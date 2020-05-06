@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "es2015",
+      "lib": ["es2015", "es2016"],
+      "module": "commonjs",
+      "declaration": true,
+      "outDir": "./dist",
+      "strict": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "**/__tests__/*"]
+  }
