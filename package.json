@@ -1,0 +1,59 @@
+{
+  "name": "@binance/connector",
+  "version": "1.0.0",
+  "description": "This is a lightweight library that works as a connector to the Binance public API.",
+  "main": "src/index.js",
+  "scripts": {
+    "jsdoc": "jsdoc -c conf.json && ./docs_src/docs.sh",
+    "jsdoc:win": "jsdoc -c conf.json && npx jsdoc --readme ./docs_src/gettingStarted.md src/modules/blvt.js && node ./docs_src/generateDoc.js && RD /S /Q out",
+    "test": "jest --testPathIgnorePatterns=__tests__/websocket/subscription.test.js",
+    "test:watch": "jest --watchAll",
+    "standard": "standard",
+    "standard:fix": "standard --fix ",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binance/binance-connector-node.git"
+  },
+  "engines": {
+    "node": ">=12.22.3",
+    "npm": ">=6.14.13"
+  },
+  "keywords": [
+    "Binance",
+    "API"
+  ],
+  "author": "Binance",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binance/binance-connector/issues"
+  },
+  "homepage": "https://github.com/binance/binance-connector#readme",
+  "devDependencies": {
+    "clean-jsdoc-theme": "^3.2.7",
+    "husky": "^6.0.0",
+    "jest": "^26.0.1",
+    "jsdoc": "^3.6.7",
+    "marked": "^2.1.1",
+    "nock": "^13.0.2",
+    "standard": "^14.3.4"
+  },
+  "files": [
+    "src/**/*"
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ws": "^7.5.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "/docs/**/*.js"
+    ]
+  }
+}
