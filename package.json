@@ -33,9 +33,12 @@
     "dist/**/*"
   ],
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "qs": "^6.9.4"
   },
-  "jest":{
-    "testMatch": ["**/__tests__/**/*.test.js"]
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
   }
 }
