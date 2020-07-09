@@ -1,6 +1,7 @@
 
 const axios = require('axios')
 const nock = require('nock')
+const Spot = require('../../src/spot')
 const httpAdapter = require('axios/lib/adapters/http')
 
 const host = 'https://api.binance.com'
@@ -12,6 +13,14 @@ const nockMock = (urlPath) => (responseData) => {
     .reply(200, responseData)
 }
 
+const responseMockData = {
+  key: 'value', foo: 'bar'
+}
+
+const SpotClient = new Spot()
+
 module.exports = {
-  nockMock
+  nockMock,
+  responseMockData,
+  SpotClient
 }

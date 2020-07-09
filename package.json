@@ -34,5 +34,8 @@
   ],
   "dependencies": {
     "axios": "^0.19.2"
+  },
+  "jest":{
+    "testMatch": ["**/__tests__/**/*.test.js"]
   }
 }

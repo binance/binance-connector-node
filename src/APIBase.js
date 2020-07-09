@@ -4,10 +4,12 @@ class APIBase {
   constructor (apiKey = '', apiSecret = '') {
     this.apiKey = apiKey
     this.apiSecret = apiSecret
+  }
 
-    this.request = axios.create({
+  publicRequest (path, params = {}) {
+    return axios.create({
       baseURL: 'https://api.binance.com'
-    })
+    }).get(path)
   }
 }
 
