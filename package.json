@@ -3,17 +3,15 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest --config jestconfig.json",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "standard": "standard",
+    "standard:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -21,26 +19,26 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/2pd/binance-connector-node/issues"
   },
   "homepage": "https://github.com/2pd/binance-connector-node#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.9.6",
-    "@types/jest": "^25.2.1",
     "jest": "^26.0.1",
-    "prettier": "^2.0.5",
-    "ts-jest": "^25.4.0",
-    "ts-node": "^8.10.1",
-    "tslint": "^6.1.2",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.8.3"
+    "nock": "^13.0.2",
+    "standard": "^14.3.4"
   },
   "files": [
     "dist/**/*"
   ],
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "qs": "^6.9.4"
+  },
+  "jest": {
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
   }
 }
