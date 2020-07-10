@@ -1,9 +1,8 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, responseMockData, SpotClient } = require('../../helpers/testSetup')
+const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#depth', () => {
-
   describe('throw MissingParameterError', async () => {
     it('missing symbol', async () => {
       expect(() => {

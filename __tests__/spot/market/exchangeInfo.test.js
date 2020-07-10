@@ -1,6 +1,6 @@
 /* global describe, it, expect, */
 
-const { nockMock, responseMockData, SpotClient } = require('../../helpers/testSetup')
+const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#exchangeInfo', () => {
   it('should return exchange info', async () => {
