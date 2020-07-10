@@ -20,7 +20,7 @@ class APIBase {
   createRequest () {
     axios.defaults.baseURL = 'https://api.binance.com'
     axios.defaults.headers['Content-Type'] = 'application/json'
-
+    axios.defaults.headers['X-MBX-APIKEY'] = this.apiKey
     return axios.create()
   }
 }

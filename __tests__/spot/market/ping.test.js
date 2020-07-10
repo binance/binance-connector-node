@@ -1,6 +1,6 @@
 /* global describe, it, expect, */
 
-const { nockMock, SpotClient } = require('../../helpers/testSetup')
+const { nockMock, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#ping', () => {
   it('should test API response', async () => {

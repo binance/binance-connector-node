@@ -1,6 +1,6 @@
 /* global describe, it, expect, */
 
-const { nockMock, responseMockData, SpotClient } = require('../../helpers/testSetup')
+const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#time', () => {
   it('should return server time', async () => {

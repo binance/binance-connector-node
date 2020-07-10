@@ -1,5 +1,5 @@
 
-const MissingParameterError = require('../error/missingParameterError')
+const { validateParameter } = require('../helpers/validation')
 
 const Market = superclass => class extends superclass {
   /*
@@ -9,7 +9,6 @@ const Market = superclass => class extends superclass {
     *
     * Test connectivity to the Rest API.
     *
-    * @link https://binance-docs.github.io/apidocs/spot/en/#test-connectivity
     */
   ping () {
     return this.publicRequest('/api/v3/ping')
@@ -22,7 +21,6 @@ const Market = superclass => class extends superclass {
     *
     * Test connectivity to the Rest API and get the current server time.
     *
-    * @link https://binance-docs.github.io/apidocs/spot/en/#check-server-time
     */
   time () {
     return this.publicRequest('/api/v3/time')
@@ -35,8 +33,6 @@ const Market = superclass => class extends superclass {
     *
     * Current exchange trading rules and symbol information
     *
-    * @link https://binance-docs.github.io/apidocs/spot/en/#exchange-information
-    *
     */
   exchangeInfo () {
     return this.publicRequest('/api/v3/exchangeInfo')
@@ -47,13 +43,11 @@ const Market = superclass => class extends superclass {
     *
     * GET /api/v3/depth
     *
-    * @param string $symbol
-    * @param array  $options
+    * @param {string} symbol
+    * @param {number} limit
     */
   depth (symbol, options = {}) {
-    if (symbol === undefined || symbol === '') {
-      throw new MissingParameterError('symbol')
-    }
+    validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
       '/api/v3/depth',
@@ -68,16 +62,56 @@ const Market = superclass => class extends superclass {
     *
     * GET /api/v3/trades
     *
-    * @param string $symbol
-    * @param array  $options
+    * @param {string} symbol
+    * @param {number} limit
     */
   trades (symbol, options = {}) {
-    if (symbol === undefined || symbol === '') {
-      throw new MissingParameterError('symbol')
-    }
+    validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
       '/api/v3/trades',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
+      })
+    )
+  }
+
+  /*
+    * Old Trade Lookup
+    *
+    * GET /api/v3/historicalTrades
+    *
+    * @param {string} symbol
+    * @param {number} limit
+    * @param {number} fromId
+    */
+  historicalTrades (symbol, options = {}) {
+    validateParameter(symbol, 'symbol')
+
+    return this.publicRequest(
+      '/api/v3/historicalTrades',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
+      })
+    )
+  }
+
+  /*
+    * Compressed/Aggregate Trades List
+    *
+    * GET /api/v3/aggTrades
+    *
+    * @param {string} symbol
+    * @param {number} fromId
+    * @param {number} startTime
+    * @param {number} endTime
+    * @param {number} limit
+    */
+  aggTrades (symbol, options = {}) {
+    validateParameter(symbol, 'symbol')
+
+    return this.publicRequest(
+      '/api/v3/aggTrades',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
       })

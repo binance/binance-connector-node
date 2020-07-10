@@ -2,20 +2,20 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
-describe('#trades', () => {
+describe('#aggTrades', async () => {
   describe('throw MissingParameterError', async () => {
     it('missing symbol', async () => {
       expect(() => {
-        SpotClient.trades()
+        SpotClient.aggTrades()
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return trades', async () => {
+  it('should return agg trades', async () => {
     const symbol = 'BTCUSDT'
-    nockMock(`/api/v3/trades?symbol=${symbol}`)(responseMockData)
+    nockMock(`/api/v3/aggTrades?symbol=${symbol}`)(responseMockData)
 
-    return SpotClient.trades(symbol).then(response => {
+    return SpotClient.aggTrades(symbol).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)
     })
