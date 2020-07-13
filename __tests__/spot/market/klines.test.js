@@ -17,7 +17,7 @@ describe('#klines', () => {
     })
   })
 
-  it('should return historical trades', async () => {
+  it('should return klines', async () => {
     const symbol = 'BTCUSDT'
     const interval = '1m'
     nockMock(`/api/v3/klines?symbol=${symbol}&interval=${interval}`)(responseMockData)
