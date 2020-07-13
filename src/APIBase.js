@@ -1,5 +1,6 @@
 const axios = require('axios')
 const qs = require('qs')
+const { cleanEmptyObject } = require('./helpers/utils')
 
 class APIBase {
   constructor (apiKey = '', apiSecret = '') {
@@ -8,6 +9,7 @@ class APIBase {
   }
 
   publicRequest (path, params = {}) {
+    params = cleanEmptyObject(params)
     params = qs.stringify(params)
     if (params !== '') {
       path = `${path}?${params}`
