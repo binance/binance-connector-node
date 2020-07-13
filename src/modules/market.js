@@ -117,6 +117,29 @@ const Market = superclass => class extends superclass {
       })
     )
   }
+
+  /*
+    * Kline/Candlestick Data
+    *
+    * GET /api/v3/klines
+    *
+    * @param {string} symbol
+    * @param {string} interval
+    * @param {number} startTime
+    * @param {number} endTime
+    * @param {number} limit
+    */
+  klines (symbol, interval, options = {}) {
+    validateParameter(symbol, 'symbol')
+    validateParameter(interval, 'interval')
+    return this.publicRequest(
+      '/api/v3/klines',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase(),
+        interval: interval
+      })
+    )
+  }
 }
 
 module.exports = Market

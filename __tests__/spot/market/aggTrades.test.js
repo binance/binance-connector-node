@@ -2,8 +2,8 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
-describe('#aggTrades', async () => {
-  describe('throw MissingParameterError', async () => {
+describe('#aggTrades', () => {
+  describe('throw MissingParameterError', () => {
     it('missing symbol', async () => {
       expect(() => {
         SpotClient.aggTrades()
