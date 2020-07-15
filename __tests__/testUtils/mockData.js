@@ -1,12 +1,14 @@
 
 const { buildQueryString } = require('../../src/helpers/utils')
 
+const amount = 10
 const startTime = '1111111'
 const endTime = '22222222'
 const fromId = '33333'
 const limit = 10
 const symbol = 'BNBUSDT'
 const side = 'BUY'
+const coin = 'BNB'
 const type = 'LIMIT'
 const quantity = 10
 const price = 1000.01
@@ -19,7 +21,9 @@ const queryString = parameters => buildQueryString(parameters)
 
 module.exports = {
   queryString,
+  amount,
   startTime,
+  coin,
   endTime,
   fromId,
   limit,
