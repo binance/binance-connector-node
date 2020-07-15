@@ -175,17 +175,25 @@ const Trade = superclass => class extends superclass {
   }
 
   /*
-     * New OCO (TRADE)
-     *
-     * POST /api/v3/order/oco
-     *
-     * @param string $symbol
-     * @param string $side
-     * @param string|float $quantity
-     * @param string|float $price
-     * @param string|float $stopPrice
-     * @param array $options
-     */
+    * New OCO (TRADE)
+    *
+    * POST /api/v3/order/oco
+    *
+    * @param {string} symbol
+    * @param {string} side
+    * @param {number} quantity
+    * @param {number} price
+    * @param {number} stopPrice
+    * @param {string} listClientOrderId
+    * @param {string} limitClientOrderId
+    * @param {number} limitIcebergQty
+    * @param {string} stopClientOrderId
+    * @param {number} stopLimitPrice
+    * @param {number} stopIcebergQty
+    * @param {string} stopLimitTimeInForce
+    * @param {string} newOrderRespType
+    * @param {string} recvWindow
+    */
   newOCOOrder (symbol, side, quantity, price, stopPrice, options = {}) {
     validateParameter(symbol, 'symbol')
     validateParameter(side, 'side')
@@ -202,6 +210,29 @@ const Trade = superclass => class extends superclass {
         quantity,
         price,
         stopPrice
+      })
+    )
+  }
+
+  /*
+  * Cancel OCO (TRADE)
+  *
+  * DELETE /api/v3/orderList
+  *
+  * @param {string} symbol
+  * @param {number} orderListId
+  * @param {string} listClientOrderId
+  * @param {string} newClientOrderId
+  * @param {number} recvWindow
+  */
+  cancelOCOOrder (symbol, options = {}) {
+    validateParameter(symbol, 'symbol')
+
+    return this.signRequest(
+      'DELETE',
+      '/api/v3/orderList',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
       })
     )
   }
