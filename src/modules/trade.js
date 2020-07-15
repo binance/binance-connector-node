@@ -93,6 +93,120 @@ const Trade = superclass => class extends superclass {
   }
 
   /*
+    * Cancel all Open Orders on a Symbol (TRADE)
+    *
+    * DELETE /api/v3/openOrders
+    *
+    * @param {string} symbol
+    * @param {number} recvWindow
+    */
+  cancelOpenOrders (symbol, options = {}) {
+    validateParameter(symbol, 'symbol')
+
+    return this.signRequest(
+      'DELETE',
+      '/api/v3/openOrders',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
+      })
+    )
+  }
+
+  /*
+    * Query Order (USER_DATA)
+    *
+    * GET /api/v3/order
+    *
+    * @param {string} symbol
+    * @param {number} orderId
+    * @param {string} origClientOrderId
+    * @param {number} recvWindow
+    */
+  getOrder (symbol, options = {}) {
+    validateParameter(symbol, 'symbol')
+    return this.signRequest(
+      'GET',
+      '/api/v3/order',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
+      })
+    )
+  }
+
+  /*
+    * Current Open Orders (USER_DATA)
+    *
+    * GET /api/v3/openOrders
+    *
+    * @param {string} symbol
+    * @param {number} orderId
+    * @param {string} origClientOrderId
+    * @param {number} recvWindow
+    */
+  openOrders (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/api/v3/openOrders',
+      options
+    )
+  }
+
+  /*
+    * All Orders (USER_DATA)
+    *
+    * GET /api/v3/allOrders
+    *
+    * @param {string} symbol
+    * @param {number} orderId
+    * @param {number} startTime
+    * @param {number} endTime
+    * @param {number} limit
+    * @param {string} recvWindow
+    */
+  allOrders (symbol, options = {}) {
+    validateParameter(symbol, 'symbol')
+    return this.signRequest(
+      'GET',
+      '/api/v3/allOrders',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
+      })
+    )
+  }
+
+  /*
+     * New OCO (TRADE)
+     *
+     * POST /api/v3/order/oco
+     *
+     * @param string $symbol
+     * @param string $side
+     * @param string|float $quantity
+     * @param string|float $price
+     * @param string|float $stopPrice
+     * @param array $options
+     */
+  newOCOOrder (symbol, side, quantity, price, stopPrice, options = {}) {
+    validateParameter(symbol, 'symbol')
+    validateParameter(side, 'side')
+    validateParameter(quantity, 'quantity')
+    validateParameter(price, 'price')
+    validateParameter(stopPrice, 'stopPrice')
+
+    return this.signRequest(
+      'POST',
+      '/api/v3/order/oco',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase(),
+        side: side.toUpperCase(),
+        quantity,
+        price,
+        stopPrice
+      })
+    )
+  }
+
+  /*
     * Account Information (USER_DATA)
     *
     * GET /api/v3/account
