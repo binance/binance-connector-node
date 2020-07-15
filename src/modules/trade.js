@@ -238,6 +238,57 @@ const Trade = superclass => class extends superclass {
   }
 
   /*
+    * Query OCO (USER_DATA)
+    *
+    * GET /api/v3/orderList
+    *
+    * @param {number} orderListId
+    * @param {string} origClientOrderId
+    * @param {number} recvWindow
+    */
+  getOCOOrder (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/api/v3/orderList',
+      options
+    )
+  }
+
+  /*
+    * Query all OCO (USER_DATA)
+    *
+    * GET /api/v3/allOrderList
+    *
+    * @param {number} fromId
+    * @param {number} startTime
+    * @param {number} endTime
+    * @param {number} limit
+    * @param {number} recvWindow
+    */
+  getOCOOrders (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/api/v3/allOrderList',
+      options
+    )
+  }
+
+  /*
+    * Query Open OCO (USER_DATA)
+    *
+    * GET /api/v3/openOrderList
+    *
+    * @param {number} recvWindow
+    */
+  getOpenOCOOrders (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/api/v3/openOrderList',
+      options
+    )
+  }
+
+  /*
     * Account Information (USER_DATA)
     *
     * GET /api/v3/account
