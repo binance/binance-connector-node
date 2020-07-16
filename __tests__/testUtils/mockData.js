@@ -9,6 +9,7 @@ const limit = 10
 const symbol = 'BNBUSDT'
 const side = 'BUY'
 const coin = 'BNB'
+const asset = 'BNB'
 const type = 'LIMIT'
 const quantity = 10
 const price = 1000.01
@@ -22,6 +23,7 @@ const queryString = parameters => buildQueryString(parameters)
 module.exports = {
   queryString,
   amount,
+  asset,
   startTime,
   coin,
   endTime,
