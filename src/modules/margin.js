@@ -84,6 +84,7 @@ const Margin = superclass => class extends superclass {
     validateParameter(asset, 'asset')
 
     return this.publicRequest(
+      'GET',
       '/sapi/v1/margin/asset',
       { asset: asset.toUpperCase() }
     )
@@ -100,6 +101,7 @@ const Margin = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/sapi/v1/margin/pair',
       { symbol: symbol.toUpperCase() }
     )
@@ -113,6 +115,7 @@ const Margin = superclass => class extends superclass {
     */
   marginAllAssets () {
     return this.publicRequest(
+      'GET',
       '/sapi/v1/margin/allAssets'
     )
   }
@@ -125,6 +128,7 @@ const Margin = superclass => class extends superclass {
     */
   marginAllPairs () {
     return this.publicRequest(
+      'GET',
       '/sapi/v1/margin/allPairs'
     )
   }
@@ -140,6 +144,7 @@ const Margin = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/sapi/v1/margin/priceIndex',
       { symbol: symbol.toUpperCase() }
     )

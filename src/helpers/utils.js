@@ -15,8 +15,22 @@ const getRequestInstance = (config) => {
   })
 }
 
+const createRequest = (config) => {
+  const { baseURL, apiKey, method, url } = config
+  return getRequestInstance({
+    baseURL,
+    headers: {
+      'content-type': 'application/json',
+      'X-MBX-APIKEY': apiKey
+    }
+  }).request({
+    method,
+    url
+  })
+}
+
 module.exports = {
   cleanEmptyObject,
   buildQueryString,
-  getRequestInstance
+  createRequest
 }

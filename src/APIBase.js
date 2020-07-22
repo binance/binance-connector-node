@@ -1,6 +1,6 @@
 const crypto = require('crypto')
 const qs = require('qs')
-const { cleanEmptyObject, buildQueryString, getRequestInstance } = require('./helpers/utils')
+const { cleanEmptyObject, buildQueryString, createRequest } = require('./helpers/utils')
 
 class APIBase {
   constructor (apiKey = '', apiSecret = '', options = {}) {
@@ -9,21 +9,17 @@ class APIBase {
     this.baseURL = options.url || 'https://api.binance.com'
   }
 
-  publicRequest (path, params = {}) {
+  publicRequest (method, path, params = {}) {
     params = cleanEmptyObject(params)
     params = qs.stringify(params)
     if (params !== '') {
       path = `${path}?${params}`
     }
-    return getRequestInstance({
+    return createRequest({
+      method: method,
       baseURL: this.baseURL,
-      headers: {
-        'content-type': 'application/json',
-        'X-MBX-APIKEY': this.apiKey
-      }
-    }).request({
-      method: 'GET',
-      url: path
+      url: path,
+      apiKey: this.apiKey
     })
   }
 
@@ -35,16 +31,11 @@ class APIBase {
       .update(queryString.substr(1))
       .digest('hex')
 
-    const url = `${path}${queryString}&signature=${signature}`
-    return getRequestInstance({
+    return createRequest({
+      method: method,
       baseURL: this.baseURL,
-      headers: {
-        'content-type': 'application/json',
-        'X-MBX-APIKEY': this.apiKey
-      }
-    }).request({
-      method,
-      url
+      url: `${path}${queryString}&signature=${signature}`,
+      apiKey: this.apiKey
     })
   }
 }
