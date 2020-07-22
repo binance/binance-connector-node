@@ -11,7 +11,7 @@ const Market = superclass => class extends superclass {
     *
     */
   ping () {
-    return this.publicRequest('/api/v3/ping')
+    return this.publicRequest('GET', '/api/v3/ping')
   }
 
   /*
@@ -23,7 +23,7 @@ const Market = superclass => class extends superclass {
     *
     */
   time () {
-    return this.publicRequest('/api/v3/time')
+    return this.publicRequest('GET', '/api/v3/time')
   }
 
   /*
@@ -35,7 +35,7 @@ const Market = superclass => class extends superclass {
     *
     */
   exchangeInfo () {
-    return this.publicRequest('/api/v3/exchangeInfo')
+    return this.publicRequest('GET', '/api/v3/exchangeInfo')
   }
 
   /*
@@ -50,6 +50,7 @@ const Market = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/api/v3/depth',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
@@ -69,6 +70,7 @@ const Market = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/api/v3/trades',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
@@ -89,6 +91,7 @@ const Market = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/api/v3/historicalTrades',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
@@ -111,6 +114,7 @@ const Market = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/api/v3/aggTrades',
       Object.assign(options, {
         symbol: symbol.toUpperCase()
@@ -133,6 +137,7 @@ const Market = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
     validateParameter(interval, 'interval')
     return this.publicRequest(
+      'GET',
       '/api/v3/klines',
       Object.assign(options, {
         symbol: symbol.toUpperCase(),
@@ -152,6 +157,7 @@ const Market = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/api/v3/avgPrice', { symbol: symbol.toUpperCase() }
     )
   }
@@ -167,6 +173,7 @@ const Market = superclass => class extends superclass {
     validateParameter(symbol, 'symbol')
 
     return this.publicRequest(
+      'GET',
       '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase() }
     )
   }
@@ -180,6 +187,7 @@ const Market = superclass => class extends superclass {
   */
   tickerPrice (symbol = '') {
     return this.publicRequest(
+      'GET',
       '/api/v3/ticker/price', { symbol: symbol.toUpperCase() }
     )
   }
@@ -193,6 +201,7 @@ const Market = superclass => class extends superclass {
   */
   bookTicker (symbol = '') {
     return this.publicRequest(
+      'GET',
       '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase() }
     )
   }

@@ -50,6 +50,13 @@ const nockDeleteMock = (urlPath) => (responseData) => {
     .reply(200, responseData)
 }
 
+const nockPutMock = (urlPath) => (responseData) => {
+  nock(host)
+    .filteringPath(path => filterPath(path))
+    .put(urlPath)
+    .reply(200, responseData)
+}
+
 const responseMockData = {
   key: 'value', foo: 'bar'
 }
@@ -60,6 +67,7 @@ module.exports = {
   nockMock,
   nockPostMock,
   nockDeleteMock,
+  nockPutMock,
   responseMockData,
   SpotClient
 }

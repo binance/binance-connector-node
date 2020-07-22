@@ -8,7 +8,7 @@ const Wallet = superclass => class extends superclass {
     *
     */
   systemStatus () {
-    return this.publicRequest('/wapi/v3/systemStatus.html')
+    return this.publicRequest('GET', '/wapi/v3/systemStatus.html')
   }
 
   /*
