@@ -1,29 +1,25 @@
 {
   "name": "binance-connector-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags",
     "standard": "standard",
     "standard:fix": "standard --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/2pd/binance-connector-node.git"
+    "url": "git+https://github.com/binance-exchange/binance-connector-node.git"
   },
-  "keywords": [],
+  "keywords": ["Binance", "API"],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/2pd/binance-connector-node/issues"
+    "url": "https://github.com/binance-exchange/binance-connector-node/issues"
   },
-  "homepage": "https://github.com/2pd/binance-connector-node#readme",
+  "homepage": "https://github.com/binance-exchange/binance-connector-node#readme",
   "devDependencies": {
     "jest": "^26.0.1",
     "nock": "^13.0.2",
