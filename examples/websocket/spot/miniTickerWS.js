@@ -18,4 +18,9 @@ const callbacks = {
     console.log(data)
   }
 }
-client.kline('bnbusdt', '1m', callbacks)
+
+// all pairs
+client.miniTickerWS(null, callbacks)
+
+// single pair
+// client.miniTickerWS('bnbusdt', callbacks)

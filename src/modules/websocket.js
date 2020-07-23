@@ -17,7 +17,7 @@ const Websocket = superclass => class extends superclass {
     * @param {string} symbol
     *
     */
-  aggTrade (symbol, callbacks) {
+  aggTradeWS (symbol, callbacks) {
     validateParameter(symbol, 'symbol')
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@aggTrade`
     this.logger.debug(url)
@@ -34,7 +34,7 @@ const Websocket = superclass => class extends superclass {
     * @param {string} symbol
     *
     */
-  trade (symbol, callbacks) {
+  tradeWS (symbol, callbacks) {
     validateParameter(symbol, 'symbol')
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@trade`
     this.logger.debug(url)
@@ -73,7 +73,7 @@ const Websocket = superclass => class extends superclass {
     * @param {string} interval
     *
     */
-  kline (symbol, interval, callbacks) {
+  klineWS (symbol, interval, callbacks) {
     validateParameter(symbol, 'symbol')
     validateParameter(interval, 'interval')
 
@@ -95,7 +95,7 @@ const Websocket = superclass => class extends superclass {
     *
     * @param {string} symbol
     */
-  miniTicker (symbol = null, callbacks) {
+  miniTickerWS (symbol = null, callbacks) {
     let path = '!miniTicker@arr'
     if (symbol !== null && symbol !== '') {
       path = `${symbol.toLowerCase()}@miniTicker`
@@ -120,10 +120,10 @@ const Websocket = superclass => class extends superclass {
     * @param {string} symbol
     *
     */
-  ticker (symbol = null, callbacks) {
+  tickerWS (symbol = null, callbacks) {
     let path = '!ticker@arr'
     if (symbol !== null && symbol !== '') {
-      path = `${symbol.toLowerCase()}@miniTicker`
+      path = `${symbol.toLowerCase()}@ticker`
     }
     const url = `${this.wsURL}/ws/${path}`
     this.logger.debug(url)
@@ -144,10 +144,10 @@ const Websocket = superclass => class extends superclass {
     *
     * @param {string} symbol
     */
-  bookTicker (symbol = null, callbacks) {
-    let path = '!ticker@arr'
+  bookTickerWS (symbol = null, callbacks) {
+    let path = '!bookTicker'
     if (symbol !== null && symbol !== '') {
-      path = `${symbol.toLowerCase()}@miniTicker`
+      path = `${symbol.toLowerCase()}@bookTicker`
     }
     const url = `${this.wsURL}/ws/${path}`
     this.logger.debug(url)

@@ -18,9 +18,4 @@ const callbacks = {
     console.log(data)
   }
 }
-
-// all pairs
-client.miniTicker(null, callbacks)
-
-// single pair
-// client.miniTicker('bnbusdt', callbacks)
+client.tradeWS('bnbusdt', callbacks)
