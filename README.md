@@ -59,7 +59,7 @@ const callbacks = {
     console.log(data)
   }
 }
-client.aggTrade('bnbusdt', callbacks)
+client.aggTradeWS('bnbusdt', callbacks)
 
 
 // support combined stream, e.g.
