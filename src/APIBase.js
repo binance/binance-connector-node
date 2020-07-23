@@ -1,17 +1,15 @@
 const crypto = require('crypto')
 const qs = require('qs')
-const bunyan = require('bunyan')
-const { cleanEmptyObject, buildQueryString, createRequest } = require('./helpers/utils')
-const { appName } = require('./helpers/constants')
+const { cleanEmptyObject, buildQueryString, createRequest, defaultLogger } = require('./helpers/utils')
 
 class APIBase {
   constructor (options) {
     const { apiKey, apiSecret, baseURL, logger } = options
-    
+
     this.apiKey = apiKey
     this.apiSecret = apiSecret
     this.baseURL = baseURL
-    this.logger = logger || bunyan.createLogger({ name: appName })
+    this.logger = logger || defaultLogger
   }
 
   publicRequest (method, path, params = {}) {

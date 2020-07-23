@@ -61,6 +61,9 @@ const callbacks = {
 }
 client.aggTrade('bnbusdt', callbacks)
 
+
+// support combined stream, e.g.
+client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 ```
 
 ## Test
