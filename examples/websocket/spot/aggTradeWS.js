@@ -18,4 +18,4 @@ const callbacks = {
     console.log(data)
   }
 }
-client.aggTrade('bnbusdt', callbacks)
+client.aggTradeWS('bnbusdt', callbacks)

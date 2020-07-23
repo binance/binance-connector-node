@@ -18,4 +18,9 @@ const callbacks = {
     console.log(data)
   }
 }
-client.trade('bnbusdt', callbacks)
+
+// all pairs
+// client.tickerWS(null, callbacks)
+
+// single pair
+client.tickerWS('bnbusdt', callbacks)
