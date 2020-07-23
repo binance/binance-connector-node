@@ -1,12 +1,15 @@
 const crypto = require('crypto')
 const qs = require('qs')
-const { cleanEmptyObject, buildQueryString, createRequest } = require('./helpers/utils')
+const { cleanEmptyObject, buildQueryString, createRequest, defaultLogger } = require('./helpers/utils')
 
 class APIBase {
-  constructor (apiKey = '', apiSecret = '', options = {}) {
+  constructor (options) {
+    const { apiKey, apiSecret, baseURL, logger } = options
+
     this.apiKey = apiKey
     this.apiSecret = apiSecret
-    this.baseURL = options.url || 'https://api.binance.com'
+    this.baseURL = baseURL
+    this.logger = logger || defaultLogger
   }
 
   publicRequest (method, path, params = {}) {

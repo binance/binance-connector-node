@@ -1,4 +1,6 @@
 const axios = require('axios')
+const bunyan = require('bunyan')
+const { appName } = require('./constants')
 
 const cleanEmptyObject = obj => {
   Object.keys(obj).forEach((key) => (obj[key] == null || obj[key] === '') && delete obj[key])
@@ -29,8 +31,11 @@ const createRequest = (config) => {
   })
 }
 
+const defaultLogger = bunyan.createLogger({ name: appName })
+
 module.exports = {
   cleanEmptyObject,
   buildQueryString,
-  createRequest
+  createRequest,
+  defaultLogger
 }
