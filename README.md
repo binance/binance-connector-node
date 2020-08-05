@@ -13,7 +13,7 @@ npm install binance-conector-node
 
 ```javascript
 
-const Spot = require('binance-connector-node')
+const { Spot } = require('binance-connector-node')
 
 const apiKey = ''
 const apiSecret = ''
@@ -41,7 +41,7 @@ More examples are available from `examples` folder
 
 ```javascript
 const bunyan = require('bunyan')
-const Spot = require('binance-connector-node')
+const { Spot } = require('binance-connector-node')
 const logger = bunyan.createLogger({
   name: 'binance connector',
   stream: process.stdout,

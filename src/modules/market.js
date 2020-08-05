@@ -169,9 +169,7 @@ const Market = superclass => class extends superclass {
   *
   * @param {string} symbol
   */
-  ticker24hr (symbol) {
-    validateParameter(symbol, 'symbol')
-
+  ticker24hr (symbol = '') {
     return this.publicRequest(
       'GET',
       '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase() }
