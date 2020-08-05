@@ -1,13 +1,13 @@
 /* global describe, it, expect, */
-const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#ticker24hr', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
-      expect(() => {
-        SpotClient.ticker24hr('')
-      }).toThrow(MissingParameterError)
+  it('should return 24hr price for all pairs', async () => {
+    nockMock('/api/v3/ticker/24hr')(responseMockData)
+
+    return SpotClient.ticker24hr().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(responseMockData)
     })
   })
 
