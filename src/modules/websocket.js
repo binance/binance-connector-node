@@ -4,7 +4,7 @@ const WebSocketClient = require('ws')
 const Websocket = superclass => class extends superclass {
   constructor (options) {
     super(options)
-    this.wsURL = 'wss://stream.binance.com:9443'
+    this.wsURL = options.wsURL || 'wss://stream.binance.com:9443'
   }
 
   /*
