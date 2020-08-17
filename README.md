@@ -49,7 +49,8 @@ const logger = bunyan.createLogger({
 })
 
 const client = new Spot('', '', {
-  logger // logger is optional
+  logger // logger is optional,
+  wsURL: 'wss://testnet.binance.vision' // optional, for testnet only. By default on production
 })
 
 const callbacks = {
