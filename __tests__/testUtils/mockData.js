@@ -4,6 +4,7 @@ const { buildQueryString } = require('../../src/helpers/utils')
 const amount = 10
 const startTime = '1111111'
 const endTime = '22222222'
+const email = 'alice@test.com'
 const fromId = '33333'
 const limit = 10
 const lot = 10
@@ -17,6 +18,7 @@ const price = 1000.01
 const productId = 'BNB_DAILY'
 const projectId = 'project_id'
 const stopPrice = 1001.02
+const status = 'enabled'
 const orderId = '123456789'
 const newClientOrderId = '234567890'
 const recvWindow = 1000
@@ -30,6 +32,7 @@ module.exports = {
   startTime,
   coin,
   endTime,
+  email,
   fromId,
   limit,
   lot,
@@ -40,6 +43,7 @@ module.exports = {
   price,
   productId,
   projectId,
+  status,
   stopPrice,
   orderId,
   newClientOrderId,
