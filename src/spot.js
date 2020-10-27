@@ -1,4 +1,5 @@
 const APIBase = require('./APIBase')
+const Blvt = require('./modules/blvt')
 const Bswap = require('./modules/bswap')
 const Corporate = require('./modules/corporate')
 const Market = require('./modules/market')
@@ -9,7 +10,7 @@ const Savings = require('./modules/savings')
 const Stream = require('./modules/stream')
 const Websocket = require('./modules/websocket')
 
-class Spot extends Bswap(Corporate(Websocket(Stream(Savings(Margin(Wallet(Market(Trade(APIBase))))))))) {
+class Spot extends Blvt(Bswap(Corporate(Websocket(Stream(Savings(Margin(Wallet(Market(Trade(APIBase)))))))))) {
   constructor (apiKey = '', apiSecret = '', options = {}) {
     options.baseURL = options.baseURL || 'https://api.binance.com'
     super({
