@@ -1,6 +1,6 @@
 {
   "name": "binance-connector-node",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/binance-exchange/binance-connector-node.git"
   },
-  "keywords": ["Binance", "API"],
+  "keywords": [
+    "Binance",
+    "API"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -29,7 +32,7 @@
     "src/**/*"
   ],
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bunyan": "^1.8.14",
     "qs": "^6.9.4",
     "ws": "^7.3.1"
