@@ -4,9 +4,9 @@ Another thin library that working as connector to Binance Public API.
 
 ## Installation
 
-```javascript
-
-npm install binance-conector-node
+```bash
+cd <your_project_directory>
+npm install binance-connector-node
 ```
 
 ## How to use
@@ -22,7 +22,7 @@ client.account().then(response => console.log(response.data))
 
 client.time().then(response => console.log(response.data))
 
-# todo place order
+// todo place order
 ```
 
 ### Testnet
@@ -69,7 +69,8 @@ client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 
 ## Test
 
-```javascript
+```bash
+cd <this_project_directory>
 
 npm install
 
