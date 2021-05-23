@@ -10,8 +10,9 @@ const Mining = require('./modules/mining')
 const Savings = require('./modules/savings')
 const Stream = require('./modules/stream')
 const Websocket = require('./modules/websocket')
+const flowRight = require('lodash.flowright')
 
-class Spot extends Blvt(Bswap(Corporate(Websocket(Stream(Savings(Margin(Mining(Wallet(Market(Trade(APIBase))))))))))) {
+class Spot extends flowRight(Blvt, Bswap, Corporate, Websocket, Stream, Savings, Margin, Mining, Wallet, Market, Trade) (APIBase) {
   constructor (apiKey = '', apiSecret = '', options = {}) {
     options.baseURL = options.baseURL || 'https://api.binance.com'
     super({
