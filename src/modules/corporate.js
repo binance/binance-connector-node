@@ -47,36 +47,6 @@ const Corporate = superclass => class extends superclass {
   }
 
   /*
-    * Query Sub-account Transfer History(For Master Account)
-    *
-    * GET /wapi/v3/sub-account/transfer/history.html
-    *
-    * @param {string} fromEmail
-    * @param {string} toEmail
-    * @param {number} asset
-    * @param {number} amount
-    * @param {number} recvWindow
-    * @link https://binance-docs.github.io/apidocs/spot/en/#sub-account-spot-asset-transfer-for-master-account
-    */
-  subAccountTransfer (fromEmail, toEmail, asset, amount, options = {}) {
-    validateParameter(fromEmail, 'fromEmail')
-    validateParameter(toEmail, 'toEmail')
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
-
-    return this.signRequest(
-      'POST',
-      '/wapi/v3/sub-account/transfer.html',
-      Object.assign(options, {
-        fromEmail,
-        toEmail,
-        asset,
-        amount
-      })
-    )
-  }
-
-  /*
     * Query Sub-account Assets(For Master Account)
     *
     * GET /wapi/v3/sub-account/assets.html
