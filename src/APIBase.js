@@ -1,6 +1,5 @@
 const crypto = require('crypto')
-const qs = require('qs')
-const { cleanEmptyObject, buildQueryString, createRequest, defaultLogger } = require('./helpers/utils')
+const { cleanEmptyObject, buildQueryString, createRequest, defaultLogger, stringify } = require('./helpers/utils')
 
 class APIBase {
   constructor (options) {
@@ -14,7 +13,7 @@ class APIBase {
 
   publicRequest (method, path, params = {}) {
     params = cleanEmptyObject(params)
-    params = qs.stringify(params)
+    params = stringify(params)
     if (params !== '') {
       path = `${path}?${params}`
     }
