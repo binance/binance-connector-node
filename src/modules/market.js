@@ -184,7 +184,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/avgPrice
    *
    * Current average price for a symbol.
-   * https://binance-docs.github.io/apidocs/spot/en/#current-average-price
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#current-average-price}
    *
    * @param {string} symbol
    */
