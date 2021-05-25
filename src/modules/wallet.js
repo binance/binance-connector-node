@@ -24,7 +24,9 @@ const Wallet = superclass => class extends superclass {
     *
     * Get information of coins (available for deposit and withdraw) for user.
     *
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data}
+    * 
+    * @param {number} [recvWindow]
     *
     */
   coinInfo (options = {}) {
@@ -39,12 +41,14 @@ const Wallet = superclass => class extends superclass {
     * Daily Account Snapshot (USER_DATA)
     *
     * GET /sapi/v1/accountSnapshot
+    * 
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data}
     *
-    * @param {string} type
-    * @param {number} startTime
-    * @param {number} endTime
-    * @param {number} limit
-    * @param {number} recvWindow
+    * @param {string} type ["SPOT", "MARGIN", "FUTURES"]
+    * @param {number} [startTime]
+    * @param {number} [endTime]
+    * @param {number} [limit] [min 5, max 30, default 5]
+    * @param {number} [recvWindow]
     */
   accountSnapshot (type, options = {}) {
     validateParameter(type, 'type')
@@ -63,7 +67,9 @@ const Wallet = superclass => class extends superclass {
     *
     * GET /sapi/v1/account/disableFastWithdrawSwitch
     *
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data}
+    * 
+    * @param {number} [recvWindow]
     */
   disableFastWithdraw (options = {}) {
     return this.signRequest(
@@ -78,7 +84,9 @@ const Wallet = superclass => class extends superclass {
     *
     * GET /sapi/v1/account/enableFastWithdrawSwitch
     *
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data}
+    * 
+    * @param {number} [recvWindow]
     */
   enableFastWithdraw (options = {}) {
     return this.signRequest(
@@ -93,15 +101,18 @@ const Wallet = superclass => class extends superclass {
     *
     * POST /sapi/v1/capital/withdraw/apply
     *
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi}
+    * 
     * @param {string} coin
     * @param {string} address
     * @param {number} amount
-    * @param {string} withdrawOrderId
-    * @param {string} network
-    * @param {string} addressTag
-    * @param {boolean} transactionFeeFlag
-    * @param {string} name
-    * @param {number} recvWindow
+    * @param {string} [withdrawOrderId] - client id for withdraw
+    * @param {string} [network]
+    * @param {string} [addressTag] - Secondary address identifier for coins like XRP,XMR etc.
+    * @param {boolean} [transactionFeeFlag] - When making internal transfer, true for returning the fee to the destination account;
+    *                                         false for returning the fee back to the departure account. Default false.
+    * @param {string} [name] - Description of the address. Space in name should be encoded into %20.
+    * @param {number} [recvWindow]
     */
   withdraw (coin, address, amount, options = {}) {
     validateParameter(coin, 'coin')
@@ -124,13 +135,15 @@ const Wallet = superclass => class extends superclass {
     *
     * GET /sapi/v1/capital/deposit/hisrec
     *
-    * @param {string} coin
-    * @param {number} status
-    * @param {number} startTime
-    * @param {number} endTime
-    * @param {number} offest
-    * @param {number} limit
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data}
+    * 
+    * @param {string} [coin]
+    * @param {number} [status] [0:pending, 6:credited but cannot withdraw, 1:success]
+    * @param {number} [startTime] [Default: 90 days from current timestamp]
+    * @param {number} [endTime] [Default: present timestamp]
+    * @param {number} [offest]
+    * @param {number} [limit]
+    * @param {number} [recvWindow]
     */
   depositHistory (options = {}) {
     return this.signRequest(
@@ -145,13 +158,15 @@ const Wallet = superclass => class extends superclass {
     *
     * GET /sapi/v1/capital/withdraw/history
     *
-    * @param {string} coin
-    * @param {number} status 0:Email Sent,1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed
-    * @param {number} startTime
-    * @param {number} endTime
-    * @param {number} offest
-    * @param {number} limit
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data}
+    * 
+    * @param {string} [coin]
+    * @param {number} status [0:Email Sent,1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed]
+    * @param {number} [startTime] [Default: 90 days from current timestamp]
+    * @param {number} [endTime] [Default: present timestamp]
+    * @param {number} [offest]
+    * @param {number} [limit]
+    * @param {number} [recvWindow]
     */
   withdrawHistory (options = {}) {
     return this.signRequest(
@@ -165,10 +180,12 @@ const Wallet = superclass => class extends superclass {
     * Deposit Address (supporting network) (USER_DATA)
     *
     * GET /sapi/v1/capital/deposit/address
-    *
+    * 
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data}
+    * 
     * @param {string} coin
-    * @param {string} network
-    * @param {number} recvWindow
+    * @param {string} [network]
+    * @param {number} [recvWindow]
     */
   depositAddress (coin, options = {}) {
     validateParameter(coin, 'coin')
@@ -247,8 +264,10 @@ const Wallet = superclass => class extends superclass {
     *
     * Convert dust assets to BNB.
     *
-    * @param {array} asset The asset being converted. For example: asset=BTC&asset=USDT
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data}
+    * 
+    * @param {array} asset - The asset being converted. For example: asset=BTC&asset=USDT
+    * @param {number} [recvWindow]
     */
   dustTransfer (asset, options = {}) {
     return this.signRequest(
@@ -266,12 +285,14 @@ const Wallet = superclass => class extends superclass {
     * GET /sapi/v1/asset/assetDividend
     *
     * Query asset dividend record.
+    * 
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data}
     *
-    * @param {string} asset
-    * @param {number} startTime
-    * @param {number} endTime
-    * @param {number} limit
-    * @param {number} recvWindow
+    * @param {string} [asset]
+    * @param {number} [startTime]
+    * @param {number} [endTime]
+    * @param {number} [limit] [Default 20, max 500]
+    * @param {number} [recvWindow]
     */
   assetDevidendRecord (options = {}) {
     return this.signRequest(
