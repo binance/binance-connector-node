@@ -31,11 +31,16 @@ const createRequest = (config) => {
   })
 }
 
+const stringify = (params) => {
+  return Object.entries(params).map(entry => `${entry[0]}=${entry[1]}`).join('&')
+}
+
 const defaultLogger = bunyan.createLogger({ name: appName })
 
 module.exports = {
   cleanEmptyObject,
   buildQueryString,
   createRequest,
-  defaultLogger
+  defaultLogger,
+  stringify
 }
