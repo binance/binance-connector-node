@@ -6,8 +6,8 @@ const client = new Spot(apiKey, apiSecret)
 
 client.subAccountList(
   {
-    email: '',
-    status: 'enabled',
+    email: 'alice@test.com',
+    isFreeze: false,
     page: 1,
     limit: 100
   }

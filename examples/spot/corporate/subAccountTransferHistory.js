@@ -6,7 +6,7 @@ const client = new Spot(apiKey, apiSecret)
 
 client.subAccountTransferHistory(
   {
-    email: ''
+    toEmail: 'alice@test.com'
   }
 ).then(response => console.log(response.data))
   .catch(error => console.log(error))

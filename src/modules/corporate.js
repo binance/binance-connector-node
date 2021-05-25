@@ -5,23 +5,24 @@ const { validateParameter } = require('../helpers/validation')
  * @module Corporate
  * @param {*} superclass
  */
-const Corporate = superclass => class extends superclass {
+ const Corporate = superclass => class extends superclass {
+
   /**
-   * Query Sub-account List(For Master Account)
-   *
-   * GET /wapi/v3/sub-account/list.html
-   *
-   * @param {string} email
-   * @param {string} status
-   * @param {number} page
-   * @param {number} limit
-   * @param {number} recvWindow
-   * @link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-for-master-account
-   */
+    * Query Sub-account List(For Master Account)
+    *
+    * GET /sapi/v1/sub-account/list
+    *
+    * @param {string} email
+    * @param {string} isFreeze
+    * @param {number} page
+    * @param {number} limit
+    * @param {number} recvWindow
+    * @link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account
+    */
   subAccountList (options = {}) {
     return this.signRequest(
       'GET',
-      '/wapi/v3/sub-account/list.html',
+      '/sapi/v1/sub-account/list',
       options
     )
   }
@@ -29,43 +30,40 @@ const Corporate = superclass => class extends superclass {
   /**
    * Query Sub-account Transfer History(For Master Account)
    *
-   * GET /wapi/v3/sub-account/transfer/history.html
+   * GET /sapi/v1/sub-account/sub/transfer/history
    *
-   * @param {string} email
+   * @param {string} fromEmail
+   * @param {string} toEmail
    * @param {number} startTime
    * @param {number} endTime
    * @param {number} page
    * @param {number} limit
    * @param {number} recvWindow
-   * @link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-for-master-account
+   * @link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account
    */
-  subAccountTransferHistory (email, options = {}) {
-    validateParameter(email, 'email')
-
+  subAccountTransferHistory (options = {}) {
     return this.signRequest(
       'GET',
-      '/wapi/v3/sub-account/transfer/history.html',
-      Object.assign(options, {
-        email
-      })
+      '/sapi/v1/sub-account/sub/transfer/history',
+      options
     )
   }
 
-  /*
+  /**
     * Query Sub-account Assets(For Master Account)
     *
-    * GET /wapi/v3/sub-account/assets.html
+    * GET /sapi/v3/sub-account/assets
     *
     * @param {string} email
     * @param {number} recvWindow
-    * @link https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account
+    * @link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account
     */
   subAccountAssets (email, options = {}) {
     validateParameter(email, 'email')
 
     return this.signRequest(
       'GET',
-      '/wapi/v3/sub-account/assets.html',
+      '/sapi/v3/sub-account/assets',
       Object.assign(options, {
         email
       })
