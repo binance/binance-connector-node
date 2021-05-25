@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: Bswap</title>
+    <title>JSDoc: Module: Mining</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: Bswap</h1>
+    <h1 class="page-title">Module: Mining</h1>
 
     
 
@@ -38,7 +38,7 @@
     <div class="container-overview">
     
         
-            <div class="description">API bswap endpoints</div>
+            <div class="description">API mining endpoints</div>
         
 
         
@@ -136,7 +136,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line3">line 3</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line3">line 3</a>
     </li></ul></dd>
     
 
@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="bswapLiquidity"><span class="type-signature"></span>bswapLiquidity<span class="signature">(poolId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningAccountList"><span class="type-signature"></span>miningAccountList<span class="signature">(algo, userName, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -201,11 +201,11 @@
 
 
 <div class="description">
-    Get liquidity information of a pool (USER_DATA)
+    Account List (USER_DATA)
 
-GET /sapi/v1/bswap/liquidity
+GET /sapi/v1/mining/statistics/user/list
 
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data">https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data</a>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-list-user_data</a>
 </div>
 
 
@@ -243,7 +243,722 @@ GET /sapi/v1/bswap/liquidity
 
         <tr>
             
-                <td class="name"><code>poolId</code></td>
+                <td class="name"><code>algo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line162">line 162</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="miningAlgoList"><span class="type-signature"></span>miningAlgoList<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Acquiring Algorithm (MARKET_DATA)
+
+GET /sapi/v1/mining/pub/algoList
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#acquiring-algorithm-market_data">https://binance-docs.github.io/apidocs/spot/en/#acquiring-algorithm-market_data</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="miningCoinList"><span class="type-signature"></span>miningCoinList<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Acquiring CoinName (MARKET_DATA)
+
+GET /sapi/v1/mining/pub/coinList
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#acquiring-coinname-market_data">https://binance-docs.github.io/apidocs/spot/en/#acquiring-coinname-market_data</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="miningRevenueList"><span class="type-signature"></span>miningRevenueList<span class="signature">(algo, userName, coin<span class="signature-attributes">opt</span>, startDate<span class="signature-attributes">opt</span>, endDate<span class="signature-attributes">opt</span>, pageIndex<span class="signature-attributes">opt</span>, pageSize<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Revenue List (USER_DATA)
+
+GET /sapi/v1/mining/payment/list
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#revenue-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#revenue-list-user_data</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>algo</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pageIndex</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pageSize</code></td>
             
 
             <td class="type">
@@ -343,7 +1058,7 @@ GET /sapi/v1/bswap/liquidity
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line36">line 36</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line114">line 114</a>
     </li></ul></dd>
     
 
@@ -379,7 +1094,7 @@ GET /sapi/v1/bswap/liquidity
     
 
     
-    <h4 class="name" id="bswapLiquidityAdd"><span class="type-signature"></span>bswapLiquidityAdd<span class="signature">(poolId, asset, quantity, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningStatisticList"><span class="type-signature"></span>miningStatisticList<span class="signature">(algo, userName, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -387,11 +1102,11 @@ GET /sapi/v1/bswap/liquidity
 
 
 <div class="description">
-    Add Liquidity (TRADE)
+    Statistic List (USER_DATA)
 
-POST /sapi/v1/bswap/liquidityAdd
+GET /sapi/v1/mining/statistics/user/status
 
-<a href="https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade">https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade</a>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#statistic-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#statistic-list-user_data</a>
 </div>
 
 
@@ -429,38 +1144,7 @@ POST /sapi/v1/bswap/liquidityAdd
 
         <tr>
             
-                <td class="name"><code>poolId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>asset</code></td>
+                <td class="name"><code>algo</code></td>
             
 
             <td class="type">
@@ -491,13 +1175,13 @@ POST /sapi/v1/bswap/liquidityAdd
 
         <tr>
             
-                <td class="name"><code>quantity</code></td>
+                <td class="name"><code>userName</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">string</span>
 
 
             
@@ -589,7 +1273,7 @@ POST /sapi/v1/bswap/liquidityAdd
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line56">line 56</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line138">line 138</a>
     </li></ul></dd>
     
 
@@ -625,7 +1309,7 @@ POST /sapi/v1/bswap/liquidityAdd
     
 
     
-    <h4 class="name" id="bswapLiquidityOperationRecord"><span class="type-signature"></span>bswapLiquidityOperationRecord<span class="signature">(operationId<span class="signature-attributes">opt</span>, poolId<span class="signature-attributes">opt</span>, operation<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningWorker"><span class="type-signature"></span>miningWorker<span class="signature">(algo, userName, workerName, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -633,11 +1317,11 @@ POST /sapi/v1/bswap/liquidityAdd
 
 
 <div class="description">
-    Get Liquidity Operation Record (USER_DATA)
+    Request for Detail Miner List (USER_DATA)
 
-GET /sapi/v1/bswap/liquidityOps
+GET /sapi/v1/mining/worker/detail
 
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data">https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data</a>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#request-for-detail-miner-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#request-for-detail-miner-list-user_data</a>
 </div>
 
 
@@ -675,389 +1359,7 @@ GET /sapi/v1/bswap/liquidityOps
 
         <tr>
             
-                <td class="name"><code>operationId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>poolId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>operation</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last">`ADD` or `REMOVE`</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>startTime</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>endTime</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>recvWindow</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line118">line 118</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="bswapLiquidityRemove"><span class="type-signature"></span>bswapLiquidityRemove<span class="signature">(poolId, type, asset, shareAmount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Remove Liquidity (TRADE)
-
-POST /sapi/v1/bswap/liquidityRemove
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade">https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>poolId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>algo</code></td>
             
 
             <td class="type">
@@ -1081,14 +1383,14 @@ POST /sapi/v1/bswap/liquidityRemove
 
             
 
-            <td class="description last">`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal</td>
+            <td class="description last"></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>asset</code></td>
+                <td class="name"><code>userName</code></td>
             
 
             <td class="type">
@@ -1119,13 +1421,13 @@ POST /sapi/v1/bswap/liquidityRemove
 
         <tr>
             
-                <td class="name"><code>shareAmount</code></td>
+                <td class="name"><code>workerName</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">string</span>
 
 
             
@@ -1217,7 +1519,7 @@ POST /sapi/v1/bswap/liquidityRemove
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line85">line 85</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -1253,7 +1555,7 @@ POST /sapi/v1/bswap/liquidityRemove
     
 
     
-    <h4 class="name" id="bswapPools"><span class="type-signature"></span>bswapPools<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningWorkerList"><span class="type-signature"></span>miningWorkerList<span class="signature">(algo, userName, pageIndex<span class="signature-attributes">opt</span>, sort<span class="signature-attributes">opt</span>, sortColumn<span class="signature-attributes">opt</span>, workerStatus<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1261,109 +1563,11 @@ POST /sapi/v1/bswap/liquidityRemove
 
 
 <div class="description">
-    List All Swap Pools (MARKET_DATA)
+    Request for Miner List (USER_DATA)
 
-Get metadata about all swap pools.
+GET /sapi/v1/mining/worker/list
 
-GET /sapi/v1/bswap/pools
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data">https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data</a>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="bswapRequestQuote"><span class="type-signature"></span>bswapRequestQuote<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Request Quote (USER_DATA)
-
-Request a quote for swap quote asset (selling asset) for base asset (buying asset), essentially price/exchange rates.
-quoteQty is quantity of quote asset (to sell).
-Please be noted the quote is for reference only, the actual price will change as the liquidity changes, it's recommended to swap immediate after request a quote for slippage prevention.
-
-POST /sapi/v1/bswap/quote
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data">https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data</a>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#request-for-miner-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#request-for-miner-list-user_data</a>
 </div>
 
 
@@ -1401,7 +1605,7 @@ POST /sapi/v1/bswap/quote
 
         <tr>
             
-                <td class="name"><code>quoteAsset</code></td>
+                <td class="name"><code>algo</code></td>
             
 
             <td class="type">
@@ -1432,7 +1636,7 @@ POST /sapi/v1/bswap/quote
 
         <tr>
             
-                <td class="name"><code>baseAsset</code></td>
+                <td class="name"><code>userName</code></td>
             
 
             <td class="type">
@@ -1463,470 +1667,7 @@ POST /sapi/v1/bswap/quote
 
         <tr>
             
-                <td class="name"><code>quoteQty</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>recvWindow</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line142">line 142</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="bswapSwap"><span class="type-signature"></span>bswapSwap<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Swap (TRADE)
-
-POST /sapi/v1/bswap/swap
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#swap-trade">https://binance-docs.github.io/apidocs/spot/en/#swap-trade</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>quoteAsset</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>baseAsset</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>quoteQty</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>recvWindow</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line170">line 170</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="bswapSwapHistory"><span class="type-signature"></span>bswapSwapHistory<span class="signature">(swapId<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, baseAsset<span class="signature-attributes">opt</span>, quoteAsset<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get Swap History (USER_DATA)
-
-GET /sapi/v1/bswap/swap
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#swap-trade">https://binance-docs.github.io/apidocs/spot/en/#swap-trade</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>swapId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>startTime</code></td>
+                <td class="name"><code>pageIndex</code></td>
             
 
             <td class="type">
@@ -1959,7 +1700,7 @@ GET /sapi/v1/bswap/swap
 
         <tr>
             
-                <td class="name"><code>endTime</code></td>
+                <td class="name"><code>sort</code></td>
             
 
             <td class="type">
@@ -1992,7 +1733,7 @@ GET /sapi/v1/bswap/swap
 
         <tr>
             
-                <td class="name"><code>status</code></td>
+                <td class="name"><code>sortColumn</code></td>
             
 
             <td class="type">
@@ -2025,73 +1766,7 @@ GET /sapi/v1/bswap/swap
 
         <tr>
             
-                <td class="name"><code>baseAsset</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>quoteAsset</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
+                <td class="name"><code>workerStatus</code></td>
             
 
             <td class="type">
@@ -2191,7 +1866,7 @@ GET /sapi/v1/bswap/swap
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line202">line 202</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -2243,7 +1918,7 @@ GET /sapi/v1/bswap/swap
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 14:37:17 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 14:41:07 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
