@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="account"><span class="type-signature"></span>account<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="account"><span class="type-signature"></span>account<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -204,6 +204,8 @@
     Account Information (USER_DATA)
 
 GET /api/v3/account
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-information-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-information-user_data</a>
 </div>
 
 
@@ -226,6 +228,8 @@ GET /api/v3/account
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -251,6 +255,16 @@ GET /api/v3/account
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -296,7 +310,7 @@ GET /api/v3/account
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line303">line 303</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line326">line 326</a>
     </li></ul></dd>
     
 
@@ -332,7 +346,7 @@ GET /api/v3/account
     
 
     
-    <h4 class="name" id="allOrders"><span class="type-signature"></span>allOrders<span class="signature">(symbol, orderId, startTime, endTime, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="allOrders"><span class="type-signature"></span>allOrders<span class="signature">(symbol, orderId<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -343,6 +357,8 @@ GET /api/v3/account
     All Orders (USER_DATA)
 
 GET /api/v3/allOrders
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#all-orders-user_data">https://binance-docs.github.io/apidocs/spot/en/#all-orders-user_data</a>
 </div>
 
 
@@ -365,6 +381,8 @@ GET /api/v3/allOrders
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -390,6 +408,14 @@ GET /api/v3/allOrders
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -414,6 +440,16 @@ GET /api/v3/allOrders
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -436,6 +472,16 @@ GET /api/v3/allOrders
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -460,6 +506,16 @@ GET /api/v3/allOrders
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -483,6 +539,16 @@ GET /api/v3/allOrders
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -505,6 +571,16 @@ GET /api/v3/allOrders
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -550,7 +626,7 @@ GET /api/v3/allOrders
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line171">line 171</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line182">line 182</a>
     </li></ul></dd>
     
 
@@ -586,7 +662,7 @@ GET /api/v3/allOrders
     
 
     
-    <h4 class="name" id="cancelOCOOrder"><span class="type-signature"></span>cancelOCOOrder<span class="signature">(symbol, orderListId, listClientOrderId, newClientOrderId, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="cancelOCOOrder"><span class="type-signature"></span>cancelOCOOrder<span class="signature">(symbol, orderListId<span class="signature-attributes">opt</span>, listClientOrderId<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -597,6 +673,8 @@ GET /api/v3/allOrders
     Cancel OCO (TRADE)
 
 DELETE /api/v3/orderList
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#cancel-oco-trade">https://binance-docs.github.io/apidocs/spot/en/#cancel-oco-trade</a>
 </div>
 
 
@@ -619,6 +697,8 @@ DELETE /api/v3/orderList
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -645,6 +725,14 @@ DELETE /api/v3/orderList
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -667,6 +755,16 @@ DELETE /api/v3/orderList
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -691,6 +789,16 @@ DELETE /api/v3/orderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -714,6 +822,16 @@ DELETE /api/v3/orderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -736,6 +854,16 @@ DELETE /api/v3/orderList
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -781,7 +909,7 @@ DELETE /api/v3/orderList
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line233">line 233</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line248">line 248</a>
     </li></ul></dd>
     
 
@@ -817,7 +945,7 @@ DELETE /api/v3/orderList
     
 
     
-    <h4 class="name" id="cancelOpenOrders"><span class="type-signature"></span>cancelOpenOrders<span class="signature">(symbol, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="cancelOpenOrders"><span class="type-signature"></span>cancelOpenOrders<span class="signature">(symbol, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -828,6 +956,8 @@ DELETE /api/v3/orderList
     Cancel all Open Orders on a Symbol (TRADE)
 
 DELETE /api/v3/openOrders
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#cancel-all-open-orders-on-a-symbol-trade">https://binance-docs.github.io/apidocs/spot/en/#cancel-all-open-orders-on-a-symbol-trade</a>
 </div>
 
 
@@ -850,6 +980,8 @@ DELETE /api/v3/openOrders
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -876,6 +1008,14 @@ DELETE /api/v3/openOrders
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -898,6 +1038,16 @@ DELETE /api/v3/openOrders
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -943,7 +1093,7 @@ DELETE /api/v3/openOrders
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line108">line 108</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line115">line 115</a>
     </li></ul></dd>
     
 
@@ -979,7 +1129,7 @@ DELETE /api/v3/openOrders
     
 
     
-    <h4 class="name" id="cancelOrder"><span class="type-signature"></span>cancelOrder<span class="signature">(symbol, orderId, origClientOrderId, newClientOrderId, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="cancelOrder"><span class="type-signature"></span>cancelOrder<span class="signature">(symbol, orderId<span class="signature-attributes">opt</span>, origClientOrderId<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -990,6 +1140,8 @@ DELETE /api/v3/openOrders
     Cancel Order (TRADE)
 
 DELETE /api/v3/order
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#cancel-order-trade">https://binance-docs.github.io/apidocs/spot/en/#cancel-order-trade</a>
 </div>
 
 
@@ -1012,6 +1164,8 @@ DELETE /api/v3/order
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1037,6 +1191,14 @@ DELETE /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1061,6 +1223,16 @@ DELETE /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1083,6 +1255,16 @@ DELETE /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1107,6 +1289,16 @@ DELETE /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1129,6 +1321,16 @@ DELETE /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1174,7 +1376,7 @@ DELETE /api/v3/order
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line88">line 88</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -1210,7 +1412,7 @@ DELETE /api/v3/order
     
 
     
-    <h4 class="name" id="getOCOOrder"><span class="type-signature"></span>getOCOOrder<span class="signature">(orderListId, origClientOrderId, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOCOOrder"><span class="type-signature"></span>getOCOOrder<span class="signature">(orderListId<span class="signature-attributes">opt</span>, origClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1221,6 +1423,8 @@ DELETE /api/v3/order
     Query OCO (USER_DATA)
 
 GET /api/v3/orderList
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-oco-user_data">https://binance-docs.github.io/apidocs/spot/en/#query-oco-user_data</a>
 </div>
 
 
@@ -1243,6 +1447,8 @@ GET /api/v3/orderList
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1269,6 +1475,16 @@ GET /api/v3/orderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1292,6 +1508,16 @@ GET /api/v3/orderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1314,6 +1540,16 @@ GET /api/v3/orderList
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1359,7 +1595,7 @@ GET /api/v3/orderList
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line254">line 254</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line271">line 271</a>
     </li></ul></dd>
     
 
@@ -1395,7 +1631,7 @@ GET /api/v3/orderList
     
 
     
-    <h4 class="name" id="getOCOOrders"><span class="type-signature"></span>getOCOOrders<span class="signature">(fromId, startTime, endTime, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOCOOrders"><span class="type-signature"></span>getOCOOrders<span class="signature">(fromId<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1406,6 +1642,8 @@ GET /api/v3/orderList
     Query all OCO (USER_DATA)
 
 GET /api/v3/allOrderList
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-all-oco-user_data">https://binance-docs.github.io/apidocs/spot/en/#query-all-oco-user_data</a>
 </div>
 
 
@@ -1428,6 +1666,8 @@ GET /api/v3/allOrderList
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1454,6 +1694,16 @@ GET /api/v3/allOrderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1476,6 +1726,16 @@ GET /api/v3/allOrderList
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1500,6 +1760,16 @@ GET /api/v3/allOrderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1523,6 +1793,16 @@ GET /api/v3/allOrderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1545,6 +1825,16 @@ GET /api/v3/allOrderList
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1590,7 +1880,7 @@ GET /api/v3/allOrderList
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line273">line 273</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line292">line 292</a>
     </li></ul></dd>
     
 
@@ -1626,7 +1916,7 @@ GET /api/v3/allOrderList
     
 
     
-    <h4 class="name" id="getOpenOCOOrders"><span class="type-signature"></span>getOpenOCOOrders<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOpenOCOOrders"><span class="type-signature"></span>getOpenOCOOrders<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1637,6 +1927,8 @@ GET /api/v3/allOrderList
     Query Open OCO (USER_DATA)
 
 GET /api/v3/openOrderList
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-open-oco-user_data">https://binance-docs.github.io/apidocs/spot/en/#query-open-oco-user_data</a>
 </div>
 
 
@@ -1659,6 +1951,8 @@ GET /api/v3/openOrderList
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1685,6 +1979,16 @@ GET /api/v3/openOrderList
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1729,7 +2033,7 @@ GET /api/v3/openOrderList
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line288">line 288</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line309">line 309</a>
     </li></ul></dd>
     
 
@@ -1765,7 +2069,7 @@ GET /api/v3/openOrderList
     
 
     
-    <h4 class="name" id="getOrder"><span class="type-signature"></span>getOrder<span class="signature">(symbol, orderId, origClientOrderId, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOrder"><span class="type-signature"></span>getOrder<span class="signature">(symbol, orderId<span class="signature-attributes">opt</span>, origClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1776,6 +2080,8 @@ GET /api/v3/openOrderList
     Query Order (USER_DATA)
 
 GET /api/v3/order
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-order-user_data">https://binance-docs.github.io/apidocs/spot/en/#query-order-user_data</a>
 </div>
 
 
@@ -1798,6 +2104,8 @@ GET /api/v3/order
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1823,6 +2131,14 @@ GET /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1847,6 +2163,16 @@ GET /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1870,6 +2196,16 @@ GET /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1892,6 +2228,16 @@ GET /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1937,7 +2283,7 @@ GET /api/v3/order
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line130">line 130</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line139">line 139</a>
     </li></ul></dd>
     
 
@@ -1973,7 +2319,7 @@ GET /api/v3/order
     
 
     
-    <h4 class="name" id="myTrades"><span class="type-signature"></span>myTrades<span class="signature">(symbol, startTime, endTime, fromId, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="myTrades"><span class="type-signature"></span>myTrades<span class="signature">(symbol, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, fromId<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1984,6 +2330,8 @@ GET /api/v3/order
     Account Trade List (USER_DATA)
 
 GET /api/v3/myTrades
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-trade-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-trade-list-user_data</a>
 </div>
 
 
@@ -2006,6 +2354,8 @@ GET /api/v3/myTrades
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2031,6 +2381,14 @@ GET /api/v3/myTrades
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2055,6 +2413,16 @@ GET /api/v3/myTrades
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2077,6 +2445,16 @@ GET /api/v3/myTrades
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2101,6 +2479,16 @@ GET /api/v3/myTrades
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2124,6 +2512,16 @@ GET /api/v3/myTrades
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2146,6 +2544,16 @@ GET /api/v3/myTrades
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2191,7 +2599,7 @@ GET /api/v3/myTrades
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line323">line 323</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line348">line 348</a>
     </li></ul></dd>
     
 
@@ -2227,7 +2635,7 @@ GET /api/v3/myTrades
     
 
     
-    <h4 class="name" id="newOCOOrder"><span class="type-signature"></span>newOCOOrder<span class="signature">(symbol, side, quantity, price, stopPrice, listClientOrderId, limitClientOrderId, limitIcebergQty, stopClientOrderId, stopLimitPrice, stopIcebergQty, stopLimitTimeInForce, newOrderRespType, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="newOCOOrder"><span class="type-signature"></span>newOCOOrder<span class="signature">(symbol, side, quantity, price, stopPrice, listClientOrderId<span class="signature-attributes">opt</span>, limitClientOrderId<span class="signature-attributes">opt</span>, limitIcebergQty<span class="signature-attributes">opt</span>, stopClientOrderId<span class="signature-attributes">opt</span>, stopLimitPrice<span class="signature-attributes">opt</span>, stopIcebergQty<span class="signature-attributes">opt</span>, stopLimitTimeInForce<span class="signature-attributes">opt</span>, newOrderRespType<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2238,6 +2646,8 @@ GET /api/v3/myTrades
     New OCO (TRADE)
 
 POST /api/v3/order/oco
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#new-oco-trade">https://binance-docs.github.io/apidocs/spot/en/#new-oco-trade</a>
 </div>
 
 
@@ -2260,6 +2670,8 @@ POST /api/v3/order/oco
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2285,6 +2697,14 @@ POST /api/v3/order/oco
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2309,6 +2729,14 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2331,6 +2759,14 @@ POST /api/v3/order/oco
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2355,6 +2791,14 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2378,6 +2822,14 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2400,6 +2852,16 @@ POST /api/v3/order/oco
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2424,6 +2886,16 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2446,6 +2918,16 @@ POST /api/v3/order/oco
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2470,6 +2952,16 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2492,6 +2984,16 @@ POST /api/v3/order/oco
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2516,6 +3018,16 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2539,6 +3051,16 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2562,6 +3084,16 @@ POST /api/v3/order/oco
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2584,6 +3116,16 @@ POST /api/v3/order/oco
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2629,7 +3171,7 @@ POST /api/v3/order/oco
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line202">line 202</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line215">line 215</a>
     </li></ul></dd>
     
 
@@ -2665,7 +3207,7 @@ POST /api/v3/order/oco
     
 
     
-    <h4 class="name" id="newOrder"><span class="type-signature"></span>newOrder<span class="signature">(symbol, side, type, timeInForce, quantity, quoteOrderQty, price, newClientOrderId, stopPrice, icebergQty, newOrderRespType, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="newOrder"><span class="type-signature"></span>newOrder<span class="signature">(symbol, side, type, timeInForce<span class="signature-attributes">opt</span>, quantity<span class="signature-attributes">opt</span>, quoteOrderQty<span class="signature-attributes">opt</span>, price<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, stopPrice<span class="signature-attributes">opt</span>, icebergQty<span class="signature-attributes">opt</span>, newOrderRespType<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2676,6 +3218,8 @@ POST /api/v3/order/oco
     New Order (TRADE)
 
 POST /api/v3/order
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#new-order-trade">https://binance-docs.github.io/apidocs/spot/en/#new-order-trade</a>
 </div>
 
 
@@ -2698,6 +3242,8 @@ POST /api/v3/order
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2724,6 +3270,14 @@ POST /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2746,6 +3300,14 @@ POST /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2770,6 +3332,14 @@ POST /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2792,6 +3362,16 @@ POST /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2816,6 +3396,16 @@ POST /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2838,6 +3428,16 @@ POST /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2862,6 +3462,16 @@ POST /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2884,6 +3494,16 @@ POST /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2908,6 +3528,16 @@ POST /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2930,6 +3560,16 @@ POST /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2954,6 +3594,16 @@ POST /api/v3/order
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2976,6 +3626,16 @@ POST /api/v3/order
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3021,7 +3681,7 @@ POST /api/v3/order
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line61">line 61</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
@@ -3057,7 +3717,7 @@ POST /api/v3/order
     
 
     
-    <h4 class="name" id="newOrderTest"><span class="type-signature"></span>newOrderTest<span class="signature">(symbol, side, type, timeInForce, quantity, quoteOrderQty, price, newClientOrderId, stopPrice, icebergQty, newOrderRespType, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="newOrderTest"><span class="type-signature"></span>newOrderTest<span class="signature">(symbol, side, type, timeInForce<span class="signature-attributes">opt</span>, quantity<span class="signature-attributes">opt</span>, quoteOrderQty<span class="signature-attributes">opt</span>, price<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, stopPrice<span class="signature-attributes">opt</span>, icebergQty<span class="signature-attributes">opt</span>, newOrderRespType<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3068,6 +3728,8 @@ POST /api/v3/order
     Test New Order (TRADE)
 
 POST /api/v3/order/test
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#test-new-order-trade">https://binance-docs.github.io/apidocs/spot/en/#test-new-order-trade</a>
 </div>
 
 
@@ -3090,6 +3752,8 @@ POST /api/v3/order/test
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -3116,6 +3780,14 @@ POST /api/v3/order/test
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3138,6 +3810,14 @@ POST /api/v3/order/test
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3162,6 +3842,14 @@ POST /api/v3/order/test
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3184,6 +3872,16 @@ POST /api/v3/order/test
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3208,6 +3906,16 @@ POST /api/v3/order/test
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3230,6 +3938,16 @@ POST /api/v3/order/test
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3254,6 +3972,16 @@ POST /api/v3/order/test
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3276,6 +4004,16 @@ POST /api/v3/order/test
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3300,6 +4038,16 @@ POST /api/v3/order/test
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3322,6 +4070,16 @@ POST /api/v3/order/test
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3346,6 +4104,16 @@ POST /api/v3/order/test
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3368,6 +4136,16 @@ POST /api/v3/order/test
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3413,7 +4191,7 @@ POST /api/v3/order/test
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line27">line 27</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -3449,7 +4227,7 @@ POST /api/v3/order/test
     
 
     
-    <h4 class="name" id="openOrders"><span class="type-signature"></span>openOrders<span class="signature">(symbol, orderId, origClientOrderId, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="openOrders"><span class="type-signature"></span>openOrders<span class="signature">(symbol, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3460,6 +4238,8 @@ POST /api/v3/order/test
     Current Open Orders (USER_DATA)
 
 GET /api/v3/openOrders
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#current-open-orders-user_data">https://binance-docs.github.io/apidocs/spot/en/#current-open-orders-user_data</a>
 </div>
 
 
@@ -3482,6 +4262,8 @@ GET /api/v3/openOrders
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -3508,51 +4290,13 @@ GET /api/v3/openOrders
             </td>
 
             
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>orderId</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">number</span>
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>origClientOrderId</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">string</span>
 
-
-            
-            </td>
-
+                
+                </td>
             
 
             
@@ -3576,6 +4320,16 @@ GET /api/v3/openOrders
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3621,7 +4375,7 @@ GET /api/v3/openOrders
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line151">line 151</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line160">line 160</a>
     </li></ul></dd>
     
 
@@ -3673,7 +4427,7 @@ GET /api/v3/openOrders
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 11:55:11 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 14:37:17 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

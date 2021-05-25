@@ -13,7 +13,7 @@ const Bswap = superclass => class extends superclass {
    *
    * GET /sapi/v1/bswap/pools
    *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data}
    */
   bswapPools (options = {}) {
     return this.signRequest(
@@ -28,10 +28,10 @@ const Bswap = superclass => class extends superclass {
    *
    * GET /sapi/v1/bswap/liquidity
    *
-   * @param {number} poolId
-   * @param {number} recvWindow
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data}
    *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data
+   * @param {number} [poolId]
+   * @param {number} [recvWindow]
    */
   bswapLiquidity (options = {}) {
     return this.signRequest(
@@ -46,12 +46,12 @@ const Bswap = superclass => class extends superclass {
    *
    * POST /sapi/v1/bswap/liquidityAdd
    *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade}
+   *
    * @param {number} poolId
    * @param {string} asset
    * @param {number} quantity
-   * @param {number} recvWindow
-   *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade
+   * @param {number} [recvWindow]
    */
   bswapLiquidityAdd (poolId, asset, quantity, options = {}) {
     validateParameter(poolId, 'poolId')
@@ -74,13 +74,13 @@ const Bswap = superclass => class extends superclass {
    *
    * POST /sapi/v1/bswap/liquidityRemove
    *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade}
+   *
    * @param {number} poolId
-   * @param {string} type [`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal]
+   * @param {string} type -`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal
    * @param {string} asset
    * @param {number} shareAmount
-   * @param {number} recvWindow
-   *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade
+   * @param {number} [recvWindow]
    */
   bswapLiquidityRemove (poolId, type, asset, shareAmount, options = {}) {
     validateParameter(poolId, 'poolId')
@@ -105,15 +105,15 @@ const Bswap = superclass => class extends superclass {
    *
    * GET /sapi/v1/bswap/liquidityOps
    *
-   * @param {number} operationId
-   * @param {number} poolId
-   * @param {string} operation [`ADD` or `REMOVE`]
-   * @param {number} startTime
-   * @param {number} endTime
-   * @param {number} limit
-   * @param {number} recvWindow
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data}
    *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data
+   * @param {number} [operationId]
+   * @param {number} [poolId]
+   * @param {string} [operation] -`ADD` or `REMOVE`
+   * @param {number} [startTime]
+   * @param {number} [endTime]
+   * @param {number} [limit]
+   * @param {number} [recvWindow]
    */
   bswapLiquidityOperationRecord (options = {}) {
     return this.signRequest(
@@ -132,12 +132,12 @@ const Bswap = superclass => class extends superclass {
    *
    * POST /sapi/v1/bswap/quote
    *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data}
+   *
    * @param {string} quoteAsset
    * @param {string} baseAsset
    * @param {number} quoteQty
-   * @param {number} recvWindow
-   *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data
+   * @param {number} [recvWindow]
    */
   bswapRequestQuote (quoteAsset, baseAsset, quoteQty, options = {}) {
     validateParameter(quoteAsset, 'quoteAsset')
@@ -160,12 +160,12 @@ const Bswap = superclass => class extends superclass {
    *
    * POST /sapi/v1/bswap/swap
    *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#swap-trade}
+   *
    * @param {string} quoteAsset
    * @param {string} baseAsset
    * @param {number} quoteQty
-   * @param {number} recvWindow
-   *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#swap-trade
+   * @param {number} [recvWindow]
    */
   bswapSwap (quoteAsset, baseAsset, quoteQty, options = {}) {
     validateParameter(quoteAsset, 'quoteAsset')
@@ -188,12 +188,16 @@ const Bswap = superclass => class extends superclass {
    *
    * GET /sapi/v1/bswap/swap
    *
-   * @param {string} swapId
-   * @param {string} baseAsset
-   * @param {number} quoteQty
-   * @param {number} recvWindow
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#swap-trade}
    *
-   * @link https://binance-docs.github.io/apidocs/spot/en/#swap-trade
+   * @param {string} [swapId]
+   * @param {number} [startTime]
+   * @param {number} [endTime]
+   * @param {number} [status]
+   * @param {string} [baseAsset]
+   * @param {string} [quoteAsset]
+   * @param {number} [limit]
+   * @param {number} [recvWindow]
    */
   bswapSwapHistory (options = {}) {
     return this.signRequest(

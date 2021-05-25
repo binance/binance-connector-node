@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="miningAccountList"><span class="type-signature"></span>miningAccountList<span class="signature">(algo, userName, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningAccountList"><span class="type-signature"></span>miningAccountList<span class="signature">(algo, userName, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -204,6 +204,8 @@
     Account List (USER_DATA)
 
 GET /sapi/v1/mining/statistics/user/list
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-list-user_data</a>
 </div>
 
 
@@ -226,6 +228,8 @@ GET /sapi/v1/mining/statistics/user/list
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -252,6 +256,14 @@ GET /sapi/v1/mining/statistics/user/list
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -275,6 +287,14 @@ GET /sapi/v1/mining/statistics/user/list
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -297,6 +317,16 @@ GET /sapi/v1/mining/statistics/user/list
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -342,7 +372,7 @@ GET /sapi/v1/mining/statistics/user/list
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line157">line 157</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line162">line 162</a>
     </li></ul></dd>
     
 
@@ -378,7 +408,7 @@ GET /sapi/v1/mining/statistics/user/list
     
 
     
-    <h4 class="name" id="miningAlgoList"><span class="type-signature"></span>miningAlgoList<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningAlgoList"><span class="type-signature"></span>miningAlgoList<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -389,186 +419,8 @@ GET /sapi/v1/mining/statistics/user/list
     Acquiring Algorithm (MARKET_DATA)
 
 GET /sapi/v1/mining/pub/algoList
-</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line16">line 16</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="miningCoinList"><span class="type-signature"></span>miningCoinList<span class="signature">()</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Acquiring CoinName (MARKET_DATA)
-
-GET /sapi/v1/mining/pub/coinList
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line31">line 31</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="miningRevenueList"><span class="type-signature"></span>miningRevenueList<span class="signature">(algo, userName, coin, startDate, endDate, pageIndex, recvWindow)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Revenue List (USER_DATA)
-
-GET /sapi/v1/mining/payment/list
+<a href="https://binance-docs.github.io/apidocs/spot/en/#acquiring-algorithm-market_data">https://binance-docs.github.io/apidocs/spot/en/#acquiring-algorithm-market_data</a>
 </div>
 
 
@@ -591,6 +443,314 @@ GET /sapi/v1/mining/payment/list
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="miningCoinList"><span class="type-signature"></span>miningCoinList<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Acquiring CoinName (MARKET_DATA)
+
+GET /sapi/v1/mining/pub/coinList
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#acquiring-coinname-market_data">https://binance-docs.github.io/apidocs/spot/en/#acquiring-coinname-market_data</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="miningRevenueList"><span class="type-signature"></span>miningRevenueList<span class="signature">(algo, userName, coin<span class="signature-attributes">opt</span>, startDate<span class="signature-attributes">opt</span>, endDate<span class="signature-attributes">opt</span>, pageIndex<span class="signature-attributes">opt</span>, pageSize<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Revenue List (USER_DATA)
+
+GET /sapi/v1/mining/payment/list
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#revenue-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#revenue-list-user_data</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
         
 
         
@@ -617,6 +777,14 @@ GET /sapi/v1/mining/payment/list
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -639,6 +807,14 @@ GET /sapi/v1/mining/payment/list
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -663,6 +839,16 @@ GET /sapi/v1/mining/payment/list
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -685,6 +871,16 @@ GET /sapi/v1/mining/payment/list
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -709,6 +905,16 @@ GET /sapi/v1/mining/payment/list
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -732,6 +938,49 @@ GET /sapi/v1/mining/payment/list
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pageSize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -754,6 +1003,16 @@ GET /sapi/v1/mining/payment/list
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -799,7 +1058,7 @@ GET /sapi/v1/mining/payment/list
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line109">line 109</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line114">line 114</a>
     </li></ul></dd>
     
 
@@ -835,7 +1094,7 @@ GET /sapi/v1/mining/payment/list
     
 
     
-    <h4 class="name" id="miningStatisticList"><span class="type-signature"></span>miningStatisticList<span class="signature">(algo, userName, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningStatisticList"><span class="type-signature"></span>miningStatisticList<span class="signature">(algo, userName, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -846,6 +1105,8 @@ GET /sapi/v1/mining/payment/list
     Statistic List (USER_DATA)
 
 GET /sapi/v1/mining/statistics/user/status
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#statistic-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#statistic-list-user_data</a>
 </div>
 
 
@@ -868,6 +1129,8 @@ GET /sapi/v1/mining/statistics/user/status
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -894,6 +1157,14 @@ GET /sapi/v1/mining/statistics/user/status
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -917,6 +1188,14 @@ GET /sapi/v1/mining/statistics/user/status
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -939,6 +1218,16 @@ GET /sapi/v1/mining/statistics/user/status
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -984,7 +1273,7 @@ GET /sapi/v1/mining/statistics/user/status
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line133">line 133</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line138">line 138</a>
     </li></ul></dd>
     
 
@@ -1020,7 +1309,7 @@ GET /sapi/v1/mining/statistics/user/status
     
 
     
-    <h4 class="name" id="miningWorker"><span class="type-signature"></span>miningWorker<span class="signature">(algo, userName, workerName, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningWorker"><span class="type-signature"></span>miningWorker<span class="signature">(algo, userName, workerName, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1031,6 +1320,8 @@ GET /sapi/v1/mining/statistics/user/status
     Request for Detail Miner List (USER_DATA)
 
 GET /sapi/v1/mining/worker/detail
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#request-for-detail-miner-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#request-for-detail-miner-list-user_data</a>
 </div>
 
 
@@ -1053,6 +1344,8 @@ GET /sapi/v1/mining/worker/detail
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1079,6 +1372,14 @@ GET /sapi/v1/mining/worker/detail
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1101,6 +1402,14 @@ GET /sapi/v1/mining/worker/detail
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1125,6 +1434,14 @@ GET /sapi/v1/mining/worker/detail
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1147,6 +1464,16 @@ GET /sapi/v1/mining/worker/detail
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1192,7 +1519,7 @@ GET /sapi/v1/mining/worker/detail
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line51">line 51</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -1228,7 +1555,7 @@ GET /sapi/v1/mining/worker/detail
     
 
     
-    <h4 class="name" id="miningWorkerList"><span class="type-signature"></span>miningWorkerList<span class="signature">(algo, userName, pageIndex, sort, sortColumn, workerStatus, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miningWorkerList"><span class="type-signature"></span>miningWorkerList<span class="signature">(algo, userName, pageIndex<span class="signature-attributes">opt</span>, sort<span class="signature-attributes">opt</span>, sortColumn<span class="signature-attributes">opt</span>, workerStatus<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1239,6 +1566,8 @@ GET /sapi/v1/mining/worker/detail
     Request for Miner List (USER_DATA)
 
 GET /sapi/v1/mining/worker/list
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#request-for-miner-list-user_data">https://binance-docs.github.io/apidocs/spot/en/#request-for-miner-list-user_data</a>
 </div>
 
 
@@ -1261,6 +1590,8 @@ GET /sapi/v1/mining/worker/list
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1287,6 +1618,14 @@ GET /sapi/v1/mining/worker/list
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1309,6 +1648,14 @@ GET /sapi/v1/mining/worker/list
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1333,6 +1680,16 @@ GET /sapi/v1/mining/worker/list
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1355,6 +1712,16 @@ GET /sapi/v1/mining/worker/list
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1379,6 +1746,16 @@ GET /sapi/v1/mining/worker/list
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1402,6 +1779,16 @@ GET /sapi/v1/mining/worker/list
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1424,6 +1811,16 @@ GET /sapi/v1/mining/worker/list
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1469,7 +1866,7 @@ GET /sapi/v1/mining/worker/list
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line81">line 81</a>
+        <a href="mining.js.html">mining.js</a>, <a href="mining.js.html#line85">line 85</a>
     </li></ul></dd>
     
 
@@ -1521,7 +1918,7 @@ GET /sapi/v1/mining/worker/list
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 11:55:11 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 14:37:17 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="bswapLiquidity"><span class="type-signature"></span>bswapLiquidity<span class="signature">(poolId, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidity"><span class="type-signature"></span>bswapLiquidity<span class="signature">(poolId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -204,6 +204,8 @@
     Get liquidity information of a pool (USER_DATA)
 
 GET /sapi/v1/bswap/liquidity
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data">https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data</a>
 </div>
 
 
@@ -226,6 +228,8 @@ GET /sapi/v1/bswap/liquidity
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -252,6 +256,16 @@ GET /sapi/v1/bswap/liquidity
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -274,6 +288,16 @@ GET /sapi/v1/bswap/liquidity
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -355,7 +379,7 @@ GET /sapi/v1/bswap/liquidity
     
 
     
-    <h4 class="name" id="bswapLiquidityAdd"><span class="type-signature"></span>bswapLiquidityAdd<span class="signature">(poolId, asset, quantity, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidityAdd"><span class="type-signature"></span>bswapLiquidityAdd<span class="signature">(poolId, asset, quantity, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -366,6 +390,8 @@ GET /sapi/v1/bswap/liquidity
     Add Liquidity (TRADE)
 
 POST /sapi/v1/bswap/liquidityAdd
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade">https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade</a>
 </div>
 
 
@@ -388,6 +414,8 @@ POST /sapi/v1/bswap/liquidityAdd
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -414,6 +442,14 @@ POST /sapi/v1/bswap/liquidityAdd
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -436,6 +472,14 @@ POST /sapi/v1/bswap/liquidityAdd
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -460,6 +504,14 @@ POST /sapi/v1/bswap/liquidityAdd
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -482,6 +534,16 @@ POST /sapi/v1/bswap/liquidityAdd
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -563,7 +625,7 @@ POST /sapi/v1/bswap/liquidityAdd
     
 
     
-    <h4 class="name" id="bswapLiquidityOperationRecord"><span class="type-signature"></span>bswapLiquidityOperationRecord<span class="signature">(operationId, poolId, operation, startTime, endTime, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidityOperationRecord"><span class="type-signature"></span>bswapLiquidityOperationRecord<span class="signature">(operationId<span class="signature-attributes">opt</span>, poolId<span class="signature-attributes">opt</span>, operation<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -574,6 +636,8 @@ POST /sapi/v1/bswap/liquidityAdd
     Get Liquidity Operation Record (USER_DATA)
 
 GET /sapi/v1/bswap/liquidityOps
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data">https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data</a>
 </div>
 
 
@@ -596,6 +660,8 @@ GET /sapi/v1/bswap/liquidityOps
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -622,6 +688,16 @@ GET /sapi/v1/bswap/liquidityOps
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -644,6 +720,16 @@ GET /sapi/v1/bswap/liquidityOps
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -668,10 +754,20 @@ GET /sapi/v1/bswap/liquidityOps
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[`ADD` or `REMOVE`]</td>
+            <td class="description last">`ADD` or `REMOVE`</td>
         </tr>
 
     
@@ -690,6 +786,16 @@ GET /sapi/v1/bswap/liquidityOps
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -714,6 +820,16 @@ GET /sapi/v1/bswap/liquidityOps
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -737,6 +853,16 @@ GET /sapi/v1/bswap/liquidityOps
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -759,6 +885,16 @@ GET /sapi/v1/bswap/liquidityOps
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -840,7 +976,7 @@ GET /sapi/v1/bswap/liquidityOps
     
 
     
-    <h4 class="name" id="bswapLiquidityRemove"><span class="type-signature"></span>bswapLiquidityRemove<span class="signature">(poolId, type, asset, shareAmount, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidityRemove"><span class="type-signature"></span>bswapLiquidityRemove<span class="signature">(poolId, type, asset, shareAmount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -851,6 +987,8 @@ GET /sapi/v1/bswap/liquidityOps
     Remove Liquidity (TRADE)
 
 POST /sapi/v1/bswap/liquidityRemove
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade">https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade</a>
 </div>
 
 
@@ -873,6 +1011,8 @@ POST /sapi/v1/bswap/liquidityRemove
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -899,6 +1039,14 @@ POST /sapi/v1/bswap/liquidityRemove
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -922,10 +1070,18 @@ POST /sapi/v1/bswap/liquidityRemove
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal]</td>
+            <td class="description last">`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal</td>
         </tr>
 
     
@@ -944,6 +1100,14 @@ POST /sapi/v1/bswap/liquidityRemove
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -968,6 +1132,14 @@ POST /sapi/v1/bswap/liquidityRemove
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -990,6 +1162,16 @@ POST /sapi/v1/bswap/liquidityRemove
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1084,6 +1266,8 @@ POST /sapi/v1/bswap/liquidityRemove
 Get metadata about all swap pools.
 
 GET /sapi/v1/bswap/pools
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data">https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data</a>
 </div>
 
 
@@ -1163,7 +1347,7 @@ GET /sapi/v1/bswap/pools
     
 
     
-    <h4 class="name" id="bswapRequestQuote"><span class="type-signature"></span>bswapRequestQuote<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapRequestQuote"><span class="type-signature"></span>bswapRequestQuote<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1178,6 +1362,8 @@ quoteQty is quantity of quote asset (to sell).
 Please be noted the quote is for reference only, the actual price will change as the liquidity changes, it's recommended to swap immediate after request a quote for slippage prevention.
 
 POST /sapi/v1/bswap/quote
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data">https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data</a>
 </div>
 
 
@@ -1200,6 +1386,8 @@ POST /sapi/v1/bswap/quote
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1226,6 +1414,14 @@ POST /sapi/v1/bswap/quote
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1248,6 +1444,14 @@ POST /sapi/v1/bswap/quote
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1272,6 +1476,14 @@ POST /sapi/v1/bswap/quote
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1294,6 +1506,16 @@ POST /sapi/v1/bswap/quote
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1375,7 +1597,7 @@ POST /sapi/v1/bswap/quote
     
 
     
-    <h4 class="name" id="bswapSwap"><span class="type-signature"></span>bswapSwap<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapSwap"><span class="type-signature"></span>bswapSwap<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1386,6 +1608,8 @@ POST /sapi/v1/bswap/quote
     Swap (TRADE)
 
 POST /sapi/v1/bswap/swap
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#swap-trade">https://binance-docs.github.io/apidocs/spot/en/#swap-trade</a>
 </div>
 
 
@@ -1408,6 +1632,8 @@ POST /sapi/v1/bswap/swap
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1434,6 +1660,14 @@ POST /sapi/v1/bswap/swap
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1456,6 +1690,14 @@ POST /sapi/v1/bswap/swap
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1480,6 +1722,14 @@ POST /sapi/v1/bswap/swap
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1502,6 +1752,16 @@ POST /sapi/v1/bswap/swap
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1583,7 +1843,7 @@ POST /sapi/v1/bswap/swap
     
 
     
-    <h4 class="name" id="bswapSwapHistory"><span class="type-signature"></span>bswapSwapHistory<span class="signature">(swapId, baseAsset, quoteQty, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapSwapHistory"><span class="type-signature"></span>bswapSwapHistory<span class="signature">(swapId<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, baseAsset<span class="signature-attributes">opt</span>, quoteAsset<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1594,6 +1854,8 @@ POST /sapi/v1/bswap/swap
     Get Swap History (USER_DATA)
 
 GET /sapi/v1/bswap/swap
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#swap-trade">https://binance-docs.github.io/apidocs/spot/en/#swap-trade</a>
 </div>
 
 
@@ -1616,6 +1878,8 @@ GET /sapi/v1/bswap/swap
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1642,6 +1906,115 @@ GET /sapi/v1/bswap/swap
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1665,6 +2038,16 @@ GET /sapi/v1/bswap/swap
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1675,7 +2058,40 @@ GET /sapi/v1/bswap/swap
 
         <tr>
             
-                <td class="name"><code>quoteQty</code></td>
+                <td class="name"><code>quoteAsset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
             
 
             <td class="type">
@@ -1687,6 +2103,16 @@ GET /sapi/v1/bswap/swap
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1710,6 +2136,16 @@ GET /sapi/v1/bswap/swap
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1755,7 +2191,7 @@ GET /sapi/v1/bswap/swap
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line198">line 198</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line202">line 202</a>
     </li></ul></dd>
     
 
@@ -1807,7 +2243,7 @@ GET /sapi/v1/bswap/swap
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 11:55:11 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 14:37:17 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
