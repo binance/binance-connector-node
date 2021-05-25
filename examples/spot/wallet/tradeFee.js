@@ -4,5 +4,5 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.tradeFee().then(response => console.log(response.data))
+client.tradeFee({symbol:'BNBUSDT'}).then(response => console.log(response.data))
   .catch(error => console.log(error))

@@ -3,7 +3,7 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 describe('#assetDetail', () => {
   it('should return asset details', async () => {
-    nockMock('/wapi/v3/assetDetail.html')(responseMockData)
+    nockMock('/sapi/v1/asset/assetDetail')(responseMockData)
 
     return SpotClient.assetDetail().then(response => {
       expect(response).toBeDefined()

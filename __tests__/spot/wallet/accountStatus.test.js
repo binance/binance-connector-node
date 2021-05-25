@@ -3,7 +3,7 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 describe('#accountStatus', () => {
   it('should return account status', async () => {
-    nockMock('/wapi/v3/accountStatus.html')(responseMockData)
+    nockMock('/sapi/v1/account/status')(responseMockData)
 
     return SpotClient.accountStatus().then(response => {
       expect(response).toBeDefined()

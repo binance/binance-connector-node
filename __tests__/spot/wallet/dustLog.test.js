@@ -3,7 +3,7 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 describe('#dustLog', () => {
   it('should return account dust log', async () => {
-    nockMock('/wapi/v3/userAssetDribbletLog.html')(responseMockData)
+    nockMock('/sapi/v1/asset/dribblet')(responseMockData)
 
     return SpotClient.dustLog().then(response => {
       expect(response).toBeDefined()

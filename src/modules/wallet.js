@@ -9,11 +9,12 @@ const Wallet = superclass => class extends superclass {
   /**
     * System Status (System)
     *
-    * GET /wapi/v3/systemStatus.html
-    *
+    * GET /sapi/v1/system/status
+    * 
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system}
     */
   systemStatus () {
-    return this.publicRequest('GET', '/wapi/v3/systemStatus.html')
+    return this.publicRequest('GET', '/sapi/v1/system/status')
   }
 
   /**
@@ -184,14 +185,19 @@ const Wallet = superclass => class extends superclass {
   /**
     * Account Status (USER_DATA)
     *
-    * GET /wapi/v3/accountStatus.html
+    * GET /sapi/v1/account/status
     *
-    * @param {number} recvWindow
+    * Fetch account status detail.
+    * 
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data}
+    * 
+    * @param {number} [recvWindow]
+    * 
     */
   accountStatus (options = {}) {
     return this.signRequest(
       'GET',
-      '/wapi/v3/accountStatus.html',
+      '/sapi/v1/account/status',
       options
     )
   }
@@ -199,16 +205,18 @@ const Wallet = superclass => class extends superclass {
   /**
     * Account API Trading Status (USER_DATA)
     *
-    * GET /wapi/v3/apiTradingStatus.html
+    * GET /sapi/v1/account/apiTradingStatus
     *
     * Fetch account api trading status detail.
     *
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data}
+    * 
+    * @param {number} [recvWindow]
     */
   tradingStatus (options = {}) {
     return this.signRequest(
       'GET',
-      '/wapi/v3/apiTradingStatus.html',
+      '/sapi/v1/account/apiTradingStatus',
       options
     )
   }
@@ -216,16 +224,18 @@ const Wallet = superclass => class extends superclass {
   /**
     * DustLog (USER_DATA)
     *
-    * GET /wapi/v3/userAssetDribbletLog.html
+    * GET /sapi/v1/asset/dribblet
     *
-    * Fetch small amounts of assets exchanged BNB records.
-    *
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data}
+    * 
+    * @param {number} [startTime]
+    * @param {number} [endTime]
+    * @param {number} [recvWindow]
     */
   dustLog (options = {}) {
     return this.signRequest(
       'GET',
-      '/wapi/v3/userAssetDribbletLog.html',
+      '/sapi/v1/asset/dribblet',
       options
     )
   }
@@ -274,16 +284,20 @@ const Wallet = superclass => class extends superclass {
   /**
     * Asset Detail (USER_DATA)
     *
-    * GET /wapi/v3/assetDetail.html
+    * GET /sapi/v1/asset/assetDetail
     *
     * Fetch details of assets supported on Binance.
+    * Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.
     *
-    * @param {number} recvWindow
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data}
+    * 
+    * @param {string} [asset]
+    * @param {number} [recvWindow]
     */
   assetDetail (options = {}) {
     return this.signRequest(
       'GET',
-      '/wapi/v3/assetDetail.html',
+      '/sapi/v1/asset/assetDetail',
       options
     )
   }
@@ -291,16 +305,20 @@ const Wallet = superclass => class extends superclass {
   /**
     * Trade Fee (USER_DATA)
     *
-    * GET /wapi/v3/tradeFee.html
+    * GET /sapi/v1/asset/tradeFee
     *
-    * Fetch trade fee, values in percentage.
+    * Fetch trade fee
     *
-    * @param {number} recvWindow
-    */
+    * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data} 
+    * 
+    * @param {string} [symbol]
+    * @param {number} [recvWindow]
+    * 
+    */ 
   tradeFee (options = {}) {
     return this.signRequest(
       'GET',
-      '/wapi/v3/tradeFee.html',
+      '/sapi/v1/asset/tradeFee',
       options
     )
   }
