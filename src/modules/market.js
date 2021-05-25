@@ -1,7 +1,7 @@
 
 const { validateParameter } = require('../helpers/validation')
 
-/** 
+/**
  * API market endpoints
  * @module Market
  * @param {*} superclass
@@ -9,9 +9,9 @@ const { validateParameter } = require('../helpers/validation')
 const Market = superclass => class extends superclass {
   /**
    * Test Connectivity
-   * 
+   *
    * GET /api/v3/ping
-   * 
+   *
    * Test connectivity to the Rest API.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#test-connectivity}
    */
@@ -21,7 +21,7 @@ const Market = superclass => class extends superclass {
 
   /**
    * Check Server Time
-   * 
+   *
    * GET /api/v3/time
    *
    * Test connectivity to the Rest API and get the current server time.
@@ -39,16 +39,16 @@ const Market = superclass => class extends superclass {
    *
    * Current exchange trading rules and symbol information
    * {@link https://binance-docs.github.io/apidocs/spot/en/#exchange-information}
-   * 
+   *
    * @param {string} [symbol] - symbol
    * @param {Array} [symbols] - an array of symbols
    *
    */
   exchangeInfo (options = {}) {
-    if (options.hasOwnProperty('symbol')) {
+    if (Object.prototype.hasOwnProperty.call(options, 'symbol')) {
       options.symbol = options.symbol.toUpperCase()
     }
-    if (options.hasOwnProperty('symbols')) {
+    if (Object.prototype.hasOwnProperty.call(options, 'symbols')) {
       options.symbols = `["${options.symbols.map(symbol => symbol.toUpperCase()).join('","')}"]`
     }
     return this.publicRequest(
@@ -62,7 +62,7 @@ const Market = superclass => class extends superclass {
    * Order Book
    *
    * GET /api/v3/depth
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#order-book}
    *
    * @param {string} symbol
@@ -84,7 +84,7 @@ const Market = superclass => class extends superclass {
    * Recent Trades List
    *
    * GET /api/v3/trades
-   * 
+   *
    * Get recent trades.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list}
    *
@@ -107,7 +107,7 @@ const Market = superclass => class extends superclass {
    * Old Trade Lookup
    *
    * GET /api/v3/historicalTrades
-   * 
+   *
    * Get older market trades.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup}
    *
@@ -131,9 +131,9 @@ const Market = superclass => class extends superclass {
    * Compressed/Aggregate Trades List
    *
    * GET /api/v3/aggTrades
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#compressed-aggregate-trades-list}
-   * 
+   *
    * @param {string} symbol
    * @param {number} [fromId]
    * @param {number} [startTime]
@@ -156,7 +156,7 @@ const Market = superclass => class extends superclass {
    * Kline/Candlestick Data
    *
    * GET /api/v3/klines
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data}
    *
    * @param {string} symbol
@@ -182,7 +182,7 @@ const Market = superclass => class extends superclass {
    * Current Average Price
    *
    * GET /api/v3/avgPrice
-   * 
+   *
    * Current average price for a symbol.
    * https://binance-docs.github.io/apidocs/spot/en/#current-average-price
    *
@@ -203,7 +203,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/ticker/24hr
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics}
-   * 
+   *
    * @param {string} [symbol]
    */
   ticker24hr (symbol = '') {
@@ -217,7 +217,7 @@ const Market = superclass => class extends superclass {
    * Symbol Price Ticker
    *
    * GET /api/v3/ticker/price
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker}
    *
    * @param {string} symbol
@@ -233,7 +233,7 @@ const Market = superclass => class extends superclass {
    * Symbol Order Book Ticker
    *
    * GET /api/v3/ticker/bookTicker
-   * 
+   *
    * Best price/qty on the order book for a symbol or symbols.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-order-book-ticker}
    *

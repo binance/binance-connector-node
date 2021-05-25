@@ -1,4 +1,32 @@
-const { validateParameter } = require('../helpers/validation')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: websocket.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: websocket.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { validateParameter } = require('../helpers/validation')
 const WebSocketClient = require('ws')
 
 /**
@@ -16,7 +44,7 @@ const Websocket = superclass => class extends superclass {
     * Aggregate Trade Streams
     *
     * The Aggregate Trade Streams push trade information that is aggregated for a single taker order.
-    * Stream Name: <symbol>@aggTrade
+    * Stream Name: &lt;symbol>@aggTrade
     * Update Speed: Real-time
     *
     * @param {string} symbol
@@ -33,7 +61,7 @@ const Websocket = superclass => class extends superclass {
     * Trade Streams
     *
     * The Trade Streams push raw trade information; each trade has a unique buyer and seller.
-    * Stream Name: <symbol>@trade
+    * Stream Name: &lt;symbol>@trade
     * Update Speed: Real-time
     *
     * @param {string} symbol
@@ -51,7 +79,7 @@ const Websocket = superclass => class extends superclass {
     *
     * The Kline/Candlestick Stream push updates to the current klines/candlestick every second.
     *
-    * Stream Name: <symbol>@kline_<interval>
+    * Stream Name: &lt;symbol>@kline_&lt;interval>
     *
     * interval:
     * m -> minutes; h -> hours; d -> days; w -> weeks; M -> months
@@ -93,7 +121,7 @@ const Websocket = superclass => class extends superclass {
     * 24hr rolling window mini-ticker statistics.
     * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs
     *
-    * Stream Name: <symbol>@miniTicker or
+    * Stream Name: &lt;symbol>@miniTicker or
     * Stream Name: !miniTicker@arr
     *
     * Update Speed: 1000ms
@@ -102,7 +130,7 @@ const Websocket = superclass => class extends superclass {
     */
   miniTickerWS (symbol = null, callbacks) {
     let path = '!miniTicker@arr'
-    if (symbol !== null && symbol !== '') {
+    if (symbol !== null &amp;&amp; symbol !== '') {
       path = `${symbol.toLowerCase()}@miniTicker`
     }
     const url = `${this.wsURL}/ws/${path}`
@@ -117,7 +145,7 @@ const Websocket = superclass => class extends superclass {
     *
     * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
     *
-    * Stream Name: <symbol>@ticker or
+    * Stream Name: &lt;symbol>@ticker or
     * Stream Name: !ticker@arr
     *
     * Update Speed: 1000ms
@@ -127,7 +155,7 @@ const Websocket = superclass => class extends superclass {
     */
   tickerWS (symbol = null, callbacks) {
     let path = '!ticker@arr'
-    if (symbol !== null && symbol !== '') {
+    if (symbol !== null &amp;&amp; symbol !== '') {
       path = `${symbol.toLowerCase()}@ticker`
     }
     const url = `${this.wsURL}/ws/${path}`
@@ -142,7 +170,7 @@ const Websocket = superclass => class extends superclass {
     *
     * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
     *
-    * Stream Name: <symbol>@ticker or
+    * Stream Name: &lt;symbol>@ticker or
     * Stream Name: !ticker@arr
     *
     * Update Speed: 1000ms
@@ -151,7 +179,7 @@ const Websocket = superclass => class extends superclass {
     */
   bookTickerWS (symbol = null, callbacks) {
     let path = '!bookTicker'
-    if (symbol !== null && symbol !== '') {
+    if (symbol !== null &amp;&amp; symbol !== '') {
       path = `${symbol.toLowerCase()}@bookTicker`
     }
     const url = `${this.wsURL}/ws/${path}`
@@ -164,8 +192,8 @@ const Websocket = superclass => class extends superclass {
     *
     * Top bids and asks, Valid are 5, 10, or 20.
     *
-    * Stream Names: <symbol>@depth<levels> OR
-    * <symbol>@depth<levels>@100ms.
+    * Stream Names: &lt;symbol>@depth&lt;levels> OR
+    * &lt;symbol>@depth&lt;levels>@100ms.
     *
     * Update Speed: 1000ms or 100ms
     *
@@ -189,7 +217,7 @@ const Websocket = superclass => class extends superclass {
     *
     * Order book price and quantity depth updates used to locally manage an order book.
     *
-    * Stream Names: <symbol>@depth OR <symbol>@depth@100ms
+    * Stream Names: &lt;symbol>@depth OR &lt;symbol>@depth@100ms
     *
     * Update Speed: 1000ms or 100ms
     *
@@ -256,3 +284,26 @@ const Websocket = superclass => class extends superclass {
 }
 
 module.exports = Websocket
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Corporate.html">Corporate</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 11:37:46 GMT+0800 (Singapore Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

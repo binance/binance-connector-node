@@ -29,7 +29,7 @@
             <pre class="prettyprint source linenums"><code>
 const { validateParameter } = require('../helpers/validation')
 
-/** 
+/**
  * API market endpoints
  * @module Market
  * @param {*} superclass
@@ -37,9 +37,9 @@ const { validateParameter } = require('../helpers/validation')
 const Market = superclass => class extends superclass {
   /**
    * Test Connectivity
-   * 
+   *
    * GET /api/v3/ping
-   * 
+   *
    * Test connectivity to the Rest API.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#test-connectivity}
    */
@@ -49,7 +49,7 @@ const Market = superclass => class extends superclass {
 
   /**
    * Check Server Time
-   * 
+   *
    * GET /api/v3/time
    *
    * Test connectivity to the Rest API and get the current server time.
@@ -67,16 +67,16 @@ const Market = superclass => class extends superclass {
    *
    * Current exchange trading rules and symbol information
    * {@link https://binance-docs.github.io/apidocs/spot/en/#exchange-information}
-   * 
+   *
    * @param {string} [symbol] - symbol
    * @param {Array} [symbols] - an array of symbols
    *
    */
   exchangeInfo (options = {}) {
-    if (options.hasOwnProperty('symbol')) {
+    if (Object.prototype.hasOwnProperty.call(options, 'symbol')) {
       options.symbol = options.symbol.toUpperCase()
     }
-    if (options.hasOwnProperty('symbols')) {
+    if (Object.prototype.hasOwnProperty.call(options, 'symbols')) {
       options.symbols = `["${options.symbols.map(symbol => symbol.toUpperCase()).join('","')}"]`
     }
     return this.publicRequest(
@@ -90,7 +90,7 @@ const Market = superclass => class extends superclass {
    * Order Book
    *
    * GET /api/v3/depth
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#order-book}
    *
    * @param {string} symbol
@@ -112,7 +112,7 @@ const Market = superclass => class extends superclass {
    * Recent Trades List
    *
    * GET /api/v3/trades
-   * 
+   *
    * Get recent trades.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list}
    *
@@ -135,7 +135,7 @@ const Market = superclass => class extends superclass {
    * Old Trade Lookup
    *
    * GET /api/v3/historicalTrades
-   * 
+   *
    * Get older market trades.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup}
    *
@@ -159,9 +159,9 @@ const Market = superclass => class extends superclass {
    * Compressed/Aggregate Trades List
    *
    * GET /api/v3/aggTrades
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#compressed-aggregate-trades-list}
-   * 
+   *
    * @param {string} symbol
    * @param {number} [fromId]
    * @param {number} [startTime]
@@ -184,7 +184,7 @@ const Market = superclass => class extends superclass {
    * Kline/Candlestick Data
    *
    * GET /api/v3/klines
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data}
    *
    * @param {string} symbol
@@ -210,7 +210,7 @@ const Market = superclass => class extends superclass {
    * Current Average Price
    *
    * GET /api/v3/avgPrice
-   * 
+   *
    * Current average price for a symbol.
    * https://binance-docs.github.io/apidocs/spot/en/#current-average-price
    *
@@ -231,7 +231,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/ticker/24hr
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics}
-   * 
+   *
    * @param {string} [symbol]
    */
   ticker24hr (symbol = '') {
@@ -245,7 +245,7 @@ const Market = superclass => class extends superclass {
    * Symbol Price Ticker
    *
    * GET /api/v3/ticker/price
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker}
    *
    * @param {string} symbol
@@ -261,7 +261,7 @@ const Market = superclass => class extends superclass {
    * Symbol Order Book Ticker
    *
    * GET /api/v3/ticker/bookTicker
-   * 
+   *
    * Best price/qty on the order book for a symbol or symbols.
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-order-book-ticker}
    *
@@ -286,13 +286,13 @@ module.exports = Market
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Market.html">Market</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Corporate.html">Corporate</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 10:05:16 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 11:37:46 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
