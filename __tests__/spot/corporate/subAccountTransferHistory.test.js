@@ -3,7 +3,7 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 const {
   queryString,
-  recvWindow,
+  recvWindow
 } = require('../../testUtils/mockData')
 
 describe('#subAccountTransferHistory', () => {

@@ -5,15 +5,14 @@ const { validateParameter } = require('../helpers/validation')
  * @module Corporate
  * @param {*} superclass
  */
- const Corporate = superclass => class extends superclass {
-
+const Corporate = superclass => class extends superclass {
   /**
     * Query Sub-account List(For Master Account)
     *
     * GET /sapi/v1/sub-account/list
     *
     * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account}
-    * 
+    *
     * @param {string} [email]
     * @param {string} [isFreeze]
     * @param {number} [page]
@@ -35,7 +34,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/sub/transfer/history
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account}
-   * 
+   *
    * @param {string} [fromEmail]
    * @param {string} [toEmail]
    * @param {number} [startTime]
@@ -59,7 +58,7 @@ const { validateParameter } = require('../helpers/validation')
     * GET /sapi/v3/sub-account/assets
     *
     * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account}
-    * 
+    *
     * @param {string} email
     * @param {number} [recvWindow]
     */
@@ -81,7 +80,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/capital/deposit/subAddress
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {string} coin
    * @param {string} [network]
@@ -107,7 +106,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/capital/deposit/subHisrec
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {string} [coin]
    * @param {number} [status]
@@ -135,7 +134,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/status
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account}
-   * 
+   *
    * @param {string} [email]
    * @param {number} [recvWindow]
    */
@@ -153,7 +152,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/status
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account}
-   * 
+   *
    * @param {string} [email]
    * @param {number} [recvWindow]
    */
@@ -175,7 +174,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/margin/account
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {number} [recvWindow]
    */
@@ -197,7 +196,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/margin/accountSummary
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account}
-   * 
+   *
    * @param {number} [recvWindow]
    */
   subAccountMarginAccountSummary (options = {}) {
@@ -214,7 +213,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/futures/enable
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {number} [recvWindow]
    */
@@ -236,7 +235,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/futures/account
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {number} [recvWindow]
    */
@@ -258,7 +257,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/futures/accountSummary
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account}
-   * 
+   *
    * @param {number} [recvWindow]
    */
   subAccountFuturesAccountSummary (options = {}) {
@@ -273,9 +272,9 @@ const { validateParameter } = require('../helpers/validation')
    * Get Futures Postion-Risk of Sub-account (For Master Account)
    *
    * GET /sapi/v1/sub-account/futures/positionRisk
-   * 
+   *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {number} [recvWindow]
    */
@@ -297,7 +296,7 @@ const { validateParameter } = require('../helpers/validation')
    * POST /sapi/v1/sub-account/futures/transfer
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {string} asset
    * @param {number} amount
@@ -328,7 +327,7 @@ const { validateParameter } = require('../helpers/validation')
    * POST /sapi/v1/sub-account/margin/transfer
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account}
-   * 
+   *
    * @param {string} email
    * @param {string} asset
    * @param {number} amount
@@ -360,7 +359,7 @@ const { validateParameter } = require('../helpers/validation')
    * POST /sapi/v1/sub-account/margin/transfer
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account}
-   * 
+   *
    * @param {string} toEmail
    * @param {string} asset
    * @param {number} amount
@@ -388,7 +387,7 @@ const { validateParameter } = require('../helpers/validation')
    * POST /sapi/v1/sub-account/transfer/subToMaster
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account}
-   * 
+   *
    * @param {string} asset
    * @param {number} amount
    * @param {number} [recvWindow]
@@ -413,14 +412,14 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/transfer/subUserHistory
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account}
-   * 
+   *
    * @param {string} [asset] - If not sent, result of all assets will be returned
    * @param {number} [type] [1: transfer in, 2: transfer out]
    * @param {number} startTime
    * @param {number} endTime
    * @param {number} limit - Default 500
    * @param {number} [recvWindow]
-  
+
    */
   subAccountTransferSubAccountHistory (options = {}) {
     return this.signRequest(
@@ -436,7 +435,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/futures/internalTransfer
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account}
-   * 
+   *
    * @param {string} email - Sub-account email
    * @param {number} futuresType [1:USDT-maringed Futues，2: Coin-margined Futures]
    * @param {number} [startTime] - Default return the history with in 100 days
@@ -462,7 +461,7 @@ const { validateParameter } = require('../helpers/validation')
    * POST /sapi/v1/sub-account/futures/internalTransfer
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account}
-   * 
+   *
    * @param {string} fromEmail - Sender email
    * @param {string} toEmail - Recipient email
    * @param {number} futuresType [1:USDT-maringed Futues，2: Coin-margined Futures]
@@ -497,7 +496,7 @@ const { validateParameter } = require('../helpers/validation')
    * GET /sapi/v1/sub-account/spotSummary
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account}
-   * 
+   *
    * @param {string} [email] - Sub account email
    * @param {string} [page] - default 1
    * @param {number} [size] - default 10, max 20
