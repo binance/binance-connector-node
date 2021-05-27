@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="accountSnapshot"><span class="type-signature"></span>accountSnapshot<span class="signature">(type, startTime, endTime, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="accountSnapshot"><span class="type-signature"></span>accountSnapshot<span class="signature">(type, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -204,6 +204,8 @@
     Daily Account Snapshot (USER_DATA)
 
 GET /sapi/v1/accountSnapshot
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data">https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data</a>
 </div>
 
 
@@ -226,6 +228,8 @@ GET /sapi/v1/accountSnapshot
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -252,10 +256,18 @@ GET /sapi/v1/accountSnapshot
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">"SPOT", "MARGIN", "FUTURES"</td>
         </tr>
 
     
@@ -274,6 +286,16 @@ GET /sapi/v1/accountSnapshot
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -298,6 +320,16 @@ GET /sapi/v1/accountSnapshot
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -321,10 +353,20 @@ GET /sapi/v1/accountSnapshot
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">min 5, max 30, default 5</td>
         </tr>
 
     
@@ -343,6 +385,16 @@ GET /sapi/v1/accountSnapshot
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -388,7 +440,7 @@ GET /sapi/v1/accountSnapshot
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line48">line 48</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -424,7 +476,7 @@ GET /sapi/v1/accountSnapshot
     
 
     
-    <h4 class="name" id="accountStatus"><span class="type-signature"></span>accountStatus<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="accountStatus"><span class="type-signature"></span>accountStatus<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -434,7 +486,11 @@ GET /sapi/v1/accountSnapshot
 <div class="description">
     Account Status (USER_DATA)
 
-GET /wapi/v3/accountStatus.html
+GET /sapi/v1/account/status
+
+Fetch account status detail.
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data</a>
 </div>
 
 
@@ -457,6 +513,8 @@ GET /wapi/v3/accountStatus.html
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -482,6 +540,16 @@ GET /wapi/v3/accountStatus.html
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -527,7 +595,7 @@ GET /wapi/v3/accountStatus.html
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line191">line 191</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line214">line 214</a>
     </li></ul></dd>
     
 
@@ -563,7 +631,7 @@ GET /wapi/v3/accountStatus.html
     
 
     
-    <h4 class="name" id="assetDetail"><span class="type-signature"></span>assetDetail<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="assetDetail"><span class="type-signature"></span>assetDetail<span class="signature">(asset<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -573,9 +641,12 @@ GET /wapi/v3/accountStatus.html
 <div class="description">
     Asset Detail (USER_DATA)
 
-GET /wapi/v3/assetDetail.html
+GET /sapi/v1/asset/assetDetail
 
 Fetch details of assets supported on Binance.
+Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data</a>
 </div>
 
 
@@ -599,146 +670,7 @@ Fetch details of assets supported on Binance.
         <th>Type</th>
 
         
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>recvWindow</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line283">line 283</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="assetDevidendRecord"><span class="type-signature"></span>assetDevidendRecord<span class="signature">(asset, startTime, endTime, limit, recvWindow)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Asset Dividend Record (USER_DATA)
-
-GET /sapi/v1/asset/assetDividend
-
-Query asset dividend record.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
+        <th>Attributes</th>
         
 
         
@@ -765,74 +697,15 @@ Query asset dividend record.
             </td>
 
             
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>startTime</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>endTime</code></td>
-            
-
-            <td class="type">
-            
+                    &lt;optional><br>
                 
-<span class="param-type">number</span>
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>limit</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">number</span>
 
-
-            
-            </td>
-
+                
+                </td>
             
 
             
@@ -856,6 +729,16 @@ Query asset dividend record.
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -901,7 +784,7 @@ Query asset dividend record.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line266">line 266</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line318">line 318</a>
     </li></ul></dd>
     
 
@@ -937,7 +820,7 @@ Query asset dividend record.
     
 
     
-    <h4 class="name" id="coinInfo"><span class="type-signature"></span>coinInfo<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="assetDevidendRecord"><span class="type-signature"></span>assetDevidendRecord<span class="signature">(asset<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -945,11 +828,13 @@ Query asset dividend record.
 
 
 <div class="description">
-    All Coins' Information (USER_DATA)
+    Asset Dividend Record (USER_DATA)
 
-GET /sapi/v1/capital/config/getall
+GET /sapi/v1/asset/assetDividend
 
-Get information of coins (available for deposit and withdraw) for user.
+Query asset dividend record.
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data">https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data</a>
 </div>
 
 
@@ -972,6 +857,295 @@ Get information of coins (available for deposit and withdraw) for user.
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Default 20, max 500</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line297">line 297</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="coinInfo"><span class="type-signature"></span>coinInfo<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    All Coins' Information (USER_DATA)
+
+GET /sapi/v1/capital/config/getall
+
+Get information of coins (available for deposit and withdraw) for user.
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data">https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
         
 
         
@@ -998,6 +1172,16 @@ Get information of coins (available for deposit and withdraw) for user.
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1042,7 +1226,7 @@ Get information of coins (available for deposit and withdraw) for user.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line29">line 29</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -1078,7 +1262,7 @@ Get information of coins (available for deposit and withdraw) for user.
     
 
     
-    <h4 class="name" id="depositAddress"><span class="type-signature"></span>depositAddress<span class="signature">(coin, network, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="depositAddress"><span class="type-signature"></span>depositAddress<span class="signature">(coin, network<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1089,6 +1273,8 @@ Get information of coins (available for deposit and withdraw) for user.
     Deposit Address (supporting network) (USER_DATA)
 
 GET /sapi/v1/capital/deposit/address
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data">https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data</a>
 </div>
 
 
@@ -1111,6 +1297,8 @@ GET /sapi/v1/capital/deposit/address
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1136,6 +1324,14 @@ GET /sapi/v1/capital/deposit/address
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1160,6 +1356,16 @@ GET /sapi/v1/capital/deposit/address
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1182,6 +1388,16 @@ GET /sapi/v1/capital/deposit/address
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1227,7 +1443,7 @@ GET /sapi/v1/capital/deposit/address
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line172">line 172</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line190">line 190</a>
     </li></ul></dd>
     
 
@@ -1263,7 +1479,7 @@ GET /sapi/v1/capital/deposit/address
     
 
     
-    <h4 class="name" id="depositHistory"><span class="type-signature"></span>depositHistory<span class="signature">(coin, status, startTime, endTime, offest, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="depositHistory"><span class="type-signature"></span>depositHistory<span class="signature">(coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, offest<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1274,6 +1490,8 @@ GET /sapi/v1/capital/deposit/address
     Deposit History(supporting network) (USER_DATA
 
 GET /sapi/v1/capital/deposit/hisrec
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data">https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data</a>
 </div>
 
 
@@ -1296,6 +1514,8 @@ GET /sapi/v1/capital/deposit/hisrec
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1322,6 +1542,16 @@ GET /sapi/v1/capital/deposit/hisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1345,10 +1575,20 @@ GET /sapi/v1/capital/deposit/hisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">0:pending, 6:credited but cannot withdraw, 1:success</td>
         </tr>
 
     
@@ -1368,10 +1608,20 @@ GET /sapi/v1/capital/deposit/hisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default: 90 days from current timestamp</td>
         </tr>
 
     
@@ -1391,10 +1641,20 @@ GET /sapi/v1/capital/deposit/hisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default: present timestamp</td>
         </tr>
 
     
@@ -1413,6 +1673,16 @@ GET /sapi/v1/capital/deposit/hisrec
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1437,6 +1707,16 @@ GET /sapi/v1/capital/deposit/hisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1459,6 +1739,16 @@ GET /sapi/v1/capital/deposit/hisrec
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1504,7 +1794,7 @@ GET /sapi/v1/capital/deposit/hisrec
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line134">line 134</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line148">line 148</a>
     </li></ul></dd>
     
 
@@ -1540,7 +1830,7 @@ GET /sapi/v1/capital/deposit/hisrec
     
 
     
-    <h4 class="name" id="disableFastWithdraw"><span class="type-signature"></span>disableFastWithdraw<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="disableFastWithdraw"><span class="type-signature"></span>disableFastWithdraw<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1551,6 +1841,8 @@ GET /sapi/v1/capital/deposit/hisrec
     Disable Fast Withdraw Switch (USER_DATA)
 
 GET /sapi/v1/account/disableFastWithdrawSwitch
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data">https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data</a>
 </div>
 
 
@@ -1573,6 +1865,8 @@ GET /sapi/v1/account/disableFastWithdrawSwitch
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1598,6 +1892,16 @@ GET /sapi/v1/account/disableFastWithdrawSwitch
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1643,7 +1947,7 @@ GET /sapi/v1/account/disableFastWithdrawSwitch
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line67">line 67</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line74">line 74</a>
     </li></ul></dd>
     
 
@@ -1679,7 +1983,7 @@ GET /sapi/v1/account/disableFastWithdrawSwitch
     
 
     
-    <h4 class="name" id="dustLog"><span class="type-signature"></span>dustLog<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="dustLog"><span class="type-signature"></span>dustLog<span class="signature">(startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1689,9 +1993,9 @@ GET /sapi/v1/account/disableFastWithdrawSwitch
 <div class="description">
     DustLog (USER_DATA)
 
-GET /wapi/v3/userAssetDribbletLog.html
+GET /sapi/v1/asset/dribblet
 
-Fetch small amounts of assets exchanged BNB records.
+<a href="https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data</a>
 </div>
 
 
@@ -1715,6 +2019,8 @@ Fetch small amounts of assets exchanged BNB records.
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -1723,6 +2029,72 @@ Fetch small amounts of assets exchanged BNB records.
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
     
 
         <tr>
@@ -1739,6 +2111,16 @@ Fetch small amounts of assets exchanged BNB records.
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1784,7 +2166,7 @@ Fetch small amounts of assets exchanged BNB records.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line225">line 225</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line252">line 252</a>
     </li></ul></dd>
     
 
@@ -1820,7 +2202,7 @@ Fetch small amounts of assets exchanged BNB records.
     
 
     
-    <h4 class="name" id="dustTransfer"><span class="type-signature"></span>dustTransfer<span class="signature">(asset, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="dustTransfer"><span class="type-signature"></span>dustTransfer<span class="signature">(asset, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1833,6 +2215,8 @@ Fetch small amounts of assets exchanged BNB records.
 POST /sapi/v1/asset/dust
 
 Convert dust assets to BNB.
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data">https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data</a>
 </div>
 
 
@@ -1855,6 +2239,8 @@ Convert dust assets to BNB.
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1881,6 +2267,14 @@ Convert dust assets to BNB.
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1903,6 +2297,16 @@ Convert dust assets to BNB.
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1948,7 +2352,7 @@ Convert dust assets to BNB.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line243">line 243</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line272">line 272</a>
     </li></ul></dd>
     
 
@@ -1984,7 +2388,7 @@ Convert dust assets to BNB.
     
 
     
-    <h4 class="name" id="enableFastWithdraw"><span class="type-signature"></span>enableFastWithdraw<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="enableFastWithdraw"><span class="type-signature"></span>enableFastWithdraw<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1995,6 +2399,8 @@ Convert dust assets to BNB.
     Enable Fast Withdraw Switch (USER_DATA)
 
 GET /sapi/v1/account/enableFastWithdrawSwitch
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data">https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data</a>
 </div>
 
 
@@ -2017,6 +2423,8 @@ GET /sapi/v1/account/enableFastWithdrawSwitch
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2042,6 +2450,16 @@ GET /sapi/v1/account/enableFastWithdrawSwitch
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2087,7 +2505,7 @@ GET /sapi/v1/account/enableFastWithdrawSwitch
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line82">line 82</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -2133,7 +2551,9 @@ GET /sapi/v1/account/enableFastWithdrawSwitch
 <div class="description">
     System Status (System)
 
-GET /wapi/v3/systemStatus.html
+GET /sapi/v1/system/status
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system">https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system</a>
 </div>
 
 
@@ -2177,7 +2597,7 @@ GET /wapi/v3/systemStatus.html
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line15">line 15</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -2213,7 +2633,7 @@ GET /wapi/v3/systemStatus.html
     
 
     
-    <h4 class="name" id="tradeFee"><span class="type-signature"></span>tradeFee<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="tradeFee"><span class="type-signature"></span>tradeFee<span class="signature">(symbol<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2223,9 +2643,11 @@ GET /wapi/v3/systemStatus.html
 <div class="description">
     Trade Fee (USER_DATA)
 
-GET /wapi/v3/tradeFee.html
+GET /sapi/v1/asset/tradeFee
 
-Fetch trade fee, values in percentage.
+Fetch trade fee
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data</a>
 </div>
 
 
@@ -2249,6 +2671,8 @@ Fetch trade fee, values in percentage.
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -2257,6 +2681,39 @@ Fetch trade fee, values in percentage.
     </thead>
 
     <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
     
 
         <tr>
@@ -2273,6 +2730,16 @@ Fetch trade fee, values in percentage.
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2318,7 +2785,7 @@ Fetch trade fee, values in percentage.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line300">line 300</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line339">line 339</a>
     </li></ul></dd>
     
 
@@ -2354,7 +2821,7 @@ Fetch trade fee, values in percentage.
     
 
     
-    <h4 class="name" id="tradingStatus"><span class="type-signature"></span>tradingStatus<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="tradingStatus"><span class="type-signature"></span>tradingStatus<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2364,9 +2831,11 @@ Fetch trade fee, values in percentage.
 <div class="description">
     Account API Trading Status (USER_DATA)
 
-GET /wapi/v3/apiTradingStatus.html
+GET /sapi/v1/account/apiTradingStatus
 
 Fetch account api trading status detail.
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data</a>
 </div>
 
 
@@ -2389,6 +2858,8 @@ Fetch account api trading status detail.
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2414,6 +2885,16 @@ Fetch account api trading status detail.
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2459,7 +2940,7 @@ Fetch account api trading status detail.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line208">line 208</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line233">line 233</a>
     </li></ul></dd>
     
 
@@ -2495,7 +2976,7 @@ Fetch account api trading status detail.
     
 
     
-    <h4 class="name" id="withdraw"><span class="type-signature"></span>withdraw<span class="signature">(coin, address, amount, withdrawOrderId, network, addressTag, transactionFeeFlag, name, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withdraw"><span class="type-signature"></span>withdraw<span class="signature">(coin, address, amount, withdrawOrderId<span class="signature-attributes">opt</span>, network<span class="signature-attributes">opt</span>, addressTag<span class="signature-attributes">opt</span>, transactionFeeFlag<span class="signature-attributes">opt</span>, name<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2506,6 +2987,8 @@ Fetch account api trading status detail.
     Withdraw
 
 POST /sapi/v1/capital/withdraw/apply
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi">https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi</a>
 </div>
 
 
@@ -2528,6 +3011,8 @@ POST /sapi/v1/capital/withdraw/apply
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2553,6 +3038,14 @@ POST /sapi/v1/capital/withdraw/apply
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2577,6 +3070,14 @@ POST /sapi/v1/capital/withdraw/apply
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2599,6 +3100,14 @@ POST /sapi/v1/capital/withdraw/apply
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2623,10 +3132,20 @@ POST /sapi/v1/capital/withdraw/apply
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">client id for withdraw</td>
         </tr>
 
     
@@ -2645,6 +3164,16 @@ POST /sapi/v1/capital/withdraw/apply
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2669,10 +3198,20 @@ POST /sapi/v1/capital/withdraw/apply
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Secondary address identifier for coins like XRP,XMR etc.</td>
         </tr>
 
     
@@ -2692,10 +3231,21 @@ POST /sapi/v1/capital/withdraw/apply
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">When making internal transfer, true for returning the fee to the destination account;
+<br>false for returning the fee back to the departure account. Default false.</td>
         </tr>
 
     
@@ -2715,10 +3265,20 @@ POST /sapi/v1/capital/withdraw/apply
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Description of the address. Space in name should be encoded into %20.</td>
         </tr>
 
     
@@ -2737,6 +3297,16 @@ POST /sapi/v1/capital/withdraw/apply
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2782,7 +3352,7 @@ POST /sapi/v1/capital/withdraw/apply
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line105">line 105</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -2818,7 +3388,7 @@ POST /sapi/v1/capital/withdraw/apply
     
 
     
-    <h4 class="name" id="withdrawHistory"><span class="type-signature"></span>withdrawHistory<span class="signature">(coin, status, startTime, endTime, offest, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withdrawHistory"><span class="type-signature"></span>withdrawHistory<span class="signature">(coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, offest<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2829,6 +3399,8 @@ POST /sapi/v1/capital/withdraw/apply
     Withdraw History(supporting network) (USER_DATA)
 
 GET /sapi/v1/capital/withdraw/history
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data">https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data</a>
 </div>
 
 
@@ -2851,6 +3423,8 @@ GET /sapi/v1/capital/withdraw/history
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2877,6 +3451,16 @@ GET /sapi/v1/capital/withdraw/history
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2900,10 +3484,20 @@ GET /sapi/v1/capital/withdraw/history
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">0:Email Sent,1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed</td>
+            <td class="description last">0:Email Sent 1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed</td>
         </tr>
 
     
@@ -2923,10 +3517,20 @@ GET /sapi/v1/capital/withdraw/history
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default: 90 days from current timestamp</td>
         </tr>
 
     
@@ -2946,10 +3550,20 @@ GET /sapi/v1/capital/withdraw/history
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default: present timestamp</td>
         </tr>
 
     
@@ -2968,6 +3582,16 @@ GET /sapi/v1/capital/withdraw/history
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2992,6 +3616,16 @@ GET /sapi/v1/capital/withdraw/history
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3014,6 +3648,16 @@ GET /sapi/v1/capital/withdraw/history
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3059,7 +3703,7 @@ GET /sapi/v1/capital/withdraw/history
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line155">line 155</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line171">line 171</a>
     </li></ul></dd>
     
 
@@ -3111,7 +3755,7 @@ GET /sapi/v1/capital/withdraw/history
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu May 27 2021 15:11:02 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu May 27 2021 21:44:48 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
