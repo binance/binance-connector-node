@@ -10,9 +10,21 @@ const removeEmptyValue = obj => {
   return obj
 }
 
-const buildQueryString = (q) => (q ? `${Object.keys(q)
-  .map((k) => `${k}=${encodeURIComponent(q[k])}`)
-  .join('&')}` : '')
+const buildQueryString = params => {
+  if (!params) return ''
+  return Object.entries(params)
+    .map(stringifyKeyValuePair)
+    .join('&')
+}
+
+/**
+ * NOTE: The array conversion logic is different from usual query string.
+ * E.g. symbols=["BTCUSDT","BNBBTC"] instead of symbols[]=BTCUSDT&symbols[]=BNBBTC
+ */
+const stringifyKeyValuePair = ([key, value]) => {
+  const valueString = Array.isArray(value) ? `["${value.join('","')}"]` : value
+  return `${key}=${encodeURIComponent(valueString)}`
+}
 
 const getRequestInstance = (config) => {
   return axios.create({

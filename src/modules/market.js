@@ -49,7 +49,7 @@ const Market = superclass => class extends superclass {
       options.symbol = options.symbol.toUpperCase()
     }
     if (Object.prototype.hasOwnProperty.call(options, 'symbols')) {
-      options.symbols = `["${options.symbols.map(symbol => symbol.toUpperCase()).join('","')}"]`
+      options.symbols = options.symbols.map(symbol => symbol.toUpperCase())
     }
     return this.publicRequest(
       'GET',

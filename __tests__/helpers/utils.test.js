@@ -2,7 +2,7 @@
 
 const { removeEmptyValue, buildQueryString } = require('../../src/helpers/utils')
 
-describe('#cleanEmptyObject', () => {
+describe('#removeEmptyValue', () => {
   it('should be same without empty value', () => {
     const obj = { foo: 'bar' }
     expect(removeEmptyValue(obj)).toBe(obj)
