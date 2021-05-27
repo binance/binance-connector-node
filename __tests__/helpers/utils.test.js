@@ -20,7 +20,8 @@ describe('#removeEmptyValue', () => {
   })
 
   it.each(
-    [[undefined], [null], [NaN], [0.01], [1000], ['string'], [{ key: undefined }]]
+    [[undefined], [null], [NaN], [0.01], [1000], ['string'],
+      [{ key: undefined }], [{ key: [] }], [{ key: {} }]]
   )('should remove invalid value %s and return an empty object', invalidValue => {
     expect(removeEmptyValue(invalidValue)).toStrictEqual({})
   })

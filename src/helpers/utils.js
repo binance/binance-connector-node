@@ -4,8 +4,11 @@ const { appName } = require('./constants')
 
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
+  // remove falsy value (except for false and 0), empty object, empty array
   Object.keys(obj).forEach(key =>
-    ((!obj[key] && obj[key] !== false && obj[key] !== 0)) &&
+    ((!obj[key] && obj[key] !== false && obj[key] !== 0) ||
+      (obj[key] instanceof Object && !Object.keys(obj[key]).length) ||
+      (Array.isArray(obj[key]) && !obj[key].length)) &&
     delete obj[key])
   return obj
 }
