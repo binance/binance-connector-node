@@ -46,11 +46,17 @@ const createRequest = (config) => {
   })
 }
 
+const flowRight = (...functions) => input => functions.reduceRight(
+  (input, fn) => fn(input),
+  input
+)
+
 const defaultLogger = bunyan.createLogger({ name: appName })
 
 module.exports = {
   removeEmptyValue,
   buildQueryString,
   createRequest,
+  flowRight,
   defaultLogger
 }

@@ -3,7 +3,7 @@ const {
   Blvt, Bswap, SubAccount, Market, Trade,
   Wallet, Margin, Mining, Savings, Stream, Websocket
 } = require('./modules')
-const flowRight = require('lodash.flowright')
+const { flowRight } = require('./helpers/utils')
 
 class Spot extends flowRight(Blvt, Bswap, SubAccount, Websocket, Stream,
   Savings, Margin, Mining, Wallet, Market, Trade)(APIBase) {
