@@ -3,7 +3,9 @@ const bunyan = require('bunyan')
 const { appName } = require('./constants')
 
 const cleanEmptyObject = obj => {
-  Object.keys(obj).forEach((key) => (obj[key] == null || obj[key] === '') && delete obj[key])
+  Object.keys(obj).forEach(key =>
+    (!obj[key] && obj[key] !== false && obj[key] !== 0) &&
+    delete obj[key])
   return obj
 }
 

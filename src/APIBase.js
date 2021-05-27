@@ -26,6 +26,7 @@ class APIBase {
   }
 
   signRequest (method, path, params = {}) {
+    params = cleanEmptyObject(params)
     const timestamp = Date.now()
     const queryString = buildQueryString({ ...params, timestamp })
     const signature = crypto

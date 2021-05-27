@@ -3,20 +3,17 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 const {
   queryString,
-  id,
   startTime,
   endTime,
   limit,
   recvWindow
 } = require('../../testUtils/mockData')
 
-const tokenName = 'BTCDOWN'
-
 describe('#blvtRedemptionRecord', () => {
   it('should query redeem record', async () => {
     const parameters = {
-      tokenName,
-      id,
+      id: 1,
+      tokenName: 'BTCDOWN',
       startTime,
       endTime,
       limit,

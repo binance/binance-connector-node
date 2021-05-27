@@ -5,7 +5,6 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 const {
   queryString,
   asset,
-  txId,
   recvWindow
 } = require('../../testUtils/mockData')
 
@@ -20,7 +19,7 @@ describe('#marginRepayRecord', () => {
 
   it('should return margin repay record', async () => {
     const parameters = {
-      txId,
+      txId: 10,
       recvWindow
     }
     nockMock(`/sapi/v1/margin/repay${queryString({ asset, ...parameters })}`)(responseMockData)
