@@ -5,7 +5,7 @@ const { appName } = require('./constants')
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
   Object.keys(obj).forEach(key =>
-    (!obj[key] && obj[key] !== false && obj[key] !== 0) &&
+    ((!obj[key] && obj[key] !== false && obj[key] !== 0)) &&
     delete obj[key])
   return obj
 }

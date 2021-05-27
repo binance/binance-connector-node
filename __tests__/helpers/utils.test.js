@@ -1,6 +1,6 @@
 /* global describe, it, expect, */
 
-const { removeEmptyValue, buildQueryString } = require('../../src/helpers/utils')
+const { removeEmptyValue, buildQueryString, flowRight } = require('../../src/helpers/utils')
 
 describe('#removeEmptyValue', () => {
   it('should be same without empty value', () => {
@@ -8,40 +8,69 @@ describe('#removeEmptyValue', () => {
     expect(removeEmptyValue(obj)).toBe(obj)
   })
 
-  it('should remove the empty value', () => {
-    const empty = {}
-    expect(removeEmptyValue(empty)).toStrictEqual({})
-    const emptyObj = { foo: '' }
-    expect(removeEmptyValue(emptyObj)).toStrictEqual({})
-    const mixedObj = { foo: '', key: 'value' }
-    expect(removeEmptyValue(mixedObj)).toStrictEqual({ key: 'value' })
+  it.each(
+    [
+      [{ key1: 'value1', key2: '' }, { key1: 'value1' }],
+      [{ key1: '', key2: 'value2' }, { key2: 'value2' }],
+      [{ key1: 1, key2: undefined }, { key1: 1 }],
+      [{ key1: true, key2: null, key3: false }, { key1: true, key3: false }]
+    ]
+  )('should remove the empty value', (obj, expectedObj) => {
+    expect(removeEmptyValue(obj)).toStrictEqual(expectedObj)
   })
 
   it.each(
-    [[undefined], [null], [NaN], [0.01], [1000], ['string']]
-  )('should remove invalid value %s', invalidValue => {
+    [[undefined], [null], [NaN], [0.01], [1000], ['string'], [{ key: undefined }]]
+  )('should remove invalid value %s and return an empty object', invalidValue => {
     expect(removeEmptyValue(invalidValue)).toStrictEqual({})
   })
 
-  it('should keep falsy value 0 and false', async () => {
+  it('should keep falsy value 0 and false', () => {
     const obj = { key1: 0, key2: false, key3: true }
     expect(removeEmptyValue(obj)).toStrictEqual(obj)
   })
 })
 
 describe('#buildQueryString', () => {
-  it('should be return query string', async () => {
-    const obj = { foo: 'bar' }
-    expect(buildQueryString(obj)).toStrictEqual('foo=bar')
-  })
+  it.each`
+  inputObj | output
+  ${{ key1: 'value1' }} | ${'key1=value1'}
+  ${{ key1: 'true', key2: 'false' }} | ${'key1=true&key2=false'}
+  ${{ key1: 'value1', key2: 'value2', key3: 'value3' }} | ${'key1=value1&key2=value2&key3=value3'}
+  ${{ key1: 'value1', key2: ['value2', 'value3'] }} | ${'key1=value1&key2=%5B%22value2%22%2C%22value3%22%5D'}
+  `('should return a query string $output',
+    ({ inputObj, output }) => {
+      expect(buildQueryString(inputObj)).toStrictEqual(output)
+    })
 
-  it('should be return query string from multi keys', async () => {
-    const obj = { foo: 'bar', key: 'value' }
-    expect(buildQueryString(obj)).toStrictEqual('foo=bar&key=value')
-  })
-
-  it('recieve empty object', async () => {
+  it('should return an empty string when receives an empty object', () => {
     const obj = {}
     expect(buildQueryString(obj)).toStrictEqual('')
+  })
+})
+
+describe('#flowRight', () => {
+  it('should create a new composite function', () => {
+    const incrementFunction = num => num + 1
+    const squareFunction = num => num * num
+    const expectedFunction = num => (num + 1) * (num + 1)
+    expect(flowRight(squareFunction, incrementFunction)(2))
+      .toStrictEqual(expectedFunction(2))
+  })
+
+  it('should be the same when there is only 1 input function', () => {
+    const incrementFunction = num => num + 1
+    const expectedFunction = num => num + 1
+    expect(flowRight(incrementFunction)(2))
+      .toStrictEqual(expectedFunction(2))
+  })
+
+  it('should create a new composite function given 3 inputs', () => {
+    const incrementFunction = num => num + 1
+    const squareFunction = num => num * num
+    const subtractionFunction = num => num - 2
+    const expectedFunction = num => ((num + 1) * (num + 1)) - 2
+    expect(flowRight(subtractionFunction, squareFunction, incrementFunction)(2))
+      .toStrictEqual(expectedFunction(2))
   })
 })
