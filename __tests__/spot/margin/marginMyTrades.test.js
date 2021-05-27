@@ -25,7 +25,7 @@ describe('#marginMyTrades', () => {
       endTime,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/myTrades${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/myTrades?${queryString({ symbol, ...parameters })}`)(responseMockData)
 
     return SpotClient.marginMyTrades(symbol, parameters).then(response => {
       expect(response).toBeDefined()

@@ -13,7 +13,7 @@ describe('#marginInterestHistory', () => {
       size: 10,
       asset
     }
-    nockMock(`/sapi/v1/margin/interestHistory${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/interestHistory?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.marginInterestHistory(parameters).then(response => {
       expect(response).toBeDefined()

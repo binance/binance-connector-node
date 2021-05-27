@@ -19,7 +19,7 @@ describe('#blvtSubscriptionRecord', () => {
       limit,
       recvWindow
     }
-    nockMock(`/sapi/v1/blvt/subscribe/record${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/blvt/subscribe/record?${queryString({ ...parameters })}`)(responseMockData)
     return SpotClient.blvtSubscriptionRecord(parameters).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)

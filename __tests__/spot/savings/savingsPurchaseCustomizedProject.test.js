@@ -27,7 +27,7 @@ describe('#savingsPurchaseCustomizedProject', () => {
     })
   })
   it('should return purchaseId', async () => {
-    nockPostMock(`/sapi/v1/lending/customizedFixed/purchase${queryString({ projectId, lot })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/lending/customizedFixed/purchase?${queryString({ projectId, lot })}`)(responseMockData)
 
     return SpotClient.savingsPurchaseCustomizedProject(projectId, lot).then(response => {
       expect(response).toBeDefined()

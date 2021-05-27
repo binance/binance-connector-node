@@ -21,7 +21,7 @@ describe('#marginMaxBorrowable', () => {
       asset,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/maxBorrowable${queryString({ asset, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/maxBorrowable?${queryString({ asset, ...parameters })}`)(responseMockData)
 
     return SpotClient.marginMaxBorrowable(asset, parameters).then(response => {
       expect(response).toBeDefined()

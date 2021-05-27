@@ -29,7 +29,7 @@ describe('#savingsPurchaseRecord', () => {
       endTime,
       recvWindow
     }
-    nockMock(`/sapi/v1/lending/union/purchaseRecord${queryString({ lendingType: 'DAILY', ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/union/purchaseRecord?${queryString({ lendingType: 'DAILY', ...parameters })}`)(responseMockData)
 
     return SpotClient.savingsPurchaseRecord('DAILY', parameters).then(response => {
       expect(response).toBeDefined()

@@ -15,7 +15,7 @@ describe('#savingsFlexibleProducts', () => {
       status: 'SUBSCRIBABLE',
       featured: 'ALL'
     }
-    nockMock(`/sapi/v1/lending/daily/product/list${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/daily/product/list?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.savingsFlexibleProducts(parameters).then(response => {
       expect(response).toBeDefined()

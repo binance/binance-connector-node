@@ -25,7 +25,7 @@ describe('#allOrders', () => {
     const parameters = {
       orderId
     }
-    nockMock(`/api/v3/allOrders${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockMock(`/api/v3/allOrders?${queryString({ symbol, ...parameters })}`)(responseMockData)
 
     return SpotClient.allOrders(symbol, parameters).then(response => {
       expect(response).toBeDefined()

@@ -31,7 +31,7 @@ describe('#subAccountDepositAddress', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/capital/deposit/subAddress${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/capital/deposit/subAddress?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountDepositAddress(email, coin, { recvWindow }).then(response => {
       expect(response).toBeDefined()

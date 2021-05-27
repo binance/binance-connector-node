@@ -19,7 +19,7 @@ describe('#blvtRedemptionRecord', () => {
       limit,
       recvWindow
     }
-    nockMock(`/sapi/v1/blvt/redeem/record${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/blvt/redeem/record?${queryString({ ...parameters })}`)(responseMockData)
     return SpotClient.blvtRedemptionRecord(parameters).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)

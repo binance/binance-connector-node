@@ -34,7 +34,7 @@ describe('#myTrades', () => {
       fromId,
       limit
     }
-    nockMock(`/api/v3/myTrades${queryString({ ...parameters, symbol: 'BTCUSDT' })}`)(responseMockData)
+    nockMock(`/api/v3/myTrades?${queryString({ ...parameters, symbol: 'BTCUSDT' })}`)(responseMockData)
 
     return SpotClient.myTrades('BTCUSDT', parameters).then(response => {
       expect(response).toBeDefined()

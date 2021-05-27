@@ -40,7 +40,7 @@ describe('#newMarginOrder', () => {
       price,
       newClientOrderId
     }
-    nockPostMock(`/sapi/v1/margin/order${queryString({ symbol, side, type, quantity, ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/margin/order?${queryString({ symbol, side, type, quantity, ...parameters })}`)(responseMockData)
 
     return SpotClient.newMarginOrder(symbol, side, type, quantity, parameters).then(response => {
       expect(response).toBeDefined()

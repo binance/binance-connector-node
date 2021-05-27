@@ -19,7 +19,7 @@ describe('#marginPairIndex', () => {
     const parameters = {
       symbol
     }
-    nockMock(`/sapi/v1/margin/priceIndex${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/priceIndex?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.marginPairIndex(symbol).then(response => {
       expect(response).toBeDefined()

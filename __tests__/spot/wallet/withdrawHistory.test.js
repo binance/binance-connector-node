@@ -11,7 +11,7 @@ describe('#withdrawHistory', () => {
       coin: 'BNB',
       status: 1
     }
-    nockMock(`/sapi/v1/capital/withdraw/history${queryString({ coin: 'BNB', status: 1 })}`)(responseMockData)
+    nockMock(`/sapi/v1/capital/withdraw/history?${queryString({ coin: 'BNB', status: 1 })}`)(responseMockData)
 
     return SpotClient.withdrawHistory(parameters).then(response => {
       expect(response).toBeDefined()

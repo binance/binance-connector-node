@@ -13,7 +13,7 @@ describe('#bswapPools', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/bswap/pools${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/bswap/pools?${queryString({ ...parameters })}`)(responseMockData)
     return SpotClient.bswapPools(parameters).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)

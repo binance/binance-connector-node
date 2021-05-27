@@ -27,7 +27,7 @@ describe('#savingsPurchaseFlexibleProduct', () => {
     })
   })
   it('should return purchaseId', async () => {
-    nockPostMock(`/sapi/v1/lending/daily/purchase${queryString({ productId, amount })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/lending/daily/purchase?${queryString({ productId, amount })}`)(responseMockData)
 
     return SpotClient.savingsPurchaseFlexibleProduct(productId, amount).then(response => {
       expect(response).toBeDefined()

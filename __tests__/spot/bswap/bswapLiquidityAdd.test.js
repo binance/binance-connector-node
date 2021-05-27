@@ -38,7 +38,7 @@ describe('#bswapLiquidityAdd', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/bswap/liquidityAdd${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/bswap/liquidityAdd?${queryString({ ...parameters })}`)(responseMockData)
     return SpotClient.bswapLiquidityAdd(1, asset, quantity, { recvWindow }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)

@@ -22,7 +22,7 @@ describe('#marginLoanRecord', () => {
       txId: 10,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/loan${queryString({ asset, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/loan?${queryString({ asset, ...parameters })}`)(responseMockData)
 
     return SpotClient.marginLoanRecord(asset, parameters).then(response => {
       expect(response).toBeDefined()

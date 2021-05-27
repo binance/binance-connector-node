@@ -21,7 +21,7 @@ describe('#marginMaxTransferable', () => {
       asset,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/maxTransferable${queryString({ asset, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/maxTransferable?${queryString({ asset, ...parameters })}`)(responseMockData)
 
     return SpotClient.marginMaxTransferable(asset, parameters).then(response => {
       expect(response).toBeDefined()

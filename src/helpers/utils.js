@@ -2,15 +2,16 @@ const axios = require('axios')
 const bunyan = require('bunyan')
 const { appName } = require('./constants')
 
-const cleanEmptyObject = obj => {
+const removeEmptyValue = obj => {
+  if (!(obj instanceof Object)) return {}
   Object.keys(obj).forEach(key =>
     (!obj[key] && obj[key] !== false && obj[key] !== 0) &&
     delete obj[key])
   return obj
 }
 
-const buildQueryString = (q) => (q ? `?${Object.keys(q)
-  .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(q[k])}`)
+const buildQueryString = (q) => (q ? `${Object.keys(q)
+  .map((k) => `${k}=${encodeURIComponent(q[k])}`)
   .join('&')}` : '')
 
 const getRequestInstance = (config) => {
@@ -33,16 +34,11 @@ const createRequest = (config) => {
   })
 }
 
-const stringify = (params) => {
-  return Object.entries(params).map(entry => `${entry[0]}=${entry[1]}`).join('&')
-}
-
 const defaultLogger = bunyan.createLogger({ name: appName })
 
 module.exports = {
-  cleanEmptyObject,
+  removeEmptyValue,
   buildQueryString,
   createRequest,
-  defaultLogger,
-  stringify
+  defaultLogger
 }

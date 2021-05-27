@@ -22,7 +22,7 @@ describe('#cancelMarginOrder', () => {
       orderId,
       recvWindow
     }
-    nockDeleteMock(`/sapi/v1/margin/order${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockDeleteMock(`/sapi/v1/margin/order?${queryString({ symbol, ...parameters })}`)(responseMockData)
 
     return SpotClient.cancelMarginOrder(symbol, parameters).then(response => {
       expect(response).toBeDefined()

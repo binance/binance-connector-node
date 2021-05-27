@@ -10,45 +10,48 @@ const {
   amount
 } = require('../../testUtils/mockData')
 
-describe('#subAccountMarginTransfer', () => {
+const fromEmail = email
+const toEmail = 'bob@test.com'
+
+describe('#subAccountTransfer', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing fromEmail', async () => {
       expect(() => {
-        SpotClient.subAccountMarginTransfer('', asset, amount, 1)
+        SpotClient.subAccountTransfer('', toEmail, asset, amount)
+      }).toThrow(MissingParameterError)
+    })
+
+    it('missing toEmail', async () => {
+      expect(() => {
+        SpotClient.subAccountTransfer(email, '', asset, amount)
       }).toThrow(MissingParameterError)
     })
 
     it('missing asset', async () => {
       expect(() => {
-        SpotClient.subAccountMarginTransfer(email, '', amount, 1)
+        SpotClient.subAccountTransfer(email, toEmail, '', amount)
       }).toThrow(MissingParameterError)
     })
 
     it('missing amount', async () => {
       expect(() => {
-        SpotClient.subAccountMarginTransfer(email, asset, '', 1)
-      }).toThrow(MissingParameterError)
-    })
-
-    it('missing type', async () => {
-      expect(() => {
-        SpotClient.subAccountMarginTransfer(email, asset, amount, '')
+        SpotClient.subAccountTransfer(email, toEmail, asset, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should transfer sub account margin funds', async () => {
+  it('should transfer asset', async () => {
     const parameters = {
-      email,
+      fromEmail,
+      toEmail,
       asset,
       amount,
-      type: 1,
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/margin/transfer?${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/wapi/v3/sub-account/transfer.html?${queryString({ ...parameters })}`)(responseMockData)
 
-    return SpotClient.subAccountMarginTransfer(email, asset, amount, 1, { recvWindow }).then(response => {
+    return SpotClient.subAccountTransfer(fromEmail, toEmail, asset, amount, { recvWindow }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)
     })

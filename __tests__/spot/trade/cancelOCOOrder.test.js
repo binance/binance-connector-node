@@ -26,7 +26,7 @@ describe('#cancelOCOOrder', () => {
       orderListId: 'list_id',
       recvWindow
     }
-    nockDeleteMock(`/api/v3/orderList${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockDeleteMock(`/api/v3/orderList?${queryString({ symbol, ...parameters })}`)(responseMockData)
 
     return SpotClient.cancelOCOOrder(symbol, parameters).then(response => {
       expect(response).toBeDefined()

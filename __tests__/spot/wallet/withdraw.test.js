@@ -33,7 +33,7 @@ describe('#withdraw', () => {
       network: 'BNB',
       addressTag: 'address_tag'
     }
-    nockPostMock(`/sapi/v1/capital/withdraw/apply${queryString({ coin: 'BNB', address: 'address', amount: 1, ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/capital/withdraw/apply?${queryString({ coin: 'BNB', address: 'address', amount: 1, ...parameters })}`)(responseMockData)
 
     return SpotClient.withdraw('BNB', 'address', 1, parameters).then(response => {
       expect(response).toBeDefined()

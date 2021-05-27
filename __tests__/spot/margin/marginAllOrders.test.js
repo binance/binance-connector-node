@@ -22,7 +22,7 @@ describe('#marginAllOrders', () => {
       orderId,
       limit
     }
-    nockMock(`/sapi/v1/margin/allOrders${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/allOrders?${queryString({ symbol, ...parameters })}`)(responseMockData)
 
     return SpotClient.marginAllOrders(symbol, parameters).then(response => {
       expect(response).toBeDefined()

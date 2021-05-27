@@ -13,7 +13,7 @@ describe('#subAccountList', () => {
       status,
       recvWindow
     }
-    nockMock(`/sapi/v1/sub-account/list${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/sub-account/list?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountList(parameters).then(response => {
       expect(response).toBeDefined()

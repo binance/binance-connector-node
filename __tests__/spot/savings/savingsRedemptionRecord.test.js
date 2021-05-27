@@ -29,7 +29,7 @@ describe('#savingsRedemptionRecord', () => {
       endTime,
       recvWindow
     }
-    nockMock(`/sapi/v1/lending/union/redemptionRecord${queryString({ lendingType: 'DAILY', ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/union/redemptionRecord?${queryString({ lendingType: 'DAILY', ...parameters })}`)(responseMockData)
 
     return SpotClient.savingsRedemptionRecord('DAILY', parameters).then(response => {
       expect(response).toBeDefined()

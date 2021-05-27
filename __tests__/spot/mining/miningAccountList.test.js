@@ -34,7 +34,7 @@ describe('#miningAccountList', () => {
       algo,
       userName
     }
-    nockMock(`/sapi/v1/mining/statistics/user/list${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/mining/statistics/user/list?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.miningAccountList(algo, userName).then(response => {
       expect(response).toBeDefined()

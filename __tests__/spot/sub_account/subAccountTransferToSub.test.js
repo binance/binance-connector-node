@@ -39,7 +39,7 @@ describe('#subAccountTransferToSub', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/transfer/subToSub${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/transfer/subToSub?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountTransferToSub(email, asset, amount, { recvWindow }).then(response => {
       expect(response).toBeDefined()

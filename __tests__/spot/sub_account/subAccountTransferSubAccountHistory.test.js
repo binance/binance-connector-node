@@ -15,7 +15,7 @@ describe('#subAccountTransferSubAccountHistory', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/sub-account/transfer/subUserHistory${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/sub-account/transfer/subUserHistory?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountTransferSubAccountHistory(parameters).then(response => {
       expect(response).toBeDefined()

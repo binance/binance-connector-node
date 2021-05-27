@@ -25,7 +25,7 @@ describe('#cancelOpenOrders', () => {
     const parameters = {
       recvWindow
     }
-    nockDeleteMock(`/api/v3/openOrders${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockDeleteMock(`/api/v3/openOrders?${queryString({ symbol, ...parameters })}`)(responseMockData)
 
     return SpotClient.cancelOpenOrders(symbol, parameters).then(response => {
       expect(response).toBeDefined()

@@ -23,7 +23,7 @@ describe('#subAccountEnableMargin', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/margin/enable${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/margin/enable?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountEnableMargin(email, { recvWindow }).then(response => {
       expect(response).toBeDefined()

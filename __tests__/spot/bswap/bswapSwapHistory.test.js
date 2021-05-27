@@ -21,7 +21,7 @@ describe('#bswapSwapHistory', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/bswap/swap${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/bswap/swap?${queryString({ ...parameters })}`)(responseMockData)
     return SpotClient.bswapSwapHistory(parameters).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)

@@ -9,7 +9,7 @@ describe('#assetDevidendRecord', () => {
       status: 1
     }
 
-    nockMock(`/sapi/v1/asset/assetDividend${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/asset/assetDividend?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.assetDevidendRecord(parameters).then(response => {
       expect(response).toBeDefined()

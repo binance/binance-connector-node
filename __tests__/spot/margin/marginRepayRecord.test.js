@@ -22,7 +22,7 @@ describe('#marginRepayRecord', () => {
       txId: 10,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/repay${queryString({ asset, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/repay?${queryString({ asset, ...parameters })}`)(responseMockData)
 
     return SpotClient.marginRepayRecord(asset, parameters).then(response => {
       expect(response).toBeDefined()
