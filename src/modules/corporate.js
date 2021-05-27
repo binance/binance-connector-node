@@ -300,9 +300,9 @@ const Corporate = superclass => class extends superclass {
    * @param {string} email
    * @param {string} asset
    * @param {number} amount
-   * @param {number} type - 1: transfer from subaccount's spot account to its USDT-margined futures account 
+   * @param {number} type - 1: transfer from subaccount's spot account to its USDT-margined futures account
    * <br>2: transfer from subaccount's USDT-margined futures account to its spot account
-   * <br>3: transfer from subaccount's spot account to its COIN-margined futures account 
+   * <br>3: transfer from subaccount's spot account to its COIN-margined futures account
    * <br>4: transfer from subaccount's COIN-margined futures account to its spot account
    * @param {number} [recvWindow]
    */
@@ -334,7 +334,7 @@ const Corporate = superclass => class extends superclass {
    * @param {string} email
    * @param {string} asset
    * @param {number} amount
-   * @param {number} type - 1: transfer from subaccount's spot account to margin account 
+   * @param {number} type - 1: transfer from subaccount's spot account to margin account
    * <br>2: transfer from subaccount's margin account to its spot account
    * @param {number} [recvWindow]
 

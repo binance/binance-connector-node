@@ -23,7 +23,6 @@ describe('#subAccountFuturesAssetTransferHistory', () => {
         SpotClient.subAccountFuturesAssetTransferHistory(email, '')
       }).toThrow(MissingParameterError)
     })
-
   })
 
   it('should get sub account futures asset transfer history', async () => {
