@@ -44,10 +44,10 @@ const Wallet = superclass => class extends superclass {
     *
     * {@link https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data}
     *
-    * @param {string} type ["SPOT", "MARGIN", "FUTURES"]
+    * @param {string} type - "SPOT", "MARGIN", "FUTURES"
     * @param {number} [startTime]
     * @param {number} [endTime]
-    * @param {number} [limit] [min 5, max 30, default 5]
+    * @param {number} [limit] - min 5, max 30, default 5
     * @param {number} [recvWindow]
     */
   accountSnapshot (type, options = {}) {
@@ -110,7 +110,7 @@ const Wallet = superclass => class extends superclass {
     * @param {string} [network]
     * @param {string} [addressTag] - Secondary address identifier for coins like XRP,XMR etc.
     * @param {boolean} [transactionFeeFlag] - When making internal transfer, true for returning the fee to the destination account;
-    *                                         false for returning the fee back to the departure account. Default false.
+    * <br>false for returning the fee back to the departure account. Default false.
     * @param {string} [name] - Description of the address. Space in name should be encoded into %20.
     * @param {number} [recvWindow]
     */
@@ -138,9 +138,9 @@ const Wallet = superclass => class extends superclass {
     * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data}
     *
     * @param {string} [coin]
-    * @param {number} [status] [0:pending, 6:credited but cannot withdraw, 1:success]
-    * @param {number} [startTime] [Default: 90 days from current timestamp]
-    * @param {number} [endTime] [Default: present timestamp]
+    * @param {number} [status] - 0:pending, 6:credited but cannot withdraw, 1:success
+    * @param {number} [startTime] - Default: 90 days from current timestamp
+    * @param {number} [endTime] - Default: present timestamp
     * @param {number} [offest]
     * @param {number} [limit]
     * @param {number} [recvWindow]
@@ -161,9 +161,9 @@ const Wallet = superclass => class extends superclass {
     * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data}
     *
     * @param {string} [coin]
-    * @param {number} status [0:Email Sent,1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed]
-    * @param {number} [startTime] [Default: 90 days from current timestamp]
-    * @param {number} [endTime] [Default: present timestamp]
+    * @param {number} [status] - 0:Email Sent 1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed
+    * @param {number} [startTime] - Default: 90 days from current timestamp
+    * @param {number} [endTime] - Default: present timestamp
     * @param {number} [offest]
     * @param {number} [limit]
     * @param {number} [recvWindow]
@@ -291,7 +291,7 @@ const Wallet = superclass => class extends superclass {
     * @param {string} [asset]
     * @param {number} [startTime]
     * @param {number} [endTime]
-    * @param {number} [limit] [Default 20, max 500]
+    * @param {number} [limit] - Default 20, max 500
     * @param {number} [recvWindow]
     */
   assetDevidendRecord (options = {}) {

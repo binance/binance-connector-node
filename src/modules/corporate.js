@@ -147,9 +147,9 @@ const Corporate = superclass => class extends superclass {
   }
 
   /**
-   * Get Sub-account's Status on Margin/Futures(For Master Account)
+   * Enable Margin for Sub-account (For Master Account)
    *
-   * GET /sapi/v1/sub-account/status
+   * POST /sapi/v1/sub-account/margin/enable
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account}
    *
@@ -300,7 +300,10 @@ const Corporate = superclass => class extends superclass {
    * @param {string} email
    * @param {string} asset
    * @param {number} amount
-   * @param {number} type [1: transfer from subaccount's spot account to its USDT-margined futures account 2: transfer from subaccount's USDT-margined futures account to its spot account 3: transfer from subaccount's spot account to its COIN-margined futures account 4:transfer from subaccount's COIN-margined futures account to its spot account]
+   * @param {number} type - 1: transfer from subaccount's spot account to its USDT-margined futures account 
+   * <br>2: transfer from subaccount's USDT-margined futures account to its spot account
+   * <br>3: transfer from subaccount's spot account to its COIN-margined futures account 
+   * <br>4: transfer from subaccount's COIN-margined futures account to its spot account
    * @param {number} [recvWindow]
    */
   subAccountFuturesTransfer (email, asset, amount, type, options = {}) {
@@ -331,7 +334,8 @@ const Corporate = superclass => class extends superclass {
    * @param {string} email
    * @param {string} asset
    * @param {number} amount
-   * @param {number} type [1: transfer from subaccount's spot account to margin account 2: transfer from subaccount's margin account to its spot account]
+   * @param {number} type - 1: transfer from subaccount's spot account to margin account 
+   * <br>2: transfer from subaccount's margin account to its spot account
    * @param {number} [recvWindow]
 
    */
@@ -356,7 +360,7 @@ const Corporate = superclass => class extends superclass {
   /**
    * Transfer to Sub-account of Same Master（For Sub-account）
    *
-   * POST /sapi/v1/sub-account/margin/transfer
+   * POST /sapi/v1/sub-account/transfer/subToSub
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account}
    *
@@ -414,10 +418,10 @@ const Corporate = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account}
    *
    * @param {string} [asset] - If not sent, result of all assets will be returned
-   * @param {number} [type] [1: transfer in, 2: transfer out]
-   * @param {number} startTime
-   * @param {number} endTime
-   * @param {number} limit - Default 500
+   * @param {number} [type] - 1: transfer in, 2: transfer out
+   * @param {number} [startTime]
+   * @param {number} [endTime]
+   * @param {number} [limit] - Default 500
    * @param {number} [recvWindow]
 
    */
@@ -437,14 +441,16 @@ const Corporate = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account}
    *
    * @param {string} email - Sub-account email
-   * @param {number} futuresType [1:USDT-maringed Futues，2: Coin-margined Futures]
+   * @param {number} futuresType - 1: USDT-margined Futures，2: Coin-margined Futures
    * @param {number} [startTime] - Default return the history with in 100 days
    * @param {number} [endTime] - Default return the history with in 100 days
    * @param {number} [page] - Default value: 1
-   * @param {number} [limit] - Default value: 50, Max value: 500]
+   * @param {number} [limit] - Default value: 50, Max value: 500
    * @param {number} [recvWindow]
    */
   subAccountFuturesAssetTransferHistory (email, futuresType, options = {}) {
+    validateParameter(email, 'email')
+    validateParameter(futuresType, 'futuresType')
     return this.signRequest(
       'GET',
       '/sapi/v1/sub-account/futures/internalTransfer',
@@ -464,7 +470,7 @@ const Corporate = superclass => class extends superclass {
    *
    * @param {string} fromEmail - Sender email
    * @param {string} toEmail - Recipient email
-   * @param {number} futuresType [1:USDT-maringed Futues，2: Coin-margined Futures]
+   * @param {number} futuresType - 1: USDT-margined Futures，2: Coin-margined Futures
    * @param {number} asset
    * @param {number} amount
    * @param {number} [recvWindow]
