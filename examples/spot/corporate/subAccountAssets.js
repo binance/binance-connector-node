@@ -5,6 +5,6 @@ const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
 client.subAccountAssets(
-  '' // sub email
+  'alice@test.com' // sub email
 ).then(response => console.log(response.data))
   .catch(error => console.log(error))

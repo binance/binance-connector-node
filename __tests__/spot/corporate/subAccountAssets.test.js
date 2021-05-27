@@ -17,13 +17,13 @@ describe('#subAccountAssets', () => {
     })
   })
 
-  it('should query sub accont asset', async () => {
+  it('should query sub account assets', async () => {
     const parameters = {
       email,
       recvWindow
     }
 
-    nockMock(`/wapi/v3/sub-account/assets.html${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v3/sub-account/assets${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountAssets(email, { recvWindow }).then(response => {
       expect(response).toBeDefined()
