@@ -20,7 +20,7 @@ const hashRate = 100000000
 
 describe('#miningHashrateResaleRequest', () => {
   it.each`
-  userName | algo | startDate | endDate | toPoolUser | hashRate
+  pUserName | pAlgo | pStartDate | pEndDate | pToPoolUser | pHashRate
   ${''} | ${''} | ${''} | ${''} | ${''} | ${''}
   ${undefined} | ${undefined} | ${undefined} | ${undefined} | ${undefined} | ${undefined}
   ${''} | ${algo} | ${startDate} | ${endDate} | ${userName2} | ${hashRate}
@@ -29,9 +29,9 @@ describe('#miningHashrateResaleRequest', () => {
   ${userName} | ${algo} | ${startDate} | ${''} | ${userName2} | ${hashRate}
   ${userName} | ${algo} | ${startDate} | ${endDate} | ${''} | ${hashRate}
   ${userName} | ${algo} | ${startDate} | ${endDate} | ${userName2} | ${''}
-  `('missing algo', () => {
+  `('missing parameter', ({ pUserName, pAlgo, pStartDate, pEndDate, pToPoolUser, pHashRate }) => {
     expect(() => {
-      SpotClient.miningHashrateResaleRequest('', userName)
+      SpotClient.miningHashrateResaleRequest(pUserName, pAlgo, pStartDate, pEndDate, pToPoolUser, pHashRate)
     }).toThrow(MissingParameterError)
   })
 
