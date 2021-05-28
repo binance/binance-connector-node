@@ -26,7 +26,7 @@ describe('#userUniversalTransfer', () => {
     const parameters = {
       recvWindow
     }
-    nockPostMock(`/sapi/v1/asset/transfer${queryString({ type, asset, amount, ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/asset/transfer?${queryString({ type, asset, amount, ...parameters })}`)(responseMockData)
 
     return SpotClient.userUniversalTransfer(type, asset, amount, parameters).then(response => {
       expect(response).toBeDefined()

@@ -44,7 +44,7 @@ describe('#miningHashrateResaleRequest', () => {
       hashRate,
       toPoolUser: userName2
     }
-    nockPostMock(`/sapi/v1/mining/hash-transfer/config${queryString(parameters)}`)(responseMockData)
+    nockPostMock(`/sapi/v1/mining/hash-transfer/config?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.miningHashrateResaleRequest(userName, algo, startDate, endDate, userName2, hashRate)
       .then(response => {
