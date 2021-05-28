@@ -11,7 +11,7 @@ describe('#validateParameter', () => {
   })
 
   it.each([
-    ['', ''], ['', 'paramName'], ['', 'paramName'],
+    ['', ''], ['', 'paramName'],
     [undefined, 'paramName'], [null, 'paramName'], [NaN, 'paramName']
   ])('should throw error for empty parameter', (param, paramName) => {
     expect(() => {
