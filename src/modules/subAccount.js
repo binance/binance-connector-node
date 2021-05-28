@@ -1,11 +1,11 @@
 const { validateParameter } = require('../helpers/validation')
 
 /**
- * API corporate endpoints
- * @module Corporate
+ * API sub account endpoints
+ * @module SubAccount
  * @param {*} superclass
  */
-const Corporate = superclass => class extends superclass {
+const SubAccount = superclass => class extends superclass {
   /**
     * Query Sub-account List(For Master Account)
     *
@@ -517,4 +517,4 @@ const Corporate = superclass => class extends superclass {
   }
 }
 
-module.exports = Corporate
+module.exports = SubAccount
