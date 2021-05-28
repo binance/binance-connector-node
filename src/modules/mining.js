@@ -165,7 +165,7 @@ const Mining = superclass => class extends superclass {
    * @param {number} [recvWindow]
    */
   miningHashrateResaleList (options = {}) {
-    return this.publicRequest(
+    return this.signRequest(
       'GET',
       '/sapi/v1/mining/hash-transfer/config/details/list',
       options
