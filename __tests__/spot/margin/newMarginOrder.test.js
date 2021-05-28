@@ -16,33 +16,29 @@ describe('#newMarginOrder', () => {
   describe('throw MissingParameterError', () => {
     it('missing symbol', () => {
       expect(() => {
-        SpotClient.newMarginOrder('', side, type, quantity)
+        SpotClient.newMarginOrder('', side, type)
       }).toThrow(MissingParameterError)
     })
     it('missing side', () => {
       expect(() => {
-        SpotClient.newMarginOrder(symbol, '', type, quantity)
+        SpotClient.newMarginOrder(symbol, '', type)
       }).toThrow(MissingParameterError)
     })
     it('missing type', () => {
       expect(() => {
-        SpotClient.newMarginOrder(symbol, side, '', quantity)
-      }).toThrow(MissingParameterError)
-    })
-    it('missing quantity', () => {
-      expect(() => {
-        SpotClient.newMarginOrder(symbol, side, type, '')
+        SpotClient.newMarginOrder(symbol, side, '')
       }).toThrow(MissingParameterError)
     })
   })
   it('should return new margin order', () => {
     const parameters = {
+      quantity,
       price,
       newClientOrderId
     }
-    nockPostMock(`/sapi/v1/margin/order?${queryString({ symbol, side, type, quantity, ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/margin/order?${queryString({ symbol, side, type, ...parameters })}`)(responseMockData)
 
-    return SpotClient.newMarginOrder(symbol, side, type, quantity, parameters).then(response => {
+    return SpotClient.newMarginOrder(symbol, side, type, parameters).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(responseMockData)
     })

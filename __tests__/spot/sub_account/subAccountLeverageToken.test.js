@@ -8,7 +8,7 @@ const {
   email
 } = require('../../testUtils/mockData')
 
-describe('#subAccountAssets', () => {
+describe('#subAccountLeverageToken', () => {
   it.each([
     [undefined, undefined], ['', ''], [null, null],
     [undefined, true], ['', false], ['test@123.com', null]
