@@ -23,7 +23,7 @@ describe('#subAccountFuturesPositionRisk', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/sub-account/futures/positionRisk${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/sub-account/futures/positionRisk?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountFuturesPositionRisk(email, { recvWindow }).then(response => {
       expect(response).toBeDefined()

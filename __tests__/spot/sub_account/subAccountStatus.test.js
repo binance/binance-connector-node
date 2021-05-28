@@ -13,7 +13,7 @@ describe('#subAccountStatus', () => {
       email,
       recvWindow
     }
-    nockMock(`/sapi/v1/sub-account/status${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/sub-account/status?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountStatus(parameters).then(response => {
       expect(response).toBeDefined()

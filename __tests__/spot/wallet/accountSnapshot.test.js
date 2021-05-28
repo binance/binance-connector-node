@@ -23,7 +23,7 @@ describe('#accountSnapshot', () => {
       limit,
       recvWindow
     }
-    nockMock(`/sapi/v1/accountSnapshot${queryString({ type, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/accountSnapshot?${queryString({ type, ...parameters })}`)(responseMockData)
 
     return SpotClient.accountSnapshot(type, parameters).then(response => {
       expect(response).toBeDefined()

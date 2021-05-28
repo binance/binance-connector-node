@@ -23,7 +23,7 @@ describe('#marginOrder', () => {
       orderId,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/order${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/order?${queryString({ symbol, ...parameters })}`)(responseMockData)
 
     return SpotClient.marginOrder(symbol, parameters).then(response => {
       expect(response).toBeDefined()

@@ -22,7 +22,7 @@ describe('#depositAddress', () => {
       network: 'BNB',
       recvWindow
     }
-    nockMock(`/sapi/v1/capital/deposit/address${queryString({ coin, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/capital/deposit/address?${queryString({ coin, ...parameters })}`)(responseMockData)
 
     return SpotClient.depositAddress(coin, parameters).then(response => {
       expect(response).toBeDefined()

@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="subAccountAssets"><span class="type-signature"></span>subAccountAssets<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountAssets"><span class="type-signature"></span>subAccountAssets<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -203,7 +203,9 @@
 <div class="description">
     Query Sub-account Assets(For Master Account)
 
-GET /wapi/v3/sub-account/assets.html
+GET /sapi/v3/sub-account/assets
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account</a>
 </div>
 
 
@@ -226,6 +228,8 @@ GET /wapi/v3/sub-account/assets.html
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -252,6 +256,14 @@ GET /wapi/v3/sub-account/assets.html
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -274,6 +286,16 @@ GET /wapi/v3/sub-account/assets.html
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -319,7 +341,7 @@ GET /wapi/v3/sub-account/assets.html
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line93">line 93</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line65">line 65</a>
     </li></ul></dd>
     
 
@@ -355,7 +377,7 @@ GET /wapi/v3/sub-account/assets.html
     
 
     
-    <h4 class="name" id="subAccountDepositAddress"><span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountDepositAddress"><span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, coin, network<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -366,6 +388,8 @@ GET /wapi/v3/sub-account/assets.html
     Get Sub-account Deposit Address (For Master Account)
 
 GET /sapi/v1/capital/deposit/subAddress
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a>
 </div>
 
 
@@ -388,6 +412,8 @@ GET /sapi/v1/capital/deposit/subAddress
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -414,167 +440,13 @@ GET /sapi/v1/capital/deposit/subAddress
             </td>
 
             
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>recvWindow</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">number</span>
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line114">line 114</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="subAccountDepositHistory"><span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, coin, status, startTime, endTime, limit, offset, recvWindow)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get Sub-account Deposit History (For Master Account)
-
-GET /sapi/v1/capital/deposit/subHisrec
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>email</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">string</span>
 
-
-            
-            </td>
-
+                
+                </td>
             
 
             
@@ -599,6 +471,264 @@ GET /sapi/v1/capital/deposit/subHisrec
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>network</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line89">line 89</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="subAccountDepositHistory"><span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, offset<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get Sub-account Deposit History (For Master Account)
+
+GET /sapi/v1/capital/deposit/subHisrec
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -621,6 +751,16 @@ GET /sapi/v1/capital/deposit/subHisrec
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -645,6 +785,16 @@ GET /sapi/v1/capital/deposit/subHisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -667,6 +817,16 @@ GET /sapi/v1/capital/deposit/subHisrec
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -691,6 +851,16 @@ GET /sapi/v1/capital/deposit/subHisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -714,6 +884,16 @@ GET /sapi/v1/capital/deposit/subHisrec
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -736,6 +916,16 @@ GET /sapi/v1/capital/deposit/subHisrec
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -781,7 +971,7 @@ GET /sapi/v1/capital/deposit/subHisrec
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line143">line 143</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line119">line 119</a>
     </li></ul></dd>
     
 
@@ -817,7 +1007,7 @@ GET /sapi/v1/capital/deposit/subHisrec
     
 
     
-    <h4 class="name" id="subAccountEnableFutures"><span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountEnableFutures"><span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -828,6 +1018,8 @@ GET /sapi/v1/capital/deposit/subHisrec
     Enable Futures for Sub-account (For Master Account)
 
 GET /sapi/v1/sub-account/futures/enable
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account</a>
 </div>
 
 
@@ -850,6 +1042,8 @@ GET /sapi/v1/sub-account/futures/enable
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -876,6 +1070,14 @@ GET /sapi/v1/sub-account/futures/enable
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -898,6 +1100,16 @@ GET /sapi/v1/sub-account/futures/enable
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -943,7 +1155,7 @@ GET /sapi/v1/sub-account/futures/enable
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line239">line 239</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line220">line 220</a>
     </li></ul></dd>
     
 
@@ -979,7 +1191,7 @@ GET /sapi/v1/sub-account/futures/enable
     
 
     
-    <h4 class="name" id="subAccountEnableMargin"><span class="type-signature"></span>subAccountEnableMargin<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountEnableMargin"><span class="type-signature"></span>subAccountEnableMargin<span class="signature">(email<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -987,9 +1199,11 @@ GET /sapi/v1/sub-account/futures/enable
 
 
 <div class="description">
-    Get Sub-account's Status on Margin/Futures(For Master Account)
+    Enable Margin for Sub-account (For Master Account)
 
-GET /sapi/v1/sub-account/status
+POST /sapi/v1/sub-account/margin/enable
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account</a>
 </div>
 
 
@@ -1012,6 +1226,8 @@ GET /sapi/v1/sub-account/status
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1038,6 +1254,16 @@ GET /sapi/v1/sub-account/status
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1060,6 +1286,16 @@ GET /sapi/v1/sub-account/status
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1105,7 +1341,7 @@ GET /sapi/v1/sub-account/status
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line181">line 181</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line159">line 159</a>
     </li></ul></dd>
     
 
@@ -1141,7 +1377,7 @@ GET /sapi/v1/sub-account/status
     
 
     
-    <h4 class="name" id="subAccountFuturesAccount"><span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesAccount"><span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1152,6 +1388,8 @@ GET /sapi/v1/sub-account/status
     Get Detail on Sub-account's Futures Account (For Master Account)
 
 GET /sapi/v1/sub-account/futures/account
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account</a>
 </div>
 
 
@@ -1174,6 +1412,8 @@ GET /sapi/v1/sub-account/futures/account
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1200,6 +1440,14 @@ GET /sapi/v1/sub-account/futures/account
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1222,6 +1470,16 @@ GET /sapi/v1/sub-account/futures/account
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1267,7 +1525,7 @@ GET /sapi/v1/sub-account/futures/account
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line260">line 260</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line242">line 242</a>
     </li></ul></dd>
     
 
@@ -1303,7 +1561,7 @@ GET /sapi/v1/sub-account/futures/account
     
 
     
-    <h4 class="name" id="subAccountFuturesAccountSummary"><span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesAccountSummary"><span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1314,6 +1572,8 @@ GET /sapi/v1/sub-account/futures/account
     Get Summary of Sub-account's Futures Account (For Master Account)
 
 GET /sapi/v1/sub-account/futures/accountSummary
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account</a>
 </div>
 
 
@@ -1336,6 +1596,8 @@ GET /sapi/v1/sub-account/futures/accountSummary
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1362,6 +1624,16 @@ GET /sapi/v1/sub-account/futures/accountSummary
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1406,7 +1678,7 @@ GET /sapi/v1/sub-account/futures/accountSummary
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line280">line 280</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line263">line 263</a>
     </li></ul></dd>
     
 
@@ -1442,7 +1714,7 @@ GET /sapi/v1/sub-account/futures/accountSummary
     
 
     
-    <h4 class="name" id="subAccountFuturesAssetTransfer"><span class="type-signature"></span>subAccountFuturesAssetTransfer<span class="signature">(fromEmail, toEmail, futuresType, asset, amount, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesAssetTransfer"><span class="type-signature"></span>subAccountFuturesAssetTransfer<span class="signature">(fromEmail, toEmail, futuresType, asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1453,6 +1725,8 @@ GET /sapi/v1/sub-account/futures/accountSummary
     Sub-account Futures Asset Transfer(For Master Account)
 
 POST /sapi/v1/sub-account/futures/internalTransfer
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account</a>
 </div>
 
 
@@ -1475,6 +1749,8 @@ POST /sapi/v1/sub-account/futures/internalTransfer
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1501,10 +1777,18 @@ POST /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Sender email</td>
         </tr>
 
     
@@ -1524,10 +1808,18 @@ POST /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Recipient email</td>
         </tr>
 
     
@@ -1547,10 +1839,18 @@ POST /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[1:USDT-maringed Futues，2: Coin-margined Futures]</td>
+            <td class="description last">1: USDT-margined Futures，2: Coin-margined Futures</td>
         </tr>
 
     
@@ -1569,6 +1869,14 @@ POST /sapi/v1/sub-account/futures/internalTransfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1593,6 +1901,14 @@ POST /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -1615,6 +1931,16 @@ POST /sapi/v1/sub-account/futures/internalTransfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1696,7 +2022,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer
     
 
     
-    <h4 class="name" id="subAccountFuturesAssetTransferHistory"><span class="type-signature"></span>subAccountFuturesAssetTransferHistory<span class="signature">(email, futuresType, startTime, endTime, page, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesAssetTransferHistory"><span class="type-signature"></span>subAccountFuturesAssetTransferHistory<span class="signature">(email, futuresType, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1707,6 +2033,8 @@ POST /sapi/v1/sub-account/futures/internalTransfer
     Query Sub-account Futures Asset Transfer History(For Master Account)
 
 GET /sapi/v1/sub-account/futures/internalTransfer
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account</a>
 </div>
 
 
@@ -1729,6 +2057,8 @@ GET /sapi/v1/sub-account/futures/internalTransfer
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1755,10 +2085,18 @@ GET /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Sub-account email</td>
         </tr>
 
     
@@ -1778,10 +2116,18 @@ GET /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[1:USDT-maringed Futues，2: Coin-margined Futures]</td>
+            <td class="description last">1: USDT-margined Futures，2: Coin-margined Futures</td>
         </tr>
 
     
@@ -1801,10 +2147,20 @@ GET /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default return the history with in 100 days</td>
         </tr>
 
     
@@ -1824,10 +2180,20 @@ GET /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default return the history with in 100 days</td>
         </tr>
 
     
@@ -1847,10 +2213,20 @@ GET /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default value: 1</td>
         </tr>
 
     
@@ -1870,10 +2246,20 @@ GET /sapi/v1/sub-account/futures/internalTransfer
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default value: 50, Max value: 500</td>
         </tr>
 
     
@@ -1892,6 +2278,16 @@ GET /sapi/v1/sub-account/futures/internalTransfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1937,7 +2333,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line455">line 455</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line451">line 451</a>
     </li></ul></dd>
     
 
@@ -1973,7 +2369,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer
     
 
     
-    <h4 class="name" id="subAccountFuturesPositionRisk"><span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesPositionRisk"><span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1984,6 +2380,8 @@ GET /sapi/v1/sub-account/futures/internalTransfer
     Get Futures Postion-Risk of Sub-account (For Master Account)
 
 GET /sapi/v1/sub-account/futures/positionRisk
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account</a>
 </div>
 
 
@@ -2006,6 +2404,8 @@ GET /sapi/v1/sub-account/futures/positionRisk
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2032,6 +2432,14 @@ GET /sapi/v1/sub-account/futures/positionRisk
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2054,6 +2462,16 @@ GET /sapi/v1/sub-account/futures/positionRisk
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2099,7 +2517,7 @@ GET /sapi/v1/sub-account/futures/positionRisk
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line297">line 297</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line281">line 281</a>
     </li></ul></dd>
     
 
@@ -2135,7 +2553,7 @@ GET /sapi/v1/sub-account/futures/positionRisk
     
 
     
-    <h4 class="name" id="subAccountFuturesTransfer"><span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesTransfer"><span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2146,6 +2564,8 @@ GET /sapi/v1/sub-account/futures/positionRisk
     Futures Transfer for Sub-account(For Master Account)
 
 POST /sapi/v1/sub-account/futures/transfer
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account</a>
 </div>
 
 
@@ -2168,6 +2588,8 @@ POST /sapi/v1/sub-account/futures/transfer
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2193,6 +2615,14 @@ POST /sapi/v1/sub-account/futures/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2217,6 +2647,14 @@ POST /sapi/v1/sub-account/futures/transfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2239,6 +2677,14 @@ POST /sapi/v1/sub-account/futures/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2263,10 +2709,21 @@ POST /sapi/v1/sub-account/futures/transfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[1: transfer from subaccount's spot account to its USDT-margined futures account 2: transfer from subaccount's USDT-margined futures account to its spot account 3: transfer from subaccount's spot account to its COIN-margined futures account 4:transfer from subaccount's COIN-margined futures account to its spot account]</td>
+            <td class="description last">1: transfer from subaccount's spot account to its USDT-margined futures account
+<br>2: transfer from subaccount's USDT-margined futures account to its spot account
+<br>3: transfer from subaccount's spot account to its COIN-margined futures account
+<br>4: transfer from subaccount's COIN-margined futures account to its spot account</td>
         </tr>
 
     
@@ -2285,6 +2742,16 @@ POST /sapi/v1/sub-account/futures/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2330,7 +2797,7 @@ POST /sapi/v1/sub-account/futures/transfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line321">line 321</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line309">line 309</a>
     </li></ul></dd>
     
 
@@ -2366,7 +2833,7 @@ POST /sapi/v1/sub-account/futures/transfer
     
 
     
-    <h4 class="name" id="subAccountList"><span class="type-signature"></span>subAccountList<span class="signature">(email, status, page, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountList"><span class="type-signature"></span>subAccountList<span class="signature">(email<span class="signature-attributes">opt</span>, isFreeze<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2376,7 +2843,9 @@ POST /sapi/v1/sub-account/futures/transfer
 <div class="description">
     Query Sub-account List(For Master Account)
 
-GET /wapi/v3/sub-account/list.html
+GET /sapi/v1/sub-account/list
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account</a>
 </div>
 
 
@@ -2399,6 +2868,8 @@ GET /wapi/v3/sub-account/list.html
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2425,6 +2896,16 @@ GET /wapi/v3/sub-account/list.html
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2435,7 +2916,7 @@ GET /wapi/v3/sub-account/list.html
 
         <tr>
             
-                <td class="name"><code>status</code></td>
+                <td class="name"><code>isFreeze</code></td>
             
 
             <td class="type">
@@ -2447,6 +2928,16 @@ GET /wapi/v3/sub-account/list.html
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2471,6 +2962,16 @@ GET /wapi/v3/sub-account/list.html
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2494,6 +2995,16 @@ GET /wapi/v3/sub-account/list.html
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2516,6 +3027,16 @@ GET /wapi/v3/sub-account/list.html
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2561,7 +3082,7 @@ GET /wapi/v3/sub-account/list.html
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line21">line 21</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -2597,7 +3118,7 @@ GET /wapi/v3/sub-account/list.html
     
 
     
-    <h4 class="name" id="subAccountMarginAccount"><span class="type-signature"></span>subAccountMarginAccount<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountMarginAccount"><span class="type-signature"></span>subAccountMarginAccount<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2608,6 +3129,8 @@ GET /wapi/v3/sub-account/list.html
     Get Detail on Sub-account's Margin Account (For Master Account)
 
 GET /sapi/v1/sub-account/margin/account
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a>
 </div>
 
 
@@ -2630,6 +3153,8 @@ GET /sapi/v1/sub-account/margin/account
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2656,6 +3181,14 @@ GET /sapi/v1/sub-account/margin/account
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -2678,6 +3211,169 @@ GET /sapi/v1/sub-account/margin/account
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line181">line 181</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="subAccountMarginAccountSummary"><span class="type-signature"></span>subAccountMarginAccountSummary<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get Summary of Sub-account's Margin Account (For Master Account)
+
+GET /sapi/v1/sub-account/margin/accountSummary
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2759,146 +3455,7 @@ GET /sapi/v1/sub-account/margin/account
     
 
     
-    <h4 class="name" id="subAccountMarginAccountSummary"><span class="type-signature"></span>subAccountMarginAccountSummary<span class="signature">(recvWindow)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get Summary of Sub-account's Margin Account (For Master Account)
-
-GET /sapi/v1/sub-account/margin/accountSummary
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>recvWindow</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line222">line 222</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="subAccountMarginTransfer"><span class="type-signature"></span>subAccountMarginTransfer<span class="signature">(email, asset, amount, type, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountMarginTransfer"><span class="type-signature"></span>subAccountMarginTransfer<span class="signature">(email, asset, amount, type, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2909,6 +3466,8 @@ GET /sapi/v1/sub-account/margin/accountSummary
     Margin Transfer for Sub-account(For Master Account)
 
 POST /sapi/v1/sub-account/margin/transfer
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account</a>
 </div>
 
 
@@ -2931,6 +3490,8 @@ POST /sapi/v1/sub-account/margin/transfer
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -2956,6 +3517,14 @@ POST /sapi/v1/sub-account/margin/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2980,6 +3549,14 @@ POST /sapi/v1/sub-account/margin/transfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3002,6 +3579,14 @@ POST /sapi/v1/sub-account/margin/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3026,10 +3611,19 @@ POST /sapi/v1/sub-account/margin/transfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[1: transfer from subaccount's spot account to margin account 2: transfer from subaccount's margin account to its spot account]</td>
+            <td class="description last">1: transfer from subaccount's spot account to margin account
+<br>2: transfer from subaccount's margin account to its spot account</td>
         </tr>
 
     
@@ -3048,6 +3642,16 @@ POST /sapi/v1/sub-account/margin/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3093,7 +3697,7 @@ POST /sapi/v1/sub-account/margin/transfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line351">line 351</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line342">line 342</a>
     </li></ul></dd>
     
 
@@ -3129,7 +3733,7 @@ POST /sapi/v1/sub-account/margin/transfer
     
 
     
-    <h4 class="name" id="subAccountSpotSummary"><span class="type-signature"></span>subAccountSpotSummary<span class="signature">(email, page, size, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountSpotSummary"><span class="type-signature"></span>subAccountSpotSummary<span class="signature">(email<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, size<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3140,6 +3744,8 @@ POST /sapi/v1/sub-account/margin/transfer
     Query Sub-account Spot Assets Summary (For Master Account)
 
 GET /sapi/v1/sub-account/spotSummary
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account</a>
 </div>
 
 
@@ -3162,6 +3768,8 @@ GET /sapi/v1/sub-account/spotSummary
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -3188,10 +3796,20 @@ GET /sapi/v1/sub-account/spotSummary
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Sub account email</td>
         </tr>
 
     
@@ -3211,10 +3829,20 @@ GET /sapi/v1/sub-account/spotSummary
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">default 1</td>
         </tr>
 
     
@@ -3234,10 +3862,20 @@ GET /sapi/v1/sub-account/spotSummary
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">default 10, max 20</td>
         </tr>
 
     
@@ -3256,6 +3894,16 @@ GET /sapi/v1/sub-account/spotSummary
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3301,7 +3949,7 @@ GET /sapi/v1/sub-account/spotSummary
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line510">line 510</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line511">line 511</a>
     </li></ul></dd>
     
 
@@ -3337,7 +3985,7 @@ GET /sapi/v1/sub-account/spotSummary
     
 
     
-    <h4 class="name" id="subAccountStatus"><span class="type-signature"></span>subAccountStatus<span class="signature">(email, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountStatus"><span class="type-signature"></span>subAccountStatus<span class="signature">(email<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3348,6 +3996,8 @@ GET /sapi/v1/sub-account/spotSummary
     Get Sub-account's Status on Margin/Futures(For Master Account)
 
 GET /sapi/v1/sub-account/status
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account</a>
 </div>
 
 
@@ -3370,6 +4020,8 @@ GET /sapi/v1/sub-account/status
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -3396,6 +4048,16 @@ GET /sapi/v1/sub-account/status
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3418,6 +4080,16 @@ GET /sapi/v1/sub-account/status
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3463,7 +4135,7 @@ GET /sapi/v1/sub-account/status
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line164">line 164</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -3499,7 +4171,7 @@ GET /sapi/v1/sub-account/status
     
 
     
-    <h4 class="name" id="subAccountTransfer"><span class="type-signature"></span>subAccountTransfer<span class="signature">(fromEmail, toEmail, asset, amount, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferHistory"><span class="type-signature"></span>subAccountTransferHistory<span class="signature">(fromEmail<span class="signature-attributes">opt</span>, toEmail<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3509,7 +4181,9 @@ GET /sapi/v1/sub-account/status
 <div class="description">
     Query Sub-account Transfer History(For Master Account)
 
-GET /wapi/v3/sub-account/transfer/history.html
+GET /sapi/v1/sub-account/sub/transfer/history
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account</a>
 </div>
 
 
@@ -3532,6 +4206,8 @@ GET /wapi/v3/sub-account/transfer/history.html
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -3558,6 +4234,16 @@ GET /wapi/v3/sub-account/transfer/history.html
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3581,213 +4267,15 @@ GET /wapi/v3/sub-account/transfer/history.html
             </td>
 
             
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>asset</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>amount</code></td>
-            
-
-            <td class="type">
-            
+                    &lt;optional><br>
                 
-<span class="param-type">number</span>
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>recvWindow</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">number</span>
 
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line66">line 66</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="subAccountTransferHistory"><span class="type-signature"></span>subAccountTransferHistory<span class="signature">(email, startTime, endTime, page, limit, recvWindow)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Query Sub-account Transfer History(For Master Account)
-
-GET /wapi/v3/sub-account/transfer/history.html
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>email</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
+                </td>
             
 
             
@@ -3812,6 +4300,16 @@ GET /wapi/v3/sub-account/transfer/history.html
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3834,6 +4332,16 @@ GET /wapi/v3/sub-account/transfer/history.html
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3858,6 +4366,16 @@ GET /wapi/v3/sub-account/transfer/history.html
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3881,6 +4399,16 @@ GET /wapi/v3/sub-account/transfer/history.html
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3903,6 +4431,16 @@ GET /wapi/v3/sub-account/transfer/history.html
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -3948,7 +4486,7 @@ GET /wapi/v3/sub-account/transfer/history.html
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line42">line 42</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -3984,7 +4522,7 @@ GET /wapi/v3/sub-account/transfer/history.html
     
 
     
-    <h4 class="name" id="subAccountTransferSubAccountHistory"><span class="type-signature"></span>subAccountTransferSubAccountHistory<span class="signature">(asset, type, startTime, endTime, limit, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferSubAccountHistory"><span class="type-signature"></span>subAccountTransferSubAccountHistory<span class="signature">(asset<span class="signature-attributes">opt</span>, type<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3995,6 +4533,8 @@ GET /wapi/v3/sub-account/transfer/history.html
     Sub-account Transfer History (For Sub-account)
 
 GET /sapi/v1/sub-account/transfer/subUserHistory
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account</a>
 </div>
 
 
@@ -4017,6 +4557,8 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -4043,10 +4585,20 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">If not sent, result of all assets will be returned</td>
         </tr>
 
     
@@ -4066,10 +4618,20 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last">[1: transfer in, 2: transfer out]</td>
+            <td class="description last">1: transfer in, 2: transfer out</td>
         </tr>
 
     
@@ -4088,6 +4650,16 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -4112,6 +4684,16 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -4135,10 +4717,20 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default 500</td>
         </tr>
 
     
@@ -4157,6 +4749,16 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -4202,7 +4804,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line433">line 433</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line428">line 428</a>
     </li></ul></dd>
     
 
@@ -4238,7 +4840,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
     
 
     
-    <h4 class="name" id="subAccountTransferToMaster"><span class="type-signature"></span>subAccountTransferToMaster<span class="signature">(asset, amount, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferToMaster"><span class="type-signature"></span>subAccountTransferToMaster<span class="signature">(asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4249,6 +4851,8 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
     Transfer to Master（For Sub-account）
 
 POST /sapi/v1/sub-account/transfer/subToMaster
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account</a>
 </div>
 
 
@@ -4271,6 +4875,8 @@ POST /sapi/v1/sub-account/transfer/subToMaster
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -4297,6 +4903,14 @@ POST /sapi/v1/sub-account/transfer/subToMaster
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -4320,6 +4934,14 @@ POST /sapi/v1/sub-account/transfer/subToMaster
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -4342,6 +4964,16 @@ POST /sapi/v1/sub-account/transfer/subToMaster
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -4387,7 +5019,7 @@ POST /sapi/v1/sub-account/transfer/subToMaster
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line406">line 406</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line399">line 399</a>
     </li></ul></dd>
     
 
@@ -4423,7 +5055,7 @@ POST /sapi/v1/sub-account/transfer/subToMaster
     
 
     
-    <h4 class="name" id="subAccountTransferToSub"><span class="type-signature"></span>subAccountTransferToSub<span class="signature">(toEmail, asset, amount, recvWindow)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferToSub"><span class="type-signature"></span>subAccountTransferToSub<span class="signature">(toEmail, asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4433,7 +5065,9 @@ POST /sapi/v1/sub-account/transfer/subToMaster
 <div class="description">
     Transfer to Sub-account of Same Master（For Sub-account）
 
-POST /sapi/v1/sub-account/margin/transfer
+POST /sapi/v1/sub-account/transfer/subToSub
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account</a>
 </div>
 
 
@@ -4456,6 +5090,8 @@ POST /sapi/v1/sub-account/margin/transfer
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -4482,6 +5118,14 @@ POST /sapi/v1/sub-account/margin/transfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -4504,6 +5148,14 @@ POST /sapi/v1/sub-account/margin/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -4528,6 +5180,14 @@ POST /sapi/v1/sub-account/margin/transfer
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -4550,6 +5210,16 @@ POST /sapi/v1/sub-account/margin/transfer
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -4595,7 +5265,7 @@ POST /sapi/v1/sub-account/margin/transfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line380">line 380</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line372">line 372</a>
     </li></ul></dd>
     
 
@@ -4647,7 +5317,7 @@ POST /sapi/v1/sub-account/margin/transfer
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue May 25 2021 17:26:15 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu May 27 2021 21:44:48 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

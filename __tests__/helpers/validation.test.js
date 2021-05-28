@@ -1,5 +1,4 @@
 /* global describe, it, expect, */
-// const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 const { validateParameter } = require('../../src/helpers/validation')
 const { MissingParameterError } = require('../../src/error/missingParameterError')

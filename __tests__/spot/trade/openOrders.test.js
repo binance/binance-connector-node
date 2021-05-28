@@ -17,7 +17,7 @@ describe('#openOrders', () => {
       symbol,
       recvWindow
     }
-    nockMock(`/api/v3/openOrders${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/api/v3/openOrders?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.openOrders(parameters).then(response => {
       expect(response).toBeDefined()

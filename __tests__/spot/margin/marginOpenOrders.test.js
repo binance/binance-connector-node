@@ -13,7 +13,7 @@ describe('#marginOpenOrders', () => {
       symbol,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/openOrders${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/openOrders?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.marginOpenOrders(parameters).then(response => {
       expect(response).toBeDefined()

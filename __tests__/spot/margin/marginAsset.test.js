@@ -19,7 +19,7 @@ describe('#marginAsset', () => {
     const parameters = {
       asset
     }
-    nockMock(`/sapi/v1/margin/asset${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/asset?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.marginAsset(asset).then(response => {
       expect(response).toBeDefined()

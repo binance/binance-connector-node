@@ -46,7 +46,7 @@ describe('#subAccountMarginTransfer', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/margin/transfer${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/margin/transfer?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountMarginTransfer(email, asset, amount, 1, { recvWindow }).then(response => {
       expect(response).toBeDefined()

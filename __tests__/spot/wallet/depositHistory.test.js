@@ -11,7 +11,7 @@ describe('#depositHistory', () => {
       coin: 'BNB',
       status: 1
     }
-    nockMock(`/sapi/v1/capital/deposit/hisrec${queryString({ coin: 'BNB', status: 1 })}`)(responseMockData)
+    nockMock(`/sapi/v1/capital/deposit/hisrec?${queryString({ coin: 'BNB', status: 1 })}`)(responseMockData)
 
     return SpotClient.depositHistory(parameters).then(response => {
       expect(response).toBeDefined()

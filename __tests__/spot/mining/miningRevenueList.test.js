@@ -34,7 +34,7 @@ describe('#miningRevenueList', () => {
       algo,
       userName
     }
-    nockMock(`/sapi/v1/mining/payment/list${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/mining/payment/list?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.miningRevenueList(algo, userName).then(response => {
       expect(response).toBeDefined()

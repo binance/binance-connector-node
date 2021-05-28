@@ -16,7 +16,7 @@ describe('#getOCOOrders', () => {
       limit: 10,
       recvWindow
     }
-    nockMock(`/api/v3/allOrderList${queryString(parameters)}`)(responseMockData)
+    nockMock(`/api/v3/allOrderList?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.getOCOOrders(parameters).then(response => {
       expect(response).toBeDefined()

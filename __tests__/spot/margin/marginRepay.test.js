@@ -27,7 +27,7 @@ describe('#marginRepay', () => {
       asset,
       amount
     }
-    nockPostMock(`/sapi/v1/margin/repay${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/margin/repay?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.marginRepay(asset, amount).then(response => {
       expect(response).toBeDefined()

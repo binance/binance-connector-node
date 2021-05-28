@@ -19,7 +19,7 @@ describe('#marginPair', () => {
     const parameters = {
       symbol
     }
-    nockMock(`/sapi/v1/margin/pair${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/pair?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.marginPair(symbol).then(response => {
       expect(response).toBeDefined()

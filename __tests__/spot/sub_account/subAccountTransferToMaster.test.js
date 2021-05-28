@@ -31,7 +31,7 @@ describe('#subAccountTransferToMaster', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/transfer/subToMaster${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/transfer/subToMaster?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountTransferToMaster(asset, amount, { recvWindow }).then(response => {
       expect(response).toBeDefined()

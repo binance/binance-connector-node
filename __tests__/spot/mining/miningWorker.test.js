@@ -42,7 +42,7 @@ describe('#miningWorker', () => {
       userName,
       workerName
     }
-    nockMock(`/sapi/v1/mining/worker/detail${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/mining/worker/detail?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.miningWorker(algo, userName, workerName).then(response => {
       expect(response).toBeDefined()

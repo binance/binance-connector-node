@@ -53,7 +53,7 @@ describe('#newOCOOrder', () => {
       limitClientOrderId: 'my_order_id',
       limitIcebergQty: 1
     }
-    nockPostMock(`/api/v3/order/oco${queryString({ symbol, side, quantity, price, stopPrice, ...parameters })}`)(responseMockData)
+    nockPostMock(`/api/v3/order/oco?${queryString({ symbol, side, quantity, price, stopPrice, ...parameters })}`)(responseMockData)
 
     return SpotClient.newOCOOrder(symbol, side, quantity, price, stopPrice, parameters).then(response => {
       expect(response).toBeDefined()

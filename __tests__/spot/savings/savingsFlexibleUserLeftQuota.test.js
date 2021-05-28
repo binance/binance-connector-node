@@ -24,7 +24,7 @@ describe('#savingsFlexibleUserLeftQuota', () => {
     const parameters = {
       recvWindow
     }
-    nockMock(`/sapi/v1/lending/daily/userLeftQuota${queryString({ productId, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/daily/userLeftQuota?${queryString({ productId, ...parameters })}`)(responseMockData)
 
     return SpotClient.savingsFlexibleUserLeftQuota(productId, parameters).then(response => {
       expect(response).toBeDefined()

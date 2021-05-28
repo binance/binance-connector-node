@@ -26,7 +26,7 @@ describe('#savingsFlexibleUserRedemptionQuota', () => {
     })
   })
   it('should return flexible product quota', async () => {
-    nockMock(`/sapi/v1/lending/daily/userRedemptionQuota${queryString({ productId, type: 'FAST' })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/daily/userRedemptionQuota?${queryString({ productId, type: 'FAST' })}`)(responseMockData)
 
     return SpotClient.savingsFlexibleUserRedemptionQuota(productId, 'FAST').then(response => {
       expect(response).toBeDefined()

@@ -130,7 +130,7 @@ const Bswap = superclass => class extends superclass {
    * quoteQty is quantity of quote asset (to sell).
    * Please be noted the quote is for reference only, the actual price will change as the liquidity changes, it's recommended to swap immediate after request a quote for slippage prevention.
    *
-   * POST /sapi/v1/bswap/quote
+   * GET /sapi/v1/bswap/quote
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data}
    *

@@ -28,7 +28,7 @@ describe('#savingsProductList', () => {
       sortBy: 'START_TIME',
       recvWindow
     }
-    nockMock(`/sapi/v1/lending/project/list${queryString({ type: 'REGULAR', ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/project/list?${queryString({ type: 'REGULAR', ...parameters })}`)(responseMockData)
 
     return SpotClient.savingsProductList('REGULAR', parameters).then(response => {
       expect(response).toBeDefined()

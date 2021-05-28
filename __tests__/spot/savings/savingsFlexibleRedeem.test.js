@@ -38,7 +38,7 @@ describe('#savingsFlexibleRedeem', () => {
       amount,
       type: 'FAST'
     }
-    nockPostMock(`/sapi/v1/lending/daily/redeem${queryString(parameters)}`)(responseMockData)
+    nockPostMock(`/sapi/v1/lending/daily/redeem?${queryString(parameters)}`)(responseMockData)
 
     return SpotClient.savingsFlexibleRedeem(productId, amount, 'FAST').then(response => {
       expect(response).toBeDefined()

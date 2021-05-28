@@ -3,19 +3,17 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 const {
   queryString,
-  asset,
-  current,
-  size
+  asset
 } = require('../../testUtils/mockData')
 
 describe('#marginInterestHistory', () => {
   it('should return margin interest history record', async () => {
     const parameters = {
-      asset,
-      current,
-      size
+      current: 1,
+      size: 10,
+      asset
     }
-    nockMock(`/sapi/v1/margin/interestHistory${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/interestHistory?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.marginInterestHistory(parameters).then(response => {
       expect(response).toBeDefined()

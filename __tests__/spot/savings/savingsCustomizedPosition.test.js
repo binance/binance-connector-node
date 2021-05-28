@@ -27,7 +27,7 @@ describe('#savingsCustomizedPosition', () => {
       status,
       recvWindow
     }
-    nockMock(`/sapi/v1/lending/project/position/list${queryString({ asset: 'BNB', ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/project/position/list?${queryString({ asset: 'BNB', ...parameters })}`)(responseMockData)
 
     return SpotClient.savingsCustomizedPosition('BNB', parameters).then(response => {
       expect(response).toBeDefined()

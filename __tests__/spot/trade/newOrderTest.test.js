@@ -42,7 +42,7 @@ describe('#newOrderTest', () => {
       quantity,
       price
     }
-    nockPostMock(`/api/v3/order/test${queryString({ symbol, side, type, ...parameters })}`)(responseMockData)
+    nockPostMock(`/api/v3/order/test?${queryString({ symbol, side, type, ...parameters })}`)(responseMockData)
 
     return SpotClient.newOrderTest(symbol, side, type, parameters).then(response => {
       expect(response).toBeDefined()

@@ -23,7 +23,7 @@ describe('#subAccountEnableFutures', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/futures/enable${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/futures/enable?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountEnableFutures(email, { recvWindow }).then(response => {
       expect(response).toBeDefined()
