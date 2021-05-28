@@ -2,7 +2,7 @@
 const { nockDeleteMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#closeListenKey', () => {
-  it('should result of delete listen key', async () => {
+  it('should result of delete listen key', () => {
     nockDeleteMock('/api/v3/userDataStream?listenKey=aaa')(responseMockData)
 
     return SpotClient.closeListenKey('aaa').then(response => {

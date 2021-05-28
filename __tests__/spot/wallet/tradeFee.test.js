@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#tradeFee', () => {
-  it('should return trade fee', async () => {
+  it('should return trade fee', () => {
     nockMock('/sapi/v1/asset/tradeFee')(responseMockData)
 
     return SpotClient.tradeFee().then(response => {

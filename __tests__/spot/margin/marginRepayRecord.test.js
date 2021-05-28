@@ -10,14 +10,14 @@ const {
 
 describe('#marginRepayRecord', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginRepayRecord('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return margin repay record', async () => {
+  it('should return margin repay record', () => {
     const parameters = {
       txId: 10,
       recvWindow

@@ -12,32 +12,32 @@ const {
 
 describe('#subAccountMarginTransfer', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountMarginTransfer('', asset, amount, 1)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.subAccountMarginTransfer(email, '', amount, 1)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.subAccountMarginTransfer(email, asset, '', 1)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.subAccountMarginTransfer(email, asset, amount, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should transfer sub account margin funds', async () => {
+  it('should transfer sub account margin funds', () => {
     const parameters = {
       email,
       asset,

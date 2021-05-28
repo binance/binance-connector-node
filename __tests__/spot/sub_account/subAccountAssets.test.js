@@ -10,14 +10,14 @@ const {
 
 describe('#subAccountAssets', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountAssets('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should query sub account assets', async () => {
+  it('should query sub account assets', () => {
     const parameters = {
       email,
       recvWindow

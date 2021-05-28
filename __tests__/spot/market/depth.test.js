@@ -4,14 +4,14 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 describe('#depth', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.depth()
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return orderbook', async () => {
+  it('should return orderbook', () => {
     const symbol = 'BTCUSDT'
     nockMock(`/api/v3/depth?symbol=${symbol}`)(responseMockData)
 

@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#tickerPrice', () => {
-  it('should return all ticker price', async () => {
+  it('should return all ticker price', () => {
     nockMock('/api/v3/ticker/price')(responseMockData)
 
     return SpotClient.tickerPrice().then(response => {
@@ -11,7 +11,7 @@ describe('#tickerPrice', () => {
     })
   })
 
-  it('should return ticker price', async () => {
+  it('should return ticker price', () => {
     const symbol = 'BTCUSDT'
     nockMock(`/api/v3/ticker/price?symbol=${symbol}`)(responseMockData)
 

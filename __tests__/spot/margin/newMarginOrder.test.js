@@ -14,28 +14,28 @@ const {
 
 describe('#newMarginOrder', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.newMarginOrder('', side, type, quantity)
       }).toThrow(MissingParameterError)
     })
-    it('missing side', async () => {
+    it('missing side', () => {
       expect(() => {
         SpotClient.newMarginOrder(symbol, '', type, quantity)
       }).toThrow(MissingParameterError)
     })
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.newMarginOrder(symbol, side, '', quantity)
       }).toThrow(MissingParameterError)
     })
-    it('missing quantity', async () => {
+    it('missing quantity', () => {
       expect(() => {
         SpotClient.newMarginOrder(symbol, side, type, '')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return new margin order', async () => {
+  it('should return new margin order', () => {
     const parameters = {
       price,
       newClientOrderId

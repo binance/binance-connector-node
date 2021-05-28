@@ -3,7 +3,7 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 const { queryString } = require('../../testUtils/mockData')
 
 describe('#assetDevidendRecord', () => {
-  it('should return asset devidend log', async () => {
+  it('should return asset devidend log', () => {
     const parameters = {
       coin: 'BNB',
       status: 1

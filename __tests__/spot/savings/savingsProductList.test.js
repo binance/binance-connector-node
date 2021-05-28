@@ -14,13 +14,13 @@ const {
 
 describe('#savingsProductList', () => {
   describe('throw MissingParameterError', () => {
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.savingsProductList('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return product list', async () => {
+  it('should return product list', () => {
     const parameters = {
       asset,
       status: 'ALL',

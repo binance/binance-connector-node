@@ -26,7 +26,7 @@ describe('#subAccountAssets', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/blvt/enable${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/blvt/enable?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountLeverageToken(email, enableBlvt, { recvWindow }).then(response => {
       expect(response).toBeDefined()

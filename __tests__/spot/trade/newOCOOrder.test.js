@@ -17,38 +17,38 @@ const {
 
 describe('#newOCOOrder', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.newOCOOrder('', side, quantity, price, stopPrice)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing side', async () => {
+    it('missing side', () => {
       expect(() => {
         SpotClient.newOCOOrder(symbol, '', quantity, price, stopPrice)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing quantity', async () => {
+    it('missing quantity', () => {
       expect(() => {
         SpotClient.newOCOOrder(symbol, side, '', price, stopPrice)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing price', async () => {
+    it('missing price', () => {
       expect(() => {
         SpotClient.newOCOOrder(symbol, side, quantity, '', stopPrice)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing stopPrice', async () => {
+    it('missing stopPrice', () => {
       expect(() => {
         SpotClient.newOCOOrder(symbol, side, quantity, price, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return new oco order', async () => {
+  it('should return new oco order', () => {
     const parameters = {
       limitClientOrderId: 'my_order_id',
       limitIcebergQty: 1

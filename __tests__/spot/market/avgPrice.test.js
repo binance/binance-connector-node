@@ -4,14 +4,14 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 describe('#avgPrice', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.avgPrice('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return avg price', async () => {
+  it('should return avg price', () => {
     const symbol = 'BTCUSDT'
     nockMock(`/api/v3/avgPrice?symbol=${symbol}`)(responseMockData)
 

@@ -12,32 +12,32 @@ const {
 
 describe('#subAccountFuturesTransfer', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountFuturesTransfer('', asset, amount, 1)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.subAccountFuturesTransfer(email, '', amount, 1)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.subAccountFuturesTransfer(email, asset, '', 1)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.subAccountFuturesTransfer(email, asset, amount, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should enable sub account futures', async () => {
+  it('should enable sub account futures', () => {
     const parameters = {
       email,
       asset,

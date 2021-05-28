@@ -16,13 +16,13 @@ const {
 
 describe('#savingsPurchaseRecord', () => {
   describe('throw MissingParameterError', () => {
-    it('missing lendingType', async () => {
+    it('missing lendingType', () => {
       expect(() => {
         SpotClient.savingsPurchaseRecord('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return purchase records', async () => {
+  it('should return purchase records', () => {
     const parameters = {
       asset,
       startTime,

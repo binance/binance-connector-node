@@ -10,7 +10,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#blvtSubscriptionRecord', () => {
-  it('should query subscription record', async () => {
+  it('should query subscription record', () => {
     const parameters = {
       tokenName: 'BTCDOWN',
       id: 1,

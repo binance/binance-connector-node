@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#subAccountSpotSummary', () => {
-  it('should return sub account spot summary', async () => {
+  it('should return sub account spot summary', () => {
     nockMock('/sapi/v1/sub-account/spotSummary')(responseMockData)
 
     return SpotClient.subAccountSpotSummary().then(response => {

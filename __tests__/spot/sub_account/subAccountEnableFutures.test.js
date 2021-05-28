@@ -10,14 +10,14 @@ const {
 
 describe('#subAccountEnableFutures', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountEnableFutures('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should enable sub account futures', async () => {
+  it('should enable sub account futures', () => {
     const parameters = {
       email,
       recvWindow

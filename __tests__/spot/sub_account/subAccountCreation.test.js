@@ -23,7 +23,7 @@ describe('#subAccountCreation', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/virtualSubAccount${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/virtualSubAccount?${queryString({ ...parameters })}`)(responseMockData)
 
     return SpotClient.subAccountCreation(subAccountString, { recvWindow }).then(response => {
       expect(response).toBeDefined()

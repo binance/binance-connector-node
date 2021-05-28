@@ -2,7 +2,7 @@
 const { nockDeleteMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#closeMarginListenKey', () => {
-  it('should result of delete listen key', async () => {
+  it('should result of delete listen key', () => {
     nockDeleteMock('/sapi/v1/userDataStream?listenKey=aaa')(responseMockData)
 
     return SpotClient.closeMarginListenKey('aaa').then(response => {

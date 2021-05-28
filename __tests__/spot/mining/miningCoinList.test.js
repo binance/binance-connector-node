@@ -6,7 +6,7 @@ const {
 } = require('../../testUtils/testSetup')
 
 describe('#miningCoinList', () => {
-  it('should return coin list', async () => {
+  it('should return coin list', () => {
     nockMock('/sapi/v1/mining/pub/coinList')(responseMockData)
 
     return SpotClient.miningCoinList().then(response => {

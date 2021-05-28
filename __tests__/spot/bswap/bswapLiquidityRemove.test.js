@@ -14,32 +14,32 @@ const shareAmount = quantity
 
 describe('#bswapLiquidityRemove', () => {
   describe('throw MissingParameterError', () => {
-    it('missing poolId', async () => {
+    it('missing poolId', () => {
       expect(() => {
         SpotClient.bswapLiquidityRemove('', type, asset, shareAmount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.bswapLiquidityRemove(1, '', asset, shareAmount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.bswapLiquidityRemove(1, type, '', shareAmount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing shareAmount', async () => {
+    it('missing shareAmount', () => {
       expect(() => {
         SpotClient.bswapLiquidityRemove(1, type, asset, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should remove liquidity from swappool', async () => {
+  it('should remove liquidity from swappool', () => {
     const parameters = {
       poolId: 1,
       type,

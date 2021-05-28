@@ -2,7 +2,7 @@
 const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#disableFastWithdraw', () => {
-  it('should return success', async () => {
+  it('should return success', () => {
     nockPostMock('/sapi/v1/account/disableFastWithdrawSwitch')(responseMockData)
 
     return SpotClient.disableFastWithdraw().then(response => {
