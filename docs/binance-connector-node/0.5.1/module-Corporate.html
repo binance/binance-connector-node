@@ -377,7 +377,11 @@ GET /sapi/v3/sub-account/assets
     
 
     
+<<<<<<< HEAD
     <h4 class="name" id="subAccountDepositAddress"><span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, coin, network<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
+    <h4 class="name" id="subAccountCreation"><span class="type-signature"></span>subAccountCreation<span class="signature">(subAccountString, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
     
 
     
@@ -385,11 +389,17 @@ GET /sapi/v3/sub-account/assets
 
 
 <div class="description">
-    Get Sub-account Deposit Address (For Master Account)
+    Create a Virtual Sub-account(For Master Account)
 
+<<<<<<< HEAD
 GET /sapi/v1/capital/deposit/subAddress
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a>
+=======
+POST /sapi/v1/sub-account/virtualSubAccount
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
 </div>
 
 
@@ -427,7 +437,7 @@ GET /sapi/v1/capital/deposit/subAddress
 
         <tr>
             
-                <td class="name"><code>email</code></td>
+                <td class="name"><code>subAccountString</code></td>
             
 
             <td class="type">
@@ -448,6 +458,7 @@ GET /sapi/v1/capital/deposit/subAddress
                 
                 </td>
             
+<<<<<<< HEAD
 
             
 
@@ -512,6 +523,8 @@ GET /sapi/v1/capital/deposit/subAddress
                 
                 </td>
             
+=======
+>>>>>>> add sub-account endpoint and debug input validator
 
             
 
@@ -589,7 +602,11 @@ GET /sapi/v1/capital/deposit/subAddress
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
         <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line89">line 89</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line525">line 525</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -625,7 +642,413 @@ GET /sapi/v1/capital/deposit/subAddress
     
 
     
+<<<<<<< HEAD
     <h4 class="name" id="subAccountDepositHistory"><span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, offset<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
+    <h4 class="name" id="subAccountDepositAddress"><span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, coin, network<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
+    
+
+    
+
+
+
+<div class="description">
+    Get Sub-account Deposit Address (For Master Account)
+
+<<<<<<< HEAD
+GET /sapi/v1/capital/deposit/subHisrec
+=======
+GET /sapi/v1/capital/deposit/subAddress
+>>>>>>> add sub-account endpoint and debug input validator
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+<<<<<<< HEAD
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+<<<<<<< HEAD
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>network</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+<<<<<<< HEAD
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+<<<<<<< HEAD
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line119">line 119</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line87">line 87</a>
+>>>>>>> add sub-account endpoint and debug input validator
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountEnableFutures"><span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
+    <h4 class="name" id="subAccountDepositHistory"><span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, offset<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
     
 
     
@@ -635,9 +1058,15 @@ GET /sapi/v1/capital/deposit/subAddress
 <div class="description">
     Get Sub-account Deposit History (For Master Account)
 
+<<<<<<< HEAD
+GET /sapi/v1/sub-account/futures/enable
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account</a>
+=======
 GET /sapi/v1/capital/deposit/subHisrec
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
 </div>
 
 
@@ -798,8 +1227,17 @@ GET /sapi/v1/capital/deposit/subHisrec
 
             
 
+<<<<<<< HEAD
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+=======
             <td class="description last"></td>
         </tr>
+>>>>>>> add sub-account endpoint and debug input validator
 
     
 
@@ -867,6 +1305,63 @@ GET /sapi/v1/capital/deposit/subHisrec
             <td class="description last"></td>
         </tr>
 
+<<<<<<< HEAD
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="subAccountEnableMargin"><span class="type-signature"></span>subAccountEnableMargin<span class="signature">(email<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Enable Margin for Sub-account (For Master Account)
+
+POST /sapi/v1/sub-account/margin/enable
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+=======
+>>>>>>> add sub-account endpoint and debug input validator
     
 
         <tr>
@@ -971,7 +1466,11 @@ GET /sapi/v1/capital/deposit/subHisrec
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line119">line 119</a>
+<<<<<<< HEAD
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line159">line 159</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line117">line 117</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -1007,7 +1506,11 @@ GET /sapi/v1/capital/deposit/subHisrec
     
 
     
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountFuturesAccount"><span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
     <h4 class="name" id="subAccountEnableFutures"><span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
     
 
     
@@ -1017,9 +1520,15 @@ GET /sapi/v1/capital/deposit/subHisrec
 <div class="description">
     Enable Futures for Sub-account (For Master Account)
 
+<<<<<<< HEAD
+GET /sapi/v1/sub-account/futures/account
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account</a>
+=======
 GET /sapi/v1/sub-account/futures/enable
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
 </div>
 
 
@@ -1155,7 +1664,11 @@ GET /sapi/v1/sub-account/futures/enable
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line220">line 220</a>
+<<<<<<< HEAD
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line242">line 242</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line216">line 216</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -1191,7 +1704,11 @@ GET /sapi/v1/sub-account/futures/enable
     
 
     
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountFuturesAccountSummary"><span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
     <h4 class="name" id="subAccountEnableMargin"><span class="type-signature"></span>subAccountEnableMargin<span class="signature">(email<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
     
 
     
@@ -1201,9 +1718,15 @@ GET /sapi/v1/sub-account/futures/enable
 <div class="description">
     Enable Margin for Sub-account (For Master Account)
 
+<<<<<<< HEAD
+GET /sapi/v1/sub-account/futures/accountSummary
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account</a>
+=======
 POST /sapi/v1/sub-account/margin/enable
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
 </div>
 
 
@@ -1341,7 +1864,11 @@ POST /sapi/v1/sub-account/margin/enable
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line159">line 159</a>
+<<<<<<< HEAD
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line263">line 263</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line155">line 155</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -1377,7 +1904,11 @@ POST /sapi/v1/sub-account/margin/enable
     
 
     
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountFuturesAssetTransfer"><span class="type-signature"></span>subAccountFuturesAssetTransfer<span class="signature">(fromEmail, toEmail, futuresType, asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
     <h4 class="name" id="subAccountFuturesAccount"><span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
     
 
     
@@ -1387,9 +1918,15 @@ POST /sapi/v1/sub-account/margin/enable
 <div class="description">
     Get Detail on Sub-account's Futures Account (For Master Account)
 
+<<<<<<< HEAD
+POST /sapi/v1/sub-account/futures/internalTransfer
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account</a>
+=======
 GET /sapi/v1/sub-account/futures/account
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
 </div>
 
 
@@ -1441,6 +1978,94 @@ GET /sapi/v1/sub-account/futures/account
 
             
                 <td class="attributes">
+<<<<<<< HEAD
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Sender email</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>toEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">Recipient email</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>futuresType</code></td>
+            
+=======
+                
+>>>>>>> add sub-account endpoint and debug input validator
+
+                
+
+<<<<<<< HEAD
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">1: USDT-margined Futures，2: Coin-margined Futures</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
+                
+                </td>
+            
+                <td class="attributes">
                 
 
                 
@@ -1470,6 +2095,40 @@ GET /sapi/v1/sub-account/futures/account
             
             </td>
 
+            
+                <td class="attributes">
+                
+<<<<<<< HEAD
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+=======
+                    &lt;optional><br>
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
             
                 <td class="attributes">
                 
@@ -1525,7 +2184,7 @@ GET /sapi/v1/sub-account/futures/account
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line242">line 242</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line238">line 238</a>
     </li></ul></dd>
     
 
@@ -1561,7 +2220,11 @@ GET /sapi/v1/sub-account/futures/account
     
 
     
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountFuturesAssetTransferHistory"><span class="type-signature"></span>subAccountFuturesAssetTransferHistory<span class="signature">(email, futuresType, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
     <h4 class="name" id="subAccountFuturesAccountSummary"><span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
     
 
     
@@ -1571,9 +2234,15 @@ GET /sapi/v1/sub-account/futures/account
 <div class="description">
     Get Summary of Sub-account's Futures Account (For Master Account)
 
+<<<<<<< HEAD
+GET /sapi/v1/sub-account/futures/internalTransfer
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account</a>
+=======
 GET /sapi/v1/sub-account/futures/accountSummary
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
 </div>
 
 
@@ -1626,8 +2295,11 @@ GET /sapi/v1/sub-account/futures/accountSummary
             
                 <td class="attributes">
                 
+<<<<<<< HEAD
+=======
                     &lt;optional><br>
                 
+>>>>>>> add sub-account endpoint and debug input validator
 
                 
 
@@ -1637,7 +2309,7 @@ GET /sapi/v1/sub-account/futures/accountSummary
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Sub-account email</td>
         </tr>
 
     
@@ -1648,10 +2320,27 @@ GET /sapi/v1/sub-account/futures/accountSummary
 
 
 
+<<<<<<< HEAD
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">1: USDT-margined Futures，2: Coin-margined Futures</td>
+        </tr>
+=======
 
 <dl class="details">
 
     
+>>>>>>> add sub-account endpoint and debug input validator
 
     
 
@@ -1678,7 +2367,7 @@ GET /sapi/v1/sub-account/futures/accountSummary
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line263">line 263</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line259">line 259</a>
     </li></ul></dd>
     
 
@@ -1986,7 +2675,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line479">line 479</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line475">line 475</a>
     </li></ul></dd>
     
 
@@ -2333,7 +3022,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line451">line 451</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line447">line 447</a>
     </li></ul></dd>
     
 
@@ -2361,12 +3050,31 @@ GET /sapi/v1/sub-account/futures/internalTransfer
 
 
 
+<<<<<<< HEAD
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
 
 
         
             
 
+<<<<<<< HEAD
+            <td class="description last">Default return the history with in 100 days</td>
+        </tr>
+=======
     
+>>>>>>> add sub-account endpoint and debug input validator
 
     
     <h4 class="name" id="subAccountFuturesPositionRisk"><span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
@@ -2379,19 +3087,56 @@ GET /sapi/v1/sub-account/futures/internalTransfer
 <div class="description">
     Get Futures Postion-Risk of Sub-account (For Master Account)
 
+<<<<<<< HEAD
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+=======
 GET /sapi/v1/sub-account/futures/positionRisk
+>>>>>>> add sub-account endpoint and debug input validator
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account</a>
 </div>
 
+<<<<<<< HEAD
+            <td class="description last">Default return the history with in 100 days</td>
+        </tr>
+=======
+>>>>>>> add sub-account endpoint and debug input validator
 
 
 
 
 
 
+<<<<<<< HEAD
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
 
 
+<<<<<<< HEAD
+            <td class="description last">Default value: 1</td>
+        </tr>
+=======
     <h5>Parameters:</h5>
     
 
@@ -2409,6 +3154,7 @@ GET /sapi/v1/sub-account/futures/positionRisk
         
 
         
+>>>>>>> add sub-account endpoint and debug input validator
 
         <th class="last">Description</th>
     </tr>
@@ -2434,6 +3180,11 @@ GET /sapi/v1/sub-account/futures/positionRisk
             
                 <td class="attributes">
                 
+<<<<<<< HEAD
+                    &lt;optional><br>
+                
+=======
+>>>>>>> add sub-account endpoint and debug input validator
 
                 
 
@@ -2443,7 +3194,7 @@ GET /sapi/v1/sub-account/futures/positionRisk
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default value: 50, Max value: 500</td>
         </tr>
 
     
@@ -2517,7 +3268,11 @@ GET /sapi/v1/sub-account/futures/positionRisk
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line281">line 281</a>
+<<<<<<< HEAD
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line451">line 451</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line277">line 277</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -2553,7 +3308,11 @@ GET /sapi/v1/sub-account/futures/positionRisk
     
 
     
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountFuturesPositionRisk"><span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
     <h4 class="name" id="subAccountFuturesTransfer"><span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
     
 
     
@@ -2563,9 +3322,15 @@ GET /sapi/v1/sub-account/futures/positionRisk
 <div class="description">
     Futures Transfer for Sub-account(For Master Account)
 
+<<<<<<< HEAD
+GET /sapi/v1/sub-account/futures/positionRisk
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account</a>
+=======
 POST /sapi/v1/sub-account/futures/transfer
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
 </div>
 
 
@@ -2624,6 +3389,8 @@ POST /sapi/v1/sub-account/futures/transfer
                 
                 </td>
             
+<<<<<<< HEAD
+=======
 
             
 
@@ -2686,6 +3453,7 @@ POST /sapi/v1/sub-account/futures/transfer
                 
                 </td>
             
+>>>>>>> add sub-account endpoint and debug input validator
 
             
 
@@ -2797,7 +3565,313 @@ POST /sapi/v1/sub-account/futures/transfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line281">line 281</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line305">line 305</a>
+>>>>>>> add sub-account endpoint and debug input validator
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountFuturesTransfer"><span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
+    <h4 class="name" id="subAccountLeverageToken"><span class="type-signature"></span>subAccountLeverageToken<span class="signature">(email, enableBlvt, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
+    
+
+    
+
+
+
+<div class="description">
+    Enable Leverage Token for Sub-account (For Master Account)
+
+<<<<<<< HEAD
+POST /sapi/v1/sub-account/futures/transfer
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account</a>
+=======
+POST /sapi/v1/sub-account/blvt/enable
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+<<<<<<< HEAD
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>enableBlvt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+<<<<<<< HEAD
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+=======
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+<<<<<<< HEAD
+            <td class="description last">1: transfer from subaccount's spot account to its USDT-margined futures account
+<br>2: transfer from subaccount's USDT-margined futures account to its spot account
+<br>3: transfer from subaccount's spot account to its COIN-margined futures account
+<br>4: transfer from subaccount's COIN-margined futures account to its spot account</td>
+=======
+            <td class="description last"></td>
+>>>>>>> add sub-account endpoint and debug input validator
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
         <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line309">line 309</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line545">line 545</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -3266,7 +4340,11 @@ GET /sapi/v1/sub-account/margin/account
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
         <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line181">line 181</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line177">line 177</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -3419,7 +4497,11 @@ GET /sapi/v1/sub-account/margin/accountSummary
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
         <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line202">line 202</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line198">line 198</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -3697,7 +4779,11 @@ POST /sapi/v1/sub-account/margin/transfer
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
         <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line342">line 342</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line338">line 338</a>
+>>>>>>> add sub-account endpoint and debug input validator
     </li></ul></dd>
     
 
@@ -3832,6 +4918,7 @@ GET /sapi/v1/sub-account/spotSummary
                 <td class="attributes">
                 
                     &lt;optional><br>
+<<<<<<< HEAD
                 
 
                 
@@ -3854,13 +4941,14 @@ GET /sapi/v1/sub-account/spotSummary
 
             <td class="type">
             
+=======
+>>>>>>> add sub-account endpoint and debug input validator
                 
-<span class="param-type">number</span>
 
+                
 
-            
-            </td>
-
+                
+                </td>
             
                 <td class="attributes">
                 
@@ -3873,16 +4961,20 @@ GET /sapi/v1/sub-account/spotSummary
                 </td>
             
 
+<<<<<<< HEAD
             
 
             <td class="description last">default 10, max 20</td>
+=======
+            <td class="description last">default 1</td>
+>>>>>>> add sub-account endpoint and debug input validator
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>recvWindow</code></td>
+                <td class="name"><code>size</code></td>
             
 
             <td class="type">
@@ -3898,6 +4990,7 @@ GET /sapi/v1/sub-account/spotSummary
                 <td class="attributes">
                 
                     &lt;optional><br>
+<<<<<<< HEAD
                 
 
                 
@@ -4040,13 +5133,14 @@ GET /sapi/v1/sub-account/status
 
             <td class="type">
             
+=======
+>>>>>>> add sub-account endpoint and debug input validator
                 
-<span class="param-type">string</span>
 
+                
 
-            
-            </td>
-
+                
+                </td>
             
                 <td class="attributes">
                 
@@ -4061,7 +5155,7 @@ GET /sapi/v1/sub-account/status
 
             
 
-            <td class="description last"></td>
+            <td class="description last">default 10, max 20</td>
         </tr>
 
     
@@ -4135,7 +5229,295 @@ GET /sapi/v1/sub-account/status
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+<<<<<<< HEAD
         <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line141">line 141</a>
+=======
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line507">line 507</a>
+>>>>>>> add sub-account endpoint and debug input validator
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+<<<<<<< HEAD
+    <h4 class="name" id="subAccountTransferHistory"><span class="type-signature"></span>subAccountTransferHistory<span class="signature">(fromEmail<span class="signature-attributes">opt</span>, toEmail<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+=======
+    <h4 class="name" id="subAccountStatus"><span class="type-signature"></span>subAccountStatus<span class="signature">(email<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+>>>>>>> add sub-account endpoint and debug input validator
+    
+
+    
+
+
+
+<div class="description">
+    Get Sub-account's Status on Margin/Futures(For Master Account)
+
+GET /sapi/v1/sub-account/status
+
+<<<<<<< HEAD
+GET /sapi/v1/sub-account/sub/transfer/history
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account</a>
+=======
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account</a>
+>>>>>>> add sub-account endpoint and debug input validator
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>email</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+<<<<<<< HEAD
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>toEmail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+=======
+                
+                    &lt;optional><br>
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+<<<<<<< HEAD
+                <td class="attributes">
+                
+                    &lt;optional><br>
+=======
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+<<<<<<< HEAD
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+=======
+                <td class="attributes">
+                
+                    &lt;optional><br>
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+<<<<<<< HEAD
+                <td class="attributes">
+                
+                    &lt;optional><br>
+=======
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line137">line 137</a>
     </li></ul></dd>
     
 
@@ -4259,79 +5641,13 @@ GET /sapi/v1/sub-account/sub/transfer/history
 
             <td class="type">
             
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
+>>>>>>> add sub-account endpoint and debug input validator
                 
 
                 
 
                 
                 </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>startTime</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>endTime</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
             
                 <td class="attributes">
                 
@@ -4369,6 +5685,41 @@ GET /sapi/v1/sub-account/sub/transfer/history
                 <td class="attributes">
                 
                     &lt;optional><br>
+<<<<<<< HEAD
+=======
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
                 
 
                 
@@ -4398,6 +5749,41 @@ GET /sapi/v1/sub-account/sub/transfer/history
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+<<<<<<< HEAD
+=======
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+>>>>>>> add sub-account endpoint and debug input validator
+                
+
+                
+
+                
+                </td>
             
                 <td class="attributes">
                 
@@ -4589,6 +5975,15 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
                 
                     &lt;optional><br>
                 
+<<<<<<< HEAD
+=======
+
+                
+
+                
+                </td>
+            
+>>>>>>> add sub-account endpoint and debug input validator
 
                 
 
@@ -4596,8 +5991,11 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
                 </td>
             
 
+<<<<<<< HEAD
             
 
+=======
+>>>>>>> add sub-account endpoint and debug input validator
             <td class="description last">If not sent, result of all assets will be returned</td>
         </tr>
 
@@ -4804,7 +6202,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line428">line 428</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line424">line 424</a>
     </li></ul></dd>
     
 
@@ -5019,7 +6417,7 @@ POST /sapi/v1/sub-account/transfer/subToMaster
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line399">line 399</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line395">line 395</a>
     </li></ul></dd>
     
 
@@ -5265,7 +6663,7 @@ POST /sapi/v1/sub-account/transfer/subToSub
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line372">line 372</a>
+        <a href="corporate.js.html">corporate.js</a>, <a href="corporate.js.html#line368">line 368</a>
     </li></ul></dd>
     
 
@@ -5317,7 +6715,7 @@ POST /sapi/v1/sub-account/transfer/subToSub
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu May 27 2021 21:44:48 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Fri May 28 2021 11:26:21 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
