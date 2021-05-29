@@ -11,26 +11,26 @@ const {
 
 describe('#bswapLiquidityAdd', () => {
   describe('throw MissingParameterError', () => {
-    it('missing poolId', async () => {
+    it('missing poolId', () => {
       expect(() => {
         SpotClient.bswapLiquidityAdd('', asset, quantity)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.bswapLiquidityAdd(1, '', quantity)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing quantity', async () => {
+    it('missing quantity', () => {
       expect(() => {
         SpotClient.bswapLiquidityAdd('', asset, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should add liquidity to swappool', async () => {
+  it('should add liquidity to swappool', () => {
     const parameters = {
       poolId: 1,
       asset,

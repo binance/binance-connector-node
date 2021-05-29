@@ -11,7 +11,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#getOCOOrder', () => {
-  it('should return oco order details', async () => {
+  it('should return oco order details', () => {
     const parameters = {
       orderListId: 10,
       recvWindow

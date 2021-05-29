@@ -9,13 +9,13 @@ const {
 
 describe('#marginAsset', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginAsset('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should asset details', async () => {
+  it('should asset details', () => {
     const parameters = {
       asset
     }

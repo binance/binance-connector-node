@@ -16,20 +16,20 @@ const userName = 'minerName'
 
 describe('#miningAccountList', () => {
   describe('throw MissingParameterError', () => {
-    it('missing algo', async () => {
+    it('missing algo', () => {
       expect(() => {
         SpotClient.miningAccountList('', userName)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing userName', async () => {
+    it('missing userName', () => {
       expect(() => {
         SpotClient.miningAccountList(algo, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return Account list', async () => {
+  it('should return Account list', () => {
     const parameters = {
       algo,
       userName

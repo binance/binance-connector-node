@@ -12,7 +12,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#openOrders', () => {
-  it('should return order details', async () => {
+  it('should return order details', () => {
     const parameters = {
       symbol,
       recvWindow

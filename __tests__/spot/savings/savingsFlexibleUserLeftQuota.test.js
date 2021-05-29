@@ -14,13 +14,13 @@ const {
 
 describe('#savingsFlexibleUserLeftQuota', () => {
   describe('throw MissingParameterError', () => {
-    it('missing productId', async () => {
+    it('missing productId', () => {
       expect(() => {
         SpotClient.savingsFlexibleUserLeftQuota('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return Left Daily Purchase Quota of Flexible Product', async () => {
+  it('should return Left Daily Purchase Quota of Flexible Product', () => {
     const parameters = {
       recvWindow
     }

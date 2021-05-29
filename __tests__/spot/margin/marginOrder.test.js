@@ -11,14 +11,14 @@ const {
 
 describe('#marginOrder', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.marginOrder('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return margin order details', async () => {
+  it('should return margin order details', () => {
     const parameters = {
       orderId,
       recvWindow

@@ -14,25 +14,25 @@ const {
 
 describe('#savingsFlexibleRedeem', () => {
   describe('throw MissingParameterError', () => {
-    it('missing productId', async () => {
+    it('missing productId', () => {
       expect(() => {
         SpotClient.savingsFlexibleRedeem('', 1, 'FAST')
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.savingsFlexibleRedeem('BNB_SAVINGS', '', 'FAST')
       }).toThrow(MissingParameterError)
     })
 
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.savingsFlexibleRedeem('BNB_SAVINGS', 1, '')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return success', async () => {
+  it('should return success', () => {
     const parameters = {
       productId,
       amount,

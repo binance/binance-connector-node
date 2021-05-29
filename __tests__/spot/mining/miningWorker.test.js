@@ -17,26 +17,26 @@ const workerName = 'bhdc1.16A10404B'
 
 describe('#miningWorker', () => {
   describe('throw MissingParameterError', () => {
-    it('missing algo', async () => {
+    it('missing algo', () => {
       expect(() => {
         SpotClient.miningWorker('', userName, workerName)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing userName', async () => {
+    it('missing userName', () => {
       expect(() => {
         SpotClient.miningWorker(algo, '', workerName)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing workerName', async () => {
+    it('missing workerName', () => {
       expect(() => {
         SpotClient.miningWorker(algo, userName, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return miner details', async () => {
+  it('should return miner details', () => {
     const parameters = {
       algo,
       userName,

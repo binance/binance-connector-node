@@ -16,7 +16,7 @@ const {
 
 describe('#myTrades', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.myTrades('')
       }).toThrow(MissingParameterError)
@@ -27,7 +27,7 @@ describe('#myTrades', () => {
     })
   })
 
-  it('should return my trade list', async () => {
+  it('should return my trade list', () => {
     const parameters = {
       startTime,
       endTime,

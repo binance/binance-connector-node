@@ -17,26 +17,26 @@ const {
 
 describe('#newOrder', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.newOrder('', side, type)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing side', async () => {
+    it('missing side', () => {
       expect(() => {
         SpotClient.newOrder(symbol, '', type)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.newOrder(symbol, side, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return new order', async () => {
+  it('should return new order', () => {
     const parameters = {
       timeInForce: 'GTC',
       quantity,

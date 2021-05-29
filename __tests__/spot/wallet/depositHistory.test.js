@@ -6,7 +6,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#depositHistory', () => {
-  it('should return coin information', async () => {
+  it('should return coin information', () => {
     const parameters = {
       coin: 'BNB',
       status: 1

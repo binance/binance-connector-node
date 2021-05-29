@@ -14,14 +14,14 @@ const {
 
 describe('#cancelOpenOrders', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.cancelOpenOrders('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return all cancelled order', async () => {
+  it('should return all cancelled order', () => {
     const parameters = {
       recvWindow
     }

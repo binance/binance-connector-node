@@ -8,7 +8,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountList', () => {
-  it('should return sub account list', async () => {
+  it('should return sub account list', () => {
     const parameters = {
       status,
       recvWindow

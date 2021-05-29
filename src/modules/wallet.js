@@ -7,28 +7,28 @@ const { validateParameter } = require('../helpers/validation')
  */
 const Wallet = superclass => class extends superclass {
   /**
-    * System Status (System)
-    *
-    * GET /sapi/v1/system/status
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system}
-    */
+   * System Status (System)
+   *
+   * GET /sapi/v1/system/status
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system}
+   */
   systemStatus () {
     return this.publicRequest('GET', '/sapi/v1/system/status')
   }
 
   /**
-    * All Coins' Information (USER_DATA)
-    *
-    * GET /sapi/v1/capital/config/getall
-    *
-    * Get information of coins (available for deposit and withdraw) for user.
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data}
-    *
-    * @param {number} [recvWindow]
-    *
-    */
+   * All Coins' Information (USER_DATA)
+   *
+   * GET /sapi/v1/capital/config/getall
+   *
+   * Get information of coins (available for deposit and withdraw) for user.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data}
+   *
+   * @param {number} [recvWindow]
+   *
+   */
   coinInfo (options = {}) {
     return this.signRequest(
       'GET',
@@ -38,18 +38,18 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Daily Account Snapshot (USER_DATA)
-    *
-    * GET /sapi/v1/accountSnapshot
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data}
-    *
-    * @param {string} type - "SPOT", "MARGIN", "FUTURES"
-    * @param {number} [startTime]
-    * @param {number} [endTime]
-    * @param {number} [limit] - min 5, max 30, default 5
-    * @param {number} [recvWindow]
-    */
+   * Daily Account Snapshot (USER_DATA)
+   *
+   * GET /sapi/v1/accountSnapshot
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data}
+   *
+   * @param {string} type - "SPOT", "MARGIN", "FUTURES"
+   * @param {number} [startTime]
+   * @param {number} [endTime]
+   * @param {number} [limit] - min 5, max 30, default 5
+   * @param {number} [recvWindow]
+   */
   accountSnapshot (type, options = {}) {
     validateParameter(type, 'type')
 
@@ -63,14 +63,14 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Disable Fast Withdraw Switch (USER_DATA)
-    *
-    * GET /sapi/v1/account/disableFastWithdrawSwitch
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data}
-    *
-    * @param {number} [recvWindow]
-    */
+   * Disable Fast Withdraw Switch (USER_DATA)
+   *
+   * GET /sapi/v1/account/disableFastWithdrawSwitch
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data}
+   *
+   * @param {number} [recvWindow]
+   */
   disableFastWithdraw (options = {}) {
     return this.signRequest(
       'POST',
@@ -80,14 +80,14 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Enable Fast Withdraw Switch (USER_DATA)
-    *
-    * GET /sapi/v1/account/enableFastWithdrawSwitch
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data}
-    *
-    * @param {number} [recvWindow]
-    */
+   * Enable Fast Withdraw Switch (USER_DATA)
+   *
+   * GET /sapi/v1/account/enableFastWithdrawSwitch
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data}
+   *
+   * @param {number} [recvWindow]
+   */
   enableFastWithdraw (options = {}) {
     return this.signRequest(
       'POST',
@@ -97,23 +97,23 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Withdraw
-    *
-    * POST /sapi/v1/capital/withdraw/apply
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi}
-    *
-    * @param {string} coin
-    * @param {string} address
-    * @param {number} amount
-    * @param {string} [withdrawOrderId] - client id for withdraw
-    * @param {string} [network]
-    * @param {string} [addressTag] - Secondary address identifier for coins like XRP,XMR etc.
-    * @param {boolean} [transactionFeeFlag] - When making internal transfer, true for returning the fee to the destination account;
-    * <br>false for returning the fee back to the departure account. Default false.
-    * @param {string} [name] - Description of the address. Space in name should be encoded into %20.
-    * @param {number} [recvWindow]
-    */
+   * Withdraw
+   *
+   * POST /sapi/v1/capital/withdraw/apply
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi}
+   *
+   * @param {string} coin
+   * @param {string} address
+   * @param {number} amount
+   * @param {string} [withdrawOrderId] - client id for withdraw
+   * @param {string} [network]
+   * @param {string} [addressTag] - Secondary address identifier for coins like XRP,XMR etc.
+   * @param {boolean} [transactionFeeFlag] - When making internal transfer, true for returning the fee to the destination account;
+   * <br>false for returning the fee back to the departure account. Default false.
+   * @param {string} [name] - Description of the address. Space in name should be encoded into %20.
+   * @param {number} [recvWindow]
+   */
   withdraw (coin, address, amount, options = {}) {
     validateParameter(coin, 'coin')
     validateParameter(address, 'address')
@@ -131,20 +131,20 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Deposit History(supporting network) (USER_DATA
-    *
-    * GET /sapi/v1/capital/deposit/hisrec
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data}
-    *
-    * @param {string} [coin]
-    * @param {number} [status] - 0:pending, 6:credited but cannot withdraw, 1:success
-    * @param {number} [startTime] - Default: 90 days from current timestamp
-    * @param {number} [endTime] - Default: present timestamp
-    * @param {number} [offest]
-    * @param {number} [limit]
-    * @param {number} [recvWindow]
-    */
+   * Deposit History(supporting network) (USER_DATA
+   *
+   * GET /sapi/v1/capital/deposit/hisrec
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data}
+   *
+   * @param {string} [coin]
+   * @param {number} [status] - 0:pending, 6:credited but cannot withdraw, 1:success
+   * @param {number} [startTime] - Default: 90 days from current timestamp
+   * @param {number} [endTime] - Default: present timestamp
+   * @param {number} [offest]
+   * @param {number} [limit]
+   * @param {number} [recvWindow]
+   */
   depositHistory (options = {}) {
     return this.signRequest(
       'GET',
@@ -154,20 +154,20 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Withdraw History(supporting network) (USER_DATA)
-    *
-    * GET /sapi/v1/capital/withdraw/history
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data}
-    *
-    * @param {string} [coin]
-    * @param {number} [status] - 0:Email Sent 1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed
-    * @param {number} [startTime] - Default: 90 days from current timestamp
-    * @param {number} [endTime] - Default: present timestamp
-    * @param {number} [offest]
-    * @param {number} [limit]
-    * @param {number} [recvWindow]
-    */
+   * Withdraw History(supporting network) (USER_DATA)
+   *
+   * GET /sapi/v1/capital/withdraw/history
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data}
+   *
+   * @param {string} [coin]
+   * @param {number} [status] - 0:Email Sent 1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed
+   * @param {number} [startTime] - Default: 90 days from current timestamp
+   * @param {number} [endTime] - Default: present timestamp
+   * @param {number} [offest]
+   * @param {number} [limit]
+   * @param {number} [recvWindow]
+   */
   withdrawHistory (options = {}) {
     return this.signRequest(
       'GET',
@@ -177,16 +177,16 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Deposit Address (supporting network) (USER_DATA)
-    *
-    * GET /sapi/v1/capital/deposit/address
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data}
-    *
-    * @param {string} coin
-    * @param {string} [network]
-    * @param {number} [recvWindow]
-    */
+   * Deposit Address (supporting network) (USER_DATA)
+   *
+   * GET /sapi/v1/capital/deposit/address
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data}
+   *
+   * @param {string} coin
+   * @param {string} [network]
+   * @param {number} [recvWindow]
+   */
   depositAddress (coin, options = {}) {
     validateParameter(coin, 'coin')
 
@@ -200,17 +200,17 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Account Status (USER_DATA)
-    *
-    * GET /sapi/v1/account/status
-    *
-    * Fetch account status detail.
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data}
-    *
-    * @param {number} [recvWindow]
-    *
-    */
+   * Account Status (USER_DATA)
+   *
+   * GET /sapi/v1/account/status
+   *
+   * Fetch account status detail.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data}
+   *
+   * @param {number} [recvWindow]
+   *
+   */
   accountStatus (options = {}) {
     return this.signRequest(
       'GET',
@@ -220,16 +220,16 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Account API Trading Status (USER_DATA)
-    *
-    * GET /sapi/v1/account/apiTradingStatus
-    *
-    * Fetch account api trading status detail.
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data}
-    *
-    * @param {number} [recvWindow]
-    */
+   * Account API Trading Status (USER_DATA)
+   *
+   * GET /sapi/v1/account/apiTradingStatus
+   *
+   * Fetch account api trading status detail.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data}
+   *
+   * @param {number} [recvWindow]
+   */
   tradingStatus (options = {}) {
     return this.signRequest(
       'GET',
@@ -239,16 +239,16 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * DustLog (USER_DATA)
-    *
-    * GET /sapi/v1/asset/dribblet
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data}
-    *
-    * @param {number} [startTime]
-    * @param {number} [endTime]
-    * @param {number} [recvWindow]
-    */
+   * DustLog (USER_DATA)
+   *
+   * GET /sapi/v1/asset/dribblet
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data}
+   *
+   * @param {number} [startTime]
+   * @param {number} [endTime]
+   * @param {number} [recvWindow]
+   */
   dustLog (options = {}) {
     return this.signRequest(
       'GET',
@@ -258,18 +258,19 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Dust Transfer (USER_DATA)
-    *
-    * POST /sapi/v1/asset/dust
-    *
-    * Convert dust assets to BNB.
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data}
-    *
-    * @param {array} asset - The asset being converted. For example: asset=BTC&asset=USDT
-    * @param {number} [recvWindow]
-    */
+   * Dust Transfer (USER_DATA)
+   *
+   * POST /sapi/v1/asset/dust
+   *
+   * Convert dust assets to BNB.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data}
+   *
+   * @param {array} asset - The asset being converted. For example: asset=BTC&asset=USDT
+   * @param {number} [recvWindow]
+   */
   dustTransfer (asset, options = {}) {
+    validateParameter(asset, 'asset')
     return this.signRequest(
       'POST',
       '/sapi/v1/asset/dust',
@@ -280,20 +281,20 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Asset Dividend Record (USER_DATA)
-    *
-    * GET /sapi/v1/asset/assetDividend
-    *
-    * Query asset dividend record.
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data}
-    *
-    * @param {string} [asset]
-    * @param {number} [startTime]
-    * @param {number} [endTime]
-    * @param {number} [limit] - Default 20, max 500
-    * @param {number} [recvWindow]
-    */
+   * Asset Dividend Record (USER_DATA)
+   *
+   * GET /sapi/v1/asset/assetDividend
+   *
+   * Query asset dividend record.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data}
+   *
+   * @param {string} [asset]
+   * @param {number} [startTime]
+   * @param {number} [endTime]
+   * @param {number} [limit] - Default 20, max 500
+   * @param {number} [recvWindow]
+   */
   assetDevidendRecord (options = {}) {
     return this.signRequest(
       'GET',
@@ -303,18 +304,18 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Asset Detail (USER_DATA)
-    *
-    * GET /sapi/v1/asset/assetDetail
-    *
-    * Fetch details of assets supported on Binance.
-    * Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data}
-    *
-    * @param {string} [asset]
-    * @param {number} [recvWindow]
-    */
+   * Asset Detail (USER_DATA)
+   *
+   * GET /sapi/v1/asset/assetDetail
+   *
+   * Fetch details of assets supported on Binance.
+   * Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data}
+   *
+   * @param {string} [asset]
+   * @param {number} [recvWindow]
+   */
   assetDetail (options = {}) {
     return this.signRequest(
       'GET',
@@ -324,23 +325,75 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-    * Trade Fee (USER_DATA)
-    *
-    * GET /sapi/v1/asset/tradeFee
-    *
-    * Fetch trade fee
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data}
-    *
-    * @param {string} [symbol]
-    * @param {number} [recvWindow]
-    *
-    */
+   * Trade Fee (USER_DATA)
+   *
+   * GET /sapi/v1/asset/tradeFee
+   *
+   * Fetch trade fee
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data}
+   *
+   * @param {string} [symbol]
+   * @param {number} [recvWindow]
+   *
+   */
   tradeFee (options = {}) {
     return this.signRequest(
       'GET',
       '/sapi/v1/asset/tradeFee',
       options
+    )
+  }
+
+  /**
+   * User Universal Transfer
+   *
+   * POST /sapi/v1/asset/transfer
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#user-universal-transfer}
+   *
+   * @param {string} type
+   * @param {string} asset
+   * @param {number} amount
+   * @param {number} [recvWindow]
+   */
+  userUniversalTransfer (type, asset, amount, options = {}) {
+    validateParameter(type, 'type')
+    validateParameter(asset, 'asset')
+    validateParameter(amount, 'amount')
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/asset/transfer',
+      Object.assign(options, {
+        type,
+        asset,
+        amount
+      })
+    )
+  }
+
+  /**
+   * Query User Universal Transfer History
+   *
+   * GET /sapi/v1/asset/transfer
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-user-universal-transfer-history}
+   *
+   * @param {string} type
+   * @param {number} [startTime]
+   * @param {number} [endTime]
+   * @param {number} [current]
+   * @param {number} [size]
+   * @param {number} [recvWindow]
+   */
+  userUniversalTransferHistory (type, options = {}) {
+    validateParameter(type, 'type')
+
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/asset/transfer',
+      Object.assign(options, { type })
     )
   }
 }

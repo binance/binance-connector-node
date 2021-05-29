@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#marginAccount', () => {
-  it('should return margin account details', async () => {
+  it('should return margin account details', () => {
     nockMock('/sapi/v1/margin/account')(responseMockData)
 
     return SpotClient.marginAccount().then(response => {

@@ -13,26 +13,26 @@ const quoteQty = 1
 
 describe('#bswapRequestQuote', () => {
   describe('throw MissingParameterError', () => {
-    it('missing quoteAsset', async () => {
+    it('missing quoteAsset', () => {
       expect(() => {
         SpotClient.bswapSwap('', baseAsset, quoteQty)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing baseAsset', async () => {
+    it('missing baseAsset', () => {
       expect(() => {
         SpotClient.bswapSwap(quoteAsset, '', quoteQty)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing quoteQty', async () => {
+    it('missing quoteQty', () => {
       expect(() => {
         SpotClient.bswapSwap(quoteAsset, baseAsset, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should request a quote', async () => {
+  it('should request a quote', () => {
     const parameters = {
       quoteAsset,
       baseAsset,

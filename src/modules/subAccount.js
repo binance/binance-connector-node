@@ -68,9 +68,7 @@ const SubAccount = superclass => class extends superclass {
     return this.signRequest(
       'GET',
       '/sapi/v3/sub-account/assets',
-      Object.assign(options, {
-        email
-      })
+      Object.assign(options, { email })
     )
   }
 
@@ -122,9 +120,7 @@ const SubAccount = superclass => class extends superclass {
     return this.signRequest(
       'GET',
       '/sapi/v1/capital/deposit/subHisrec',
-      Object.assign(options, {
-        email
-      })
+      Object.assign(options, { email })
     )
   }
 
@@ -513,6 +509,46 @@ const SubAccount = superclass => class extends superclass {
       'GET',
       '/sapi/v1/sub-account/spotSummary',
       options
+    )
+  }
+
+  /**
+   * Create a Virtual Sub-account(For Master Account)
+   *
+   * POST /sapi/v1/sub-account/virtualSubAccount
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account}
+   *
+   * @param {string} subAccountString
+   * @param {number} [recvWindow]
+   */
+  subAccountCreation (subAccountString, options = {}) {
+    validateParameter(subAccountString, 'subAccountString')
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/sub-account/virtualSubAccount',
+      Object.assign(options, { subAccountString })
+    )
+  }
+
+  /**
+   * Enable Leverage Token for Sub-account (For Master Account)
+   *
+   * POST /sapi/v1/sub-account/blvt/enable
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account}
+   *
+   * @param {string} email
+   * @param {boolean} enableBlvt
+   * @param {number} [recvWindow]
+   */
+  subAccountLeverageToken (email, enableBlvt, options = {}) {
+    validateParameter(email, 'email')
+    validateParameter(enableBlvt, 'enableBlvt')
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/sub-account/blvt/enable',
+      Object.assign(options, { email, enableBlvt })
     )
   }
 }

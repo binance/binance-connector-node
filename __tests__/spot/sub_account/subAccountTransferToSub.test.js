@@ -12,26 +12,26 @@ const {
 
 describe('#subAccountTransferToSub', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountTransferToSub('', asset, amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.subAccountTransferToSub(email, '', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.subAccountTransferToSub(email, asset, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should transfer to sub account', async () => {
+  it('should transfer to sub account', () => {
     const parameters = {
       toEmail: email,
       asset,

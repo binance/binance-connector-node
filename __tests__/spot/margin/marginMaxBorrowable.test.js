@@ -10,13 +10,13 @@ const {
 
 describe('#marginMaxBorrowable', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginMaxBorrowable('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return max borrowable funds', async () => {
+  it('should return max borrowable funds', () => {
     const parameters = {
       asset,
       recvWindow

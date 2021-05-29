@@ -6,7 +6,7 @@ const {
 } = require('../../testUtils/testSetup')
 
 describe('#getOpenOCOOrders', () => {
-  it('should return open oco order list', async () => {
+  it('should return open oco order list', () => {
     nockMock('/api/v3/openOrderList')(responseMockData)
 
     return SpotClient.getOpenOCOOrders().then(response => {

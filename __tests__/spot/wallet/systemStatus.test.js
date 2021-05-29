@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#systemStatus', () => {
-  it('should return system status', async () => {
+  it('should return system status', () => {
     nockMock('/sapi/v1/system/status')(responseMockData)
 
     return SpotClient.systemStatus().then(response => {

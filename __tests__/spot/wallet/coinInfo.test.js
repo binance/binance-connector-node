@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#coinInfo', () => {
-  it('should return coin information', async () => {
+  it('should return coin information', () => {
     nockMock('/sapi/v1/capital/config/getall')(responseMockData)
 
     return SpotClient.coinInfo().then(response => {

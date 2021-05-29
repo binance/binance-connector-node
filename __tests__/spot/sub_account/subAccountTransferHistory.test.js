@@ -7,7 +7,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountTransferHistory', () => {
-  it('should return sub account transfer history', async () => {
+  it('should return sub account transfer history', () => {
     const parameters = {
       toEmail: 'bob@test.com',
       recvWindow

@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#ticker24hr', () => {
-  it('should return 24hr price for all pairs', async () => {
+  it('should return 24hr price for all pairs', () => {
     nockMock('/api/v3/ticker/24hr')(responseMockData)
 
     return SpotClient.ticker24hr().then(response => {
@@ -11,7 +11,7 @@ describe('#ticker24hr', () => {
     })
   })
 
-  it('should return 24hr price', async () => {
+  it('should return 24hr price', () => {
     const symbol = 'BTCUSDT'
     nockMock(`/api/v3/ticker/24hr?symbol=${symbol}`)(responseMockData)
 

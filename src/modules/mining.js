@@ -100,7 +100,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/payment/list
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#revenue-list-user_data}
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#earnings-list-user_data}
    *
    * @param {string} algo
    * @param {string} userName
@@ -119,6 +119,140 @@ const Mining = superclass => class extends superclass {
       '/sapi/v1/mining/payment/list',
       Object.assign(options, {
         algo,
+        userName
+      })
+    )
+  }
+
+  /**
+   * Extra Bonus List (USER_DATA)
+   *
+   * GET /sapi/v1/mining/payment/other
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#extra-bonus-list-user_data}
+   *
+   * @param {string} algo
+   * @param {string} userName
+   * @param {string} [coin]
+   * @param {number} [startDate]
+   * @param {number} [endDate]
+   * @param {number} [pageIndex]
+   * @param {number} [pageSize]
+   * @param {number} [recvWindow]
+   */
+  miningBonusList (algo, userName, options = {}) {
+    validateParameter(algo, 'algo')
+    validateParameter(userName, 'userName')
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/mining/payment/other',
+      Object.assign(options, {
+        algo,
+        userName
+      })
+    )
+  }
+
+  /**
+   * Hashrate Resale List (USER_DATA)
+   *
+   * GET /sapi/v1/mining/hash-transfer/config/details/list
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-list-user_data}
+   *
+   * @param {number} [pageIndex]
+   * @param {number} [pageSize]
+   * @param {number} [recvWindow]
+   */
+  miningHashrateResaleList (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/mining/hash-transfer/config/details/list',
+      options
+    )
+  }
+
+  /**
+   * Hashrate Resale Detail (USER_DATA)
+   *
+   * GET /sapi/v1/mining/hash-transfer/profit/details
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-detail-user_data}
+   *
+   * @param {number} configId
+   * @param {string} userName
+   * @param {number} [recvWindow]
+   */
+  miningHashrateResaleDetail (configId, userName, options = {}) {
+    validateParameter(configId, 'configId')
+    validateParameter(userName, 'userName')
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/mining/hash-transfer/profit/details',
+      Object.assign(options, {
+        configId,
+        userName
+      })
+    )
+  }
+
+  /**
+   * Hashrate Resale Request (USER_DATA)
+   *
+   * POST /sapi/v1/mining/hash-transfer/config
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-request-user_data}
+   *
+   * @param {string} userName
+   * @param {string} algo
+   * @param {number} startDate
+   * @param {number} endDate
+   * @param {string} toPoolUser
+   * @param {number} hashRate
+   * @param {number} [recvWindow]
+   */
+  miningHashrateResaleRequest (userName, algo, startDate, endDate,
+    toPoolUser, hashRate, options = {}) {
+    validateParameter(userName, 'userName')
+    validateParameter(algo, 'algo')
+    validateParameter(startDate, 'startDate')
+    validateParameter(endDate, 'endDate')
+    validateParameter(toPoolUser, 'toPoolUser')
+    validateParameter(hashRate, 'hashRate')
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/mining/hash-transfer/config',
+      Object.assign(options, {
+        userName,
+        algo,
+        startDate,
+        endDate,
+        toPoolUser,
+        hashRate
+      })
+    )
+  }
+
+  /**
+   * Hashrate Resale Detail (USER_DATA)
+   *
+   * POST /sapi/v1/mining/hash-transfer/config/cancel
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-hashrate-resale-configuration-user_data}
+   *
+   * @param {number} configId
+   * @param {string} userName
+   * @param {number} [recvWindow]
+   */
+  miningHashrateResaleCancel (configId, userName, options = {}) {
+    validateParameter(configId, 'configId')
+    validateParameter(userName, 'userName')
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/mining/hash-transfer/config/cancel',
+      Object.assign(options, {
+        configId,
         userName
       })
     )

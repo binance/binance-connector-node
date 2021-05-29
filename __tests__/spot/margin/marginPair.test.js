@@ -9,13 +9,13 @@ const {
 
 describe('#marginPair', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.marginPair('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should pair details', async () => {
+  it('should pair details', () => {
     const parameters = {
       symbol
     }

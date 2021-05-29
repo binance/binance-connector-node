@@ -10,14 +10,14 @@ const {
 
 describe('#subAccountMarginAccount', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountMarginAccount('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should enable sub account margin', async () => {
+  it('should enable sub account margin', () => {
     const parameters = {
       email,
       recvWindow

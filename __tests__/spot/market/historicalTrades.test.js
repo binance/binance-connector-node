@@ -4,14 +4,14 @@ const { nockMock, responseMockData, SpotClient } = require('../../testUtils/test
 
 describe('#historicalTrades', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.historicalTrades()
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return historical trades', async () => {
+  it('should return historical trades', () => {
     const symbol = 'BTCUSDT'
     nockMock(`/api/v3/historicalTrades?symbol=${symbol}`)(responseMockData)
 

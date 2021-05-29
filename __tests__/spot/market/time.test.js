@@ -3,7 +3,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#time', () => {
-  it('should return server time', async () => {
+  it('should return server time', () => {
     nockMock('/api/v3/time')(responseMockData)
 
     return SpotClient.time().then(response => {

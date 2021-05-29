@@ -9,13 +9,13 @@ const {
 
 describe('#marginPairIndex', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.marginPairIndex('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return pair index', async () => {
+  it('should return pair index', () => {
     const parameters = {
       symbol
     }

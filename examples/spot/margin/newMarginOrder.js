@@ -8,8 +8,8 @@ client.newMarginOrder(
   'BNBUSDT', // symbol
   'BUY',
   'LIMIT',
-  1,
   {
+    quantity: 1,
     price: '10',
     newClientOrderId: 'my_order',
     newOrderRespType: 'FULL',

@@ -10,14 +10,14 @@ const {
 
 describe('#marginLoanRecord', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginLoanRecord('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return margin loan record', async () => {
+  it('should return margin loan record', () => {
     const parameters = {
       txId: 10,
       recvWindow

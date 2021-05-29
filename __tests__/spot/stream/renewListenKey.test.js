@@ -2,7 +2,7 @@
 const { nockPutMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#renewListenKey', () => {
-  it('should renew listen key', async () => {
+  it('should renew listen key', () => {
     nockPutMock('/api/v3/userDataStream?listenKey=aaa')(responseMockData)
 
     return SpotClient.renewListenKey('aaa').then(response => {

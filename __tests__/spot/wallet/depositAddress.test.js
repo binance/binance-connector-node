@@ -10,14 +10,14 @@ const {
 
 describe('#depositAddress', () => {
   describe('throw MissingParameterError', () => {
-    it('missing coin', async () => {
+    it('missing coin', () => {
       expect(() => {
         SpotClient.depositAddress('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return coin deposit address', async () => {
+  it('should return coin deposit address', () => {
     const parameters = {
       network: 'BNB',
       recvWindow

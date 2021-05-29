@@ -10,13 +10,13 @@ const {
 
 describe('#marginMaxTransferable', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginMaxTransferable('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return max transfer amount', async () => {
+  it('should return max transfer amount', () => {
     const parameters = {
       asset,
       recvWindow
