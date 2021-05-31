@@ -8,11 +8,11 @@ const { validateParameter } = require('../helpers/validation')
  */
 const Market = superclass => class extends superclass {
   /**
-   * Test Connectivity
+   * Test Connectivity<br>
    *
-   * GET /api/v3/ping
+   * GET /api/v3/ping<br>
    *
-   * Test connectivity to the Rest API.
+   * Test connectivity to the Rest API.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#test-connectivity}
    */
   ping (options = {}) {
@@ -20,11 +20,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Check Server Time
+   * Check Server Time<br>
    *
-   * GET /api/v3/time
+   * GET /api/v3/time<br>
    *
-   * Test connectivity to the Rest API and get the current server time.
+   * Test connectivity to the Rest API and get the current server time.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#check-server-time}
    *
    */
@@ -33,11 +33,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Exchange Information
+   * Exchange Information<br>
    *
-   * GET /api/v3/exchangeInfo
+   * GET /api/v3/exchangeInfo<br>
    *
-   * Current exchange trading rules and symbol information
+   * Current exchange trading rules and symbol information<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#exchange-information}
    *
    * @param {string} [symbol] - symbol
@@ -59,14 +59,15 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Order Book
+   * Order Book<br>
    *
-   * GET /api/v3/depth
+   * GET /api/v3/depth<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#order-book}
    *
    * @param {string} symbol
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 100; max 5000.
+   *    Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000]
    */
   depth (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -81,15 +82,15 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Recent Trades List
+   * Recent Trades List<br>
    *
-   * GET /api/v3/trades
+   * GET /api/v3/trades<br>
    *
-   * Get recent trades.
+   * Get recent trades.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list}
    *
    * @param {string} symbol
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 500; max 1000.
    */
   trades (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -104,16 +105,16 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Old Trade Lookup
+   * Old Trade Lookup<br>
    *
-   * GET /api/v3/historicalTrades
+   * GET /api/v3/historicalTrades<br>
    *
-   * Get older market trades.
+   * Get older market trades.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup}
    *
    * @param {string} symbol
-   * @param {number} [limit]
-   * @param {number} [fromId]
+   * @param {number} [limit] - Default 500; max 1000.
+   * @param {number} [fromId] - Trade id to fetch from. Default gets most recent trades.
    */
   historicalTrades (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -128,17 +129,17 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Compressed/Aggregate Trades List
+   * Compressed/Aggregate Trades List<br>
    *
-   * GET /api/v3/aggTrades
+   * GET /api/v3/aggTrades<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#compressed-aggregate-trades-list}
    *
    * @param {string} symbol
-   * @param {number} [fromId]
+   * @param {number} [fromId] - id to get aggregate trades from INCLUSIVE.
    * @param {number} [startTime]
    * @param {number} [endTime]
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 500; max 1000.
    */
   aggTrades (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -153,9 +154,9 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Kline/Candlestick Data
+   * Kline/Candlestick Data<br>
    *
-   * GET /api/v3/klines
+   * GET /api/v3/klines<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data}
    *
@@ -163,7 +164,7 @@ const Market = superclass => class extends superclass {
    * @param {string} interval
    * @param {number} [startTime]
    * @param {number} [endTime]
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 500; max 1000.
    */
   klines (symbol, interval, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -179,11 +180,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Current Average Price
+   * Current Average Price<br>
    *
-   * GET /api/v3/avgPrice
+   * GET /api/v3/avgPrice<br>
    *
-   * Current average price for a symbol.
+   * Current average price for a symbol.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#current-average-price}
    *
    * @param {string} symbol
@@ -198,9 +199,9 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * 24hr Ticker Price Change Statistics
+   * 24hr Ticker Price Change Statistics<br>
    *
-   * GET /api/v3/ticker/24hr
+   * GET /api/v3/ticker/24hr<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics}
    *
@@ -214,9 +215,9 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Symbol Price Ticker
+   * Symbol Price Ticker<br>
    *
-   * GET /api/v3/ticker/price
+   * GET /api/v3/ticker/price<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker}
    *
@@ -230,11 +231,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Symbol Order Book Ticker
+   * Symbol Order Book Ticker<br>
    *
-   * GET /api/v3/ticker/bookTicker
+   * GET /api/v3/ticker/bookTicker<br>
    *
-   * Best price/qty on the order book for a symbol or symbols.
+   * Best price/qty on the order book for a symbol or symbols.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-order-book-ticker}
    *
    * @param {string} [symbol]

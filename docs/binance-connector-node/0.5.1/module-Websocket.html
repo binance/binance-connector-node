@@ -201,13 +201,12 @@
 
 
 <div class="description">
-    Aggregate Trade Streams
+    Aggregate Trade Streams<br>
 
-The Aggregate Trade Streams push trade information that is aggregated for a single taker order.
-<br>
-Stream Name: <symbol>@aggTrade
-<br>
-Update Speed: Real-time
+The Aggregate Trade Streams push trade information that is aggregated for a single taker order.<br>
+
+Stream Name: &lt;symbol&gt;@aggTrade <br>
+Update Speed: Real-time<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#aggregate-trade-streams">https://binance-docs.github.io/apidocs/spot/en/#aggregate-trade-streams</a>
 </div>
@@ -302,7 +301,7 @@ Update Speed: Real-time
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line28">line 28</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -338,7 +337,7 @@ Update Speed: Real-time
     
 
     
-    <h4 class="name" id="bookTickerWS"><span class="type-signature"></span>bookTickerWS<span class="signature">(symbol)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bookTickerWS"><span class="type-signature"></span>bookTickerWS<span class="signature">(symbol<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -346,13 +345,12 @@ Update Speed: Real-time
 
 
 <div class="description">
-    Individual symbol or all symbols book ticker
+    Individual symbol or all symbols book ticker<br>
 
-Pushes any update to the best bid or ask's price or quantity in real-time.
-<br>
-Stream Name: <symbol>@bookTicker or !bookTicker
-<br>
-Update Speed: Real-time
+Pushes any update to the best bid or ask's price or quantity in real-time.<br>
+
+Stream Name: &lt;symbol&gt;@bookTicker or !bookTicker <br>
+Update Speed: Real-time<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-book-ticker-streams">https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-book-ticker-streams</a>
 <br>
@@ -380,6 +378,8 @@ Update Speed: Real-time
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
         <th>Default</th>
@@ -406,6 +406,16 @@ Update Speed: Real-time
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -457,7 +467,7 @@ Update Speed: Real-time
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line148">line 148</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -501,7 +511,7 @@ Update Speed: Real-time
 
 
 <div class="description">
-    Listen to User data stream
+    Listen to market streams<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams">https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams</a>
 </div>
@@ -596,7 +606,7 @@ Update Speed: Real-time
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line232">line 232</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line223">line 223</a>
     </li></ul></dd>
     
 
@@ -640,13 +650,12 @@ Update Speed: Real-time
 
 
 <div class="description">
-    Diff. Depth Stream
+    Diff. Depth Stream<br>
 
-Order book price and quantity depth updates used to locally manage an order book.
-<br>
-Stream Names: <symbol>@depth or <symbol>@depth@100ms
-<br>
-Update Speed: 1000ms or 100ms
+Order book price and quantity depth updates used to locally manage an order book.<br>
+
+Stream Names: &lt;symbol&gt;@depth or &lt;symbol&gt;@depth@100ms <br>
+Update Speed: 1000ms or 100ms<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#diff-depth-stream">https://binance-docs.github.io/apidocs/spot/en/#diff-depth-stream</a>
 </div>
@@ -764,7 +773,7 @@ Update Speed: 1000ms or 100ms
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line199">line 199</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line190">line 190</a>
     </li></ul></dd>
     
 
@@ -808,13 +817,12 @@ Update Speed: 1000ms or 100ms
 
 
 <div class="description">
-    Kline/Candlestick Streams
+    Kline/Candlestick Streams<br>
 
-The Kline/Candlestick Stream push updates to the current klines/candlestick every second.
-<br>
-Stream Name: <symbol>@kline_<interval>
-<br>
-Update Speed: 2000ms
+The Kline/Candlestick Stream push updates to the current klines/candlestick every second.<br>
+
+Stream Name: &lt;symbol&gt;@kline_&lt;interval&gt; <br>
+Update Speed: 2000ms <br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-streams">https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-streams</a>
 </div>
@@ -933,7 +941,7 @@ Update Speed: 2000ms
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line70">line 70</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -969,7 +977,7 @@ Update Speed: 2000ms
     
 
     
-    <h4 class="name" id="miniTickerWS"><span class="type-signature"></span>miniTickerWS<span class="signature">(symbol)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="miniTickerWS"><span class="type-signature"></span>miniTickerWS<span class="signature">(symbol<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -977,14 +985,13 @@ Update Speed: 2000ms
 
 
 <div class="description">
-    Individual symbol or all symbols mini ticker
+    Individual symbol or all symbols mini ticker<br>
 
-24hr rolling window mini-ticker statistics.
-These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs
-<br>
-Stream Name: <symbol>@miniTicker or !miniTicker@arr
-<br>
-Update Speed: 1000ms
+24hr rolling window mini-ticker statistics.<br>
+These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs<br>
+
+Stream Name: &lt;symbol&gt;@miniTicker or !miniTicker@arr <br>
+Update Speed: 1000ms <br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-mini-ticker-stream">https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-mini-ticker-stream</a>
 <br>
@@ -1012,6 +1019,8 @@ Update Speed: 1000ms
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
         <th>Default</th>
@@ -1038,6 +1047,16 @@ Update Speed: 1000ms
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1089,7 +1108,7 @@ Update Speed: 1000ms
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line95">line 95</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -1133,13 +1152,12 @@ Update Speed: 1000ms
 
 
 <div class="description">
-    Partial Book Depth Streams
+    Partial Book Depth Streams<br>
 
-Top bids and asks, Valid are 5, 10, or 20.
-<br>
-Stream Names: <symbol>@depth<levels> or <symbol>@depth<levels>@100ms.
-<br>
-Update Speed: 1000ms or 100ms
+Top bids and asks, Valid are 5, 10, or 20.<br>
+
+Stream Names: &lt;symbol&gt;@depth&lt;levels&gt; or &lt;symbol&gt;@depth&lt;levels&gt;@100ms. <br>
+Update Speed: 1000ms or 100ms<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#partial-book-depth-streams">https://binance-docs.github.io/apidocs/spot/en/#partial-book-depth-streams</a>
 </div>
@@ -1280,7 +1298,7 @@ Update Speed: 1000ms or 100ms
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line174">line 174</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line166">line 166</a>
     </li></ul></dd>
     
 
@@ -1316,7 +1334,7 @@ Update Speed: 1000ms or 100ms
     
 
     
-    <h4 class="name" id="tickerWS"><span class="type-signature"></span>tickerWS<span class="signature">(symbol)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="tickerWS"><span class="type-signature"></span>tickerWS<span class="signature">(symbol<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1324,15 +1342,13 @@ Update Speed: 1000ms or 100ms
 
 
 <div class="description">
-    Individual symbol or all symbols ticker
+    Individual symbol or all symbols ticker<br>
 
-24hr rollwing window ticker statistics for a single symbol.
-<br>
-These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
-<br>
-Stream Name: <symbol>@ticker or !ticker@arr
-<br>
-Update Speed: 1000ms
+24hr rollwing window ticker statistics for a single symbol.<br>
+These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.<br>
+
+Stream Name: &lt;symbol&gt;@ticker or !ticker@arr <br>
+Update Speed: 1000ms<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-ticker-streams">https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-ticker-streams</a>
 <br>
@@ -1360,6 +1376,8 @@ Update Speed: 1000ms
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
         <th>Default</th>
@@ -1386,6 +1404,16 @@ Update Speed: 1000ms
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -1437,7 +1465,7 @@ Update Speed: 1000ms
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line123">line 123</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -1481,13 +1509,12 @@ Update Speed: 1000ms
 
 
 <div class="description">
-    Trade Streams
+    Trade Streams<br>
 
-The Trade Streams push raw trade information; each trade has a unique buyer and seller.
-<br>
-Stream Name: <symbol>@trade
-<br>
-Update Speed: Real-time
+The Trade Streams push raw trade information; each trade has a unique buyer and seller.<br>
+
+Stream Name: &lt;symbol&gt;@trade <br>
+Update Speed: Real-time<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#trade-streams">https://binance-docs.github.io/apidocs/spot/en/#trade-streams</a>
 </div>
@@ -1582,7 +1609,7 @@ Update Speed: Real-time
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line48">line 48</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -1626,7 +1653,7 @@ Update Speed: Real-time
 
 
 <div class="description">
-    Listen to User data stream
+    Listen to User data stream<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#user-data-streams">https://binance-docs.github.io/apidocs/spot/en/#user-data-streams</a>
 </div>
@@ -1721,7 +1748,7 @@ Update Speed: Real-time
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line215">line 215</a>
+        <a href="websocket.js.html">websocket.js</a>, <a href="websocket.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -1773,7 +1800,7 @@ Update Speed: Real-time
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat May 29 2021 10:02:16 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
