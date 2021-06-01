@@ -4,13 +4,17 @@ const { appName } = require('./constants')
 
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
-  // remove falsy value (except for false and 0), empty object, empty array
-  Object.keys(obj).forEach(key =>
-    ((!obj[key] && obj[key] !== false && obj[key] !== 0) ||
-      (obj[key] instanceof Object && !Object.keys(obj[key]).length) ||
-      (Array.isArray(obj[key]) && !obj[key].length)) &&
-    delete obj[key])
+  Object.keys(obj).forEach(key => isEmptyValue(obj[key]) && delete obj[key])
   return obj
+}
+
+const isEmptyValue = input => {
+  // scope of empty value: falsy value (except for false and 0),
+  // string with white space characters only, empty object, empty array
+  return (!input && input !== false && input !== 0) ||
+    ((typeof input === 'string' || input instanceof String) && /^\s+$/.test(input)) ||
+    (input instanceof Object && !Object.keys(input).length) ||
+    (Array.isArray(input) && !input.length)
 }
 
 const buildQueryString = params => {
@@ -57,6 +61,7 @@ const flowRight = (...functions) => input => functions.reduceRight(
 const defaultLogger = bunyan.createLogger({ name: appName })
 
 module.exports = {
+  isEmptyValue,
   removeEmptyValue,
   buildQueryString,
   createRequest,

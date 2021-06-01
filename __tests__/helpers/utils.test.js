@@ -1,6 +1,20 @@
 /* global describe, it, expect, */
 
-const { removeEmptyValue, buildQueryString, flowRight } = require('../../src/helpers/utils')
+const { isEmptyValue, removeEmptyValue, buildQueryString, flowRight } = require('../../src/helpers/utils')
+
+describe('#isEmptyValue', () => {
+  it.each([
+    [0], [1], [{ key: 'value' }], [[1, 2, 3]], ['string'], [true], [false]
+  ])('should return false when it is not an empty value', input => {
+    expect(isEmptyValue(input)).toBe(false)
+  })
+
+  it.each([
+    [undefined], [NaN], [''], ['  '], ['\t'], ['\n'], ['\r'], [{}], [[]]
+  ])('should return true when it is an empty or invalid value', input => {
+    expect(isEmptyValue(input)).toBe(true)
+  })
+})
 
 describe('#removeEmptyValue', () => {
   it('should be same without empty value', () => {
