@@ -201,9 +201,9 @@
 
 
 <div class="description">
-    Get liquidity information of a pool (USER_DATA)
+    Get liquidity information of a pool (USER_DATA)<br>
 
-GET /sapi/v1/bswap/liquidity
+GET /sapi/v1/bswap/liquidity<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data">https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data</a>
 </div>
@@ -302,7 +302,7 @@ GET /sapi/v1/bswap/liquidity
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The value cannot be greater than 60000</td>
         </tr>
 
     
@@ -387,9 +387,9 @@ GET /sapi/v1/bswap/liquidity
 
 
 <div class="description">
-    Add Liquidity (TRADE)
+    Add Liquidity (TRADE)<br>
 
-POST /sapi/v1/bswap/liquidityAdd
+POST /sapi/v1/bswap/liquidityAdd<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade">https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade</a>
 </div>
@@ -548,7 +548,7 @@ POST /sapi/v1/bswap/liquidityAdd
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The value cannot be greater than 60000</td>
         </tr>
 
     
@@ -633,9 +633,9 @@ POST /sapi/v1/bswap/liquidityAdd
 
 
 <div class="description">
-    Get Liquidity Operation Record (USER_DATA)
+    Get Liquidity Operation Record (USER_DATA)<br>
 
-GET /sapi/v1/bswap/liquidityOps
+GET /sapi/v1/bswap/liquidityOps<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data">https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data</a>
 </div>
@@ -866,7 +866,7 @@ GET /sapi/v1/bswap/liquidityOps
 
             
 
-            <td class="description last"></td>
+            <td class="description last">default 3, max 100</td>
         </tr>
 
     
@@ -899,7 +899,7 @@ GET /sapi/v1/bswap/liquidityOps
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The value cannot be greater than 60000</td>
         </tr>
 
     
@@ -984,9 +984,9 @@ GET /sapi/v1/bswap/liquidityOps
 
 
 <div class="description">
-    Remove Liquidity (TRADE)
+    Remove Liquidity (TRADE)<br>
 
-POST /sapi/v1/bswap/liquidityRemove
+POST /sapi/v1/bswap/liquidityRemove<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade">https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade</a>
 </div>
@@ -1176,7 +1176,7 @@ POST /sapi/v1/bswap/liquidityRemove
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The value cannot be greater than 60000</td>
         </tr>
 
     
@@ -1261,11 +1261,11 @@ POST /sapi/v1/bswap/liquidityRemove
 
 
 <div class="description">
-    List All Swap Pools (MARKET_DATA)
+    List All Swap Pools (MARKET_DATA)<br>
 
-Get metadata about all swap pools.
+GET /sapi/v1/bswap/pools<br>
 
-GET /sapi/v1/bswap/pools
+Get metadata about all swap pools.<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data">https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data</a>
 </div>
@@ -1355,13 +1355,15 @@ GET /sapi/v1/bswap/pools
 
 
 <div class="description">
-    Request Quote (USER_DATA)
+    Request Quote (USER_DATA)<br>
 
-Request a quote for swap quote asset (selling asset) for base asset (buying asset), essentially price/exchange rates.
-quoteQty is quantity of quote asset (to sell).
-Please be noted the quote is for reference only, the actual price will change as the liquidity changes, it's recommended to swap immediate after request a quote for slippage prevention.
+Request a quote for swap quote asset (selling asset) for base asset (buying asset),
+essentially price/exchange rates. quoteQty is quantity of quote asset (to sell).<br>
+Please be noted the quote is for reference only, the actual price will change
+as the liquidity changes, it's recommended to swap immediate after request a quote
+for slippage prevention.<br>
 
-GET /sapi/v1/bswap/quote
+GET /sapi/v1/bswap/quote<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data">https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data</a>
 </div>
@@ -1520,7 +1522,7 @@ GET /sapi/v1/bswap/quote
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The value cannot be greater than 60000</td>
         </tr>
 
     
@@ -1561,7 +1563,7 @@ GET /sapi/v1/bswap/quote
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line142">line 142</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line144">line 144</a>
     </li></ul></dd>
     
 
@@ -1605,9 +1607,9 @@ GET /sapi/v1/bswap/quote
 
 
 <div class="description">
-    Swap (TRADE)
+    Swap (TRADE)<br>
 
-POST /sapi/v1/bswap/swap
+POST /sapi/v1/bswap/swap<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#swap-trade">https://binance-docs.github.io/apidocs/spot/en/#swap-trade</a>
 </div>
@@ -1766,7 +1768,7 @@ POST /sapi/v1/bswap/swap
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The value cannot be greater than 60000</td>
         </tr>
 
     
@@ -1807,7 +1809,7 @@ POST /sapi/v1/bswap/swap
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line170">line 170</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line172">line 172</a>
     </li></ul></dd>
     
 
@@ -1851,9 +1853,9 @@ POST /sapi/v1/bswap/swap
 
 
 <div class="description">
-    Get Swap History (USER_DATA)
+    Get Swap History (USER_DATA)<br>
 
-GET /sapi/v1/bswap/swap
+GET /sapi/v1/bswap/swap<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#swap-trade">https://binance-docs.github.io/apidocs/spot/en/#swap-trade</a>
 </div>
@@ -2018,7 +2020,7 @@ GET /sapi/v1/bswap/swap
 
             
 
-            <td class="description last"></td>
+            <td class="description last">0: pending for swap, 1: success, 2: failed</td>
         </tr>
 
     
@@ -2117,7 +2119,7 @@ GET /sapi/v1/bswap/swap
 
             
 
-            <td class="description last"></td>
+            <td class="description last">default 3, max 100</td>
         </tr>
 
     
@@ -2150,7 +2152,7 @@ GET /sapi/v1/bswap/swap
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The value cannot be greater than 60000</td>
         </tr>
 
     
@@ -2191,7 +2193,7 @@ GET /sapi/v1/bswap/swap
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line202">line 202</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line204">line 204</a>
     </li></ul></dd>
     
 
@@ -2243,7 +2245,7 @@ GET /sapi/v1/bswap/swap
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat May 29 2021 10:02:16 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

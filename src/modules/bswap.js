@@ -7,11 +7,11 @@ const { validateParameter } = require('../helpers/validation')
  */
 const Bswap = superclass => class extends superclass {
   /**
-   * List All Swap Pools (MARKET_DATA)
+   * List All Swap Pools (MARKET_DATA)<br>
    *
-   * Get metadata about all swap pools.
+   * GET /sapi/v1/bswap/pools<br>
    *
-   * GET /sapi/v1/bswap/pools
+   * Get metadata about all swap pools.<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data}
    */
@@ -24,14 +24,14 @@ const Bswap = superclass => class extends superclass {
   }
 
   /**
-   * Get liquidity information of a pool (USER_DATA)
+   * Get liquidity information of a pool (USER_DATA)<br>
    *
-   * GET /sapi/v1/bswap/liquidity
+   * GET /sapi/v1/bswap/liquidity<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data}
    *
    * @param {number} [poolId]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidity (options = {}) {
     return this.signRequest(
@@ -42,16 +42,16 @@ const Bswap = superclass => class extends superclass {
   }
 
   /**
-   * Add Liquidity (TRADE)
+   * Add Liquidity (TRADE)<br>
    *
-   * POST /sapi/v1/bswap/liquidityAdd
+   * POST /sapi/v1/bswap/liquidityAdd<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade}
    *
    * @param {number} poolId
    * @param {string} asset
    * @param {number} quantity
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityAdd (poolId, asset, quantity, options = {}) {
     validateParameter(poolId, 'poolId')
@@ -70,9 +70,9 @@ const Bswap = superclass => class extends superclass {
   }
 
   /**
-   * Remove Liquidity (TRADE)
+   * Remove Liquidity (TRADE)<br>
    *
-   * POST /sapi/v1/bswap/liquidityRemove
+   * POST /sapi/v1/bswap/liquidityRemove<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade}
    *
@@ -80,7 +80,7 @@ const Bswap = superclass => class extends superclass {
    * @param {string} type -`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal
    * @param {string} asset
    * @param {number} shareAmount
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityRemove (poolId, type, asset, shareAmount, options = {}) {
     validateParameter(poolId, 'poolId')
@@ -101,9 +101,9 @@ const Bswap = superclass => class extends superclass {
   }
 
   /**
-   * Get Liquidity Operation Record (USER_DATA)
+   * Get Liquidity Operation Record (USER_DATA)<br>
    *
-   * GET /sapi/v1/bswap/liquidityOps
+   * GET /sapi/v1/bswap/liquidityOps<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data}
    *
@@ -112,8 +112,8 @@ const Bswap = superclass => class extends superclass {
    * @param {string} [operation] -`ADD` or `REMOVE`
    * @param {number} [startTime]
    * @param {number} [endTime]
-   * @param {number} [limit]
-   * @param {number} [recvWindow]
+   * @param {number} [limit] - default 3, max 100
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityOperationRecord (options = {}) {
     return this.signRequest(
@@ -124,20 +124,22 @@ const Bswap = superclass => class extends superclass {
   }
 
   /**
-   * Request Quote (USER_DATA)
+   * Request Quote (USER_DATA)<br>
    *
-   * Request a quote for swap quote asset (selling asset) for base asset (buying asset), essentially price/exchange rates.
-   * quoteQty is quantity of quote asset (to sell).
-   * Please be noted the quote is for reference only, the actual price will change as the liquidity changes, it's recommended to swap immediate after request a quote for slippage prevention.
+   * Request a quote for swap quote asset (selling asset) for base asset (buying asset),
+   * essentially price/exchange rates. quoteQty is quantity of quote asset (to sell).<br>
+   * Please be noted the quote is for reference only, the actual price will change
+   * as the liquidity changes, it's recommended to swap immediate after request a quote
+   * for slippage prevention.<br>
    *
-   * GET /sapi/v1/bswap/quote
+   * GET /sapi/v1/bswap/quote<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data}
    *
    * @param {string} quoteAsset
    * @param {string} baseAsset
    * @param {number} quoteQty
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapRequestQuote (quoteAsset, baseAsset, quoteQty, options = {}) {
     validateParameter(quoteAsset, 'quoteAsset')
@@ -156,16 +158,16 @@ const Bswap = superclass => class extends superclass {
   }
 
   /**
-   * Swap (TRADE)
+   * Swap (TRADE)<br>
    *
-   * POST /sapi/v1/bswap/swap
+   * POST /sapi/v1/bswap/swap<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#swap-trade}
    *
    * @param {string} quoteAsset
    * @param {string} baseAsset
    * @param {number} quoteQty
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapSwap (quoteAsset, baseAsset, quoteQty, options = {}) {
     validateParameter(quoteAsset, 'quoteAsset')
@@ -184,20 +186,20 @@ const Bswap = superclass => class extends superclass {
   }
 
   /**
-   * Get Swap History (USER_DATA)
+   * Get Swap History (USER_DATA)<br>
    *
-   * GET /sapi/v1/bswap/swap
+   * GET /sapi/v1/bswap/swap<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#swap-trade}
    *
    * @param {string} [swapId]
    * @param {number} [startTime]
    * @param {number} [endTime]
-   * @param {number} [status]
+   * @param {number} [status] - 0: pending for swap, 1: success, 2: failed
    * @param {string} [baseAsset]
    * @param {string} [quoteAsset]
-   * @param {number} [limit]
-   * @param {number} [recvWindow]
+   * @param {number} [limit] - default 3, max 100
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapSwapHistory (options = {}) {
     return this.signRequest(

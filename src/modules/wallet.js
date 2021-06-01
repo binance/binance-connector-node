@@ -7,9 +7,9 @@ const { validateParameter } = require('../helpers/validation')
  */
 const Wallet = superclass => class extends superclass {
   /**
-   * System Status (System)
+   * System Status (System)<br>
    *
-   * GET /sapi/v1/system/status
+   * GET /sapi/v1/system/status<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system}
    */
@@ -18,15 +18,15 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * All Coins' Information (USER_DATA)
+   * All Coins' Information (USER_DATA)<br>
    *
-   * GET /sapi/v1/capital/config/getall
+   * GET /sapi/v1/capital/config/getall<br>
    *
-   * Get information of coins (available for deposit and withdraw) for user.
+   * Get information of coins (available for deposit and withdraw) for user.<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    *
    */
   coinInfo (options = {}) {
@@ -38,9 +38,9 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Daily Account Snapshot (USER_DATA)
+   * Daily Account Snapshot (USER_DATA)<br>
    *
-   * GET /sapi/v1/accountSnapshot
+   * GET /sapi/v1/accountSnapshot<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data}
    *
@@ -48,7 +48,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [startTime]
    * @param {number} [endTime]
    * @param {number} [limit] - min 5, max 30, default 5
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   accountSnapshot (type, options = {}) {
     validateParameter(type, 'type')
@@ -63,13 +63,13 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Disable Fast Withdraw Switch (USER_DATA)
+   * Disable Fast Withdraw Switch (USER_DATA)<br>
    *
-   * GET /sapi/v1/account/disableFastWithdrawSwitch
+   * GET /sapi/v1/account/disableFastWithdrawSwitch<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   disableFastWithdraw (options = {}) {
     return this.signRequest(
@@ -80,13 +80,13 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Enable Fast Withdraw Switch (USER_DATA)
+   * Enable Fast Withdraw Switch (USER_DATA)<br>
    *
-   * GET /sapi/v1/account/enableFastWithdrawSwitch
+   * GET /sapi/v1/account/enableFastWithdrawSwitch<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   enableFastWithdraw (options = {}) {
     return this.signRequest(
@@ -97,9 +97,9 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Withdraw
+   * Withdraw<br>
    *
-   * POST /sapi/v1/capital/withdraw/apply
+   * POST /sapi/v1/capital/withdraw/apply<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi}
    *
@@ -112,7 +112,7 @@ const Wallet = superclass => class extends superclass {
    * @param {boolean} [transactionFeeFlag] - When making internal transfer, true for returning the fee to the destination account;
    * <br>false for returning the fee back to the departure account. Default false.
    * @param {string} [name] - Description of the address. Space in name should be encoded into %20.
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   withdraw (coin, address, amount, options = {}) {
     validateParameter(coin, 'coin')
@@ -131,9 +131,9 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Deposit History(supporting network) (USER_DATA
+   * Deposit History(supporting network) (USER_DATA)<br>
    *
-   * GET /sapi/v1/capital/deposit/hisrec
+   * GET /sapi/v1/capital/deposit/hisrec<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data}
    *
@@ -143,7 +143,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [endTime] - Default: present timestamp
    * @param {number} [offest]
    * @param {number} [limit]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   depositHistory (options = {}) {
     return this.signRequest(
@@ -154,9 +154,9 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Withdraw History(supporting network) (USER_DATA)
+   * Withdraw History(supporting network) (USER_DATA)<br>
    *
-   * GET /sapi/v1/capital/withdraw/history
+   * GET /sapi/v1/capital/withdraw/history<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data}
    *
@@ -166,7 +166,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [endTime] - Default: present timestamp
    * @param {number} [offest]
    * @param {number} [limit]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   withdrawHistory (options = {}) {
     return this.signRequest(
@@ -177,15 +177,15 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Deposit Address (supporting network) (USER_DATA)
+   * Deposit Address (supporting network) (USER_DATA)<br>
    *
-   * GET /sapi/v1/capital/deposit/address
+   * GET /sapi/v1/capital/deposit/address<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data}
    *
    * @param {string} coin
    * @param {string} [network]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   depositAddress (coin, options = {}) {
     validateParameter(coin, 'coin')
@@ -200,15 +200,14 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Account Status (USER_DATA)
+   * Account Status (USER_DATA)<br>
    *
-   * GET /sapi/v1/account/status
+   * GET /sapi/v1/account/status<br>
    *
-   * Fetch account status detail.
-   *
+   * Fetch account status detail.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    *
    */
   accountStatus (options = {}) {
@@ -220,15 +219,14 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Account API Trading Status (USER_DATA)
+   * Account API Trading Status (USER_DATA)<br>
    *
-   * GET /sapi/v1/account/apiTradingStatus
+   * GET /sapi/v1/account/apiTradingStatus<br>
    *
-   * Fetch account api trading status detail.
-   *
+   * Fetch account api trading status detail.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   tradingStatus (options = {}) {
     return this.signRequest(
@@ -239,15 +237,15 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * DustLog (USER_DATA)
+   * DustLog (USER_DATA)<br>
    *
-   * GET /sapi/v1/asset/dribblet
+   * GET /sapi/v1/asset/dribblet<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data}
    *
    * @param {number} [startTime]
    * @param {number} [endTime]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   dustLog (options = {}) {
     return this.signRequest(
@@ -258,16 +256,15 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Dust Transfer (USER_DATA)
+   * Dust Transfer (USER_DATA)<br>
    *
-   * POST /sapi/v1/asset/dust
+   * POST /sapi/v1/asset/dust<br>
    *
-   * Convert dust assets to BNB.
-   *
+   * Convert dust assets to BNB.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data}
    *
    * @param {array} asset - The asset being converted. For example: asset=BTC&asset=USDT
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   dustTransfer (asset, options = {}) {
     validateParameter(asset, 'asset')
@@ -281,19 +278,18 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Asset Dividend Record (USER_DATA)
+   * Asset Dividend Record (USER_DATA)<br>
    *
-   * GET /sapi/v1/asset/assetDividend
+   * GET /sapi/v1/asset/assetDividend<br>
    *
-   * Query asset dividend record.
-   *
+   * Query asset dividend record.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data}
    *
    * @param {string} [asset]
    * @param {number} [startTime]
    * @param {number} [endTime]
    * @param {number} [limit] - Default 20, max 500
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   assetDevidendRecord (options = {}) {
     return this.signRequest(
@@ -304,17 +300,16 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Asset Detail (USER_DATA)
+   * Asset Detail (USER_DATA)<br>
    *
-   * GET /sapi/v1/asset/assetDetail
+   * GET /sapi/v1/asset/assetDetail<br>
    *
-   * Fetch details of assets supported on Binance.
-   * Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.
-   *
+   * Fetch details of assets supported on Binance.<br>
+   * Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data}
    *
    * @param {string} [asset]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   assetDetail (options = {}) {
     return this.signRequest(
@@ -325,16 +320,15 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Trade Fee (USER_DATA)
+   * Trade Fee (USER_DATA)<br>
    *
-   * GET /sapi/v1/asset/tradeFee
+   * GET /sapi/v1/asset/tradeFee<br>
    *
-   * Fetch trade fee
-   *
+   * Fetch trade fee<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data}
    *
    * @param {string} [symbol]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    *
    */
   tradeFee (options = {}) {
@@ -346,16 +340,16 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * User Universal Transfer
+   * User Universal Transfer<br>
    *
-   * POST /sapi/v1/asset/transfer
+   * POST /sapi/v1/asset/transfer<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#user-universal-transfer}
    *
    * @param {string} type
    * @param {string} asset
    * @param {number} amount
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   userUniversalTransfer (type, asset, amount, options = {}) {
     validateParameter(type, 'type')
@@ -374,9 +368,9 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Query User Universal Transfer History
+   * Query User Universal Transfer History<br>
    *
-   * GET /sapi/v1/asset/transfer
+   * GET /sapi/v1/asset/transfer<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-user-universal-transfer-history}
    *
@@ -385,7 +379,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [endTime]
    * @param {number} [current]
    * @param {number} [size]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   userUniversalTransferHistory (type, options = {}) {
     validateParameter(type, 'type')

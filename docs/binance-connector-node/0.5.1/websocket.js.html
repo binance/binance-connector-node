@@ -41,18 +41,17 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Aggregate Trade Streams
-    *
-    * The Aggregate Trade Streams push trade information that is aggregated for a single taker order.
-    * &lt;br>
-    * Stream Name: &lt;symbol>@aggTrade
-    * &lt;br>
-    * Update Speed: Real-time
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#aggregate-trade-streams}
-    *
-    * @param {string} symbol
-    */
+   * Aggregate Trade Streams&lt;br>
+   *
+   * The Aggregate Trade Streams push trade information that is aggregated for a single taker order.&lt;br>
+   *
+   * Stream Name: &amp;lt;symbol&amp;gt;@aggTrade &lt;br>
+   * Update Speed: Real-time&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#aggregate-trade-streams}
+   *
+   * @param {string} symbol
+   */
   aggTradeWS (symbol, callbacks) {
     validateParameter(symbol, 'symbol')
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@aggTrade`
@@ -61,18 +60,17 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Trade Streams
-    *
-    * The Trade Streams push raw trade information; each trade has a unique buyer and seller.
-    * &lt;br>
-    * Stream Name: &lt;symbol>@trade
-    * &lt;br>
-    * Update Speed: Real-time
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-streams}
-    *
-    * @param {string} symbol
-    */
+   * Trade Streams&lt;br>
+   *
+   * The Trade Streams push raw trade information; each trade has a unique buyer and seller.&lt;br>
+   *
+   * Stream Name: &amp;lt;symbol&amp;gt;@trade &lt;br>
+   * Update Speed: Real-time&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-streams}
+   *
+   * @param {string} symbol
+   */
   tradeWS (symbol, callbacks) {
     validateParameter(symbol, 'symbol')
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@trade`
@@ -81,20 +79,19 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Kline/Candlestick Streams
-    *
-    * The Kline/Candlestick Stream push updates to the current klines/candlestick every second.
-    * &lt;br>
-    * Stream Name: &lt;symbol>@kline_&lt;interval>
-    * &lt;br>
-    * Update Speed: 2000ms
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-streams}
-    *
-    * @param {string} symbol
-    * @param {string} interval - m -> minutes; h -> hours; d -> days; w -> weeks; M -> months:&lt;br>
-    *     1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
-    */
+   * Kline/Candlestick Streams&lt;br>
+   *
+   * The Kline/Candlestick Stream push updates to the current klines/candlestick every second.&lt;br>
+   *
+   * Stream Name: &amp;lt;symbol&amp;gt;@kline_&amp;lt;interval&amp;gt; &lt;br>
+   * Update Speed: 2000ms &lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-streams}
+   *
+   * @param {string} symbol
+   * @param {string} interval - m -> minutes; h -> hours; d -> days; w -> weeks; M -> months:&lt;br>
+   *     1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
+   */
   klineWS (symbol, interval, callbacks) {
     validateParameter(symbol, 'symbol')
     validateParameter(interval, 'interval')
@@ -105,21 +102,20 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Individual symbol or all symbols mini ticker
-    *
-    * 24hr rolling window mini-ticker statistics.
-    * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs
-    * &lt;br>
-    * Stream Name: &lt;symbol>@miniTicker or !miniTicker@arr
-    * &lt;br>
-    * Update Speed: 1000ms
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-mini-ticker-stream}
-    * &lt;br>
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-mini-tickers-stream}
-    *
-    * @param {string} symbol
-    */
+   * Individual symbol or all symbols mini ticker&lt;br>
+   *
+   * 24hr rolling window mini-ticker statistics.&lt;br>
+   * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs&lt;br>
+   *
+   * Stream Name: &amp;lt;symbol&amp;gt;@miniTicker or !miniTicker@arr &lt;br>
+   * Update Speed: 1000ms &lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-mini-ticker-stream}
+   * &lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-mini-tickers-stream}
+   *
+   * @param {string} [symbol]
+   */
   miniTickerWS (symbol = null, callbacks) {
     let path = '!miniTicker@arr'
     if (symbol !== null &amp;&amp; symbol !== '') {
@@ -131,23 +127,21 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Individual symbol or all symbols ticker
-    *
-    * 24hr rollwing window ticker statistics for a single symbol.
-    * &lt;br>
-    * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.
-    * &lt;br>
-    * Stream Name: &lt;symbol>@ticker or !ticker@arr
-    * &lt;br>
-    * Update Speed: 1000ms
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-ticker-streams}
-    * &lt;br>
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-tickers-stream}
-    *
-    * @param {string} symbol
-    *
-    */
+   * Individual symbol or all symbols ticker&lt;br>
+   *
+   * 24hr rollwing window ticker statistics for a single symbol.&lt;br>
+   * These are NOT the statistics of the UTC day, but a 24hr rolling window for the previous 24hrs.&lt;br>
+   *
+   * Stream Name: &amp;lt;symbol&amp;gt;@ticker or !ticker@arr &lt;br>
+   * Update Speed: 1000ms&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-ticker-streams}
+   * &lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-tickers-stream}
+   *
+   * @param {string} [symbol]
+   *
+   */
   tickerWS (symbol = null, callbacks) {
     let path = '!ticker@arr'
     if (symbol !== null &amp;&amp; symbol !== '') {
@@ -159,20 +153,19 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Individual symbol or all symbols book ticker
-    *
-    * Pushes any update to the best bid or ask's price or quantity in real-time.
-    * &lt;br>
-    * Stream Name: &lt;symbol>@bookTicker or !bookTicker
-    * &lt;br>
-    * Update Speed: Real-time
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-book-ticker-streams}
-    * &lt;br>
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#all-book-tickers-stream}
-    *
-    * @param {string} symbol
-    */
+   * Individual symbol or all symbols book ticker&lt;br>
+   *
+   * Pushes any update to the best bid or ask's price or quantity in real-time.&lt;br>
+   *
+   * Stream Name: &amp;lt;symbol&amp;gt;@bookTicker or !bookTicker &lt;br>
+   * Update Speed: Real-time&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-book-ticker-streams}
+   * &lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-book-tickers-stream}
+   *
+   * @param {string} [symbol]
+   */
   bookTickerWS (symbol = null, callbacks) {
     let path = '!bookTicker'
     if (symbol !== null &amp;&amp; symbol !== '') {
@@ -184,21 +177,20 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Partial Book Depth Streams
-    *
-    * Top bids and asks, Valid are 5, 10, or 20.
-    * &lt;br>
-    * Stream Names: &lt;symbol>@depth&lt;levels> or &lt;symbol>@depth&lt;levels>@100ms.
-    * &lt;br>
-    * Update Speed: 1000ms or 100ms
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#partial-book-depth-streams}
-    *
-    * @param {string} symbol
-    * @param {string} levels - 5, 10, or 20
-    * @param {string} speed - 1000ms or 100ms
-    *
-    */
+   * Partial Book Depth Streams&lt;br>
+   *
+   * Top bids and asks, Valid are 5, 10, or 20.&lt;br>
+   *
+   * Stream Names: &amp;lt;symbol&amp;gt;@depth&amp;lt;levels&amp;gt; or &amp;lt;symbol&amp;gt;@depth&amp;lt;levels&amp;gt;@100ms. &lt;br>
+   * Update Speed: 1000ms or 100ms&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#partial-book-depth-streams}
+   *
+   * @param {string} symbol
+   * @param {string} levels - 5, 10, or 20
+   * @param {string} speed - 1000ms or 100ms
+   *
+   */
   partialBookDepth (symbol, levels, speed, callbacks) {
     validateParameter(symbol, 'symbol')
     validateParameter(levels, 'levels')
@@ -210,20 +202,19 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Diff. Depth Stream
-    *
-    * Order book price and quantity depth updates used to locally manage an order book.
-    * &lt;br>
-    * Stream Names: &lt;symbol>@depth or &lt;symbol>@depth@100ms
-    * &lt;br>
-    * Update Speed: 1000ms or 100ms
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#diff-depth-stream}
-    *
-    * @param {string} symbol
-    * @param {string} speed - 1000ms or 100ms
-    *
-    */
+   * Diff. Depth Stream&lt;br>
+   *
+   * Order book price and quantity depth updates used to locally manage an order book.&lt;br>
+   *
+   * Stream Names: &amp;lt;symbol&amp;gt;@depth or &amp;lt;symbol&amp;gt;@depth@100ms &lt;br>
+   * Update Speed: 1000ms or 100ms&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#diff-depth-stream}
+   *
+   * @param {string} symbol
+   * @param {string} speed - 1000ms or 100ms
+   *
+   */
   diffBookDepth (symbol, speed, callbacks) {
     validateParameter(symbol, 'symbol')
     validateParameter(speed, 'speed')
@@ -234,12 +225,12 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Listen to User data stream
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#user-data-streams}
-    *
-    * @param {string} listenKey
-    */
+   * Listen to User data stream&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#user-data-streams}
+   *
+   * @param {string} listenKey
+   */
   userData (listenKey, callbacks) {
     validateParameter(listenKey, 'listenKey')
 
@@ -249,14 +240,14 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
-    * Listen to User data stream
-    *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams}
-    *
-    * @param {array} streams
-    *
-    * e.g. client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
-    */
+   * Listen to market streams&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#websocket-market-streams}
+   *
+   * @param {array} streams
+   *
+   * e.g. client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+   */
   combinedStreams (streams, callbacks) {
     if (!Array.isArray(streams)) {
       streams = [streams]
@@ -302,7 +293,7 @@ module.exports = Websocket
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sat May 29 2021 10:02:16 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
