@@ -4,5 +4,6 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.userUniversalTransferHistory('MAIN_MARGIN').then(response => console.log(response.data))
-  .catch(error => console.log(error))
+client.userUniversalTransferHistory('MAIN_MARGIN')
+  .then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

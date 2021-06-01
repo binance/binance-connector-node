@@ -8,5 +8,5 @@ client.newOrderTest('BNBUSDT', 'BUY', 'LIMIT', {
   price: '10',
   quantity: 1,
   timeInForce: 'GTC'
-}).then(response => console.log(response.data))
-  .catch(error => console.log(error))
+}).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

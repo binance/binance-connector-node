@@ -7,5 +7,5 @@ const email = 'sub.account@email.com'
 
 client.subAccountLeverageToken(
   email, true
-).then(response => console.log(response.data))
-  .catch(error => console.log(error))
+).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

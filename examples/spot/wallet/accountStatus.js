@@ -4,5 +4,6 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.accountStatus().then(response => console.log(response.data))
-  .catch(error => console.log(error))
+client.accountStatus()
+  .then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

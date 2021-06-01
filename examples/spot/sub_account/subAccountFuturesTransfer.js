@@ -9,5 +9,5 @@ client.subAccountFuturesTransfer(
   'USDT',
   '1', // amount
   1 // type
-).then(response => console.log(response.data))
-  .catch(error => console.log(error))
+).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

@@ -1,6 +1,5 @@
 const axios = require('axios')
-const bunyan = require('bunyan')
-const { appName } = require('./constants')
+const { Console } = require('console')
 
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
@@ -9,8 +8,10 @@ const removeEmptyValue = obj => {
 }
 
 const isEmptyValue = input => {
-  // scope of empty value: falsy value (except for false and 0),
-  // string with white space characters only, empty object, empty array
+  /**
+   * Scope of empty value: falsy value (except for false and 0),
+   * string with white space characters only, empty object, empty array
+   */
   return (!input && input !== false && input !== 0) ||
     ((typeof input === 'string' || input instanceof String) && /^\s+$/.test(input)) ||
     (input instanceof Object && !Object.keys(input).length) ||
@@ -58,7 +59,10 @@ const flowRight = (...functions) => input => functions.reduceRight(
   input
 )
 
-const defaultLogger = bunyan.createLogger({ name: appName })
+const defaultLogger = new Console({
+  stdout: process.stdout,
+  stderr: process.stderr
+})
 
 module.exports = {
   isEmptyValue,
