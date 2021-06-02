@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="accountSnapshot"><span class="type-signature"></span>accountSnapshot<span class="signature">(type, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="accountSnapshot"><span class="type-signature"></span>accountSnapshot<span class="signature">(type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -270,6 +270,60 @@ GET /sapi/v1/accountSnapshot<br>
             <td class="description last">"SPOT", "MARGIN", "FUTURES"</td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -406,6 +460,13 @@ GET /sapi/v1/accountSnapshot<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -440,7 +501,7 @@ GET /sapi/v1/accountSnapshot<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line53">line 53</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line55">line 55</a>
     </li></ul></dd>
     
 
@@ -476,7 +537,7 @@ GET /sapi/v1/accountSnapshot<br>
     
 
     
-    <h4 class="name" id="accountStatus"><span class="type-signature"></span>accountStatus<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="accountStatus"><span class="type-signature"></span>accountStatus<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -502,6 +563,60 @@ Fetch account status detail.<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -560,6 +675,13 @@ Fetch account status detail.<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -594,7 +716,7 @@ Fetch account status detail.<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line213">line 213</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line220">line 220</a>
     </li></ul></dd>
     
 
@@ -630,7 +752,7 @@ Fetch account status detail.<br>
     
 
     
-    <h4 class="name" id="assetDetail"><span class="type-signature"></span>assetDetail<span class="signature">(asset<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="assetDetail"><span class="type-signature"></span>assetDetail<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -657,6 +779,60 @@ Please get network and other deposit or withdraw details from GET /sapi/v1/capit
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -748,6 +924,13 @@ Please get network and other deposit or withdraw details from GET /sapi/v1/capit
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -782,7 +965,7 @@ Please get network and other deposit or withdraw details from GET /sapi/v1/capit
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line314">line 314</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line326">line 326</a>
     </li></ul></dd>
     
 
@@ -818,7 +1001,7 @@ Please get network and other deposit or withdraw details from GET /sapi/v1/capit
     
 
     
-    <h4 class="name" id="assetDevidendRecord"><span class="type-signature"></span>assetDevidendRecord<span class="signature">(asset<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="assetDevidendRecord"><span class="type-signature"></span>assetDevidendRecord<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -844,6 +1027,60 @@ Query asset dividend record.<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1034,6 +1271,13 @@ Query asset dividend record.<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1068,7 +1312,7 @@ Query asset dividend record.<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line294">line 294</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line305">line 305</a>
     </li></ul></dd>
     
 
@@ -1104,7 +1348,7 @@ Query asset dividend record.<br>
     
 
     
-    <h4 class="name" id="coinInfo"><span class="type-signature"></span>coinInfo<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="coinInfo"><span class="type-signature"></span>coinInfo<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1131,6 +1375,60 @@ Get information of coins (available for deposit and withdraw) for user.<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1189,6 +1487,13 @@ Get information of coins (available for deposit and withdraw) for user.<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1223,7 +1528,7 @@ Get information of coins (available for deposit and withdraw) for user.<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line32">line 32</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -1259,7 +1564,7 @@ Get information of coins (available for deposit and withdraw) for user.<br>
     
 
     
-    <h4 class="name" id="depositAddress"><span class="type-signature"></span>depositAddress<span class="signature">(coin, network<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="depositAddress"><span class="type-signature"></span>depositAddress<span class="signature">(coin, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1340,6 +1645,60 @@ GET /sapi/v1/capital/deposit/address<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>network</code></td>
             
 
@@ -1406,6 +1765,13 @@ GET /sapi/v1/capital/deposit/address<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1440,7 +1806,7 @@ GET /sapi/v1/capital/deposit/address<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line190">line 190</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line196">line 196</a>
     </li></ul></dd>
     
 
@@ -1476,7 +1842,7 @@ GET /sapi/v1/capital/deposit/address<br>
     
 
     
-    <h4 class="name" id="depositHistory"><span class="type-signature"></span>depositHistory<span class="signature">(coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, offest<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="depositHistory"><span class="type-signature"></span>depositHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1501,6 +1867,60 @@ GET /sapi/v1/capital/deposit/hisrec<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1757,6 +2177,13 @@ GET /sapi/v1/capital/deposit/hisrec<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1791,7 +2218,7 @@ GET /sapi/v1/capital/deposit/hisrec<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line148">line 148</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line152">line 152</a>
     </li></ul></dd>
     
 
@@ -1827,7 +2254,7 @@ GET /sapi/v1/capital/deposit/hisrec<br>
     
 
     
-    <h4 class="name" id="disableFastWithdraw"><span class="type-signature"></span>disableFastWithdraw<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="disableFastWithdraw"><span class="type-signature"></span>disableFastWithdraw<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1852,6 +2279,60 @@ GET /sapi/v1/account/disableFastWithdrawSwitch<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1910,6 +2391,13 @@ GET /sapi/v1/account/disableFastWithdrawSwitch<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1944,7 +2432,7 @@ GET /sapi/v1/account/disableFastWithdrawSwitch<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line74">line 74</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line77">line 77</a>
     </li></ul></dd>
     
 
@@ -1980,7 +2468,7 @@ GET /sapi/v1/account/disableFastWithdrawSwitch<br>
     
 
     
-    <h4 class="name" id="dustLog"><span class="type-signature"></span>dustLog<span class="signature">(startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="dustLog"><span class="type-signature"></span>dustLog<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2005,6 +2493,60 @@ GET /sapi/v1/asset/dribblet<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -2129,6 +2671,13 @@ GET /sapi/v1/asset/dribblet<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2163,7 +2712,7 @@ GET /sapi/v1/asset/dribblet<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line250">line 250</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line259">line 259</a>
     </li></ul></dd>
     
 
@@ -2199,7 +2748,7 @@ GET /sapi/v1/asset/dribblet<br>
     
 
     
-    <h4 class="name" id="dustTransfer"><span class="type-signature"></span>dustTransfer<span class="signature">(asset, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="dustTransfer"><span class="type-signature"></span>dustTransfer<span class="signature">(asset, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2281,13 +2830,13 @@ Convert dust assets to BNB.<br>
 
         <tr>
             
-                <td class="name"><code>recvWindow</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">object</span>
 
 
             
@@ -2307,108 +2856,9 @@ Convert dust assets to BNB.<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line269">line 269</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="enableFastWithdraw"><span class="type-signature"></span>enableFastWithdraw<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Enable Fast Withdraw Switch (USER_DATA)<br>
-
-GET /sapi/v1/account/enableFastWithdrawSwitch<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data">https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -2467,6 +2917,13 @@ GET /sapi/v1/account/enableFastWithdrawSwitch<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2501,7 +2958,221 @@ GET /sapi/v1/account/enableFastWithdrawSwitch<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line91">line 91</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line279">line 279</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="enableFastWithdraw"><span class="type-signature"></span>enableFastWithdraw<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Enable Fast Withdraw Switch (USER_DATA)<br>
+
+GET /sapi/v1/account/enableFastWithdrawSwitch<br>
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data">https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -2629,7 +3300,7 @@ GET /sapi/v1/system/status<br>
     
 
     
-    <h4 class="name" id="tradeFee"><span class="type-signature"></span>tradeFee<span class="signature">(symbol<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="tradeFee"><span class="type-signature"></span>tradeFee<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2655,6 +3326,60 @@ Fetch trade fee<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -2746,6 +3471,13 @@ Fetch trade fee<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2780,7 +3512,7 @@ Fetch trade fee<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line334">line 334</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line347">line 347</a>
     </li></ul></dd>
     
 
@@ -2816,7 +3548,7 @@ Fetch trade fee<br>
     
 
     
-    <h4 class="name" id="tradingStatus"><span class="type-signature"></span>tradingStatus<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="tradingStatus"><span class="type-signature"></span>tradingStatus<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2842,6 +3574,60 @@ Fetch account api trading status detail.<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -2900,6 +3686,13 @@ Fetch account api trading status detail.<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2934,7 +3727,7 @@ Fetch account api trading status detail.<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line231">line 231</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line239">line 239</a>
     </li></ul></dd>
     
 
@@ -2970,7 +3763,7 @@ Fetch account api trading status detail.<br>
     
 
     
-    <h4 class="name" id="userUniversalTransfer"><span class="type-signature"></span>userUniversalTransfer<span class="signature">(type, asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="userUniversalTransfer"><span class="type-signature"></span>userUniversalTransfer<span class="signature">(type, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3113,6 +3906,60 @@ POST /sapi/v1/asset/transfer<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -3140,6 +3987,13 @@ POST /sapi/v1/asset/transfer<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -3180,7 +4034,7 @@ POST /sapi/v1/asset/transfer<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line354">line 354</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line368">line 368</a>
     </li></ul></dd>
     
 
@@ -3216,7 +4070,7 @@ POST /sapi/v1/asset/transfer<br>
     
 
     
-    <h4 class="name" id="userUniversalTransferHistory"><span class="type-signature"></span>userUniversalTransferHistory<span class="signature">(type, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, current<span class="signature-attributes">opt</span>, size<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="userUniversalTransferHistory"><span class="type-signature"></span>userUniversalTransferHistory<span class="signature">(type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3293,6 +4147,60 @@ GET /sapi/v1/asset/transfer<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -3462,6 +4370,13 @@ GET /sapi/v1/asset/transfer<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -3496,7 +4411,7 @@ GET /sapi/v1/asset/transfer<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line384">line 384</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line397">line 397</a>
     </li></ul></dd>
     
 
@@ -3532,7 +4447,7 @@ GET /sapi/v1/asset/transfer<br>
     
 
     
-    <h4 class="name" id="withdraw"><span class="type-signature"></span>withdraw<span class="signature">(coin, address, amount, withdrawOrderId<span class="signature-attributes">opt</span>, network<span class="signature-attributes">opt</span>, addressTag<span class="signature-attributes">opt</span>, transactionFeeFlag<span class="signature-attributes">opt</span>, name<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withdraw"><span class="type-signature"></span>withdraw<span class="signature">(coin, address, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3671,6 +4586,60 @@ POST /sapi/v1/capital/withdraw/apply<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -3874,6 +4843,13 @@ POST /sapi/v1/capital/withdraw/apply<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -3908,7 +4884,7 @@ POST /sapi/v1/capital/withdraw/apply<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line117">line 117</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line122">line 122</a>
     </li></ul></dd>
     
 
@@ -3944,7 +4920,7 @@ POST /sapi/v1/capital/withdraw/apply<br>
     
 
     
-    <h4 class="name" id="withdrawHistory"><span class="type-signature"></span>withdrawHistory<span class="signature">(coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, offest<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="withdrawHistory"><span class="type-signature"></span>withdrawHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3969,6 +4945,60 @@ GET /sapi/v1/capital/withdraw/history<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -4225,6 +5255,13 @@ GET /sapi/v1/capital/withdraw/history<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -4259,7 +5296,7 @@ GET /sapi/v1/capital/withdraw/history<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line171">line 171</a>
+        <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line176">line 176</a>
     </li></ul></dd>
     
 
@@ -4311,7 +5348,7 @@ GET /sapi/v1/capital/withdraw/history<br>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 20:34:22 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

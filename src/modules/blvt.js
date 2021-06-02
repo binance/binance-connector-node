@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API blvt endpoints
@@ -13,7 +13,8 @@ const Blvt = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-blvt-info-market_data}
    *
-   * @param {string} [tokenName]
+   * @param {object} [options]
+   * @param {string} [options.tokenName]
    */
   blvtInfo (options = {}) {
     return this.publicRequest(
@@ -32,11 +33,11 @@ const Blvt = superclass => class extends superclass {
    *
    * @param {string} tokenName
    * @param {number} cost
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   subscribeBlvt (tokenName, cost, options = {}) {
-    validateParameter(tokenName, 'tokenName')
-    validateParameter(cost, 'cost')
+    validateRequiredParameters({ tokenName, cost })
     return this.signRequest(
       'POST',
       '/sapi/v1/blvt/subscribe',
@@ -55,12 +56,13 @@ const Blvt = superclass => class extends superclass {
    * Only the data of the latest 90 days is available<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-subscription-record-user_data}
    *
-   * @param {string} [tokenName]
-   * @param {number} [id]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - default 1000, max 1000
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.tokenName]
+   * @param {number} [options.id]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - default 1000, max 1000
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    *
    */
   blvtSubscriptionRecord (options = {}) {
@@ -80,11 +82,11 @@ const Blvt = superclass => class extends superclass {
    *
    * @param {string} tokenName
    * @param {number} amount
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   redeemBlvt (tokenName, amount, options = {}) {
-    validateParameter(tokenName, 'tokenName')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ tokenName, amount })
     return this.signRequest(
       'POST',
       '/sapi/v1/blvt/redeem',
@@ -103,12 +105,13 @@ const Blvt = superclass => class extends superclass {
    * Only the data of the latest 90 days is available<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-redemption-record-user_data}
    *
-   * @param {string} [tokenName]
-   * @param {number} [id]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - default 1000, max 1000
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.tokenName]
+   * @param {number} [options.id]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - default 1000, max 1000
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   blvtRedemptionRecord (options = {}) {
     return this.signRequest(

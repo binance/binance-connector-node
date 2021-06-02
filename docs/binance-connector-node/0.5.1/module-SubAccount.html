@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="subAccountAssets"><span class="type-signature"></span>subAccountAssets<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountAssets"><span class="type-signature"></span>subAccountAssets<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -274,6 +274,60 @@ GET /sapi/v3/sub-account/assets<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -301,6 +355,13 @@ GET /sapi/v3/sub-account/assets<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -341,7 +402,7 @@ GET /sapi/v3/sub-account/assets<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line64">line 64</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -377,7 +438,7 @@ GET /sapi/v3/sub-account/assets<br>
     
 
     
-    <h4 class="name" id="subAccountCreation"><span class="type-signature"></span>subAccountCreation<span class="signature">(subAccountString, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountCreation"><span class="type-signature"></span>subAccountCreation<span class="signature">(subAccountString, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -458,6 +519,60 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -485,6 +600,13 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -525,7 +647,7 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line524">line 524</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line531">line 531</a>
     </li></ul></dd>
     
 
@@ -561,7 +683,7 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
     
 
     
-    <h4 class="name" id="subAccountDepositAddress"><span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, coin, network<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountDepositAddress"><span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, coin, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -673,6 +795,60 @@ GET /sapi/v1/capital/deposit/subAddress<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>network</code></td>
             
 
@@ -739,6 +915,13 @@ GET /sapi/v1/capital/deposit/subAddress<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -773,7 +956,7 @@ GET /sapi/v1/capital/deposit/subAddress<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line86">line 86</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -809,7 +992,7 @@ GET /sapi/v1/capital/deposit/subAddress<br>
     
 
     
-    <h4 class="name" id="subAccountDepositHistory"><span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, coin<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, offset<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountDepositHistory"><span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -886,6 +1069,60 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -1121,6 +1358,13 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1155,7 +1399,7 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line116">line 116</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line120">line 120</a>
     </li></ul></dd>
     
 
@@ -1191,7 +1435,7 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
     
 
     
-    <h4 class="name" id="subAccountEnableFutures"><span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountEnableFutures"><span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1272,6 +1516,60 @@ GET /sapi/v1/sub-account/futures/enable<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -1299,6 +1597,13 @@ GET /sapi/v1/sub-account/futures/enable<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1339,7 +1644,7 @@ GET /sapi/v1/sub-account/futures/enable<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line215">line 215</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line224">line 224</a>
     </li></ul></dd>
     
 
@@ -1375,7 +1680,7 @@ GET /sapi/v1/sub-account/futures/enable<br>
     
 
     
-    <h4 class="name" id="subAccountEnableMargin"><span class="type-signature"></span>subAccountEnableMargin<span class="signature">(email<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountEnableMargin"><span class="type-signature"></span>subAccountEnableMargin<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1400,6 +1705,60 @@ POST /sapi/v1/sub-account/margin/enable<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1491,6 +1850,13 @@ POST /sapi/v1/sub-account/margin/enable<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1525,7 +1891,7 @@ POST /sapi/v1/sub-account/margin/enable<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line154">line 154</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line160">line 160</a>
     </li></ul></dd>
     
 
@@ -1561,7 +1927,7 @@ POST /sapi/v1/sub-account/margin/enable<br>
     
 
     
-    <h4 class="name" id="subAccountFuturesAccount"><span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesAccount"><span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1642,13 +2008,13 @@ GET /sapi/v1/sub-account/futures/account<br>
 
         <tr>
             
-                <td class="name"><code>recvWindow</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">object</span>
 
 
             
@@ -1668,108 +2034,9 @@ GET /sapi/v1/sub-account/futures/account<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line237">line 237</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="subAccountFuturesAccountSummary"><span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get Summary of Sub-account's Futures Account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/futures/accountSummary<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1828,6 +2095,13 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1862,7 +2136,7 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line258">line 258</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line247">line 247</a>
     </li></ul></dd>
     
 
@@ -1898,7 +2172,221 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
     
 
     
-    <h4 class="name" id="subAccountFuturesAssetTransfer"><span class="type-signature"></span>subAccountFuturesAssetTransfer<span class="signature">(fromEmail, toEmail, futuresType, asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesAccountSummary"><span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get Summary of Sub-account's Futures Account (For Master Account)<br>
+
+GET /sapi/v1/sub-account/futures/accountSummary<br>
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line269">line 269</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="subAccountFuturesAssetTransfer"><span class="type-signature"></span>subAccountFuturesAssetTransfer<span class="signature">(fromEmail, toEmail, futuresType, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2103,6 +2591,60 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -2130,6 +2672,13 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -2170,7 +2719,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line474">line 474</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line483">line 483</a>
     </li></ul></dd>
     
 
@@ -2206,7 +2755,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
     
 
     
-    <h4 class="name" id="subAccountFuturesAssetTransferHistory"><span class="type-signature"></span>subAccountFuturesAssetTransferHistory<span class="signature">(email, futuresType, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesAssetTransferHistory"><span class="type-signature"></span>subAccountFuturesAssetTransferHistory<span class="signature">(email, futuresType, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2314,6 +2863,60 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
             <td class="description last">1: USDT-margined Futures，2: Coin-margined Futures</td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -2483,6 +3086,13 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2517,7 +3127,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line446">line 446</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line455">line 455</a>
     </li></ul></dd>
     
 
@@ -2553,7 +3163,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
     
 
     
-    <h4 class="name" id="subAccountFuturesPositionRisk"><span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesPositionRisk"><span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2634,6 +3244,60 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -2661,6 +3325,13 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -2701,7 +3372,7 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line276">line 276</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line288">line 288</a>
     </li></ul></dd>
     
 
@@ -2737,7 +3408,7 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
     
 
     
-    <h4 class="name" id="subAccountFuturesTransfer"><span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountFuturesTransfer"><span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2914,6 +3585,60 @@ POST /sapi/v1/sub-account/futures/transfer<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -2941,6 +3666,13 @@ POST /sapi/v1/sub-account/futures/transfer<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -2981,7 +3713,7 @@ POST /sapi/v1/sub-account/futures/transfer<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line304">line 304</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line317">line 317</a>
     </li></ul></dd>
     
 
@@ -3017,7 +3749,7 @@ POST /sapi/v1/sub-account/futures/transfer<br>
     
 
     
-    <h4 class="name" id="subAccountLeverageToken"><span class="type-signature"></span>subAccountLeverageToken<span class="signature">(email, enableBlvt, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountLeverageToken"><span class="type-signature"></span>subAccountLeverageToken<span class="signature">(email, enableBlvt, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3129,6 +3861,60 @@ POST /sapi/v1/sub-account/blvt/enable<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -3156,6 +3942,13 @@ POST /sapi/v1/sub-account/blvt/enable<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -3196,7 +3989,7 @@ POST /sapi/v1/sub-account/blvt/enable<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line544">line 544</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line552">line 552</a>
     </li></ul></dd>
     
 
@@ -3232,7 +4025,7 @@ POST /sapi/v1/sub-account/blvt/enable<br>
     
 
     
-    <h4 class="name" id="subAccountList"><span class="type-signature"></span>subAccountList<span class="signature">(email<span class="signature-attributes">opt</span>, isFreeze<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountList"><span class="type-signature"></span>subAccountList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3257,6 +4050,60 @@ GET /sapi/v1/sub-account/list<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -3447,6 +4294,13 @@ GET /sapi/v1/sub-account/list<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -3481,7 +4335,7 @@ GET /sapi/v1/sub-account/list<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line23">line 23</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -3517,7 +4371,7 @@ GET /sapi/v1/sub-account/list<br>
     
 
     
-    <h4 class="name" id="subAccountMarginAccount"><span class="type-signature"></span>subAccountMarginAccount<span class="signature">(email, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountMarginAccount"><span class="type-signature"></span>subAccountMarginAccount<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3598,13 +4452,13 @@ GET /sapi/v1/sub-account/margin/account<br>
 
         <tr>
             
-                <td class="name"><code>recvWindow</code></td>
+                <td class="name"><code>options</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">object</span>
 
 
             
@@ -3624,108 +4478,9 @@ GET /sapi/v1/sub-account/margin/account<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line176">line 176</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="subAccountMarginAccountSummary"><span class="type-signature"></span>subAccountMarginAccountSummary<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Get Summary of Sub-account's Margin Account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/margin/accountSummary<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -3784,6 +4539,13 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -3818,7 +4580,7 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line197">line 197</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line183">line 183</a>
     </li></ul></dd>
     
 
@@ -3854,7 +4616,221 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
     
 
     
-    <h4 class="name" id="subAccountMarginTransfer"><span class="type-signature"></span>subAccountMarginTransfer<span class="signature">(email, asset, amount, type, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountMarginAccountSummary"><span class="type-signature"></span>subAccountMarginAccountSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Get Summary of Sub-account's Margin Account (For Master Account)<br>
+
+GET /sapi/v1/sub-account/margin/accountSummary<br>
+
+<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line205">line 205</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="subAccountMarginTransfer"><span class="type-signature"></span>subAccountMarginTransfer<span class="signature">(email, asset, amount, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4029,6 +5005,60 @@ POST /sapi/v1/sub-account/margin/transfer<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -4056,6 +5086,13 @@ POST /sapi/v1/sub-account/margin/transfer<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -4096,7 +5133,7 @@ POST /sapi/v1/sub-account/margin/transfer<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line337">line 337</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line348">line 348</a>
     </li></ul></dd>
     
 
@@ -4132,7 +5169,7 @@ POST /sapi/v1/sub-account/margin/transfer<br>
     
 
     
-    <h4 class="name" id="subAccountSpotSummary"><span class="type-signature"></span>subAccountSpotSummary<span class="signature">(email<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, size<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountSpotSummary"><span class="type-signature"></span>subAccountSpotSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4157,6 +5194,60 @@ GET /sapi/v1/sub-account/spotSummary<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -4314,6 +5405,13 @@ GET /sapi/v1/sub-account/spotSummary<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -4348,7 +5446,7 @@ GET /sapi/v1/sub-account/spotSummary<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line506">line 506</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line512">line 512</a>
     </li></ul></dd>
     
 
@@ -4384,7 +5482,7 @@ GET /sapi/v1/sub-account/spotSummary<br>
     
 
     
-    <h4 class="name" id="subAccountStatus"><span class="type-signature"></span>subAccountStatus<span class="signature">(email<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountStatus"><span class="type-signature"></span>subAccountStatus<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4409,6 +5507,60 @@ GET /sapi/v1/sub-account/status<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -4500,6 +5652,13 @@ GET /sapi/v1/sub-account/status<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -4534,7 +5693,7 @@ GET /sapi/v1/sub-account/status<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line136">line 136</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -4570,7 +5729,7 @@ GET /sapi/v1/sub-account/status<br>
     
 
     
-    <h4 class="name" id="subAccountTransferHistory"><span class="type-signature"></span>subAccountTransferHistory<span class="signature">(fromEmail<span class="signature-attributes">opt</span>, toEmail<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, page<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferHistory"><span class="type-signature"></span>subAccountTransferHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4595,6 +5754,60 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -4851,6 +6064,13 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -4885,7 +6105,7 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line46">line 46</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line48">line 48</a>
     </li></ul></dd>
     
 
@@ -4921,7 +6141,7 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
     
 
     
-    <h4 class="name" id="subAccountTransferSubAccountHistory"><span class="type-signature"></span>subAccountTransferSubAccountHistory<span class="signature">(asset<span class="signature-attributes">opt</span>, type<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferSubAccountHistory"><span class="type-signature"></span>subAccountTransferSubAccountHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4946,6 +6166,60 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -5169,6 +6443,13 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -5203,7 +6484,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line423">line 423</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line431">line 431</a>
     </li></ul></dd>
     
 
@@ -5239,7 +6520,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
     
 
     
-    <h4 class="name" id="subAccountTransferToMaster"><span class="type-signature"></span>subAccountTransferToMaster<span class="signature">(asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferToMaster"><span class="type-signature"></span>subAccountTransferToMaster<span class="signature">(asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -5351,6 +6632,60 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -5378,6 +6713,13 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -5418,7 +6760,7 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line394">line 394</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line402">line 402</a>
     </li></ul></dd>
     
 
@@ -5454,7 +6796,7 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
     
 
     
-    <h4 class="name" id="subAccountTransferToSub"><span class="type-signature"></span>subAccountTransferToSub<span class="signature">(toEmail, asset, amount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="subAccountTransferToSub"><span class="type-signature"></span>subAccountTransferToSub<span class="signature">(toEmail, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -5597,6 +6939,60 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -5624,6 +7020,13 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -5664,7 +7067,7 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line367">line 367</a>
+        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line376">line 376</a>
     </li></ul></dd>
     
 
@@ -5716,7 +7119,7 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 20:34:22 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="bswapLiquidity"><span class="type-signature"></span>bswapLiquidity<span class="signature">(poolId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidity"><span class="type-signature"></span>bswapLiquidity<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -218,6 +218,60 @@ GET /sapi/v1/bswap/liquidity<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -309,6 +363,13 @@ GET /sapi/v1/bswap/liquidity<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -379,7 +440,7 @@ GET /sapi/v1/bswap/liquidity<br>
     
 
     
-    <h4 class="name" id="bswapLiquidityAdd"><span class="type-signature"></span>bswapLiquidityAdd<span class="signature">(poolId, asset, quantity, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidityAdd"><span class="type-signature"></span>bswapLiquidityAdd<span class="signature">(poolId, asset, quantity, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -522,6 +583,60 @@ POST /sapi/v1/bswap/liquidityAdd<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -549,6 +664,13 @@ POST /sapi/v1/bswap/liquidityAdd<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -589,7 +711,7 @@ POST /sapi/v1/bswap/liquidityAdd<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line56">line 56</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line57">line 57</a>
     </li></ul></dd>
     
 
@@ -625,7 +747,7 @@ POST /sapi/v1/bswap/liquidityAdd<br>
     
 
     
-    <h4 class="name" id="bswapLiquidityOperationRecord"><span class="type-signature"></span>bswapLiquidityOperationRecord<span class="signature">(operationId<span class="signature-attributes">opt</span>, poolId<span class="signature-attributes">opt</span>, operation<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidityOperationRecord"><span class="type-signature"></span>bswapLiquidityOperationRecord<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -650,6 +772,60 @@ GET /sapi/v1/bswap/liquidityOps<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -906,6 +1082,13 @@ GET /sapi/v1/bswap/liquidityOps<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -940,7 +1123,7 @@ GET /sapi/v1/bswap/liquidityOps<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line118">line 118</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line116">line 116</a>
     </li></ul></dd>
     
 
@@ -976,7 +1159,7 @@ GET /sapi/v1/bswap/liquidityOps<br>
     
 
     
-    <h4 class="name" id="bswapLiquidityRemove"><span class="type-signature"></span>bswapLiquidityRemove<span class="signature">(poolId, type, asset, shareAmount, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapLiquidityRemove"><span class="type-signature"></span>bswapLiquidityRemove<span class="signature">(poolId, type, asset, shareAmount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1150,6 +1333,60 @@ POST /sapi/v1/bswap/liquidityRemove<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -1177,6 +1414,13 @@ POST /sapi/v1/bswap/liquidityRemove<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1347,7 +1591,7 @@ Get metadata about all swap pools.<br>
     
 
     
-    <h4 class="name" id="bswapRequestQuote"><span class="type-signature"></span>bswapRequestQuote<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapRequestQuote"><span class="type-signature"></span>bswapRequestQuote<span class="signature">(quoteAsset, baseAsset, quoteQty, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1496,6 +1740,60 @@ GET /sapi/v1/bswap/quote<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -1523,6 +1821,13 @@ GET /sapi/v1/bswap/quote<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1563,7 +1868,7 @@ GET /sapi/v1/bswap/quote<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line144">line 144</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -1599,7 +1904,7 @@ GET /sapi/v1/bswap/quote<br>
     
 
     
-    <h4 class="name" id="bswapSwap"><span class="type-signature"></span>bswapSwap<span class="signature">(quoteAsset, baseAsset, quoteQty, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapSwap"><span class="type-signature"></span>bswapSwap<span class="signature">(quoteAsset, baseAsset, quoteQty, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1742,6 +2047,60 @@ POST /sapi/v1/bswap/swap<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -1769,6 +2128,13 @@ POST /sapi/v1/bswap/swap<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1809,7 +2175,7 @@ POST /sapi/v1/bswap/swap<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line172">line 172</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line170">line 170</a>
     </li></ul></dd>
     
 
@@ -1845,7 +2211,7 @@ POST /sapi/v1/bswap/swap<br>
     
 
     
-    <h4 class="name" id="bswapSwapHistory"><span class="type-signature"></span>bswapSwapHistory<span class="signature">(swapId<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, status<span class="signature-attributes">opt</span>, baseAsset<span class="signature-attributes">opt</span>, quoteAsset<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="bswapSwapHistory"><span class="type-signature"></span>bswapSwapHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1870,6 +2236,60 @@ GET /sapi/v1/bswap/swap<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -2159,6 +2579,13 @@ GET /sapi/v1/bswap/swap<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2193,7 +2620,7 @@ GET /sapi/v1/bswap/swap<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line204">line 204</a>
+        <a href="bswap.js.html">bswap.js</a>, <a href="bswap.js.html#line201">line 201</a>
     </li></ul></dd>
     
 
@@ -2245,7 +2672,7 @@ GET /sapi/v1/bswap/swap<br>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 20:34:22 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
