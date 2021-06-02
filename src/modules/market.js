@@ -15,8 +15,8 @@ const Market = superclass => class extends superclass {
    * Test connectivity to the Rest API.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#test-connectivity}
    */
-  ping (options = {}) {
-    return this.publicRequest('GET', '/api/v3/ping', options)
+  ping () {
+    return this.publicRequest('GET', '/api/v3/ping')
   }
 
   /**
@@ -28,8 +28,8 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#check-server-time}
    *
    */
-  time (options = {}) {
-    return this.publicRequest('GET', '/api/v3/time', options)
+  time () {
+    return this.publicRequest('GET', '/api/v3/time')
   }
 
   /**
@@ -40,8 +40,9 @@ const Market = superclass => class extends superclass {
    * Current exchange trading rules and symbol information<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#exchange-information}
    *
-   * @param {string} [symbol] - symbol
-   * @param {Array} [symbols] - an array of symbols
+   * @param {object} [options]
+   * @param {string} [options.symbol] - symbol
+   * @param {Array} [options.symbols] - an array of symbols
    *
    */
   exchangeInfo (options = {}) {
@@ -66,7 +67,8 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#order-book}
    *
    * @param {string} symbol
-   * @param {number} [limit] - Default 100; max 5000.
+   * @param {object} [options]
+   * @param {number} [options.limit] - Default 100; max 5000.
    *    Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000]
    */
   depth (symbol, options = {}) {
@@ -90,7 +92,8 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list}
    *
    * @param {string} symbol
-   * @param {number} [limit] - Default 500; max 1000.
+   * @param {object} [options]
+   * @param {number} [options.limit] - Default 500; max 1000.
    */
   trades (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -113,8 +116,9 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup}
    *
    * @param {string} symbol
-   * @param {number} [limit] - Default 500; max 1000.
-   * @param {number} [fromId] - Trade id to fetch from. Default gets most recent trades.
+   * @param {object} [options]
+   * @param {number} [options.limit] - Default 500; max 1000.
+   * @param {number} [options.fromId] - Trade id to fetch from. Default gets most recent trades.
    */
   historicalTrades (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -136,10 +140,11 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#compressed-aggregate-trades-list}
    *
    * @param {string} symbol
-   * @param {number} [fromId] - id to get aggregate trades from INCLUSIVE.
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - Default 500; max 1000.
+   * @param {object} [options]
+   * @param {number} [options.fromId] - id to get aggregate trades from INCLUSIVE.
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - Default 500; max 1000.
    */
   aggTrades (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -162,9 +167,10 @@ const Market = superclass => class extends superclass {
    *
    * @param {string} symbol
    * @param {string} interval
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - Default 500; max 1000.
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - Default 500; max 1000.
    */
   klines (symbol, interval, options = {}) {
     validateRequiredParameters({ symbol, interval })

@@ -13,9 +13,10 @@ const Savings = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-list-user_data}
    *
-   * @param {string} [status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
-   * @param {string} [featured] - "ALL", "true"; default "ALL"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
+   * @param {string} [options.featured] - "ALL", "true"; default "ALL"
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleProducts (options = {}) {
     return this.signRequest(
@@ -33,7 +34,8 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-left-daily-purchase-quota-of-flexible-product-user_data}
    *
    * @param {string} productId
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleUserLeftQuota (productId, options = {}) {
     validateRequiredParameters({ productId })
@@ -55,7 +57,8 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} productId
    * @param {string} amount
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseFlexibleProduct (productId, amount, options = {}) {
     validateRequiredParameters({ productId, amount })
@@ -79,7 +82,8 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} productId
    * @param {string} type - "FAST", "NORMAL"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleUserRedemptionQuota (productId, type, options = {}) {
     validateRequiredParameters({ productId, type })
@@ -104,7 +108,8 @@ const Savings = superclass => class extends superclass {
    * @param {string} productId
    * @param {number} amount
    * @param {string} type - "FAST", "NORMAL"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleRedeem (productId, amount, type, options = {}) {
     validateRequiredParameters({ productId, amount, type })
@@ -128,7 +133,8 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-position-user_data}
    *
    * @param {string} asset
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleProductPosition (asset, options = {}) {
     validateRequiredParameters({ asset })
@@ -150,13 +156,14 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fixed-and-activity-project-list-user_data}
    *
    * @param {string} type - "ACTIVITY", "CUSTOMIZED_FIXED"
-   * @param {string} [asset]
-   * @param {string} [status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
-   * @param {boolean} [isSortAsc] - default "true"
-   * @param {string} [sortBy] - "START_TIME", "LOT_SIZE", "INTEREST_RATE", "DURATION"; default "START_TIME"
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {string} [options.status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
+   * @param {boolean} [options.isSortAsc] - default "true"
+   * @param {string} [options.sortBy] - "START_TIME", "LOT_SIZE", "INTEREST_RATE", "DURATION"; default "START_TIME"
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsProductList (type, options = {}) {
     validateRequiredParameters({ type })
@@ -179,7 +186,8 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} projectId
    * @param {number} lot
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseCustomizedProject (projectId, lot, options = {}) {
     validateRequiredParameters({ projectId, lot })
@@ -202,9 +210,10 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fixed-activity-project-position-user_data}
    *
    * @param {string} asset
-   * @param {string} [projectId]
-   * @param {string} [status] - "HOLDING", "REDEEMED"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.projectId]
+   * @param {string} [options.status] - "HOLDING", "REDEEMED"
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsCustomizedPosition (asset, options = {}) {
     validateRequiredParameters({ asset })
@@ -225,7 +234,8 @@ const Savings = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#lending-account-user_data}
    *
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsAccount (options = {}) {
     return this.signRequest(
@@ -244,12 +254,13 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} lendingType - "DAILY" for flexible,
    *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
-   * @param {string} [asset]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseRecord (lendingType, options = {}) {
     validateRequiredParameters({ lendingType })
@@ -272,12 +283,13 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} lendingType - "DAILY" for flexible,
    *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
-   * @param {string} [asset]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsRedemptionRecord (lendingType, options = {}) {
     validateRequiredParameters({ lendingType })
@@ -300,12 +312,13 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} lendingType - "DAILY" for flexible,
    *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
-   * @param {string} [asset]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsInterestHistory (lendingType, options = {}) {
     validateRequiredParameters({ lendingType })
