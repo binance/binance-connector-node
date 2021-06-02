@@ -4,5 +4,5 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.savingsFlexibleUserRedemptionQuota('', 'FAST').then(response => console.log(response.data))
-  .catch(error => console.log(error))
+client.savingsFlexibleUserRedemptionQuota('', 'FAST').then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

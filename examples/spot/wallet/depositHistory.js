@@ -9,5 +9,5 @@ client.depositHistory(
     coin: 'BNB',
     status: 1
   }
-).then(response => console.log(response.data))
-  .catch(error => console.log(error))
+).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))
