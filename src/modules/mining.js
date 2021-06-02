@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API mining endpoints
@@ -13,7 +13,8 @@ const Mining = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#acquiring-algorithm-market_data}
    *
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningAlgoList (options = {}) {
     return this.publicRequest(
@@ -30,7 +31,8 @@ const Mining = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#acquiring-coinname-market_data}
    *
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningCoinList (options = {}) {
     return this.publicRequest(
@@ -50,12 +52,11 @@ const Mining = superclass => class extends superclass {
    * @param {string} algo
    * @param {string} userName - Mining account
    * @param {string} workerName
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningWorker (algo, userName, workerName, options = {}) {
-    validateParameter(algo, 'algo')
-    validateParameter(userName, 'userName')
-    validateParameter(workerName, 'workerName')
+    validateRequiredParameters({ algo, userName, workerName })
     return this.signRequest(
       'GET',
       '/sapi/v1/mining/worker/detail',
@@ -76,19 +77,19 @@ const Mining = superclass => class extends superclass {
    *
    * @param {string} algo
    * @param {string} userName - Mining account
-   * @param {number} [pageIndex] - Page number，default is first page, 1
-   * @param {number} [sort] - sort sequence (default = 0)
+   * @param {object} [options]
+   * @param {number} [options.pageIndex] - Page number，default is first page, 1
+   * @param {number} [options.sort] - sort sequence (default = 0)
    *    <br> 0 positive sequence, 1 negative sequence
-   * @param {number} [sortColumn] - Sort by (default 1): <br> 1: miner name,
+   * @param {number} [options.sortColumn] - Sort by (default 1): <br> 1: miner name,
    *    <br> 2: real-time computing power, <br> 3: daily average computing power,
    *    <br> 4: real-time rejection rate, <br> 5: last submission time
-   * @param {number} [workerStatus] - miners status (default = 0)
+   * @param {number} [options.workerStatus] - miners status (default = 0)
    *    <br> 0 all, 1 valid, 2 invalid, 3 failure
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningWorkerList (algo, userName, options = {}) {
-    validateParameter(algo, 'algo')
-    validateParameter(userName, 'userName')
+    validateRequiredParameters({ algo, userName })
     return this.signRequest(
       'GET',
       '/sapi/v1/mining/worker/list',
@@ -108,16 +109,16 @@ const Mining = superclass => class extends superclass {
    *
    * @param {string} algo
    * @param {string} userName - Mining account
-   * @param {string} [coin]
-   * @param {number} [startDate]
-   * @param {number} [endDate]
-   * @param {number} [pageIndex] - Page number，default is first page, 1
-   * @param {number} [pageSize] - minimum 10, maximum 200
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.coin]
+   * @param {number} [options.startDate]
+   * @param {number} [options.endDate]
+   * @param {number} [options.pageIndex] - Page number，default is first page, 1
+   * @param {number} [options.pageSize] - minimum 10, maximum 200
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningRevenueList (algo, userName, options = {}) {
-    validateParameter(algo, 'algo')
-    validateParameter(userName, 'userName')
+    validateRequiredParameters({ algo, userName })
     return this.signRequest(
       'GET',
       '/sapi/v1/mining/payment/list',
@@ -137,16 +138,16 @@ const Mining = superclass => class extends superclass {
    *
    * @param {string} algo
    * @param {string} userName
-   * @param {string} [coin]
-   * @param {number} [startDate]
-   * @param {number} [endDate]
-   * @param {number} [pageIndex] - Page number，default is first page, 1
-   * @param {number} [pageSize] - minimum 10, maximum 200
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.coin]
+   * @param {number} [options.startDate]
+   * @param {number} [options.endDate]
+   * @param {number} [options.pageIndex] - Page number，default is first page, 1
+   * @param {number} [options.pageSize] - minimum 10, maximum 200
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningBonusList (algo, userName, options = {}) {
-    validateParameter(algo, 'algo')
-    validateParameter(userName, 'userName')
+    validateRequiredParameters({ algo, userName })
     return this.signRequest(
       'GET',
       '/sapi/v1/mining/payment/other',
@@ -164,9 +165,10 @@ const Mining = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-list-user_data}
    *
-   * @param {number} [pageIndex] - Page number，default is first page, 1
-   * @param {number} [pageSize] - minimum 10, maximum 200
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.pageIndex] - Page number，default is first page, 1
+   * @param {number} [options.pageSize] - minimum 10, maximum 200
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningHashrateResaleList (options = {}) {
     return this.signRequest(
@@ -185,13 +187,13 @@ const Mining = superclass => class extends superclass {
    *
    * @param {number} configId - Mining ID
    * @param {string} userName - Mining Account
-   * @param {number} [pageIndex] - Page number，default is first page, 1
-   * @param {number} [pageSize] - minimum 10, maximum 200
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.pageIndex] - Page number，default is first page, 1
+   * @param {number} [options.pageSize] - minimum 10, maximum 200
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningHashrateResaleDetail (configId, userName, options = {}) {
-    validateParameter(configId, 'configId')
-    validateParameter(userName, 'userName')
+    validateRequiredParameters({ configId, userName })
     return this.signRequest(
       'GET',
       '/sapi/v1/mining/hash-transfer/profit/details',
@@ -215,16 +217,19 @@ const Mining = superclass => class extends superclass {
    * @param {number} endDate
    * @param {string} toPoolUser - Mining Account
    * @param {number} hashRate - Resale hashrate h/s must be transferred
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningHashrateResaleRequest (userName, algo, startDate, endDate,
     toPoolUser, hashRate, options = {}) {
-    validateParameter(userName, 'userName')
-    validateParameter(algo, 'algo')
-    validateParameter(startDate, 'startDate')
-    validateParameter(endDate, 'endDate')
-    validateParameter(toPoolUser, 'toPoolUser')
-    validateParameter(hashRate, 'hashRate')
+    validateRequiredParameters({
+      userName,
+      algo,
+      startDate,
+      endDate,
+      toPoolUser,
+      hashRate
+    })
 
     return this.signRequest(
       'POST',
@@ -249,11 +254,11 @@ const Mining = superclass => class extends superclass {
    *
    * @param {number} configId - Mining ID
    * @param {string} userName
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningHashrateResaleCancel (configId, userName, options = {}) {
-    validateParameter(configId, 'configId')
-    validateParameter(userName, 'userName')
+    validateRequiredParameters({ configId, userName })
     return this.signRequest(
       'POST',
       '/sapi/v1/mining/hash-transfer/config/cancel',
@@ -273,11 +278,11 @@ const Mining = superclass => class extends superclass {
    *
    * @param {string} algo
    * @param {string} userName - Mining account
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningStatisticList (algo, userName, options = {}) {
-    validateParameter(algo, 'algo')
-    validateParameter(userName, 'userName')
+    validateRequiredParameters({ algo, userName })
     return this.signRequest(
       'GET',
       '/sapi/v1/mining/statistics/user/status',
@@ -297,11 +302,11 @@ const Mining = superclass => class extends superclass {
    *
    * @param {string} algo
    * @param {string} userName - Mining account
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   miningAccountList (algo, userName, options = {}) {
-    validateParameter(algo, 'algo')
-    validateParameter(userName, 'userName')
+    validateRequiredParameters({ algo, userName })
     return this.signRequest(
       'GET',
       '/sapi/v1/mining/statistics/user/list',

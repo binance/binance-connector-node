@@ -193,7 +193,7 @@
     
 
     
-    <h4 class="name" id="account"><span class="type-signature"></span>account<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="account"><span class="type-signature"></span>account<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -218,6 +218,60 @@ GET /api/v3/account<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -276,6 +330,13 @@ GET /api/v3/account<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -310,7 +371,7 @@ GET /api/v3/account<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line327">line 327</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line332">line 332</a>
     </li></ul></dd>
     
 
@@ -346,7 +407,7 @@ GET /api/v3/account<br>
     
 
     
-    <h4 class="name" id="allOrders"><span class="type-signature"></span>allOrders<span class="signature">(symbol, orderId<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="allOrders"><span class="type-signature"></span>allOrders<span class="signature">(symbol, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -423,6 +484,60 @@ GET /api/v3/allOrders<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -592,6 +707,13 @@ GET /api/v3/allOrders<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -626,7 +748,7 @@ GET /api/v3/allOrders<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line183">line 183</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line186">line 186</a>
     </li></ul></dd>
     
 
@@ -662,7 +784,7 @@ GET /api/v3/allOrders<br>
     
 
     
-    <h4 class="name" id="cancelOCOOrder"><span class="type-signature"></span>cancelOCOOrder<span class="signature">(symbol, orderListId<span class="signature-attributes">opt</span>, listClientOrderId<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="cancelOCOOrder"><span class="type-signature"></span>cancelOCOOrder<span class="signature">(symbol, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -739,6 +861,60 @@ DELETE /api/v3/orderList<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -875,6 +1051,13 @@ DELETE /api/v3/orderList<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -909,7 +1092,7 @@ DELETE /api/v3/orderList<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line249">line 249</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line250">line 250</a>
     </li></ul></dd>
     
 
@@ -945,7 +1128,7 @@ DELETE /api/v3/orderList<br>
     
 
     
-    <h4 class="name" id="cancelOpenOrders"><span class="type-signature"></span>cancelOpenOrders<span class="signature">(symbol, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="cancelOpenOrders"><span class="type-signature"></span>cancelOpenOrders<span class="signature">(symbol, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1026,6 +1209,60 @@ DELETE /api/v3/openOrders<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>recvWindow</code></td>
             
 
@@ -1053,6 +1290,13 @@ DELETE /api/v3/openOrders<br>
             
 
             <td class="description last">The value cannot be greater than 60000</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1129,7 +1373,7 @@ DELETE /api/v3/openOrders<br>
     
 
     
-    <h4 class="name" id="cancelOrder"><span class="type-signature"></span>cancelOrder<span class="signature">(symbol, orderId<span class="signature-attributes">opt</span>, origClientOrderId<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="cancelOrder"><span class="type-signature"></span>cancelOrder<span class="signature">(symbol, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1206,6 +1450,60 @@ DELETE /api/v3/order<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -1342,6 +1640,13 @@ DELETE /api/v3/order<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1376,7 +1681,7 @@ DELETE /api/v3/order<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line95">line 95</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -1412,7 +1717,7 @@ DELETE /api/v3/order<br>
     
 
     
-    <h4 class="name" id="getOCOOrder"><span class="type-signature"></span>getOCOOrder<span class="signature">(orderListId<span class="signature-attributes">opt</span>, origClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOCOOrder"><span class="type-signature"></span>getOCOOrder<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1437,6 +1742,60 @@ GET /api/v3/orderList<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1561,6 +1920,13 @@ GET /api/v3/orderList<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1595,7 +1961,7 @@ GET /api/v3/orderList<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line272">line 272</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line274">line 274</a>
     </li></ul></dd>
     
 
@@ -1631,7 +1997,7 @@ GET /api/v3/orderList<br>
     
 
     
-    <h4 class="name" id="getOCOOrders"><span class="type-signature"></span>getOCOOrders<span class="signature">(fromId<span class="signature-attributes">opt</span>, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOCOOrders"><span class="type-signature"></span>getOCOOrders<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1656,6 +2022,60 @@ GET /api/v3/allOrderList<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1846,6 +2266,13 @@ GET /api/v3/allOrderList<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -1880,7 +2307,7 @@ GET /api/v3/allOrderList<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line293">line 293</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line296">line 296</a>
     </li></ul></dd>
     
 
@@ -1916,7 +2343,7 @@ GET /api/v3/allOrderList<br>
     
 
     
-    <h4 class="name" id="getOpenOCOOrders"><span class="type-signature"></span>getOpenOCOOrders<span class="signature">(recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOpenOCOOrders"><span class="type-signature"></span>getOpenOCOOrders<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -1941,6 +2368,60 @@ GET /api/v3/openOrderList<br>
 
     <h5>Parameters:</h5>
     
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
 
 <table class="params">
     <thead>
@@ -1999,6 +2480,13 @@ GET /api/v3/openOrderList<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2033,7 +2521,7 @@ GET /api/v3/openOrderList<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line310">line 310</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line314">line 314</a>
     </li></ul></dd>
     
 
@@ -2069,7 +2557,7 @@ GET /api/v3/openOrderList<br>
     
 
     
-    <h4 class="name" id="getOrder"><span class="type-signature"></span>getOrder<span class="signature">(symbol, orderId<span class="signature-attributes">opt</span>, origClientOrderId<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getOrder"><span class="type-signature"></span>getOrder<span class="signature">(symbol, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2146,6 +2634,60 @@ GET /api/v3/order<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -2249,6 +2791,13 @@ GET /api/v3/order<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2283,7 +2832,7 @@ GET /api/v3/order<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line140">line 140</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -2319,7 +2868,7 @@ GET /api/v3/order<br>
     
 
     
-    <h4 class="name" id="myTrades"><span class="type-signature"></span>myTrades<span class="signature">(symbol, startTime<span class="signature-attributes">opt</span>, endTime<span class="signature-attributes">opt</span>, fromId<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="myTrades"><span class="type-signature"></span>myTrades<span class="signature">(symbol, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2396,6 +2945,60 @@ GET /api/v3/myTrades<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -2565,6 +3168,13 @@ GET /api/v3/myTrades<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -2599,7 +3209,7 @@ GET /api/v3/myTrades<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line349">line 349</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line355">line 355</a>
     </li></ul></dd>
     
 
@@ -2635,7 +3245,7 @@ GET /api/v3/myTrades<br>
     
 
     
-    <h4 class="name" id="newOCOOrder"><span class="type-signature"></span>newOCOOrder<span class="signature">(symbol, side, quantity, price, stopPrice, listClientOrderId<span class="signature-attributes">opt</span>, limitClientOrderId<span class="signature-attributes">opt</span>, limitIcebergQty<span class="signature-attributes">opt</span>, stopClientOrderId<span class="signature-attributes">opt</span>, stopLimitPrice<span class="signature-attributes">opt</span>, stopIcebergQty<span class="signature-attributes">opt</span>, stopLimitTimeInForce<span class="signature-attributes">opt</span>, newOrderRespType<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="newOCOOrder"><span class="type-signature"></span>newOCOOrder<span class="signature">(symbol, side, quantity, price, stopPrice, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2836,6 +3446,60 @@ POST /api/v3/order/oco<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -3137,6 +3801,13 @@ POST /api/v3/order/oco<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -3171,7 +3842,7 @@ POST /api/v3/order/oco<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line216">line 216</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line220">line 220</a>
     </li></ul></dd>
     
 
@@ -3207,7 +3878,7 @@ POST /api/v3/order/oco<br>
     
 
     
-    <h4 class="name" id="newOrder"><span class="type-signature"></span>newOrder<span class="signature">(symbol, side, type, timeInForce<span class="signature-attributes">opt</span>, quantity<span class="signature-attributes">opt</span>, quoteOrderQty<span class="signature-attributes">opt</span>, price<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, stopPrice<span class="signature-attributes">opt</span>, icebergQty<span class="signature-attributes">opt</span>, newOrderRespType<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="newOrder"><span class="type-signature"></span>newOrder<span class="signature">(symbol, side, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3346,6 +4017,60 @@ POST /api/v3/order<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -3647,6 +4372,13 @@ POST /api/v3/order<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -3717,7 +4449,7 @@ POST /api/v3/order<br>
     
 
     
-    <h4 class="name" id="newOrderTest"><span class="type-signature"></span>newOrderTest<span class="signature">(symbol, side, type, timeInForce<span class="signature-attributes">opt</span>, quantity<span class="signature-attributes">opt</span>, quoteOrderQty<span class="signature-attributes">opt</span>, price<span class="signature-attributes">opt</span>, newClientOrderId<span class="signature-attributes">opt</span>, stopPrice<span class="signature-attributes">opt</span>, icebergQty<span class="signature-attributes">opt</span>, newOrderRespType<span class="signature-attributes">opt</span>, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="newOrderTest"><span class="type-signature"></span>newOrderTest<span class="signature">(symbol, side, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3856,6 +4588,60 @@ POST /api/v3/order/test<br>
             <td class="description last"></td>
         </tr>
 
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
     
 
         <tr>
@@ -4158,6 +4944,13 @@ POST /api/v3/order/test<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -4192,7 +4985,7 @@ POST /api/v3/order/test<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line30">line 30</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -4228,7 +5021,7 @@ POST /api/v3/order/test<br>
     
 
     
-    <h4 class="name" id="openOrders"><span class="type-signature"></span>openOrders<span class="signature">(symbol, recvWindow<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="openOrders"><span class="type-signature"></span>openOrders<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4278,6 +5071,60 @@ GET /api/v3/openOrders<br>
 
         <tr>
             
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
                 <td class="name"><code>symbol</code></td>
             
 
@@ -4292,6 +5139,8 @@ GET /api/v3/openOrders<br>
 
             
                 <td class="attributes">
+                
+                    &lt;optional><br>
                 
 
                 
@@ -4342,6 +5191,13 @@ GET /api/v3/openOrders<br>
     </tbody>
 </table>
 
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
 
 
 
@@ -4376,7 +5232,7 @@ GET /api/v3/openOrders<br>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line161">line 161</a>
+        <a href="trade.js.html">trade.js</a>, <a href="trade.js.html#line163">line 163</a>
     </li></ul></dd>
     
 
@@ -4428,7 +5284,7 @@ GET /api/v3/openOrders<br>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 20:34:22 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API bswap endpoints
@@ -15,11 +15,10 @@ const Bswap = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data}
    */
-  bswapPools (options = {}) {
+  bswapPools () {
     return this.signRequest(
       'GET',
-      '/sapi/v1/bswap/pools',
-      options
+      '/sapi/v1/bswap/pools'
     )
   }
 
@@ -30,8 +29,9 @@ const Bswap = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data}
    *
-   * @param {number} [poolId]
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.poolId]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidity (options = {}) {
     return this.signRequest(
@@ -51,12 +51,11 @@ const Bswap = superclass => class extends superclass {
    * @param {number} poolId
    * @param {string} asset
    * @param {number} quantity
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityAdd (poolId, asset, quantity, options = {}) {
-    validateParameter(poolId, 'poolId')
-    validateParameter(asset, 'asset')
-    validateParameter(quantity, 'quantity')
+    validateRequiredParameters({ poolId, asset, quantity })
 
     return this.signRequest(
       'POST',
@@ -80,13 +79,11 @@ const Bswap = superclass => class extends superclass {
    * @param {string} type -`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal
    * @param {string} asset
    * @param {number} shareAmount
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityRemove (poolId, type, asset, shareAmount, options = {}) {
-    validateParameter(poolId, 'poolId')
-    validateParameter(type, 'type')
-    validateParameter(asset, 'asset')
-    validateParameter(shareAmount, 'shareAmount')
+    validateRequiredParameters({ poolId, type, asset, shareAmount })
 
     return this.signRequest(
       'POST',
@@ -107,13 +104,14 @@ const Bswap = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data}
    *
-   * @param {number} [operationId]
-   * @param {number} [poolId]
-   * @param {string} [operation] -`ADD` or `REMOVE`
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - default 3, max 100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.operationId]
+   * @param {number} [options.poolId]
+   * @param {string} [options.operation] -`ADD` or `REMOVE`
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - default 3, max 100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityOperationRecord (options = {}) {
     return this.signRequest(
@@ -139,12 +137,11 @@ const Bswap = superclass => class extends superclass {
    * @param {string} quoteAsset
    * @param {string} baseAsset
    * @param {number} quoteQty
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapRequestQuote (quoteAsset, baseAsset, quoteQty, options = {}) {
-    validateParameter(quoteAsset, 'quoteAsset')
-    validateParameter(baseAsset, 'baseAsset')
-    validateParameter(quoteQty, 'quoteQty')
+    validateRequiredParameters({ quoteAsset, baseAsset, quoteQty })
 
     return this.signRequest(
       'GET',
@@ -167,12 +164,11 @@ const Bswap = superclass => class extends superclass {
    * @param {string} quoteAsset
    * @param {string} baseAsset
    * @param {number} quoteQty
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapSwap (quoteAsset, baseAsset, quoteQty, options = {}) {
-    validateParameter(quoteAsset, 'quoteAsset')
-    validateParameter(baseAsset, 'baseAsset')
-    validateParameter(quoteQty, 'quoteQty')
+    validateRequiredParameters({ quoteAsset, baseAsset, quoteQty })
 
     return this.signRequest(
       'POST',
@@ -192,14 +188,15 @@ const Bswap = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#swap-trade}
    *
-   * @param {string} [swapId]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [status] - 0: pending for swap, 1: success, 2: failed
-   * @param {string} [baseAsset]
-   * @param {string} [quoteAsset]
-   * @param {number} [limit] - default 3, max 100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.swapId]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.status] - 0: pending for swap, 1: success, 2: failed
+   * @param {string} [options.baseAsset]
+   * @param {string} [options.quoteAsset]
+   * @param {number} [options.limit] - default 3, max 100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapSwapHistory (options = {}) {
     return this.signRequest(

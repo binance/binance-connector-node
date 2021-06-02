@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API savings endpoints
@@ -13,9 +13,10 @@ const Savings = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-list-user_data}
    *
-   * @param {string} [status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
-   * @param {string} [featured] - "ALL", "true"; default "ALL"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
+   * @param {string} [options.featured] - "ALL", "true"; default "ALL"
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleProducts (options = {}) {
     return this.signRequest(
@@ -33,10 +34,11 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-left-daily-purchase-quota-of-flexible-product-user_data}
    *
    * @param {string} productId
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleUserLeftQuota (productId, options = {}) {
-    validateParameter(productId, 'productId')
+    validateRequiredParameters({ productId })
     return this.signRequest(
       'GET',
       '/sapi/v1/lending/daily/userLeftQuota',
@@ -55,11 +57,11 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} productId
    * @param {string} amount
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseFlexibleProduct (productId, amount, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ productId, amount })
 
     return this.signRequest(
       'POST',
@@ -80,11 +82,11 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} productId
    * @param {string} type - "FAST", "NORMAL"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleUserRedemptionQuota (productId, type, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ productId, type })
 
     return this.signRequest(
       'GET',
@@ -106,12 +108,11 @@ const Savings = superclass => class extends superclass {
    * @param {string} productId
    * @param {number} amount
    * @param {string} type - "FAST", "NORMAL"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleRedeem (productId, amount, type, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ productId, amount, type })
 
     return this.signRequest(
       'POST',
@@ -132,10 +133,11 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-position-user_data}
    *
    * @param {string} asset
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleProductPosition (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -154,16 +156,17 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fixed-and-activity-project-list-user_data}
    *
    * @param {string} type - "ACTIVITY", "CUSTOMIZED_FIXED"
-   * @param {string} [asset]
-   * @param {string} [status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
-   * @param {boolean} [isSortAsc] - default "true"
-   * @param {string} [sortBy] - "START_TIME", "LOT_SIZE", "INTEREST_RATE", "DURATION"; default "START_TIME"
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {string} [options.status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
+   * @param {boolean} [options.isSortAsc] - default "true"
+   * @param {string} [options.sortBy] - "START_TIME", "LOT_SIZE", "INTEREST_RATE", "DURATION"; default "START_TIME"
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsProductList (type, options = {}) {
-    validateParameter(type, 'type')
+    validateRequiredParameters({ type })
 
     return this.signRequest(
       'GET',
@@ -183,11 +186,11 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} projectId
    * @param {number} lot
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseCustomizedProject (projectId, lot, options = {}) {
-    validateParameter(projectId, 'projectId')
-    validateParameter(lot, 'lot')
+    validateRequiredParameters({ projectId, lot })
 
     return this.signRequest(
       'POST',
@@ -207,12 +210,13 @@ const Savings = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fixed-activity-project-position-user_data}
    *
    * @param {string} asset
-   * @param {string} [projectId]
-   * @param {string} [status] - "HOLDING", "REDEEMED"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.projectId]
+   * @param {string} [options.status] - "HOLDING", "REDEEMED"
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsCustomizedPosition (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -230,7 +234,8 @@ const Savings = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#lending-account-user_data}
    *
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsAccount (options = {}) {
     return this.signRequest(
@@ -249,15 +254,16 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} lendingType - "DAILY" for flexible,
    *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
-   * @param {string} [asset]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseRecord (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',
@@ -277,15 +283,16 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} lendingType - "DAILY" for flexible,
    *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
-   * @param {string} [asset]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsRedemptionRecord (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',
@@ -305,15 +312,16 @@ const Savings = superclass => class extends superclass {
    *
    * @param {string} lendingType - "DAILY" for flexible,
    *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
-   * @param {string} [asset]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10, Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsInterestHistory (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',

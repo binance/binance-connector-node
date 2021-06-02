@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API margin endpoints
@@ -17,12 +17,11 @@ const Margin = superclass => class extends superclass {
    * @param {number} amount
    * @param {number} type - 1: transfer from main account to margin account
    *    <br>2: transfer from margin account to main account
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginTransfer (asset, amount, type, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ asset, amount, type })
 
     return this.signRequest(
       'POST',
@@ -45,13 +44,13 @@ const Margin = superclass => class extends superclass {
    *
    * @param {string} asset
    * @param {number} amount
-   * @param {string} [isIsolated] - TRUE or FALSE
-   * @param {string} [symbol] - isolated symbol
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - TRUE or FALSE
+   * @param {string} [options.symbol] - isolated symbol
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginBorrow (asset, amount, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ asset, amount })
 
     return this.signRequest(
       'POST',
@@ -73,13 +72,13 @@ const Margin = superclass => class extends superclass {
    *
    * @param {string} asset
    * @param {string} amount
-   * @param {string} [isIsolated] - TRUE or FALSE
-   * @param {string} [symbol]
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - TRUE or FALSE
+   * @param {string} [options.symbol]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginRepay (asset, amount, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ asset, amount })
 
     return this.signRequest(
       'POST',
@@ -101,7 +100,7 @@ const Margin = superclass => class extends superclass {
    * @param {string} asset
    */
   marginAsset (asset) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.publicRequest(
       'GET',
@@ -120,7 +119,7 @@ const Margin = superclass => class extends superclass {
    * @param {string} symbol
    */
   marginPair (symbol) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -167,7 +166,7 @@ const Margin = superclass => class extends superclass {
    * @param {string} symbol
    */
   marginPairIndex (symbol) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -186,27 +185,26 @@ const Margin = superclass => class extends superclass {
    * @param {string} symbol
    * @param {string} side - BUY or SELL
    * @param {string} type
-   * @param {string} [isIsolated] - TRUE or FALSE
-   * @param {number} [quantity]
-   * @param {number} [quoteOrderQty]
-   * @param {number} [price]
-   * @param {number} [stopPrice] - Used with STOP_LOSS, STOP_LOSS_LIMIT,
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - TRUE or FALSE
+   * @param {number} [options.quantity]
+   * @param {number} [options.quoteOrderQty]
+   * @param {number} [options.price]
+   * @param {number} [options.stopPrice] - Used with STOP_LOSS, STOP_LOSS_LIMIT,
    *    TAKE_PROFIT, and TAKE_PROFIT_LIMIT orders.
-   * @param {string} [newClientOrderId] - A unique id among open orders.
+   * @param {string} [options.newClientOrderId] - A unique id among open orders.
    *    Automatically generated if not sent.
-   * @param {number} [icebergQty] - Used with LIMIT, STOP_LOSS_LIMIT,
+   * @param {number} [options.icebergQty] - Used with LIMIT, STOP_LOSS_LIMIT,
    *    and TAKE_PROFIT_LIMIT to create an iceberg order.
-   * @param {string} [newOrderRespType] - Set the response JSON. ACK, RESULT, or FULL;
+   * @param {string} [options.newOrderRespType] - Set the response JSON. ACK, RESULT, or FULL;
    *    MARKET and LIMIT order types default to FULL, all other orders default to ACK.
-   * @param {string} [sideEffectType] - NO_SIDE_EFFECT, MARGIN_BUY, AUTO_REPAY;
+   * @param {string} [options.sideEffectType] - NO_SIDE_EFFECT, MARGIN_BUY, AUTO_REPAY;
    *    default NO_SIDE_EFFECT.
-   * @param {string} [timeInForce] - GTC, IOC, FOK
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeInForce] - GTC, IOC, FOK
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   newMarginOrder (symbol, side, type, options = {}) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(side, 'side')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ symbol, side, type })
 
     return this.signRequest(
       'POST',
@@ -227,15 +225,16 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-cancel-order-trade}
    *
    * @param {string} symbol
-   * @param {string} [isIsolated] - TRUE or FALSE
-   * @param {number} [orderId]
-   * @param {string} [origClientOrderId]
-   * @param {string} [newClientOrderId] - Used to uniquely identify this cancel.
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - TRUE or FALSE
+   * @param {number} [options.orderId]
+   * @param {string} [options.origClientOrderId]
+   * @param {string} [options.newClientOrderId] - Used to uniquely identify this cancel.
    *    Automatically generated by default.
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   cancelMarginOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'DELETE',
@@ -254,11 +253,12 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-cancel-all-open-orders-on-a-symbol-trade}
    *
    * @param {string} symbol
-   * @param {string} [isIsolated] - TRUE or FALSE, default "FALSE"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - TRUE or FALSE, default "FALSE"
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   cancelAllOpenMarginOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'DELETE',
@@ -276,14 +276,15 @@ const Margin = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-cross-margin-transfer-history-user_data}
    *
-   * @param {string} [asset]
-   * @param {string} [type] - ROLL_IN, ROLL_OUT
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10 Max:100
-   * @param {boolean} [archived] - Default: false. Set to true for archived data from 6 months ago
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {string} [options.type] - ROLL_IN, ROLL_OUT
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10 Max:100
+   * @param {boolean} [options.archived] - Default: false. Set to true for archived data from 6 months ago
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginTransferHistory (options = {}) {
     return this.signRequest(
@@ -301,17 +302,18 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-loan-record-user_data}
    *
    * @param {string} asset
-   * @param {string} [isolatedSymbol]
-   * @param {number} [txId] - the tranId in POST /sapi/v1/margin/loan
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10 Max:100
-   * @param {boolean} [archived] - Default: false. Set to true for archived data from 6 months ago
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isolatedSymbol]
+   * @param {number} [options.txId] - the tranId in POST /sapi/v1/margin/loan
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10 Max:100
+   * @param {boolean} [options.archived] - Default: false. Set to true for archived data from 6 months ago
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginLoanRecord (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -330,17 +332,18 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-repay-record-user_data}
    *
    * @param {string} asset
-   * @param {string} [isolatedSymbol]
-   * @param {number} [txId] - return of /sapi/v1/margin/repay
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10 Max:100
-   * @param {boolean} [archived] - Default: false. Set to true for archived data from 6 months ago
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isolatedSymbol]
+   * @param {number} [options.txId] - return of /sapi/v1/margin/repay
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10 Max:100
+   * @param {boolean} [options.archived] - Default: false. Set to true for archived data from 6 months ago
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginRepayRecord (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -358,14 +361,15 @@ const Margin = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-interest-history-user_data}
    *
-   * @param {string} [asset]
-   * @param {string} [isolatedSymbol]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10 Max:100
-   * @param {boolean} [archived] - Default: false. Set to true for archived data from 6 months ago
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {string} [options.isolatedSymbol]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10 Max:100
+   * @param {boolean} [options.archived] - Default: false. Set to true for archived data from 6 months ago
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginInterestHistory (options = {}) {
     return this.signRequest(
@@ -382,12 +386,13 @@ const Margin = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-force-liquidation-record-user_data}
    *
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {string} [isolatedSymbol]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10 Max:100
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {string} [options.isolatedSymbol]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10 Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginForceLiquidationRecord (options = {}) {
     return this.signRequest(
@@ -404,7 +409,8 @@ const Margin = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-cross-margin-account-details-user_data}
    *
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginAccount (options = {}) {
     return this.signRequest(
@@ -422,13 +428,14 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-order-user_data}
    *
    * @param {string} symbol
-   * @param {string} [isIsolated] - TRUE or FALSE, default "FALSE"
-   * @param {number} [orderId]
-   * @param {string} [origClientOrderId]
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - TRUE or FALSE, default "FALSE"
+   * @param {number} [options.orderId]
+   * @param {string} [options.origClientOrderId]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'GET',
@@ -446,9 +453,10 @@ const Margin = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-open-orders-user_data}
    *
-   * @param {string} [symbol]
-   * @param {string} [isIsolated] - TRUE or FALSE, default "FALSE"
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.symbol]
+   * @param {string} [options.isIsolated] - TRUE or FALSE, default "FALSE"
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginOpenOrders (options = {}) {
     return this.signRequest(
@@ -466,15 +474,16 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-all-orders-user_data}
    *
    * @param {string} symbol
-   * @param {string} [isIsolated] - TRUE or FALSE, default "FALSE"
-   * @param {number} [orderId]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - Default 500; max 500.
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - TRUE or FALSE, default "FALSE"
+   * @param {number} [options.orderId]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - Default 500; max 500.
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginAllOrders (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'GET',
@@ -493,15 +502,16 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-trade-list-user_data}
    *
    * @param {string} symbol
-   * @param {string} [isIsolated] - Default 500; max 500.
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [fromId] - TradeId to fetch from. Default gets most recent trades.
-   * @param {number} [limit] - Default 500; max 1000.
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - Default 500; max 500.
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.fromId] - TradeId to fetch from. Default gets most recent trades.
+   * @param {number} [options.limit] - Default 500; max 1000.
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginMyTrades (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'GET',
@@ -520,11 +530,12 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-max-borrow-user_data}
    *
    * @param {string} asset
-   * @param {string} [isolatedSymbol]
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isolatedSymbol]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginMaxBorrowable (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -543,11 +554,12 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-max-transfer-out-amount-user_data}
    *
    * @param {string} asset
-   * @param {string} [isolatedSymbol]
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {string} [options.isolatedSymbol]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginMaxTransferable (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -566,14 +578,15 @@ const Margin = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-interest-rate-history-user_data}
    *
    * @param {string} asset
-   * @param {number} [vipLevel]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit]
-   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   * @param {object} [options]
+   * @param {number} [options.vipLevel]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginInterestRateHistory (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
     return this.signRequest(
       'GET',
       '/sapi/v1/margin/interestRateHistory',

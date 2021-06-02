@@ -1,19 +1,17 @@
 const { isEmptyValue } = require('./utils')
 const MissingParameterError = require('../error/missingParameterError')
 
-const validateParameter = (param, paramName) => {
-  if (isEmptyValue(param)) {
-    throw new MissingParameterError(paramName)
-  }
-}
-
-const hasOneOfParameters = (param, paramName, param2, paramName2) => {
-  if ((param === undefined || param === '') && (param2 === undefined || param2 === '')) {
-    throw new MissingParameterError(paramName + ', ' + paramName2)
-  }
+const validateRequiredParameters = paramObject => {
+  if (!paramObject || isEmptyValue(paramObject)) { throw new MissingParameterError() }
+  const emptyParams = []
+  Object.keys(paramObject).forEach(param => {
+    if (isEmptyValue(paramObject[param])) {
+      emptyParams.push(param)
+    }
+  })
+  if (emptyParams.length) { throw new MissingParameterError(emptyParams) }
 }
 
 module.exports = {
-  validateParameter,
-  hasOneOfParameters
+  validateRequiredParameters
 }

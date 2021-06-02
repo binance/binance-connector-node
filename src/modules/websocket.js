@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 const WebSocketClient = require('ws')
 
 /**
@@ -25,7 +25,7 @@ const Websocket = superclass => class extends superclass {
    * @param {string} symbol
    */
   aggTradeWS (symbol, callbacks) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@aggTrade`
     this.logger.debug(url)
     this.subscribe(url, callbacks)
@@ -44,7 +44,7 @@ const Websocket = superclass => class extends superclass {
    * @param {string} symbol
    */
   tradeWS (symbol, callbacks) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@trade`
     this.logger.debug(url)
     this.subscribe(url, callbacks)
@@ -65,8 +65,7 @@ const Websocket = superclass => class extends superclass {
    *     1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
    */
   klineWS (symbol, interval, callbacks) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(interval, 'interval')
+    validateRequiredParameters({ symbol, interval })
 
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@kline_${interval}`
     this.logger.debug(url)
@@ -164,9 +163,7 @@ const Websocket = superclass => class extends superclass {
    *
    */
   partialBookDepth (symbol, levels, speed, callbacks) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(levels, 'levels')
-    validateParameter(speed, 'speed')
+    validateRequiredParameters({ symbol, levels, speed })
 
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@depth${levels}@${speed}`
     this.logger.debug(url)
@@ -188,8 +185,7 @@ const Websocket = superclass => class extends superclass {
    *
    */
   diffBookDepth (symbol, speed, callbacks) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(speed, 'speed')
+    validateRequiredParameters({ symbol, speed })
 
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@depth@${speed}`
     this.logger.debug(url)
@@ -204,7 +200,7 @@ const Websocket = superclass => class extends superclass {
    * @param {string} listenKey
    */
   userData (listenKey, callbacks) {
-    validateParameter(listenKey, 'listenKey')
+    validateRequiredParameters({ listenKey })
 
     const url = `${this.wsURL}/ws/${listenKey}`
     this.logger.debug(url)
