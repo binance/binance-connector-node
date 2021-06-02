@@ -1,6 +1,6 @@
 /* global describe, it, expect, */
 
-const { validateRequiredParameters } = require('../../src/helpers/validation')
+const { validateRequiredParameters, hasOneOfParameters } = require('../../src/helpers/validation')
 const MissingParameterError = require('../../src/error/missingParameterError')
 
 describe('#validateRequiredParameters', () => {
@@ -40,6 +40,38 @@ describe('#validateRequiredParameters', () => {
   ])('should not throw error when parameter is filled', (param, paramName) => {
     expect(() => {
       validateRequiredParameters({ [paramName]: param })
+    }).not.toThrow(MissingParameterError)
+  })
+})
+
+describe('#hasOneOfParameters', () => {
+  it('should throw error without object', () => {
+    expect(() => {
+      hasOneOfParameters()
+    }).toThrow(MissingParameterError)
+  })
+
+  it('should throw error with empty object', () => {
+    expect(() => {
+      hasOneOfParameters({})
+    }).toThrow(MissingParameterError)
+  })
+
+  it.each([
+    ['', ''], [{}, {}], [[], []], [undefined, undefined], [null, null]
+  ])('should throw error when both parameters are empty ', (param, param2) => {
+    expect(() => {
+      hasOneOfParameters({ param, param2 })
+    }).toThrow(MissingParameterError)
+  })
+
+  it.each([
+    [2.0, 5.0], ['param', 'param2'],
+    [2.0, ''], [2.0, {}], [2.0, []], [2.0, undefined], [2.0, null],
+    ['', 5.0], [{}, 5.0], [[], 5.0], [undefined, 5.0], [null, 5.0]
+  ])('should not throw error when at least one parameter is filled', (param, param2) => {
+    expect(() => {
+      hasOneOfParameters({ param, param2 })
     }).not.toThrow(MissingParameterError)
   })
 })

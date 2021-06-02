@@ -1,4 +1,4 @@
-const { validateParameter, hasOneOfParameters } = require('../helpers/validation')
+const { validateRequiredParameters, hasOneOfParameters } = require('../helpers/validation')
 
 /**
  * API futures endpoints
@@ -21,12 +21,11 @@ const Futures = superclass => class extends superclass {
    * <br>2: transfer from USDT-Ⓜ futures account to spot account.
    * <br>3: transfer from spot account to COIN-Ⓜ futures account.
    * <br>4: transfer from COIN-Ⓜ futures account to spot account.
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
    */
   futuresAccountTransfer (asset, amount, type, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ asset, amount, type })
 
     return this.signRequest(
       'POST',
@@ -44,14 +43,14 @@ const Futures = superclass => class extends superclass {
    *
    * @param {string} asset
    * @param {number} startTime
-   * @param {number} [endTime]
-   * @param {number} [current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [size] - Default:10 Max:100
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10 Max:100
+   * @param {number} [options.recvWindow]
    */
   futuresAccountTransferHistory (asset, startTime, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(startTime, 'startTime')
+    validateRequiredParameters({ asset, startTime })
 
     return this.signRequest(
       'GET',
@@ -71,12 +70,12 @@ const Futures = superclass => class extends superclass {
    * @param {number} amount - mandatory when collateralAmount is empty
    * @param {string} collateralCoin
    * @param {number} collateralAmount - mandatory when amount is empty
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
    */
   futuresBorrowCrossCollateral (coin, amount, collateralCoin, collateralAmount, options = {}) {
-    validateParameter(coin, 'coin')
-    validateParameter(collateralCoin, 'collateralCoin')
-    hasOneOfParameters(amount, 'amount', collateralAmount, 'collateralAmount')
+    validateRequiredParameters({ coin, collateralCoin })
+    hasOneOfParameters({ amount, collateralAmount })
 
     return this.signRequest(
       'POST',
@@ -92,11 +91,12 @@ const Futures = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#cross-collateral-borrow-history-user_data}
    *
-   * @param {string} [coin]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - default 500, max 1000
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {string} [options.coin]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - default 500, max 1000
+   * @param {number} [options.recvWindow]
    */
   futuresBorrowCrossCollateralHistory (options = {}) {
     return this.signRequest(
@@ -116,12 +116,11 @@ const Futures = superclass => class extends superclass {
    * @param {string} coin
    * @param {string} collateralCoin
    * @param {number} amount
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
    */
   futuresRepayCrossCollateral (coin, collateralCoin, amount, options = {}) {
-    validateParameter(coin, 'coin')
-    validateParameter(collateralCoin, 'collateralCoin')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ coin, collateralCoin, amount })
 
     return this.signRequest(
       'POST',
@@ -137,11 +136,12 @@ const Futures = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#cross-collateral-repayment-history-user_data}
    *
-   * @param {string} [coin]
-   * @param {number} [startTime]
-   * @param {number} [endTime]
-   * @param {number} [limit] - default 500, max 1000
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {string} [options.coin]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - default 500, max 1000
+   * @param {number} [options.recvWindow]
    */
   futuresRepayCrossCollateralHistory (options = {}) {
     return this.signRequest(
@@ -158,7 +158,8 @@ const Futures = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#cross-collateral-wallet-v2-user_data}
    *
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
    */
   futuresCrossCollateralWallet (options = {}) {
     return this.signRequest(
@@ -175,9 +176,10 @@ const Futures = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#cross-collateral-information-v2-user_data}
    *
-   * @param {number} [loanCoin]
-   * @param {number} [collateralCoin]
-   * @param {number} [recvWindow]
+   * @param {object} [options]
+   * @param {number} [options.loanCoin]
+   * @param {number} [options.collateralCoin]
+   * @param {number} [options.recvWindow]
    */
   futuresCrossCollateralInfo (options = {}) {
     return this.signRequest(

@@ -12,6 +12,15 @@ const validateRequiredParameters = paramObject => {
   if (emptyParams.length) { throw new MissingParameterError(emptyParams) }
 }
 
+const hasOneOfParameters = paramObject => {
+  if (!paramObject || isEmptyValue(paramObject)) { throw new MissingParameterError() }
+  const params = Object.values(paramObject)
+  if (isEmptyValue(params[0]) && isEmptyValue(params[1])) {
+    throw new MissingParameterError(Object.keys(paramObject))
+  }
+}
+
 module.exports = {
-  validateRequiredParameters
+  validateRequiredParameters,
+  hasOneOfParameters
 }
