@@ -11,20 +11,20 @@ const {
 
 describe('#subAccountTransferToMaster', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.subAccountTransferToMaster('', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.subAccountTransferToMaster(asset, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should transfer to master', async () => {
+  it('should transfer to master', () => {
     const parameters = {
       asset,
       amount,

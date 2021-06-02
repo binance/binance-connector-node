@@ -11,7 +11,9 @@ describe('#futuresCrossCollateralWallet', () => {
     const parameters = {
       recvWindow
     }
-    nockMock(`/sapi/v2/futures/loan/wallet?${queryString({ ...parameters })}`)(responseMockData)
+
+    var test = { ...parameters }
+    nockMock(`/sapi/v2/futures/loan/wallet?${queryString(test)}`)(responseMockData)
 
     return SpotClient.futuresCrossCollateralWallet(parameters).then(response => {
       expect(response).toBeDefined()

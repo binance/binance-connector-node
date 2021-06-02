@@ -36,11 +36,11 @@ const { validateParameter } = require('../helpers/validation')
  */
 const Market = superclass => class extends superclass {
   /**
-   * Test Connectivity
+   * Test Connectivity&lt;br>
    *
-   * GET /api/v3/ping
+   * GET /api/v3/ping&lt;br>
    *
-   * Test connectivity to the Rest API.
+   * Test connectivity to the Rest API.&lt;br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#test-connectivity}
    */
   ping (options = {}) {
@@ -48,11 +48,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Check Server Time
+   * Check Server Time&lt;br>
    *
-   * GET /api/v3/time
+   * GET /api/v3/time&lt;br>
    *
-   * Test connectivity to the Rest API and get the current server time.
+   * Test connectivity to the Rest API and get the current server time.&lt;br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#check-server-time}
    *
    */
@@ -61,11 +61,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Exchange Information
+   * Exchange Information&lt;br>
    *
-   * GET /api/v3/exchangeInfo
+   * GET /api/v3/exchangeInfo&lt;br>
    *
-   * Current exchange trading rules and symbol information
+   * Current exchange trading rules and symbol information&lt;br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#exchange-information}
    *
    * @param {string} [symbol] - symbol
@@ -87,14 +87,15 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Order Book
+   * Order Book&lt;br>
    *
-   * GET /api/v3/depth
+   * GET /api/v3/depth&lt;br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#order-book}
    *
    * @param {string} symbol
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 100; max 5000.
+   *    Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000]
    */
   depth (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -109,15 +110,15 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Recent Trades List
+   * Recent Trades List&lt;br>
    *
-   * GET /api/v3/trades
+   * GET /api/v3/trades&lt;br>
    *
-   * Get recent trades.
+   * Get recent trades.&lt;br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list}
    *
    * @param {string} symbol
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 500; max 1000.
    */
   trades (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -132,16 +133,16 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Old Trade Lookup
+   * Old Trade Lookup&lt;br>
    *
-   * GET /api/v3/historicalTrades
+   * GET /api/v3/historicalTrades&lt;br>
    *
-   * Get older market trades.
+   * Get older market trades.&lt;br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup}
    *
    * @param {string} symbol
-   * @param {number} [limit]
-   * @param {number} [fromId]
+   * @param {number} [limit] - Default 500; max 1000.
+   * @param {number} [fromId] - Trade id to fetch from. Default gets most recent trades.
    */
   historicalTrades (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -156,17 +157,17 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Compressed/Aggregate Trades List
+   * Compressed/Aggregate Trades List&lt;br>
    *
-   * GET /api/v3/aggTrades
+   * GET /api/v3/aggTrades&lt;br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#compressed-aggregate-trades-list}
    *
    * @param {string} symbol
-   * @param {number} [fromId]
+   * @param {number} [fromId] - id to get aggregate trades from INCLUSIVE.
    * @param {number} [startTime]
    * @param {number} [endTime]
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 500; max 1000.
    */
   aggTrades (symbol, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -181,9 +182,9 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Kline/Candlestick Data
+   * Kline/Candlestick Data&lt;br>
    *
-   * GET /api/v3/klines
+   * GET /api/v3/klines&lt;br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data}
    *
@@ -191,7 +192,7 @@ const Market = superclass => class extends superclass {
    * @param {string} interval
    * @param {number} [startTime]
    * @param {number} [endTime]
-   * @param {number} [limit]
+   * @param {number} [limit] - Default 500; max 1000.
    */
   klines (symbol, interval, options = {}) {
     validateParameter(symbol, 'symbol')
@@ -207,11 +208,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Current Average Price
+   * Current Average Price&lt;br>
    *
-   * GET /api/v3/avgPrice
+   * GET /api/v3/avgPrice&lt;br>
    *
-   * Current average price for a symbol.
+   * Current average price for a symbol.&lt;br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#current-average-price}
    *
    * @param {string} symbol
@@ -226,9 +227,9 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * 24hr Ticker Price Change Statistics
+   * 24hr Ticker Price Change Statistics&lt;br>
    *
-   * GET /api/v3/ticker/24hr
+   * GET /api/v3/ticker/24hr&lt;br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics}
    *
@@ -242,9 +243,9 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Symbol Price Ticker
+   * Symbol Price Ticker&lt;br>
    *
-   * GET /api/v3/ticker/price
+   * GET /api/v3/ticker/price&lt;br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker}
    *
@@ -258,11 +259,11 @@ const Market = superclass => class extends superclass {
   }
 
   /**
-   * Symbol Order Book Ticker
+   * Symbol Order Book Ticker&lt;br>
    *
-   * GET /api/v3/ticker/bookTicker
+   * GET /api/v3/ticker/bookTicker&lt;br>
    *
-   * Best price/qty on the order book for a symbol or symbols.
+   * Best price/qty on the order book for a symbol or symbols.&lt;br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-order-book-ticker}
    *
    * @param {string} [symbol]
@@ -286,13 +287,13 @@ module.exports = Market
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Futures.html">Futures</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-SubAccount.html">SubAccount</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-SubAccount.html">SubAccount</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 10:16:09 GMT+0100 (Western European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

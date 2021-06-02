@@ -6,7 +6,7 @@ const {
 } = require('../../testUtils/testSetup')
 
 describe('#miningAlgoList', () => {
-  it('should return algorithm list', async () => {
+  it('should return algorithm list', () => {
     nockMock('/sapi/v1/mining/pub/algoList')(responseMockData)
 
     return SpotClient.miningAlgoList().then(response => {

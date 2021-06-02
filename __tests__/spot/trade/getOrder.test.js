@@ -14,14 +14,14 @@ const {
 
 describe('#getOrder', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.getOrder('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return order details', async () => {
+  it('should return order details', () => {
     const parameters = {
       orderId
     }

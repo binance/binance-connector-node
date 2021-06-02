@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#marginAllAssets', () => {
-  it('should asset details', async () => {
+  it('should asset details', () => {
     nockMock('/sapi/v1/margin/allAssets')(responseMockData)
 
     return SpotClient.marginAllAssets().then(response => {

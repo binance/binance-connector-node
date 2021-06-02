@@ -10,7 +10,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#blvtRedemptionRecord', () => {
-  it('should query redeem record', async () => {
+  it('should query redeem record', () => {
     const parameters = {
       id: 1,
       tokenName: 'BTCDOWN',

@@ -11,20 +11,20 @@ const {
 
 describe('#subAccountDepositAddress', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountDepositAddress('', 'BNB')
       }).toThrow(MissingParameterError)
     })
 
-    it('missing coin', async () => {
+    it('missing coin', () => {
       expect(() => {
         SpotClient.subAccountDepositAddress(email, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should query sub accont deposit address', async () => {
+  it('should query sub accont deposit address', () => {
     const parameters = {
       email,
       coin,

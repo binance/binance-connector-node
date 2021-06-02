@@ -11,13 +11,13 @@ const {
 
 describe('#marginAllOrders', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.marginAllOrders('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return all orders', async () => {
+  it('should return all orders', () => {
     const parameters = {
       orderId,
       limit

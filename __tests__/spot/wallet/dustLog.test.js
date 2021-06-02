@@ -2,7 +2,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#dustLog', () => {
-  it('should return account dust log', async () => {
+  it('should return account dust log', () => {
     nockMock('/sapi/v1/asset/dribblet')(responseMockData)
 
     return SpotClient.dustLog().then(response => {

@@ -11,20 +11,20 @@ const tokenName = 'BTCDOWN'
 
 describe('#subscribeBlvt', () => {
   describe('throw MissingParameterError', () => {
-    it('missing tokenName', async () => {
+    it('missing tokenName', () => {
       expect(() => {
         SpotClient.subscribeBlvt('', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing cost', async () => {
+    it('missing cost', () => {
       expect(() => {
         SpotClient.subscribeBlvt(tokenName, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should subscribe blvt', async () => {
+  it('should subscribe blvt', () => {
     const parameters = {
       tokenName,
       cost: amount

@@ -6,5 +6,5 @@ const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.v
 
 client.getOCOOrders({
   limit: 100
-}).then(response => console.log(response.data))
-  .catch(error => console.log(error))
+}).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

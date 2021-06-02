@@ -5,9 +5,9 @@
  */
 const Stream = superclass => class extends superclass {
   /**
-   * Create a ListenKey (USER_STREAM)
+   * Create a ListenKey (USER_STREAM)<br>
    *
-   * POST /api/v3/userDataStream
+   * POST /api/v3/userDataStream<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-spot}
    */
@@ -19,9 +19,9 @@ const Stream = superclass => class extends superclass {
   }
 
   /**
-   * Ping/Keep-alive a ListenKey (USER_STREAM)
+   * Ping/Keep-alive a ListenKey (USER_STREAM)<br>
    *
-   * PUT /api/v3/userDataStream
+   * PUT /api/v3/userDataStream<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-spot}
    *
@@ -36,9 +36,9 @@ const Stream = superclass => class extends superclass {
   }
 
   /**
-   * Close a ListenKey (USER_STREAM)
+   * Close a ListenKey (USER_STREAM)<br>
    *
-   * DELETE /api/v3/userDataStream
+   * DELETE /api/v3/userDataStream<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-spot}
    *
@@ -68,9 +68,9 @@ const Stream = superclass => class extends superclass {
   }
 
   /**
-   * Ping/Keep-alive a Margin ListenKey (USER_STREAM)
+   * Ping/Keep-alive a Margin ListenKey (USER_STREAM)<br>
    *
-   * PUT /sapi/v1/userDataStream
+   * PUT /sapi/v1/userDataStream<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-margin}
    *
@@ -85,9 +85,9 @@ const Stream = superclass => class extends superclass {
   }
 
   /**
-   * Close a Margin ListenKey (USER_STREAM)
+   * Close a Margin ListenKey (USER_STREAM)<br>
    *
-   * DELETE /sapi/v1/userDataStream
+   * DELETE /sapi/v1/userDataStream<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-margin}
    *

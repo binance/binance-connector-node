@@ -10,14 +10,14 @@ const {
 
 describe('#accountSnapshot', () => {
   describe('throw MissingParameterError', () => {
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.accountSnapshot('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return account snapshot', async () => {
+  it('should return account snapshot', () => {
     const type = 'SPOT'
     const parameters = {
       limit,

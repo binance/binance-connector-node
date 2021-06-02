@@ -7,13 +7,13 @@ const { validateParameter } = require('../helpers/validation')
  */
 const Mining = superclass => class extends superclass {
   /**
-   * Acquiring Algorithm (MARKET_DATA)
+   * Acquiring Algorithm (MARKET_DATA)<br>
    *
-   * GET /sapi/v1/mining/pub/algoList
+   * GET /sapi/v1/mining/pub/algoList<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#acquiring-algorithm-market_data}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   miningAlgoList (options = {}) {
     return this.publicRequest(
@@ -24,13 +24,13 @@ const Mining = superclass => class extends superclass {
   }
 
   /**
-   * Acquiring CoinName (MARKET_DATA)
+   * Acquiring CoinName (MARKET_DATA)<br>
    *
-   * GET /sapi/v1/mining/pub/coinList
+   * GET /sapi/v1/mining/pub/coinList<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#acquiring-coinname-market_data}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   miningCoinList (options = {}) {
     return this.publicRequest(
@@ -41,16 +41,16 @@ const Mining = superclass => class extends superclass {
   }
 
   /**
-   * Request for Detail Miner List (USER_DATA)
+   * Request for Detail Miner List (USER_DATA)<br>
    *
-   * GET /sapi/v1/mining/worker/detail
+   * GET /sapi/v1/mining/worker/detail<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#request-for-detail-miner-list-user_data}
    *
    * @param {string} algo
-   * @param {string} userName
+   * @param {string} userName - Mining account
    * @param {string} workerName
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   miningWorker (algo, userName, workerName, options = {}) {
     validateParameter(algo, 'algo')
@@ -68,19 +68,23 @@ const Mining = superclass => class extends superclass {
   }
 
   /**
-   * Request for Miner List (USER_DATA)
+   * Request for Miner List (USER_DATA)<br>
    *
-   * GET /sapi/v1/mining/worker/list
+   * GET /sapi/v1/mining/worker/list<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#request-for-miner-list-user_data}
    *
    * @param {string} algo
-   * @param {string} userName
-   * @param {number} [pageIndex]
-   * @param {number} [sort]
-   * @param {number} [sortColumn]
-   * @param {number} [workerStatus]
-   * @param {number} [recvWindow]
+   * @param {string} userName - Mining account
+   * @param {number} [pageIndex] - Page number，default is first page, 1
+   * @param {number} [sort] - sort sequence (default = 0)
+   *    <br> 0 positive sequence, 1 negative sequence
+   * @param {number} [sortColumn] - Sort by (default 1): <br> 1: miner name,
+   *    <br> 2: real-time computing power, <br> 3: daily average computing power,
+   *    <br> 4: real-time rejection rate, <br> 5: last submission time
+   * @param {number} [workerStatus] - miners status (default = 0)
+   *    <br> 0 all, 1 valid, 2 invalid, 3 failure
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   miningWorkerList (algo, userName, options = {}) {
     validateParameter(algo, 'algo')
@@ -96,20 +100,20 @@ const Mining = superclass => class extends superclass {
   }
 
   /**
-   * Revenue List (USER_DATA)
+   * Revenue List (USER_DATA)<br>
    *
-   * GET /sapi/v1/mining/payment/list
+   * GET /sapi/v1/mining/payment/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#revenue-list-user_data}
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#earnings-list-user_data}
    *
    * @param {string} algo
-   * @param {string} userName
+   * @param {string} userName - Mining account
    * @param {string} [coin]
    * @param {number} [startDate]
    * @param {number} [endDate]
-   * @param {number} [pageIndex]
-   * @param {number} [pageSize]
-   * @param {number} [recvWindow]
+   * @param {number} [pageIndex] - Page number，default is first page, 1
+   * @param {number} [pageSize] - minimum 10, maximum 200
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   miningRevenueList (algo, userName, options = {}) {
     validateParameter(algo, 'algo')
@@ -125,15 +129,151 @@ const Mining = superclass => class extends superclass {
   }
 
   /**
-   * Statistic List (USER_DATA)
+   * Extra Bonus List (USER_DATA)<br>
    *
-   * GET /sapi/v1/mining/statistics/user/status
+   * GET /sapi/v1/mining/payment/other<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#extra-bonus-list-user_data}
+   *
+   * @param {string} algo
+   * @param {string} userName
+   * @param {string} [coin]
+   * @param {number} [startDate]
+   * @param {number} [endDate]
+   * @param {number} [pageIndex] - Page number，default is first page, 1
+   * @param {number} [pageSize] - minimum 10, maximum 200
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   */
+  miningBonusList (algo, userName, options = {}) {
+    validateParameter(algo, 'algo')
+    validateParameter(userName, 'userName')
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/mining/payment/other',
+      Object.assign(options, {
+        algo,
+        userName
+      })
+    )
+  }
+
+  /**
+   * Hashrate Resale List (USER_DATA)<br>
+   *
+   * GET /sapi/v1/mining/hash-transfer/config/details/list<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-list-user_data}
+   *
+   * @param {number} [pageIndex] - Page number，default is first page, 1
+   * @param {number} [pageSize] - minimum 10, maximum 200
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   */
+  miningHashrateResaleList (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/mining/hash-transfer/config/details/list',
+      options
+    )
+  }
+
+  /**
+   * Hashrate Resale Detail (USER_DATA)<br>
+   *
+   * GET /sapi/v1/mining/hash-transfer/profit/details<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-detail-user_data}
+   *
+   * @param {number} configId - Mining ID
+   * @param {string} userName - Mining Account
+   * @param {number} [pageIndex] - Page number，default is first page, 1
+   * @param {number} [pageSize] - minimum 10, maximum 200
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   */
+  miningHashrateResaleDetail (configId, userName, options = {}) {
+    validateParameter(configId, 'configId')
+    validateParameter(userName, 'userName')
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/mining/hash-transfer/profit/details',
+      Object.assign(options, {
+        configId,
+        userName
+      })
+    )
+  }
+
+  /**
+   * Hashrate Resale Request (USER_DATA)<br>
+   *
+   * POST /sapi/v1/mining/hash-transfer/config<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-request-user_data}
+   *
+   * @param {string} userName - Mining Account
+   * @param {string} algo
+   * @param {number} startDate
+   * @param {number} endDate
+   * @param {string} toPoolUser - Mining Account
+   * @param {number} hashRate - Resale hashrate h/s must be transferred
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   */
+  miningHashrateResaleRequest (userName, algo, startDate, endDate,
+    toPoolUser, hashRate, options = {}) {
+    validateParameter(userName, 'userName')
+    validateParameter(algo, 'algo')
+    validateParameter(startDate, 'startDate')
+    validateParameter(endDate, 'endDate')
+    validateParameter(toPoolUser, 'toPoolUser')
+    validateParameter(hashRate, 'hashRate')
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/mining/hash-transfer/config',
+      Object.assign(options, {
+        userName,
+        algo,
+        startDate,
+        endDate,
+        toPoolUser,
+        hashRate
+      })
+    )
+  }
+
+  /**
+   * Hashrate Resale Detail (USER_DATA)<br>
+   *
+   * POST /sapi/v1/mining/hash-transfer/config/cancel<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-hashrate-resale-configuration-user_data}
+   *
+   * @param {number} configId - Mining ID
+   * @param {string} userName
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   */
+  miningHashrateResaleCancel (configId, userName, options = {}) {
+    validateParameter(configId, 'configId')
+    validateParameter(userName, 'userName')
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/mining/hash-transfer/config/cancel',
+      Object.assign(options, {
+        configId,
+        userName
+      })
+    )
+  }
+
+  /**
+   * Statistic List (USER_DATA)<br>
+   *
+   * GET /sapi/v1/mining/statistics/user/status<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#statistic-list-user_data}
    *
    * @param {string} algo
-   * @param {string} userName
-   * @param {number} [recvWindow]
+   * @param {string} userName - Mining account
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   miningStatisticList (algo, userName, options = {}) {
     validateParameter(algo, 'algo')
@@ -149,15 +289,15 @@ const Mining = superclass => class extends superclass {
   }
 
   /**
-   * Account List (USER_DATA)
+   * Account List (USER_DATA)<br>
    *
-   * GET /sapi/v1/mining/statistics/user/list
+   * GET /sapi/v1/mining/statistics/user/list<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#account-list-user_data}
    *
    * @param {string} algo
-   * @param {string} userName
-   * @param {number} [recvWindow]
+   * @param {string} userName - Mining account
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   miningAccountList (algo, userName, options = {}) {
     validateParameter(algo, 'algo')

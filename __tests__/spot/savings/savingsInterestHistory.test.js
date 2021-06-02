@@ -16,13 +16,13 @@ const {
 
 describe('#savingsInterestHistory', () => {
   describe('throw MissingParameterError', () => {
-    it('missing lendingType', async () => {
+    it('missing lendingType', () => {
       expect(() => {
         SpotClient.savingsInterestHistory('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return redemptionRecord records', async () => {
+  it('should return redemptionRecord records', () => {
     const parameters = {
       asset,
       startTime,

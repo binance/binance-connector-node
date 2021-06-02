@@ -3,7 +3,7 @@
 const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#exchangeInfo', () => {
-  it('should return exchange info', async () => {
+  it('should return exchange info', () => {
     nockMock('/api/v3/exchangeInfo')(responseMockData)
 
     return SpotClient.exchangeInfo().then(response => {

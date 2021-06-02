@@ -15,13 +15,13 @@ const {
 
 describe('#savingsCustomizedPosition', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.savingsCustomizedPosition('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return project position', async () => {
+  it('should return project position', () => {
     const parameters = {
       projectId,
       status,

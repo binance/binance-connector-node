@@ -6,7 +6,7 @@ const {
 } = require('../../testUtils/testSetup')
 
 describe('#savingsAccount', () => {
-  it('should return saving account', async () => {
+  it('should return saving account', () => {
     nockMock('/sapi/v1/lending/union/account')(responseMockData)
 
     return SpotClient.savingsAccount().then(response => {

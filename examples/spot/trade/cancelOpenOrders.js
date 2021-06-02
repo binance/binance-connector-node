@@ -6,5 +6,5 @@ const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.v
 
 client.cancelOpenOrders('BNBUSDT', {
   recvWindow: 3000
-}).then(response => console.log(response.data))
-  .catch(({ response }) => console.log(response.data.code, response.data.msg))
+}).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

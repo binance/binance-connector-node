@@ -9,7 +9,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginTransfer', () => {
-  it('should transfer funds', async () => {
+  it('should transfer funds', () => {
     const parameters = {
       asset,
       amount,

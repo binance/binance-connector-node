@@ -7,7 +7,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginInterestHistory', () => {
-  it('should return margin interest history record', async () => {
+  it('should return margin interest history record', () => {
     const parameters = {
       current: 1,
       size: 10,

@@ -8,7 +8,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginOpenOrders', () => {
-  it('should return margin open orders', async () => {
+  it('should return margin open orders', () => {
     const parameters = {
       symbol,
       recvWindow

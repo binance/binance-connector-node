@@ -1,8 +1,8 @@
 const Error = require('../error/error')
 
 class MissingParameterError extends Error {
-  constructor (param) {
-    super(`At least one required parameter ("${param}") is missing!`)
+  constructor (paramName) {
+    super(`At least one required parameter ("${paramName}") is missing!`)
     this.name = 'MissingParameterError'
   }
 }

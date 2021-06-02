@@ -9,26 +9,26 @@ const {
 
 describe('#withdraw', () => {
   describe('throw MissingParameterError', () => {
-    it('missing coin', async () => {
+    it('missing coin', () => {
       expect(() => {
         SpotClient.withdraw('', 'address', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing address', async () => {
+    it('missing address', () => {
       expect(() => {
         SpotClient.withdraw('BNB', '', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.withdraw('BNB', 'address')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return withdraw data', async () => {
+  it('should return withdraw data', () => {
     const parameters = {
       network: 'BNB',
       addressTag: 'address_tag'

@@ -4,5 +4,6 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.bswapPools().then(({ data }) => console.log(data))
-  .catch(({ response }) => console.log(response.data))
+client.bswapPools()
+  .then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

@@ -7,7 +7,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#bswapPools', () => {
-  it('should get all swap pools', async () => {
+  it('should get all swap pools', () => {
     const parameters = {
       poolId: 1,
       recvWindow

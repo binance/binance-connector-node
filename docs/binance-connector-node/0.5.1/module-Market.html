@@ -201,9 +201,9 @@
 
 
 <div class="description">
-    Compressed/Aggregate Trades List
+    Compressed/Aggregate Trades List<br>
 
-GET /api/v3/aggTrades
+GET /api/v3/aggTrades<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#compressed-aggregate-trades-list">https://binance-docs.github.io/apidocs/spot/en/#compressed-aggregate-trades-list</a>
 </div>
@@ -300,7 +300,7 @@ GET /api/v3/aggTrades
 
             
 
-            <td class="description last"></td>
+            <td class="description last">id to get aggregate trades from INCLUSIVE.</td>
         </tr>
 
     
@@ -399,7 +399,7 @@ GET /api/v3/aggTrades
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default 500; max 1000.</td>
         </tr>
 
     
@@ -440,7 +440,7 @@ GET /api/v3/aggTrades
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line143">line 143</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line144">line 144</a>
     </li></ul></dd>
     
 
@@ -484,11 +484,11 @@ GET /api/v3/aggTrades
 
 
 <div class="description">
-    Current Average Price
+    Current Average Price<br>
 
-GET /api/v3/avgPrice
+GET /api/v3/avgPrice<br>
 
-Current average price for a symbol.
+Current average price for a symbol.<br>
 <a href="https://binance-docs.github.io/apidocs/spot/en/#current-average-price">https://binance-docs.github.io/apidocs/spot/en/#current-average-price</a>
 </div>
 
@@ -582,7 +582,7 @@ Current average price for a symbol.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line191">line 191</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line192">line 192</a>
     </li></ul></dd>
     
 
@@ -626,11 +626,11 @@ Current average price for a symbol.
 
 
 <div class="description">
-    Symbol Order Book Ticker
+    Symbol Order Book Ticker<br>
 
-GET /api/v3/ticker/bookTicker
+GET /api/v3/ticker/bookTicker<br>
 
-Best price/qty on the order book for a symbol or symbols.
+Best price/qty on the order book for a symbol or symbols.<br>
 <a href="https://binance-docs.github.io/apidocs/spot/en/#symbol-order-book-ticker">https://binance-docs.github.io/apidocs/spot/en/#symbol-order-book-ticker</a>
 </div>
 
@@ -736,7 +736,7 @@ Best price/qty on the order book for a symbol or symbols.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line242">line 242</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line243">line 243</a>
     </li></ul></dd>
     
 
@@ -780,9 +780,9 @@ Best price/qty on the order book for a symbol or symbols.
 
 
 <div class="description">
-    Order Book
+    Order Book<br>
 
-GET /api/v3/depth
+GET /api/v3/depth<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#order-book">https://binance-docs.github.io/apidocs/spot/en/#order-book</a>
 </div>
@@ -879,7 +879,8 @@ GET /api/v3/depth
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default 100; max 5000.
+   Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000]</td>
         </tr>
 
     
@@ -920,7 +921,7 @@ GET /api/v3/depth
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line71">line 71</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -964,11 +965,11 @@ GET /api/v3/depth
 
 
 <div class="description">
-    Exchange Information
+    Exchange Information<br>
 
-GET /api/v3/exchangeInfo
+GET /api/v3/exchangeInfo<br>
 
-Current exchange trading rules and symbol information
+Current exchange trading rules and symbol information<br>
 <a href="https://binance-docs.github.io/apidocs/spot/en/#exchange-information">https://binance-docs.github.io/apidocs/spot/en/#exchange-information</a>
 </div>
 
@@ -1151,11 +1152,11 @@ Current exchange trading rules and symbol information
 
 
 <div class="description">
-    Old Trade Lookup
+    Old Trade Lookup<br>
 
-GET /api/v3/historicalTrades
+GET /api/v3/historicalTrades<br>
 
-Get older market trades.
+Get older market trades.<br>
 <a href="https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup">https://binance-docs.github.io/apidocs/spot/en/#old-trade-lookup</a>
 </div>
 
@@ -1251,7 +1252,7 @@ Get older market trades.
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default 500; max 1000.</td>
         </tr>
 
     
@@ -1284,7 +1285,7 @@ Get older market trades.
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Trade id to fetch from. Default gets most recent trades.</td>
         </tr>
 
     
@@ -1325,7 +1326,7 @@ Get older market trades.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line118">line 118</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line119">line 119</a>
     </li></ul></dd>
     
 
@@ -1369,9 +1370,9 @@ Get older market trades.
 
 
 <div class="description">
-    Kline/Candlestick Data
+    Kline/Candlestick Data<br>
 
-GET /api/v3/klines
+GET /api/v3/klines<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data">https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-data</a>
 </div>
@@ -1565,7 +1566,7 @@ GET /api/v3/klines
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default 500; max 1000.</td>
         </tr>
 
     
@@ -1606,7 +1607,7 @@ GET /api/v3/klines
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line168">line 168</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -1650,11 +1651,11 @@ GET /api/v3/klines
 
 
 <div class="description">
-    Test Connectivity
+    Test Connectivity<br>
 
-GET /api/v3/ping
+GET /api/v3/ping<br>
 
-Test connectivity to the Rest API.
+Test connectivity to the Rest API.<br>
 <a href="https://binance-docs.github.io/apidocs/spot/en/#test-connectivity">https://binance-docs.github.io/apidocs/spot/en/#test-connectivity</a>
 </div>
 
@@ -1743,9 +1744,9 @@ Test connectivity to the Rest API.
 
 
 <div class="description">
-    24hr Ticker Price Change Statistics
+    24hr Ticker Price Change Statistics<br>
 
-GET /api/v3/ticker/24hr
+GET /api/v3/ticker/24hr<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics">https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics</a>
 </div>
@@ -1852,7 +1853,7 @@ GET /api/v3/ticker/24hr
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line209">line 209</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line210">line 210</a>
     </li></ul></dd>
     
 
@@ -1896,9 +1897,9 @@ GET /api/v3/ticker/24hr
 
 
 <div class="description">
-    Symbol Price Ticker
+    Symbol Price Ticker<br>
 
-GET /api/v3/ticker/price
+GET /api/v3/ticker/price<br>
 
 <a href="https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker">https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker</a>
 </div>
@@ -1993,7 +1994,7 @@ GET /api/v3/ticker/price
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line225">line 225</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line226">line 226</a>
     </li></ul></dd>
     
 
@@ -2037,11 +2038,11 @@ GET /api/v3/ticker/price
 
 
 <div class="description">
-    Check Server Time
+    Check Server Time<br>
 
-GET /api/v3/time
+GET /api/v3/time<br>
 
-Test connectivity to the Rest API and get the current server time.
+Test connectivity to the Rest API and get the current server time.<br>
 <a href="https://binance-docs.github.io/apidocs/spot/en/#check-server-time">https://binance-docs.github.io/apidocs/spot/en/#check-server-time</a>
 </div>
 
@@ -2130,11 +2131,11 @@ Test connectivity to the Rest API and get the current server time.
 
 
 <div class="description">
-    Recent Trades List
+    Recent Trades List<br>
 
-GET /api/v3/trades
+GET /api/v3/trades<br>
 
-Get recent trades.
+Get recent trades.<br>
 <a href="https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list">https://binance-docs.github.io/apidocs/spot/en/#recent-trades-list</a>
 </div>
 
@@ -2230,7 +2231,7 @@ Get recent trades.
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Default 500; max 1000.</td>
         </tr>
 
     
@@ -2271,7 +2272,7 @@ Get recent trades.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="market.js.html">market.js</a>, <a href="market.js.html#line94">line 94</a>
+        <a href="market.js.html">market.js</a>, <a href="market.js.html#line95">line 95</a>
     </li></ul></dd>
     
 
@@ -2317,13 +2318,13 @@ Get recent trades.
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Futures.html">Futures</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-SubAccount.html">SubAccount</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-SubAccount.html">SubAccount</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Wed Jun 02 2021 10:16:09 GMT+0100 (Western European Summer Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Tue Jun 01 2021 10:28:59 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

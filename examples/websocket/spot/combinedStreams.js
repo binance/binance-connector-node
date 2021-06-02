@@ -1,10 +1,12 @@
-const bunyan = require('bunyan')
-
+const { Console } = require('console')
+const fs = require('fs')
 const Spot = require('../../../src/spot')
-const logger = bunyan.createLogger({
-  name: 'binance connector',
-  stream: process.stdout,
-  level: 'debug'
+
+const output = fs.createWriteStream('./stdout.log')
+const errorOutput = fs.createWriteStream('./stderr.log')
+const logger = new Console({
+  stdout: output,
+  stderr: errorOutput
 })
 
 const client = new Spot('', '', {
@@ -12,10 +14,10 @@ const client = new Spot('', '', {
 })
 
 const callbacks = {
-  open: () => console.log('open'),
-  close: () => console.log('closed'),
-  message: function (data) {
-    console.log(data)
-  }
+  open: () => client.logger.debug('open'),
+  close: () => client.logger.debug('closed'),
+  message: data => client.logger.log(data)
 }
+
 client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+// check the output file

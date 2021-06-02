@@ -11,14 +11,14 @@ const {
 
 describe('#subAccountDepositHistory', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountDepositHistory('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should query sub accont deposit history', async () => {
+  it('should query sub accont deposit history', () => {
     const parameters = {
       email,
       coin,

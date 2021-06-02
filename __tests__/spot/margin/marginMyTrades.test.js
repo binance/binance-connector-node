@@ -12,14 +12,14 @@ const {
 
 describe('#marginMyTrades', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.marginMyTrades('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return my margin trades', async () => {
+  it('should return my margin trades', () => {
     const parameters = {
       startTime,
       endTime,

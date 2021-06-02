@@ -12,7 +12,7 @@ const swapId = 1
 const status = 0
 
 describe('#bswapSwapHistory', () => {
-  it('should get swap history', async () => {
+  it('should get swap history', () => {
     const parameters = {
       swapId,
       startTime,

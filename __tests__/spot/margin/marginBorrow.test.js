@@ -10,19 +10,19 @@ const {
 
 describe('#marginBorrow', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginBorrow('', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.marginBorrow(asset, '')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should transfer transaction id', async () => {
+  it('should transfer transaction id', () => {
     const parameters = {
       asset,
       amount

@@ -1,8 +1,8 @@
-
+const { isEmptyValue } = require('./utils')
 const MissingParameterError = require('../error/missingParameterError')
 
 const validateParameter = (param, paramName) => {
-  if (param === undefined || param === '') {
+  if (isEmptyValue(param)) {
     throw new MissingParameterError(paramName)
   }
 }

@@ -11,13 +11,13 @@ const {
 
 describe('#cancelMarginOrder', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.cancelMarginOrder('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return cancelled margin order', async () => {
+  it('should return cancelled margin order', () => {
     const parameters = {
       orderId,
       recvWindow

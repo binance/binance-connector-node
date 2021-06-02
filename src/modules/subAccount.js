@@ -7,9 +7,9 @@ const { validateParameter } = require('../helpers/validation')
  */
 const SubAccount = superclass => class extends superclass {
   /**
-    * Query Sub-account List(For Master Account)
+    * Query Sub-account List(For Master Account)<br>
     *
-    * GET /sapi/v1/sub-account/list
+    * GET /sapi/v1/sub-account/list<br>
     *
     * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account}
     *
@@ -17,7 +17,7 @@ const SubAccount = superclass => class extends superclass {
     * @param {string} [isFreeze]
     * @param {number} [page]
     * @param {number} [limit]
-    * @param {number} [recvWindow]
+    * @param {number} [recvWindow] - The value cannot be greater than 60000
 
     */
   subAccountList (options = {}) {
@@ -29,9 +29,9 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Query Sub-account Transfer History(For Master Account)
+   * Query Sub-account Transfer History(For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/sub/transfer/history
+   * GET /sapi/v1/sub-account/sub/transfer/history<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account}
    *
@@ -41,8 +41,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [endTime]
    * @param {number} [page]
    * @param {number} [limit]
-   * @param {number} [recvWindow]
-
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountTransferHistory (options = {}) {
     return this.signRequest(
@@ -53,14 +52,14 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-    * Query Sub-account Assets(For Master Account)
+    * Query Sub-account Assets(For Master Account)<br>
     *
-    * GET /sapi/v3/sub-account/assets
+    * GET /sapi/v3/sub-account/assets<br>
     *
     * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account}
     *
     * @param {string} email
-    * @param {number} [recvWindow]
+    * @param {number} [recvWindow] - The value cannot be greater than 60000
     */
   subAccountAssets (email, options = {}) {
     validateParameter(email, 'email')
@@ -68,23 +67,21 @@ const SubAccount = superclass => class extends superclass {
     return this.signRequest(
       'GET',
       '/sapi/v3/sub-account/assets',
-      Object.assign(options, {
-        email
-      })
+      Object.assign(options, { email })
     )
   }
 
   /**
-   * Get Sub-account Deposit Address (For Master Account)
+   * Get Sub-account Deposit Address (For Master Account)<br>
    *
-   * GET /sapi/v1/capital/deposit/subAddress
+   * GET /sapi/v1/capital/deposit/subAddress<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account}
    *
    * @param {string} email
    * @param {string} coin
    * @param {string} [network]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountDepositAddress (email, coin, options = {}) {
     validateParameter(email, 'email')
@@ -101,9 +98,9 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Get Sub-account Deposit History (For Master Account)
+   * Get Sub-account Deposit History (For Master Account)<br>
    *
-   * GET /sapi/v1/capital/deposit/subHisrec
+   * GET /sapi/v1/capital/deposit/subHisrec<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account}
    *
@@ -114,7 +111,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [endTime]
    * @param {number} [limit]
    * @param {number} [offset]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountDepositHistory (email, options = {}) {
     validateParameter(email, 'email')
@@ -122,21 +119,19 @@ const SubAccount = superclass => class extends superclass {
     return this.signRequest(
       'GET',
       '/sapi/v1/capital/deposit/subHisrec',
-      Object.assign(options, {
-        email
-      })
+      Object.assign(options, { email })
     )
   }
 
   /**
-   * Get Sub-account's Status on Margin/Futures(For Master Account)
+   * Get Sub-account's Status on Margin/Futures(For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/status
+   * GET /sapi/v1/sub-account/status<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account}
    *
    * @param {string} [email]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountStatus (options = {}) {
     return this.signRequest(
@@ -147,14 +142,14 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Enable Margin for Sub-account (For Master Account)
+   * Enable Margin for Sub-account (For Master Account)<br>
    *
-   * POST /sapi/v1/sub-account/margin/enable
+   * POST /sapi/v1/sub-account/margin/enable<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account}
    *
    * @param {string} [email]
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountEnableMargin (email, options = {}) {
     validateParameter(email, 'email')
@@ -169,14 +164,14 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Get Detail on Sub-account's Margin Account (For Master Account)
+   * Get Detail on Sub-account's Margin Account (For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/margin/account
+   * GET /sapi/v1/sub-account/margin/account<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account}
    *
    * @param {string} email
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountMarginAccount (email, options = {}) {
     validateParameter(email, 'email')
@@ -191,13 +186,13 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Get Summary of Sub-account's Margin Account (For Master Account)
+   * Get Summary of Sub-account's Margin Account (For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/margin/accountSummary
+   * GET /sapi/v1/sub-account/margin/accountSummary<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountMarginAccountSummary (options = {}) {
     return this.signRequest(
@@ -208,14 +203,14 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Enable Futures for Sub-account (For Master Account)
+   * Enable Futures for Sub-account (For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/futures/enable
+   * GET /sapi/v1/sub-account/futures/enable<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account}
    *
    * @param {string} email
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountEnableFutures (email, options = {}) {
     validateParameter(email, 'email')
@@ -230,14 +225,14 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Get Detail on Sub-account's Futures Account (For Master Account)
+   * Get Detail on Sub-account's Futures Account (For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/futures/account
+   * GET /sapi/v1/sub-account/futures/account<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account}
    *
    * @param {string} email
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesAccount (email, options = {}) {
     validateParameter(email, 'email')
@@ -252,13 +247,13 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Get Summary of Sub-account's Futures Account (For Master Account)
+   * Get Summary of Sub-account's Futures Account (For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/futures/accountSummary
+   * GET /sapi/v1/sub-account/futures/accountSummary<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account}
    *
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesAccountSummary (options = {}) {
     return this.signRequest(
@@ -269,14 +264,14 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Get Futures Postion-Risk of Sub-account (For Master Account)
+   * Get Futures Postion-Risk of Sub-account (For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/futures/positionRisk
+   * GET /sapi/v1/sub-account/futures/positionRisk<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account}
    *
    * @param {string} email
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesPositionRisk (email, options = {}) {
     validateParameter(email, 'email')
@@ -291,9 +286,9 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Futures Transfer for Sub-account(For Master Account)
+   * Futures Transfer for Sub-account(For Master Account)<br>
    *
-   * POST /sapi/v1/sub-account/futures/transfer
+   * POST /sapi/v1/sub-account/futures/transfer<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account}
    *
@@ -304,7 +299,7 @@ const SubAccount = superclass => class extends superclass {
    * <br>2: transfer from subaccount's USDT-margined futures account to its spot account
    * <br>3: transfer from subaccount's spot account to its COIN-margined futures account
    * <br>4: transfer from subaccount's COIN-margined futures account to its spot account
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesTransfer (email, asset, amount, type, options = {}) {
     validateParameter(email, 'email')
@@ -325,9 +320,9 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Margin Transfer for Sub-account(For Master Account)
+   * Margin Transfer for Sub-account(For Master Account)<br>
    *
-   * POST /sapi/v1/sub-account/margin/transfer
+   * POST /sapi/v1/sub-account/margin/transfer<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account}
    *
@@ -336,7 +331,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} amount
    * @param {number} type - 1: transfer from subaccount's spot account to margin account
    * <br>2: transfer from subaccount's margin account to its spot account
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
 
    */
   subAccountMarginTransfer (email, asset, amount, type, options = {}) {
@@ -358,16 +353,16 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Transfer to Sub-account of Same Master（For Sub-account）
+   * Transfer to Sub-account of Same Master（For Sub-account）<br>
    *
-   * POST /sapi/v1/sub-account/transfer/subToSub
+   * POST /sapi/v1/sub-account/transfer/subToSub<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account}
    *
    * @param {string} toEmail
    * @param {string} asset
    * @param {number} amount
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountTransferToSub (toEmail, asset, amount, options = {}) {
     validateParameter(toEmail, 'toEmail')
@@ -386,15 +381,15 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Transfer to Master（For Sub-account）
+   * Transfer to Master（For Sub-account）<br>
    *
-   * POST /sapi/v1/sub-account/transfer/subToMaster
+   * POST /sapi/v1/sub-account/transfer/subToMaster<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account}
    *
    * @param {string} asset
    * @param {number} amount
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountTransferToMaster (asset, amount, options = {}) {
     validateParameter(asset, 'asset')
@@ -411,9 +406,9 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Sub-account Transfer History (For Sub-account)
+   * Sub-account Transfer History (For Sub-account)<br>
    *
-   * GET /sapi/v1/sub-account/transfer/subUserHistory
+   * GET /sapi/v1/sub-account/transfer/subUserHistory<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account}
    *
@@ -422,7 +417,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [startTime]
    * @param {number} [endTime]
    * @param {number} [limit] - Default 500
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
 
    */
   subAccountTransferSubAccountHistory (options = {}) {
@@ -434,9 +429,9 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Query Sub-account Futures Asset Transfer History(For Master Account)
+   * Query Sub-account Futures Asset Transfer History(For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/futures/internalTransfer
+   * GET /sapi/v1/sub-account/futures/internalTransfer<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account}
    *
@@ -446,7 +441,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [endTime] - Default return the history with in 100 days
    * @param {number} [page] - Default value: 1
    * @param {number} [limit] - Default value: 50, Max value: 500
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesAssetTransferHistory (email, futuresType, options = {}) {
     validateParameter(email, 'email')
@@ -462,9 +457,9 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Sub-account Futures Asset Transfer(For Master Account)
+   * Sub-account Futures Asset Transfer(For Master Account)<br>
    *
-   * POST /sapi/v1/sub-account/futures/internalTransfer
+   * POST /sapi/v1/sub-account/futures/internalTransfer<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account}
    *
@@ -473,7 +468,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} futuresType - 1: USDT-margined Futures，2: Coin-margined Futures
    * @param {number} asset
    * @param {number} amount
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
 
    */
   subAccountFuturesAssetTransfer (fromEmail, toEmail, futuresType, asset, amount, options = {}) {
@@ -497,22 +492,62 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
-   * Query Sub-account Spot Assets Summary (For Master Account)
+   * Query Sub-account Spot Assets Summary (For Master Account)<br>
    *
-   * GET /sapi/v1/sub-account/spotSummary
+   * GET /sapi/v1/sub-account/spotSummary<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account}
    *
    * @param {string} [email] - Sub account email
    * @param {string} [page] - default 1
    * @param {number} [size] - default 10, max 20
-   * @param {number} [recvWindow]
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountSpotSummary (options = {}) {
     return this.signRequest(
       'GET',
       '/sapi/v1/sub-account/spotSummary',
       options
+    )
+  }
+
+  /**
+   * Create a Virtual Sub-account(For Master Account)<br>
+   *
+   * POST /sapi/v1/sub-account/virtualSubAccount<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account}
+   *
+   * @param {string} subAccountString
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   */
+  subAccountCreation (subAccountString, options = {}) {
+    validateParameter(subAccountString, 'subAccountString')
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/sub-account/virtualSubAccount',
+      Object.assign(options, { subAccountString })
+    )
+  }
+
+  /**
+   * Enable Leverage Token for Sub-account (For Master Account)<br>
+   *
+   * POST /sapi/v1/sub-account/blvt/enable<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account}
+   *
+   * @param {string} email
+   * @param {boolean} enableBlvt
+   * @param {number} [recvWindow] - The value cannot be greater than 60000
+   */
+  subAccountLeverageToken (email, enableBlvt, options = {}) {
+    validateParameter(email, 'email')
+    validateParameter(enableBlvt, 'enableBlvt')
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/sub-account/blvt/enable',
+      Object.assign(options, { email, enableBlvt })
     )
   }
 }

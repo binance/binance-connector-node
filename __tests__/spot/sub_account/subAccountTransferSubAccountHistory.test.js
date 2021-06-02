@@ -8,7 +8,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountTransferSubAccountHistory', () => {
-  it('should get sub account transfer history', async () => {
+  it('should get sub account transfer history', () => {
     const parameters = {
       asset,
       type: 1,

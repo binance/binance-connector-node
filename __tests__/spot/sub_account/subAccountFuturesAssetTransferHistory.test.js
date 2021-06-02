@@ -12,20 +12,20 @@ const futuresType = 1
 
 describe('#subAccountFuturesAssetTransferHistory', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', async () => {
+    it('missing email', () => {
       expect(() => {
         SpotClient.subAccountFuturesAssetTransferHistory('', futuresType)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing futuresType', async () => {
+    it('missing futuresType', () => {
       expect(() => {
         SpotClient.subAccountFuturesAssetTransferHistory(email, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should get sub account futures asset transfer history', async () => {
+  it('should get sub account futures asset transfer history', () => {
     const parameters = {
       email: email,
       futuresType,

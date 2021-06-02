@@ -10,7 +10,7 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#savingsFlexibleProducts', () => {
-  it('should return flexible product list', async () => {
+  it('should return flexible product list', () => {
     const parameters = {
       status: 'SUBSCRIBABLE',
       featured: 'ALL'

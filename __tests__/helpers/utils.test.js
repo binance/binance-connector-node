@@ -1,6 +1,20 @@
 /* global describe, it, expect, */
 
-const { removeEmptyValue, buildQueryString, flowRight } = require('../../src/helpers/utils')
+const { isEmptyValue, removeEmptyValue, buildQueryString, flowRight } = require('../../src/helpers/utils')
+
+describe('#isEmptyValue', () => {
+  it.each([
+    [0], [1], [{ key: 'value' }], [[1, 2, 3]], ['string'], [true], [false]
+  ])('should return false when it is not an empty value', input => {
+    expect(isEmptyValue(input)).toBe(false)
+  })
+
+  it.each([
+    [undefined], [NaN], [null], [''], ['  '], ['\t'], ['\n'], ['\r'], [{}], [[]]
+  ])('should return true when it is an empty or invalid value', input => {
+    expect(isEmptyValue(input)).toBe(true)
+  })
+})
 
 describe('#removeEmptyValue', () => {
   it('should be same without empty value', () => {
@@ -73,5 +87,18 @@ describe('#flowRight', () => {
     const expectedFunction = num => ((num + 1) * (num + 1)) - 2
     expect(flowRight(subtractionFunction, squareFunction, incrementFunction)(2))
       .toStrictEqual(expectedFunction(2))
+  })
+
+  it('should create a new composite class', () => {
+    const ClassA = superclass => class extends superclass {
+      functionA () { return 1 }
+    }
+    class ClassB {
+      functionB () { return 2 }
+    }
+    class ClassC extends flowRight(ClassA)(ClassB) {}
+    const instanceC = new ClassC()
+    expect(instanceC.functionA()).toBe(1)
+    expect(instanceC.functionB()).toBe(2)
   })
 })
