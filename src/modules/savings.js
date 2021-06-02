@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API savings endpoints
@@ -36,7 +36,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleUserLeftQuota (productId, options = {}) {
-    validateParameter(productId, 'productId')
+    validateRequiredParameters({ productId })
     return this.signRequest(
       'GET',
       '/sapi/v1/lending/daily/userLeftQuota',
@@ -58,8 +58,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseFlexibleProduct (productId, amount, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ productId, amount })
 
     return this.signRequest(
       'POST',
@@ -83,8 +82,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleUserRedemptionQuota (productId, type, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ productId, type })
 
     return this.signRequest(
       'GET',
@@ -109,9 +107,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleRedeem (productId, amount, type, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ productId, amount, type })
 
     return this.signRequest(
       'POST',
@@ -135,7 +131,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleProductPosition (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -163,7 +159,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsProductList (type, options = {}) {
-    validateParameter(type, 'type')
+    validateRequiredParameters({ type })
 
     return this.signRequest(
       'GET',
@@ -186,8 +182,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseCustomizedProject (projectId, lot, options = {}) {
-    validateParameter(projectId, 'projectId')
-    validateParameter(lot, 'lot')
+    validateRequiredParameters({ projectId, lot })
 
     return this.signRequest(
       'POST',
@@ -212,7 +207,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsCustomizedPosition (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -257,7 +252,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsPurchaseRecord (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',
@@ -285,7 +280,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsRedemptionRecord (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',
@@ -313,7 +308,7 @@ const Savings = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   savingsInterestHistory (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',

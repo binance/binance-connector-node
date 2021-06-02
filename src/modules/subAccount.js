@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API sub account endpoints
@@ -62,7 +62,7 @@ const SubAccount = superclass => class extends superclass {
     * @param {number} [recvWindow] - The value cannot be greater than 60000
     */
   subAccountAssets (email, options = {}) {
-    validateParameter(email, 'email')
+    validateRequiredParameters({ email })
 
     return this.signRequest(
       'GET',
@@ -84,8 +84,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountDepositAddress (email, coin, options = {}) {
-    validateParameter(email, 'email')
-    validateParameter(coin, 'coin')
+    validateRequiredParameters({ email, coin })
 
     return this.signRequest(
       'GET',
@@ -114,7 +113,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountDepositHistory (email, options = {}) {
-    validateParameter(email, 'email')
+    validateRequiredParameters({ email })
 
     return this.signRequest(
       'GET',
@@ -152,7 +151,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountEnableMargin (email, options = {}) {
-    validateParameter(email, 'email')
+    validateRequiredParameters({ email })
 
     return this.signRequest(
       'POST',
@@ -174,7 +173,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountMarginAccount (email, options = {}) {
-    validateParameter(email, 'email')
+    validateRequiredParameters({ email })
 
     return this.signRequest(
       'GET',
@@ -213,7 +212,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountEnableFutures (email, options = {}) {
-    validateParameter(email, 'email')
+    validateRequiredParameters({ email })
 
     return this.signRequest(
       'POST',
@@ -235,7 +234,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesAccount (email, options = {}) {
-    validateParameter(email, 'email')
+    validateRequiredParameters({ email })
 
     return this.signRequest(
       'GET',
@@ -274,7 +273,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesPositionRisk (email, options = {}) {
-    validateParameter(email, 'email')
+    validateRequiredParameters({ email })
 
     return this.signRequest(
       'GET',
@@ -302,10 +301,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesTransfer (email, asset, amount, type, options = {}) {
-    validateParameter(email, 'email')
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ email, asset, amount, type })
 
     return this.signRequest(
       'POST',
@@ -335,10 +331,7 @@ const SubAccount = superclass => class extends superclass {
 
    */
   subAccountMarginTransfer (email, asset, amount, type, options = {}) {
-    validateParameter(email, 'email')
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ email, asset, amount, type })
 
     return this.signRequest(
       'POST',
@@ -365,9 +358,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountTransferToSub (toEmail, asset, amount, options = {}) {
-    validateParameter(toEmail, 'toEmail')
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ toEmail, asset, amount })
 
     return this.signRequest(
       'POST',
@@ -392,8 +383,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountTransferToMaster (asset, amount, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ asset, amount })
 
     return this.signRequest(
       'POST',
@@ -444,8 +434,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountFuturesAssetTransferHistory (email, futuresType, options = {}) {
-    validateParameter(email, 'email')
-    validateParameter(futuresType, 'futuresType')
+    validateRequiredParameters({ email, futuresType })
     return this.signRequest(
       'GET',
       '/sapi/v1/sub-account/futures/internalTransfer',
@@ -472,11 +461,7 @@ const SubAccount = superclass => class extends superclass {
 
    */
   subAccountFuturesAssetTransfer (fromEmail, toEmail, futuresType, asset, amount, options = {}) {
-    validateParameter(fromEmail, 'fromEmail')
-    validateParameter(toEmail, 'toEmail')
-    validateParameter(futuresType, 'futuresType')
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ fromEmail, toEmail, futuresType, asset, amount })
 
     return this.signRequest(
       'POST',
@@ -522,7 +507,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountCreation (subAccountString, options = {}) {
-    validateParameter(subAccountString, 'subAccountString')
+    validateRequiredParameters({ subAccountString })
     return this.signRequest(
       'POST',
       '/sapi/v1/sub-account/virtualSubAccount',
@@ -542,8 +527,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subAccountLeverageToken (email, enableBlvt, options = {}) {
-    validateParameter(email, 'email')
-    validateParameter(enableBlvt, 'enableBlvt')
+    validateRequiredParameters({ email, enableBlvt })
     return this.signRequest(
       'POST',
       '/sapi/v1/sub-account/blvt/enable',

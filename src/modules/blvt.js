@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API blvt endpoints
@@ -35,8 +35,7 @@ const Blvt = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   subscribeBlvt (tokenName, cost, options = {}) {
-    validateParameter(tokenName, 'tokenName')
-    validateParameter(cost, 'cost')
+    validateRequiredParameters({ tokenName, cost })
     return this.signRequest(
       'POST',
       '/sapi/v1/blvt/subscribe',
@@ -83,8 +82,7 @@ const Blvt = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   redeemBlvt (tokenName, amount, options = {}) {
-    validateParameter(tokenName, 'tokenName')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ tokenName, amount })
     return this.signRequest(
       'POST',
       '/sapi/v1/blvt/redeem',

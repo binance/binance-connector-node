@@ -1,5 +1,5 @@
 
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API market endpoints
@@ -70,7 +70,7 @@ const Market = superclass => class extends superclass {
    *    Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000]
    */
   depth (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -93,7 +93,7 @@ const Market = superclass => class extends superclass {
    * @param {number} [limit] - Default 500; max 1000.
    */
   trades (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -117,7 +117,7 @@ const Market = superclass => class extends superclass {
    * @param {number} [fromId] - Trade id to fetch from. Default gets most recent trades.
    */
   historicalTrades (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -142,7 +142,7 @@ const Market = superclass => class extends superclass {
    * @param {number} [limit] - Default 500; max 1000.
    */
   aggTrades (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -167,8 +167,7 @@ const Market = superclass => class extends superclass {
    * @param {number} [limit] - Default 500; max 1000.
    */
   klines (symbol, interval, options = {}) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(interval, 'interval')
+    validateRequiredParameters({ symbol, interval })
     return this.publicRequest(
       'GET',
       '/api/v3/klines',
@@ -190,7 +189,7 @@ const Market = superclass => class extends superclass {
    * @param {string} symbol
    */
   avgPrice (symbol) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',

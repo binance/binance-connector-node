@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API margin endpoints
@@ -20,9 +20,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginTransfer (asset, amount, type, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ asset, amount, type })
 
     return this.signRequest(
       'POST',
@@ -50,8 +48,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginBorrow (asset, amount, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ asset, amount })
 
     return this.signRequest(
       'POST',
@@ -78,8 +75,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginRepay (asset, amount, options = {}) {
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ asset, amount })
 
     return this.signRequest(
       'POST',
@@ -101,7 +97,7 @@ const Margin = superclass => class extends superclass {
    * @param {string} asset
    */
   marginAsset (asset) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.publicRequest(
       'GET',
@@ -120,7 +116,7 @@ const Margin = superclass => class extends superclass {
    * @param {string} symbol
    */
   marginPair (symbol) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -167,7 +163,7 @@ const Margin = superclass => class extends superclass {
    * @param {string} symbol
    */
   marginPairIndex (symbol) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
@@ -204,9 +200,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   newMarginOrder (symbol, side, type, options = {}) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(side, 'side')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ symbol, side, type })
 
     return this.signRequest(
       'POST',
@@ -235,7 +229,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   cancelMarginOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'DELETE',
@@ -258,7 +252,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   cancelAllOpenMarginOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'DELETE',
@@ -311,7 +305,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginLoanRecord (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -340,7 +334,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginRepayRecord (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -428,7 +422,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'GET',
@@ -474,7 +468,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginAllOrders (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'GET',
@@ -501,7 +495,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginMyTrades (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'GET',
@@ -524,7 +518,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginMaxBorrowable (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -547,7 +541,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginMaxTransferable (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -573,7 +567,7 @@ const Margin = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   marginInterestRateHistory (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
     return this.signRequest(
       'GET',
       '/sapi/v1/margin/interestRateHistory',

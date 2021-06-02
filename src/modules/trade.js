@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API trade endpoints
@@ -28,9 +28,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   newOrderTest (symbol, side, type, options = {}) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(side, 'side')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ symbol, side, type })
 
     return this.signRequest(
       'POST',
@@ -64,9 +62,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   newOrder (symbol, side, type, options = {}) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(side, 'side')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ symbol, side, type })
 
     return this.signRequest(
       'POST',
@@ -93,7 +89,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   cancelOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'DELETE',
@@ -114,7 +110,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   cancelOpenOrders (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'DELETE',
@@ -138,7 +134,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   getOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
     return this.signRequest(
       'GET',
       '/api/v3/order',
@@ -155,7 +151,7 @@ const Trade = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#current-open-orders-user_data}
    *
-   * @param {string} symbol
+   * @param {string} [symbol]
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   openOrders (options = {}) {
@@ -181,7 +177,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} [recvWindow] - The value cannot be greater than 60000
    */
   allOrders (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
     return this.signRequest(
       'GET',
       '/api/v3/allOrders',
@@ -214,11 +210,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} [recvWindow] - The value cannot be greater than 60000
    */
   newOCOOrder (symbol, side, quantity, price, stopPrice, options = {}) {
-    validateParameter(symbol, 'symbol')
-    validateParameter(side, 'side')
-    validateParameter(quantity, 'quantity')
-    validateParameter(price, 'price')
-    validateParameter(stopPrice, 'stopPrice')
+    validateRequiredParameters({ symbol, side, quantity, price, stopPrice })
 
     return this.signRequest(
       'POST',
@@ -247,7 +239,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   cancelOCOOrder (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'DELETE',
@@ -347,7 +339,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   myTrades (symbol, options = {}) {
-    validateParameter(symbol, 'symbol')
+    validateRequiredParameters({ symbol })
 
     return this.signRequest(
       'GET',

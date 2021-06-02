@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API bswap endpoints
@@ -54,9 +54,7 @@ const Bswap = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityAdd (poolId, asset, quantity, options = {}) {
-    validateParameter(poolId, 'poolId')
-    validateParameter(asset, 'asset')
-    validateParameter(quantity, 'quantity')
+    validateRequiredParameters({ poolId, asset, quantity })
 
     return this.signRequest(
       'POST',
@@ -83,10 +81,7 @@ const Bswap = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityRemove (poolId, type, asset, shareAmount, options = {}) {
-    validateParameter(poolId, 'poolId')
-    validateParameter(type, 'type')
-    validateParameter(asset, 'asset')
-    validateParameter(shareAmount, 'shareAmount')
+    validateRequiredParameters({ poolId, type, asset, shareAmount })
 
     return this.signRequest(
       'POST',
@@ -142,9 +137,7 @@ const Bswap = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapRequestQuote (quoteAsset, baseAsset, quoteQty, options = {}) {
-    validateParameter(quoteAsset, 'quoteAsset')
-    validateParameter(baseAsset, 'baseAsset')
-    validateParameter(quoteQty, 'quoteQty')
+    validateRequiredParameters({ quoteAsset, baseAsset, quoteQty })
 
     return this.signRequest(
       'GET',
@@ -170,9 +163,7 @@ const Bswap = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   bswapSwap (quoteAsset, baseAsset, quoteQty, options = {}) {
-    validateParameter(quoteAsset, 'quoteAsset')
-    validateParameter(baseAsset, 'baseAsset')
-    validateParameter(quoteQty, 'quoteQty')
+    validateRequiredParameters({ quoteAsset, baseAsset, quoteQty })
 
     return this.signRequest(
       'POST',

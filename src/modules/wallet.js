@@ -1,4 +1,4 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
  * API wallet endpoints
@@ -51,7 +51,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   accountSnapshot (type, options = {}) {
-    validateParameter(type, 'type')
+    validateRequiredParameters({ type })
 
     return this.signRequest(
       'GET',
@@ -115,9 +115,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   withdraw (coin, address, amount, options = {}) {
-    validateParameter(coin, 'coin')
-    validateParameter(address, 'address')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ coin, address, amount })
 
     return this.signRequest(
       'POST',
@@ -188,7 +186,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   depositAddress (coin, options = {}) {
-    validateParameter(coin, 'coin')
+    validateRequiredParameters({ coin })
 
     return this.signRequest(
       'GET',
@@ -267,7 +265,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   dustTransfer (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
     return this.signRequest(
       'POST',
       '/sapi/v1/asset/dust',
@@ -352,9 +350,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   userUniversalTransfer (type, asset, amount, options = {}) {
-    validateParameter(type, 'type')
-    validateParameter(asset, 'asset')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ type, asset, amount })
 
     return this.signRequest(
       'POST',
@@ -382,7 +378,7 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [recvWindow] - The value cannot be greater than 60000
    */
   userUniversalTransferHistory (type, options = {}) {
-    validateParameter(type, 'type')
+    validateRequiredParameters({ type })
 
     return this.signRequest(
       'GET',
