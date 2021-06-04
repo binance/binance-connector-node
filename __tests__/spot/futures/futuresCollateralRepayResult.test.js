@@ -8,12 +8,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#futuresCollateralRepayResult', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing quoteId', () => {
-      expect(() => {
-        SpotClient.futuresCollateralRepayResult()
-      }).toThrow(MissingParameterError)
-    })
+  it('missing quoteId', () => {
+    expect(() => {
+      SpotClient.futuresCollateralRepayResult()
+    }).toThrow(MissingParameterError)
   })
 
   it('should get repay with collateral result', () => {

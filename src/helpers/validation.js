@@ -15,7 +15,7 @@ const validateRequiredParameters = paramObject => {
 const hasOneOfParameters = paramObject => {
   if (!paramObject || isEmptyValue(paramObject)) { throw new MissingParameterError() }
   const params = Object.values(paramObject)
-  if (isEmptyValue(params[0]) && isEmptyValue(params[1])) {
+  if (params.every(isEmptyValue)) {
     throw new MissingParameterError(Object.keys(paramObject))
   }
 }

@@ -1,12 +1,11 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { queryString } = require('../../testUtils/mockData')
 
 const coin = 'USDT'
 const collateralCoin = 'BUSD'
 const amount = 2.5
-
-const { queryString } = require('../../testUtils/mockData')
 
 describe('#futuresLoanRepay', () => {
   describe('throw MissingParameterError', () => {
