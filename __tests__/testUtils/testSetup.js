@@ -16,7 +16,7 @@ const filterPath = path => {
   if (pathList.length > 1) {
     const params = pathList[1].split('&')
     const filteredParams = params.filter(param => (!param.startsWith('timestamp') && !param.startsWith('signature')))
-    if (filteredParams.length > 1) {
+    if (filteredParams.length >= 1) {
       return `${pathList[0]}?${filteredParams.join('&')}`
     }
 
@@ -24,33 +24,32 @@ const filterPath = path => {
     if (params.length > 1) {
       return pathList[0]
     }
-
     return path
   }
 }
 
-const nockMock = (urlPath) => (responseData) => {
+const nockMock = urlPath => responseData => {
   nock(host)
     .filteringPath(path => filterPath(path))
     .get(urlPath)
     .reply(200, responseData)
 }
 
-const nockPostMock = (urlPath) => (responseData) => {
+const nockPostMock = urlPath => responseData => {
   nock(host)
     .filteringPath(path => filterPath(path))
     .post(urlPath)
     .reply(200, responseData)
 }
 
-const nockDeleteMock = (urlPath) => (responseData) => {
+const nockDeleteMock = urlPath => responseData => {
   nock(host)
     .filteringPath(path => filterPath(path))
     .delete(urlPath)
     .reply(200, responseData)
 }
 
-const nockPutMock = (urlPath) => (responseData) => {
+const nockPutMock = urlPath => responseData => {
   nock(host)
     .filteringPath(path => filterPath(path))
     .put(urlPath)
