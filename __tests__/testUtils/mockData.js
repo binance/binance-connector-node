@@ -21,6 +21,8 @@ const stopPrice = 1001.02
 const status = 'enabled'
 const orderId = '123456789'
 const newClientOrderId = '234567890'
+const loanCoin = 'USDT'
+const collateralCoin = 'BUSD'
 const recvWindow = 1000
 
 const queryString = parameters => buildQueryString(parameters)
@@ -47,5 +49,7 @@ module.exports = {
   stopPrice,
   orderId,
   newClientOrderId,
+  loanCoin,
+  collateralCoin,
   recvWindow
 }
