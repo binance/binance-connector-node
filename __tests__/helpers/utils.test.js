@@ -53,9 +53,15 @@ describe('#buildQueryString', () => {
   ${{ key1: 'value1', key2: 'value2', key3: 'value3' }} | ${'key1=value1&key2=value2&key3=value3'}
   ${{ key1: 'value1', key2: ['value2', 'value3'] }} | ${'key1=value1&key2=%5B%22value2%22%2C%22value3%22%5D'}
   `('should return a query string $output',
-    ({ inputObj, output }) => {
+    ({ inputObj, output }) =>
       expect(buildQueryString(inputObj)).toStrictEqual(output)
-    })
+  )
+
+  it.each(
+    [[false], [undefined], [''], [null], [NaN]]
+  )('should return an empty string when receives a falsy value', (input) => {
+    expect(buildQueryString(input)).toStrictEqual('')
+  })
 
   it('should return an empty string when receives an empty object', () => {
     const obj = {}

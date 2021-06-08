@@ -8,6 +8,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#futuresLoanBorrowHistory', () => {
+  it('should get cross-collateral borrow history without parameter attached', () => {
+    nockMock('/sapi/v1/futures/loan/borrow/history')(mockResponse)
+
+    return SpotClient.futuresLoanBorrowHistory().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should get cross-collateral borrow history', () => {
     const parameters = {
       coin,
