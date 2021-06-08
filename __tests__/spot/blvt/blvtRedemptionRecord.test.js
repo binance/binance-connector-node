@@ -10,7 +10,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#blvtRedemptionRecord', () => {
-  it('should query redeem record', () => {
+  it('should query redemption record without parameter attached', () => {
+    nockMock('/sapi/v1/blvt/redeem/record')(mockResponse)
+    return SpotClient.blvtRedemptionRecord().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
+  it('should query redemption record', () => {
     const parameters = {
       id: 1,
       tokenName: 'BTCDOWN',

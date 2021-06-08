@@ -9,12 +9,12 @@ const amount = 1
 
 describe('#userUniversalTransfer', () => {
   it.each`
-  pType | pAsset | pAmount
-  ${''} | ${''} | ${''}
+  pType        | pAsset       | pAmount
+  ${''}        | ${''}        | ${''}
   ${undefined} | ${undefined} | ${undefined}
-  ${''} | ${asset} | ${amount}
-  ${type} | ${''} | ${amount}
-  ${type} | ${asset} | ${''}
+  ${''}        | ${asset}     | ${amount}
+  ${type}      | ${''}        | ${amount}
+  ${type}      | ${asset}     | ${''}
   `('should throw MissingParameterError when missing parameters',
     ({ pType, pAsset, pAmount }) => {
       expect(() => {

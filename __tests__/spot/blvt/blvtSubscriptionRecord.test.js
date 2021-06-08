@@ -10,6 +10,14 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#blvtSubscriptionRecord', () => {
+  it('should query subscription record without parameter attached', () => {
+    nockMock('/sapi/v1/blvt/subscribe/record?')(mockResponse)
+    return SpotClient.blvtSubscriptionRecord().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should query subscription record', () => {
     const parameters = {
       tokenName: 'BTCDOWN',

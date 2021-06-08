@@ -8,16 +8,21 @@ const {
   recvWindow
 } = require('../../testUtils/mockData')
 
-const swapId = 1
-const status = 0
-
 describe('#bswapSwapHistory', () => {
+  it('should get swap history without parameter attached', () => {
+    nockMock('/sapi/v1/bswap/swap')(mockResponse)
+    return SpotClient.bswapSwapHistory().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should get swap history', () => {
     const parameters = {
-      swapId,
+      swapId: 1,
       startTime,
       endTime,
-      status,
+      status: 0,
       recvWindow
     }
 
