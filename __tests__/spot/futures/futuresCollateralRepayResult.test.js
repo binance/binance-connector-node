@@ -1,11 +1,7 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
-
-const {
-  queryString,
-  recvWindow
-} = require('../../testUtils/mockData')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
+const { mockResponse, recvWindow } = require('../../testUtils/mockData')
 
 describe('#futuresCollateralRepayResult', () => {
   it('missing quoteId', () => {
@@ -20,11 +16,11 @@ describe('#futuresCollateralRepayResult', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/futures/loan/collateralRepayResult?${queryString({ quoteId, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/futures/loan/collateralRepayResult?${buildQueryString({ quoteId, ...parameters })}`)(mockResponse)
 
     return SpotClient.futuresCollateralRepayResult(quoteId, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

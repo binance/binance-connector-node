@@ -1,15 +1,11 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-
 const {
   nockPostMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
-
-const {
-  queryString
-} = require('../../testUtils/mockData')
+const { mockResponse } = require('../../testUtils/mockData')
 
 const algo = 'sha256'
 const userName = 'minerName'
@@ -44,12 +40,12 @@ describe('#miningHashrateResaleRequest', () => {
       hashRate,
       toPoolUser: userName2
     }
-    nockPostMock(`/sapi/v1/mining/hash-transfer/config?${queryString(parameters)}`)(responseMockData)
+    nockPostMock(`/sapi/v1/mining/hash-transfer/config?${buildQueryString(parameters)}`)(mockResponse)
 
     return SpotClient.miningHashrateResaleRequest(userName, algo, startDate, endDate, userName2, hashRate)
       .then(response => {
         expect(response).toBeDefined()
-        expect(response.data).toEqual(responseMockData)
+        expect(response.data).toEqual(mockResponse)
       })
   })
 })

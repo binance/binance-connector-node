@@ -1,7 +1,7 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
-const { queryString } = require('../../testUtils/mockData')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
+const { mockResponse } = require('../../testUtils/mockData')
 
 const coin = 'USDT'
 const collateralCoin = 'BUSD'
@@ -33,11 +33,11 @@ describe('#futuresCollateralRepayQuote', () => {
       amount
     }
 
-    nockMock(`/sapi/v1/futures/loan/collateralRepay?${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/futures/loan/collateralRepay?${buildQueryString(parameters)}`)(mockResponse)
 
     return SpotClient.futuresCollateralRepayQuote(coin, collateralCoin, amount).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

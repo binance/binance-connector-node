@@ -1,6 +1,7 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, SpotClient } = require('../../testUtils/testSetup')
+const { mockResponse } = require('../../testUtils/mockData')
 
 describe('#depth', () => {
   describe('throw MissingParameterError', () => {
@@ -13,11 +14,11 @@ describe('#depth', () => {
 
   it('should return orderbook', () => {
     const symbol = 'BTCUSDT'
-    nockMock(`/api/v3/depth?symbol=${symbol}`)(responseMockData)
+    nockMock(`/api/v3/depth?symbol=${symbol}`)(mockResponse)
 
     return SpotClient.depth(symbol).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

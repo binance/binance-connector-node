@@ -1,11 +1,7 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
-
-const {
-  queryString,
-  recvWindow
-} = require('../../testUtils/mockData')
+const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
+const { mockResponse, recvWindow } = require('../../testUtils/mockData')
 
 const quoteAsset = 'USDT'
 const baseAsset = 'BUSD'
@@ -40,10 +36,10 @@ describe('#bswapRequestQuote', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/bswap/swap?${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/bswap/swap?${buildQueryString({ ...parameters })}`)(mockResponse)
     return SpotClient.bswapSwap(quoteAsset, baseAsset, quoteQty, { recvWindow }).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

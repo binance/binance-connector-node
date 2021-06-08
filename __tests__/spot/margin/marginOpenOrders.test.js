@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   symbol,
   recvWindow
 } = require('../../testUtils/mockData')
@@ -13,11 +13,11 @@ describe('#marginOpenOrders', () => {
       symbol,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/openOrders?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/openOrders?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.marginOpenOrders(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

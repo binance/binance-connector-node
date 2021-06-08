@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   recvWindow,
   email
 } = require('../../testUtils/mockData')
@@ -13,11 +13,11 @@ describe('#subAccountStatus', () => {
       email,
       recvWindow
     }
-    nockMock(`/sapi/v1/sub-account/status?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/sub-account/status?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.subAccountStatus(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   startTime,
   endTime,
   recvWindow
@@ -21,10 +21,10 @@ describe('#bswapSwapHistory', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/bswap/swap?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/bswap/swap?${buildQueryString({ ...parameters })}`)(mockResponse)
     return SpotClient.bswapSwapHistory(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

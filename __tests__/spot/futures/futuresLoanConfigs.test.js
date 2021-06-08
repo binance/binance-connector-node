@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   loanCoin,
   collateralCoin
 } = require('../../testUtils/mockData')
@@ -13,11 +13,11 @@ describe('#futuresLoanConfigs', () => {
       loanCoin,
       collateralCoin
     }
-    nockMock(`/sapi/v2/futures/loan/configs?${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v2/futures/loan/configs?${buildQueryString(parameters)}`)(mockResponse)
 
     return SpotClient.futuresLoanConfigs(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

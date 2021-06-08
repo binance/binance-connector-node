@@ -2,12 +2,12 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockPostMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   symbol,
   side,
   quantity,
@@ -53,11 +53,11 @@ describe('#newOCOOrder', () => {
       limitClientOrderId: 'my_order_id',
       limitIcebergQty: 1
     }
-    nockPostMock(`/api/v3/order/oco?${queryString({ symbol, side, quantity, price, stopPrice, ...parameters })}`)(responseMockData)
+    nockPostMock(`/api/v3/order/oco?${buildQueryString({ symbol, side, quantity, price, stopPrice, ...parameters })}`)(mockResponse)
 
     return SpotClient.newOCOOrder(symbol, side, quantity, price, stopPrice, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

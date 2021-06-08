@@ -2,12 +2,12 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockDeleteMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   symbol,
   recvWindow
 } = require('../../testUtils/mockData')
@@ -25,11 +25,11 @@ describe('#cancelOpenOrders', () => {
     const parameters = {
       recvWindow
     }
-    nockDeleteMock(`/api/v3/openOrders?${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockDeleteMock(`/api/v3/openOrders?${buildQueryString({ symbol, ...parameters })}`)(mockResponse)
 
     return SpotClient.cancelOpenOrders(symbol, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

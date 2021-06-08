@@ -1,9 +1,9 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   recvWindow,
   email
 } = require('../../testUtils/mockData')
@@ -23,11 +23,11 @@ describe('#subAccountFuturesPositionRisk', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/sub-account/futures/positionRisk?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/sub-account/futures/positionRisk?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.subAccountFuturesPositionRisk(email, { recvWindow }).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

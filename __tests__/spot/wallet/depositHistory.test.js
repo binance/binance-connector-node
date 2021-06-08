@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString
+  mockResponse
 } = require('../../testUtils/mockData')
 
 describe('#depositHistory', () => {
@@ -11,11 +11,11 @@ describe('#depositHistory', () => {
       coin: 'BNB',
       status: 1
     }
-    nockMock(`/sapi/v1/capital/deposit/hisrec?${queryString({ coin: 'BNB', status: 1 })}`)(responseMockData)
+    nockMock(`/sapi/v1/capital/deposit/hisrec?${buildQueryString({ coin: 'BNB', status: 1 })}`)(mockResponse)
 
     return SpotClient.depositHistory(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

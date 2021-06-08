@@ -1,5 +1,4 @@
 /* global describe, it, expect, */
-
 const { isEmptyValue, removeEmptyValue, buildQueryString, flowRight } = require('../../src/helpers/utils')
 
 describe('#isEmptyValue', () => {

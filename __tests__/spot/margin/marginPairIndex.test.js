@@ -1,9 +1,9 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   symbol
 } = require('../../testUtils/mockData')
 
@@ -19,11 +19,11 @@ describe('#marginPairIndex', () => {
     const parameters = {
       symbol
     }
-    nockMock(`/sapi/v1/margin/priceIndex?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/priceIndex?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.marginPairIndex(symbol).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

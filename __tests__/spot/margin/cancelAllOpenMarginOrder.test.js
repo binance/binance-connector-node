@@ -1,9 +1,9 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockDeleteMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockDeleteMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   recvWindow,
   symbol
 } = require('../../testUtils/mockData')
@@ -20,11 +20,11 @@ describe('#cancelAllOpenMarginOrder', () => {
     const parameters = {
       recvWindow
     }
-    nockDeleteMock(`/sapi/v1/margin/openOrders?${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockDeleteMock(`/sapi/v1/margin/openOrders?${buildQueryString({ symbol, ...parameters })}`)(mockResponse)
 
     return SpotClient.cancelAllOpenMarginOrder(symbol, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

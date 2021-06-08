@@ -1,13 +1,10 @@
 /* global describe, it, expect, */
 const {
   nockMock,
-  responseMockData,
-  SpotClient
+  SpotClient,
+  buildQueryString
 } = require('../../testUtils/testSetup')
-
-const {
-  queryString
-} = require('../../testUtils/mockData')
+const { mockResponse } = require('../../testUtils/mockData')
 
 describe('#savingsFlexibleProducts', () => {
   it('should return flexible product list', () => {
@@ -15,11 +12,11 @@ describe('#savingsFlexibleProducts', () => {
       status: 'SUBSCRIBABLE',
       featured: 'ALL'
     }
-    nockMock(`/sapi/v1/lending/daily/product/list?${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/daily/product/list?${buildQueryString(parameters)}`)(mockResponse)
 
     return SpotClient.savingsFlexibleProducts(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

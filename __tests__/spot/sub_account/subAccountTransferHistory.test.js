@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   recvWindow
 } = require('../../testUtils/mockData')
 
@@ -13,11 +13,11 @@ describe('#subAccountTransferHistory', () => {
       recvWindow
     }
 
-    nockMock(`/sapi/v1/sub-account/sub/transfer/history?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/sub-account/sub/transfer/history?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.subAccountTransferHistory(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

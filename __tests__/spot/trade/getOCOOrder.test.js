@@ -1,12 +1,12 @@
 /* global describe, it, expect, */
 const {
   nockMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   recvWindow
 } = require('../../testUtils/mockData')
 
@@ -16,11 +16,11 @@ describe('#getOCOOrder', () => {
       orderListId: 10,
       recvWindow
     }
-    nockMock(`/api/v3/orderList?${queryString(parameters)}`)(responseMockData)
+    nockMock(`/api/v3/orderList?${buildQueryString(parameters)}`)(mockResponse)
 
     return SpotClient.getOCOOrder(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })
