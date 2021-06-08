@@ -1,5 +1,10 @@
 # Binance connector in Nodejs
 
+[![npm version](https://badge.fury.io/js/binance-connector-node.svg)](https://badge.fury.io/js/binance-connecter-node)
+[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 Another thin library that working as connector to Binance Public API.
 
 ## Installation
