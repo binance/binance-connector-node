@@ -8,6 +8,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountStatus', () => {
+  it('should return sub account status without parameter attached', () => {
+    nockMock(`/sapi/v1/sub-account/status?${buildQueryString()}`)(mockResponse)
+
+    return SpotClient.subAccountStatus().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should return sub account status', () => {
     const parameters = {
       email,

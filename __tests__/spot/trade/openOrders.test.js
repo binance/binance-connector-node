@@ -12,6 +12,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#openOrders', () => {
+  it('should return order details when no parameter attached', () => {
+    nockMock('/api/v3/openOrders')(mockResponse)
+
+    return SpotClient.openOrders().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should return order details', () => {
     const parameters = {
       symbol,

@@ -7,6 +7,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountList', () => {
+  it('should return sub account list when no parameter attached', () => {
+    nockMock('/sapi/v1/sub-account/list')(mockResponse)
+
+    return SpotClient.subAccountList().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should return sub account list', () => {
     const parameters = {
       status,

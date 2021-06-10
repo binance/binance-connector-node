@@ -11,6 +11,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#getOCOOrders', () => {
+  it('should return oco order list when no parameter attached', () => {
+    nockMock('/api/v3/allOrderList')(mockResponse)
+
+    return SpotClient.getOCOOrders().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should return oco order list', () => {
     const parameters = {
       limit: 10,
