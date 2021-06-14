@@ -1,6 +1,10 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
+const {
+  nockMock,
+  buildQueryString,
+  SpotClient
+} = require('../../testUtils/testSetup')
 
 const {
   mockResponse,
@@ -8,23 +12,18 @@ const {
   recvWindow
 } = require('../../testUtils/mockData')
 
-describe('#marginRepayRecord', () => {
+describe('#savingsFlexibleProductPosition', () => {
   describe('throw MissingParameterError', () => {
     it('missing asset', () => {
       expect(() => {
-        SpotClient.marginRepayRecord('')
+        SpotClient.savingsFlexibleProductPosition('')
       }).toThrow(MissingParameterError)
     })
   })
+  it('should get flexible product position', () => {
+    nockMock(`/sapi/v1/lending/daily/token/position?${buildQueryString({ asset, recvWindow })}`)(mockResponse)
 
-  it('should return margin repay record', () => {
-    const parameters = {
-      txId: 10,
-      recvWindow
-    }
-    nockMock(`/sapi/v1/margin/repay?${buildQueryString({ asset, ...parameters })}`)(mockResponse)
-
-    return SpotClient.marginRepayRecord(asset, parameters).then(response => {
+    return SpotClient.savingsFlexibleProductPosition(asset, { recvWindow }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

@@ -1,12 +1,11 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
-
+const { nockPostMock, SpotClient, buildQueryString } = require('../../testUtils/testSetup')
 const {
-  queryString,
   asset,
   quantity,
-  recvWindow
+  recvWindow,
+  mockResponse
 } = require('../../testUtils/mockData')
 
 describe('#bswapLiquidityAdd', () => {
@@ -34,14 +33,13 @@ describe('#bswapLiquidityAdd', () => {
     const parameters = {
       poolId: 1,
       asset,
-      quantity,
-      recvWindow
+      quantity
     }
 
-    nockPostMock(`/sapi/v1/bswap/liquidityAdd?${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/bswap/liquidityAdd?${buildQueryString({ recvWindow, ...parameters })}`)(mockResponse)
     return SpotClient.bswapLiquidityAdd(1, asset, quantity, { recvWindow }).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

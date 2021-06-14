@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   startTime,
   endTime,
   limit,
@@ -10,6 +10,14 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#blvtSubscriptionRecord', () => {
+  it('should query subscription record without parameter attached', () => {
+    nockMock('/sapi/v1/blvt/subscribe/record?')(mockResponse)
+    return SpotClient.blvtSubscriptionRecord().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should query subscription record', () => {
     const parameters = {
       tokenName: 'BTCDOWN',
@@ -19,10 +27,10 @@ describe('#blvtSubscriptionRecord', () => {
       limit,
       recvWindow
     }
-    nockMock(`/sapi/v1/blvt/subscribe/record?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/blvt/subscribe/record?${buildQueryString({ ...parameters })}`)(mockResponse)
     return SpotClient.blvtSubscriptionRecord(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

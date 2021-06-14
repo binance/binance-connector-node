@@ -3,13 +3,10 @@ const MissingParameterError = require('../../../src/error/missingParameterError'
 
 const {
   nockMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
-
-const {
-  queryString
-} = require('../../testUtils/mockData')
+const { mockResponse } = require('../../testUtils/mockData')
 
 const algo = 'sha256'
 const userName = 'minerName'
@@ -34,11 +31,11 @@ describe('#miningWorkerList', () => {
       algo,
       userName
     }
-    nockMock(`/sapi/v1/mining/worker/list?${queryString(parameters)}`)(responseMockData)
+    nockMock(`/sapi/v1/mining/worker/list?${buildQueryString(parameters)}`)(mockResponse)
 
     return SpotClient.miningWorkerList(algo, userName).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

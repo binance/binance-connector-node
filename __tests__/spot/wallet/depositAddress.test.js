@@ -1,9 +1,9 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 const MissingParameterError = require('../../../src/error/missingParameterError')
 
 const {
-  queryString,
+  mockResponse,
   coin,
   recvWindow
 } = require('../../testUtils/mockData')
@@ -22,11 +22,11 @@ describe('#depositAddress', () => {
       network: 'BNB',
       recvWindow
     }
-    nockMock(`/sapi/v1/capital/deposit/address?${queryString({ coin, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/capital/deposit/address?${buildQueryString({ coin, ...parameters })}`)(mockResponse)
 
     return SpotClient.depositAddress(coin, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

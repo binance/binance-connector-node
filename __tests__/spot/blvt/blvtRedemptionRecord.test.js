@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   startTime,
   endTime,
   limit,
@@ -10,7 +10,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#blvtRedemptionRecord', () => {
-  it('should query redeem record', () => {
+  it('should query redemption record without parameter attached', () => {
+    nockMock('/sapi/v1/blvt/redeem/record')(mockResponse)
+    return SpotClient.blvtRedemptionRecord().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
+  it('should query redemption record', () => {
     const parameters = {
       id: 1,
       tokenName: 'BTCDOWN',
@@ -19,10 +27,10 @@ describe('#blvtRedemptionRecord', () => {
       limit,
       recvWindow
     }
-    nockMock(`/sapi/v1/blvt/redeem/record?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/blvt/redeem/record?${buildQueryString({ ...parameters })}`)(mockResponse)
     return SpotClient.blvtRedemptionRecord(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

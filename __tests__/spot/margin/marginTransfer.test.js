@@ -1,8 +1,8 @@
 /* global describe, it, expect, */
-const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   asset,
   amount,
   type
@@ -15,11 +15,11 @@ describe('#marginTransfer', () => {
       amount,
       type
     }
-    nockPostMock(`/sapi/v1/margin/transfer?${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/margin/transfer?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.marginTransfer(asset, amount, type).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

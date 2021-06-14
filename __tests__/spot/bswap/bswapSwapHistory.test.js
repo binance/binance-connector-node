@@ -1,30 +1,35 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   startTime,
   endTime,
   recvWindow
 } = require('../../testUtils/mockData')
 
-const swapId = 1
-const status = 0
-
 describe('#bswapSwapHistory', () => {
+  it('should get swap history without parameter attached', () => {
+    nockMock('/sapi/v1/bswap/swap')(mockResponse)
+    return SpotClient.bswapSwapHistory().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
   it('should get swap history', () => {
     const parameters = {
-      swapId,
+      swapId: 1,
       startTime,
       endTime,
-      status,
+      status: 0,
       recvWindow
     }
 
-    nockMock(`/sapi/v1/bswap/swap?${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/bswap/swap?${buildQueryString({ ...parameters })}`)(mockResponse)
     return SpotClient.bswapSwapHistory(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

@@ -1,8 +1,8 @@
-
 const axios = require('axios')
 const nock = require('nock')
 const Spot = require('../../src/spot')
 const httpAdapter = require('axios/lib/adapters/http')
+const { buildQueryString } = require('../../src/helpers/utils')
 
 const host = 'https://api.binance.com'
 axios.defaults.adapter = httpAdapter
@@ -12,20 +12,12 @@ const filterPath = path => {
   if (pathList.length <= 1) {
     return path
   }
-
-  if (pathList.length > 1) {
-    const params = pathList[1].split('&')
-    const filteredParams = params.filter(param => (!param.startsWith('timestamp') && !param.startsWith('signature')))
-    if (filteredParams.length >= 1) {
-      return `${pathList[0]}?${filteredParams.join('&')}`
-    }
-
-    // if only has timestamp and signature
-    if (params.length > 1) {
-      return pathList[0]
-    }
-    return path
-  }
+  const params = pathList[1].split('&')
+  const filteredParams = params.filter(param =>
+    !param.startsWith('timestamp') && !param.startsWith('signature'))
+  return filteredParams.length >= 1
+    ? `${pathList[0]}?${filteredParams.join('&')}`
+    : pathList[0]
 }
 
 const nockMock = urlPath => responseData => {
@@ -56,10 +48,6 @@ const nockPutMock = urlPath => responseData => {
     .reply(200, responseData)
 }
 
-const responseMockData = {
-  key: 'value', foo: 'bar'
-}
-
 const SpotClient = new Spot()
 
 module.exports = {
@@ -67,6 +55,6 @@ module.exports = {
   nockPostMock,
   nockDeleteMock,
   nockPutMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 }

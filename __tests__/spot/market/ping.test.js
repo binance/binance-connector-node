@@ -1,5 +1,4 @@
 /* global describe, it, expect, */
-
 const { nockMock, SpotClient } = require('../../testUtils/testSetup')
 
 describe('#ping', () => {

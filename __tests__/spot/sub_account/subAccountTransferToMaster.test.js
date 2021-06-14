@@ -1,9 +1,9 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   recvWindow,
   asset,
   amount
@@ -31,11 +31,11 @@ describe('#subAccountTransferToMaster', () => {
       recvWindow
     }
 
-    nockPostMock(`/sapi/v1/sub-account/transfer/subToMaster?${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/sub-account/transfer/subToMaster?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.subAccountTransferToMaster(asset, amount, { recvWindow }).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

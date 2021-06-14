@@ -1,9 +1,9 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   amount
 } = require('../../testUtils/mockData')
 
@@ -29,10 +29,10 @@ describe('#subscribeBlvt', () => {
       tokenName,
       cost: amount
     }
-    nockPostMock(`/sapi/v1/blvt/subscribe?${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/blvt/subscribe?${buildQueryString({ ...parameters })}`)(mockResponse)
     return SpotClient.subscribeBlvt(tokenName, amount).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

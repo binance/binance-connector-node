@@ -2,12 +2,12 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   startTime,
   endTime,
   fromId,
@@ -34,11 +34,11 @@ describe('#myTrades', () => {
       fromId,
       limit
     }
-    nockMock(`/api/v3/myTrades?${queryString({ ...parameters, symbol: 'BTCUSDT' })}`)(responseMockData)
+    nockMock(`/api/v3/myTrades?${buildQueryString({ ...parameters, symbol: 'BTCUSDT' })}`)(mockResponse)
 
     return SpotClient.myTrades('BTCUSDT', parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })
