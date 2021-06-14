@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "jsdoc": "jsdoc ./src/modules/ ./package.json -d ./docs",
+    "jsdoc": "jsdoc -c conf.json -d ./docs",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "standard": "standard",

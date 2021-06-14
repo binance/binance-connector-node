@@ -2,5 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npm run standard:fix
-# npm run jsdoc
+npm run jsdoc
 git add -u
