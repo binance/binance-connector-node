@@ -1,0 +1,10 @@
+{
+    "source": {
+        "include":["./src/modules/", "./package.json"]
+    },
+    "templates": {
+        "default": {
+            "includeDate": false
+        }
+    }
+}

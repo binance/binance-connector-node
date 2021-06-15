@@ -1,10 +1,10 @@
 {
   "name": "binance-connector-node",
   "version": "0.5.1",
-  "description": "",
+  "description": "This is a lightweight library that works as a connector to the Binance public API.",
   "main": "src/index.js",
   "scripts": {
-    "jsdoc": "jsdoc ./src/modules/ ./package.json -d ./docs",
+    "jsdoc": "jsdoc -c conf.json -d ./docs",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "standard": "standard",
@@ -19,7 +19,7 @@
     "Binance",
     "API"
   ],
-  "author": "",
+  "author": "Binance",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/binance-exchange/binance-connector-node/issues"
