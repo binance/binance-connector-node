@@ -9,12 +9,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#accountSnapshot', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing type', () => {
-      expect(() => {
-        SpotClient.accountSnapshot('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing type', () => {
+    expect(() => {
+      SpotClient.accountSnapshot('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should return account snapshot', () => {

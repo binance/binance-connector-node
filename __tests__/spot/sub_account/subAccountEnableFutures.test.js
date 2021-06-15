@@ -9,12 +9,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountEnableFutures', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing email', () => {
-      expect(() => {
-        SpotClient.subAccountEnableFutures('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing email', () => {
+    expect(() => {
+      SpotClient.subAccountEnableFutures('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should enable sub account futures', () => {

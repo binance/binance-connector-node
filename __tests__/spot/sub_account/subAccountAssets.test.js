@@ -8,12 +8,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountAssets', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing email', () => {
-      expect(() => {
-        SpotClient.subAccountAssets('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing email', () => {
+    expect(() => {
+      SpotClient.subAccountAssets('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should query sub account assets', () => {

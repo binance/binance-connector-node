@@ -14,12 +14,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#cancelOrder', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', () => {
-      expect(() => {
-        SpotClient.cancelOrder('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.cancelOrder('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should return cancelled order', () => {

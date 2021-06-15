@@ -9,12 +9,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#depositAddress', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing coin', () => {
-      expect(() => {
-        SpotClient.depositAddress('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing coin', () => {
+    expect(() => {
+      SpotClient.depositAddress('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should return coin deposit address', () => {
