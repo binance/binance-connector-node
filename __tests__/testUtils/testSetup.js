@@ -50,11 +50,35 @@ const nockPutMock = urlPath => responseData => {
 
 const SpotClient = new Spot()
 
+const mockSubscription = (targetUrl, mockResponse) => {
+  SpotClient.subscribe = new Proxy(SpotClient.subscribe, {
+    apply: function (target, thisArg, [url, callback]) {
+      targetUrl = targetUrl.replace('?', '\\?')
+      if (url.match(new RegExp(`${targetUrl}$`))) {
+        return callback(null, mockResponse)
+      }
+      return callback(new Error('URL mismatch'))
+    }
+  })
+}
+
+const mockConnection = (classInstance, streamMethod, ...args) => testScenarios => {
+  const messages = []
+  const messageCallback = (err, data) => {
+    if (err) messages.push(err)
+    else messages.push(data)
+  }
+  classInstance[streamMethod](...args, messageCallback)
+  return testScenarios(messages)
+}
+
 module.exports = {
   nockMock,
   nockPostMock,
   nockDeleteMock,
   nockPutMock,
   buildQueryString,
+  mockSubscription,
+  mockConnection,
   SpotClient
 }

@@ -1,4 +1,5 @@
 const { validateRequiredParameters } = require('../helpers/validation')
+const { isEmptyValue } = require('../helpers/utils')
 const WebSocketClient = require('ws')
 
 /**
@@ -89,7 +90,7 @@ const Websocket = superclass => class extends superclass {
    */
   miniTickerWS (symbol = null, callbacks) {
     let path = '!miniTicker@arr'
-    if (symbol !== null && symbol !== '') {
+    if (!isEmptyValue(symbol)) {
       path = `${symbol.toLowerCase()}@miniTicker`
     }
     const url = `${this.wsURL}/ws/${path}`
@@ -115,7 +116,7 @@ const Websocket = superclass => class extends superclass {
    */
   tickerWS (symbol = null, callbacks) {
     let path = '!ticker@arr'
-    if (symbol !== null && symbol !== '') {
+    if (!isEmptyValue(symbol)) {
       path = `${symbol.toLowerCase()}@ticker`
     }
     const url = `${this.wsURL}/ws/${path}`
@@ -139,7 +140,7 @@ const Websocket = superclass => class extends superclass {
    */
   bookTickerWS (symbol = null, callbacks) {
     let path = '!bookTicker'
-    if (symbol !== null && symbol !== '') {
+    if (!isEmptyValue(symbol)) {
       path = `${symbol.toLowerCase()}@bookTicker`
     }
     const url = `${this.wsURL}/ws/${path}`
@@ -214,7 +215,7 @@ const Websocket = superclass => class extends superclass {
    *
    * @param {array} streams
    *
-   * e.g. client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+   * e.g. client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@ticker'], callbacks)
    */
   combinedStreams (streams, callbacks) {
     if (!Array.isArray(streams)) {
