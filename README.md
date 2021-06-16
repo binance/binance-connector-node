@@ -1,6 +1,7 @@
 # Binance connector in Nodejs
 
 [![npm version](https://badge.fury.io/js/binance-connector-node.svg)](https://badge.fury.io/js/binance-connecter-node)
+[![Node version](https://img.shields.io/node/v/binance-connector-node.svg?style=flat)](http://nodejs.org/download/)
 [![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
