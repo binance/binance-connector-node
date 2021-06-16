@@ -15,13 +15,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#savingsRedemptionRecord', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing lendingType', () => {
-      expect(() => {
-        SpotClient.savingsRedemptionRecord('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing lendingType', () => {
+    expect(() => {
+      SpotClient.savingsRedemptionRecord('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should return redemptionRecord records', () => {
     const parameters = {
       asset,

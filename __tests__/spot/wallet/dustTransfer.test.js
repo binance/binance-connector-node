@@ -4,12 +4,10 @@ const MissingParameterError = require('../../../src/error/missingParameterError'
 const { mockResponse } = require('../../testUtils/mockData')
 
 describe('#dustTransfer', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing asset', () => {
-      expect(() => {
-        SpotClient.dustTransfer('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing asset', () => {
+    expect(() => {
+      SpotClient.dustTransfer('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should Convert dust assets to BNB', () => {

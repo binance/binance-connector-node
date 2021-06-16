@@ -8,12 +8,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#userUniversalTransferHistory', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing type', () => {
-      expect(() => {
-        SpotClient.userUniversalTransferHistory('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing type', () => {
+    expect(() => {
+      SpotClient.userUniversalTransferHistory('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should return type deposit address', () => {

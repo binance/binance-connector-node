@@ -10,12 +10,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#subAccountDepositHistory', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing email', () => {
-      expect(() => {
-        SpotClient.subAccountDepositHistory('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing email', () => {
+    expect(() => {
+      SpotClient.subAccountDepositHistory('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should query sub accont deposit history', () => {

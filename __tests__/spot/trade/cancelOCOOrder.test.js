@@ -13,12 +13,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#cancelOCOOrder', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', () => {
-      expect(() => {
-        SpotClient.cancelOCOOrder('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.cancelOCOOrder('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should return cancelled oco order', () => {
