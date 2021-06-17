@@ -1,26 +1,26 @@
 {
-    "source": {
-        "include":["./src/modules/", "./package.json"]
-    },
-    "plugins": ["plugins/markdown"],
-    "templates": {
-        "default": {
-            "includeDate": false
+  "source": {
+    "include":["./src/modules/", "./package.json"]
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "default": {
+      "includeDate": false
+    }
+  },
+  "opts": {
+    "readme": "./README.md",
+    "destination": "./docs",
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "title": "binance-connector-node",
+      "menuLocation": "down",
+      "menu" : [
+        {
+          "title": "Github repository",
+          "link": "https://github.com/binance-exchange/binance-connector-node.git"
         }
-    },
-    "opts": {
-        "readme": "./README.md",
-        "destination": "./docs",
-        "template": "node_modules/clean-jsdoc-theme",
-        "theme_opts": {
-            "title": "binance-connector-node",
-            "menuLocation": "down",
-            "menu" : [
-                {
-                  "title": "Github repository",
-                  "link": "https://github.com/binance-exchange/binance-connector-node.git"
-                }
-            ]
-        }
-     }
+      ]
+    }
+  }
 }
