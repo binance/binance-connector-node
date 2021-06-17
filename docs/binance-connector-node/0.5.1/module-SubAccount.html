@@ -1,30 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Module: SubAccount</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adding meta -->
+    
+
+    <!-- Adding external script-->
+    
+
+    <!-- Adding external style-->
+    
+
+    <!-- Adding scripts-->
+    
+
+    <!-- Adding style-->
+    
+
+    <!-- Adding overlay script-->
+    
+
+    <!-- Adding overlay style-->
+    
+
+
+    <title>
+      SubAccount
+    </title>
+
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-
-<body>
-
-<div id="main">
-
-    <h1 class="page-title">Module: SubAccount</h1>
-
+    <link type="text/css" rel="stylesheet" href="styles/third-party/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/third-party/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/reset.css">
+    <link type="text/css" rel="stylesheet" href="styles/heading.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-base.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-light.css">
     
+    <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path
+                    d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z" />
+                <path
+                    d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z" />
+            </g>
+        </symbol>
+        <symbol id='search-icon' viewBox="0 0 512 512">
+            <g>
+                <g>
+                    <path
+                        d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z" />
+                </g>
+            </g>
+            <g>
+                <g>
+                    <path
+                        d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z" />
+                </g>
+            </g>
+        </symbol>
+        <symbol id="down-icon" viewBox="0 0 16 16">
+            <path 
+                fill-rule="evenodd" 
+                clip-rule="evenodd" 
+                d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"
+            >
+            </path>
+        </symbol>
+    </defs>
+</svg>
+  </head>
+
+  <body>
+
+    <nav class="navbar" id="navbar">
+      <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">binance-connector-node</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><ul><li class="menu-li"><a href='https://github.com/binance-exchange/binance-connector-node.git' class=' menu-link' id='' target=''>Github repository</a></li></ul><div class="accordion collapsed" id="4630852" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=9717986><div class="accordion-heading child"><a href="module-Blvt.html">Blvt</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Blvt.html#blvtInfo">blvtInfo</a></li><li data-type='method'><a href="module-Blvt.html#blvtRedemptionRecord">blvtRedemptionRecord</a></li><li data-type='method'><a href="module-Blvt.html#blvtSubscriptionRecord">blvtSubscriptionRecord</a></li><li data-type='method'><a href="module-Blvt.html#redeemBlvt">redeemBlvt</a></li><li data-type='method'><a href="module-Blvt.html#subscribeBlvt">subscribeBlvt</a></li></ul></li><li class="accordion collapsed child" id=7202148><div class="accordion-heading child"><a href="module-Bswap.html">Bswap</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Bswap.html#bswapLiquidity">bswapLiquidity</a></li><li data-type='method'><a href="module-Bswap.html#bswapLiquidityAdd">bswapLiquidityAdd</a></li><li data-type='method'><a href="module-Bswap.html#bswapLiquidityOperationRecord">bswapLiquidityOperationRecord</a></li><li data-type='method'><a href="module-Bswap.html#bswapLiquidityRemove">bswapLiquidityRemove</a></li><li data-type='method'><a href="module-Bswap.html#bswapPools">bswapPools</a></li><li data-type='method'><a href="module-Bswap.html#bswapRequestQuote">bswapRequestQuote</a></li><li data-type='method'><a href="module-Bswap.html#bswapSwap">bswapSwap</a></li><li data-type='method'><a href="module-Bswap.html#bswapSwapHistory">bswapSwapHistory</a></li></ul></li><li class="accordion collapsed child" id=7326766><div class="accordion-heading child"><a href="module-Futures.html">Futures</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Futures.html#futuresCollateralRepay">futuresCollateralRepay</a></li><li data-type='method'><a href="module-Futures.html#futuresCollateralRepayLimit">futuresCollateralRepayLimit</a></li><li data-type='method'><a href="module-Futures.html#futuresCollateralRepayQuote">futuresCollateralRepayQuote</a></li><li data-type='method'><a href="module-Futures.html#futuresCollateralRepayResult">futuresCollateralRepayResult</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanAdjustCollateral">futuresLoanAdjustCollateral</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanAdjustCollateralHistory">futuresLoanAdjustCollateralHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanBorrow">futuresLoanBorrow</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanBorrowHistory">futuresLoanBorrowHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanCalcAdjustLevel">futuresLoanCalcAdjustLevel</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanCalcMaxAdjustAmount">futuresLoanCalcMaxAdjustAmount</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanConfigs">futuresLoanConfigs</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanInterestHistory">futuresLoanInterestHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanLiquidationHistory">futuresLoanLiquidationHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanRepay">futuresLoanRepay</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanRepayHistory">futuresLoanRepayHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanWallet">futuresLoanWallet</a></li><li data-type='method'><a href="module-Futures.html#futuresTransfer">futuresTransfer</a></li><li data-type='method'><a href="module-Futures.html#futuresTransferHistory">futuresTransferHistory</a></li></ul></li><li class="accordion collapsed child" id=218771><div class="accordion-heading child"><a href="module-Margin.html">Margin</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Margin.html#cancelAllOpenMarginOrder">cancelAllOpenMarginOrder</a></li><li data-type='method'><a href="module-Margin.html#cancelMarginOrder">cancelMarginOrder</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginAccountInfo">isolatedMarginAccountInfo</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginAllSymbols">isolatedMarginAllSymbols</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginSymbol">isolatedMarginSymbol</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginTransfer">isolatedMarginTransfer</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginTransferHistory">isolatedMarginTransferHistory</a></li><li data-type='method'><a href="module-Margin.html#marginAccount">marginAccount</a></li><li data-type='method'><a href="module-Margin.html#marginAllAssets">marginAllAssets</a></li><li data-type='method'><a href="module-Margin.html#marginAllOrders">marginAllOrders</a></li><li data-type='method'><a href="module-Margin.html#marginAllPairs">marginAllPairs</a></li><li data-type='method'><a href="module-Margin.html#marginAsset">marginAsset</a></li><li data-type='method'><a href="module-Margin.html#marginBorrow">marginBorrow</a></li><li data-type='method'><a href="module-Margin.html#marginForceLiquidationRecord">marginForceLiquidationRecord</a></li><li data-type='method'><a href="module-Margin.html#marginInterestHistory">marginInterestHistory</a></li><li data-type='method'><a href="module-Margin.html#marginInterestRateHistory">marginInterestRateHistory</a></li><li data-type='method'><a href="module-Margin.html#marginLoanRecord">marginLoanRecord</a></li><li data-type='method'><a href="module-Margin.html#marginMaxBorrowable">marginMaxBorrowable</a></li><li data-type='method'><a href="module-Margin.html#marginMaxTransferable">marginMaxTransferable</a></li><li data-type='method'><a href="module-Margin.html#marginMyTrades">marginMyTrades</a></li><li data-type='method'><a href="module-Margin.html#marginOpenOrders">marginOpenOrders</a></li><li data-type='method'><a href="module-Margin.html#marginOrder">marginOrder</a></li><li data-type='method'><a href="module-Margin.html#marginPair">marginPair</a></li><li data-type='method'><a href="module-Margin.html#marginPairIndex">marginPairIndex</a></li><li data-type='method'><a href="module-Margin.html#marginRepay">marginRepay</a></li><li data-type='method'><a href="module-Margin.html#marginRepayRecord">marginRepayRecord</a></li><li data-type='method'><a href="module-Margin.html#marginTransfer">marginTransfer</a></li><li data-type='method'><a href="module-Margin.html#marginTransferHistory">marginTransferHistory</a></li><li data-type='method'><a href="module-Margin.html#newMarginOrder">newMarginOrder</a></li></ul></li><li class="accordion collapsed child" id=7774208><div class="accordion-heading child"><a href="module-Market.html">Market</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Market.html#aggTrades">aggTrades</a></li><li data-type='method'><a href="module-Market.html#avgPrice">avgPrice</a></li><li data-type='method'><a href="module-Market.html#bookTicker">bookTicker</a></li><li data-type='method'><a href="module-Market.html#depth">depth</a></li><li data-type='method'><a href="module-Market.html#exchangeInfo">exchangeInfo</a></li><li data-type='method'><a href="module-Market.html#historicalTrades">historicalTrades</a></li><li data-type='method'><a href="module-Market.html#klines">klines</a></li><li data-type='method'><a href="module-Market.html#ping">ping</a></li><li data-type='method'><a href="module-Market.html#ticker24hr">ticker24hr</a></li><li data-type='method'><a href="module-Market.html#tickerPrice">tickerPrice</a></li><li data-type='method'><a href="module-Market.html#time">time</a></li><li data-type='method'><a href="module-Market.html#trades">trades</a></li></ul></li><li class="accordion collapsed child" id=8268661><div class="accordion-heading child"><a href="module-Mining.html">Mining</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Mining.html#miningAccountList">miningAccountList</a></li><li data-type='method'><a href="module-Mining.html#miningAlgoList">miningAlgoList</a></li><li data-type='method'><a href="module-Mining.html#miningBonusList">miningBonusList</a></li><li data-type='method'><a href="module-Mining.html#miningCoinList">miningCoinList</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleCancel">miningHashrateResaleCancel</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleDetail">miningHashrateResaleDetail</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleList">miningHashrateResaleList</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleRequest">miningHashrateResaleRequest</a></li><li data-type='method'><a href="module-Mining.html#miningRevenueList">miningRevenueList</a></li><li data-type='method'><a href="module-Mining.html#miningStatisticList">miningStatisticList</a></li><li data-type='method'><a href="module-Mining.html#miningWorker">miningWorker</a></li><li data-type='method'><a href="module-Mining.html#miningWorkerList">miningWorkerList</a></li></ul></li><li class="accordion collapsed child" id=5140088><div class="accordion-heading child"><a href="module-Savings.html">Savings</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Savings.html#savingsAccount">savingsAccount</a></li><li data-type='method'><a href="module-Savings.html#savingsCustomizedPosition">savingsCustomizedPosition</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleProductPosition">savingsFlexibleProductPosition</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleProducts">savingsFlexibleProducts</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleRedeem">savingsFlexibleRedeem</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleUserLeftQuota">savingsFlexibleUserLeftQuota</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleUserRedemptionQuota">savingsFlexibleUserRedemptionQuota</a></li><li data-type='method'><a href="module-Savings.html#savingsInterestHistory">savingsInterestHistory</a></li><li data-type='method'><a href="module-Savings.html#savingsProductList">savingsProductList</a></li><li data-type='method'><a href="module-Savings.html#savingsPurchaseCustomizedProject">savingsPurchaseCustomizedProject</a></li><li data-type='method'><a href="module-Savings.html#savingsPurchaseFlexibleProduct">savingsPurchaseFlexibleProduct</a></li><li data-type='method'><a href="module-Savings.html#savingsPurchaseRecord">savingsPurchaseRecord</a></li><li data-type='method'><a href="module-Savings.html#savingsRedemptionRecord">savingsRedemptionRecord</a></li></ul></li><li class="accordion collapsed child" id=6251594><div class="accordion-heading child"><a href="module-Stream.html">Stream</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Stream.html#closeIsolatedMarginListenKey">closeIsolatedMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#closeListenKey">closeListenKey</a></li><li data-type='method'><a href="module-Stream.html#closeMarginListenKey">closeMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#createIsolatedMarginListenKey">createIsolatedMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#createListenKey">createListenKey</a></li><li data-type='method'><a href="module-Stream.html#createMarginListenKey">createMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#renewIsolatedMarginListenKey">renewIsolatedMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#renewListenKey">renewListenKey</a></li><li data-type='method'><a href="module-Stream.html#renewMarginListenKey">renewMarginListenKey</a></li></ul></li><li class="accordion collapsed child" id=1661976><div class="accordion-heading child"><a href="module-SubAccount.html">SubAccount</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-SubAccount.html#managedSubAccountAssets">managedSubAccountAssets</a></li><li data-type='method'><a href="module-SubAccount.html#managedSubAccountDeposit">managedSubAccountDeposit</a></li><li data-type='method'><a href="module-SubAccount.html#managedSubAccountWithdraw">managedSubAccountWithdraw</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountAssets">subAccountAssets</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountCreation">subAccountCreation</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountDepositAddress">subAccountDepositAddress</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountDepositHistory">subAccountDepositHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountEnableFutures">subAccountEnableFutures</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountEnableMargin">subAccountEnableMargin</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAccount">subAccountFuturesAccount</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAccountSummary">subAccountFuturesAccountSummary</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAssetTransfer">subAccountFuturesAssetTransfer</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAssetTransferHistory">subAccountFuturesAssetTransferHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesPositionRisk">subAccountFuturesPositionRisk</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesTransfer">subAccountFuturesTransfer</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountLeverageToken">subAccountLeverageToken</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountList">subAccountList</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountMarginAccount">subAccountMarginAccount</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountMarginAccountSummary">subAccountMarginAccountSummary</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountMarginTransfer">subAccountMarginTransfer</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountSpotSummary">subAccountSpotSummary</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountStatus">subAccountStatus</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferHistory">subAccountTransferHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferSubAccountHistory">subAccountTransferSubAccountHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferToMaster">subAccountTransferToMaster</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferToSub">subAccountTransferToSub</a></li></ul></li><li class="accordion collapsed child" id=7588632><div class="accordion-heading child"><a href="module-Trade.html">Trade</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Trade.html#account">account</a></li><li data-type='method'><a href="module-Trade.html#allOrders">allOrders</a></li><li data-type='method'><a href="module-Trade.html#cancelOCOOrder">cancelOCOOrder</a></li><li data-type='method'><a href="module-Trade.html#cancelOpenOrders">cancelOpenOrders</a></li><li data-type='method'><a href="module-Trade.html#cancelOrder">cancelOrder</a></li><li data-type='method'><a href="module-Trade.html#getOCOOrder">getOCOOrder</a></li><li data-type='method'><a href="module-Trade.html#getOCOOrders">getOCOOrders</a></li><li data-type='method'><a href="module-Trade.html#getOpenOCOOrders">getOpenOCOOrders</a></li><li data-type='method'><a href="module-Trade.html#getOrder">getOrder</a></li><li data-type='method'><a href="module-Trade.html#myTrades">myTrades</a></li><li data-type='method'><a href="module-Trade.html#newOCOOrder">newOCOOrder</a></li><li data-type='method'><a href="module-Trade.html#newOrder">newOrder</a></li><li data-type='method'><a href="module-Trade.html#newOrderTest">newOrderTest</a></li><li data-type='method'><a href="module-Trade.html#openOrders">openOrders</a></li></ul></li><li class="accordion collapsed child" id=3152001><div class="accordion-heading child"><a href="module-Wallet.html">Wallet</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Wallet.html#accountSnapshot">accountSnapshot</a></li><li data-type='method'><a href="module-Wallet.html#accountStatus">accountStatus</a></li><li data-type='method'><a href="module-Wallet.html#assetDetail">assetDetail</a></li><li data-type='method'><a href="module-Wallet.html#assetDevidendRecord">assetDevidendRecord</a></li><li data-type='method'><a href="module-Wallet.html#coinInfo">coinInfo</a></li><li data-type='method'><a href="module-Wallet.html#depositAddress">depositAddress</a></li><li data-type='method'><a href="module-Wallet.html#depositHistory">depositHistory</a></li><li data-type='method'><a href="module-Wallet.html#disableFastWithdraw">disableFastWithdraw</a></li><li data-type='method'><a href="module-Wallet.html#dustLog">dustLog</a></li><li data-type='method'><a href="module-Wallet.html#dustTransfer">dustTransfer</a></li><li data-type='method'><a href="module-Wallet.html#enableFastWithdraw">enableFastWithdraw</a></li><li data-type='method'><a href="module-Wallet.html#systemStatus">systemStatus</a></li><li data-type='method'><a href="module-Wallet.html#tradeFee">tradeFee</a></li><li data-type='method'><a href="module-Wallet.html#tradingStatus">tradingStatus</a></li><li data-type='method'><a href="module-Wallet.html#userUniversalTransfer">userUniversalTransfer</a></li><li data-type='method'><a href="module-Wallet.html#userUniversalTransferHistory">userUniversalTransferHistory</a></li><li data-type='method'><a href="module-Wallet.html#withdraw">withdraw</a></li><li data-type='method'><a href="module-Wallet.html#withdrawHistory">withdrawHistory</a></li></ul></li><li class="accordion collapsed child" id=6625620><div class="accordion-heading child"><a href="module-Websocket.html">Websocket</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Websocket.html#aggTradeWS">aggTradeWS</a></li><li data-type='method'><a href="module-Websocket.html#bookTickerWS">bookTickerWS</a></li><li data-type='method'><a href="module-Websocket.html#combinedStreams">combinedStreams</a></li><li data-type='method'><a href="module-Websocket.html#diffBookDepth">diffBookDepth</a></li><li data-type='method'><a href="module-Websocket.html#klineWS">klineWS</a></li><li data-type='method'><a href="module-Websocket.html#miniTickerWS">miniTickerWS</a></li><li data-type='method'><a href="module-Websocket.html#partialBookDepth">partialBookDepth</a></li><li data-type='method'><a href="module-Websocket.html#tickerWS">tickerWS</a></li><li data-type='method'><a href="module-Websocket.html#tradeWS">tradeWS</a></li><li data-type='method'><a href="module-Websocket.html#userData">userData</a></li></ul></li></ul> </div></div>
+      
+
+    </nav>
+    <div class="navbar-ham" id="navbar-ham">
+      <div>
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+      </div>
+    </div>
+
+    <div id="main" class="main-content">
+      
+      <h1 id='page-title' class="page-title">
+        SubAccount
+      </h1>
+      
+
+      
 
 
 
 
 <section>
+
 
 <header>
     
@@ -34,11 +116,12 @@
     
 </header>
 
+
 <article>
     <div class="container-overview">
     
         
-            <div class="description">API sub account endpoints</div>
+            <div class="description"><p>API sub account endpoints</p></div>
         
 
         
@@ -54,8 +137,9 @@
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -102,6 +186,9 @@
     </tbody>
 </table>
 
+    </div>
+
+
 
 
 
@@ -134,10 +221,12 @@
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line3">line 3</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line3">line 3</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -146,8 +235,6 @@
 
     
 </dl>
-
-
 
 
 
@@ -176,9 +263,7 @@
 
     
 
-    
-
-    
+     
 
     
 
@@ -192,21 +277,20 @@
 
     
 
-    
-    <h4 class="name" id="managedSubAccountAssets"><span class="type-signature"></span>managedSubAccountAssets<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="managedSubAccountAssets">
+        <a href="#managedSubAccountAssets">#</a>
+        <span class="type-signature"></span>managedSubAccountAssets<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Query managed sub-account asset details（For Investor Master Account)<br>
-
-GET /sapi/v1/managed-subaccount/asset<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-asset-details-for-investor-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-asset-details-for-investor-master-account</a>
-</div>
+    <div class="description">
+        <p>Query managed sub-account asset details（For Investor Master Account)<br></p>
+<p>GET /sapi/v1/managed-subaccount/asset<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-asset-details-for-investor-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-asset-details-for-investor-master-account</a></p>
+    </div>
 
 
 
@@ -216,8 +300,9 @@ GET /sapi/v1/managed-subaccount/asset<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -368,6 +453,9 @@ GET /sapi/v1/managed-subaccount/asset<br>
     </tbody>
 </table>
 
+    </div>
+
+
 
 
 
@@ -400,10 +488,12 @@ GET /sapi/v1/managed-subaccount/asset<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line593">line 593</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line593">line 593</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -430,28 +520,25 @@ GET /sapi/v1/managed-subaccount/asset<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="managedSubAccountDeposit"><span class="type-signature"></span>managedSubAccountDeposit<span class="signature">(toEmail, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="managedSubAccountDeposit">
+        <a href="#managedSubAccountDeposit">#</a>
+        <span class="type-signature"></span>managedSubAccountDeposit<span class="signature">(toEmail, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Deposit assets into the managed sub-account（For Investor Master Account)<br>
-
-POST /sapi/v1/managed-subaccount/deposit<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#deposit-assets-into-the-managed-sub-account-for-investor-master-account">https://binance-docs.github.io/apidocs/spot/en/#deposit-assets-into-the-managed-sub-account-for-investor-master-account</a>
-</div>
+    <div class="description">
+        <p>Deposit assets into the managed sub-account（For Investor Master Account)<br></p>
+<p>POST /sapi/v1/managed-subaccount/deposit<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#deposit-assets-into-the-managed-sub-account-for-investor-master-account">https://binance-docs.github.io/apidocs/spot/en/#deposit-assets-into-the-managed-sub-account-for-investor-master-account</a></p>
+    </div>
 
 
 
@@ -461,8 +548,9 @@ POST /sapi/v1/managed-subaccount/deposit<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -661,7 +749,7 @@ POST /sapi/v1/managed-subaccount/deposit<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -674,6 +762,9 @@ POST /sapi/v1/managed-subaccount/deposit<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -707,10 +798,12 @@ POST /sapi/v1/managed-subaccount/deposit<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line573">line 573</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line573">line 573</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -737,28 +830,25 @@ POST /sapi/v1/managed-subaccount/deposit<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="managedSubAccountWithdraw"><span class="type-signature"></span>managedSubAccountWithdraw<span class="signature">(fromEmail, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="managedSubAccountWithdraw">
+        <a href="#managedSubAccountWithdraw">#</a>
+        <span class="type-signature"></span>managedSubAccountWithdraw<span class="signature">(fromEmail, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Withdrawl assets from the managed sub-account（For Investor Master Account)<br>
-
-POST /sapi/v1/managed-subaccount/withdraw<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#withdrawl-assets-from-the-managed-sub-account-for-investor-master-account">https://binance-docs.github.io/apidocs/spot/en/#withdrawl-assets-from-the-managed-sub-account-for-investor-master-account</a>
-</div>
+    <div class="description">
+        <p>Withdrawl assets from the managed sub-account（For Investor Master Account)<br></p>
+<p>POST /sapi/v1/managed-subaccount/withdraw<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#withdrawl-assets-from-the-managed-sub-account-for-investor-master-account">https://binance-docs.github.io/apidocs/spot/en/#withdrawl-assets-from-the-managed-sub-account-for-investor-master-account</a></p>
+    </div>
 
 
 
@@ -768,8 +858,9 @@ POST /sapi/v1/managed-subaccount/withdraw<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -968,8 +1059,8 @@ POST /sapi/v1/managed-subaccount/withdraw<br>
 
             
 
-            <td class="description last">Withdrawals is automatically occur on the transfer date(UTC0).
-<br>If a date is not selected, the withdrawal occurs right now</td>
+            <td class="description last"><p>Withdrawals is automatically occur on the transfer date(UTC0).
+<br>If a date is not selected, the withdrawal occurs right now</p></td>
         </tr>
 
     
@@ -1016,6 +1107,9 @@ POST /sapi/v1/managed-subaccount/withdraw<br>
     </tbody>
 </table>
 
+    </div>
+
+
 
 
 
@@ -1048,10 +1142,12 @@ POST /sapi/v1/managed-subaccount/withdraw<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line617">line 617</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line617">line 617</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -1078,28 +1174,25 @@ POST /sapi/v1/managed-subaccount/withdraw<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountAssets"><span class="type-signature"></span>subAccountAssets<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountAssets">
+        <a href="#subAccountAssets">#</a>
+        <span class="type-signature"></span>subAccountAssets<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Query Sub-account Assets(For Master Account)<br>
-
-GET /sapi/v3/sub-account/assets<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Query Sub-account Assets(For Master Account)<br></p>
+<p>GET /sapi/v3/sub-account/assets<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account</a></p>
+    </div>
 
 
 
@@ -1109,8 +1202,9 @@ GET /sapi/v3/sub-account/assets<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -1247,7 +1341,7 @@ GET /sapi/v3/sub-account/assets<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -1260,6 +1354,9 @@ GET /sapi/v3/sub-account/assets<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -1293,10 +1390,12 @@ GET /sapi/v3/sub-account/assets<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line66">line 66</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line66">line 66</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -1323,28 +1422,25 @@ GET /sapi/v3/sub-account/assets<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountCreation"><span class="type-signature"></span>subAccountCreation<span class="signature">(subAccountString, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountCreation">
+        <a href="#subAccountCreation">#</a>
+        <span class="type-signature"></span>subAccountCreation<span class="signature">(subAccountString, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Create a Virtual Sub-account(For Master Account)<br>
-
-POST /sapi/v1/sub-account/virtualSubAccount<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Create a Virtual Sub-account(For Master Account)<br></p>
+<p>POST /sapi/v1/sub-account/virtualSubAccount<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -1354,8 +1450,9 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -1492,7 +1589,7 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -1505,6 +1602,9 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -1538,10 +1638,12 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line530">line 530</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line530">line 530</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -1568,28 +1670,25 @@ POST /sapi/v1/sub-account/virtualSubAccount<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountDepositAddress"><span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, coin, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountDepositAddress">
+        <a href="#subAccountDepositAddress">#</a>
+        <span class="type-signature"></span>subAccountDepositAddress<span class="signature">(email, coin, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Sub-account Deposit Address (For Master Account)<br>
-
-GET /sapi/v1/capital/deposit/subAddress<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Sub-account Deposit Address (For Master Account)<br></p>
+<p>GET /sapi/v1/capital/deposit/subAddress<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a></p>
+    </div>
 
 
 
@@ -1599,8 +1698,9 @@ GET /sapi/v1/capital/deposit/subAddress<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -1801,7 +1901,7 @@ GET /sapi/v1/capital/deposit/subAddress<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -1814,6 +1914,9 @@ GET /sapi/v1/capital/deposit/subAddress<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -1847,10 +1950,12 @@ GET /sapi/v1/capital/deposit/subAddress<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line89">line 89</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line89">line 89</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -1877,28 +1982,25 @@ GET /sapi/v1/capital/deposit/subAddress<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountDepositHistory"><span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountDepositHistory">
+        <a href="#subAccountDepositHistory">#</a>
+        <span class="type-signature"></span>subAccountDepositHistory<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Sub-account Deposit History (For Master Account)<br>
-
-GET /sapi/v1/capital/deposit/subHisrec<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Sub-account Deposit History (For Master Account)<br></p>
+<p>GET /sapi/v1/capital/deposit/subHisrec<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account</a></p>
+    </div>
 
 
 
@@ -1908,8 +2010,9 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -2244,7 +2347,7 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -2257,6 +2360,9 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -2290,10 +2396,12 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line119">line 119</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line119">line 119</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -2320,28 +2428,25 @@ GET /sapi/v1/capital/deposit/subHisrec<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountEnableFutures"><span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountEnableFutures">
+        <a href="#subAccountEnableFutures">#</a>
+        <span class="type-signature"></span>subAccountEnableFutures<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Enable Futures for Sub-account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/futures/enable<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Enable Futures for Sub-account (For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/futures/enable<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -2351,8 +2456,9 @@ GET /sapi/v1/sub-account/futures/enable<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -2489,7 +2595,7 @@ GET /sapi/v1/sub-account/futures/enable<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -2502,6 +2608,9 @@ GET /sapi/v1/sub-account/futures/enable<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -2535,10 +2644,12 @@ GET /sapi/v1/sub-account/futures/enable<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line223">line 223</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line223">line 223</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -2565,28 +2676,25 @@ GET /sapi/v1/sub-account/futures/enable<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountEnableMargin"><span class="type-signature"></span>subAccountEnableMargin<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountEnableMargin">
+        <a href="#subAccountEnableMargin">#</a>
+        <span class="type-signature"></span>subAccountEnableMargin<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Enable Margin for Sub-account (For Master Account)<br>
-
-POST /sapi/v1/sub-account/margin/enable<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Enable Margin for Sub-account (For Master Account)<br></p>
+<p>POST /sapi/v1/sub-account/margin/enable<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -2596,8 +2704,9 @@ POST /sapi/v1/sub-account/margin/enable<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -2647,7 +2756,7 @@ POST /sapi/v1/sub-account/margin/enable<br>
 
             
 
-            <td class="description last">Sub-account email</td>
+            <td class="description last"><p>Sub-account email</p></td>
         </tr>
 
     
@@ -2734,7 +2843,7 @@ POST /sapi/v1/sub-account/margin/enable<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -2747,6 +2856,9 @@ POST /sapi/v1/sub-account/margin/enable<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -2780,10 +2892,12 @@ POST /sapi/v1/sub-account/margin/enable<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line159">line 159</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line159">line 159</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -2810,28 +2924,25 @@ POST /sapi/v1/sub-account/margin/enable<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountFuturesAccount"><span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountFuturesAccount">
+        <a href="#subAccountFuturesAccount">#</a>
+        <span class="type-signature"></span>subAccountFuturesAccount<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Detail on Sub-account's Futures Account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/futures/account<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Detail on Sub-account's Futures Account (For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/futures/account<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -2841,8 +2952,9 @@ GET /sapi/v1/sub-account/futures/account<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -2979,7 +3091,7 @@ GET /sapi/v1/sub-account/futures/account<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -2992,6 +3104,9 @@ GET /sapi/v1/sub-account/futures/account<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -3025,10 +3140,12 @@ GET /sapi/v1/sub-account/futures/account<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line246">line 246</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line246">line 246</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -3055,28 +3172,25 @@ GET /sapi/v1/sub-account/futures/account<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountFuturesAccountSummary"><span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountFuturesAccountSummary">
+        <a href="#subAccountFuturesAccountSummary">#</a>
+        <span class="type-signature"></span>subAccountFuturesAccountSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Summary of Sub-account's Futures Account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/futures/accountSummary<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Summary of Sub-account's Futures Account (For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/futures/accountSummary<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -3086,8 +3200,9 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -3193,7 +3308,7 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -3206,6 +3321,9 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -3239,10 +3357,12 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line268">line 268</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line268">line 268</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -3269,28 +3389,25 @@ GET /sapi/v1/sub-account/futures/accountSummary<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountFuturesAssetTransfer"><span class="type-signature"></span>subAccountFuturesAssetTransfer<span class="signature">(fromEmail, toEmail, futuresType, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountFuturesAssetTransfer">
+        <a href="#subAccountFuturesAssetTransfer">#</a>
+        <span class="type-signature"></span>subAccountFuturesAssetTransfer<span class="signature">(fromEmail, toEmail, futuresType, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Sub-account Futures Asset Transfer(For Master Account)<br>
-
-POST /sapi/v1/sub-account/futures/internalTransfer<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Sub-account Futures Asset Transfer(For Master Account)<br></p>
+<p>POST /sapi/v1/sub-account/futures/internalTransfer<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account</a></p>
+    </div>
 
 
 
@@ -3300,8 +3417,9 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -3351,7 +3469,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">Sender email</td>
+            <td class="description last"><p>Sender email</p></td>
         </tr>
 
     
@@ -3382,7 +3500,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">Recipient email</td>
+            <td class="description last"><p>Recipient email</p></td>
         </tr>
 
     
@@ -3413,7 +3531,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">1: USDT-margined Futures，2: Coin-margined Futures</td>
+            <td class="description last"><p>1: USDT-margined Futures，2: Coin-margined Futures</p></td>
         </tr>
 
     
@@ -3562,7 +3680,7 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -3575,6 +3693,9 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -3608,10 +3729,12 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line482">line 482</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line482">line 482</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -3638,28 +3761,25 @@ POST /sapi/v1/sub-account/futures/internalTransfer<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountFuturesAssetTransferHistory"><span class="type-signature"></span>subAccountFuturesAssetTransferHistory<span class="signature">(email, futuresType, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountFuturesAssetTransferHistory">
+        <a href="#subAccountFuturesAssetTransferHistory">#</a>
+        <span class="type-signature"></span>subAccountFuturesAssetTransferHistory<span class="signature">(email, futuresType, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Query Sub-account Futures Asset Transfer History(For Master Account)<br>
-
-GET /sapi/v1/sub-account/futures/internalTransfer<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Query Sub-account Futures Asset Transfer History(For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/futures/internalTransfer<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account</a></p>
+    </div>
 
 
 
@@ -3669,8 +3789,9 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -3720,7 +3841,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">Sub-account email</td>
+            <td class="description last"><p>Sub-account email</p></td>
         </tr>
 
     
@@ -3751,7 +3872,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">1: USDT-margined Futures，2: Coin-margined Futures</td>
+            <td class="description last"><p>1: USDT-margined Futures，2: Coin-margined Futures</p></td>
         </tr>
 
     
@@ -3838,7 +3959,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">Default return the history with in 100 days</td>
+            <td class="description last"><p>Default return the history with in 100 days</p></td>
         </tr>
 
     
@@ -3871,7 +3992,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">Default return the history with in 100 days</td>
+            <td class="description last"><p>Default return the history with in 100 days</p></td>
         </tr>
 
     
@@ -3904,7 +4025,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">Default value: 1</td>
+            <td class="description last"><p>Default value: 1</p></td>
         </tr>
 
     
@@ -3937,7 +4058,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">Default value: 50, Max value: 500</td>
+            <td class="description last"><p>Default value: 50, Max value: 500</p></td>
         </tr>
 
     
@@ -3970,7 +4091,7 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -3983,6 +4104,9 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -4016,10 +4140,12 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line454">line 454</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line454">line 454</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -4046,28 +4172,25 @@ GET /sapi/v1/sub-account/futures/internalTransfer<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountFuturesPositionRisk"><span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountFuturesPositionRisk">
+        <a href="#subAccountFuturesPositionRisk">#</a>
+        <span class="type-signature"></span>subAccountFuturesPositionRisk<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Futures Postion-Risk of Sub-account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/futures/positionRisk<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Futures Postion-Risk of Sub-account (For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/futures/positionRisk<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -4077,8 +4200,9 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -4215,7 +4339,7 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -4228,6 +4352,9 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -4261,10 +4388,12 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line287">line 287</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line287">line 287</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -4291,28 +4420,25 @@ GET /sapi/v1/sub-account/futures/positionRisk<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountFuturesTransfer"><span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountFuturesTransfer">
+        <a href="#subAccountFuturesTransfer">#</a>
+        <span class="type-signature"></span>subAccountFuturesTransfer<span class="signature">(email, asset, amount, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Futures Transfer for Sub-account(For Master Account)<br>
-
-POST /sapi/v1/sub-account/futures/transfer<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Futures Transfer for Sub-account(For Master Account)<br></p>
+<p>POST /sapi/v1/sub-account/futures/transfer<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -4322,8 +4448,9 @@ POST /sapi/v1/sub-account/futures/transfer<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -4466,10 +4593,10 @@ POST /sapi/v1/sub-account/futures/transfer<br>
 
             
 
-            <td class="description last">1: transfer from subaccount's spot account to its USDT-margined futures account
+            <td class="description last"><p>1: transfer from subaccount's spot account to its USDT-margined futures account
 <br>2: transfer from subaccount's USDT-margined futures account to its spot account
 <br>3: transfer from subaccount's spot account to its COIN-margined futures account
-<br>4: transfer from subaccount's COIN-margined futures account to its spot account</td>
+<br>4: transfer from subaccount's COIN-margined futures account to its spot account</p></td>
         </tr>
 
     
@@ -4556,7 +4683,7 @@ POST /sapi/v1/sub-account/futures/transfer<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -4569,6 +4696,9 @@ POST /sapi/v1/sub-account/futures/transfer<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -4602,10 +4732,12 @@ POST /sapi/v1/sub-account/futures/transfer<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line316">line 316</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line316">line 316</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -4632,28 +4764,25 @@ POST /sapi/v1/sub-account/futures/transfer<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountLeverageToken"><span class="type-signature"></span>subAccountLeverageToken<span class="signature">(email, enableBlvt, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountLeverageToken">
+        <a href="#subAccountLeverageToken">#</a>
+        <span class="type-signature"></span>subAccountLeverageToken<span class="signature">(email, enableBlvt, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Enable Leverage Token for Sub-account (For Master Account)<br>
-
-POST /sapi/v1/sub-account/blvt/enable<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Enable Leverage Token for Sub-account (For Master Account)<br></p>
+<p>POST /sapi/v1/sub-account/blvt/enable<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -4663,8 +4792,9 @@ POST /sapi/v1/sub-account/blvt/enable<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -4832,7 +4962,7 @@ POST /sapi/v1/sub-account/blvt/enable<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -4845,6 +4975,9 @@ POST /sapi/v1/sub-account/blvt/enable<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -4878,10 +5011,12 @@ POST /sapi/v1/sub-account/blvt/enable<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line551">line 551</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line551">line 551</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -4908,28 +5043,25 @@ POST /sapi/v1/sub-account/blvt/enable<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountList"><span class="type-signature"></span>subAccountList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountList">
+        <a href="#subAccountList">#</a>
+        <span class="type-signature"></span>subAccountList<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Query Sub-account List(For Master Account)<br>
-
-GET /sapi/v1/sub-account/list<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Query Sub-account List(For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/list<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account</a></p>
+    </div>
 
 
 
@@ -4939,8 +5071,9 @@ GET /sapi/v1/sub-account/list<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -5178,7 +5311,7 @@ GET /sapi/v1/sub-account/list<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -5191,6 +5324,9 @@ GET /sapi/v1/sub-account/list<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -5224,10 +5360,12 @@ GET /sapi/v1/sub-account/list<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line23">line 23</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line23">line 23</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -5254,28 +5392,25 @@ GET /sapi/v1/sub-account/list<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountMarginAccount"><span class="type-signature"></span>subAccountMarginAccount<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountMarginAccount">
+        <a href="#subAccountMarginAccount">#</a>
+        <span class="type-signature"></span>subAccountMarginAccount<span class="signature">(email, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Detail on Sub-account's Margin Account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/margin/account<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Detail on Sub-account's Margin Account (For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/margin/account<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -5285,8 +5420,9 @@ GET /sapi/v1/sub-account/margin/account<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -5423,7 +5559,7 @@ GET /sapi/v1/sub-account/margin/account<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -5436,6 +5572,9 @@ GET /sapi/v1/sub-account/margin/account<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -5469,10 +5608,12 @@ GET /sapi/v1/sub-account/margin/account<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line182">line 182</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line182">line 182</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -5499,28 +5640,25 @@ GET /sapi/v1/sub-account/margin/account<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountMarginAccountSummary"><span class="type-signature"></span>subAccountMarginAccountSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountMarginAccountSummary">
+        <a href="#subAccountMarginAccountSummary">#</a>
+        <span class="type-signature"></span>subAccountMarginAccountSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Summary of Sub-account's Margin Account (For Master Account)<br>
-
-GET /sapi/v1/sub-account/margin/accountSummary<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Summary of Sub-account's Margin Account (For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/margin/accountSummary<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -5530,8 +5668,9 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -5637,7 +5776,7 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -5650,6 +5789,9 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -5683,10 +5825,12 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line204">line 204</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line204">line 204</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -5713,28 +5857,25 @@ GET /sapi/v1/sub-account/margin/accountSummary<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountMarginTransfer"><span class="type-signature"></span>subAccountMarginTransfer<span class="signature">(email, asset, amount, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountMarginTransfer">
+        <a href="#subAccountMarginTransfer">#</a>
+        <span class="type-signature"></span>subAccountMarginTransfer<span class="signature">(email, asset, amount, type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Margin Transfer for Sub-account(For Master Account)<br>
-
-POST /sapi/v1/sub-account/margin/transfer<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Margin Transfer for Sub-account(For Master Account)<br></p>
+<p>POST /sapi/v1/sub-account/margin/transfer<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account</a></p>
+    </div>
 
 
 
@@ -5744,8 +5885,9 @@ POST /sapi/v1/sub-account/margin/transfer<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -5888,8 +6030,8 @@ POST /sapi/v1/sub-account/margin/transfer<br>
 
             
 
-            <td class="description last">1: transfer from subaccount's spot account to margin account
-<br>2: transfer from subaccount's margin account to its spot account</td>
+            <td class="description last"><p>1: transfer from subaccount's spot account to margin account
+<br>2: transfer from subaccount's margin account to its spot account</p></td>
         </tr>
 
     
@@ -5976,7 +6118,7 @@ POST /sapi/v1/sub-account/margin/transfer<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -5989,6 +6131,9 @@ POST /sapi/v1/sub-account/margin/transfer<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -6022,10 +6167,12 @@ POST /sapi/v1/sub-account/margin/transfer<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line347">line 347</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line347">line 347</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -6052,28 +6199,25 @@ POST /sapi/v1/sub-account/margin/transfer<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountSpotSummary"><span class="type-signature"></span>subAccountSpotSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountSpotSummary">
+        <a href="#subAccountSpotSummary">#</a>
+        <span class="type-signature"></span>subAccountSpotSummary<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Query Sub-account Spot Assets Summary (For Master Account)<br>
-
-GET /sapi/v1/sub-account/spotSummary<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Query Sub-account Spot Assets Summary (For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/spotSummary<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account</a></p>
+    </div>
 
 
 
@@ -6083,8 +6227,9 @@ GET /sapi/v1/sub-account/spotSummary<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -6190,7 +6335,7 @@ GET /sapi/v1/sub-account/spotSummary<br>
 
             
 
-            <td class="description last">Sub account email</td>
+            <td class="description last"><p>Sub account email</p></td>
         </tr>
 
     
@@ -6223,7 +6368,7 @@ GET /sapi/v1/sub-account/spotSummary<br>
 
             
 
-            <td class="description last">default 1</td>
+            <td class="description last"><p>default 1</p></td>
         </tr>
 
     
@@ -6256,7 +6401,7 @@ GET /sapi/v1/sub-account/spotSummary<br>
 
             
 
-            <td class="description last">default 10, max 20</td>
+            <td class="description last"><p>default 10, max 20</p></td>
         </tr>
 
     
@@ -6289,7 +6434,7 @@ GET /sapi/v1/sub-account/spotSummary<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -6302,6 +6447,9 @@ GET /sapi/v1/sub-account/spotSummary<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -6335,10 +6483,12 @@ GET /sapi/v1/sub-account/spotSummary<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line511">line 511</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line511">line 511</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -6365,28 +6515,25 @@ GET /sapi/v1/sub-account/spotSummary<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountStatus"><span class="type-signature"></span>subAccountStatus<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountStatus">
+        <a href="#subAccountStatus">#</a>
+        <span class="type-signature"></span>subAccountStatus<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Get Sub-account's Status on Margin/Futures(For Master Account)<br>
-
-GET /sapi/v1/sub-account/status<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Get Sub-account's Status on Margin/Futures(For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/status<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account</a></p>
+    </div>
 
 
 
@@ -6396,8 +6543,9 @@ GET /sapi/v1/sub-account/status<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -6536,7 +6684,7 @@ GET /sapi/v1/sub-account/status<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -6549,6 +6697,9 @@ GET /sapi/v1/sub-account/status<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -6582,10 +6733,12 @@ GET /sapi/v1/sub-account/status<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line140">line 140</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line140">line 140</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -6612,28 +6765,25 @@ GET /sapi/v1/sub-account/status<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountTransferHistory"><span class="type-signature"></span>subAccountTransferHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountTransferHistory">
+        <a href="#subAccountTransferHistory">#</a>
+        <span class="type-signature"></span>subAccountTransferHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Query Sub-account Transfer History(For Master Account)<br>
-
-GET /sapi/v1/sub-account/sub/transfer/history<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account</a>
-</div>
+    <div class="description">
+        <p>Query Sub-account Transfer History(For Master Account)<br></p>
+<p>GET /sapi/v1/sub-account/sub/transfer/history<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account">https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account</a></p>
+    </div>
 
 
 
@@ -6643,8 +6793,9 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -6948,7 +7099,7 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -6961,6 +7112,9 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -6994,10 +7148,12 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line47">line 47</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line47">line 47</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -7024,28 +7180,25 @@ GET /sapi/v1/sub-account/sub/transfer/history<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountTransferSubAccountHistory"><span class="type-signature"></span>subAccountTransferSubAccountHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountTransferSubAccountHistory">
+        <a href="#subAccountTransferSubAccountHistory">#</a>
+        <span class="type-signature"></span>subAccountTransferSubAccountHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Sub-account Transfer History (For Sub-account)<br>
-
-GET /sapi/v1/sub-account/transfer/subUserHistory<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account</a>
-</div>
+    <div class="description">
+        <p>Sub-account Transfer History (For Sub-account)<br></p>
+<p>GET /sapi/v1/sub-account/transfer/subUserHistory<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account</a></p>
+    </div>
 
 
 
@@ -7055,8 +7208,9 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -7162,7 +7316,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
 
             
 
-            <td class="description last">If not sent, result of all assets will be returned</td>
+            <td class="description last"><p>If not sent, result of all assets will be returned</p></td>
         </tr>
 
     
@@ -7195,7 +7349,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
 
             
 
-            <td class="description last">1: transfer in, 2: transfer out</td>
+            <td class="description last"><p>1: transfer in, 2: transfer out</p></td>
         </tr>
 
     
@@ -7294,7 +7448,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
 
             
 
-            <td class="description last">Default 500</td>
+            <td class="description last"><p>Default 500</p></td>
         </tr>
 
     
@@ -7327,7 +7481,7 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -7340,6 +7494,9 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -7373,10 +7530,12 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line430">line 430</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line430">line 430</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -7403,28 +7562,25 @@ GET /sapi/v1/sub-account/transfer/subUserHistory<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountTransferToMaster"><span class="type-signature"></span>subAccountTransferToMaster<span class="signature">(asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountTransferToMaster">
+        <a href="#subAccountTransferToMaster">#</a>
+        <span class="type-signature"></span>subAccountTransferToMaster<span class="signature">(asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Transfer to Master（For Sub-account）<br>
-
-POST /sapi/v1/sub-account/transfer/subToMaster<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account</a>
-</div>
+    <div class="description">
+        <p>Transfer to Master（For Sub-account）<br></p>
+<p>POST /sapi/v1/sub-account/transfer/subToMaster<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account</a></p>
+    </div>
 
 
 
@@ -7434,8 +7590,9 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -7603,7 +7760,7 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -7616,6 +7773,9 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -7649,10 +7809,12 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line401">line 401</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line401">line 401</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -7679,28 +7841,25 @@ POST /sapi/v1/sub-account/transfer/subToMaster<br>
 
 
 
-
-
         
             
 
     
 
-    
-    <h4 class="name" id="subAccountTransferToSub"><span class="type-signature"></span>subAccountTransferToSub<span class="signature">(toEmail, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
-    
+    <h4 class="name" id="subAccountTransferToSub">
+        <a href="#subAccountTransferToSub">#</a>
+        <span class="type-signature"></span>subAccountTransferToSub<span class="signature">(toEmail, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
 
     
 
 
 
-<div class="description">
-    Transfer to Sub-account of Same Master（For Sub-account）<br>
-
-POST /sapi/v1/sub-account/transfer/subToSub<br>
-
-<a href="https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account</a>
-</div>
+    <div class="description">
+        <p>Transfer to Sub-account of Same Master（For Sub-account）<br></p>
+<p>POST /sapi/v1/sub-account/transfer/subToSub<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account">https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account</a></p>
+    </div>
 
 
 
@@ -7710,8 +7869,9 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
 
 
 
-    <h5>Parameters:</h5>
-    
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
 
 <table class="params">
     <thead>
@@ -7910,7 +8070,7 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
 
             
 
-            <td class="description last">The value cannot be greater than 60000</td>
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
         </tr>
 
     
@@ -7923,6 +8083,9 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
     
     </tbody>
 </table>
+
+    </div>
+
 
 
 
@@ -7956,10 +8119,12 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
     
 
     
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line375">line 375</a>
-    </li></ul></dd>
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="subAccount.js.html">subAccount.js</a>, <a href="subAccount.js.html#line375">line 375</a>
+            </li></ul></dd>
+        </div>
     
 
     
@@ -7968,8 +8133,6 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
 
     
 </dl>
-
-
 
 
 
@@ -8001,19 +8164,39 @@ POST /sapi/v1/sub-account/transfer/subToSub<br>
 
 
 
-</div>
+    </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Futures.html">Futures</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-SubAccount.html">SubAccount</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
-</nav>
+    <footer class="footer" id="footer">
+      
+    </footer>
 
-<br class="clear">
+    <script src="scripts/third-party/prettify.js"></script>
+    <script src="scripts/third-party/lang-css.js"></script>
+    <script type="text/javascript" src="scripts/misc.js"></script>
 
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a>
-</footer>
+    <script>prettyPrint();</script>
+    <script src="scripts/linenumber.js"></script>
+    <script src="scripts/fix-code-block.js"></script>
+    <script src="scripts/fix-navbar.js"></script>
+    
+      <script src="scripts/search.js"></script>
+      <script src="scripts/third-party/fuse.js"></script>
+      <script>
+        var list = [{"title":"Blvt","link":"<a href=\"module-Blvt.html\">Blvt</a>"},{"title":"module:Blvt#blvtInfo","link":"<a href=\"module-Blvt.html#blvtInfo\">module:Blvt &rtrif; blvtInfo</a>"},{"title":"module:Blvt#blvtRedemptionRecord","link":"<a href=\"module-Blvt.html#blvtRedemptionRecord\">module:Blvt &rtrif; blvtRedemptionRecord</a>"},{"title":"module:Blvt#blvtSubscriptionRecord","link":"<a href=\"module-Blvt.html#blvtSubscriptionRecord\">module:Blvt &rtrif; blvtSubscriptionRecord</a>"},{"title":"module:Blvt#redeemBlvt","link":"<a href=\"module-Blvt.html#redeemBlvt\">module:Blvt &rtrif; redeemBlvt</a>"},{"title":"module:Blvt#subscribeBlvt","link":"<a href=\"module-Blvt.html#subscribeBlvt\">module:Blvt &rtrif; subscribeBlvt</a>"},{"title":"Bswap","link":"<a href=\"module-Bswap.html\">Bswap</a>"},{"title":"module:Bswap#bswapLiquidity","link":"<a href=\"module-Bswap.html#bswapLiquidity\">module:Bswap &rtrif; bswapLiquidity</a>"},{"title":"module:Bswap#bswapLiquidityAdd","link":"<a href=\"module-Bswap.html#bswapLiquidityAdd\">module:Bswap &rtrif; bswapLiquidityAdd</a>"},{"title":"module:Bswap#bswapLiquidityOperationRecord","link":"<a href=\"module-Bswap.html#bswapLiquidityOperationRecord\">module:Bswap &rtrif; bswapLiquidityOperationRecord</a>"},{"title":"module:Bswap#bswapLiquidityRemove","link":"<a href=\"module-Bswap.html#bswapLiquidityRemove\">module:Bswap &rtrif; bswapLiquidityRemove</a>"},{"title":"module:Bswap#bswapPools","link":"<a href=\"module-Bswap.html#bswapPools\">module:Bswap &rtrif; bswapPools</a>"},{"title":"module:Bswap#bswapRequestQuote","link":"<a href=\"module-Bswap.html#bswapRequestQuote\">module:Bswap &rtrif; bswapRequestQuote</a>"},{"title":"module:Bswap#bswapSwap","link":"<a href=\"module-Bswap.html#bswapSwap\">module:Bswap &rtrif; bswapSwap</a>"},{"title":"module:Bswap#bswapSwapHistory","link":"<a href=\"module-Bswap.html#bswapSwapHistory\">module:Bswap &rtrif; bswapSwapHistory</a>"},{"title":"Futures","link":"<a href=\"module-Futures.html\">Futures</a>"},{"title":"module:Futures#futuresCollateralRepay","link":"<a href=\"module-Futures.html#futuresCollateralRepay\">module:Futures &rtrif; futuresCollateralRepay</a>"},{"title":"module:Futures#futuresCollateralRepayLimit","link":"<a href=\"module-Futures.html#futuresCollateralRepayLimit\">module:Futures &rtrif; futuresCollateralRepayLimit</a>"},{"title":"module:Futures#futuresCollateralRepayQuote","link":"<a href=\"module-Futures.html#futuresCollateralRepayQuote\">module:Futures &rtrif; futuresCollateralRepayQuote</a>"},{"title":"module:Futures#futuresCollateralRepayResult","link":"<a href=\"module-Futures.html#futuresCollateralRepayResult\">module:Futures &rtrif; futuresCollateralRepayResult</a>"},{"title":"module:Futures#futuresLoanAdjustCollateral","link":"<a href=\"module-Futures.html#futuresLoanAdjustCollateral\">module:Futures &rtrif; futuresLoanAdjustCollateral</a>"},{"title":"module:Futures#futuresLoanAdjustCollateralHistory","link":"<a href=\"module-Futures.html#futuresLoanAdjustCollateralHistory\">module:Futures &rtrif; futuresLoanAdjustCollateralHistory</a>"},{"title":"module:Futures#futuresLoanBorrow","link":"<a href=\"module-Futures.html#futuresLoanBorrow\">module:Futures &rtrif; futuresLoanBorrow</a>"},{"title":"module:Futures#futuresLoanBorrowHistory","link":"<a href=\"module-Futures.html#futuresLoanBorrowHistory\">module:Futures &rtrif; futuresLoanBorrowHistory</a>"},{"title":"module:Futures#futuresLoanCalcAdjustLevel","link":"<a href=\"module-Futures.html#futuresLoanCalcAdjustLevel\">module:Futures &rtrif; futuresLoanCalcAdjustLevel</a>"},{"title":"module:Futures#futuresLoanCalcMaxAdjustAmount","link":"<a href=\"module-Futures.html#futuresLoanCalcMaxAdjustAmount\">module:Futures &rtrif; futuresLoanCalcMaxAdjustAmount</a>"},{"title":"module:Futures#futuresLoanConfigs","link":"<a href=\"module-Futures.html#futuresLoanConfigs\">module:Futures &rtrif; futuresLoanConfigs</a>"},{"title":"module:Futures#futuresLoanInterestHistory","link":"<a href=\"module-Futures.html#futuresLoanInterestHistory\">module:Futures &rtrif; futuresLoanInterestHistory</a>"},{"title":"module:Futures#futuresLoanLiquidationHistory","link":"<a href=\"module-Futures.html#futuresLoanLiquidationHistory\">module:Futures &rtrif; futuresLoanLiquidationHistory</a>"},{"title":"module:Futures#futuresLoanRepay","link":"<a href=\"module-Futures.html#futuresLoanRepay\">module:Futures &rtrif; futuresLoanRepay</a>"},{"title":"module:Futures#futuresLoanRepayHistory","link":"<a href=\"module-Futures.html#futuresLoanRepayHistory\">module:Futures &rtrif; futuresLoanRepayHistory</a>"},{"title":"module:Futures#futuresLoanWallet","link":"<a href=\"module-Futures.html#futuresLoanWallet\">module:Futures &rtrif; futuresLoanWallet</a>"},{"title":"module:Futures#futuresTransfer","link":"<a href=\"module-Futures.html#futuresTransfer\">module:Futures &rtrif; futuresTransfer</a>"},{"title":"module:Futures#futuresTransferHistory","link":"<a href=\"module-Futures.html#futuresTransferHistory\">module:Futures &rtrif; futuresTransferHistory</a>"},{"title":"Margin","link":"<a href=\"module-Margin.html\">Margin</a>"},{"title":"module:Margin#cancelAllOpenMarginOrder","link":"<a href=\"module-Margin.html#cancelAllOpenMarginOrder\">module:Margin &rtrif; cancelAllOpenMarginOrder</a>"},{"title":"module:Margin#cancelMarginOrder","link":"<a href=\"module-Margin.html#cancelMarginOrder\">module:Margin &rtrif; cancelMarginOrder</a>"},{"title":"module:Margin#isolatedMarginAccountInfo","link":"<a href=\"module-Margin.html#isolatedMarginAccountInfo\">module:Margin &rtrif; isolatedMarginAccountInfo</a>"},{"title":"module:Margin#isolatedMarginAllSymbols","link":"<a href=\"module-Margin.html#isolatedMarginAllSymbols\">module:Margin &rtrif; isolatedMarginAllSymbols</a>"},{"title":"module:Margin#isolatedMarginSymbol","link":"<a href=\"module-Margin.html#isolatedMarginSymbol\">module:Margin &rtrif; isolatedMarginSymbol</a>"},{"title":"module:Margin#isolatedMarginTransfer","link":"<a href=\"module-Margin.html#isolatedMarginTransfer\">module:Margin &rtrif; isolatedMarginTransfer</a>"},{"title":"module:Margin#isolatedMarginTransferHistory","link":"<a href=\"module-Margin.html#isolatedMarginTransferHistory\">module:Margin &rtrif; isolatedMarginTransferHistory</a>"},{"title":"module:Margin#marginAccount","link":"<a href=\"module-Margin.html#marginAccount\">module:Margin &rtrif; marginAccount</a>"},{"title":"module:Margin#marginAllAssets","link":"<a href=\"module-Margin.html#marginAllAssets\">module:Margin &rtrif; marginAllAssets</a>"},{"title":"module:Margin#marginAllOrders","link":"<a href=\"module-Margin.html#marginAllOrders\">module:Margin &rtrif; marginAllOrders</a>"},{"title":"module:Margin#marginAllPairs","link":"<a href=\"module-Margin.html#marginAllPairs\">module:Margin &rtrif; marginAllPairs</a>"},{"title":"module:Margin#marginAsset","link":"<a href=\"module-Margin.html#marginAsset\">module:Margin &rtrif; marginAsset</a>"},{"title":"module:Margin#marginBorrow","link":"<a href=\"module-Margin.html#marginBorrow\">module:Margin &rtrif; marginBorrow</a>"},{"title":"module:Margin#marginForceLiquidationRecord","link":"<a href=\"module-Margin.html#marginForceLiquidationRecord\">module:Margin &rtrif; marginForceLiquidationRecord</a>"},{"title":"module:Margin#marginInterestHistory","link":"<a href=\"module-Margin.html#marginInterestHistory\">module:Margin &rtrif; marginInterestHistory</a>"},{"title":"module:Margin#marginInterestRateHistory","link":"<a href=\"module-Margin.html#marginInterestRateHistory\">module:Margin &rtrif; marginInterestRateHistory</a>"},{"title":"module:Margin#marginLoanRecord","link":"<a href=\"module-Margin.html#marginLoanRecord\">module:Margin &rtrif; marginLoanRecord</a>"},{"title":"module:Margin#marginMaxBorrowable","link":"<a href=\"module-Margin.html#marginMaxBorrowable\">module:Margin &rtrif; marginMaxBorrowable</a>"},{"title":"module:Margin#marginMaxTransferable","link":"<a href=\"module-Margin.html#marginMaxTransferable\">module:Margin &rtrif; marginMaxTransferable</a>"},{"title":"module:Margin#marginMyTrades","link":"<a href=\"module-Margin.html#marginMyTrades\">module:Margin &rtrif; marginMyTrades</a>"},{"title":"module:Margin#marginOpenOrders","link":"<a href=\"module-Margin.html#marginOpenOrders\">module:Margin &rtrif; marginOpenOrders</a>"},{"title":"module:Margin#marginOrder","link":"<a href=\"module-Margin.html#marginOrder\">module:Margin &rtrif; marginOrder</a>"},{"title":"module:Margin#marginPair","link":"<a href=\"module-Margin.html#marginPair\">module:Margin &rtrif; marginPair</a>"},{"title":"module:Margin#marginPairIndex","link":"<a href=\"module-Margin.html#marginPairIndex\">module:Margin &rtrif; marginPairIndex</a>"},{"title":"module:Margin#marginRepay","link":"<a href=\"module-Margin.html#marginRepay\">module:Margin &rtrif; marginRepay</a>"},{"title":"module:Margin#marginRepayRecord","link":"<a href=\"module-Margin.html#marginRepayRecord\">module:Margin &rtrif; marginRepayRecord</a>"},{"title":"module:Margin#marginTransfer","link":"<a href=\"module-Margin.html#marginTransfer\">module:Margin &rtrif; marginTransfer</a>"},{"title":"module:Margin#marginTransferHistory","link":"<a href=\"module-Margin.html#marginTransferHistory\">module:Margin &rtrif; marginTransferHistory</a>"},{"title":"module:Margin#newMarginOrder","link":"<a href=\"module-Margin.html#newMarginOrder\">module:Margin &rtrif; newMarginOrder</a>"},{"title":"Market","link":"<a href=\"module-Market.html\">Market</a>"},{"title":"module:Market#aggTrades","link":"<a href=\"module-Market.html#aggTrades\">module:Market &rtrif; aggTrades</a>"},{"title":"module:Market#avgPrice","link":"<a href=\"module-Market.html#avgPrice\">module:Market &rtrif; avgPrice</a>"},{"title":"module:Market#bookTicker","link":"<a href=\"module-Market.html#bookTicker\">module:Market &rtrif; bookTicker</a>"},{"title":"module:Market#depth","link":"<a href=\"module-Market.html#depth\">module:Market &rtrif; depth</a>"},{"title":"module:Market#exchangeInfo","link":"<a href=\"module-Market.html#exchangeInfo\">module:Market &rtrif; exchangeInfo</a>"},{"title":"module:Market#historicalTrades","link":"<a href=\"module-Market.html#historicalTrades\">module:Market &rtrif; historicalTrades</a>"},{"title":"module:Market#klines","link":"<a href=\"module-Market.html#klines\">module:Market &rtrif; klines</a>"},{"title":"module:Market#ping","link":"<a href=\"module-Market.html#ping\">module:Market &rtrif; ping</a>"},{"title":"module:Market#ticker24hr","link":"<a href=\"module-Market.html#ticker24hr\">module:Market &rtrif; ticker24hr</a>"},{"title":"module:Market#tickerPrice","link":"<a href=\"module-Market.html#tickerPrice\">module:Market &rtrif; tickerPrice</a>"},{"title":"module:Market#time","link":"<a href=\"module-Market.html#time\">module:Market &rtrif; time</a>"},{"title":"module:Market#trades","link":"<a href=\"module-Market.html#trades\">module:Market &rtrif; trades</a>"},{"title":"Mining","link":"<a href=\"module-Mining.html\">Mining</a>"},{"title":"module:Mining#miningAccountList","link":"<a href=\"module-Mining.html#miningAccountList\">module:Mining &rtrif; miningAccountList</a>"},{"title":"module:Mining#miningAlgoList","link":"<a href=\"module-Mining.html#miningAlgoList\">module:Mining &rtrif; miningAlgoList</a>"},{"title":"module:Mining#miningBonusList","link":"<a href=\"module-Mining.html#miningBonusList\">module:Mining &rtrif; miningBonusList</a>"},{"title":"module:Mining#miningCoinList","link":"<a href=\"module-Mining.html#miningCoinList\">module:Mining &rtrif; miningCoinList</a>"},{"title":"module:Mining#miningHashrateResaleCancel","link":"<a href=\"module-Mining.html#miningHashrateResaleCancel\">module:Mining &rtrif; miningHashrateResaleCancel</a>"},{"title":"module:Mining#miningHashrateResaleDetail","link":"<a href=\"module-Mining.html#miningHashrateResaleDetail\">module:Mining &rtrif; miningHashrateResaleDetail</a>"},{"title":"module:Mining#miningHashrateResaleList","link":"<a href=\"module-Mining.html#miningHashrateResaleList\">module:Mining &rtrif; miningHashrateResaleList</a>"},{"title":"module:Mining#miningHashrateResaleRequest","link":"<a href=\"module-Mining.html#miningHashrateResaleRequest\">module:Mining &rtrif; miningHashrateResaleRequest</a>"},{"title":"module:Mining#miningRevenueList","link":"<a href=\"module-Mining.html#miningRevenueList\">module:Mining &rtrif; miningRevenueList</a>"},{"title":"module:Mining#miningStatisticList","link":"<a href=\"module-Mining.html#miningStatisticList\">module:Mining &rtrif; miningStatisticList</a>"},{"title":"module:Mining#miningWorker","link":"<a href=\"module-Mining.html#miningWorker\">module:Mining &rtrif; miningWorker</a>"},{"title":"module:Mining#miningWorkerList","link":"<a href=\"module-Mining.html#miningWorkerList\">module:Mining &rtrif; miningWorkerList</a>"},{"title":"Savings","link":"<a href=\"module-Savings.html\">Savings</a>"},{"title":"module:Savings#savingsAccount","link":"<a href=\"module-Savings.html#savingsAccount\">module:Savings &rtrif; savingsAccount</a>"},{"title":"module:Savings#savingsCustomizedPosition","link":"<a href=\"module-Savings.html#savingsCustomizedPosition\">module:Savings &rtrif; savingsCustomizedPosition</a>"},{"title":"module:Savings#savingsFlexibleProductPosition","link":"<a href=\"module-Savings.html#savingsFlexibleProductPosition\">module:Savings &rtrif; savingsFlexibleProductPosition</a>"},{"title":"module:Savings#savingsFlexibleProducts","link":"<a href=\"module-Savings.html#savingsFlexibleProducts\">module:Savings &rtrif; savingsFlexibleProducts</a>"},{"title":"module:Savings#savingsFlexibleRedeem","link":"<a href=\"module-Savings.html#savingsFlexibleRedeem\">module:Savings &rtrif; savingsFlexibleRedeem</a>"},{"title":"module:Savings#savingsFlexibleUserLeftQuota","link":"<a href=\"module-Savings.html#savingsFlexibleUserLeftQuota\">module:Savings &rtrif; savingsFlexibleUserLeftQuota</a>"},{"title":"module:Savings#savingsFlexibleUserRedemptionQuota","link":"<a href=\"module-Savings.html#savingsFlexibleUserRedemptionQuota\">module:Savings &rtrif; savingsFlexibleUserRedemptionQuota</a>"},{"title":"module:Savings#savingsInterestHistory","link":"<a href=\"module-Savings.html#savingsInterestHistory\">module:Savings &rtrif; savingsInterestHistory</a>"},{"title":"module:Savings#savingsProductList","link":"<a href=\"module-Savings.html#savingsProductList\">module:Savings &rtrif; savingsProductList</a>"},{"title":"module:Savings#savingsPurchaseCustomizedProject","link":"<a href=\"module-Savings.html#savingsPurchaseCustomizedProject\">module:Savings &rtrif; savingsPurchaseCustomizedProject</a>"},{"title":"module:Savings#savingsPurchaseFlexibleProduct","link":"<a href=\"module-Savings.html#savingsPurchaseFlexibleProduct\">module:Savings &rtrif; savingsPurchaseFlexibleProduct</a>"},{"title":"module:Savings#savingsPurchaseRecord","link":"<a href=\"module-Savings.html#savingsPurchaseRecord\">module:Savings &rtrif; savingsPurchaseRecord</a>"},{"title":"module:Savings#savingsRedemptionRecord","link":"<a href=\"module-Savings.html#savingsRedemptionRecord\">module:Savings &rtrif; savingsRedemptionRecord</a>"},{"title":"Stream","link":"<a href=\"module-Stream.html\">Stream</a>"},{"title":"module:Stream#closeIsolatedMarginListenKey","link":"<a href=\"module-Stream.html#closeIsolatedMarginListenKey\">module:Stream &rtrif; closeIsolatedMarginListenKey</a>"},{"title":"module:Stream#closeListenKey","link":"<a href=\"module-Stream.html#closeListenKey\">module:Stream &rtrif; closeListenKey</a>"},{"title":"module:Stream#closeMarginListenKey","link":"<a href=\"module-Stream.html#closeMarginListenKey\">module:Stream &rtrif; closeMarginListenKey</a>"},{"title":"module:Stream#createIsolatedMarginListenKey","link":"<a href=\"module-Stream.html#createIsolatedMarginListenKey\">module:Stream &rtrif; createIsolatedMarginListenKey</a>"},{"title":"module:Stream#createListenKey","link":"<a href=\"module-Stream.html#createListenKey\">module:Stream &rtrif; createListenKey</a>"},{"title":"module:Stream#createMarginListenKey","link":"<a href=\"module-Stream.html#createMarginListenKey\">module:Stream &rtrif; createMarginListenKey</a>"},{"title":"module:Stream#renewIsolatedMarginListenKey","link":"<a href=\"module-Stream.html#renewIsolatedMarginListenKey\">module:Stream &rtrif; renewIsolatedMarginListenKey</a>"},{"title":"module:Stream#renewListenKey","link":"<a href=\"module-Stream.html#renewListenKey\">module:Stream &rtrif; renewListenKey</a>"},{"title":"module:Stream#renewMarginListenKey","link":"<a href=\"module-Stream.html#renewMarginListenKey\">module:Stream &rtrif; renewMarginListenKey</a>"},{"title":"SubAccount","link":"<a href=\"module-SubAccount.html\">SubAccount</a>"},{"title":"module:SubAccount#managedSubAccountAssets","link":"<a href=\"module-SubAccount.html#managedSubAccountAssets\">module:SubAccount &rtrif; managedSubAccountAssets</a>"},{"title":"module:SubAccount#managedSubAccountDeposit","link":"<a href=\"module-SubAccount.html#managedSubAccountDeposit\">module:SubAccount &rtrif; managedSubAccountDeposit</a>"},{"title":"module:SubAccount#managedSubAccountWithdraw","link":"<a href=\"module-SubAccount.html#managedSubAccountWithdraw\">module:SubAccount &rtrif; managedSubAccountWithdraw</a>"},{"title":"module:SubAccount#subAccountAssets","link":"<a href=\"module-SubAccount.html#subAccountAssets\">module:SubAccount &rtrif; subAccountAssets</a>"},{"title":"module:SubAccount#subAccountCreation","link":"<a href=\"module-SubAccount.html#subAccountCreation\">module:SubAccount &rtrif; subAccountCreation</a>"},{"title":"module:SubAccount#subAccountDepositAddress","link":"<a href=\"module-SubAccount.html#subAccountDepositAddress\">module:SubAccount &rtrif; subAccountDepositAddress</a>"},{"title":"module:SubAccount#subAccountDepositHistory","link":"<a href=\"module-SubAccount.html#subAccountDepositHistory\">module:SubAccount &rtrif; subAccountDepositHistory</a>"},{"title":"module:SubAccount#subAccountEnableFutures","link":"<a href=\"module-SubAccount.html#subAccountEnableFutures\">module:SubAccount &rtrif; subAccountEnableFutures</a>"},{"title":"module:SubAccount#subAccountEnableMargin","link":"<a href=\"module-SubAccount.html#subAccountEnableMargin\">module:SubAccount &rtrif; subAccountEnableMargin</a>"},{"title":"module:SubAccount#subAccountFuturesAccount","link":"<a href=\"module-SubAccount.html#subAccountFuturesAccount\">module:SubAccount &rtrif; subAccountFuturesAccount</a>"},{"title":"module:SubAccount#subAccountFuturesAccountSummary","link":"<a href=\"module-SubAccount.html#subAccountFuturesAccountSummary\">module:SubAccount &rtrif; subAccountFuturesAccountSummary</a>"},{"title":"module:SubAccount#subAccountFuturesAssetTransfer","link":"<a href=\"module-SubAccount.html#subAccountFuturesAssetTransfer\">module:SubAccount &rtrif; subAccountFuturesAssetTransfer</a>"},{"title":"module:SubAccount#subAccountFuturesAssetTransferHistory","link":"<a href=\"module-SubAccount.html#subAccountFuturesAssetTransferHistory\">module:SubAccount &rtrif; subAccountFuturesAssetTransferHistory</a>"},{"title":"module:SubAccount#subAccountFuturesPositionRisk","link":"<a href=\"module-SubAccount.html#subAccountFuturesPositionRisk\">module:SubAccount &rtrif; subAccountFuturesPositionRisk</a>"},{"title":"module:SubAccount#subAccountFuturesTransfer","link":"<a href=\"module-SubAccount.html#subAccountFuturesTransfer\">module:SubAccount &rtrif; subAccountFuturesTransfer</a>"},{"title":"module:SubAccount#subAccountLeverageToken","link":"<a href=\"module-SubAccount.html#subAccountLeverageToken\">module:SubAccount &rtrif; subAccountLeverageToken</a>"},{"title":"module:SubAccount#subAccountList","link":"<a href=\"module-SubAccount.html#subAccountList\">module:SubAccount &rtrif; subAccountList</a>"},{"title":"module:SubAccount#subAccountMarginAccount","link":"<a href=\"module-SubAccount.html#subAccountMarginAccount\">module:SubAccount &rtrif; subAccountMarginAccount</a>"},{"title":"module:SubAccount#subAccountMarginAccountSummary","link":"<a href=\"module-SubAccount.html#subAccountMarginAccountSummary\">module:SubAccount &rtrif; subAccountMarginAccountSummary</a>"},{"title":"module:SubAccount#subAccountMarginTransfer","link":"<a href=\"module-SubAccount.html#subAccountMarginTransfer\">module:SubAccount &rtrif; subAccountMarginTransfer</a>"},{"title":"module:SubAccount#subAccountSpotSummary","link":"<a href=\"module-SubAccount.html#subAccountSpotSummary\">module:SubAccount &rtrif; subAccountSpotSummary</a>"},{"title":"module:SubAccount#subAccountStatus","link":"<a href=\"module-SubAccount.html#subAccountStatus\">module:SubAccount &rtrif; subAccountStatus</a>"},{"title":"module:SubAccount#subAccountTransferHistory","link":"<a href=\"module-SubAccount.html#subAccountTransferHistory\">module:SubAccount &rtrif; subAccountTransferHistory</a>"},{"title":"module:SubAccount#subAccountTransferSubAccountHistory","link":"<a href=\"module-SubAccount.html#subAccountTransferSubAccountHistory\">module:SubAccount &rtrif; subAccountTransferSubAccountHistory</a>"},{"title":"module:SubAccount#subAccountTransferToMaster","link":"<a href=\"module-SubAccount.html#subAccountTransferToMaster\">module:SubAccount &rtrif; subAccountTransferToMaster</a>"},{"title":"module:SubAccount#subAccountTransferToSub","link":"<a href=\"module-SubAccount.html#subAccountTransferToSub\">module:SubAccount &rtrif; subAccountTransferToSub</a>"},{"title":"Trade","link":"<a href=\"module-Trade.html\">Trade</a>"},{"title":"module:Trade#account","link":"<a href=\"module-Trade.html#account\">module:Trade &rtrif; account</a>"},{"title":"module:Trade#allOrders","link":"<a href=\"module-Trade.html#allOrders\">module:Trade &rtrif; allOrders</a>"},{"title":"module:Trade#cancelOCOOrder","link":"<a href=\"module-Trade.html#cancelOCOOrder\">module:Trade &rtrif; cancelOCOOrder</a>"},{"title":"module:Trade#cancelOpenOrders","link":"<a href=\"module-Trade.html#cancelOpenOrders\">module:Trade &rtrif; cancelOpenOrders</a>"},{"title":"module:Trade#cancelOrder","link":"<a href=\"module-Trade.html#cancelOrder\">module:Trade &rtrif; cancelOrder</a>"},{"title":"module:Trade#getOCOOrder","link":"<a href=\"module-Trade.html#getOCOOrder\">module:Trade &rtrif; getOCOOrder</a>"},{"title":"module:Trade#getOCOOrders","link":"<a href=\"module-Trade.html#getOCOOrders\">module:Trade &rtrif; getOCOOrders</a>"},{"title":"module:Trade#getOpenOCOOrders","link":"<a href=\"module-Trade.html#getOpenOCOOrders\">module:Trade &rtrif; getOpenOCOOrders</a>"},{"title":"module:Trade#getOrder","link":"<a href=\"module-Trade.html#getOrder\">module:Trade &rtrif; getOrder</a>"},{"title":"module:Trade#myTrades","link":"<a href=\"module-Trade.html#myTrades\">module:Trade &rtrif; myTrades</a>"},{"title":"module:Trade#newOCOOrder","link":"<a href=\"module-Trade.html#newOCOOrder\">module:Trade &rtrif; newOCOOrder</a>"},{"title":"module:Trade#newOrder","link":"<a href=\"module-Trade.html#newOrder\">module:Trade &rtrif; newOrder</a>"},{"title":"module:Trade#newOrderTest","link":"<a href=\"module-Trade.html#newOrderTest\">module:Trade &rtrif; newOrderTest</a>"},{"title":"module:Trade#openOrders","link":"<a href=\"module-Trade.html#openOrders\">module:Trade &rtrif; openOrders</a>"},{"title":"Wallet","link":"<a href=\"module-Wallet.html\">Wallet</a>"},{"title":"module:Wallet#accountSnapshot","link":"<a href=\"module-Wallet.html#accountSnapshot\">module:Wallet &rtrif; accountSnapshot</a>"},{"title":"module:Wallet#accountStatus","link":"<a href=\"module-Wallet.html#accountStatus\">module:Wallet &rtrif; accountStatus</a>"},{"title":"module:Wallet#assetDetail","link":"<a href=\"module-Wallet.html#assetDetail\">module:Wallet &rtrif; assetDetail</a>"},{"title":"module:Wallet#assetDevidendRecord","link":"<a href=\"module-Wallet.html#assetDevidendRecord\">module:Wallet &rtrif; assetDevidendRecord</a>"},{"title":"module:Wallet#coinInfo","link":"<a href=\"module-Wallet.html#coinInfo\">module:Wallet &rtrif; coinInfo</a>"},{"title":"module:Wallet#depositAddress","link":"<a href=\"module-Wallet.html#depositAddress\">module:Wallet &rtrif; depositAddress</a>"},{"title":"module:Wallet#depositHistory","link":"<a href=\"module-Wallet.html#depositHistory\">module:Wallet &rtrif; depositHistory</a>"},{"title":"module:Wallet#disableFastWithdraw","link":"<a href=\"module-Wallet.html#disableFastWithdraw\">module:Wallet &rtrif; disableFastWithdraw</a>"},{"title":"module:Wallet#dustLog","link":"<a href=\"module-Wallet.html#dustLog\">module:Wallet &rtrif; dustLog</a>"},{"title":"module:Wallet#dustTransfer","link":"<a href=\"module-Wallet.html#dustTransfer\">module:Wallet &rtrif; dustTransfer</a>"},{"title":"module:Wallet#enableFastWithdraw","link":"<a href=\"module-Wallet.html#enableFastWithdraw\">module:Wallet &rtrif; enableFastWithdraw</a>"},{"title":"module:Wallet#systemStatus","link":"<a href=\"module-Wallet.html#systemStatus\">module:Wallet &rtrif; systemStatus</a>"},{"title":"module:Wallet#tradeFee","link":"<a href=\"module-Wallet.html#tradeFee\">module:Wallet &rtrif; tradeFee</a>"},{"title":"module:Wallet#tradingStatus","link":"<a href=\"module-Wallet.html#tradingStatus\">module:Wallet &rtrif; tradingStatus</a>"},{"title":"module:Wallet#userUniversalTransfer","link":"<a href=\"module-Wallet.html#userUniversalTransfer\">module:Wallet &rtrif; userUniversalTransfer</a>"},{"title":"module:Wallet#userUniversalTransferHistory","link":"<a href=\"module-Wallet.html#userUniversalTransferHistory\">module:Wallet &rtrif; userUniversalTransferHistory</a>"},{"title":"module:Wallet#withdraw","link":"<a href=\"module-Wallet.html#withdraw\">module:Wallet &rtrif; withdraw</a>"},{"title":"module:Wallet#withdrawHistory","link":"<a href=\"module-Wallet.html#withdrawHistory\">module:Wallet &rtrif; withdrawHistory</a>"},{"title":"Websocket","link":"<a href=\"module-Websocket.html\">Websocket</a>"},{"title":"module:Websocket#aggTradeWS","link":"<a href=\"module-Websocket.html#aggTradeWS\">module:Websocket &rtrif; aggTradeWS</a>"},{"title":"module:Websocket#bookTickerWS","link":"<a href=\"module-Websocket.html#bookTickerWS\">module:Websocket &rtrif; bookTickerWS</a>"},{"title":"module:Websocket#combinedStreams","link":"<a href=\"module-Websocket.html#combinedStreams\">module:Websocket &rtrif; combinedStreams</a>"},{"title":"module:Websocket#diffBookDepth","link":"<a href=\"module-Websocket.html#diffBookDepth\">module:Websocket &rtrif; diffBookDepth</a>"},{"title":"module:Websocket#klineWS","link":"<a href=\"module-Websocket.html#klineWS\">module:Websocket &rtrif; klineWS</a>"},{"title":"module:Websocket#miniTickerWS","link":"<a href=\"module-Websocket.html#miniTickerWS\">module:Websocket &rtrif; miniTickerWS</a>"},{"title":"module:Websocket#partialBookDepth","link":"<a href=\"module-Websocket.html#partialBookDepth\">module:Websocket &rtrif; partialBookDepth</a>"},{"title":"module:Websocket#tickerWS","link":"<a href=\"module-Websocket.html#tickerWS\">module:Websocket &rtrif; tickerWS</a>"},{"title":"module:Websocket#tradeWS","link":"<a href=\"module-Websocket.html#tradeWS\">module:Websocket &rtrif; tradeWS</a>"},{"title":"module:Websocket#userData","link":"<a href=\"module-Websocket.html#userData\">module:Websocket &rtrif; userData</a>"}];
+        var options = 
+          setupSearch(list, options)
+      </script>
+    
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
-</body>
+    
+
+    
+
+    
+
+    
+
+
+  </body>
+
 </html>
