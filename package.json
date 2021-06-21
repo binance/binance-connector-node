@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/binance-exchange/binance-connector-node.git"
   },
-  "engines" : {
+  "engines": {
     "node": ">=10.24.1",
     "npm": ">=6.14.12"
   },
