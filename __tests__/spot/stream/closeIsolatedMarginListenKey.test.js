@@ -3,9 +3,10 @@ const MissingParameterError = require('../../../src/error/missingParameterError'
 const { nockDeleteMock, SpotClient } = require('../../testUtils/testSetup')
 const { mockResponse } = require('../../testUtils/mockData')
 
+const symbol = 'BNBUSDT'
+const listenKey = 'aaa'
+
 describe('#closeIsolatedMarginListenKey', () => {
-  const symbol = 'BNBUSDT'
-  const listenKey = 'aaa'
   it.each(
     [[undefined, undefined], ['', listenKey], [symbol, '']]
   )('should throw MissingParameterError', (pSymbol, pListenKey) => {
