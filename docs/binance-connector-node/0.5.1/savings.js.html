@@ -44,6 +44,8 @@ const Savings = superclass => class extends superclass {
    * @param {object} [options]
    * @param {string} [options.status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
    * @param {string} [options.featured] - "ALL", "true"; default "ALL"
+   * @param {number} [options.current] - Current query page. Default: 1, Min: 1
+   * @param {number} [options.size] - Default: 50, Max: 100
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleProducts (options = {}) {
