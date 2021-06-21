@@ -30,6 +30,7 @@ const Stream = superclass => class extends superclass {
    * @param {string} listenKey
    */
   renewListenKey (listenKey) {
+    validateRequiredParameters({ listenKey })
     return this.publicRequest(
       'PUT',
       '/api/v3/userDataStream',
@@ -47,6 +48,7 @@ const Stream = superclass => class extends superclass {
    * @param {string} listenKey
    */
   closeListenKey (listenKey) {
+    validateRequiredParameters({ listenKey })
     return this.publicRequest(
       'DELETE',
       '/api/v3/userDataStream',
@@ -79,6 +81,7 @@ const Stream = superclass => class extends superclass {
    * @param {string} listenKey
    */
   renewMarginListenKey (listenKey) {
+    validateRequiredParameters({ listenKey })
     return this.publicRequest(
       'PUT',
       '/sapi/v1/userDataStream',
@@ -96,6 +99,7 @@ const Stream = superclass => class extends superclass {
    * @param {string} listenKey
    */
   closeMarginListenKey (listenKey) {
+    validateRequiredParameters({ listenKey })
     return this.publicRequest(
       'DELETE',
       '/sapi/v1/userDataStream',
