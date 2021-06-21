@@ -14,8 +14,11 @@
     "template": "node_modules/clean-jsdoc-theme",
     "theme_opts": {
       "title": "binance-connector-node",
-      "menuLocation": "down",
       "menu" : [
+        {
+          "title": "Change log",
+          "link": "./changelog.html"
+        },
         {
           "title": "Github repository",
           "link": "https://github.com/binance-exchange/binance-connector-node.git"
