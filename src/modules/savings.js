@@ -1,15 +1,25 @@
-const { validateParameter } = require('../helpers/validation')
+const { validateRequiredParameters } = require('../helpers/validation')
 
+/**
+ * API savings endpoints
+ * @module Savings
+ * @param {*} superclass
+ */
 const Savings = superclass => class extends superclass {
-  /*
-    * Get Flexible Product List (USER_DATA)
-    *
-    * GET /sapi/v1/lending/daily/product/list
-    *
-    * @param {string} status
-    * @param {string} featured
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Flexible Product List (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/daily/product/list<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-list-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
+   * @param {string} [options.featured] - "ALL", "true"; default "ALL"
+   * @param {number} [options.current] - Current query page. Default: 1, Min: 1
+   * @param {number} [options.size] - Default: 50, Max: 100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsFlexibleProducts (options = {}) {
     return this.signRequest(
       'GET',
@@ -18,16 +28,19 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Get Left Daily Purchase Quota of Flexible Product (USER_DATA)
-    *
-    * GET /sapi/v1/lending/daily/userLeftQuota
-    *
-    * @param {string} productId
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Left Daily Purchase Quota of Flexible Product (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/daily/userLeftQuota<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-left-daily-purchase-quota-of-flexible-product-user_data}
+   *
+   * @param {string} productId
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsFlexibleUserLeftQuota (productId, options = {}) {
-    validateParameter(productId, 'productId')
+    validateRequiredParameters({ productId })
     return this.signRequest(
       'GET',
       '/sapi/v1/lending/daily/userLeftQuota',
@@ -37,18 +50,20 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Purchase Flexible Product (USER_DATA)
-    *
-    * GET /sapi/v1/lending/daily/purchase
-    *
-    * @param {string} productId
-    * @param {string} amount
-    * @param {number} recvWindow
-    */
+  /**
+   * Purchase Flexible Product (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/daily/purchase<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#purchase-flexible-product-user_data}
+   *
+   * @param {string} productId
+   * @param {string} amount
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsPurchaseFlexibleProduct (productId, amount, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(amount, 'amount')
+    validateRequiredParameters({ productId, amount })
 
     return this.signRequest(
       'POST',
@@ -60,18 +75,20 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Get Left Daily Redemption Quota of Flexible Product (USER_DATA)
-    *
-    * GET /sapi/v1/lending/daily/purchase
-    *
-    * @param {string} productId
-    * @param {string} type "FAST", "NORMAL"
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Left Daily Redemption Quota of Flexible Product (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/daily/userRedemptionQuota<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-left-daily-redemption-quota-of-flexible-product-user_data}
+   *
+   * @param {string} productId
+   * @param {string} type - "FAST", "NORMAL"
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsFlexibleUserRedemptionQuota (productId, type, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ productId, type })
 
     return this.signRequest(
       'GET',
@@ -83,19 +100,21 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Redeem Flexible Product (USER_DATA)
-    *
-    * POST /sapi/v1/lending/daily/redeem
-    *
-    * @param {string} productId
-    * @param {string} type "FAST", "NORMAL"
-    * @param {number} recvWindow
-    */
+  /**
+   * Redeem Flexible Product (USER_DATA)<br>
+   *
+   * POST /sapi/v1/lending/daily/redeem<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#redeem-flexible-product-user_data}
+   *
+   * @param {string} productId
+   * @param {number} amount
+   * @param {string} type - "FAST", "NORMAL"
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsFlexibleRedeem (productId, amount, type, options = {}) {
-    validateParameter(productId, 'productId')
-    validateParameter(amount, 'amount')
-    validateParameter(type, 'type')
+    validateRequiredParameters({ productId, amount, type })
 
     return this.signRequest(
       'POST',
@@ -108,16 +127,19 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Redeem Flexible Product (USER_DATA)
-    *
-    * GET /sapi/v1/lending/daily/redeem
-    *
-    * @param {string} asset
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Flexible Product Position (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/daily/token/position<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-position-user_data}
+   *
+   * @param {string} asset
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsFlexibleProductPosition (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -128,22 +150,25 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Get Fixed and Customized Fixed Project List(USER_DATA)
-    *
-    * GET /sapi/v1/lending/project/list
-    *
-    * @param {string} type
-    * @param {string} asset
-    * @param {string} status
-    * @param {boolean} isSortAsc
-    * @param {string} sortBy
-    * @param {number} current
-    * @param {number} size
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Fixed and Activity Project List(USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/project/list<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fixed-and-activity-project-list-user_data}
+   *
+   * @param {string} type - "ACTIVITY", "CUSTOMIZED_FIXED"
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {string} [options.status] - "ALL", "SUBSCRIBABLE", "UNSUBSCRIBABLE"; default "ALL"
+   * @param {boolean} [options.isSortAsc] - default "true"
+   * @param {string} [options.sortBy] - "START_TIME", "LOT_SIZE", "INTEREST_RATE", "DURATION"; default "START_TIME"
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsProductList (type, options = {}) {
-    validateParameter(type, 'type')
+    validateRequiredParameters({ type })
 
     return this.signRequest(
       'GET',
@@ -154,18 +179,20 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Purchase Customized Fixed Project (USER_DATA)
-    *
-    * POST /sapi/v1/lending/customizedFixed/purchase
-    *
-    * @param {string} projectId
-    * @param {number} lot
-    * @param {number} recvWindow
-    */
+  /**
+   * Purchase Fixed/Activity Project (USER_DATA)<br>
+   *
+   * POST /sapi/v1/lending/customizedFixed/purchase<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#purchase-fixed-activity-project-user_data}
+   *
+   * @param {string} projectId
+   * @param {number} lot
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsPurchaseCustomizedProject (projectId, lot, options = {}) {
-    validateParameter(projectId, 'projectId')
-    validateParameter(lot, 'lot')
+    validateRequiredParameters({ projectId, lot })
 
     return this.signRequest(
       'POST',
@@ -177,18 +204,21 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Get Customized Fixed Project Position (USER_DATA)
-    *
-    * GET /sapi/v1/lending/project/position/list
-    *
-    * @param {string} asset
-    * @param {string} projectId
-    * @param {string} status
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Fixed/Activity Project Position (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/project/position/list<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fixed-activity-project-position-user_data}
+   *
+   * @param {string} asset
+   * @param {object} [options]
+   * @param {string} [options.projectId]
+   * @param {string} [options.status] - "HOLDING", "REDEEMED"
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsCustomizedPosition (asset, options = {}) {
-    validateParameter(asset, 'asset')
+    validateRequiredParameters({ asset })
 
     return this.signRequest(
       'GET',
@@ -199,13 +229,16 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Lending Account (USER_DATA)
-    *
-    * GET /sapi/v1/lending/union/account
-    *
-    * @param {number} recvWindow
-    */
+  /**
+   * Lending Account (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/union/account<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#lending-account-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsAccount (options = {}) {
     return this.signRequest(
       'GET',
@@ -214,21 +247,25 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Get Customized Fixed Project Position (USER_DATA)
-    *
-    * GET /sapi/v1/lending/union/purchaseRecord
-    *
-    * @param {string} lendingType
-    * @param {string} asset
-    * @param {number} startTime
-    * @param {number} endTime
-    * @param {number} current
-    * @param {number} size
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Purchase Record (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/union/purchaseRecord<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-purchase-record-user_data}
+   *
+   * @param {string} lendingType - "DAILY" for flexible,
+   *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsPurchaseRecord (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',
@@ -239,21 +276,25 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Get Redemption Record (USER_DATA)
-    *
-    * GET /sapi/v1/lending/union/redemptionRecord
-    *
-    * @param {string} lendingType
-    * @param {string} asset
-    * @param {number} startTime
-    * @param {number} endTime
-    * @param {number} current
-    * @param {number} size
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Redemption Record (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/union/redemptionRecord<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-redemption-record-user_data}
+   *
+   * @param {string} lendingType - "DAILY" for flexible,
+   *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsRedemptionRecord (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',
@@ -264,21 +305,25 @@ const Savings = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Get Interest History (USER_DATA)
-    *
-    * GET /sapi/v1/lending/union/interestHistory
-    *
-    * @param {string} lendingType
-    * @param {string} asset
-    * @param {number} startTime
-    * @param {number} endTime
-    * @param {number} current
-    * @param {number} size
-    * @param {number} recvWindow
-    */
+  /**
+   * Get Interest History (USER_DATA)<br>
+   *
+   * GET /sapi/v1/lending/union/interestHistory<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-interest-history-user_data-2}
+   *
+   * @param {string} lendingType - "DAILY" for flexible,
+   *    "ACTIVITY" for activity, "CUSTOMIZED_FIXED" for fixed
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
+   * @param {number} [options.size] - Default:10, Max:100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
   savingsInterestHistory (lendingType, options = {}) {
-    validateParameter(lendingType, 'lendingType')
+    validateRequiredParameters({ lendingType })
 
     return this.signRequest(
       'GET',

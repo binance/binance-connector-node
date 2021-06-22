@@ -1,15 +1,38 @@
 const axios = require('axios')
-const bunyan = require('bunyan')
-const { appName } = require('./constants')
+const { Console } = require('console')
 
-const cleanEmptyObject = obj => {
-  Object.keys(obj).forEach((key) => (obj[key] == null || obj[key] === '') && delete obj[key])
+const removeEmptyValue = obj => {
+  if (!(obj instanceof Object)) return {}
+  Object.keys(obj).forEach(key => isEmptyValue(obj[key]) && delete obj[key])
   return obj
 }
 
-const buildQueryString = (q) => (q ? `?${Object.keys(q)
-  .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(q[k])}`)
-  .join('&')}` : '')
+const isEmptyValue = input => {
+  /**
+   * Scope of empty value: falsy value (except for false and 0),
+   * string with white space characters only, empty object, empty array
+   */
+  return (!input && input !== false && input !== 0) ||
+    ((typeof input === 'string' || input instanceof String) && /^\s+$/.test(input)) ||
+    (input instanceof Object && !Object.keys(input).length) ||
+    (Array.isArray(input) && !input.length)
+}
+
+const buildQueryString = params => {
+  if (!params) return ''
+  return Object.entries(params)
+    .map(stringifyKeyValuePair)
+    .join('&')
+}
+
+/**
+ * NOTE: The array conversion logic is different from usual query string.
+ * E.g. symbols=["BTCUSDT","BNBBTC"] instead of symbols[]=BTCUSDT&symbols[]=BNBBTC
+ */
+const stringifyKeyValuePair = ([key, value]) => {
+  const valueString = Array.isArray(value) ? `["${value.join('","')}"]` : value
+  return `${key}=${encodeURIComponent(valueString)}`
+}
 
 const getRequestInstance = (config) => {
   return axios.create({
@@ -31,11 +54,21 @@ const createRequest = (config) => {
   })
 }
 
-const defaultLogger = bunyan.createLogger({ name: appName })
+const flowRight = (...functions) => input => functions.reduceRight(
+  (input, fn) => fn(input),
+  input
+)
+
+const defaultLogger = new Console({
+  stdout: process.stdout,
+  stderr: process.stderr
+})
 
 module.exports = {
-  cleanEmptyObject,
+  isEmptyValue,
+  removeEmptyValue,
   buildQueryString,
   createRequest,
+  flowRight,
   defaultLogger
 }

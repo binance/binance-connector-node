@@ -2,25 +2,25 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   asset,
   recvWindow
 } = require('../../testUtils/mockData')
 
 describe('#savingsProductList', () => {
   describe('throw MissingParameterError', () => {
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.savingsProductList('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return product list', async () => {
+  it('should return product list', () => {
     const parameters = {
       asset,
       status: 'ALL',
@@ -28,11 +28,11 @@ describe('#savingsProductList', () => {
       sortBy: 'START_TIME',
       recvWindow
     }
-    nockMock(`/sapi/v1/lending/project/list${queryString({ type: 'REGULAR', ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/project/list?${buildQueryString({ type: 'REGULAR', ...parameters })}`)(mockResponse)
 
     return SpotClient.savingsProductList('REGULAR', parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

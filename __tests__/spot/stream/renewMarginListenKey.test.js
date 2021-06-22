@@ -1,13 +1,14 @@
 /* global describe, it, expect, */
-const { nockPutMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockPutMock, SpotClient } = require('../../testUtils/testSetup')
+const { mockResponse } = require('../../testUtils/mockData')
 
 describe('#renewMarginListenKey', () => {
-  it('should renew listen key', async () => {
-    nockPutMock('/sapi/v1/userDataStream?listenKey=aaa')(responseMockData)
+  it('should renew listen key', () => {
+    nockPutMock('/sapi/v1/userDataStream?listenKey=aaa')(mockResponse)
 
     return SpotClient.renewMarginListenKey('aaa').then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

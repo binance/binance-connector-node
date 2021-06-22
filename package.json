@@ -1,30 +1,38 @@
 {
   "name": "binance-connector-node",
   "version": "0.5.1",
-  "description": "",
+  "description": "This is a lightweight library that works as a connector to the Binance public API.",
   "main": "src/index.js",
   "scripts": {
+    "jsdoc": "jsdoc -c conf.json -d ./docs",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "standard": "standard",
-    "standard:fix": "standard --fix"
+    "standard:fix": "standard --fix ",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/binance-exchange/binance-connector-node.git"
   },
+  "engines": {
+    "node": ">=10.24.1",
+    "npm": ">=6.14.12"
+  },
   "keywords": [
     "Binance",
     "API"
   ],
-  "author": "",
+  "author": "Binance",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/binance-exchange/binance-connector-node/issues"
   },
   "homepage": "https://github.com/binance-exchange/binance-connector-node#readme",
   "devDependencies": {
+    "husky": "^6.0.0",
     "jest": "^26.0.1",
+    "jsdoc": "^3.6.7",
     "nock": "^13.0.2",
     "standard": "^14.3.4"
   },
@@ -33,13 +41,16 @@
   ],
   "dependencies": {
     "axios": "^0.21.1",
-    "bunyan": "^1.8.14",
-    "qs": "^6.9.4",
     "ws": "^7.3.1"
   },
   "jest": {
     "testMatch": [
       "**/__tests__/**/*.test.js"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "/docs/**/*.js"
     ]
   }
 }

@@ -2,34 +2,32 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   symbol,
   orderId
 } = require('../../testUtils/mockData')
 
 describe('#allOrders', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
-      expect(() => {
-        SpotClient.allOrders('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.allOrders('')
+    }).toThrow(MissingParameterError)
   })
 
-  it('should return order details', async () => {
+  it('should return order details', () => {
     const parameters = {
       orderId
     }
-    nockMock(`/api/v3/allOrders${queryString({ symbol, ...parameters })}`)(responseMockData)
+    nockMock(`/api/v3/allOrders?${buildQueryString({ symbol, ...parameters })}`)(mockResponse)
 
     return SpotClient.allOrders(symbol, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

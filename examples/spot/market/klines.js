@@ -4,5 +4,5 @@ const client = new Spot({
   baseURL: 'http://testnet.binance.vision'
 })
 
-client.klines('BTCUSDT', '1m', { limit: 5 }).then(response => console.log(response.data))
-  .catch(error => console.log(error.message))
+client.klines('BTCUSDT', '1m', { limit: 5 }).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error.message))

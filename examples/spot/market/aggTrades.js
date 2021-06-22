@@ -4,5 +4,6 @@ const Spot = require('../../../src/spot')
 const apiKey = ''
 const client = new Spot(apiKey, '')
 
-client.aggTrades('BTCUSDT', { limit: 5 }).then(response => console.log(response.data))
-  .catch(error => console.log(error.message))
+client.aggTrades('BTCUSDT', { limit: 5 })
+  .then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error.message))

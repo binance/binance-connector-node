@@ -1,37 +1,37 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   asset,
   amount
 } = require('../../testUtils/mockData')
 
 describe('#marginBorrow', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginBorrow('', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.marginBorrow(asset, '')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should transfer transaction id', async () => {
+  it('should transfer transaction id', () => {
     const parameters = {
       asset,
       amount
     }
-    nockPostMock(`/sapi/v1/margin/loan${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/margin/loan?${buildQueryString({ ...parameters })}`)(mockResponse)
 
     return SpotClient.marginBorrow(asset, amount).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

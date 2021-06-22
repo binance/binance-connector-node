@@ -1,33 +1,32 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   asset,
-  txId,
   recvWindow
 } = require('../../testUtils/mockData')
 
 describe('#marginLoanRecord', () => {
   describe('throw MissingParameterError', () => {
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.marginLoanRecord('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return margin loan record', async () => {
+  it('should return margin loan record', () => {
     const parameters = {
-      txId,
+      txId: 10,
       recvWindow
     }
-    nockMock(`/sapi/v1/margin/loan${queryString({ asset, ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/margin/loan?${buildQueryString({ asset, ...parameters })}`)(mockResponse)
 
     return SpotClient.marginLoanRecord(asset, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

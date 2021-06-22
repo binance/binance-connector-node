@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: wallet.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: wallet.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { validateRequiredParameters } = require('../helpers/validation')
+
+/**
+ * API wallet endpoints
+ * @module Wallet
+ * @param {*} superclass
+ */
+const Wallet = superclass => class extends superclass {
+  /**
+   * System Status (System)&lt;br>
+   *
+   * GET /sapi/v1/system/status&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system}
+   */
+  systemStatus () {
+    return this.publicRequest('GET', '/sapi/v1/system/status')
+  }
+
+  /**
+   * All Coins' Information (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/capital/config/getall&lt;br>
+   *
+   * Get information of coins (available for deposit and withdraw) for user.&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   *
+   */
+  coinInfo (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/capital/config/getall',
+      options
+    )
+  }
+
+  /**
+   * Daily Account Snapshot (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/accountSnapshot&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data}
+   *
+   * @param {string} type - "SPOT", "MARGIN", "FUTURES"
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - min 5, max 30, default 5
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  accountSnapshot (type, options = {}) {
+    validateRequiredParameters({ type })
+
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/accountSnapshot',
+      Object.assign(options, {
+        type: type.toUpperCase()
+      })
+    )
+  }
+
+  /**
+   * Disable Fast Withdraw Switch (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/account/disableFastWithdrawSwitch&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  disableFastWithdraw (options = {}) {
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/account/disableFastWithdrawSwitch',
+      options
+    )
+  }
+
+  /**
+   * Enable Fast Withdraw Switch (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/account/enableFastWithdrawSwitch&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  enableFastWithdraw (options = {}) {
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/account/enableFastWithdrawSwitch',
+      options
+    )
+  }
+
+  /**
+   * Withdraw&lt;br>
+   *
+   * POST /sapi/v1/capital/withdraw/apply&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi}
+   *
+   * @param {string} coin
+   * @param {string} address
+   * @param {number} amount
+   * @param {object} [options]
+   * @param {string} [options.withdrawOrderId] - client id for withdraw
+   * @param {string} [options.network]
+   * @param {string} [options.addressTag] - Secondary address identifier for coins like XRP,XMR etc.
+   * @param {boolean} [options.transactionFeeFlag] - When making internal transfer, true for returning the fee to the destination account;
+   * &lt;br>false for returning the fee back to the departure account. Default false.
+   * @param {string} [options.name] - Description of the address. Space in name should be encoded into %20.
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  withdraw (coin, address, amount, options = {}) {
+    validateRequiredParameters({ coin, address, amount })
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/capital/withdraw/apply',
+      Object.assign(options, {
+        coin: coin.toUpperCase(),
+        address,
+        amount
+      })
+    )
+  }
+
+  /**
+   * Deposit History(supporting network) (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/capital/deposit/hisrec&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.coin]
+   * @param {number} [options.status] - 0:pending, 6:credited but cannot withdraw, 1:success
+   * @param {number} [options.startTime] - Default: 90 days from current timestamp
+   * @param {number} [options.endTime] - Default: present timestamp
+   * @param {number} [options.offest]
+   * @param {number} [options.limit]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  depositHistory (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/capital/deposit/hisrec',
+      options
+    )
+  }
+
+  /**
+   * Withdraw History(supporting network) (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/capital/withdraw/history&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.coin]
+   * @param {number} [options.status] - 0:Email Sent 1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed
+   * @param {number} [options.startTime] - Default: 90 days from current timestamp
+   * @param {number} [options.endTime] - Default: present timestamp
+   * @param {number} [options.offest]
+   * @param {number} [options.limit]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  withdrawHistory (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/capital/withdraw/history',
+      options
+    )
+  }
+
+  /**
+   * Deposit Address (supporting network) (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/capital/deposit/address&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data}
+   *
+   * @param {string} coin
+   * @param {object} [options]
+   * @param {string} [options.network]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  depositAddress (coin, options = {}) {
+    validateRequiredParameters({ coin })
+
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/capital/deposit/address',
+      Object.assign(options, {
+        coin: coin.toUpperCase()
+      })
+    )
+  }
+
+  /**
+   * Account Status (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/account/status&lt;br>
+   *
+   * Fetch account status detail.&lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   *
+   */
+  accountStatus (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/account/status',
+      options
+    )
+  }
+
+  /**
+   * Account API Trading Status (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/account/apiTradingStatus&lt;br>
+   *
+   * Fetch account api trading status detail.&lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  tradingStatus (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/account/apiTradingStatus',
+      options
+    )
+  }
+
+  /**
+   * DustLog (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/asset/dribblet&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  dustLog (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/asset/dribblet',
+      options
+    )
+  }
+
+  /**
+   * Dust Transfer (USER_DATA)&lt;br>
+   *
+   * POST /sapi/v1/asset/dust&lt;br>
+   *
+   * Convert dust assets to BNB.&lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data}
+   *
+   * @param {array} asset - The asset being converted. For example: asset=BTC&amp;asset=USDT
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  dustTransfer (asset, options = {}) {
+    validateRequiredParameters({ asset })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/asset/dust',
+      Object.assign(options, {
+        asset
+      })
+    )
+  }
+
+  /**
+   * Asset Dividend Record (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/asset/assetDividend&lt;br>
+   *
+   * Query asset dividend record.&lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - Default 20, max 500
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  assetDevidendRecord (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/asset/assetDividend',
+      options
+    )
+  }
+
+  /**
+   * Asset Detail (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/asset/assetDetail&lt;br>
+   *
+   * Fetch details of assets supported on Binance.&lt;br>
+   * Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.&lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  assetDetail (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/asset/assetDetail',
+      options
+    )
+  }
+
+  /**
+   * Trade Fee (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/asset/tradeFee&lt;br>
+   *
+   * Fetch trade fee&lt;br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.symbol]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   *
+   */
+  tradeFee (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/asset/tradeFee',
+      options
+    )
+  }
+
+  /**
+   * User Universal Transfer&lt;br>
+   *
+   * POST /sapi/v1/asset/transfer&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#user-universal-transfer}
+   *
+   * @param {string} type
+   * @param {string} asset
+   * @param {number} amount
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  userUniversalTransfer (type, asset, amount, options = {}) {
+    validateRequiredParameters({ type, asset, amount })
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/asset/transfer',
+      Object.assign(options, {
+        type,
+        asset,
+        amount
+      })
+    )
+  }
+
+  /**
+   * Query User Universal Transfer History&lt;br>
+   *
+   * GET /sapi/v1/asset/transfer&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-user-universal-transfer-history}
+   *
+   * @param {string} type
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current]
+   * @param {number} [options.size]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  userUniversalTransferHistory (type, options = {}) {
+    validateRequiredParameters({ type })
+
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/asset/transfer',
+      Object.assign(options, { type })
+    )
+  }
+}
+
+module.exports = Wallet
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Futures.html">Futures</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-SubAccount.html">SubAccount</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

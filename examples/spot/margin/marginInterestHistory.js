@@ -4,5 +4,6 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.marginInterestHistory().then(response => console.log(response.data))
-  .catch(error => console.log(error))
+client.marginInterestHistory()
+  .then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))

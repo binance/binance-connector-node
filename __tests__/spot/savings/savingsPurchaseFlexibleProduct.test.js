@@ -2,36 +2,36 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockPostMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   productId,
   amount
 } = require('../../testUtils/mockData')
 
 describe('#savingsPurchaseFlexibleProduct', () => {
   describe('throw MissingParameterError', () => {
-    it('missing productId', async () => {
+    it('missing productId', () => {
       expect(() => {
         SpotClient.savingsPurchaseFlexibleProduct('', 1)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing amount', async () => {
+    it('missing amount', () => {
       expect(() => {
         SpotClient.savingsPurchaseFlexibleProduct('BNB_SAVINGS', '')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should return purchaseId', async () => {
-    nockPostMock(`/sapi/v1/lending/daily/purchase${queryString({ productId, amount })}`)(responseMockData)
 
+  it('should return purchaseId', () => {
+    nockPostMock(`/sapi/v1/lending/daily/purchase?${buildQueryString({ productId, amount })}`)(mockResponse)
     return SpotClient.savingsPurchaseFlexibleProduct(productId, amount).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

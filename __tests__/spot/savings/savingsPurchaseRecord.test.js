@@ -2,12 +2,12 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   asset,
   startTime,
   endTime,
@@ -15,25 +15,24 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#savingsPurchaseRecord', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing lendingType', async () => {
-      expect(() => {
-        SpotClient.savingsPurchaseRecord('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing lendingType', () => {
+    expect(() => {
+      SpotClient.savingsPurchaseRecord('')
+    }).toThrow(MissingParameterError)
   })
-  it('should return purchase records', async () => {
+
+  it('should return purchase records', () => {
     const parameters = {
       asset,
       startTime,
       endTime,
       recvWindow
     }
-    nockMock(`/sapi/v1/lending/union/purchaseRecord${queryString({ lendingType: 'DAILY', ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/lending/union/purchaseRecord?${buildQueryString({ lendingType: 'DAILY', ...parameters })}`)(mockResponse)
 
     return SpotClient.savingsPurchaseRecord('DAILY', parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

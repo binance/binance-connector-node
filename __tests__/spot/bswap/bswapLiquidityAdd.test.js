@@ -1,47 +1,45 @@
 /* global describe, it, expect, */
 const MissingParameterError = require('../../../src/error/missingParameterError')
-const { nockPostMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
-
+const { nockPostMock, SpotClient, buildQueryString } = require('../../testUtils/testSetup')
 const {
-  queryString,
   asset,
   quantity,
-  recvWindow
+  recvWindow,
+  mockResponse
 } = require('../../testUtils/mockData')
 
 describe('#bswapLiquidityAdd', () => {
   describe('throw MissingParameterError', () => {
-    it('missing poolId', async () => {
+    it('missing poolId', () => {
       expect(() => {
         SpotClient.bswapLiquidityAdd('', asset, quantity)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing asset', async () => {
+    it('missing asset', () => {
       expect(() => {
         SpotClient.bswapLiquidityAdd(1, '', quantity)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing quantity', async () => {
+    it('missing quantity', () => {
       expect(() => {
         SpotClient.bswapLiquidityAdd('', asset, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should add liquidity to swappool', async () => {
+  it('should add liquidity to swappool', () => {
     const parameters = {
       poolId: 1,
       asset,
-      quantity,
-      recvWindow
+      quantity
     }
 
-    nockPostMock(`/sapi/v1/bswap/liquidityAdd${queryString({ ...parameters })}`)(responseMockData)
+    nockPostMock(`/sapi/v1/bswap/liquidityAdd?${buildQueryString({ recvWindow, ...parameters })}`)(mockResponse)
     return SpotClient.bswapLiquidityAdd(1, asset, quantity, { recvWindow }).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

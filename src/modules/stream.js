@@ -1,12 +1,16 @@
-// const { validateParameter } = require('../helpers/validation')
-
+/**
+ * API stream endpoints
+ * @module Stream
+ * @param {*} superclass
+ */
 const Stream = superclass => class extends superclass {
-  /*
-    * Create a ListenKey (USER_STREAM)
-    *
-    * POST /api/v3/userDataStream
-    *
-    */
+  /**
+   * Create a ListenKey (USER_STREAM)<br>
+   *
+   * POST /api/v3/userDataStream<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-spot}
+   */
   createListenKey () {
     return this.publicRequest(
       'POST',
@@ -14,13 +18,15 @@ const Stream = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Ping/Keep-alive a ListenKey (USER_STREAM)
-    *
-    * PUT /api/v3/userDataStream
-    *
-    * @param {string} listenKey
-    */
+  /**
+   * Ping/Keep-alive a ListenKey (USER_STREAM)<br>
+   *
+   * PUT /api/v3/userDataStream<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-spot}
+   *
+   * @param {string} listenKey
+   */
   renewListenKey (listenKey) {
     return this.publicRequest(
       'PUT',
@@ -29,13 +35,15 @@ const Stream = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Close a ListenKey (USER_STREAM)
-    *
-    * DELETE /api/v3/userDataStream
-    *
-    * @param {string} listenKey
-    */
+  /**
+   * Close a ListenKey (USER_STREAM)<br>
+   *
+   * DELETE /api/v3/userDataStream<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-spot}
+   *
+   * @param {string} listenKey
+   */
   closeListenKey (listenKey) {
     return this.publicRequest(
       'DELETE',
@@ -44,12 +52,14 @@ const Stream = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Create a Margin ListenKey (USER_STREAM)
-    *
-    * POST /sapi/v1/userDataStream
-    *
-    */
+  /**
+   * Create a Margin ListenKey (USER_STREAM)
+   *
+   * POST /sapi/v1/userDataStream
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-margin}
+   *
+   */
   createMarginListenKey () {
     return this.publicRequest(
       'POST',
@@ -57,13 +67,15 @@ const Stream = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Ping/Keep-alive a Margin ListenKey (USER_STREAM)
-    *
-    * PUT /sapi/v1/userDataStream
-    *
-    * @param {string} listenKey
-    */
+  /**
+   * Ping/Keep-alive a Margin ListenKey (USER_STREAM)<br>
+   *
+   * PUT /sapi/v1/userDataStream<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-margin}
+   *
+   * @param {string} listenKey
+   */
   renewMarginListenKey (listenKey) {
     return this.publicRequest(
       'PUT',
@@ -72,13 +84,15 @@ const Stream = superclass => class extends superclass {
     )
   }
 
-  /*
-    * Close a Margin ListenKey (USER_STREAM)
-    *
-    * DELETE /sapi/v1/userDataStream
-    *
-    * @param {string} listenKey
-    */
+  /**
+   * Close a Margin ListenKey (USER_STREAM)<br>
+   *
+   * DELETE /sapi/v1/userDataStream<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#listen-key-margin}
+   *
+   * @param {string} listenKey
+   */
   closeMarginListenKey (listenKey) {
     return this.publicRequest(
       'DELETE',

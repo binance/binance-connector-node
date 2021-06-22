@@ -2,12 +2,12 @@
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockPostMock,
-  responseMockData,
+  buildQueryString,
   SpotClient
 } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
+  mockResponse,
   symbol,
   side,
   type,
@@ -17,36 +17,36 @@ const {
 
 describe('#newOrder', () => {
   describe('throw MissingParameterError', () => {
-    it('missing symbol', async () => {
+    it('missing symbol', () => {
       expect(() => {
         SpotClient.newOrder('', side, type)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing side', async () => {
+    it('missing side', () => {
       expect(() => {
         SpotClient.newOrder(symbol, '', type)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing type', async () => {
+    it('missing type', () => {
       expect(() => {
         SpotClient.newOrder(symbol, side, '')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should return new order', async () => {
+  it('should return new order', () => {
     const parameters = {
       timeInForce: 'GTC',
       quantity,
       price
     }
-    nockPostMock(`/api/v3/order${queryString({ symbol, side, type, ...parameters })}`)(responseMockData)
+    nockPostMock(`/api/v3/order?${buildQueryString({ symbol, side, type, ...parameters })}`)(mockResponse)
 
     return SpotClient.newOrder(symbol, side, type, parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })

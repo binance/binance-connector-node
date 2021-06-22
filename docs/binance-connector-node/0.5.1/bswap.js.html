@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: bswap.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: bswap.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { validateRequiredParameters } = require('../helpers/validation')
+
+/**
+ * API bswap endpoints
+ * @module Bswap
+ * @param {*} superclass
+ */
+const Bswap = superclass => class extends superclass {
+  /**
+   * List All Swap Pools (MARKET_DATA)&lt;br>
+   *
+   * GET /sapi/v1/bswap/pools&lt;br>
+   *
+   * Get metadata about all swap pools.&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#list-all-swap-pools-market_data}
+   */
+  bswapPools () {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/pools'
+    )
+  }
+
+  /**
+   * Get liquidity information of a pool (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/bswap/liquidity&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-information-of-a-pool-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.poolId]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapLiquidity (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/liquidity',
+      options
+    )
+  }
+
+  /**
+   * Add Liquidity (TRADE)&lt;br>
+   *
+   * POST /sapi/v1/bswap/liquidityAdd&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-trade}
+   *
+   * @param {number} poolId
+   * @param {string} asset
+   * @param {number} quantity
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapLiquidityAdd (poolId, asset, quantity, options = {}) {
+    validateRequiredParameters({ poolId, asset, quantity })
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/bswap/liquidityAdd',
+      Object.assign(options, {
+        poolId,
+        asset,
+        quantity
+      })
+    )
+  }
+
+  /**
+   * Remove Liquidity (TRADE)&lt;br>
+   *
+   * POST /sapi/v1/bswap/liquidityRemove&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-trade}
+   *
+   * @param {number} poolId
+   * @param {string} type -`SINGLE` for single asset removal, `COMBINATION` for combination of all coins removal
+   * @param {string} asset
+   * @param {number} shareAmount
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapLiquidityRemove (poolId, type, asset, shareAmount, options = {}) {
+    validateRequiredParameters({ poolId, type, asset, shareAmount })
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/bswap/liquidityRemove',
+      Object.assign(options, {
+        poolId,
+        type,
+        asset,
+        shareAmount
+      })
+    )
+  }
+
+  /**
+   * Get Liquidity Operation Record (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/bswap/liquidityOps&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-liquidity-operation-record-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.operationId]
+   * @param {number} [options.poolId]
+   * @param {string} [options.operation] -`ADD` or `REMOVE`
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - default 3, max 100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapLiquidityOperationRecord (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/liquidityOps',
+      options
+    )
+  }
+
+  /**
+   * Request Quote (USER_DATA)&lt;br>
+   *
+   * Request a quote for swap quote asset (selling asset) for base asset (buying asset),
+   * essentially price/exchange rates. quoteQty is quantity of quote asset (to sell).&lt;br>
+   * Please be noted the quote is for reference only, the actual price will change
+   * as the liquidity changes, it's recommended to swap immediate after request a quote
+   * for slippage prevention.&lt;br>
+   *
+   * GET /sapi/v1/bswap/quote&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#request-quote-user_data}
+   *
+   * @param {string} quoteAsset
+   * @param {string} baseAsset
+   * @param {number} quoteQty
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapRequestQuote (quoteAsset, baseAsset, quoteQty, options = {}) {
+    validateRequiredParameters({ quoteAsset, baseAsset, quoteQty })
+
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/quote',
+      Object.assign(options, {
+        quoteAsset,
+        baseAsset,
+        quoteQty
+      })
+    )
+  }
+
+  /**
+   * Swap (TRADE)&lt;br>
+   *
+   * POST /sapi/v1/bswap/swap&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#swap-trade}
+   *
+   * @param {string} quoteAsset
+   * @param {string} baseAsset
+   * @param {number} quoteQty
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapSwap (quoteAsset, baseAsset, quoteQty, options = {}) {
+    validateRequiredParameters({ quoteAsset, baseAsset, quoteQty })
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/bswap/swap',
+      Object.assign(options, {
+        quoteAsset,
+        baseAsset,
+        quoteQty
+      })
+    )
+  }
+
+  /**
+   * Get Swap History (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/bswap/swap&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#swap-trade}
+   *
+   * @param {object} [options]
+   * @param {string} [options.swapId]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.status] - 0: pending for swap, 1: success, 2: failed
+   * @param {string} [options.baseAsset]
+   * @param {string} [options.quoteAsset]
+   * @param {number} [options.limit] - default 3, max 100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapSwapHistory (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/swap',
+      options
+    )
+  }
+}
+
+module.exports = Bswap
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Blvt.html">Blvt</a></li><li><a href="module-Bswap.html">Bswap</a></li><li><a href="module-Futures.html">Futures</a></li><li><a href="module-Margin.html">Margin</a></li><li><a href="module-Market.html">Market</a></li><li><a href="module-Mining.html">Mining</a></li><li><a href="module-Savings.html">Savings</a></li><li><a href="module-Stream.html">Stream</a></li><li><a href="module-SubAccount.html">SubAccount</a></li><li><a href="module-Trade.html">Trade</a></li><li><a href="module-Wallet.html">Wallet</a></li><li><a href="module-Websocket.html">Websocket</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

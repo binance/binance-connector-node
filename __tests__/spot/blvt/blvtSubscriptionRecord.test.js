@@ -1,31 +1,36 @@
 /* global describe, it, expect, */
-const { nockMock, responseMockData, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  queryString,
-  id,
+  mockResponse,
   startTime,
   endTime,
   limit,
   recvWindow
 } = require('../../testUtils/mockData')
 
-const tokenName = 'BTCDOWN'
-
 describe('#blvtSubscriptionRecord', () => {
-  it('should query subscription record', async () => {
+  it('should query subscription record without parameter attached', () => {
+    nockMock('/sapi/v1/blvt/subscribe/record?')(mockResponse)
+    return SpotClient.blvtSubscriptionRecord().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
+  it('should query subscription record', () => {
     const parameters = {
-      tokenName,
-      id,
+      tokenName: 'BTCDOWN',
+      id: 1,
       startTime,
       endTime,
       limit,
       recvWindow
     }
-    nockMock(`/sapi/v1/blvt/subscribe/record${queryString({ ...parameters })}`)(responseMockData)
+    nockMock(`/sapi/v1/blvt/subscribe/record?${buildQueryString({ ...parameters })}`)(mockResponse)
     return SpotClient.blvtSubscriptionRecord(parameters).then(response => {
       expect(response).toBeDefined()
-      expect(response.data).toEqual(responseMockData)
+      expect(response.data).toEqual(mockResponse)
     })
   })
 })
