@@ -621,6 +621,114 @@ const Margin = superclass => class extends superclass {
       Object.assign(options, { asset })
     )
   }
+
+  /**
+   * Isolated Margin Account Transfer (MARGIN)&lt;br>
+   *
+   * POST /sapi/v1/margin/isolated/transfer&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#isolated-margin-account-transfer-margin}
+   *
+   * @param {string} asset - asset, such as BTC
+   * @param {string} symbol
+   * @param {string} transFrom - "SPOT", "ISOLATED_MARGIN"
+   * @param {string} transTo - "SPOT", "ISOLATED_MARGIN"
+   * @param {number} amount
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  isolatedMarginTransfer (asset, symbol, transFrom, transTo, amount, options = {}) {
+    validateRequiredParameters({ asset, symbol, transFrom, transTo, amount })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/margin/isolated/transfer',
+      Object.assign(options, { asset, symbol, transFrom, transTo, amount })
+    )
+  }
+
+  /**
+   * Get Isolated Margin Transfer History (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/margin/isolated/transfer&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-isolated-margin-transfer-history-user_data}
+   *
+   * @param {string} symbol
+   * @param {object} [options]
+   * @param {string} [options.asset]
+   * @param {string} [options.transFrom] - "SPOT", "ISOLATED_MARGIN"
+   * @param {string} [options.transTo] - "SPOT", "ISOLATED_MARGIN"
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.current] - Current page, default 1
+   * @param {number} [options.size] - Default 10, max 100
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  isolatedMarginTransferHistory (symbol, options = {}) {
+    validateRequiredParameters({ symbol })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/isolated/transfer',
+      Object.assign(options, { symbol })
+    )
+  }
+
+  /**
+   * Query Isolated Margin Account Info (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/margin/isolated/account&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-account-info-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.symbols] - Max 5 symbols can be sent; separated by ",". e.g. "BTCUSDT,BNBUSDT,ADAUSDT"
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  isolatedMarginAccountInfo (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/isolated/account',
+      options
+    )
+  }
+
+  /**
+   * Query Isolated Margin Symbol (USER_DATA)&lt;br>
+   *
+   * GET /sapi/v1/margin/isolated/pair&lt;br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-symbol-user_data}
+   *
+   * @param {string} symbol
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  isolatedMarginSymbol (symbol, options = {}) {
+    validateRequiredParameters({ symbol })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/isolated/pair',
+      Object.assign(options, { symbol })
+    )
+  }
+
+  /**
+ * Get All Isolated Margin Symbol(USER_DATA)&lt;br>
+ *
+ * GET /sapi/v1/margin/isolated/allPairs&lt;br>
+ *
+ * {@link https://binance-docs.github.io/apidocs/spot/en/#get-all-isolated-margin-symbol-user_data}
+ *
+ * @param {object} [options]
+ * @param {number} [options.recvWindow] - No more than 60000
+ */
+  isolatedMarginAllSymbols (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/isolated/allPairs',
+      options
+    )
+  }
 }
 
 module.exports = Margin
