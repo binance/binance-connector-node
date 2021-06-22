@@ -9,13 +9,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginMaxTransferable', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing asset', () => {
-      expect(() => {
-        SpotClient.marginMaxTransferable('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing asset', () => {
+    expect(() => {
+      SpotClient.marginMaxTransferable('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should return max transfer amount', () => {
     const parameters = {
       asset,

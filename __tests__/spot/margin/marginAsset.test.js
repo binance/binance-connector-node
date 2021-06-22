@@ -8,13 +8,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginAsset', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing asset', () => {
-      expect(() => {
-        SpotClient.marginAsset('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing asset', () => {
+    expect(() => {
+      SpotClient.marginAsset('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should asset details', () => {
     const parameters = {
       asset

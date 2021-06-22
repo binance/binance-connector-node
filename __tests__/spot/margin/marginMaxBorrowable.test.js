@@ -9,13 +9,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginMaxBorrowable', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing asset', () => {
-      expect(() => {
-        SpotClient.marginMaxBorrowable('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing asset', () => {
+    expect(() => {
+      SpotClient.marginMaxBorrowable('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should return max borrowable funds', () => {
     const parameters = {
       asset,

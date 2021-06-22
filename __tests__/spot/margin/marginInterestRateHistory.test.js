@@ -14,6 +14,7 @@ describe('#marginInterestRateHistory', () => {
       SpotClient.marginInterestRateHistory('')
     }).toThrow(MissingParameterError)
   })
+
   it('should return margin interest rate history record', () => {
     const parameters = {
       recvWindow

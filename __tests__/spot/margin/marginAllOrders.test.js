@@ -10,13 +10,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginAllOrders', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', () => {
-      expect(() => {
-        SpotClient.marginAllOrders('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.marginAllOrders('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should return all orders', () => {
     const parameters = {
       orderId,
