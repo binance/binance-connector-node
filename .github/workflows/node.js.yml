@@ -11,13 +11,28 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: artiomtr/jest-coverage-report-action@v1.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        threshold: 95 # optional parameter
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run standard
 
+  buildCompatable:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
