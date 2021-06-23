@@ -6,7 +6,17 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-Another thin library that working as connector to Binance Public API.
+This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs). It’s designed to be simple, clean, and easy to use with minimal dependencies.
+
+- Supported APIs:
+    - `/api/*`
+    - `/sapi/*`
+    - Spot Websocket Market Stream
+    - Spot User Data Stream
+- Inclusion of test cases and examples
+- Customizable base URL, request timeout and HTTP proxy
+- Response metadata can be displayed
+
 
 ## Installation
 
@@ -15,33 +25,75 @@ cd <your_project_directory>
 npm install binance-connector-node
 ```
 
-## How to use
+## RESTful APIs
 
 ```javascript
-
 const { Spot } = require('binance-connector-node')
 
 const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
+
+// Get account information
 client.account().then(response => client.logger.log(response.data))
 
-client.time().then(response => client.logger.log(response.data))
+// Place a new order
+client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
+  price: '350',
+  quantity: 1,
+  timeInForce: 'GTC'
+}).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))
 
-// todo place order
 ```
+
+Please find `examples` folder to check for more endpoints.
 
 ### Testnet
 
-The [spot testnet](https://testnet.binance.vision/) is available. In order to test on testnet:
+While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in 
+[Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
 
 ```javascript
-
 // provide the testnet base url
 const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision'})
 ```
 
-More examples are available from `examples` folder
+### Base URL
+
+If `base_url` is not provided, it defaults to `api.binance.com`.
+
+It's recommended to pass in the `base_url` parameter, even in production as Binance provides alternative URLs in case of performance issues:
+
+- `https://api1.binance.com`
+- `https://api2.binance.com`
+- `https://api3.binance.com`
+
+### Optional parameters
+
+Optional parameters are encapsulated to a single object as the last function parameter.
+
+```javascript
+const { Spot } = require('binance-connector-node')
+
+const apiKey = ''
+const apiSecret = ''
+const client = new Spot(apiKey, apiSecret)
+
+client.account({ recvWindow }).then(response => client.logger.log(response.data))
+
+```
+
+### Response Metadata
+
+The Binance API server provides weight usages in the headers of each response. This information can be fetched from `headers` property. For example, `x-mbx-used-weight` indicates the weight of a specific endpoint and `x-mbx-used-weight-1m` shows the total weight consumed within 1 minute.
+
+```
+// client initialization is skipped
+
+client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx-used-weight-1m']))
+
+```
 
 ### Integrate with customized logger
 
@@ -62,6 +114,33 @@ client.exchangeInfo().then(response => client.logger.log(response.data))
 // check the output file
 
 ```
+
+### Error
+
+There are 2 types of error may be returned from the API server and the user has to handle it properly:
+
+- `Client error`
+  - This is thrown when server returns `4XX`, this means either query parameters or API key is not in an acceptable form.
+  - The following properties may be helpful to resolve the issue:
+    - Response header - Please refer to `Response Metadata` section for more details.
+    - HTTP status code
+    - Error code - Server's error code, e.g. `-1102`
+    - Error message - Server's error message, e.g. `Unknown order sent.`
+        
+  ```
+  // client initialization is skipped
+  client.exchangeInfo({ symbol: 'invalidSymbol' })
+    .then(response => client.logger.log(response.data))
+    .catch(err => {
+      client.logger.error(err.response.headers) // full response header
+      client.logger.error(err.response.status) // 400
+      client.logger.error(err.response.data) // includes both error code and message
+    })
+
+  ```
+        
+- `Server error`
+  - This is thrown when server returns `5XX`, it's an issue from server side.
 
 
 ## Websocket
@@ -84,6 +163,8 @@ client.aggTradeWS('bnbusdt', callbacks)
 // support combined stream, e.g.
 client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 ```
+
+More websocket examples are available in the `examples` folder
 
 ### Integrate with customized logger
 
@@ -127,6 +208,16 @@ npm install
 npm run test
 
 ```
+
+## Limitation
+
+Futures and Vanilla Options APIs are not supported:
+
+  - `/fapi/*`
+  - `/dapi/*`
+  - `/vapi/*`
+  -  Associated Websocket Market and User Data Streams
+
 
 ## License
 MIT
