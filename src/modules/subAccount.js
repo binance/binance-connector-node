@@ -19,7 +19,6 @@ const SubAccount = superclass => class extends superclass {
     * @param {number} [options.page]
     * @param {number} [options.limit]
     * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-
     */
   subAccountList (options = {}) {
     return this.signRequest(
@@ -153,8 +152,8 @@ const SubAccount = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account}
    *
+   * @param {string} email - Sub-account email
    * @param {object} [options]
-   * @param {string} [options.email]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   subAccountEnableMargin (email, options = {}) {
