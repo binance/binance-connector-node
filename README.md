@@ -217,7 +217,3 @@ Futures and Vanilla Options APIs are not supported:
   - `/dapi/*`
   - `/vapi/*`
   -  Associated Websocket Market and User Data Streams
-
-
-## License
-MIT

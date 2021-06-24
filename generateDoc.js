@@ -13,8 +13,8 @@ fs.readFile(basePath + indexFile, 'utf8', function (err, data) {
     if (err) return console.log(err)
   })
 
-  const changeloMd = fs.readFileSync('CHANGELOG.md', 'utf-8')
-  const changelogContent = marked(changeloMd)
+  const changelogMd = fs.readFileSync('CHANGELOG.md', 'utf-8')
+  const changelogContent = marked(changelogMd)
   const changelog = data.replace(
     /<section class="readme">\s*<article>[\s\S]+<\/article>\s*<\/section>/,
     '<section class="readme"> <article>' + changelogContent + '</article> </section>'
