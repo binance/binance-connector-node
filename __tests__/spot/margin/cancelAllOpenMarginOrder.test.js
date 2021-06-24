@@ -9,13 +9,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#cancelAllOpenMarginOrder', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', () => {
-      expect(() => {
-        SpotClient.cancelAllOpenMarginOrder('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.cancelAllOpenMarginOrder('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should return cancelled margin order', () => {
     const parameters = {
       recvWindow

@@ -9,12 +9,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginLoanRecord', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing asset', () => {
-      expect(() => {
-        SpotClient.marginLoanRecord('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing asset', () => {
+    expect(() => {
+      SpotClient.marginLoanRecord('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should return margin loan record', () => {

@@ -11,12 +11,10 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginMyTrades', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', () => {
-      expect(() => {
-        SpotClient.marginMyTrades('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.marginMyTrades('')
+    }).toThrow(MissingParameterError)
   })
 
   it('should return my margin trades', () => {

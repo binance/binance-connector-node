@@ -19,7 +19,6 @@ const SubAccount = superclass => class extends superclass {
     * @param {number} [options.page]
     * @param {number} [options.limit]
     * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-
     */
   subAccountList (options = {}) {
     return this.signRequest(
@@ -153,8 +152,8 @@ const SubAccount = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account}
    *
+   * @param {string} email - Sub-account email
    * @param {object} [options]
-   * @param {string} [options.email]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   subAccountEnableMargin (email, options = {}) {
@@ -555,6 +554,72 @@ const SubAccount = superclass => class extends superclass {
       'POST',
       '/sapi/v1/sub-account/blvt/enable',
       Object.assign(options, { email, enableBlvt })
+    )
+  }
+
+  /**
+   * Deposit assets into the managed sub-account（For Investor Master Account)<br>
+   *
+   * POST /sapi/v1/managed-subaccount/deposit<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-assets-into-the-managed-sub-account-for-investor-master-account}
+   *
+   * @param {string} toEmail
+   * @param {string} asset
+   * @param {number} amount
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  managedSubAccountDeposit (toEmail, asset, amount, options = {}) {
+    validateRequiredParameters({ toEmail, asset, amount })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/managed-subaccount/deposit',
+      Object.assign(options, { toEmail, asset, amount })
+    )
+  }
+
+  /**
+   * Query managed sub-account asset details（For Investor Master Account)<br>
+   *
+   * GET /sapi/v1/managed-subaccount/asset<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-asset-details-for-investor-master-account}
+   *
+   * @param {string} email
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
+   */
+  managedSubAccountAssets (email, options = {}) {
+    validateRequiredParameters({ email })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/managed-subaccount/asset',
+      Object.assign(options, { email })
+    )
+  }
+
+  /**
+   * Withdrawl assets from the managed sub-account（For Investor Master Account)<br>
+   *
+   * POST /sapi/v1/managed-subaccount/withdraw<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdrawl-assets-from-the-managed-sub-account-for-investor-master-account}
+   *
+   * @param {string} fromEmail
+   * @param {string} asset
+   * @param {number} amount
+   * @param {object} [options]
+   * @param {number} [options.transferDate] - Withdrawals is automatically occur on the transfer date(UTC0).
+   * <br>If a date is not selected, the withdrawal occurs right now
+   * @param {number} [options.recvWindow]
+   */
+  managedSubAccountWithdraw (fromEmail, asset, amount, options = {}) {
+    validateRequiredParameters({ fromEmail, asset, amount })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/managed-subaccount/withdraw',
+      Object.assign(options, { fromEmail, asset, amount })
     )
   }
 }

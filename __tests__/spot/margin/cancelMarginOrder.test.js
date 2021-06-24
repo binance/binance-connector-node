@@ -10,13 +10,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#cancelMarginOrder', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', () => {
-      expect(() => {
-        SpotClient.cancelMarginOrder('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.cancelMarginOrder('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should return cancelled margin order', () => {
     const parameters = {
       orderId,

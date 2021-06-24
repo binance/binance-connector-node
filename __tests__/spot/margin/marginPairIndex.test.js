@@ -8,13 +8,12 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#marginPairIndex', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing symbol', () => {
-      expect(() => {
-        SpotClient.marginPairIndex('')
-      }).toThrow(MissingParameterError)
-    })
+  it('throw MissingParameterError when missing symbol', () => {
+    expect(() => {
+      SpotClient.marginPairIndex('')
+    }).toThrow(MissingParameterError)
   })
+
   it('should return pair index', () => {
     const parameters = {
       symbol
