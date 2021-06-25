@@ -1,10 +1,29 @@
 {
-    "source": {
-        "include":["./src/modules/", "./package.json"]
-    },
-    "templates": {
-        "default": {
-            "includeDate": false
-        }
+  "source": {
+    "include":["./src/modules/", "./package.json"]
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "default": {
+      "includeDate": false
     }
+  },
+  "opts": {
+    "readme": "./README.md",
+    "destination": "./docs",
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "title": "binance-connector-node",
+      "menu" : [
+        {
+          "title": "Change log",
+          "link": "./changelog.html"
+        },
+        {
+          "title": "Github repository",
+          "link": "https://github.com/binance-exchange/binance-connector-node.git"
+        }
+      ]
+    }
+  }
 }
