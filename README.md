@@ -1,7 +1,7 @@
 # Binance connector in Nodejs
 
-[![npm version](https://badge.fury.io/js/binance-connector-node.svg)](https://badge.fury.io/js/binance-connecter-node)
-[![Node version](https://img.shields.io/node/v/binance-connector-node.svg?style=flat)](http://nodejs.org/download/)
+[![npm version](https://badge.fury.io/js/binance-connector.svg)](https://badge.fury.io/js/binance-connecter-node)
+[![Node version](https://img.shields.io/node/v/binance-connector.svg?style=flat)](http://nodejs.org/download/)
 [![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -21,14 +21,13 @@ This is a lightweight library that works as a connector to [Binance public API](
 ## Installation
 
 ```bash
-cd <your_project_directory>
-npm install binance-connector-node
+npm install binance-connector
 ```
 
 ## RESTful APIs
 
 ```javascript
-const { Spot } = require('binance-connector-node')
+const { Spot } = require('binance-connector')
 
 const apiKey = ''
 const apiSecret = ''
@@ -74,7 +73,7 @@ It's recommended to pass in the `base_url` parameter, even in production as Bina
 Optional parameters are encapsulated to a single object as the last function parameter.
 
 ```javascript
-const { Spot } = require('binance-connector-node')
+const { Spot } = require('binance-connector')
 
 const apiKey = ''
 const apiSecret = ''
@@ -100,7 +99,7 @@ client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx
 The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
 ```javascript
-const Spot = require('binance-connector-node')
+const Spot = require('binance-connector')
 const fs = require('fs')
 const { Console } = require('console')
 
@@ -146,7 +145,7 @@ There are 2 types of error may be returned from the API server and the user has 
 ## Websocket
 
 ```javascript
-const { Spot } = require('binance-connector-node')
+const { Spot } = require('binance-connector')
 
 const client = new Spot('', '', {
   wsURL: 'wss://testnet.binance.vision' // optional, for testnet only. By default on production
@@ -173,7 +172,7 @@ The default logger defined in the package is [Node.js Console class](https://nod
 ```javascript
 const { Console } = require('console')
 const fs = require('fs')
-const Spot = require('binance-connector-node')
+const Spot = require('binance-connector')
 
 const output = fs.createWriteStream('./logs/stdout.log')
 const errorOutput = fs.createWriteStream('./logs/stderr.log')
