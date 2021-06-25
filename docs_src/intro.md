@@ -1,7 +1,7 @@
 # Binance connector in Nodejs
 
-[![npm version](https://badge.fury.io/js/binance-connector-node.svg)](https://badge.fury.io/js/binance-connecter-node)
-[![Node version](https://img.shields.io/node/v/binance-connector-node.svg?style=flat)](http://nodejs.org/download/)
+[![npm version](https://badge.fury.io/js/binance-connector.svg)](https://badge.fury.io/js/binance-connecter)
+[![Node version](https://img.shields.io/node/v/binance-connector.svg?style=flat)](http://nodejs.org/download/)
 [![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -9,7 +9,7 @@
 This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs). It’s designed to be simple, clean, and easy to use with minimal dependencies.
 
 
-* Source Code: [https://github.com/binance/binance-connector-node](https://github.com/binance/binance-connector-node)
+* Source Code: [https://github.com/binance/binance-connector](https://github.com/binance/binance-connector)
 
 * Official API document:
   * [https://github.com/binance/binance-spot-api-docs](https://github.com/binance/binance-spot-api-docs)
@@ -40,7 +40,7 @@ This is a lightweight library that works as a connector to [Binance public API](
 
 ```bash
 cd <your_project_directory>
-npm install binance-connector-node
+npm install binance-connector
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ npm install binance-connector-node
 ### RESTful APIs
 
 ```javascript
-const { Spot } = require('binance-connector-node')
+const { Spot } = require('binance-connector')
 
 const apiKey = ''
 const apiSecret = ''

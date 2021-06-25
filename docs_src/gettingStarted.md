@@ -4,7 +4,7 @@
 
 ```bash
 cd <your_project_directory>
-npm install binance-connector-node
+npm install binance-connector
 ```
 
 ## How to Generate the API key
@@ -60,7 +60,7 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.account({ recvWindow }).then(response => client.logger.log(response.data))
+client.account({ recvWindow: 6000 }).then(response => client.logger.log(response.data))
 
 ```
 
