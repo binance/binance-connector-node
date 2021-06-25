@@ -79,7 +79,7 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.account({ recvWindow }).then(response => client.logger.log(response.data))
+client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
 
 ```
 
@@ -200,7 +200,6 @@ client.aggTradeWS('bnbusdt', callbacks)
 ## Test
 
 ```bash
-cd <this_project_directory>
 
 npm install
 
