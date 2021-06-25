@@ -9,7 +9,7 @@
     }
   },
   "opts": {
-    "readme": "./README.md",
+    "readme": "./docs_src/intro.md",
     "destination": "./docs",
     "template": "node_modules/clean-jsdoc-theme",
     "theme_opts": {
@@ -18,6 +18,10 @@
         {
           "title": "Change log",
           "link": "./changelog.html"
+        },
+        {
+          "title": "Getting Started",
+          "link": "./gettingStarted.html"
         },
         {
           "title": "Github repository",
