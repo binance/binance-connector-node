@@ -73,7 +73,7 @@ Please find `examples` folder to check for more endpoints.
 ### Websocket
 
 ```javascript
-const { Spot } = require('binance-connector-node')
+const { Spot } = require('binance-connector')
 
 const client = new Spot('', '', {
   wsURL: 'wss://testnet.binance.vision' // optional, for testnet only. By default on production

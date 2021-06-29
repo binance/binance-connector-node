@@ -68,7 +68,7 @@ It's recommended to pass in the `base_url` parameter, even in production as Bina
 - `https://api2.binance.com`
 - `https://api3.binance.com`
 
-### Optional parameters
+### Optional Parameters
 
 Optional parameters are encapsulated to a single object as the last function parameter.
 
@@ -85,7 +85,7 @@ client.account({ recvWindow: 2000 }).then(response => client.logger.log(response
 
 ### Response Metadata
 
-The Binance API server provides weight usages in the headers of each response. This information can be fetched from `headers` property. For example, `x-mbx-used-weight` indicates the weight of a specific endpoint and `x-mbx-used-weight-1m` shows the total weight consumed within 1 minute.
+The Binance API server provides weight usages in the headers of each response. This information can be fetched from `headers` property. `x-mbx-used-weight` and `x-mbx-used-weight-1m` show the total weight consumed within 1 minute.
 
 ```
 // client initialization is skipped
@@ -94,7 +94,7 @@ client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx
 
 ```
 
-### Integrate with customized logger
+### Integrate with Customized Logger
 
 The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
@@ -165,7 +165,7 @@ client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 
 More websocket examples are available in the `examples` folder
 
-### Integrate with customized logger
+### Integrate with Customized Logger
 
 The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 

@@ -16,7 +16,7 @@
       "title": "binance-connector-node",
       "menu" : [
         {
-          "title": "Change log",
+          "title": "Changelog",
           "link": "./changelog.html"
         },
         {
@@ -24,7 +24,7 @@
           "link": "./gettingStarted.html"
         },
         {
-          "title": "Github repository",
+          "title": "GitHub repository",
           "link": "https://github.com/binance-exchange/binance-connector-node.git"
         }
       ]
