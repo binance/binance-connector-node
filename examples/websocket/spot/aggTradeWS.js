@@ -20,4 +20,5 @@ const callbacks = {
 }
 
 client.aggTradeWS('bnbusdt', callbacks)
+setTimeout(() => client.unsubscribe(), 3000)
 // check the output file

@@ -11,6 +11,7 @@ const Websocket = superclass => class extends superclass {
   constructor (options) {
     super(options)
     this.wsURL = options.wsURL || 'wss://stream.binance.com:9443'
+    this.ws = []
   }
 
   /**
@@ -229,6 +230,7 @@ const Websocket = superclass => class extends superclass {
 
   subscribe (url, callbacks) {
     const ws = new WebSocketClient(url)
+    this.ws.push(ws)
     Object.keys(callbacks).forEach((event, _) => {
       this.logger.debug(`listen to event: ${event}`)
       ws.on(event, callbacks[event])
@@ -246,6 +248,17 @@ const Websocket = superclass => class extends superclass {
     ws.on('error', (err) => {
       this.logger.error(err)
     })
+  }
+
+  /**
+   * Unsubscribe the streams<br>
+   *
+   * If multiple streams are subscribed with different connections,
+   * close the first connection established.
+   */
+  unsubscribe () {
+    const ws = this.ws.shift()
+    ws.close()
   }
 }
 
