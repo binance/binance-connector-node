@@ -242,6 +242,10 @@ const Websocket = superclass => class extends superclass {
     ws.on('pong', () => {
       this.logger.debug('Received pong from server')
     })
+
+    ws.on('error', (err) => {
+      this.logger.error(err)
+    })
   }
 }
 
