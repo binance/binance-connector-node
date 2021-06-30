@@ -9,18 +9,22 @@
     }
   },
   "opts": {
-    "readme": "./README.md",
+    "readme": "./docs_src/intro.md",
     "destination": "./docs",
     "template": "node_modules/clean-jsdoc-theme",
     "theme_opts": {
       "title": "binance-connector-node",
       "menu" : [
         {
-          "title": "Change log",
+          "title": "Changelog",
           "link": "./changelog.html"
         },
         {
-          "title": "Github repository",
+          "title": "Getting Started",
+          "link": "./gettingStarted.html"
+        },
+        {
+          "title": "GitHub repository",
           "link": "https://github.com/binance-exchange/binance-connector-node.git"
         }
       ]
