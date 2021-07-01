@@ -148,7 +148,7 @@ More websocket examples are available in the `examples` folder.
 
 ### Unsubscribe a Stream
 
-Unsubscription is achieved by closing the connection. If multiple streams are subscribed with different connections, `unsubscribe()` method closes the first connection established. If this method is called without any connection established, a type error is triggered, `TypeError: Cannot read property 'close' of undefined`.
+Unsubscription is achieved by closing the connection. If multiple streams are subscribed with different connections, `unsubscribe()` method closes the first connection established. If this method is called without any connection established, the console will output a message `No connection to close.`
 
 ```
 // client initialization is skipped
