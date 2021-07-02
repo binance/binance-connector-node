@@ -1,31 +1,20 @@
-# Binance connector in Nodejs
-
-[![npm version](https://badge.fury.io/js/binance-connector.svg)](https://badge.fury.io/js/binance-connecter)
-[![Node version](https://img.shields.io/node/v/binance-connector.svg?style=flat)](http://nodejs.org/download/)
-[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
-This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs). It’s designed to be simple, clean, and easy to use with minimal dependencies.
-
-- Supported APIs:
-    - `/api/*`
-    - `/sapi/*`
-    - Spot Websocket Market Stream
-    - Spot User Data Stream
-- Inclusion of test cases and examples
-- Customizable base URL, request timeout and HTTP proxy
-- Response metadata can be displayed
-- Customizable Logger
-
+# Getting Started
 
 ## Installation
 
 ```bash
+cd <your_project_directory>
 npm install binance-connector
 ```
 
-## RESTful APIs
+## API Key Pair Generation
+
+One account can have multiple API key and secret key pairs.
+Please follow the [step by step tutorial](https://www.binance.com/en-NG/support/faq/360002502072) and create the key on web site or mobile app.
+
+## Usage
+
+### RESTful APIs
 
 ```javascript
 const { Spot } = require('binance-connector')
@@ -49,16 +38,6 @@ client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
 
 Please find `examples` folder to check for more endpoints.
 
-### Testnet
-
-While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in 
-[Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
-
-```javascript
-// provide the testnet base url
-const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision'})
-```
-
 ### Base URL
 
 If `base_url` is not provided, it defaults to `api.binance.com`.
@@ -71,7 +50,8 @@ It's recommended to pass in the `base_url` parameter, even in production as Bina
 
 ### Optional Parameters
 
-Optional parameters are encapsulated to a single object as the last function parameter.
+Optional parameters are encapsulated to a single object as the last function parameter. For example, `recvWindow` is available for endpoints requiring timestamp and signature. It defaults to `5000` (milliseconds) and can be any value lower than `60000` (milliseconds).
+Anything beyond the limit will result in an error response from Binance server.
 
 ```javascript
 const { Spot } = require('binance-connector')
@@ -80,7 +60,7 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
+client.account({ recvWindow: 6000 }).then(response => client.logger.log(response.data))
 
 ```
 
@@ -95,7 +75,7 @@ client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx
 
 ```
 
-### Custom Logger Integration
+### Integrate with Customized Logger
 
 The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
@@ -117,25 +97,24 @@ client.exchangeInfo().then(response => client.logger.log(response.data))
 
 ### Error
 
-There are 2 types of error that may be returned from the API server and the user has to handle it properly:
+There are 2 types of error may be returned from the API server and the user has to handle it properly:
 
 - `Client error`
-  - This is thrown when server returns `4XX`, it's an issue from client side.
+  - This is thrown when server returns `4XX`, this means either query parameters or API key is not in an acceptable form.
   - The following properties may be helpful to resolve the issue:
     - Response header - Please refer to `Response Metadata` section for more details.
     - HTTP status code
     - Error code - Server's error code, e.g. `-1102`
     - Error message - Server's error message, e.g. `Unknown order sent.`
-    - Request config - Configuration send to the server, which can include URL, request method and headers.
+        
   ```
   // client initialization is skipped
   client.exchangeInfo({ symbol: 'invalidSymbol' })
     .then(response => client.logger.log(response.data))
     .catch(err => {
       client.logger.error(err.response.headers) // full response header
-      client.logger.error(err.response.status) // HTTP status code 400
+      client.logger.error(err.response.status) // 400
       client.logger.error(err.response.data) // includes both error code and message
-      client.logger.error(err.response.config) // includes request's config 
     })
 
   ```
@@ -167,7 +146,7 @@ client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 
 More websocket examples are available in the `examples` folder
 
-### Custom Logger Integration
+### Integrate with Customized Logger
 
 The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
@@ -198,10 +177,21 @@ client.aggTradeWS('bnbusdt', callbacks)
 
 ```
 
+### Testnet
+
+While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in 
+[Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
+
+```javascript
+// provide the testnet base url
+const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision'})
+```
+
 
 ## Test
 
 ```bash
+cd <this_project_directory>
 
 npm install
 
