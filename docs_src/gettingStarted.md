@@ -75,9 +75,7 @@ client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx
 
 ```
 
-### Integrate with Customized Logger
-
-The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
+### Custom Logger Integration
 
 ```javascript
 const Spot = require('binance-connector')
@@ -94,6 +92,8 @@ client.exchangeInfo().then(response => client.logger.log(response.data))
 // check the output file
 
 ```
+
+The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
 ### Error
 
@@ -129,7 +129,7 @@ There are 2 types of error may be returned from the API server and the user has 
 const { Spot } = require('binance-connector')
 
 const client = new Spot('', '', {
-  wsURL: 'wss://testnet.binance.vision' // optional, for testnet only. By default on production
+  wsURL: 'wss://testnet.binance.vision' // optional base URL. If not provided, defaults to wss://stream.binance.com:9443
 })
 
 const callbacks = {
@@ -146,9 +146,7 @@ client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 
 More websocket examples are available in the `examples` folder
 
-### Integrate with Customized Logger
-
-The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
+### Custom Logger Integration
 
 ```javascript
 const { Console } = require('console')
@@ -157,14 +155,9 @@ const Spot = require('binance-connector')
 
 const output = fs.createWriteStream('./logs/stdout.log')
 const errorOutput = fs.createWriteStream('./logs/stderr.log')
-const logger = new Console({
-  stdout: output,
-  stderr: errorOutput,
-})
 
-const client = new Spot('', '', {
-  logger
-})
+const logger = new Console({ stdout: output, stderr: errorOutput })
+const client = new Spot('', '', {logger})
 
 const callbacks = {
   open: () => client.logger.log('open'),
@@ -176,6 +169,8 @@ client.aggTradeWS('bnbusdt', callbacks)
 // check the output file
 
 ```
+
+The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
 ### Testnet
 

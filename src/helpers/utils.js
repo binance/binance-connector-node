@@ -46,9 +46,9 @@ const createRequest = (config) => {
   return getRequestInstance({
     baseURL,
     headers: {
-      'content-type': 'application/json',
+      'Content-Type': 'application/json',
       'X-MBX-APIKEY': apiKey,
-      'user-agent': `${constants.appName} ${constants.appVersion}`
+      'User-Agent': `${constants.appName} ${constants.appVersion}`
     }
   }).request({
     method,
