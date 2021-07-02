@@ -129,7 +129,7 @@ There are 2 types of error may be returned from the API server and the user has 
 const { Spot } = require('binance-connector')
 
 const client = new Spot('', '', {
-  wsURL: 'wss://testnet.binance.vision' // optional base URL. If not provided, defaults to wss://stream.binance.com:9443
+  wsURL: 'wss://testnet.binance.vision' // If optional base URL is not provided, wsURL defaults to wss://stream.binance.com:9443
 })
 
 const callbacks = {

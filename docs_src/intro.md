@@ -33,6 +33,7 @@ This is a lightweight library that works as a connector to [Binance public API](
 * Inclusion of test cases and examples
 * Customizable base URL, request timeout and HTTP proxy
 * Response metadata can be displayed
+* Customizable Logger
 
 ## Quick Start
 
@@ -76,7 +77,7 @@ Please find `examples` folder to check for more endpoints.
 const { Spot } = require('binance-connector')
 
 const client = new Spot('', '', {
-  wsURL: 'wss://testnet.binance.vision' // optional, for testnet only. By default on production
+  wsURL: 'wss://testnet.binance.vision' // If optional base URL is not provided, wsURL defaults to wss://stream.binance.com:9443
 })
 
 const callbacks = {
