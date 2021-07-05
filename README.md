@@ -16,6 +16,7 @@ This is a lightweight library that works as a connector to [Binance public API](
 - Inclusion of test cases and examples
 - Customizable base URL, request timeout and HTTP proxy
 - Response metadata can be displayed
+- Customizable Logger
 
 
 ## Installation
@@ -94,9 +95,7 @@ client.exchangeInfo().then(response => client.logger.log(response.headers['x-mbx
 
 ```
 
-### Integrate with Customized Logger
-
-The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
+### Custom Logger Integration
 
 ```javascript
 const Spot = require('binance-connector')
@@ -114,26 +113,29 @@ client.exchangeInfo().then(response => client.logger.log(response.data))
 
 ```
 
+The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
+
 ### Error
 
-There are 2 types of error may be returned from the API server and the user has to handle it properly:
+There are 2 types of error that may be returned from the API server and the user has to handle it properly:
 
 - `Client error`
-  - This is thrown when server returns `4XX`, this means either query parameters or API key is not in an acceptable form.
+  - This is thrown when server returns `4XX`, it's an issue from client side.
   - The following properties may be helpful to resolve the issue:
     - Response header - Please refer to `Response Metadata` section for more details.
     - HTTP status code
     - Error code - Server's error code, e.g. `-1102`
     - Error message - Server's error message, e.g. `Unknown order sent.`
-        
+    - Request config - Configuration send to the server, which can include URL, request method and headers.
   ```
   // client initialization is skipped
   client.exchangeInfo({ symbol: 'invalidSymbol' })
     .then(response => client.logger.log(response.data))
     .catch(err => {
       client.logger.error(err.response.headers) // full response header
-      client.logger.error(err.response.status) // 400
+      client.logger.error(err.response.status) // HTTP status code 400
       client.logger.error(err.response.data) // includes both error code and message
+      client.logger.error(err.response.config) // includes request's config 
     })
 
   ```
@@ -148,7 +150,7 @@ There are 2 types of error may be returned from the API server and the user has 
 const { Spot } = require('binance-connector')
 
 const client = new Spot('', '', {
-  wsURL: 'wss://testnet.binance.vision' // optional, for testnet only. By default on production
+  wsURL: 'wss://testnet.binance.vision' // If optional base URL is not provided, wsURL defaults to wss://stream.binance.com:9443
 })
 
 const callbacks = {
@@ -165,9 +167,7 @@ client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 
 More websocket examples are available in the `examples` folder
 
-### Integrate with Customized Logger
-
-The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
+### Custom Logger Integration
 
 ```javascript
 const { Console } = require('console')
@@ -176,14 +176,9 @@ const Spot = require('binance-connector')
 
 const output = fs.createWriteStream('./logs/stdout.log')
 const errorOutput = fs.createWriteStream('./logs/stderr.log')
-const logger = new Console({
-  stdout: output,
-  stderr: errorOutput,
-})
 
-const client = new Spot('', '', {
-  logger
-})
+const logger = new Console({ stdout: output, stderr: errorOutput })
+const client = new Spot('', '', {logger})
 
 const callbacks = {
   open: () => client.logger.log('open'),
@@ -196,6 +191,7 @@ client.aggTradeWS('bnbusdt', callbacks)
 
 ```
 
+The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
 ## Test
 

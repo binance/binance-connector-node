@@ -1,2 +1,9 @@
-module.exports.appName = 'Binance Connector Nodejs'
-module.exports.appNickName = 'binance-connector-nodejs'
+const packageJson = require('../../package.json')
+
+const appName = packageJson.name + '-node'
+const appVersion = packageJson.version
+
+module.exports = {
+  appName,
+  appVersion
+}
