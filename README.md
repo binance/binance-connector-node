@@ -160,12 +160,30 @@ const callbacks = {
 }
 client.aggTradeWS('bnbusdt', callbacks)
 
+// unsubscribe the stream above
+setTimeout(() => client.unsubscribe(), 3000)
 
-// support combined stream, e.g.
+// support combined stream
 client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 ```
 
 More websocket examples are available in the `examples` folder
+
+### Unsubscribe a Stream
+
+Unsubscription is achieved by closing the connection. If multiple streams are subscribed with different connections, `unsubscribe()` method closes the first established connection. If this method is called without any connection established, the console will output a message `No connection to close.`
+
+```
+// client initialization is skipped
+client.aggTradeWS('bnbusdt', callbacks)
+client.aggTradeWS('btcusdt', callbacks)
+
+// The first connection (bnbusdt@aggTrade) is closed after 3 secs.
+setTimeout(() => client.unsubscribe(), 3000)
+// The second connection (btcusdt@aggTrade) is closed after 4 secs.
+setTimeout(() => client.unsubscribe(), 4000)
+
+```
 
 ### Custom Logger Integration
 
