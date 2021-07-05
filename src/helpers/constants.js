@@ -1,7 +1,7 @@
-const pjson = require('../../package.json')
+const packageJson = require('../../package.json')
 
-const appName = pjson.name + '-node'
-const appVersion = pjson.version
+const appName = packageJson.name + '-node'
+const appVersion = packageJson.version
 
 module.exports = {
   appName,
