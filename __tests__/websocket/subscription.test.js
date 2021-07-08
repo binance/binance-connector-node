@@ -11,7 +11,7 @@ describe('#subscribe/ unsubscribe', () => {
         const ws = {
           close: (code, reason) => {
             // close event code
-            if (code === 1000) {
+            if (thisArg.closeInitiated) {
               callback(null, 'close')
             } else {
               callback(new Error('wrong close event code'), null)

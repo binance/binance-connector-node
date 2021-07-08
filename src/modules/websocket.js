@@ -1,7 +1,6 @@
 const { validateRequiredParameters } = require('../helpers/validation')
 const { isEmptyValue } = require('../helpers/utils')
 const WebSocketClient = require('ws')
-const NORMAL_CLOSURE_CODE = 1000
 
 /**
  * API websocket endpoints
@@ -14,6 +13,7 @@ const Websocket = superclass => class extends superclass {
     this.wsURL = options.wsURL || 'wss://stream.binance.com:9443'
     this.ws = []
     this.reconnectDelay = 5000
+    this.closeInitiated = false
   }
 
   /**
@@ -253,12 +253,14 @@ const Websocket = superclass => class extends superclass {
       })
 
       ws.on('close', (closeEventCode, reason) => {
-        if (closeEventCode !== NORMAL_CLOSURE_CODE) {
+        if (!this.closeInitiated) {
           this.logger.error(`Connection close due to ${closeEventCode}: ${reason}.`)
           setTimeout(() => {
             this.logger.debug('Reconnect to the server.')
             initConnect()
           }, this.reconnectDelay)
+        } else {
+          this.closeInitiated = false
         }
       })
     }
@@ -277,7 +279,8 @@ const Websocket = superclass => class extends superclass {
       return
     }
     const ws = this.ws.shift()
-    ws.close(NORMAL_CLOSURE_CODE)
+    this.closeInitiated = true
+    ws.close()
   }
 }
 
