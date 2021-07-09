@@ -19,5 +19,6 @@ const callbacks = {
   message: data => client.logger.log(data)
 }
 
-client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+const wsRef = client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

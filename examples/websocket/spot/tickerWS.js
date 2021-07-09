@@ -20,8 +20,9 @@ const callbacks = {
 }
 
 // all pairs
-// client.tickerWS(null, callbacks)
+// const wsRef = client.tickerWS(null, callbacks)
 
 // single pair
-client.tickerWS('bnbusdt', callbacks)
+const wsRef = client.tickerWS('bnbusdt', callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

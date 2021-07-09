@@ -20,5 +20,6 @@ const callbacks = {
   message: data => client.logger.log(data)
 }
 
-client.userData('<listen_key>', callbacks)
+const wsRef = client.userData('<listen_key>', callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

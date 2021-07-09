@@ -23,6 +23,6 @@ const callbacks = {
 // client.bookTickerWS(null, callbacks)
 
 // single pair
-client.bookTickerWS('bnbusdt', callbacks)
-
+const wsRef = client.bookTickerWS('bnbusdt', callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

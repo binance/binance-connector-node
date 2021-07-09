@@ -137,30 +137,33 @@ const callbacks = {
   close: () => client.logger.log('closed'),
   message: data => client.logger.log(data)
 }
-client.aggTradeWS('bnbusdt', callbacks)
+const aggTrade = client.aggTradeWS('bnbusdt', callbacks)
 
+// unsubscribe the stream above
+setTimeout(() => client.unsubscribe(aggTrade), 3000)
 
-// support combined stream, e.g.
-client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+// support combined stream
+const combinedStreams = client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 ```
 
 More websocket examples are available in the `examples` folder.
 
 ### Unsubscribe a Stream
 
-Unsubscription is achieved by closing the connection. If multiple streams are subscribed with different connections, `unsubscribe()` method closes the first established connection. If this method is called without any connection established, the console will output a message `No connection to close.`
+Unsubscription is achieved by closing the connection. If this method is called without any connection established, the console will output a message `No connection to close.`
 
 ```
 // client initialization is skipped
-client.aggTradeWS('bnbusdt', callbacks)
-client.aggTradeWS('btcusdt', callbacks)
+const wsRef = client.aggTradeWS('bnbusdt', callbacks)
 
-// The first connection (bnbusdt@aggTrade) is closed after 3 secs.
-setTimeout(() => client.unsubscribe(), 3000)
-// The second connection (btcusdt@aggTrade) is closed after 4 secs.
-setTimeout(() => client.unsubscribe(), 4000)
+// The connection (bnbusdt@aggTrade) is closed after 3 secs.
+setTimeout(() => client.unsubscribe(wsRef), 3000)
 
 ```
+
+### Auto Reconnect
+
+If there is a close event not initiated by the user, the reconnection mechanism will be triggered in 5 secs.
 
 ### Custom Logger Integration
 
@@ -181,7 +184,8 @@ const callbacks = {
   message: data => client.logger.log(data)
 }
 
-client.aggTradeWS('bnbusdt', callbacks)
+const wsRef = client.aggTradeWS('bnbusdt', callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file
 
 ```
