@@ -1,7 +1,6 @@
 const { validateRequiredParameters } = require('../helpers/validation')
 const { isEmptyValue } = require('../helpers/utils')
 const WebSocketClient = require('ws')
-const NORMAL_CLOSURE_CODE = 1000
 
 /**
  * API websocket endpoints
@@ -12,8 +11,8 @@ const Websocket = superclass => class extends superclass {
   constructor (options) {
     super(options)
     this.wsURL = options.wsURL || 'wss://stream.binance.com:9443'
-    this.ws = []
     this.reconnectDelay = 5000
+    this.closeInitiated = false
   }
 
   /**
@@ -32,7 +31,7 @@ const Websocket = superclass => class extends superclass {
     validateRequiredParameters({ symbol })
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@aggTrade`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -51,7 +50,7 @@ const Websocket = superclass => class extends superclass {
     validateRequiredParameters({ symbol })
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@trade`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -73,7 +72,7 @@ const Websocket = superclass => class extends superclass {
 
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@kline_${interval}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -98,7 +97,7 @@ const Websocket = superclass => class extends superclass {
     }
     const url = `${this.wsURL}/ws/${path}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -124,7 +123,7 @@ const Websocket = superclass => class extends superclass {
     }
     const url = `${this.wsURL}/ws/${path}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -148,7 +147,7 @@ const Websocket = superclass => class extends superclass {
     }
     const url = `${this.wsURL}/ws/${path}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -171,7 +170,7 @@ const Websocket = superclass => class extends superclass {
 
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@depth${levels}@${speed}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -193,7 +192,7 @@ const Websocket = superclass => class extends superclass {
 
     const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@depth@${speed}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -208,7 +207,7 @@ const Websocket = superclass => class extends superclass {
 
     const url = `${this.wsURL}/ws/${listenKey}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   /**
@@ -227,13 +226,14 @@ const Websocket = superclass => class extends superclass {
 
     const url = `${this.wsURL}/stream?streams=${streams.join('/')}`
     this.logger.debug(url)
-    this.subscribe(url, callbacks)
+    return this.subscribe(url, callbacks)
   }
 
   subscribe (url, callbacks) {
+    const wsRef = {}
     const initConnect = () => {
       const ws = new WebSocketClient(url)
-      this.ws.push(ws)
+      wsRef.ws = ws
       Object.keys(callbacks).forEach((event, _) => {
         this.logger.debug(`listen to event: ${event}`)
         ws.on(event, callbacks[event])
@@ -253,31 +253,32 @@ const Websocket = superclass => class extends superclass {
       })
 
       ws.on('close', (closeEventCode, reason) => {
-        if (closeEventCode !== NORMAL_CLOSURE_CODE) {
+        if (!this.closeInitiated) {
           this.logger.error(`Connection close due to ${closeEventCode}: ${reason}.`)
           setTimeout(() => {
             this.logger.debug('Reconnect to the server.')
             initConnect()
           }, this.reconnectDelay)
+        } else {
+          this.closeInitiated = false
         }
       })
     }
     initConnect()
+    return wsRef
   }
 
   /**
-   * Unsubscribe the streams<br>
+   * Unsubscribe the stream <br>
    *
-   * If multiple streams are subscribed with different connections,
-   * close the first connection established.
+   * @param {WebSocketClient} wsRef - websocket client instance created by ws package
    */
-  unsubscribe () {
-    if (!this.ws.length) {
-      this.logger.warn('No connection to close.')
-      return
+  unsubscribe (wsRef) {
+    if (!wsRef || !wsRef.ws) this.logger.warn('No connection to close.')
+    else {
+      this.closeInitiated = true
+      wsRef.ws.close()
     }
-    const ws = this.ws.shift()
-    ws.close(NORMAL_CLOSURE_CODE)
   }
 }
 

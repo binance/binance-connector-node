@@ -85,11 +85,11 @@ const callbacks = {
   close: () => client.logger.log('closed'),
   message: data => client.logger.log(data)
 }
-client.aggTradeWS('bnbusdt', callbacks)
+const aggTrade = client.aggTradeWS('bnbusdt', callbacks)
 
 
 // support combined stream, e.g.
-client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+const combinedStreams = client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
 ```
 
 More websocket examples are available in the `examples` folder

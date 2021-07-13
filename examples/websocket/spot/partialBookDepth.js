@@ -19,5 +19,6 @@ const callbacks = {
   message: data => client.logger.log(data)
 }
 
-client.partialBookDepth('bnbusdt', '5', '100ms', callbacks)
+const wsRef = client.partialBookDepth('bnbusdt', '5', '100ms', callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

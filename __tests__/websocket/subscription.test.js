@@ -11,26 +11,28 @@ describe('#subscribe/ unsubscribe', () => {
         const ws = {
           close: (code, reason) => {
             // close event code
-            if (code === 1000) {
+            if (thisArg.closeInitiated) {
               callback(null, 'close')
             } else {
               callback(new Error('wrong close event code'), null)
             }
           }
         }
-        thisArg.ws.push(ws)
+        return { ws }
       }
     })
-    MockSpotClient.subscribe('url', (err, data) => {
+    const wsRef = MockSpotClient.subscribe('url', (err, data) => {
       expect(err).toBeNull()
       expect(data).toEqual('close')
     })
-    MockSpotClient.unsubscribe()
+    MockSpotClient.unsubscribe(wsRef)
   })
 
-  it('should not unsubscribe when no subscription', () => {
+  it.each(
+    [[undefined], [{}], [{ otherKey: 'otherValue' }], [{ ws: undefined }]]
+  )('should not unsubscribe when no subscription', (ref) => {
     SpotClient.logger.warn = jest.fn()
-    SpotClient.unsubscribe()
+    SpotClient.unsubscribe(ref)
     expect(SpotClient.logger.warn).toHaveBeenCalledTimes(1)
   })
 })

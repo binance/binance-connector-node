@@ -19,6 +19,6 @@ const callbacks = {
   message: data => client.logger.log(data)
 }
 
-client.aggTradeWS('bnbusdt', callbacks)
-setTimeout(() => client.unsubscribe(), 3000)
+const wsRef = client.aggTradeWS('bnbusdt', callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

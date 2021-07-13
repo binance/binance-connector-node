@@ -19,5 +19,6 @@ const callbacks = {
   message: data => client.logger.log(data)
 }
 
-client.klineWS('bnbusdt', '1m', callbacks)
+const wsRef = client.klineWS('bnbusdt', '1m', callbacks)
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

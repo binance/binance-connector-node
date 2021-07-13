@@ -20,9 +20,10 @@ const callbacks = {
 }
 
 // all pairs
-client.miniTickerWS(null, callbacks)
+const wsRef = client.miniTickerWS(null, callbacks)
 
 // single pair
-// client.miniTickerWS('bnbusdt', callbacks)
+// const wsRef = client.miniTickerWS('bnbusdt', callbacks)
 
+setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file
