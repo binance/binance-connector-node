@@ -1,6 +1,6 @@
 {
   "name": "binance-connector",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "This is a lightweight library that works as a connector to the Binance public API.",
   "main": "src/index.js",
   "scripts": {
