@@ -179,8 +179,8 @@ const Futures = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#cross-collateral-information-v2-user_data}
    *
    * @param {object} [options]
-   * @param {number} [options.loanCoin]
-   * @param {number} [options.collateralCoin]
+   * @param {string} [options.loanCoin]
+   * @param {string} [options.collateralCoin]
    * @param {number} [options.recvWindow]
    */
   futuresLoanConfigs (options = {}) {
