@@ -226,7 +226,7 @@ const Market = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker}
    *
-   * @param {string} symbol
+   * @param {string} [symbol]
   */
   tickerPrice (symbol = '') {
     return this.publicRequest(

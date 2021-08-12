@@ -215,7 +215,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.stopIcebergQty]
    * @param {string} [options.stopLimitTimeInForce]
    * @param {string} [options.newOrderRespType]
-   * @param {string} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   newOCOOrder (symbol, side, quantity, price, stopPrice, options = {}) {
     validateRequiredParameters({ symbol, side, quantity, price, stopPrice })
@@ -346,6 +346,7 @@ const Trade = superclass => class extends superclass {
    *
    * @param {string} symbol
    * @param {object} [options]
+   * @param {number} [options.orderId] - This can only be used in combination with symbol.
    * @param {number} [options.startTime]
    * @param {number} [options.endTime]
    * @param {number} [options.fromId]

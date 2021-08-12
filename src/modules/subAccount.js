@@ -15,7 +15,7 @@ const SubAccount = superclass => class extends superclass {
     *
     * @param {object} [options]
     * @param {string} [options.email]
-    * @param {string} [options.isFreeze]
+    * @param {string} [options.isFreeze] - true or false
     * @param {number} [options.page]
     * @param {number} [options.limit]
     * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -473,7 +473,7 @@ const SubAccount = superclass => class extends superclass {
    * @param {string} fromEmail - Sender email
    * @param {string} toEmail - Recipient email
    * @param {number} futuresType - 1: USDT-margined Futures，2: Coin-margined Futures
-   * @param {number} asset
+   * @param {string} asset
    * @param {number} amount
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -504,7 +504,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * @param {object} [options]
    * @param {string} [options.email] - Sub account email
-   * @param {string} [options.page] - default 1
+   * @param {number} [options.page] - default 1
    * @param {number} [options.size] - default 10, max 20
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */

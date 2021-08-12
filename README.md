@@ -25,6 +25,10 @@ This is a lightweight library that works as a connector to [Binance public API](
 npm install @binance/connector
 ```
 
+## Documentation
+
+[https://binance.github.io/binance-connector-node/](https://binance.github.io/binance-connector-node/)
+
 ## RESTful APIs
 
 ```javascript

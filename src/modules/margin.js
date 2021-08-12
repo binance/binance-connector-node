@@ -685,15 +685,15 @@ const Margin = superclass => class extends superclass {
   }
 
   /**
- * Get All Isolated Margin Symbol(USER_DATA)<br>
- *
- * GET /sapi/v1/margin/isolated/allPairs<br>
- *
- * {@link https://binance-docs.github.io/apidocs/spot/en/#get-all-isolated-margin-symbol-user_data}
- *
- * @param {object} [options]
- * @param {number} [options.recvWindow] - No more than 60000
- */
+   * Get All Isolated Margin Symbol(USER_DATA)<br>
+   *
+   * GET /sapi/v1/margin/isolated/allPairs<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-all-isolated-margin-symbol-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
   isolatedMarginAllSymbols (options = {}) {
     return this.signRequest(
       'GET',
