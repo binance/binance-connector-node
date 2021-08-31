@@ -20,6 +20,7 @@ const callbacks = {
   message: data => client.logger.log(data)
 }
 
+// To generate the listen key, please check examples/spot/stream/ folder.
 const wsRef = client.userData('<listen_key>', callbacks)
 setTimeout(() => client.unsubscribe(wsRef), 5000)
 // check the output file

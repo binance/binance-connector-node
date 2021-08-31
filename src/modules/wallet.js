@@ -363,6 +363,8 @@ const Wallet = superclass => class extends superclass {
    * @param {string} asset
    * @param {number} amount
    * @param {object} [options]
+   * @param {string} [options.fromSymbol] - must be sent when type are ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
+   * @param {string} [options.toSymbol] - must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   userUniversalTransfer (type, asset, amount, options = {}) {
@@ -392,6 +394,8 @@ const Wallet = superclass => class extends superclass {
    * @param {number} [options.endTime]
    * @param {number} [options.current]
    * @param {number} [options.size]
+   * @param {string} [options.fromSymbol] - must be sent when type are ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
+   * @param {string} [options.toSymbol] - must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   userUniversalTransferHistory (type, options = {}) {
