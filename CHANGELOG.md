@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.1 - 2021-09-02
+### Bugfix
+- Fix on websocket close event detection logic
+
 ## v1.3.0 - 2021-08-31
 ### Added
 - `POST /sapi/v1/asset/transfer` and `GET /sapi/v1/asset/transfer` optional fields `fromSymbol`, `toSymbol`

@@ -12,7 +12,6 @@ const Websocket = superclass => class extends superclass {
     super(options)
     this.wsURL = options.wsURL || 'wss://stream.binance.com:9443'
     this.reconnectDelay = 5000
-    this.closeInitiated = false
   }
 
   /**
@@ -221,6 +220,7 @@ const Websocket = superclass => class extends superclass {
 
   subscribe (url, callbacks) {
     const wsRef = {}
+    wsRef.closeInitiated = false
     const initConnect = () => {
       const ws = new WebSocketClient(url)
       wsRef.ws = ws
@@ -243,14 +243,14 @@ const Websocket = superclass => class extends superclass {
       })
 
       ws.on('close', (closeEventCode, reason) => {
-        if (!this.closeInitiated) {
+        if (!wsRef.closeInitiated) {
           this.logger.error(`Connection close due to ${closeEventCode}: ${reason}.`)
           setTimeout(() => {
             this.logger.debug('Reconnect to the server.')
             initConnect()
           }, this.reconnectDelay)
         } else {
-          this.closeInitiated = false
+          wsRef.closeInitiated = false
         }
       })
     }
@@ -267,7 +267,7 @@ const Websocket = superclass => class extends superclass {
   unsubscribe (wsRef) {
     if (!wsRef || !wsRef.ws) this.logger.warn('No connection to close.')
     else {
-      this.closeInitiated = true
+      wsRef.closeInitiated = true
       wsRef.ws.close()
     }
   }

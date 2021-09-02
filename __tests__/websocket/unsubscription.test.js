@@ -8,17 +8,19 @@ describe('#unsubscribe', () => {
 
     MockSpotClient.subscribe = new Proxy(MockSpotClient.subscribe, {
       apply: function (target, thisArg, [url, callback]) {
-        const ws = {
+        const wsRef = {
+          closeInitiated: false
+        }
+        wsRef.ws = {
           close: (code, reason) => {
-            // close event code
-            if (thisArg.closeInitiated) {
+            if (wsRef.closeInitiated === true) {
               callback(null, 'close')
             } else {
               callback(new Error('wrong close event code'), null)
             }
           }
         }
-        return { ws }
+        return wsRef
       }
     })
     const wsRef = MockSpotClient.subscribe('url', (err, data) => {
