@@ -1,7 +1,14 @@
 # Changelog
 
+## v1.4.0 - 2021-09-14
+### Added
+- `GET /sapi/v1/capital/withdraw/history` has a new optional field withdrawOrderId
+- `DELETE /sapi/v1/margin/isolated/account` to disable isolated margin account for a specific symbol
+- `POST /sapi/v1/margin/isolated/account` to enable isolated margin account for a specific symbol
+- `GET /sapi/v1/margin/isolated/accountLimit` to query enabled isolated margin account limit
+
 ## v1.3.1 - 2021-09-02
-### Bugfix
+### Fix
 - Fix on websocket close event detection logic
 
 ## v1.3.0 - 2021-08-31

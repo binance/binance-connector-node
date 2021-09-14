@@ -166,6 +166,7 @@ const Wallet = superclass => class extends superclass {
    *
    * @param {object} [options]
    * @param {string} [options.coin]
+   * @param {string} [options.withdrawOrderId]
    * @param {number} [options.status] - 0:Email Sent 1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed
    * @param {number} [options.startTime] - Default: 90 days from current timestamp
    * @param {number} [options.endTime] - Default: present timestamp

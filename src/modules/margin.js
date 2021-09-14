@@ -817,6 +817,64 @@ const Margin = superclass => class extends superclass {
   }
 
   /**
+   * Disable Isolated Margin Account (TRADE)<br>
+   *
+   * DELETE /sapi/v1/margin/isolated/account<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-isolated-margin-account-trade}
+   *
+   * @param {string} symbol
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  disableIsolatedMarginAccount (symbol, options = {}) {
+    validateRequiredParameters({ symbol })
+    return this.signRequest(
+      'DELETE',
+      '/sapi/v1/margin/isolated/account',
+      Object.assign(options, { symbol })
+    )
+  }
+
+  /**
+   * Enable Isolated Margin Account (TRADE)<br>
+   *
+   * POST /sapi/v1/margin/isolated/account<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-isolated-margin-account-trade}
+   *
+   * @param {string} symbol
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  enableIsolatedMarginAccount (symbol, options = {}) {
+    validateRequiredParameters({ symbol })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/margin/isolated/account',
+      Object.assign(options, { symbol })
+    )
+  }
+
+  /**
+   * Query Enabled Isolated Margin Account Limit (USER_DATA)<br>
+   *
+   * GET /sapi/v1/margin/isolated/accountLimit<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-enabled-isolated-margin-account-limit-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  isolatedMarginAccountLimit (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/isolated/accountLimit',
+      options
+    )
+  }
+
+  /**
    * Query Isolated Margin Symbol (USER_DATA)<br>
    *
    * GET /sapi/v1/margin/isolated/pair<br>

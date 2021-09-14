@@ -12,7 +12,13 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#getMarginOCOOrder', () => {
-  it('should return oco order details when neither orderListId nor origClientOrderId is attached', () => {
+  it('should thorw MissingParameterError when no parameter is attached', () => {
+    expect(() => {
+      SpotClient.getMarginOCOOrder()
+    }).toThrow(MissingParameterError)
+  })
+
+  it('should thorw MissingParameterError when neither orderListId nor origClientOrderId is attached', () => {
     expect(() => {
       SpotClient.getMarginOCOOrder({ recvWindow })
     }).toThrow(MissingParameterError)
