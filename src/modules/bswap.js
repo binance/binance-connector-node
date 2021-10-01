@@ -205,6 +205,71 @@ const Bswap = superclass => class extends superclass {
       options
     )
   }
+
+  /**
+   * Get Pool Configure (USER_DATA)
+   *
+   * GET /sapi/v1/bswap/poolConfigure<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-pool-configure-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.poolId]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapGetPoolConfig (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/poolConfigure',
+      options
+    )
+  }
+
+  /**
+   * Add Liquidity Preview (USER_DATA)
+   *
+   * GET /sapi/v1/bswap/addLiquidityPreview<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#add-liquidity-preview-user_data}
+   *
+   * @param {number} poolId
+   * @param {string} type - "SINGLE" for adding a single token;"COMBINATION" for adding dual tokens
+   * @param {string} quoteAsset
+   * @param {number} quoteQty
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapAddLiquidityPreview (poolId, type, quoteAsset, quoteQty, options = {}) {
+    validateRequiredParameters({ poolId, type, quoteAsset, quoteQty })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/addLiquidityPreview',
+      Object.assign(options, { poolId, type, quoteAsset, quoteQty })
+    )
+  }
+
+  /**
+   * Remove Liquidity Preview (USER_DATA)
+   *
+   * GET /sapi/v1/bswap/removeLiquidityPreview<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#remove-liquidity-preview-user_data}
+   *
+   * @param {number} poolId
+   * @param {string} type - Type is "SINGLE", remove and obtain a single token;Type is "COMBINATION", remove and obtain dual token.
+   * @param {string} quoteAsset
+   * @param {number} shareAmount
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapRemoveLiquidityPreview (poolId, type, quoteAsset, shareAmount, options = {}) {
+    validateRequiredParameters({ poolId, type, quoteAsset, shareAmount })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/removeLiquidityPreview',
+      Object.assign(options, { poolId, type, quoteAsset, shareAmount })
+    )
+  }
 }
 
 module.exports = Bswap

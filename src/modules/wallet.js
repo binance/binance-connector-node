@@ -273,12 +273,15 @@ const Wallet = superclass => class extends superclass {
    * Convert dust assets to BNB.<br>
    * {@link https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data}
    *
-   * @param {array} asset - The asset being converted. For example: asset=BTC&asset=USDT
+   * @param {array} asset - The asset being converted
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   dustTransfer (asset, options = {}) {
     validateRequiredParameters({ asset })
+    if (Array.isArray(asset)) {
+      asset = asset.join(',')
+    }
     return this.signRequest(
       'POST',
       '/sapi/v1/asset/dust',
