@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.5.0 - 2021-10-01
+### Added
+- `GET /sapi/v1/bswap/poolConfigure` to get pool configure
+- `GET /sapi/v1/bswap/addLiquidityPreview` to get add liquidity preview
+- `GET /sapi/v1/margin/isolated/accountLimit` to get remove liquidity preview
+- Axios version upgrade to `0.21.4`
+
 ## v1.4.0 - 2021-09-14
 ### Added
 - `GET /sapi/v1/capital/withdraw/history` has a new optional field withdrawOrderId

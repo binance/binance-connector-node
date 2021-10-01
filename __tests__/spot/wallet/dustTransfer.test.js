@@ -19,4 +19,15 @@ describe('#dustTransfer', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
+
+  it('should Convert dust assets to BNB', () => {
+    const asset = ['ETC', 'USDT']
+    const assetString = 'ETC,USDT'
+    nockPostMock(`/sapi/v1/asset/dust?${buildQueryString({ asset: assetString })}`)(mockResponse)
+
+    return SpotClient.dustTransfer(asset).then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
 })
