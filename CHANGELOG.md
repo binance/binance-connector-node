@@ -1,5 +1,27 @@
 # Changelog
 
+## v1.6.0 - 2021-12-07
+### Added
+- `GET /api/v3/rateLimit/order` to get the current order count usage for all intervals
+- `GET /sapi/v1/loan/income` to support user query crypto loans history
+- `POST /sapi/v1/sub-account/subAccountApi/ipRestriction` to support master account enable and disable IP restriction for a sub-account API Key
+- `POST /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList` to support master account add IP list for a sub-account API Key
+- `GET /sapi/v1/sub-account/subAccountApi/ipRestriction` to support master account query IP restriction for a sub-account API Key
+- `DELETE /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList` to support master account delete IP list for a sub-account API Key
+- `GET /sapi/v1/pay/transactions` to support user query Pay trade history
+- `GET /sapi/v1/convert/tradeFlow` to support user query convert trade history records
+- `GET /sapi/v1/rebate/taxQuery` to support user query spot rebate history records
+- `GET /sapi/v1/margin/crossMarginData` to get cross margin fee data collection
+- `GET /sapi/v1/margin/isolatedMarginData` to get isolated margin fee data collection
+- `GET /sapi/v1/margin/isolatedMarginTier` to get isolated margin tier data collection
+- `GET /sapi/v1/nft/history/transactions` to get NFT transaction history
+- `GET /sapi/v1/nft/history/deposit` to get NFT deposit history
+- `GET /sapi/v1/nft/history/withdraw` to get NFT withdraw history
+- `GET /sapi/v1/nft/user/getAsset` to get NFT asset
+
+### Fixed
+- npm audit upgrades
+
 ## v1.5.0 - 2021-10-01
 ### Added
 - `GET /sapi/v1/bswap/poolConfigure` to get pool configure

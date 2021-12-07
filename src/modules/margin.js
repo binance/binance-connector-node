@@ -911,6 +911,74 @@ const Margin = superclass => class extends superclass {
       options
     )
   }
+
+  /**
+   * Query Cross Margin Fee Data (USER_DATA)<br>
+   *
+   * GET /sapi/v1/margin/crossMarginData<br>
+   *
+   * Get cross margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-cross-margin-fee-data-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.vipLevel] - User's current specific margin data will be returned if vipLevel is omitted
+   * @param {string} [options.coin]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  marginFee (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/crossMarginData',
+      options
+    )
+  }
+
+  /**
+   * Query Isolated Margin Fee Data (USER_DATA)<br>
+   *
+   * GET /sapi/v1/margin/isolatedMarginData<br>
+   *
+   * Get isolated margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-fee-data-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.vipLevel] - User's current specific margin data will be returned if vipLevel is omitted
+   * @param {string} [options.symbol]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  isolatedMarginFee (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/isolatedMarginData',
+      options
+    )
+  }
+
+  /**
+   * Query Isolated Margin Tier Data (USER_DATA)<br>
+   *
+   * GET /sapi/v1/margin/isolatedMarginTier<br>
+   *
+   * Get isolated margin tier data collection with any tier as https://www.binance.com/en/margin-data
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-fee-data-user_data}
+   *
+   * @param {string} symbol
+   * @param {object} [options]
+   * @param {string} [options.tier] - All margin tier data will be returned if tier is omitted
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  isolatedMarginTier (symbol, options = {}) {
+    validateRequiredParameters({ symbol })
+
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/isolatedMarginTier',
+      Object.assign(options, { symbol })
+    )
+  }
 }
 
 module.exports = Margin
