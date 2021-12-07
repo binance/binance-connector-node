@@ -1,0 +1,6225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adding meta -->
+    
+
+    <!-- Adding external script-->
+    
+
+    <!-- Adding external style-->
+    
+
+    <!-- Adding scripts-->
+    
+
+    <!-- Adding style-->
+    
+
+    <!-- Adding overlay script-->
+    
+
+    <!-- Adding overlay style-->
+    
+
+
+    <title>
+      Wallet
+    </title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/third-party/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/third-party/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/reset.css">
+    <link type="text/css" rel="stylesheet" href="styles/heading.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-base.css">
+    <link type="text/css" rel="stylesheet" href="styles/clean-jsdoc-theme-light.css">
+    
+    <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    style="display:none">
+    <defs>
+        <symbol id="copy-icon" viewbox="0 0 488.3 488.3">
+            <g>
+                <path
+                    d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z" />
+                <path
+                    d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z" />
+            </g>
+        </symbol>
+        <symbol id='search-icon' viewBox="0 0 512 512">
+            <g>
+                <g>
+                    <path
+                        d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z" />
+                </g>
+            </g>
+            <g>
+                <g>
+                    <path
+                        d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z" />
+                </g>
+            </g>
+        </symbol>
+        <symbol id="down-icon" viewBox="0 0 16 16">
+            <path 
+                fill-rule="evenodd" 
+                clip-rule="evenodd" 
+                d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"
+            >
+            </path>
+        </symbol>
+    </defs>
+</svg>
+  </head>
+
+  <body>
+
+    <nav class="navbar" id="navbar">
+      <div class="navbar-heading" id="navbar-heading"><a href="index.html"><h2 class="navbar-heading-text">@binance/connector</h2></a></div><div class="search-box" id="search-box"><div class="search-box-input-container"><input class="search-box-input" type="text" placeholder="Search..." id="search-box-input" /><svg class="search-icon" alt="search-icon"><use xlink:href="#search-icon"></use></svg></div><div class="search-item-container" id="search-item-container"><ul class="search-item-ul" id="search-item-ul"></ul></div></div><div class="sidebar-main-content" id="sidebar-main-content"><ul><li class="menu-li"><a href='./changelog.html' class=' menu-link' id='' target=''>Changelog</a></li><li class="menu-li"><a href='./gettingStarted.html' class=' menu-link' id='' target=''>Getting Started</a></li><li class="menu-li"><a href='https://github.com/binance/binance-connector-node' class=' menu-link' id='' target=''>GitHub repository</a></li></ul><div class="accordion collapsed" id="5278540" > <h3 class="accordion-heading">Modules<svg><use xlink:href="#down-icon"></use></svg></h3><ul class="accordion-content"><li class="accordion collapsed child" id=701761><div class="accordion-heading child"><a href="module-Blvt.html">Blvt</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Blvt.html#blvtInfo">blvtInfo</a></li><li data-type='method'><a href="module-Blvt.html#blvtRedemptionRecord">blvtRedemptionRecord</a></li><li data-type='method'><a href="module-Blvt.html#blvtSubscriptionRecord">blvtSubscriptionRecord</a></li><li data-type='method'><a href="module-Blvt.html#redeemBlvt">redeemBlvt</a></li><li data-type='method'><a href="module-Blvt.html#subscribeBlvt">subscribeBlvt</a></li></ul></li><li class="accordion collapsed child" id=8489891><div class="accordion-heading child"><a href="module-Bswap.html">Bswap</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Bswap.html#bswapAddLiquidityPreview">bswapAddLiquidityPreview</a></li><li data-type='method'><a href="module-Bswap.html#bswapGetPoolConfig">bswapGetPoolConfig</a></li><li data-type='method'><a href="module-Bswap.html#bswapLiquidity">bswapLiquidity</a></li><li data-type='method'><a href="module-Bswap.html#bswapLiquidityAdd">bswapLiquidityAdd</a></li><li data-type='method'><a href="module-Bswap.html#bswapLiquidityOperationRecord">bswapLiquidityOperationRecord</a></li><li data-type='method'><a href="module-Bswap.html#bswapLiquidityRemove">bswapLiquidityRemove</a></li><li data-type='method'><a href="module-Bswap.html#bswapPools">bswapPools</a></li><li data-type='method'><a href="module-Bswap.html#bswapRemoveLiquidityPreview">bswapRemoveLiquidityPreview</a></li><li data-type='method'><a href="module-Bswap.html#bswapRequestQuote">bswapRequestQuote</a></li><li data-type='method'><a href="module-Bswap.html#bswapSwap">bswapSwap</a></li><li data-type='method'><a href="module-Bswap.html#bswapSwapHistory">bswapSwapHistory</a></li></ul></li><li class="accordion collapsed child" id=6473223><div class="accordion-heading child"><a href="module-C2C.html">C2C</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-C2C.html#c2cTradeHistory">c2cTradeHistory</a></li></ul></li><li class="accordion collapsed child" id=3716073><div class="accordion-heading child"><a href="module-Convert.html">Convert</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Convert.html#convertTradeHistory">convertTradeHistory</a></li></ul></li><li class="accordion collapsed child" id=7873740><div class="accordion-heading child"><a href="module-Fiat.html">Fiat</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Fiat.html#depositWithdrawalHistory">depositWithdrawalHistory</a></li><li data-type='method'><a href="module-Fiat.html#paymentHistory">paymentHistory</a></li></ul></li><li class="accordion collapsed child" id=2949945><div class="accordion-heading child"><a href="module-Futures.html">Futures</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Futures.html#futuresCollateralRepay">futuresCollateralRepay</a></li><li data-type='method'><a href="module-Futures.html#futuresCollateralRepayLimit">futuresCollateralRepayLimit</a></li><li data-type='method'><a href="module-Futures.html#futuresCollateralRepayQuote">futuresCollateralRepayQuote</a></li><li data-type='method'><a href="module-Futures.html#futuresCollateralRepayResult">futuresCollateralRepayResult</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanAdjustCollateral">futuresLoanAdjustCollateral</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanAdjustCollateralHistory">futuresLoanAdjustCollateralHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanBorrow">futuresLoanBorrow</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanBorrowHistory">futuresLoanBorrowHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanCalcAdjustLevel">futuresLoanCalcAdjustLevel</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanCalcMaxAdjustAmount">futuresLoanCalcMaxAdjustAmount</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanConfigs">futuresLoanConfigs</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanInterestHistory">futuresLoanInterestHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanLiquidationHistory">futuresLoanLiquidationHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanRepay">futuresLoanRepay</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanRepayHistory">futuresLoanRepayHistory</a></li><li data-type='method'><a href="module-Futures.html#futuresLoanWallet">futuresLoanWallet</a></li><li data-type='method'><a href="module-Futures.html#futuresTransfer">futuresTransfer</a></li><li data-type='method'><a href="module-Futures.html#futuresTransferHistory">futuresTransferHistory</a></li></ul></li><li class="accordion collapsed child" id=9907138><div class="accordion-heading child"><a href="module-Loan.html">Loan</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Loan.html#loanHistory">loanHistory</a></li></ul></li><li class="accordion collapsed child" id=8565260><div class="accordion-heading child"><a href="module-Margin.html">Margin</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Margin.html#cancelAllOpenMarginOrder">cancelAllOpenMarginOrder</a></li><li data-type='method'><a href="module-Margin.html#cancelMarginOCOOrder">cancelMarginOCOOrder</a></li><li data-type='method'><a href="module-Margin.html#cancelMarginOrder">cancelMarginOrder</a></li><li data-type='method'><a href="module-Margin.html#disableIsolatedMarginAccount">disableIsolatedMarginAccount</a></li><li data-type='method'><a href="module-Margin.html#enableIsolatedMarginAccount">enableIsolatedMarginAccount</a></li><li data-type='method'><a href="module-Margin.html#getMarginOCOOrder">getMarginOCOOrder</a></li><li data-type='method'><a href="module-Margin.html#getMarginOCOOrders">getMarginOCOOrders</a></li><li data-type='method'><a href="module-Margin.html#getMarginOpenOCOOrders">getMarginOpenOCOOrders</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginAccountInfo">isolatedMarginAccountInfo</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginAccountLimit">isolatedMarginAccountLimit</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginAllSymbols">isolatedMarginAllSymbols</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginFee">isolatedMarginFee</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginSymbol">isolatedMarginSymbol</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginTier">isolatedMarginTier</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginTransfer">isolatedMarginTransfer</a></li><li data-type='method'><a href="module-Margin.html#isolatedMarginTransferHistory">isolatedMarginTransferHistory</a></li><li data-type='method'><a href="module-Margin.html#marginAccount">marginAccount</a></li><li data-type='method'><a href="module-Margin.html#marginAllAssets">marginAllAssets</a></li><li data-type='method'><a href="module-Margin.html#marginAllOrders">marginAllOrders</a></li><li data-type='method'><a href="module-Margin.html#marginAllPairs">marginAllPairs</a></li><li data-type='method'><a href="module-Margin.html#marginAsset">marginAsset</a></li><li data-type='method'><a href="module-Margin.html#marginBorrow">marginBorrow</a></li><li data-type='method'><a href="module-Margin.html#marginFee">marginFee</a></li><li data-type='method'><a href="module-Margin.html#marginForceLiquidationRecord">marginForceLiquidationRecord</a></li><li data-type='method'><a href="module-Margin.html#marginInterestHistory">marginInterestHistory</a></li><li data-type='method'><a href="module-Margin.html#marginInterestRateHistory">marginInterestRateHistory</a></li><li data-type='method'><a href="module-Margin.html#marginLoanRecord">marginLoanRecord</a></li><li data-type='method'><a href="module-Margin.html#marginMaxBorrowable">marginMaxBorrowable</a></li><li data-type='method'><a href="module-Margin.html#marginMaxTransferable">marginMaxTransferable</a></li><li data-type='method'><a href="module-Margin.html#marginMyTrades">marginMyTrades</a></li><li data-type='method'><a href="module-Margin.html#marginOCOOrder">marginOCOOrder</a></li><li data-type='method'><a href="module-Margin.html#marginOpenOrders">marginOpenOrders</a></li><li data-type='method'><a href="module-Margin.html#marginOrder">marginOrder</a></li><li data-type='method'><a href="module-Margin.html#marginPair">marginPair</a></li><li data-type='method'><a href="module-Margin.html#marginPairIndex">marginPairIndex</a></li><li data-type='method'><a href="module-Margin.html#marginRepay">marginRepay</a></li><li data-type='method'><a href="module-Margin.html#marginRepayRecord">marginRepayRecord</a></li><li data-type='method'><a href="module-Margin.html#marginTransfer">marginTransfer</a></li><li data-type='method'><a href="module-Margin.html#marginTransferHistory">marginTransferHistory</a></li><li data-type='method'><a href="module-Margin.html#newMarginOrder">newMarginOrder</a></li></ul></li><li class="accordion collapsed child" id=6999442><div class="accordion-heading child"><a href="module-Market.html">Market</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Market.html#aggTrades">aggTrades</a></li><li data-type='method'><a href="module-Market.html#avgPrice">avgPrice</a></li><li data-type='method'><a href="module-Market.html#bookTicker">bookTicker</a></li><li data-type='method'><a href="module-Market.html#depth">depth</a></li><li data-type='method'><a href="module-Market.html#exchangeInfo">exchangeInfo</a></li><li data-type='method'><a href="module-Market.html#historicalTrades">historicalTrades</a></li><li data-type='method'><a href="module-Market.html#klines">klines</a></li><li data-type='method'><a href="module-Market.html#ping">ping</a></li><li data-type='method'><a href="module-Market.html#ticker24hr">ticker24hr</a></li><li data-type='method'><a href="module-Market.html#tickerPrice">tickerPrice</a></li><li data-type='method'><a href="module-Market.html#time">time</a></li><li data-type='method'><a href="module-Market.html#trades">trades</a></li></ul></li><li class="accordion collapsed child" id=3054198><div class="accordion-heading child"><a href="module-Mining.html">Mining</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Mining.html#miningAccountList">miningAccountList</a></li><li data-type='method'><a href="module-Mining.html#miningAlgoList">miningAlgoList</a></li><li data-type='method'><a href="module-Mining.html#miningBonusList">miningBonusList</a></li><li data-type='method'><a href="module-Mining.html#miningCoinList">miningCoinList</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleCancel">miningHashrateResaleCancel</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleDetail">miningHashrateResaleDetail</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleList">miningHashrateResaleList</a></li><li data-type='method'><a href="module-Mining.html#miningHashrateResaleRequest">miningHashrateResaleRequest</a></li><li data-type='method'><a href="module-Mining.html#miningRevenueList">miningRevenueList</a></li><li data-type='method'><a href="module-Mining.html#miningStatisticList">miningStatisticList</a></li><li data-type='method'><a href="module-Mining.html#miningWorker">miningWorker</a></li><li data-type='method'><a href="module-Mining.html#miningWorkerList">miningWorkerList</a></li></ul></li><li class="accordion collapsed child" id=5258825><div class="accordion-heading child"><a href="module-NFT.html">NFT</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-NFT.html#nftAsset">nftAsset</a></li><li data-type='method'><a href="module-NFT.html#nftDepositHistory">nftDepositHistory</a></li><li data-type='method'><a href="module-NFT.html#nftTransactionHistory">nftTransactionHistory</a></li><li data-type='method'><a href="module-NFT.html#nftWithdrawHistory">nftWithdrawHistory</a></li></ul></li><li class="accordion collapsed child" id=5503107><div class="accordion-heading child"><a href="module-Pay.html">Pay</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Pay.html#payHistory">payHistory</a></li></ul></li><li class="accordion collapsed child" id=1959735><div class="accordion-heading child"><a href="module-Rebate.html">Rebate</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Rebate.html#rebateSpotHistory">rebateSpotHistory</a></li></ul></li><li class="accordion collapsed child" id=8118575><div class="accordion-heading child"><a href="module-Savings.html">Savings</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Savings.html#savingsAccount">savingsAccount</a></li><li data-type='method'><a href="module-Savings.html#savingsCustomizedPosition">savingsCustomizedPosition</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleProductPosition">savingsFlexibleProductPosition</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleProducts">savingsFlexibleProducts</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleRedeem">savingsFlexibleRedeem</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleUserLeftQuota">savingsFlexibleUserLeftQuota</a></li><li data-type='method'><a href="module-Savings.html#savingsFlexibleUserRedemptionQuota">savingsFlexibleUserRedemptionQuota</a></li><li data-type='method'><a href="module-Savings.html#savingsInterestHistory">savingsInterestHistory</a></li><li data-type='method'><a href="module-Savings.html#savingsProductList">savingsProductList</a></li><li data-type='method'><a href="module-Savings.html#savingsPurchaseCustomizedProject">savingsPurchaseCustomizedProject</a></li><li data-type='method'><a href="module-Savings.html#savingsPurchaseFlexibleProduct">savingsPurchaseFlexibleProduct</a></li><li data-type='method'><a href="module-Savings.html#savingsPurchaseRecord">savingsPurchaseRecord</a></li><li data-type='method'><a href="module-Savings.html#savingsRedemptionRecord">savingsRedemptionRecord</a></li></ul></li><li class="accordion collapsed child" id=4219036><div class="accordion-heading child"><a href="module-Stream.html">Stream</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Stream.html#closeIsolatedMarginListenKey">closeIsolatedMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#closeListenKey">closeListenKey</a></li><li data-type='method'><a href="module-Stream.html#closeMarginListenKey">closeMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#createIsolatedMarginListenKey">createIsolatedMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#createListenKey">createListenKey</a></li><li data-type='method'><a href="module-Stream.html#createMarginListenKey">createMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#renewIsolatedMarginListenKey">renewIsolatedMarginListenKey</a></li><li data-type='method'><a href="module-Stream.html#renewListenKey">renewListenKey</a></li><li data-type='method'><a href="module-Stream.html#renewMarginListenKey">renewMarginListenKey</a></li></ul></li><li class="accordion collapsed child" id=7030838><div class="accordion-heading child"><a href="module-SubAccount.html">SubAccount</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-SubAccount.html#managedSubAccountAssets">managedSubAccountAssets</a></li><li data-type='method'><a href="module-SubAccount.html#managedSubAccountDeposit">managedSubAccountDeposit</a></li><li data-type='method'><a href="module-SubAccount.html#managedSubAccountWithdraw">managedSubAccountWithdraw</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountApiAddIp">subAccountApiAddIp</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountApiDeleteIp">subAccountApiDeleteIp</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountApiGetIpRestriction">subAccountApiGetIpRestriction</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountApiToggleIpRestriction">subAccountApiToggleIpRestriction</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountAssets">subAccountAssets</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountCreation">subAccountCreation</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountDepositAddress">subAccountDepositAddress</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountDepositHistory">subAccountDepositHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountEnableFutures">subAccountEnableFutures</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountEnableMargin">subAccountEnableMargin</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAccount">subAccountFuturesAccount</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAccountSummary">subAccountFuturesAccountSummary</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAssetTransfer">subAccountFuturesAssetTransfer</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesAssetTransferHistory">subAccountFuturesAssetTransferHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesPositionRisk">subAccountFuturesPositionRisk</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountFuturesTransfer">subAccountFuturesTransfer</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountLeverageToken">subAccountLeverageToken</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountList">subAccountList</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountMarginAccount">subAccountMarginAccount</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountMarginAccountSummary">subAccountMarginAccountSummary</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountMarginTransfer">subAccountMarginTransfer</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountSpotSummary">subAccountSpotSummary</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountStatus">subAccountStatus</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferHistory">subAccountTransferHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferSubAccountHistory">subAccountTransferSubAccountHistory</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferToMaster">subAccountTransferToMaster</a></li><li data-type='method'><a href="module-SubAccount.html#subAccountTransferToSub">subAccountTransferToSub</a></li></ul></li><li class="accordion collapsed child" id=7718075><div class="accordion-heading child"><a href="module-Trade.html">Trade</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Trade.html#account">account</a></li><li data-type='method'><a href="module-Trade.html#allOrders">allOrders</a></li><li data-type='method'><a href="module-Trade.html#cancelOCOOrder">cancelOCOOrder</a></li><li data-type='method'><a href="module-Trade.html#cancelOpenOrders">cancelOpenOrders</a></li><li data-type='method'><a href="module-Trade.html#cancelOrder">cancelOrder</a></li><li data-type='method'><a href="module-Trade.html#getOCOOrder">getOCOOrder</a></li><li data-type='method'><a href="module-Trade.html#getOCOOrders">getOCOOrders</a></li><li data-type='method'><a href="module-Trade.html#getOpenOCOOrders">getOpenOCOOrders</a></li><li data-type='method'><a href="module-Trade.html#getOrder">getOrder</a></li><li data-type='method'><a href="module-Trade.html#myTrades">myTrades</a></li><li data-type='method'><a href="module-Trade.html#newOCOOrder">newOCOOrder</a></li><li data-type='method'><a href="module-Trade.html#newOrder">newOrder</a></li><li data-type='method'><a href="module-Trade.html#newOrderTest">newOrderTest</a></li><li data-type='method'><a href="module-Trade.html#openOrders">openOrders</a></li><li data-type='method'><a href="module-Trade.html#orderCount">orderCount</a></li></ul></li><li class="accordion collapsed child" id=3682869><div class="accordion-heading child"><a href="module-Wallet.html">Wallet</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Wallet.html#accountSnapshot">accountSnapshot</a></li><li data-type='method'><a href="module-Wallet.html#accountStatus">accountStatus</a></li><li data-type='method'><a href="module-Wallet.html#apiPermissions">apiPermissions</a></li><li data-type='method'><a href="module-Wallet.html#assetDetail">assetDetail</a></li><li data-type='method'><a href="module-Wallet.html#assetDevidendRecord">assetDevidendRecord</a></li><li data-type='method'><a href="module-Wallet.html#coinInfo">coinInfo</a></li><li data-type='method'><a href="module-Wallet.html#depositAddress">depositAddress</a></li><li data-type='method'><a href="module-Wallet.html#depositHistory">depositHistory</a></li><li data-type='method'><a href="module-Wallet.html#disableFastWithdraw">disableFastWithdraw</a></li><li data-type='method'><a href="module-Wallet.html#dustLog">dustLog</a></li><li data-type='method'><a href="module-Wallet.html#dustTransfer">dustTransfer</a></li><li data-type='method'><a href="module-Wallet.html#enableFastWithdraw">enableFastWithdraw</a></li><li data-type='method'><a href="module-Wallet.html#fundingWallet">fundingWallet</a></li><li data-type='method'><a href="module-Wallet.html#systemStatus">systemStatus</a></li><li data-type='method'><a href="module-Wallet.html#tradeFee">tradeFee</a></li><li data-type='method'><a href="module-Wallet.html#tradingStatus">tradingStatus</a></li><li data-type='method'><a href="module-Wallet.html#userUniversalTransfer">userUniversalTransfer</a></li><li data-type='method'><a href="module-Wallet.html#userUniversalTransferHistory">userUniversalTransferHistory</a></li><li data-type='method'><a href="module-Wallet.html#withdraw">withdraw</a></li><li data-type='method'><a href="module-Wallet.html#withdrawHistory">withdrawHistory</a></li></ul></li><li class="accordion collapsed child" id=8310766><div class="accordion-heading child"><a href="module-Websocket.html">Websocket</a><svg><use xlink:href="#down-icon"></use></svg></div><ul class='methods accordion-content'><li data-type='method'><a href="module-Websocket.html#aggTradeWS">aggTradeWS</a></li><li data-type='method'><a href="module-Websocket.html#bookTickerWS">bookTickerWS</a></li><li data-type='method'><a href="module-Websocket.html#combinedStreams">combinedStreams</a></li><li data-type='method'><a href="module-Websocket.html#diffBookDepth">diffBookDepth</a></li><li data-type='method'><a href="module-Websocket.html#klineWS">klineWS</a></li><li data-type='method'><a href="module-Websocket.html#miniTickerWS">miniTickerWS</a></li><li data-type='method'><a href="module-Websocket.html#partialBookDepth">partialBookDepth</a></li><li data-type='method'><a href="module-Websocket.html#tickerWS">tickerWS</a></li><li data-type='method'><a href="module-Websocket.html#tradeWS">tradeWS</a></li><li data-type='method'><a href="module-Websocket.html#unsubscribe">unsubscribe</a></li><li data-type='method'><a href="module-Websocket.html#userData">userData</a></li></ul></li></ul> </div></div>
+      
+        <div class="navbar-resize" id="navbar-resize">
+          <div class="resize-dots-container">
+            <div class="dots"></div>
+            <div class="dots"></div>
+            <div class="dots"></div>
+          </div> 
+        </div>
+      
+
+    </nav>
+    <div class="navbar-ham" id="navbar-ham">
+      <div>
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+      </div>
+    </div>
+
+    <div id="main" class="main-content">
+      
+      <h1 id='page-title' class="page-title">
+        Wallet
+      </h1>
+      
+
+      
+
+
+
+
+<section>
+
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>API wallet endpoints</p></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>superclass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line3">line 3</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="accountSnapshot">
+        <a href="#accountSnapshot">#</a>
+        <span class="type-signature"></span>accountSnapshot<span class="signature">(type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Daily Account Snapshot (USER_DATA)<br></p>
+<p>GET /sapi/v1/accountSnapshot<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data">https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>&quot;SPOT&quot;, &quot;MARGIN&quot;, &quot;FUTURES&quot;</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>min 5, max 30, default 5</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line55">line 55</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="accountStatus">
+        <a href="#accountStatus">#</a>
+        <span class="type-signature"></span>accountStatus<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Account Status (USER_DATA)<br></p>
+<p>GET /sapi/v1/account/status<br></p>
+<p>Fetch account status detail.<br>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line222">line 222</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="apiPermissions">
+        <a href="#apiPermissions">#</a>
+        <span class="type-signature"></span>apiPermissions<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>API Key Permission (USER_DATA)<br></p>
+<p>GET /sapi/v1/account/apiRestrictions<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#get-api-key-permission-user_data">https://binance-docs.github.io/apidocs/spot/en/#get-api-key-permission-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line446">line 446</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="assetDetail">
+        <a href="#assetDetail">#</a>
+        <span class="type-signature"></span>assetDetail<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Asset Detail (USER_DATA)<br></p>
+<p>GET /sapi/v1/asset/assetDetail<br></p>
+<p>Fetch details of assets supported on Binance.<br>
+Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.<br>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line331">line 331</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="assetDevidendRecord">
+        <a href="#assetDevidendRecord">#</a>
+        <span class="type-signature"></span>assetDevidendRecord<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Asset Dividend Record (USER_DATA)<br></p>
+<p>GET /sapi/v1/asset/assetDividend<br></p>
+<p>Query asset dividend record.<br>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data">https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Default 20, max 500</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line310">line 310</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="coinInfo">
+        <a href="#coinInfo">#</a>
+        <span class="type-signature"></span>coinInfo<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>All Coins' Information (USER_DATA)<br></p>
+<p>GET /sapi/v1/capital/config/getall<br></p>
+<p>Get information of coins (available for deposit and withdraw) for user.<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data">https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line33">line 33</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="depositAddress">
+        <a href="#depositAddress">#</a>
+        <span class="type-signature"></span>depositAddress<span class="signature">(coin, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Deposit Address (supporting network) (USER_DATA)<br></p>
+<p>GET /sapi/v1/capital/deposit/address<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data">https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>network</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line198">line 198</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="depositHistory">
+        <a href="#depositHistory">#</a>
+        <span class="type-signature"></span>depositHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Deposit History(supporting network) (USER_DATA)<br></p>
+<p>GET /sapi/v1/capital/deposit/hisrec<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data">https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>0:pending, 6:credited but cannot withdraw, 1:success</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Default: 90 days from current timestamp</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Default: present timestamp</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offest</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line153">line 153</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="disableFastWithdraw">
+        <a href="#disableFastWithdraw">#</a>
+        <span class="type-signature"></span>disableFastWithdraw<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Disable Fast Withdraw Switch (USER_DATA)<br></p>
+<p>GET /sapi/v1/account/disableFastWithdrawSwitch<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data">https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line77">line 77</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="dustLog">
+        <a href="#dustLog">#</a>
+        <span class="type-signature"></span>dustLog<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>DustLog (USER_DATA)<br></p>
+<p>GET /sapi/v1/asset/dribblet<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line261">line 261</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="dustTransfer">
+        <a href="#dustTransfer">#</a>
+        <span class="type-signature"></span>dustTransfer<span class="signature">(asset, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Dust Transfer (USER_DATA)<br></p>
+<p>POST /sapi/v1/asset/dust<br></p>
+<p>Convert dust assets to BNB.<br>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data">https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The asset being converted</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line281">line 281</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="enableFastWithdraw">
+        <a href="#enableFastWithdraw">#</a>
+        <span class="type-signature"></span>enableFastWithdraw<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Enable Fast Withdraw Switch (USER_DATA)<br></p>
+<p>GET /sapi/v1/account/enableFastWithdrawSwitch<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data">https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line95">line 95</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="fundingWallet">
+        <a href="#fundingWallet">#</a>
+        <span class="type-signature"></span>fundingWallet<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Funding Wallet (USER_DATA)<br></p>
+<p>POST /sapi/v1/asset/get-funding-asset<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#funding-wallet-user_data">https://binance-docs.github.io/apidocs/spot/en/#funding-wallet-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>needBtcValuation</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>true or false</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line428">line 428</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="systemStatus">
+        <a href="#systemStatus">#</a>
+        <span class="type-signature"></span>systemStatus<span class="signature">()</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>System Status (System)<br></p>
+<p>GET /sapi/v1/system/status<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system">https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line16">line 16</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="tradeFee">
+        <a href="#tradeFee">#</a>
+        <span class="type-signature"></span>tradeFee<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Trade Fee (USER_DATA)<br></p>
+<p>GET /sapi/v1/asset/tradeFee<br></p>
+<p>Fetch trade fee<br>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line352">line 352</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="tradingStatus">
+        <a href="#tradingStatus">#</a>
+        <span class="type-signature"></span>tradingStatus<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Account API Trading Status (USER_DATA)<br></p>
+<p>GET /sapi/v1/account/apiTradingStatus<br></p>
+<p>Fetch account api trading status detail.<br>
+<a href="https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data">https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line241">line 241</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="userUniversalTransfer">
+        <a href="#userUniversalTransfer">#</a>
+        <span class="type-signature"></span>userUniversalTransfer<span class="signature">(type, asset, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>User Universal Transfer (USER_DATA)<br></p>
+<p>POST /sapi/v1/asset/transfer<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#user-universal-transfer">https://binance-docs.github.io/apidocs/spot/en/#user-universal-transfer</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>asset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fromSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>must be sent when type are ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>toSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line375">line 375</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="userUniversalTransferHistory">
+        <a href="#userUniversalTransferHistory">#</a>
+        <span class="type-signature"></span>userUniversalTransferHistory<span class="signature">(type, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Query User Universal Transfer History (USER_DATA)<br></p>
+<p>GET /sapi/v1/asset/transfer<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#query-user-universal-transfer-history">https://binance-docs.github.io/apidocs/spot/en/#query-user-universal-transfer-history</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>current</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>size</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fromSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>must be sent when type are ISOLATEDMARGIN_MARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>toSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>must be sent when type are MARGIN_ISOLATEDMARGIN and ISOLATEDMARGIN_ISOLATEDMARGIN</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line406">line 406</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="withdraw">
+        <a href="#withdraw">#</a>
+        <span class="type-signature"></span>withdraw<span class="signature">(coin, address, amount, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Withdraw (USER_DATA)<br></p>
+<p>POST /sapi/v1/capital/withdraw/apply<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#withdraw-user_data">https://binance-docs.github.io/apidocs/spot/en/#withdraw-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>amount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>withdrawOrderId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>client id for withdraw</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>network</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>addressTag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Secondary address identifier for coins like XRP,XMR etc.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>transactionFeeFlag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>When making internal transfer, true for returning the fee to the destination account;
+<br>false for returning the fee back to the departure account. Default false.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Description of the address. Space in name should be encoded into %20.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>walletType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The wallet type for withdraw，0-spot wallet, 1-funding wallet. Default is spot wallet</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line123">line 123</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="withdrawHistory">
+        <a href="#withdrawHistory">#</a>
+        <span class="type-signature"></span>withdrawHistory<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+    </h4>
+
+    
+
+
+
+    <div class="description">
+        <p>Withdraw History(supporting network) (USER_DATA)<br></p>
+<p>GET /sapi/v1/capital/withdraw/history<br></p>
+<p><a href="https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data">https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data</a></p>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="method-member-container flex flex-col w-100 overflow-auto mt-20">
+        <strong>Parameters:</strong>
+        
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coin</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>withdrawOrderId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>status</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>0:Email Sent 1:Cancelled 2:Awaiting Approval 3:Rejected 4:Processing 5:Failure 6:Completed</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Default: 90 days from current timestamp</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endTime</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Default: present timestamp</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>offest</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>recvWindow</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value cannot be greater than 60000</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="details-item-container">
+            <dt class="tag-source">Source:</dt>
+            <dd class="tag-source"><ul class="dummy"><li>
+                <a href="wallet.js.html">wallet.js</a>, <a href="wallet.js.html#line178">line 178</a>
+            </li></ul></dd>
+        </div>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    </div>
+
+    <footer class="footer" id="footer">
+      
+    </footer>
+
+    <script src="scripts/third-party/prettify.js"></script>
+    <script src="scripts/third-party/lang-css.js"></script>
+    <script type="text/javascript" src="scripts/misc.js"></script>
+
+    <script>prettyPrint();</script>
+    <script src="scripts/linenumber.js"></script>
+    <script src="scripts/fix-code-block.js"></script>
+    <script src="scripts/fix-navbar.js"></script>
+    
+      <script src="scripts/search.js"></script>
+      <script src="scripts/third-party/fuse.js"></script>
+      <script>
+        var list = [{"title":"Blvt","link":"<a href=\"module-Blvt.html\">Blvt</a>"},{"title":"module:Blvt#blvtInfo","link":"<a href=\"module-Blvt.html#blvtInfo\">module:Blvt &rtrif; blvtInfo</a>"},{"title":"module:Blvt#blvtRedemptionRecord","link":"<a href=\"module-Blvt.html#blvtRedemptionRecord\">module:Blvt &rtrif; blvtRedemptionRecord</a>"},{"title":"module:Blvt#blvtSubscriptionRecord","link":"<a href=\"module-Blvt.html#blvtSubscriptionRecord\">module:Blvt &rtrif; blvtSubscriptionRecord</a>"},{"title":"module:Blvt#redeemBlvt","link":"<a href=\"module-Blvt.html#redeemBlvt\">module:Blvt &rtrif; redeemBlvt</a>"},{"title":"module:Blvt#subscribeBlvt","link":"<a href=\"module-Blvt.html#subscribeBlvt\">module:Blvt &rtrif; subscribeBlvt</a>"},{"title":"Bswap","link":"<a href=\"module-Bswap.html\">Bswap</a>"},{"title":"module:Bswap#bswapAddLiquidityPreview","link":"<a href=\"module-Bswap.html#bswapAddLiquidityPreview\">module:Bswap &rtrif; bswapAddLiquidityPreview</a>"},{"title":"module:Bswap#bswapGetPoolConfig","link":"<a href=\"module-Bswap.html#bswapGetPoolConfig\">module:Bswap &rtrif; bswapGetPoolConfig</a>"},{"title":"module:Bswap#bswapLiquidity","link":"<a href=\"module-Bswap.html#bswapLiquidity\">module:Bswap &rtrif; bswapLiquidity</a>"},{"title":"module:Bswap#bswapLiquidityAdd","link":"<a href=\"module-Bswap.html#bswapLiquidityAdd\">module:Bswap &rtrif; bswapLiquidityAdd</a>"},{"title":"module:Bswap#bswapLiquidityOperationRecord","link":"<a href=\"module-Bswap.html#bswapLiquidityOperationRecord\">module:Bswap &rtrif; bswapLiquidityOperationRecord</a>"},{"title":"module:Bswap#bswapLiquidityRemove","link":"<a href=\"module-Bswap.html#bswapLiquidityRemove\">module:Bswap &rtrif; bswapLiquidityRemove</a>"},{"title":"module:Bswap#bswapPools","link":"<a href=\"module-Bswap.html#bswapPools\">module:Bswap &rtrif; bswapPools</a>"},{"title":"module:Bswap#bswapRemoveLiquidityPreview","link":"<a href=\"module-Bswap.html#bswapRemoveLiquidityPreview\">module:Bswap &rtrif; bswapRemoveLiquidityPreview</a>"},{"title":"module:Bswap#bswapRequestQuote","link":"<a href=\"module-Bswap.html#bswapRequestQuote\">module:Bswap &rtrif; bswapRequestQuote</a>"},{"title":"module:Bswap#bswapSwap","link":"<a href=\"module-Bswap.html#bswapSwap\">module:Bswap &rtrif; bswapSwap</a>"},{"title":"module:Bswap#bswapSwapHistory","link":"<a href=\"module-Bswap.html#bswapSwapHistory\">module:Bswap &rtrif; bswapSwapHistory</a>"},{"title":"C2C","link":"<a href=\"module-C2C.html\">C2C</a>"},{"title":"module:C2C#c2cTradeHistory","link":"<a href=\"module-C2C.html#c2cTradeHistory\">module:C2C &rtrif; c2cTradeHistory</a>"},{"title":"Convert","link":"<a href=\"module-Convert.html\">Convert</a>"},{"title":"module:Convert#convertTradeHistory","link":"<a href=\"module-Convert.html#convertTradeHistory\">module:Convert &rtrif; convertTradeHistory</a>"},{"title":"Fiat","link":"<a href=\"module-Fiat.html\">Fiat</a>"},{"title":"module:Fiat#depositWithdrawalHistory","link":"<a href=\"module-Fiat.html#depositWithdrawalHistory\">module:Fiat &rtrif; depositWithdrawalHistory</a>"},{"title":"module:Fiat#paymentHistory","link":"<a href=\"module-Fiat.html#paymentHistory\">module:Fiat &rtrif; paymentHistory</a>"},{"title":"Futures","link":"<a href=\"module-Futures.html\">Futures</a>"},{"title":"module:Futures#futuresCollateralRepay","link":"<a href=\"module-Futures.html#futuresCollateralRepay\">module:Futures &rtrif; futuresCollateralRepay</a>"},{"title":"module:Futures#futuresCollateralRepayLimit","link":"<a href=\"module-Futures.html#futuresCollateralRepayLimit\">module:Futures &rtrif; futuresCollateralRepayLimit</a>"},{"title":"module:Futures#futuresCollateralRepayQuote","link":"<a href=\"module-Futures.html#futuresCollateralRepayQuote\">module:Futures &rtrif; futuresCollateralRepayQuote</a>"},{"title":"module:Futures#futuresCollateralRepayResult","link":"<a href=\"module-Futures.html#futuresCollateralRepayResult\">module:Futures &rtrif; futuresCollateralRepayResult</a>"},{"title":"module:Futures#futuresLoanAdjustCollateral","link":"<a href=\"module-Futures.html#futuresLoanAdjustCollateral\">module:Futures &rtrif; futuresLoanAdjustCollateral</a>"},{"title":"module:Futures#futuresLoanAdjustCollateralHistory","link":"<a href=\"module-Futures.html#futuresLoanAdjustCollateralHistory\">module:Futures &rtrif; futuresLoanAdjustCollateralHistory</a>"},{"title":"module:Futures#futuresLoanBorrow","link":"<a href=\"module-Futures.html#futuresLoanBorrow\">module:Futures &rtrif; futuresLoanBorrow</a>"},{"title":"module:Futures#futuresLoanBorrowHistory","link":"<a href=\"module-Futures.html#futuresLoanBorrowHistory\">module:Futures &rtrif; futuresLoanBorrowHistory</a>"},{"title":"module:Futures#futuresLoanCalcAdjustLevel","link":"<a href=\"module-Futures.html#futuresLoanCalcAdjustLevel\">module:Futures &rtrif; futuresLoanCalcAdjustLevel</a>"},{"title":"module:Futures#futuresLoanCalcMaxAdjustAmount","link":"<a href=\"module-Futures.html#futuresLoanCalcMaxAdjustAmount\">module:Futures &rtrif; futuresLoanCalcMaxAdjustAmount</a>"},{"title":"module:Futures#futuresLoanConfigs","link":"<a href=\"module-Futures.html#futuresLoanConfigs\">module:Futures &rtrif; futuresLoanConfigs</a>"},{"title":"module:Futures#futuresLoanInterestHistory","link":"<a href=\"module-Futures.html#futuresLoanInterestHistory\">module:Futures &rtrif; futuresLoanInterestHistory</a>"},{"title":"module:Futures#futuresLoanLiquidationHistory","link":"<a href=\"module-Futures.html#futuresLoanLiquidationHistory\">module:Futures &rtrif; futuresLoanLiquidationHistory</a>"},{"title":"module:Futures#futuresLoanRepay","link":"<a href=\"module-Futures.html#futuresLoanRepay\">module:Futures &rtrif; futuresLoanRepay</a>"},{"title":"module:Futures#futuresLoanRepayHistory","link":"<a href=\"module-Futures.html#futuresLoanRepayHistory\">module:Futures &rtrif; futuresLoanRepayHistory</a>"},{"title":"module:Futures#futuresLoanWallet","link":"<a href=\"module-Futures.html#futuresLoanWallet\">module:Futures &rtrif; futuresLoanWallet</a>"},{"title":"module:Futures#futuresTransfer","link":"<a href=\"module-Futures.html#futuresTransfer\">module:Futures &rtrif; futuresTransfer</a>"},{"title":"module:Futures#futuresTransferHistory","link":"<a href=\"module-Futures.html#futuresTransferHistory\">module:Futures &rtrif; futuresTransferHistory</a>"},{"title":"Loan","link":"<a href=\"module-Loan.html\">Loan</a>"},{"title":"module:Loan#loanHistory","link":"<a href=\"module-Loan.html#loanHistory\">module:Loan &rtrif; loanHistory</a>"},{"title":"Margin","link":"<a href=\"module-Margin.html\">Margin</a>"},{"title":"module:Margin#cancelAllOpenMarginOrder","link":"<a href=\"module-Margin.html#cancelAllOpenMarginOrder\">module:Margin &rtrif; cancelAllOpenMarginOrder</a>"},{"title":"module:Margin#cancelMarginOCOOrder","link":"<a href=\"module-Margin.html#cancelMarginOCOOrder\">module:Margin &rtrif; cancelMarginOCOOrder</a>"},{"title":"module:Margin#cancelMarginOrder","link":"<a href=\"module-Margin.html#cancelMarginOrder\">module:Margin &rtrif; cancelMarginOrder</a>"},{"title":"module:Margin#disableIsolatedMarginAccount","link":"<a href=\"module-Margin.html#disableIsolatedMarginAccount\">module:Margin &rtrif; disableIsolatedMarginAccount</a>"},{"title":"module:Margin#enableIsolatedMarginAccount","link":"<a href=\"module-Margin.html#enableIsolatedMarginAccount\">module:Margin &rtrif; enableIsolatedMarginAccount</a>"},{"title":"module:Margin#getMarginOCOOrder","link":"<a href=\"module-Margin.html#getMarginOCOOrder\">module:Margin &rtrif; getMarginOCOOrder</a>"},{"title":"module:Margin#getMarginOCOOrders","link":"<a href=\"module-Margin.html#getMarginOCOOrders\">module:Margin &rtrif; getMarginOCOOrders</a>"},{"title":"module:Margin#getMarginOpenOCOOrders","link":"<a href=\"module-Margin.html#getMarginOpenOCOOrders\">module:Margin &rtrif; getMarginOpenOCOOrders</a>"},{"title":"module:Margin#isolatedMarginAccountInfo","link":"<a href=\"module-Margin.html#isolatedMarginAccountInfo\">module:Margin &rtrif; isolatedMarginAccountInfo</a>"},{"title":"module:Margin#isolatedMarginAccountLimit","link":"<a href=\"module-Margin.html#isolatedMarginAccountLimit\">module:Margin &rtrif; isolatedMarginAccountLimit</a>"},{"title":"module:Margin#isolatedMarginAllSymbols","link":"<a href=\"module-Margin.html#isolatedMarginAllSymbols\">module:Margin &rtrif; isolatedMarginAllSymbols</a>"},{"title":"module:Margin#isolatedMarginFee","link":"<a href=\"module-Margin.html#isolatedMarginFee\">module:Margin &rtrif; isolatedMarginFee</a>"},{"title":"module:Margin#isolatedMarginSymbol","link":"<a href=\"module-Margin.html#isolatedMarginSymbol\">module:Margin &rtrif; isolatedMarginSymbol</a>"},{"title":"module:Margin#isolatedMarginTier","link":"<a href=\"module-Margin.html#isolatedMarginTier\">module:Margin &rtrif; isolatedMarginTier</a>"},{"title":"module:Margin#isolatedMarginTransfer","link":"<a href=\"module-Margin.html#isolatedMarginTransfer\">module:Margin &rtrif; isolatedMarginTransfer</a>"},{"title":"module:Margin#isolatedMarginTransferHistory","link":"<a href=\"module-Margin.html#isolatedMarginTransferHistory\">module:Margin &rtrif; isolatedMarginTransferHistory</a>"},{"title":"module:Margin#marginAccount","link":"<a href=\"module-Margin.html#marginAccount\">module:Margin &rtrif; marginAccount</a>"},{"title":"module:Margin#marginAllAssets","link":"<a href=\"module-Margin.html#marginAllAssets\">module:Margin &rtrif; marginAllAssets</a>"},{"title":"module:Margin#marginAllOrders","link":"<a href=\"module-Margin.html#marginAllOrders\">module:Margin &rtrif; marginAllOrders</a>"},{"title":"module:Margin#marginAllPairs","link":"<a href=\"module-Margin.html#marginAllPairs\">module:Margin &rtrif; marginAllPairs</a>"},{"title":"module:Margin#marginAsset","link":"<a href=\"module-Margin.html#marginAsset\">module:Margin &rtrif; marginAsset</a>"},{"title":"module:Margin#marginBorrow","link":"<a href=\"module-Margin.html#marginBorrow\">module:Margin &rtrif; marginBorrow</a>"},{"title":"module:Margin#marginFee","link":"<a href=\"module-Margin.html#marginFee\">module:Margin &rtrif; marginFee</a>"},{"title":"module:Margin#marginForceLiquidationRecord","link":"<a href=\"module-Margin.html#marginForceLiquidationRecord\">module:Margin &rtrif; marginForceLiquidationRecord</a>"},{"title":"module:Margin#marginInterestHistory","link":"<a href=\"module-Margin.html#marginInterestHistory\">module:Margin &rtrif; marginInterestHistory</a>"},{"title":"module:Margin#marginInterestRateHistory","link":"<a href=\"module-Margin.html#marginInterestRateHistory\">module:Margin &rtrif; marginInterestRateHistory</a>"},{"title":"module:Margin#marginLoanRecord","link":"<a href=\"module-Margin.html#marginLoanRecord\">module:Margin &rtrif; marginLoanRecord</a>"},{"title":"module:Margin#marginMaxBorrowable","link":"<a href=\"module-Margin.html#marginMaxBorrowable\">module:Margin &rtrif; marginMaxBorrowable</a>"},{"title":"module:Margin#marginMaxTransferable","link":"<a href=\"module-Margin.html#marginMaxTransferable\">module:Margin &rtrif; marginMaxTransferable</a>"},{"title":"module:Margin#marginMyTrades","link":"<a href=\"module-Margin.html#marginMyTrades\">module:Margin &rtrif; marginMyTrades</a>"},{"title":"module:Margin#marginOCOOrder","link":"<a href=\"module-Margin.html#marginOCOOrder\">module:Margin &rtrif; marginOCOOrder</a>"},{"title":"module:Margin#marginOpenOrders","link":"<a href=\"module-Margin.html#marginOpenOrders\">module:Margin &rtrif; marginOpenOrders</a>"},{"title":"module:Margin#marginOrder","link":"<a href=\"module-Margin.html#marginOrder\">module:Margin &rtrif; marginOrder</a>"},{"title":"module:Margin#marginPair","link":"<a href=\"module-Margin.html#marginPair\">module:Margin &rtrif; marginPair</a>"},{"title":"module:Margin#marginPairIndex","link":"<a href=\"module-Margin.html#marginPairIndex\">module:Margin &rtrif; marginPairIndex</a>"},{"title":"module:Margin#marginRepay","link":"<a href=\"module-Margin.html#marginRepay\">module:Margin &rtrif; marginRepay</a>"},{"title":"module:Margin#marginRepayRecord","link":"<a href=\"module-Margin.html#marginRepayRecord\">module:Margin &rtrif; marginRepayRecord</a>"},{"title":"module:Margin#marginTransfer","link":"<a href=\"module-Margin.html#marginTransfer\">module:Margin &rtrif; marginTransfer</a>"},{"title":"module:Margin#marginTransferHistory","link":"<a href=\"module-Margin.html#marginTransferHistory\">module:Margin &rtrif; marginTransferHistory</a>"},{"title":"module:Margin#newMarginOrder","link":"<a href=\"module-Margin.html#newMarginOrder\">module:Margin &rtrif; newMarginOrder</a>"},{"title":"Market","link":"<a href=\"module-Market.html\">Market</a>"},{"title":"module:Market#aggTrades","link":"<a href=\"module-Market.html#aggTrades\">module:Market &rtrif; aggTrades</a>"},{"title":"module:Market#avgPrice","link":"<a href=\"module-Market.html#avgPrice\">module:Market &rtrif; avgPrice</a>"},{"title":"module:Market#bookTicker","link":"<a href=\"module-Market.html#bookTicker\">module:Market &rtrif; bookTicker</a>"},{"title":"module:Market#depth","link":"<a href=\"module-Market.html#depth\">module:Market &rtrif; depth</a>"},{"title":"module:Market#exchangeInfo","link":"<a href=\"module-Market.html#exchangeInfo\">module:Market &rtrif; exchangeInfo</a>"},{"title":"module:Market#historicalTrades","link":"<a href=\"module-Market.html#historicalTrades\">module:Market &rtrif; historicalTrades</a>"},{"title":"module:Market#klines","link":"<a href=\"module-Market.html#klines\">module:Market &rtrif; klines</a>"},{"title":"module:Market#ping","link":"<a href=\"module-Market.html#ping\">module:Market &rtrif; ping</a>"},{"title":"module:Market#ticker24hr","link":"<a href=\"module-Market.html#ticker24hr\">module:Market &rtrif; ticker24hr</a>"},{"title":"module:Market#tickerPrice","link":"<a href=\"module-Market.html#tickerPrice\">module:Market &rtrif; tickerPrice</a>"},{"title":"module:Market#time","link":"<a href=\"module-Market.html#time\">module:Market &rtrif; time</a>"},{"title":"module:Market#trades","link":"<a href=\"module-Market.html#trades\">module:Market &rtrif; trades</a>"},{"title":"Mining","link":"<a href=\"module-Mining.html\">Mining</a>"},{"title":"module:Mining#miningAccountList","link":"<a href=\"module-Mining.html#miningAccountList\">module:Mining &rtrif; miningAccountList</a>"},{"title":"module:Mining#miningAlgoList","link":"<a href=\"module-Mining.html#miningAlgoList\">module:Mining &rtrif; miningAlgoList</a>"},{"title":"module:Mining#miningBonusList","link":"<a href=\"module-Mining.html#miningBonusList\">module:Mining &rtrif; miningBonusList</a>"},{"title":"module:Mining#miningCoinList","link":"<a href=\"module-Mining.html#miningCoinList\">module:Mining &rtrif; miningCoinList</a>"},{"title":"module:Mining#miningHashrateResaleCancel","link":"<a href=\"module-Mining.html#miningHashrateResaleCancel\">module:Mining &rtrif; miningHashrateResaleCancel</a>"},{"title":"module:Mining#miningHashrateResaleDetail","link":"<a href=\"module-Mining.html#miningHashrateResaleDetail\">module:Mining &rtrif; miningHashrateResaleDetail</a>"},{"title":"module:Mining#miningHashrateResaleList","link":"<a href=\"module-Mining.html#miningHashrateResaleList\">module:Mining &rtrif; miningHashrateResaleList</a>"},{"title":"module:Mining#miningHashrateResaleRequest","link":"<a href=\"module-Mining.html#miningHashrateResaleRequest\">module:Mining &rtrif; miningHashrateResaleRequest</a>"},{"title":"module:Mining#miningRevenueList","link":"<a href=\"module-Mining.html#miningRevenueList\">module:Mining &rtrif; miningRevenueList</a>"},{"title":"module:Mining#miningStatisticList","link":"<a href=\"module-Mining.html#miningStatisticList\">module:Mining &rtrif; miningStatisticList</a>"},{"title":"module:Mining#miningWorker","link":"<a href=\"module-Mining.html#miningWorker\">module:Mining &rtrif; miningWorker</a>"},{"title":"module:Mining#miningWorkerList","link":"<a href=\"module-Mining.html#miningWorkerList\">module:Mining &rtrif; miningWorkerList</a>"},{"title":"NFT","link":"<a href=\"module-NFT.html\">NFT</a>"},{"title":"module:NFT#nftAsset","link":"<a href=\"module-NFT.html#nftAsset\">module:NFT &rtrif; nftAsset</a>"},{"title":"module:NFT#nftDepositHistory","link":"<a href=\"module-NFT.html#nftDepositHistory\">module:NFT &rtrif; nftDepositHistory</a>"},{"title":"module:NFT#nftTransactionHistory","link":"<a href=\"module-NFT.html#nftTransactionHistory\">module:NFT &rtrif; nftTransactionHistory</a>"},{"title":"module:NFT#nftWithdrawHistory","link":"<a href=\"module-NFT.html#nftWithdrawHistory\">module:NFT &rtrif; nftWithdrawHistory</a>"},{"title":"Pay","link":"<a href=\"module-Pay.html\">Pay</a>"},{"title":"module:Pay#payHistory","link":"<a href=\"module-Pay.html#payHistory\">module:Pay &rtrif; payHistory</a>"},{"title":"Rebate","link":"<a href=\"module-Rebate.html\">Rebate</a>"},{"title":"module:Rebate#rebateSpotHistory","link":"<a href=\"module-Rebate.html#rebateSpotHistory\">module:Rebate &rtrif; rebateSpotHistory</a>"},{"title":"Savings","link":"<a href=\"module-Savings.html\">Savings</a>"},{"title":"module:Savings#savingsAccount","link":"<a href=\"module-Savings.html#savingsAccount\">module:Savings &rtrif; savingsAccount</a>"},{"title":"module:Savings#savingsCustomizedPosition","link":"<a href=\"module-Savings.html#savingsCustomizedPosition\">module:Savings &rtrif; savingsCustomizedPosition</a>"},{"title":"module:Savings#savingsFlexibleProductPosition","link":"<a href=\"module-Savings.html#savingsFlexibleProductPosition\">module:Savings &rtrif; savingsFlexibleProductPosition</a>"},{"title":"module:Savings#savingsFlexibleProducts","link":"<a href=\"module-Savings.html#savingsFlexibleProducts\">module:Savings &rtrif; savingsFlexibleProducts</a>"},{"title":"module:Savings#savingsFlexibleRedeem","link":"<a href=\"module-Savings.html#savingsFlexibleRedeem\">module:Savings &rtrif; savingsFlexibleRedeem</a>"},{"title":"module:Savings#savingsFlexibleUserLeftQuota","link":"<a href=\"module-Savings.html#savingsFlexibleUserLeftQuota\">module:Savings &rtrif; savingsFlexibleUserLeftQuota</a>"},{"title":"module:Savings#savingsFlexibleUserRedemptionQuota","link":"<a href=\"module-Savings.html#savingsFlexibleUserRedemptionQuota\">module:Savings &rtrif; savingsFlexibleUserRedemptionQuota</a>"},{"title":"module:Savings#savingsInterestHistory","link":"<a href=\"module-Savings.html#savingsInterestHistory\">module:Savings &rtrif; savingsInterestHistory</a>"},{"title":"module:Savings#savingsProductList","link":"<a href=\"module-Savings.html#savingsProductList\">module:Savings &rtrif; savingsProductList</a>"},{"title":"module:Savings#savingsPurchaseCustomizedProject","link":"<a href=\"module-Savings.html#savingsPurchaseCustomizedProject\">module:Savings &rtrif; savingsPurchaseCustomizedProject</a>"},{"title":"module:Savings#savingsPurchaseFlexibleProduct","link":"<a href=\"module-Savings.html#savingsPurchaseFlexibleProduct\">module:Savings &rtrif; savingsPurchaseFlexibleProduct</a>"},{"title":"module:Savings#savingsPurchaseRecord","link":"<a href=\"module-Savings.html#savingsPurchaseRecord\">module:Savings &rtrif; savingsPurchaseRecord</a>"},{"title":"module:Savings#savingsRedemptionRecord","link":"<a href=\"module-Savings.html#savingsRedemptionRecord\">module:Savings &rtrif; savingsRedemptionRecord</a>"},{"title":"Stream","link":"<a href=\"module-Stream.html\">Stream</a>"},{"title":"module:Stream#closeIsolatedMarginListenKey","link":"<a href=\"module-Stream.html#closeIsolatedMarginListenKey\">module:Stream &rtrif; closeIsolatedMarginListenKey</a>"},{"title":"module:Stream#closeListenKey","link":"<a href=\"module-Stream.html#closeListenKey\">module:Stream &rtrif; closeListenKey</a>"},{"title":"module:Stream#closeMarginListenKey","link":"<a href=\"module-Stream.html#closeMarginListenKey\">module:Stream &rtrif; closeMarginListenKey</a>"},{"title":"module:Stream#createIsolatedMarginListenKey","link":"<a href=\"module-Stream.html#createIsolatedMarginListenKey\">module:Stream &rtrif; createIsolatedMarginListenKey</a>"},{"title":"module:Stream#createListenKey","link":"<a href=\"module-Stream.html#createListenKey\">module:Stream &rtrif; createListenKey</a>"},{"title":"module:Stream#createMarginListenKey","link":"<a href=\"module-Stream.html#createMarginListenKey\">module:Stream &rtrif; createMarginListenKey</a>"},{"title":"module:Stream#renewIsolatedMarginListenKey","link":"<a href=\"module-Stream.html#renewIsolatedMarginListenKey\">module:Stream &rtrif; renewIsolatedMarginListenKey</a>"},{"title":"module:Stream#renewListenKey","link":"<a href=\"module-Stream.html#renewListenKey\">module:Stream &rtrif; renewListenKey</a>"},{"title":"module:Stream#renewMarginListenKey","link":"<a href=\"module-Stream.html#renewMarginListenKey\">module:Stream &rtrif; renewMarginListenKey</a>"},{"title":"SubAccount","link":"<a href=\"module-SubAccount.html\">SubAccount</a>"},{"title":"module:SubAccount#managedSubAccountAssets","link":"<a href=\"module-SubAccount.html#managedSubAccountAssets\">module:SubAccount &rtrif; managedSubAccountAssets</a>"},{"title":"module:SubAccount#managedSubAccountDeposit","link":"<a href=\"module-SubAccount.html#managedSubAccountDeposit\">module:SubAccount &rtrif; managedSubAccountDeposit</a>"},{"title":"module:SubAccount#managedSubAccountWithdraw","link":"<a href=\"module-SubAccount.html#managedSubAccountWithdraw\">module:SubAccount &rtrif; managedSubAccountWithdraw</a>"},{"title":"module:SubAccount#subAccountApiAddIp","link":"<a href=\"module-SubAccount.html#subAccountApiAddIp\">module:SubAccount &rtrif; subAccountApiAddIp</a>"},{"title":"module:SubAccount#subAccountApiDeleteIp","link":"<a href=\"module-SubAccount.html#subAccountApiDeleteIp\">module:SubAccount &rtrif; subAccountApiDeleteIp</a>"},{"title":"module:SubAccount#subAccountApiGetIpRestriction","link":"<a href=\"module-SubAccount.html#subAccountApiGetIpRestriction\">module:SubAccount &rtrif; subAccountApiGetIpRestriction</a>"},{"title":"module:SubAccount#subAccountApiToggleIpRestriction","link":"<a href=\"module-SubAccount.html#subAccountApiToggleIpRestriction\">module:SubAccount &rtrif; subAccountApiToggleIpRestriction</a>"},{"title":"module:SubAccount#subAccountAssets","link":"<a href=\"module-SubAccount.html#subAccountAssets\">module:SubAccount &rtrif; subAccountAssets</a>"},{"title":"module:SubAccount#subAccountCreation","link":"<a href=\"module-SubAccount.html#subAccountCreation\">module:SubAccount &rtrif; subAccountCreation</a>"},{"title":"module:SubAccount#subAccountDepositAddress","link":"<a href=\"module-SubAccount.html#subAccountDepositAddress\">module:SubAccount &rtrif; subAccountDepositAddress</a>"},{"title":"module:SubAccount#subAccountDepositHistory","link":"<a href=\"module-SubAccount.html#subAccountDepositHistory\">module:SubAccount &rtrif; subAccountDepositHistory</a>"},{"title":"module:SubAccount#subAccountEnableFutures","link":"<a href=\"module-SubAccount.html#subAccountEnableFutures\">module:SubAccount &rtrif; subAccountEnableFutures</a>"},{"title":"module:SubAccount#subAccountEnableMargin","link":"<a href=\"module-SubAccount.html#subAccountEnableMargin\">module:SubAccount &rtrif; subAccountEnableMargin</a>"},{"title":"module:SubAccount#subAccountFuturesAccount","link":"<a href=\"module-SubAccount.html#subAccountFuturesAccount\">module:SubAccount &rtrif; subAccountFuturesAccount</a>"},{"title":"module:SubAccount#subAccountFuturesAccountSummary","link":"<a href=\"module-SubAccount.html#subAccountFuturesAccountSummary\">module:SubAccount &rtrif; subAccountFuturesAccountSummary</a>"},{"title":"module:SubAccount#subAccountFuturesAssetTransfer","link":"<a href=\"module-SubAccount.html#subAccountFuturesAssetTransfer\">module:SubAccount &rtrif; subAccountFuturesAssetTransfer</a>"},{"title":"module:SubAccount#subAccountFuturesAssetTransferHistory","link":"<a href=\"module-SubAccount.html#subAccountFuturesAssetTransferHistory\">module:SubAccount &rtrif; subAccountFuturesAssetTransferHistory</a>"},{"title":"module:SubAccount#subAccountFuturesPositionRisk","link":"<a href=\"module-SubAccount.html#subAccountFuturesPositionRisk\">module:SubAccount &rtrif; subAccountFuturesPositionRisk</a>"},{"title":"module:SubAccount#subAccountFuturesTransfer","link":"<a href=\"module-SubAccount.html#subAccountFuturesTransfer\">module:SubAccount &rtrif; subAccountFuturesTransfer</a>"},{"title":"module:SubAccount#subAccountLeverageToken","link":"<a href=\"module-SubAccount.html#subAccountLeverageToken\">module:SubAccount &rtrif; subAccountLeverageToken</a>"},{"title":"module:SubAccount#subAccountList","link":"<a href=\"module-SubAccount.html#subAccountList\">module:SubAccount &rtrif; subAccountList</a>"},{"title":"module:SubAccount#subAccountMarginAccount","link":"<a href=\"module-SubAccount.html#subAccountMarginAccount\">module:SubAccount &rtrif; subAccountMarginAccount</a>"},{"title":"module:SubAccount#subAccountMarginAccountSummary","link":"<a href=\"module-SubAccount.html#subAccountMarginAccountSummary\">module:SubAccount &rtrif; subAccountMarginAccountSummary</a>"},{"title":"module:SubAccount#subAccountMarginTransfer","link":"<a href=\"module-SubAccount.html#subAccountMarginTransfer\">module:SubAccount &rtrif; subAccountMarginTransfer</a>"},{"title":"module:SubAccount#subAccountSpotSummary","link":"<a href=\"module-SubAccount.html#subAccountSpotSummary\">module:SubAccount &rtrif; subAccountSpotSummary</a>"},{"title":"module:SubAccount#subAccountStatus","link":"<a href=\"module-SubAccount.html#subAccountStatus\">module:SubAccount &rtrif; subAccountStatus</a>"},{"title":"module:SubAccount#subAccountTransferHistory","link":"<a href=\"module-SubAccount.html#subAccountTransferHistory\">module:SubAccount &rtrif; subAccountTransferHistory</a>"},{"title":"module:SubAccount#subAccountTransferSubAccountHistory","link":"<a href=\"module-SubAccount.html#subAccountTransferSubAccountHistory\">module:SubAccount &rtrif; subAccountTransferSubAccountHistory</a>"},{"title":"module:SubAccount#subAccountTransferToMaster","link":"<a href=\"module-SubAccount.html#subAccountTransferToMaster\">module:SubAccount &rtrif; subAccountTransferToMaster</a>"},{"title":"module:SubAccount#subAccountTransferToSub","link":"<a href=\"module-SubAccount.html#subAccountTransferToSub\">module:SubAccount &rtrif; subAccountTransferToSub</a>"},{"title":"Trade","link":"<a href=\"module-Trade.html\">Trade</a>"},{"title":"module:Trade#account","link":"<a href=\"module-Trade.html#account\">module:Trade &rtrif; account</a>"},{"title":"module:Trade#allOrders","link":"<a href=\"module-Trade.html#allOrders\">module:Trade &rtrif; allOrders</a>"},{"title":"module:Trade#cancelOCOOrder","link":"<a href=\"module-Trade.html#cancelOCOOrder\">module:Trade &rtrif; cancelOCOOrder</a>"},{"title":"module:Trade#cancelOpenOrders","link":"<a href=\"module-Trade.html#cancelOpenOrders\">module:Trade &rtrif; cancelOpenOrders</a>"},{"title":"module:Trade#cancelOrder","link":"<a href=\"module-Trade.html#cancelOrder\">module:Trade &rtrif; cancelOrder</a>"},{"title":"module:Trade#getOCOOrder","link":"<a href=\"module-Trade.html#getOCOOrder\">module:Trade &rtrif; getOCOOrder</a>"},{"title":"module:Trade#getOCOOrders","link":"<a href=\"module-Trade.html#getOCOOrders\">module:Trade &rtrif; getOCOOrders</a>"},{"title":"module:Trade#getOpenOCOOrders","link":"<a href=\"module-Trade.html#getOpenOCOOrders\">module:Trade &rtrif; getOpenOCOOrders</a>"},{"title":"module:Trade#getOrder","link":"<a href=\"module-Trade.html#getOrder\">module:Trade &rtrif; getOrder</a>"},{"title":"module:Trade#myTrades","link":"<a href=\"module-Trade.html#myTrades\">module:Trade &rtrif; myTrades</a>"},{"title":"module:Trade#newOCOOrder","link":"<a href=\"module-Trade.html#newOCOOrder\">module:Trade &rtrif; newOCOOrder</a>"},{"title":"module:Trade#newOrder","link":"<a href=\"module-Trade.html#newOrder\">module:Trade &rtrif; newOrder</a>"},{"title":"module:Trade#newOrderTest","link":"<a href=\"module-Trade.html#newOrderTest\">module:Trade &rtrif; newOrderTest</a>"},{"title":"module:Trade#openOrders","link":"<a href=\"module-Trade.html#openOrders\">module:Trade &rtrif; openOrders</a>"},{"title":"module:Trade#orderCount","link":"<a href=\"module-Trade.html#orderCount\">module:Trade &rtrif; orderCount</a>"},{"title":"Wallet","link":"<a href=\"module-Wallet.html\">Wallet</a>"},{"title":"module:Wallet#accountSnapshot","link":"<a href=\"module-Wallet.html#accountSnapshot\">module:Wallet &rtrif; accountSnapshot</a>"},{"title":"module:Wallet#accountStatus","link":"<a href=\"module-Wallet.html#accountStatus\">module:Wallet &rtrif; accountStatus</a>"},{"title":"module:Wallet#apiPermissions","link":"<a href=\"module-Wallet.html#apiPermissions\">module:Wallet &rtrif; apiPermissions</a>"},{"title":"module:Wallet#assetDetail","link":"<a href=\"module-Wallet.html#assetDetail\">module:Wallet &rtrif; assetDetail</a>"},{"title":"module:Wallet#assetDevidendRecord","link":"<a href=\"module-Wallet.html#assetDevidendRecord\">module:Wallet &rtrif; assetDevidendRecord</a>"},{"title":"module:Wallet#coinInfo","link":"<a href=\"module-Wallet.html#coinInfo\">module:Wallet &rtrif; coinInfo</a>"},{"title":"module:Wallet#depositAddress","link":"<a href=\"module-Wallet.html#depositAddress\">module:Wallet &rtrif; depositAddress</a>"},{"title":"module:Wallet#depositHistory","link":"<a href=\"module-Wallet.html#depositHistory\">module:Wallet &rtrif; depositHistory</a>"},{"title":"module:Wallet#disableFastWithdraw","link":"<a href=\"module-Wallet.html#disableFastWithdraw\">module:Wallet &rtrif; disableFastWithdraw</a>"},{"title":"module:Wallet#dustLog","link":"<a href=\"module-Wallet.html#dustLog\">module:Wallet &rtrif; dustLog</a>"},{"title":"module:Wallet#dustTransfer","link":"<a href=\"module-Wallet.html#dustTransfer\">module:Wallet &rtrif; dustTransfer</a>"},{"title":"module:Wallet#enableFastWithdraw","link":"<a href=\"module-Wallet.html#enableFastWithdraw\">module:Wallet &rtrif; enableFastWithdraw</a>"},{"title":"module:Wallet#fundingWallet","link":"<a href=\"module-Wallet.html#fundingWallet\">module:Wallet &rtrif; fundingWallet</a>"},{"title":"module:Wallet#systemStatus","link":"<a href=\"module-Wallet.html#systemStatus\">module:Wallet &rtrif; systemStatus</a>"},{"title":"module:Wallet#tradeFee","link":"<a href=\"module-Wallet.html#tradeFee\">module:Wallet &rtrif; tradeFee</a>"},{"title":"module:Wallet#tradingStatus","link":"<a href=\"module-Wallet.html#tradingStatus\">module:Wallet &rtrif; tradingStatus</a>"},{"title":"module:Wallet#userUniversalTransfer","link":"<a href=\"module-Wallet.html#userUniversalTransfer\">module:Wallet &rtrif; userUniversalTransfer</a>"},{"title":"module:Wallet#userUniversalTransferHistory","link":"<a href=\"module-Wallet.html#userUniversalTransferHistory\">module:Wallet &rtrif; userUniversalTransferHistory</a>"},{"title":"module:Wallet#withdraw","link":"<a href=\"module-Wallet.html#withdraw\">module:Wallet &rtrif; withdraw</a>"},{"title":"module:Wallet#withdrawHistory","link":"<a href=\"module-Wallet.html#withdrawHistory\">module:Wallet &rtrif; withdrawHistory</a>"},{"title":"Websocket","link":"<a href=\"module-Websocket.html\">Websocket</a>"},{"title":"module:Websocket#aggTradeWS","link":"<a href=\"module-Websocket.html#aggTradeWS\">module:Websocket &rtrif; aggTradeWS</a>"},{"title":"module:Websocket#bookTickerWS","link":"<a href=\"module-Websocket.html#bookTickerWS\">module:Websocket &rtrif; bookTickerWS</a>"},{"title":"module:Websocket#combinedStreams","link":"<a href=\"module-Websocket.html#combinedStreams\">module:Websocket &rtrif; combinedStreams</a>"},{"title":"module:Websocket#diffBookDepth","link":"<a href=\"module-Websocket.html#diffBookDepth\">module:Websocket &rtrif; diffBookDepth</a>"},{"title":"module:Websocket#klineWS","link":"<a href=\"module-Websocket.html#klineWS\">module:Websocket &rtrif; klineWS</a>"},{"title":"module:Websocket#miniTickerWS","link":"<a href=\"module-Websocket.html#miniTickerWS\">module:Websocket &rtrif; miniTickerWS</a>"},{"title":"module:Websocket#partialBookDepth","link":"<a href=\"module-Websocket.html#partialBookDepth\">module:Websocket &rtrif; partialBookDepth</a>"},{"title":"module:Websocket#tickerWS","link":"<a href=\"module-Websocket.html#tickerWS\">module:Websocket &rtrif; tickerWS</a>"},{"title":"module:Websocket#tradeWS","link":"<a href=\"module-Websocket.html#tradeWS\">module:Websocket &rtrif; tradeWS</a>"},{"title":"module:Websocket#unsubscribe","link":"<a href=\"module-Websocket.html#unsubscribe\">module:Websocket &rtrif; unsubscribe</a>"},{"title":"module:Websocket#userData","link":"<a href=\"module-Websocket.html#userData\">module:Websocket &rtrif; userData</a>"}];
+        var options = 
+          setupSearch(list, options)
+      </script>
+    
+
+    
+
+    
+      <script src="scripts/resize.js"></script>
+      <script type="text/javascript">
+        var option = {"min":"320","max":"600"}
+        setupResizeOptions(option)
+      </script>
+    
+
+    
+
+    
+
+
+  </body>
+
+</html>
