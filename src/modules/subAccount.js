@@ -622,6 +622,95 @@ const SubAccount = superclass => class extends superclass {
       Object.assign(options, { fromEmail, asset, amount })
     )
   }
+
+  /**
+   * Enable or Disable IP Restriction for a Sub-account API Key (For Master Account)<br>
+   *
+   * POST /sapi/v1/sub-account/subAccountApi/ipRestriction<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-or-disable-ip-restriction-for-a-sub-account-api-key-for-master-account}
+   *
+   * @param {string} email - Sub-account email
+   * @param {string} subAccountApiKey
+   * @param {boolean} ipRestrict - true or false
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
+   */
+  subAccountApiToggleIpRestriction (email, subAccountApiKey, ipRestrict, options = {}) {
+    validateRequiredParameters({ email, subAccountApiKey, ipRestrict })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/sub-account/subAccountApi/ipRestriction',
+      Object.assign(options, { email, subAccountApiKey, ipRestrict })
+    )
+  }
+
+  /**
+   * Add IP List for a Sub-account API Key (For Master Account)<br>
+   *
+   * POST /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList<br>
+   *
+   * Before the usage of this endpoint, please ensure POST /sapi/v1/sub-account/subAccountApi/ipRestriction was used to enable the IP restriction.<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#add-ip-list-for-a-sub-account-api-key-for-master-account}
+   *
+   * @param {string} email - Sub-account email
+   * @param {string} subAccountApiKey
+   * @param {string} ipAddress - Can be added in batches, separated by commas
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
+   */
+  subAccountApiAddIp (email, subAccountApiKey, ipAddress, options = {}) {
+    validateRequiredParameters({ email, subAccountApiKey, ipAddress })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/sub-account/subAccountApi/ipRestriction/ipList',
+      Object.assign(options, { email, subAccountApiKey, ipAddress })
+    )
+  }
+
+  /**
+   * Get IP Restriction for a Sub-account API Key (For Master Account)<br>
+   *
+   * GET /sapi/v1/sub-account/subAccountApi/ipRestriction<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-ip-restriction-for-a-sub-account-api-key-for-master-account}
+   *
+   * @param {string} email - Sub-account email
+   * @param {string} subAccountApiKey
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
+   */
+  subAccountApiGetIpRestriction (email, subAccountApiKey, options = {}) {
+    validateRequiredParameters({ email, subAccountApiKey })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/sub-account/subAccountApi/ipRestriction',
+      Object.assign(options, { email, subAccountApiKey })
+    )
+  }
+
+  /**
+   * Delete IP List for a Sub-account API Key (For Master Account)<br>
+   *
+   * DELETE /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#delete-ip-list-for-a-sub-account-api-key-for-master-account}
+   *
+   * @param {string} email - Sub-account email
+   * @param {string} subAccountApiKey
+   * @param {string} ipAddress - Can be added in batches, separated by commas
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
+   */
+  subAccountApiDeleteIp (email, subAccountApiKey, ipAddress, options = {}) {
+    validateRequiredParameters({ email, subAccountApiKey, ipAddress })
+    return this.signRequest(
+      'DELETE',
+      '/sapi/v1/sub-account/subAccountApi/ipRestriction/ipList',
+      Object.assign(options, { email, subAccountApiKey, ipAddress })
+    )
+  }
 }
 
 module.exports = SubAccount

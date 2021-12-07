@@ -31,7 +31,8 @@ describe('#withdraw', () => {
   it('should return withdraw data', () => {
     const parameters = {
       network: 'BNB',
-      addressTag: 'address_tag'
+      addressTag: 'address_tag',
+      walletType: 0
     }
     nockPostMock(`/sapi/v1/capital/withdraw/apply?${buildQueryString({ coin: 'BNB', address: 'address', amount: 1, ...parameters })}`)(mockResponse)
 

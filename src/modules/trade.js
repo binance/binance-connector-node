@@ -364,6 +364,24 @@ const Trade = superclass => class extends superclass {
       })
     )
   }
+
+  /**
+   * Query Current Order Count Usage (TRADE)<br>
+   *
+   * GET /api/v3/rateLimit/order<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-current-order-count-usage-trade}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  orderCount (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/api/v3/rateLimit/order',
+      options
+    )
+  }
 }
 
 module.exports = Trade

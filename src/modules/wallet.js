@@ -101,11 +101,11 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Withdraw<br>
+   * Withdraw (USER_DATA)<br>
    *
    * POST /sapi/v1/capital/withdraw/apply<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-sapi}
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-user_data}
    *
    * @param {string} coin
    * @param {string} address
@@ -117,6 +117,7 @@ const Wallet = superclass => class extends superclass {
    * @param {boolean} [options.transactionFeeFlag] - When making internal transfer, true for returning the fee to the destination account;
    * <br>false for returning the fee back to the departure account. Default false.
    * @param {string} [options.name] - Description of the address. Space in name should be encoded into %20.
+   * @param {number} [options.walletType] - The wallet type for withdraw，0-spot wallet, 1-funding wallet. Default is spot wallet
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   withdraw (coin, address, amount, options = {}) {
@@ -357,7 +358,7 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * User Universal Transfer<br>
+   * User Universal Transfer (USER_DATA)<br>
    *
    * POST /sapi/v1/asset/transfer<br>
    *
@@ -386,7 +387,7 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Query User Universal Transfer History<br>
+   * Query User Universal Transfer History (USER_DATA)<br>
    *
    * GET /sapi/v1/asset/transfer<br>
    *
@@ -413,7 +414,7 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * Funding Wallet<br>
+   * Funding Wallet (USER_DATA)<br>
    *
    * POST /sapi/v1/asset/get-funding-asset<br>
    *
@@ -433,7 +434,7 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
-   * API Key Permission<br>
+   * API Key Permission (USER_DATA)<br>
    *
    * GET /sapi/v1/account/apiRestrictions<br>
    *
