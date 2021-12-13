@@ -41,6 +41,8 @@ const getRequestInstance = (config) => {
   })
 }
 
+
+//TODO: Add here proxy rotation
 const createRequest = (config) => {
   const { baseURL, apiKey, method, url } = config
   return getRequestInstance({
