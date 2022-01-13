@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.7.0 - 2022-01-13
+### Added
+- `GET /sapi/v1/mining/payment/uid` to get Mining account earning
+- `GET /sapi/v1/bswap/unclaimedRewards` to get unclaimed rewards record
+- `POST /sapi/v1/bswap/claimRewards` to claim swap rewards or liquidity rewards
+- `GET /sapi/v1/bswap/claimedHistory` to get history of claimed rewards
+- `POST /sapi/v1/sub-account/universalTransfer` to transfer spot and futures asset between master account and sub accounts
+- `GET /sapi/v1/sub-account/universalTransfer` to search transfer records
+- `GET /sapi/v2/sub-account/futures/account` to get detail on sub-account's USDT margined futures account and COIN margined futures account
+- `GET /sapi/v2/sub-account/futures/accountSummary` to get summary of sub-account's USDT margined futures account and COIN margined futures account
+- `GET /sapi/v2/sub-account/futures/positionRisk` to get position risk of sub-account's USDT margined futures account and COIN margined futures account
+
 ## v1.6.0 - 2021-12-07
 ### Added
 - `GET /api/v3/rateLimit/order` to get the current order count usage for all intervals

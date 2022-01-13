@@ -4,28 +4,29 @@ const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/test
 
 const {
   mockResponse,
-  recvWindow,
-  email
+  recvWindow
 } = require('../../testUtils/mockData')
 
-describe('#subAccountFuturesAccount', () => {
+const futuresType = 2
+
+describe('#subAccountFuturesAccountSummaryV2', () => {
   describe('throw MissingParameterError', () => {
-    it('missing email', () => {
+    it('missing futuresType', () => {
       expect(() => {
-        SpotClient.subAccountFuturesAccount('')
+        SpotClient.subAccountFuturesAccountSummaryV2('')
       }).toThrow(MissingParameterError)
     })
   })
 
-  it('should get sub account futures account details', () => {
+  it('should get sub account futures acount summary based on futuresType', () => {
     const parameters = {
-      email,
+      futuresType,
       recvWindow
     }
 
-    nockMock(`/sapi/v1/sub-account/futures/account?${buildQueryString({ ...parameters })}`)(mockResponse)
+    nockMock(`/sapi/v2/sub-account/futures/accountSummary?${buildQueryString({ ...parameters })}`)(mockResponse)
 
-    return SpotClient.subAccountFuturesAccount(email, { recvWindow }).then(response => {
+    return SpotClient.subAccountFuturesAccountSummaryV2(futuresType, { recvWindow }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

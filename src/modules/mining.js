@@ -316,6 +316,32 @@ const Mining = superclass => class extends superclass {
       })
     )
   }
+
+  /**
+   * Mining Account Earning (USER_DATA)<br>
+   *
+   * GET /sapi/v1/mining/payment/uid<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#mining-account-earning-user_data}
+   *
+   * @param {string} algo - Algorithm(sha256)
+   * @param {object} [options]
+   * @param {number} [options.startDate] - Millisecond timestamp
+   * @param {number} [options.endDate] - Millisecond timestamp
+   * @param {number} [options.pageIndex] - Default 1
+   * @param {number} [options.pageSize] - Min 10,Max 200
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  miningAccountEarning (algo, options = {}) {
+    validateRequiredParameters({ algo })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/mining/payment/uid',
+      Object.assign(options, {
+        algo
+      })
+    )
+  }
 }
 
 module.exports = Mining
