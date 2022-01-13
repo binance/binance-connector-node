@@ -92,7 +92,7 @@ accurate comments, etc.) and any other requirements (such as test coverage).
 Since the `master` branch is what people actually use in production, we have
 release candidate branches, which are usually name after `rc-`, that unstable changes get merged into first. Only when we
 consider that stable we merge it into the `master` branch and release the
-changes for real.
+changes officially.
 
 Adhering to the following process is the best way to get your work
 included in the project:
@@ -115,7 +115,7 @@ included in the project:
     git pull upstream <latest_rc_branch>
     ```
 
-3.  Create a new topic branch (off the `dev` branch) to contain your feature, change, or fix:
+3.  Create a new topic branch (off the `rc-` branch) to contain your feature, change, or fix:
 
     ```bash
     git checkout -b <topic-branch-name>

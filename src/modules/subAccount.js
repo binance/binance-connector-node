@@ -711,6 +711,121 @@ const SubAccount = superclass => class extends superclass {
       Object.assign(options, { email, subAccountApiKey, ipAddress })
     )
   }
+
+  /**
+   * Universal Transfer (For Master Account)<br>
+   *
+   * POST /sapi/v1/sub-account/universalTransfer<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#universal-transfer-for-master-account}
+   *
+   * @param {string} fromAccountType - "SPOT","USDT_FUTURE","COIN_FUTURE"
+   * @param {string} toAccountType - "SPOT","USDT_FUTURE","COIN_FUTURE"
+   * @param {string} asset
+   * @param {number} amount
+   * @param {object} [options]
+   * @param {string} [options.fromEmail]
+   * @param {string} [options.toEmail]
+   * @param {string} [options.clientTranId] - Must be unique
+   * @param {number} [options.recvWindow]
+   */
+  subAccountUniversalTransfer (fromAccountType, toAccountType, asset, amount, options = {}) {
+    validateRequiredParameters({ fromAccountType, toAccountType, asset, amount })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/sub-account/universalTransfer',
+      Object.assign(options, { fromAccountType, toAccountType, asset, amount })
+    )
+  }
+
+  /**
+   * Query Universal Transfer History (For Master Account)<br>
+   *
+   * GET /sapi/v1/sub-account/universalTransfer<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-universal-transfer-history-for-master-account}
+   *
+   * @param {object} [options]
+   * @param {string} [options.fromEmail]
+   * @param {string} [options.toEmail]
+   * @param {string} [options.clientTranId]
+   * @param {string} [options.startTime]
+   * @param {string} [options.endTime]
+   * @param {string} [options.page] - Default 1
+   * @param {string} [options.limit] - Default 500, Max 500
+   * @param {number} [options.recvWindow]
+   */
+  subAccountUniversalTransferHistory (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/sub-account/universalTransfer',
+      options
+    )
+  }
+
+  /**
+   * Get Detail on Sub-account's Futures Account V2 (For Master Account)<br>
+   *
+   * GET /sapi/v2/sub-account/futures/account<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-v2-for-master-account}
+   *
+   * @param {string} email - Sub-account email
+   * @param {number} futuresType - 1:USDT Margined Futures, 2:COIN Margined Futures
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
+   */
+  subAccountFuturesAccountV2 (email, futuresType, options = {}) {
+    validateRequiredParameters({ email, futuresType })
+    return this.signRequest(
+      'GET',
+      '/sapi/v2/sub-account/futures/account',
+      Object.assign(options, { email, futuresType })
+    )
+  }
+
+  /**
+   * Get Summary of Sub-account's Futures Account V2 (For Master Account)<br>
+   *
+   * GET /sapi/v2/sub-account/futures/accountSummary<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-v2-for-master-account}
+   *
+   * @param {number} futuresType - 1:USDT Margined Futures, 2:COIN Margined Futures
+   * @param {object} [options]
+   * @param {number} [options.page] - default:1
+   * @param {number} [options.limit] - default:10, max:20
+   * @param {number} [options.recvWindow]
+   */
+  subAccountFuturesAccountSummaryV2 (futuresType, options = {}) {
+    validateRequiredParameters({ futuresType })
+    return this.signRequest(
+      'GET',
+      '/sapi/v2/sub-account/futures/accountSummary',
+      Object.assign(options, { futuresType })
+    )
+  }
+
+  /**
+   * Get Futures Position-Risk of Sub-account V2 (For Master Account)<br>
+   *
+   * GET /sapi/v2/sub-account/futures/positionRisk<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-futures-position-risk-of-sub-account-v2-for-master-account}
+   *
+   * @param {string} email - Sub-account email
+   * @param {number} futuresType - 1:USDT Margined Futures, 2:COIN Margined Futures
+   * @param {object} [options]
+   * @param {number} [options.recvWindow]
+   */
+  subAccountFuturesPositionRiskV2 (email, futuresType, options = {}) {
+    validateRequiredParameters({ email, futuresType })
+    return this.signRequest(
+      'GET',
+      '/sapi/v2/sub-account/futures/positionRisk',
+      Object.assign(options, { email, futuresType })
+    )
+  }
 }
 
 module.exports = SubAccount

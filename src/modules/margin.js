@@ -731,10 +731,9 @@ const Margin = superclass => class extends superclass {
    *
    * @param {string} asset
    * @param {object} [options]
-   * @param {number} [options.vipLevel]
-   * @param {number} [options.startTime]
-   * @param {number} [options.endTime]
-   * @param {number} [options.limit]
+   * @param {number} [options.vipLevel] - Default: user's vip level
+   * @param {number} [options.startTime] - Default: 7 days ago
+   * @param {number} [options.endTime] - Default: present. Maximum range: 1 months.
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   marginInterestRateHistory (asset, options = {}) {
