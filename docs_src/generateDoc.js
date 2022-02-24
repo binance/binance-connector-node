@@ -1,5 +1,5 @@
 const fs = require('fs')
-const marked = require('marked')
+const { marked } = require('marked')
 const { name, version } = require('../package.json')
 const basePath = `./docs/${name}/${version}/`
 const indexFile = 'index.html'
