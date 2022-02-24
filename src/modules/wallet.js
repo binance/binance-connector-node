@@ -450,6 +450,24 @@ const Wallet = superclass => class extends superclass {
       options
     )
   }
+
+  /**
+   * Get Assets That Can Be Converted Into BNB (USER_DATA)<br>
+   *
+   * POST /sapi/v1/asset/dust-btc<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bnbConvertibleAssets (options = {}) {
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/asset/dust-btc',
+      options
+    )
+  }
 }
 
 module.exports = Wallet

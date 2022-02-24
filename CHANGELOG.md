@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.8.0 - 2022-02-24
+### Added
+- `POST /sapi/v1/giftcard/createCode` to create a code for Binance Gift Card
+- `POST /sapi/v1/giftcard/redeemCode` to redeem a code for Binance Gift Card
+- `GET /sapi/v1/giftcard/verify` to verify a code for Binance Gift Card
+- `POST /sapi/v1/asset/dust-btc` to get assets that can be converted into BNB
+
+### Fixed
+- npm audit upgrades
+
 ## v1.7.0 - 2022-01-13
 ### Added
 - `GET /sapi/v1/mining/payment/uid` to get Mining account earning
