@@ -270,6 +270,68 @@ const Bswap = superclass => class extends superclass {
       Object.assign(options, { poolId, type, quoteAsset, shareAmount })
     )
   }
+
+  /**
+   * Get Unclaimed Rewards Record (USER_DATA)
+   *
+   * GET /sapi/v1/bswap/unclaimedRewards<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-unclaimed-rewards-record-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.type] - 0: Swap rewards,1:Liquidity rewards, default to 0
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapUnclaimedRewards (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/unclaimedRewards',
+      options
+    )
+  }
+
+  /**
+   * Claim rewards (TRADE)
+   *
+   * POST /sapi/v1/bswap/claimRewards<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#claim-rewards-trade}
+   *
+   * @param {object} [options]
+   * @param {number} [options.type] - 0: Swap rewards,1:Liquidity rewards, default to 0
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapClaimRewards (options = {}) {
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/bswap/claimRewards',
+      options
+    )
+  }
+
+  /**
+   * Get Claimed History (USER_DATA)
+   *
+   * GET /sapi/v1/bswap/claimedHistory<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-claimed-history-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.poolId]
+   * @param {string} [options.assetRewards]
+   * @param {number} [options.type] - 0: Swap rewards,1:Liquidity rewards, default to 0
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - default 3, max 100
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  bswapClaimedHistory (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/bswap/claimedHistory',
+      options
+    )
+  }
 }
 
 module.exports = Bswap
