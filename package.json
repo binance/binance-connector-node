@@ -3,6 +3,7 @@
   "version": "1.8.1",
   "description": "This is a lightweight library that works as a connector to the Binance public API.",
   "main": "src/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "jsdoc": "jsdoc -c conf.json && ./docs_src/docs.sh",
     "jsdoc:win": "jsdoc -c conf.json && npx jsdoc --readme ./docs_src/gettingStarted.md src/modules/blvt.js && node ./docs_src/generateDoc.js && RD /S /Q out",
