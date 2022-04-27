@@ -25,4 +25,14 @@ describe('#nftTransactionHistory', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
+
+  it('should fetch NFT transaction history without optional params', () => {
+    const orderType = 0
+    nockMock(`/sapi/v1/nft/history/transactions?${buildQueryString({ orderType })}`)(mockResponse)
+
+    return SpotClient.nftTransactionHistory(orderType).then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
 })

@@ -69,7 +69,7 @@ const Market = superclass => class extends superclass {
    * @param {string} symbol
    * @param {object} [options]
    * @param {number} [options.limit] - Default 100; max 5000.
-   *    Valid limits:[5, 10, 20, 50, 100, 500, 1000, 5000]
+   *    If limit > 5000, then the response will truncate to 5000.
    */
   depth (symbol, options = {}) {
     validateRequiredParameters({ symbol })

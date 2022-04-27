@@ -52,6 +52,7 @@ const Bswap = superclass => class extends superclass {
    * @param {string} asset
    * @param {number} quantity
    * @param {object} [options]
+   * @param {string} [options.type] - "Single" to add a single token; "Combination" to add dual tokens. Default "Single"
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   bswapLiquidityAdd (poolId, asset, quantity, options = {}) {

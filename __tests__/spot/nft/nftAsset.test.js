@@ -15,4 +15,13 @@ describe('#nftAsset', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
+
+  it('should fetch NFT assets without params', () => {
+    nockMock(`/sapi/v1/nft/user/getAsset?${buildQueryString()}`)(mockResponse)
+
+    return SpotClient.nftAsset().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
 })

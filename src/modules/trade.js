@@ -23,6 +23,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.price]
    * @param {string} [options.newClientOrderId] - A unique id among open orders. Automatically generated if not sent.
    * @param {number} [options.stopPrice] - Used with STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, and TAKE_PROFIT_LIMIT orders.
+   * @param {number} [options.trailingDelta] - Used with STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, and TAKE_PROFIT_LIMIT orders.
    * @param {number} [options.icebergQty] - Used with LIMIT, STOP_LOSS_LIMIT, and TAKE_PROFIT_LIMIT to create an iceberg order.
    * @param {string} [options.newOrderRespType] - Set the response JSON. ACK, RESULT, or FULL;
    *    MARKET and LIMIT order types default to FULL, all other orders default to ACK.
@@ -59,6 +60,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.price]
    * @param {string} [options.newClientOrderId]
    * @param {number} [options.stopPrice]
+   * @param {number} [options.trailingDelta]
    * @param {number} [options.icebergQty]
    * @param {string} [options.newOrderRespType]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -210,6 +212,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} [options.listClientOrderId]
    * @param {string} [options.limitClientOrderId]
    * @param {number} [options.limitIcebergQty]
+   * @param {number} [options.trailingDelta]
    * @param {string} [options.stopClientOrderId]
    * @param {number} [options.stopLimitPrice]
    * @param {number} [options.stopIcebergQty]

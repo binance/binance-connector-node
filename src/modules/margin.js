@@ -978,6 +978,28 @@ const Margin = superclass => class extends superclass {
       Object.assign(options, { symbol })
     )
   }
+
+  /**
+   * Query Current Margin Order Count Usage (TRADE)<br>
+   *
+   * GET /sapi/v1/margin/rateLimit/order<br>
+   *
+   * Displays the user's current margin order count usage for all intervals.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-current-margin-order-count-usage-trade}
+   *
+   * @param {object} [options]
+   * @param {string} [options.isIsolated] - for isolated margin or not, "TRUE", "FALSE"，default "FALSE"
+   * @param {string} [options.symbol] - isolated symbol, mandatory for isolated margin
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  marginOrderCount (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/rateLimit/order',
+      options
+    )
+  }
 }
 
 module.exports = Margin
