@@ -17,4 +17,11 @@ describe('#miniTicker', () => {
       expect(data).toEqual([mockResponse])
     })
   })
+
+  it('should not get all miniTicker data', () => {
+    mockSubscription('invalid URL', mockResponse)
+    mockConnection(SpotClient, 'miniTickerWS', null)(data => {
+      expect(data).toEqual([Error('URL mismatch')])
+    })
+  })
 })

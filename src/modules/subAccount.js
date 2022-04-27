@@ -624,6 +624,30 @@ const SubAccount = superclass => class extends superclass {
   }
 
   /**
+   * Query Managed Sub-account Snapshot（For Investor Master Account)<br>
+   *
+   * GET /sapi/v1/managed-subaccount/accountSnapshot<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-snapshot-for-investor-master-account}
+   *
+   * @param {string} email
+   * @param {string} type "SPOT", "MARGIN"（cross）, "FUTURES"（UM）
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] min 7, max 30, default 7
+   * @param {number} [options.recvWindow]
+   */
+  managedSubAccountSnapshot (email, type, options = {}) {
+    validateRequiredParameters({ email, type })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/managed-subaccount/accountSnapshot',
+      Object.assign(options, { email, type })
+    )
+  }
+
+  /**
    * Enable or Disable IP Restriction for a Sub-account API Key (For Master Account)<br>
    *
    * POST /sapi/v1/sub-account/subAccountApi/ipRestriction<br>
@@ -719,14 +743,15 @@ const SubAccount = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#universal-transfer-for-master-account}
    *
-   * @param {string} fromAccountType - "SPOT","USDT_FUTURE","COIN_FUTURE"
-   * @param {string} toAccountType - "SPOT","USDT_FUTURE","COIN_FUTURE"
+   * @param {string} fromAccountType - "SPOT", "USDT_FUTURE", "COIN_FUTURE", "MARGIN"(Cross), "ISOLATED_MARGIN"
+   * @param {string} toAccountType - "SPOT", "USDT_FUTURE", "COIN_FUTURE", "MARGIN"(Cross), "ISOLATED_MARGIN"
    * @param {string} asset
    * @param {number} amount
    * @param {object} [options]
    * @param {string} [options.fromEmail]
    * @param {string} [options.toEmail]
    * @param {string} [options.clientTranId] - Must be unique
+   * @param {string} [options.symbol] - Only supported under ISOLATED_MARGIN type
    * @param {number} [options.recvWindow]
    */
   subAccountUniversalTransfer (fromAccountType, toAccountType, asset, amount, options = {}) {

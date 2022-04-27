@@ -21,4 +21,13 @@ describe('#marginFee', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
+
+  it('should get cross margin fee data without params', () => {
+    nockMock(`/sapi/v1/margin/crossMarginData?${buildQueryString()}`)(mockResponse)
+
+    return SpotClient.marginFee().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
 })

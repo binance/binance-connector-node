@@ -27,4 +27,13 @@ describe('#isolatedMarginTier', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
+
+  it('should get isolated margin tier data without optional params', () => {
+    nockMock(`/sapi/v1/margin/isolatedMarginTier?${buildQueryString({ symbol })}`)(mockResponse)
+
+    return SpotClient.isolatedMarginTier(symbol).then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
 })

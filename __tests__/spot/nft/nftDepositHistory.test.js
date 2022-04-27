@@ -17,4 +17,13 @@ describe('#nftDepositHistory', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
+
+  it('should fetch NFT deposit history without params', () => {
+    nockMock(`/sapi/v1/nft/history/deposit?${buildQueryString()}`)(mockResponse)
+
+    return SpotClient.nftDepositHistory().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
 })
