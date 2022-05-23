@@ -1,5 +1,5 @@
 /* global describe, it, expect */
-const { nockMock, SpotClient } = require('../../testUtils/testSetup')
+const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 const { mockResponse } = require('../../testUtils/mockData')
 
 describe('#tickerPrice', () => {
@@ -7,6 +7,16 @@ describe('#tickerPrice', () => {
     nockMock('/api/v3/ticker/price')(mockResponse)
 
     return SpotClient.tickerPrice().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
+  it('should return ticker price for selective pairs', () => {
+    const symbols = ['BTCUSDT', 'BNBUSDT']
+    nockMock(`/api/v3/ticker/price?${buildQueryString({ symbols })}`)(mockResponse)
+
+    return SpotClient.tickerPrice('', symbols).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })
