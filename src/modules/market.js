@@ -211,11 +211,14 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#24hr-ticker-price-change-statistics}
    *
    * @param {string} [symbol]
+   * @param {Array} [symbols] - an array of symbols
    */
-  ticker24hr (symbol = '') {
+  ticker24hr (symbol = '', symbols = []) {
+    symbols = symbols.map(symbol => symbol.toUpperCase())
+
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase() }
+      '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase(), symbols: symbols }
     )
   }
 
@@ -227,11 +230,14 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-price-ticker}
    *
    * @param {string} [symbol]
+   * @param {Array} [symbols] - an array of symbols
   */
-  tickerPrice (symbol = '') {
+  tickerPrice (symbol = '', symbols = []) {
+    symbols = symbols.map(symbol => symbol.toUpperCase())
+
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/price', { symbol: symbol.toUpperCase() }
+      '/api/v3/ticker/price', { symbol: symbol.toUpperCase(), symbols: symbols }
     )
   }
 
@@ -244,11 +250,14 @@ const Market = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#symbol-order-book-ticker}
    *
    * @param {string} [symbol]
+   * @param {Array} [symbols] - an array of symbols
   */
-  bookTicker (symbol = '') {
+  bookTicker (symbol = '', symbols = []) {
+    symbols = symbols.map(symbol => symbol.toUpperCase())
+
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase() }
+      '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase(), symbols: symbols }
     )
   }
 }
