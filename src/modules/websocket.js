@@ -96,6 +96,27 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
+   * Individual Symbol Rolling Window Statistics Streams
+   *
+   * Rolling window ticker statistics for a single symbol, computed over multiple windows.
+   *
+   * Stream Name: &lt;symbol&gt;@ticker_<window_size> <br>
+   * Window Sizes: 1h,4h <br>
+   * Update Speed: 1000ms <br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-rolling-window-statistics-streams}
+   *
+   * @param {string} symbol
+   * @param {string} windowSize
+   */
+  rollingWindowTickerWS (symbol = null, windowSize = '', callbacks) {
+    validateRequiredParameters({ symbol, interval: windowSize })
+
+    const url = `${this.wsURL}/ws/${symbol.toLowerCase()}@ticker_${windowSize}`
+    return this.subscribe(url, callbacks)
+  }
+
+  /**
    * Individual symbol or all symbols ticker<br>
    *
    * 24hr rollwing window ticker statistics for a single symbol.<br>
