@@ -1,5 +1,19 @@
 # Changelog
 
+## v.1.11.0 - TBD
+### Added
+- `<symbol>@ticker_<window-size>` Individual symbol rolling window ticker streams.
+- `!ticker_<window-size>@arr` All market rolling window ticker streams
+- `GET /api/v3/ticker` for rolling window price change statistics based on windowSize provided.
+- `POST /api/v3/order/cancelReplace` to cancel an existing order and place a new order on the same symbol.
+
+### Changed
+- `GET /sapi/v1/fiat/orders`: Weight changes from IP(1) to UID(90000)
+- `GET /sapi/v1/pay/transactions`: Param names changed: startTimestamp -> startTime; endTimestamp -> endTime.
+
+### Fixed
+- Updated `jest` from `^26.0.1` to `^28.1.2` to resolve `jsdom` security issue `GHSA-f4c9-cqv8-9v98`.
+
 ## v.1.10.0 - 2022-05-23
 ### Added
 - `GET /sapi/v1/giftcard/cryptography/rsa-public-key` to fetch RSA public key.

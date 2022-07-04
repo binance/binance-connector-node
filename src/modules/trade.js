@@ -152,6 +152,53 @@ const Trade = superclass => class extends superclass {
   }
 
   /**
+   * Cancel an Existing Order and Send a New Order (TRADE)<br>
+   *
+   * Cancels an existing order and places a new order on the same symbol.
+   *
+   * Filters are evaluated before the cancel order is placed.
+   *
+   * If the new order placement is successfully sent to the engine, the order count will increase by 1.
+   *
+   * POST /api/v3/order/cancelReplace<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-an-existing-order-and-send-a-new-order-trade}
+   *
+   * @param {string} symbol
+   * @param {string} side
+   * @param {string} type
+   * @param {string} cancelReplaceMode
+   * @param {object} [options]
+   * @param {string} [options.timeInForce]
+   * @param {number} [options.quantity]
+   * @param {number} [options.quoteOrderQty]
+   * @param {number} [options.price]
+   * @param {string} [options.cancelNewClientOrderId]
+   * @param {string} [options.cancelOrigClientOrderId]
+   * @param {number} [options.cancelOrderId]
+   * @param {string} [options.newClientOrderId]
+   * @param {number} [options.stopPrice]
+   * @param {number} [options.trailingDelta]
+   * @param {number} [options.icebergQty]
+   * @param {string} [options.newOrderRespType]
+   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   */
+  cancelAndReplace (symbol, side, type, cancelReplaceMode, options = {}) {
+    validateRequiredParameters({ symbol, side, type, cancelReplaceMode })
+
+    return this.signRequest(
+      'POST',
+      '/api/v3/order/cancelReplace',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase(),
+        side: side.toUpperCase(),
+        type: type.toUpperCase(),
+        cancelReplaceMode: cancelReplaceMode
+      })
+    )
+  }
+
+  /**
    * Current Open Orders (USER_DATA)<br>
    *
    * GET /api/v3/openOrders<br>
