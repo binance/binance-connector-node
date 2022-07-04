@@ -14,7 +14,7 @@ describe('#payHistory', () => {
 
   it('should return pay transactions history with params', () => {
     const parameters = {
-      startTimestamp: 1637570276000,
+      startTime: 1637570276000,
       limit: 5
     }
     nockMock(`/sapi/v1/pay/transactions?${buildQueryString(parameters)}`)(mockResponse)

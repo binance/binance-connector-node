@@ -12,8 +12,8 @@ const Pay = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-pay-trade-history-user_data}
    *
    * @param {object} [options]
-   * @param {number} [options.startTimestamp]
-   * @param {number} [options.endTimestamp]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
    * @param {number} [options.limit] - default 100, max 100
    * @param {number} [options.recvWindow]
    *

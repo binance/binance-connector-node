@@ -260,6 +260,41 @@ const Market = superclass => class extends superclass {
       '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase(), symbols: symbols }
     )
   }
+
+  /**
+   * Rolling window price change statistics<br>
+   *
+   * GET /api/v3/ticker<br>
+   *
+   * The window used to compute statistics is typically slightly wider than requested windowSize.<br>
+   *
+   * openTime for /api/v3/ticker always starts on a minute, while the closeTime is the current time of the request. As such, the effective window might be up to 1 minute wider than requested.<br>
+   *
+   * E.g. If the closeTime is 1641287867099 (January 04, 2022 09:17:47:099 UTC) , and the windowSize is 1d. the openTime will be: 1641201420000 (January 3, 2022, 09:17:00 UTC)<br>
+   *
+   * Weight(IP): 2 for each requested symbol regardless of windowSize.<br>
+   *
+   * The weight for this request will cap at 100 once the number of symbols in the request is more than 50.<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#rolling-window-price-change-statistics}
+   *
+   * @param {string} [symbol]
+   * @param {Array} [symbols] - an array of symbols
+   * @param {object} [options]
+   * @param {number} [options.windowSize] - Defaults to 1d if no parameter provided.
+  */
+  rollingWindowTicker (symbol = '', symbols = [], options = {}) {
+    symbols = symbols.map(symbol => symbol.toUpperCase())
+
+    return this.publicRequest(
+      'GET',
+      '/api/v3/ticker',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase(),
+        symbols: symbols
+      })
+    )
+  }
 }
 
 module.exports = Market

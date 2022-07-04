@@ -121,6 +121,36 @@ const Websocket = superclass => class extends superclass {
   }
 
   /**
+   * Individual symbol or all rolling window statistics ticker<br>
+   *
+   * Rolling window ticker statistics, computed over multiple windows.<br>
+   *
+   * Stream Name: &lt;symbol&gt;@ticker_&lt;window_size&gt; or !ticker_&lt;window_size&gt;@arr <br>
+   * Window Sizes: 1h,4h <br>
+   * Update Speed: 1000ms <br>
+   *
+   * Note: This stream is different from the &lt;symbol&gt;@ticker stream. The open time O always starts on a minute, while the closing time C is the current time of the update.
+   *
+   * As such, the effective window might be up to 59999ms wider that &lt;window_size&gt;.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-rolling-window-statistics-streams}
+   * <br>
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-rolling-window-statistics-streams}
+   *
+   * @param {string} [windowSize]
+   * @param {string} [symbol]
+   *
+   */
+  rollingWindowTickerWS (windowSize, symbol = null, callbacks) {
+    let path = `!ticker_${windowSize.toLowerCase()}@arr`
+    if (!isEmptyValue(symbol)) {
+      path = `${symbol.toLowerCase()}@ticker_${windowSize.toLowerCase()}`
+    }
+    const url = `${this.wsURL}/ws/${path}`
+    return this.subscribe(url, callbacks)
+  }
+
+  /**
    * Individual symbol or all symbols book ticker<br>
    *
    * Pushes any update to the best bid or ask's price or quantity in real-time.<br>
