@@ -1,6 +1,15 @@
 # Changelog
 
-## v.1.11.0 - TBD
+## v.1.12.0 - 2022-07-19
+
+### Added
+- New endpoint for Margin:
+  - `POST /sapi/v3/asset/getUserAsset` to get user assets.
+
+- New endpoint for Wallet:
+  - `GET /sapi/v1/margin/dribblet` to query the historical information of user's margin account small-value asset conversion BNB.
+
+## v.1.11.0 - 2022-07-04
 ### Added
 - `<symbol>@ticker_<window-size>` Individual symbol rolling window ticker streams.
 - `!ticker_<window-size>@arr` All market rolling window ticker streams
