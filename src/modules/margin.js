@@ -1000,6 +1000,28 @@ const Margin = superclass => class extends superclass {
       options
     )
   }
+
+  /**
+   * Margin Dustlog (USER_DATA)<br>
+   *
+   * GET /sapi/v1/margin/dribblet<br>
+   *
+   * Query the historical information of user's margin account small-value asset conversion BNB.
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-dustlog-user_data}
+   *
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.recvWindow] - No more than 60000
+   */
+  marginDustLog (options = {}) {
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/dribblet',
+      options
+    )
+  }
 }
 
 module.exports = Margin

@@ -452,6 +452,25 @@ const Wallet = superclass => class extends superclass {
   }
 
   /**
+   * Get user assets, just for positive data. (USER_DATA)<br>
+   *
+   * POST /sapi/v3/asset/getUserAsset<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#user-asset-user_data}
+   *
+   * @param {object} [options]
+   * @param {string} [options.asset] - If asset is blank, then query all positive assets user have.
+   * @param {boolean} [options.needBtcValuation] - Whether need btc valuation or not.
+   */
+  userAsset (options = {}) {
+    return this.signRequest(
+      'POST',
+      '/sapi/v3/asset/getUserAsset',
+      options
+    )
+  }
+
+  /**
    * Get Assets That Can Be Converted Into BNB (USER_DATA)<br>
    *
    * POST /sapi/v1/asset/dust-btc<br>
