@@ -1,6 +1,6 @@
 # Changelog
 
-## v.1.13.0 - TBD
+## v.1.13.0 - 2022-08-12
 ### Added
 - New endpoint for Portfolio Margin:
   - `GET /sapi/v1/portfolio/pmLoan` to query Portfolio Margin Bankruptcy Loan Record.
