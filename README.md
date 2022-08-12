@@ -170,7 +170,7 @@ const aggTrade = client.aggTradeWS('bnbusdt', callbacks)
 setTimeout(() => client.unsubscribe(aggTrade), 3000)
 
 // support combined stream
-const combinedStreams = client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+const combinedStreams = client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@ticker'], callbacks)
 ```
 
 

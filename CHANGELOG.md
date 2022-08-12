@@ -1,7 +1,20 @@
 # Changelog
 
-## v.1.12.0 - 2022-07-19
+## v.1.13.0 - 2022-08-12
+### Added
+- New endpoint for Portfolio Margin:
+  - `GET /sapi/v1/portfolio/pmLoan` to query Portfolio Margin Bankruptcy Loan Record.
+  - `POST /sapi/v1/portfolio/repay` to repay Portfolio Margin Bankruptcy Loan.
+  - `GET /sapi/v1/portfolio/collateralRate` to get Portfolio Margin Collateral Rate.
 
+### Changed
+- Changed endpoints for Trade:
+  - `POST /api/v3/order/test` New optional fields `strategyId` and `strategyType`.
+  - `POST /api/v3/order` New optional fields `strategyId` and `strategyType`.
+  - `POST /api/v3/order/cancelReplace` New optional fields `strategyId` and `strategyType`.
+  - `POST /api/v3/order/oco` New optional fields `limitStrategyId`, `limitStrategyType`, `stopStrategyId` and `stopStrategyType`.
+
+## v.1.12.0 - 2022-07-19
 ### Added
 - New endpoint for Margin:
   - `POST /sapi/v3/asset/getUserAsset` to get user assets.
