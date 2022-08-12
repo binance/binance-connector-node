@@ -22,6 +22,8 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.quoteOrderQty]
    * @param {number} [options.price]
    * @param {string} [options.newClientOrderId] - A unique id among open orders. Automatically generated if not sent.
+   * @param {number} [options.strategyId]
+   * @param {number} [options.strategytype] - The value cannot be less than 1000000.
    * @param {number} [options.stopPrice] - Used with STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, and TAKE_PROFIT_LIMIT orders.
    * @param {number} [options.trailingDelta] - Used with STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, and TAKE_PROFIT_LIMIT orders.
    * @param {number} [options.icebergQty] - Used with LIMIT, STOP_LOSS_LIMIT, and TAKE_PROFIT_LIMIT to create an iceberg order.
@@ -59,6 +61,8 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.quoteOrderQty]
    * @param {number} [options.price]
    * @param {string} [options.newClientOrderId]
+   * @param {number} [options.strategyId]
+   * @param {number} [options.strategytype] - The value cannot be less than 1000000.
    * @param {number} [options.stopPrice]
    * @param {number} [options.trailingDelta]
    * @param {number} [options.icebergQty]
@@ -177,6 +181,8 @@ const Trade = superclass => class extends superclass {
    * @param {string} [options.cancelOrigClientOrderId]
    * @param {number} [options.cancelOrderId]
    * @param {string} [options.newClientOrderId]
+   * @param {number} [options.strategyId]
+   * @param {number} [options.strategytype] - The value cannot be less than 1000000.
    * @param {number} [options.stopPrice]
    * @param {number} [options.trailingDelta]
    * @param {number} [options.icebergQty]
@@ -258,9 +264,13 @@ const Trade = superclass => class extends superclass {
    * @param {object} [options]
    * @param {string} [options.listClientOrderId]
    * @param {string} [options.limitClientOrderId]
+   * @param {number} [options.limitStrategyId]
+   * @param {number} [options.limitStrategytype] - The value cannot be less than 1000000.
    * @param {number} [options.limitIcebergQty]
    * @param {number} [options.trailingDelta]
    * @param {string} [options.stopClientOrderId]
+   * @param {number} [options.stopStrategyId]
+   * @param {number} [options.stopStrategytype] - The value cannot be less than 1000000.
    * @param {number} [options.stopLimitPrice]
    * @param {number} [options.stopIcebergQty]
    * @param {string} [options.stopLimitTimeInForce]
