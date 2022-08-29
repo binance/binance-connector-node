@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports.Blvt = require('./blvt')
 module.exports.Bswap = require('./bswap')
 module.exports.SubAccount = require('./subAccount')

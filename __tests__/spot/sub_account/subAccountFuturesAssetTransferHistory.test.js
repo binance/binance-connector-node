@@ -26,7 +26,7 @@ describe('#subAccountFuturesAssetTransferHistory', () => {
 
   it('should get sub account futures asset transfer history', () => {
     const parameters = {
-      email: email,
+      email,
       futuresType,
       recvWindow
     }

@@ -1,3 +1,5 @@
+'use strict'
+
 const { validateRequiredParameters } = require('../helpers/validation')
 
 /**
@@ -199,7 +201,7 @@ const Trade = superclass => class extends superclass {
         symbol: symbol.toUpperCase(),
         side: side.toUpperCase(),
         type: type.toUpperCase(),
-        cancelReplaceMode: cancelReplaceMode
+        cancelReplaceMode
       })
     )
   }

@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.0.0-rc.1 - 2022-08-29
+
+- Support timeout
+- Support proxy
+- Support httpsAgent
+- Enable strict mode
+- Improve Websocket
+  - Add `pingServer` method
+
 ## v.1.13.0 - 2022-08-12
 ### Added
 - New endpoint for Portfolio Margin:

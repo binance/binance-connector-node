@@ -16,7 +16,7 @@ describe('#rebateSpotHistory', () => {
     const parameters = {
       startTime: 1636541539000,
       endTime: 1638442339000,
-      recvWindow: recvWindow
+      recvWindow
     }
     nockMock(`/sapi/v1/rebate/taxQuery?${buildQueryString(parameters)}`)(mockResponse)
 

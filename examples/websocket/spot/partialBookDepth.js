@@ -1,24 +1,16 @@
+'use strict'
+
 const { Console } = require('console')
-const fs = require('fs')
 const Spot = require('../../../src/spot')
 
-const output = fs.createWriteStream('./stdout.log')
-const errorOutput = fs.createWriteStream('./stderr.log')
-const logger = new Console({
-  stdout: output,
-  stderr: errorOutput
-})
-
-const client = new Spot('', '', {
-  logger
-})
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
+const client = new Spot('', '', { logger })
 
 const callbacks = {
-  open: () => client.logger.debug('open'),
-  close: () => client.logger.debug('closed'),
-  message: data => client.logger.log(data)
+  open: () => logger.debug('Connected with Websocket server'),
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
 }
 
 const wsRef = client.partialBookDepth('bnbusdt', '5', '100ms', callbacks)
-setTimeout(() => client.unsubscribe(wsRef), 5000)
-// check the output file
+setTimeout(() => client.unsubscribe(wsRef), 60000)

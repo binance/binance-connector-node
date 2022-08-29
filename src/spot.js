@@ -1,3 +1,5 @@
+'use strict'
+
 const APIBase = require('./APIBase')
 const modules = require('./modules')
 const { flowRight } = require('./helpers/utils')

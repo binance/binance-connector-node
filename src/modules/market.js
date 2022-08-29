@@ -1,3 +1,4 @@
+'use strict'
 
 const { validateRequiredParameters } = require('../helpers/validation')
 
@@ -179,7 +180,7 @@ const Market = superclass => class extends superclass {
       '/api/v3/klines',
       Object.assign(options, {
         symbol: symbol.toUpperCase(),
-        interval: interval
+        interval
       })
     )
   }
@@ -218,7 +219,7 @@ const Market = superclass => class extends superclass {
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase(), symbols: symbols }
+      '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase(), symbols }
     )
   }
 
@@ -237,7 +238,7 @@ const Market = superclass => class extends superclass {
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/price', { symbol: symbol.toUpperCase(), symbols: symbols }
+      '/api/v3/ticker/price', { symbol: symbol.toUpperCase(), symbols }
     )
   }
 
@@ -257,7 +258,7 @@ const Market = superclass => class extends superclass {
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase(), symbols: symbols }
+      '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase(), symbols }
     )
   }
 
@@ -291,7 +292,7 @@ const Market = superclass => class extends superclass {
       '/api/v3/ticker',
       Object.assign(options, {
         symbol: symbol.toUpperCase(),
-        symbols: symbols
+        symbols
       })
     )
   }

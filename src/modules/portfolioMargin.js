@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * API Portfolio Margin endpoints
  * @module PortfolioMargin

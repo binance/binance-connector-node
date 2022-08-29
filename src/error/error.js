@@ -1,3 +1,5 @@
+'use strict'
+
 class Error {
   constructor (message) {
     this.message = message

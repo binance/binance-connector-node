@@ -1,3 +1,5 @@
+'use strict'
+
 const packageJson = require('../../package.json')
 
 const appName = packageJson.name + '-node'

@@ -1,3 +1,5 @@
+'use strict'
+
 const axios = require('axios')
 const { Console } = require('console')
 const constants = require('./constants')
@@ -42,9 +44,12 @@ const getRequestInstance = (config) => {
 }
 
 const createRequest = (config) => {
-  const { baseURL, apiKey, method, url } = config
+  const { baseURL, apiKey, method, url, timeout, proxy, httpsAgent } = config
   return getRequestInstance({
     baseURL,
+    timeout,
+    proxy,
+    httpsAgent,
     headers: {
       'Content-Type': 'application/json',
       'X-MBX-APIKEY': apiKey,

@@ -1,3 +1,5 @@
+'use strict'
+
 const Error = require('../error/error')
 
 class MissingParameterError extends Error {
