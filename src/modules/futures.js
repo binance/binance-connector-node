@@ -1,3 +1,5 @@
+'use strict'
+
 const { validateRequiredParameters, hasOneOfParameters } = require('../helpers/validation')
 
 /**

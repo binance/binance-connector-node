@@ -1,22 +1,15 @@
+'use strict'
+
 const { Console } = require('console')
-const fs = require('fs')
 const Spot = require('../../../src/spot')
 
-const output = fs.createWriteStream('./stdout.log')
-const errorOutput = fs.createWriteStream('./stderr.log')
-const logger = new Console({
-  stdout: output,
-  stderr: errorOutput
-})
-
-const client = new Spot('', '', {
-  logger
-})
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
+const client = new Spot('', '', { logger })
 
 const callbacks = {
-  open: () => client.logger.debug('open'),
-  close: () => client.logger.debug('closed'),
-  message: data => client.logger.log(data)
+  open: () => logger.debug('Connected with Websocket server'),
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
 }
 
 // all pairs
@@ -24,5 +17,5 @@ const callbacks = {
 
 // single pair
 const wsRef = client.bookTickerWS('bnbusdt', callbacks)
-setTimeout(() => client.unsubscribe(wsRef), 5000)
+setTimeout(() => client.unsubscribe(wsRef), 60000)
 // check the output file

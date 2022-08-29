@@ -28,7 +28,7 @@ describe('#rollingWindowTicker', () => {
     const windowSize = '1d'
     nockMock(`/api/v3/ticker?symbol=${symbol}&windowSize=${windowSize}`)(mockResponse)
 
-    return SpotClient.rollingWindowTicker(symbol, [], { windowSize: windowSize }).then(response => {
+    return SpotClient.rollingWindowTicker(symbol, [], { windowSize }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

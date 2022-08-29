@@ -1,13 +1,19 @@
+'use strict'
+
 const crypto = require('crypto')
 const { removeEmptyValue, buildQueryString, createRequest, defaultLogger } = require('./helpers/utils')
 
 class APIBase {
   constructor (options) {
-    const { apiKey, apiSecret, baseURL, logger } = options
+    const { apiKey, apiSecret, baseURL, logger, timeout, proxy, httpsAgent } = options
 
     this.apiKey = apiKey
     this.apiSecret = apiSecret
     this.baseURL = baseURL
+    // default is 0 (no timeout)
+    this.timeout = timeout || 0
+    this.proxy = proxy || false
+    this.httpsAgent = httpsAgent
     this.logger = logger || defaultLogger
   }
 
@@ -18,10 +24,13 @@ class APIBase {
       path = `${path}?${params}`
     }
     return createRequest({
-      method: method,
+      method,
       baseURL: this.baseURL,
       url: path,
-      apiKey: this.apiKey
+      apiKey: this.apiKey,
+      timeout: this.timeout,
+      proxy: this.proxy,
+      httpsAgent: this.httpsAgent
     })
   }
 
@@ -35,10 +44,13 @@ class APIBase {
       .digest('hex')
 
     return createRequest({
-      method: method,
+      method,
       baseURL: this.baseURL,
       url: `${path}?${queryString}&signature=${signature}`,
-      apiKey: this.apiKey
+      apiKey: this.apiKey,
+      timeout: this.timeout,
+      proxy: this.proxy,
+      httpsAgent: this.httpsAgent
     })
   }
 }

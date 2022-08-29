@@ -1,3 +1,5 @@
+'use strict'
+
 const { validateRequiredParameters } = require('../helpers/validation')
 /**
  * API Convert endpoints

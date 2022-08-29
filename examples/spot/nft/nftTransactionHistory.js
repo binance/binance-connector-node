@@ -1,3 +1,5 @@
+'use strict'
+
 const Spot = require('../../../src/spot')
 
 const apiKey = ''

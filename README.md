@@ -14,7 +14,8 @@ This is a lightweight library that works as a connector to [Binance public API](
     - Spot Websocket Market Stream
     - Spot User Data Stream
 - Inclusion of test cases and examples
-- Customizable base URL, request timeout and HTTP proxy
+- Customizable base URL
+- Support request timeout and HTTP proxy (since v2)
 - Response metadata can be displayed
 - Customizable Logger
 
@@ -87,6 +88,72 @@ const client = new Spot(apiKey, apiSecret)
 client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
 
 ```
+
+### Timeout
+
+It's easy to set timeout in milliseconds in request. If the request take longer than timeout, the request will be aborted. If it's not set, there will be no timeout. 
+
+```javascript
+const { Spot } = require('@binance/connector')
+
+const apiKey = ''
+const apiSecret = ''
+const client = new Spot(apiKey, apiSecret, { timeout: 1000 })
+
+client.account()
+  .then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error.message))
+```
+
+### Proxy
+
+The `axios` package is used as the http client in this library. A proxy settings is passed into `axios` directly, the details can be found at [here](https://github.com/axios/axios#request-config):
+
+```javascript
+const { Spot } = require('@binance/connector')
+
+const apiKey = ''
+const apiSecret = ''
+const client = new Spot(apiKey, apiSecret, 
+  {  
+    proxy: {
+      protocol: 'https',
+      host: '127.0.0.1',
+      port: 9000,
+      auth: {
+        username: 'proxy_user',
+        password: 'password'
+      }
+    }
+  }
+)
+```
+
+You may have a HTTP proxy, that can bring the problem that you need to make a HTTPS connection through the HTTP proxy.  You can do that by build a HTTPS-over-HTTP tunnel by npm package [tunnel](https://www.npmjs.com/package/tunnel), and then pass the turnnel agent to `httpsAgent` in `axios`.
+
+```javascript
+const tunnel = require('tunnel')
+
+const agent = tunnel.httpsOverHttp({
+  proxy: {
+    host: "127.0.0.1",
+    port: 3128
+  }
+})
+
+const client = new Spot(null, null,
+  {
+    baseURL: "https://api.binance.com",
+    httpsAgent: agent
+  }
+)
+
+client.time()
+  .then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))
+
+```
+[This comment](https://github.com/axios/axios/issues/925#issuecomment-359982190) provides more details.
 
 ### Response Metadata
 
@@ -180,7 +247,7 @@ More websocket examples are available in the `examples` folder
 
 Unsubscription is achieved by closing the connection. If this method is called without any connection established, the console will output a message `No connection to close.`
 
-```
+```javascript
 // client initialization is skipped
 const wsRef = client.aggTradeWS('bnbusdt', callbacks)
 
@@ -192,6 +259,32 @@ setTimeout(() => client.unsubscribe(wsRef), 3000)
 ### Auto Reconnect
 
 If there is a close event not initiated by the user, the reconnection mechanism will be triggered in 5 secs.
+
+### Ping Server
+
+It is possible to ping server from client, and expect to receive a PONG message.
+
+```javascript
+
+const { Console } = require('console')
+const { Spot } = require('@binance/connector')
+
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr });
+const client = new Spot('', '', { logger })
+
+const callbacks = {
+  open: () => logger.info('open'),
+  close: () => logger.info('closed'),
+  message: data => logger.info(data)
+}
+
+const wsRef = client.userData('the_listen_key', callbacks)
+
+setInterval(() => {
+  client.pingServer(wsRef)
+}, 1000 * 10)
+
+```
 
 ### Custom Logger Integration
 
@@ -240,3 +333,6 @@ Futures and Vanilla Options APIs are not supported:
   - `/dapi/*`
   - `/vapi/*`
   -  Associated Websocket Market and User Data Streams
+
+## License
+MIT

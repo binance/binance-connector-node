@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * API Pay endpoints
  * @module Pay

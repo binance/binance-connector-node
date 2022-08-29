@@ -1,3 +1,5 @@
+'use strict'
+
 const { isEmptyValue } = require('./utils')
 const MissingParameterError = require('../error/missingParameterError')
 

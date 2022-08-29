@@ -1,3 +1,5 @@
+'use strict'
+
 const { validateRequiredParameters } = require('../helpers/validation')
 const { isEmptyValue } = require('../helpers/utils')
 const WebSocketClient = require('ws')
@@ -254,21 +256,34 @@ const Websocket = superclass => class extends superclass {
     const initConnect = () => {
       const ws = new WebSocketClient(url)
       wsRef.ws = ws
-      Object.keys(callbacks).forEach((event, _) => {
-        this.logger.debug(`listen to event: ${event}`)
-        ws.on(event, callbacks[event])
+
+      ws.on('open', () => {
+        this.logger.info(`Connected to the Websocket Server: ${url}`)
+        callbacks.open && callbacks.open()
+      })
+
+      // handle data message. Pass the data to the call back method from user
+      // It could be useful to store the original messages from server for debug
+      ws.on('message', data => {
+        callbacks.message && callbacks.message(data.toString())
       })
 
       ws.on('ping', () => {
-        this.logger.debug('Received ping from server')
+        // As ping pong is very important for maintaining the connection, log them as INFO level
+        this.logger.info('Received PING from server')
+        callbacks.ping && callbacks.ping()
         ws.pong()
+        this.logger.info('Responded PONG to server\'s PING message')
       })
 
       ws.on('pong', () => {
-        this.logger.debug('Received pong from server')
+        this.logger.info('Received PONG from server')
+        callbacks.pong && callbacks.pong()
       })
 
       ws.on('error', err => {
+        this.logger.error('Received error from server')
+        callbacks.error && callbacks.error()
         this.logger.error(err)
       })
 
@@ -284,7 +299,7 @@ const Websocket = superclass => class extends superclass {
         }
       })
     }
-    this.logger.debug(url)
+    this.logger.debug(`Connecting to: ${url}`)
     initConnect()
     return wsRef
   }
@@ -299,6 +314,20 @@ const Websocket = superclass => class extends superclass {
     else {
       wsRef.closeInitiated = true
       wsRef.ws.close()
+      this.logger.info('Disconnected with the Websocket Server')
+    }
+  }
+
+  /**
+   * Send Ping message to the Websocket Server <br>
+   *
+   * @param {WebSocketClient} wsRef - websocket client instance created by ws package
+   */
+  pingServer (wsRef) {
+    if (!wsRef || !wsRef.ws || wsRef.ws.readyState !== WebSocketClient.OPEN) this.logger.warn('Ping only can be sent when connection is ready.')
+    else {
+      this.logger.info('Send PING to the Websocket Server')
+      wsRef.ws.ping()
     }
   }
 }
