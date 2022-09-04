@@ -1,6 +1,6 @@
 {
-  "name": "@binance/connector",
-  "version": "2.0.0-rc.1",
+  "name": "@danswar/binance-connector-node",
+  "version": "1.0.0",
   "description": "This is a lightweight library that works as a connector to the Binance public API.",
   "main": "src/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/binance/binance-connector-node.git"
+    "url": "https://github.com/danswar/binance-connector-node.git"
   },
   "engines": {
     "node": ">=12.22.3",
@@ -27,9 +27,9 @@
   "author": "Binance",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/binance/binance-connector-node/issues"
+    "url": "https://github.com/danswar/binance-connector-node/issues"
   },
-  "homepage": "https://github.com/binance/binance-connector-node#readme",
+  "homepage": "https://github.com/danswar/binance-connector-node#readme",
   "devDependencies": {
     "clean-jsdoc-theme": "^3.2.7",
     "husky": "^6.0.0",
