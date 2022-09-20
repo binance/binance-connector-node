@@ -136,18 +136,16 @@ const Savings = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-position-user_data}
    *
-   * @param {string} asset
+   * @param {string} [asset]
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsFlexibleProductPosition (asset, options = {}) {
-    validateRequiredParameters({ asset })
-
     return this.signRequest(
       'GET',
       '/sapi/v1/lending/daily/token/position',
       Object.assign(options, {
-        asset
+        ...(asset ? { asset } : {})
       })
     )
   }
@@ -213,20 +211,18 @@ const Savings = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fixed-activity-project-position-user_data}
    *
-   * @param {string} asset
+   * @param {string} [asset]
    * @param {object} [options]
    * @param {string} [options.projectId]
    * @param {string} [options.status] - "HOLDING", "REDEEMED"
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   savingsCustomizedPosition (asset, options = {}) {
-    validateRequiredParameters({ asset })
-
     return this.signRequest(
       'GET',
       '/sapi/v1/lending/project/position/list',
       Object.assign(options, {
-        asset
+        ...(asset ? { asset } : {})
       })
     )
   }

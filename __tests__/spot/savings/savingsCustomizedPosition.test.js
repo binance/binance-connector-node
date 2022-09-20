@@ -1,5 +1,4 @@
 /* global describe, it, expect */
-const MissingParameterError = require('../../../src/error/missingParameterError')
 const {
   nockMock,
   buildQueryString,
@@ -14,13 +13,15 @@ const {
 } = require('../../testUtils/mockData')
 
 describe('#savingsCustomizedPosition', () => {
-  describe('throw MissingParameterError', () => {
-    it('missing asset', () => {
-      expect(() => {
-        SpotClient.savingsCustomizedPosition('')
-      }).toThrow(MissingParameterError)
+  it('should return all project position', () => {
+    nockMock('/sapi/v1/lending/project/position/list')(mockResponse)
+
+    return SpotClient.savingsCustomizedPosition().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
     })
   })
+
   it('should return project position', () => {
     const parameters = {
       projectId,
