@@ -14,7 +14,9 @@
   - `GET /sapi/v1/futures/loan/collateralRepay`
   - `POST /sapi/v1/futures/loan/collateralRepay`
   - `GET /sapi/v1/futures/loan/collateralRepayResult`
-
+- Fixing `asset` in the endpoints that should not be mandatory #107
+  - `GET /sapi/v1/lending/daily/token/position`
+  - `GET /sapi/v1/lending/project/position/list`
 
 ## v2.0.0-rc.1 - 2022-08-29
 
