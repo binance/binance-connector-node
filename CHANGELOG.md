@@ -1,5 +1,23 @@
 # Changelog
 
+## v2.0.0-rc.2 - 2022-10-04
+### Changed
+- Delete endpoints for Futures Cross Collateral
+  - `POST /sapi/v1/futures/loan/borrow`
+  - `POST /sapi/v1/futures/loan/repay`
+  - `GET /sapi/v2/futures/loan/configs`
+  - `GET /sapi/v2/futures/loan/calcAdjustLevel`
+  - `GET /sapi/v1/futures/loan/calcMaxAdjustAmount`
+  - `GET /sapi/v2/futures/loan/calcMaxAdjustAmount`
+  - `POST /sapi/v2/futures/loan/adjustCollateral`
+  - `GET /sapi/v1/futures/loan/collateralRepayLimit`
+  - `GET /sapi/v1/futures/loan/collateralRepay`
+  - `POST /sapi/v1/futures/loan/collateralRepay`
+  - `GET /sapi/v1/futures/loan/collateralRepayResult`
+- Fixing `asset` in the endpoints that should not be mandatory #107
+  - `GET /sapi/v1/lending/daily/token/position`
+  - `GET /sapi/v1/lending/project/position/list`
+
 ## v2.0.0-rc.1 - 2022-08-29
 
 - Support timeout
