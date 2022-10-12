@@ -186,6 +186,32 @@ const Market = superclass => class extends superclass {
   }
 
   /**
+   * UIKlines<br>
+   *
+   * GET /api/v3/uiKlines<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#uiklines}
+   *
+   * @param {string} symbol
+   * @param {string} interval
+   * @param {object} [options]
+   * @param {number} [options.startTime]
+   * @param {number} [options.endTime]
+   * @param {number} [options.limit] - Default 500; max 1000.
+   */
+  uiklines (symbol, interval, options = {}) {
+    validateRequiredParameters({ symbol, interval })
+    return this.publicRequest(
+      'GET',
+      '/api/v3/uiKlines',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase(),
+        interval
+      })
+    )
+  }
+
+  /**
    * Current Average Price<br>
    *
    * GET /api/v3/avgPrice<br>
@@ -213,13 +239,14 @@ const Market = superclass => class extends superclass {
    *
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
+   * @param {string} [type] - "MINI" or "FULL"
    */
-  ticker24hr (symbol = '', symbols = []) {
+  ticker24hr (symbol = '', symbols = [], type = 'FULL') {
     symbols = symbols.map(symbol => symbol.toUpperCase())
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase(), symbols }
+      '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase(), symbols, type }
     )
   }
 
@@ -282,6 +309,7 @@ const Market = superclass => class extends superclass {
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
    * @param {object} [options]
+   * @param {string} [options.type] Supported values: FULL or MINI.
    * @param {number} [options.windowSize] - Defaults to 1d if no parameter provided.
   */
   rollingWindowTicker (symbol = '', symbols = [], options = {}) {
