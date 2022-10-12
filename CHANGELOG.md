@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.0.0-rc.3 - 2022-10-12
+### Added
+- New endpoint
+  - `GET /api/v3/uiKlines`
+
+### Changed
+- Add new optional parameter `type` to `GET /api/v3/ticker` and `GET /api/v3/ticker/24hr`
+
 ## v2.0.0-rc.2 - 2022-10-04
 ### Changed
 - Delete endpoints for Futures Cross Collateral
