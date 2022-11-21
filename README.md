@@ -49,14 +49,31 @@ client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
   timeInForce: 'GTC'
 }).then(response => client.logger.log(response.data))
   .catch(error => client.logger.error(error))
-
 ```
 
 Please find `examples` folder to check for more endpoints.
 
+## RSA Key based Authentication
+
+```javascript
+const fs = require('fs')
+const { Spot } = require('@binance/connector')
+
+const apiKey = ''
+const apiSecret = '' // has no effect when RSA private key is provided
+
+const client = new Spot(apiKey, apiSecret, {
+  private_key_file: '/Users/john/ssl/private_key_encrypted.pem',
+  private_key_passphrase: 'password', // only used for encrypted key
+})
+
+// Get account information
+client.account().then(response => client.logger.log(response.data))
+```
+
 ### Testnet
 
-While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in 
+While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in
 [Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
 
 ```javascript
@@ -91,7 +108,7 @@ client.account({ recvWindow: 2000 }).then(response => client.logger.log(response
 
 ### Timeout
 
-It's easy to set timeout in milliseconds in request. If the request take longer than timeout, the request will be aborted. If it's not set, there will be no timeout. 
+It's easy to set timeout in milliseconds in request. If the request take longer than timeout, the request will be aborted. If it's not set, there will be no timeout.
 
 ```javascript
 const { Spot } = require('@binance/connector')
@@ -114,8 +131,8 @@ const { Spot } = require('@binance/connector')
 
 const apiKey = ''
 const apiSecret = ''
-const client = new Spot(apiKey, apiSecret, 
-  {  
+const client = new Spot(apiKey, apiSecret,
+  {
     proxy: {
       protocol: 'https',
       host: '127.0.0.1',
@@ -199,7 +216,7 @@ There are 2 types of error that may be returned from the API server and the user
     - Error code - Server's error code, e.g. `-1102`
     - Error message - Server's error message, e.g. `Unknown order sent.`
     - Request config - Configuration send to the server, which can include URL, request method and headers.
- 
+
   ```
   // client initialization is skipped
   client.exchangeInfo({ symbol: 'invalidSymbol' })
@@ -208,11 +225,11 @@ There are 2 types of error that may be returned from the API server and the user
       client.logger.error(err.response.headers) // full response header
       client.logger.error(err.response.status) // HTTP status code 400
       client.logger.error(err.response.data) // includes both error code and message
-      client.logger.error(err.response.config) // includes request's config 
+      client.logger.error(err.response.config) // includes request's config
     })
 
   ```
-        
+
 - `Server error`
   - This is thrown when server returns `5XX`, it's an issue from server side.
 

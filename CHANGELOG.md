@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.0-rc.4 - 2022-11-22
+### Added
+- Support RSA key signature.
+
 ## v2.0.0-rc.3 - 2022-10-12
 ### Added
 - New endpoint
