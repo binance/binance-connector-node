@@ -56,7 +56,6 @@ Please find `examples` folder to check for more endpoints.
 ## RSA Key based Authentication
 
 ```javascript
-const fs = require('fs')
 const { Spot } = require('@binance/connector')
 
 const apiKey = ''
