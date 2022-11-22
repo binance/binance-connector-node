@@ -5,7 +5,7 @@ const { removeEmptyValue, buildQueryString, createRequest, defaultLogger } = req
 
 class APIBase {
   constructor (options) {
-    const { apiKey, apiSecret, baseURL, logger, timeout, proxy, httpsAgent } = options
+    const { apiKey, apiSecret, baseURL, logger, timeout, proxy, httpsAgent, privateKey, privateKeyPassphrase } = options
 
     this.apiKey = apiKey
     this.apiSecret = apiSecret
@@ -15,6 +15,8 @@ class APIBase {
     this.proxy = proxy || false
     this.httpsAgent = httpsAgent
     this.logger = logger || defaultLogger
+    this.privateKey = privateKey || ''
+    this.privateKeyPassphrase = privateKeyPassphrase || ''
   }
 
   publicRequest (method, path, params = {}) {
@@ -38,10 +40,23 @@ class APIBase {
     params = removeEmptyValue(params)
     const timestamp = Date.now()
     const queryString = buildQueryString({ ...params, timestamp })
-    const signature = crypto
-      .createHmac('sha256', this.apiSecret)
-      .update(queryString)
-      .digest('hex')
+    let signature
+
+    if (!this.privateKey) {
+      signature = crypto
+        .createHmac('sha256', this.apiSecret)
+        .update(queryString)
+        .digest('hex')
+    } else {
+      signature = crypto
+        .createSign('RSA-SHA256')
+        .update(queryString)
+        .sign({
+          key: this.privateKey,
+          passphrase: this.privateKeyPassphrase
+        }, 'base64')
+      signature = encodeURIComponent(signature)
+    }
 
     return createRequest({
       method,
