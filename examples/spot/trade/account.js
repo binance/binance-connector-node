@@ -1,5 +1,6 @@
 'use strict'
 
+const fs = require('fs')
 const Spot = require('../../../src/spot')
 
 let apiKey = ''
@@ -23,13 +24,16 @@ client.account()
 // 1. Have your RSA keys ready.
 // 2. Login to Binance.com to register your public key.
 // 3. Save the API Key that is generated from UI, then you are ready to go.
-apiKey = ''
+apiKey = 'the_api_key'
 apiSecret = '' // Not required for RSA signature.
+
+// load private key
+const privateKey = fs.readFileSync('/Users/liangshi/ssl/private_key_encrypted.pem')
 
 client = new Spot(apiKey, apiSecret, {
   baseURL: 'https://testnet.binance.vision', // This URL is for testnet; Remove it for production.
-  private_key_file: '/Users/john/ssl/private_key_encrypted.pem',
-  private_key_passphrase: 'password', // only used for encrypted key
+  privateKey,
+  privateKeyPassphrase: 'private_key_password', // only used for encrypted key
   timeout: 1000
 })
 

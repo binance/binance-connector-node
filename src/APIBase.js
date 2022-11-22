@@ -1,12 +1,11 @@
 'use strict'
 
-const fs = require('fs')
 const crypto = require('crypto')
 const { removeEmptyValue, buildQueryString, createRequest, defaultLogger } = require('./helpers/utils')
 
 class APIBase {
   constructor (options) {
-    const { apiKey, apiSecret, baseURL, logger, timeout, proxy, httpsAgent, privateKeyFile, privateKeyPassphrase } = options
+    const { apiKey, apiSecret, baseURL, logger, timeout, proxy, httpsAgent, privateKey, privateKeyPassphrase } = options
 
     this.apiKey = apiKey
     this.apiSecret = apiSecret
@@ -16,7 +15,7 @@ class APIBase {
     this.proxy = proxy || false
     this.httpsAgent = httpsAgent
     this.logger = logger || defaultLogger
-    this.privateKeyFile = privateKeyFile || ''
+    this.privateKey = privateKey || ''
     this.privateKeyPassphrase = privateKeyPassphrase || ''
   }
 
@@ -43,7 +42,7 @@ class APIBase {
     const queryString = buildQueryString({ ...params, timestamp })
     let signature
 
-    if (!this.privateKeyFile) {
+    if (!this.privateKey) {
       signature = crypto
         .createHmac('sha256', this.apiSecret)
         .update(queryString)
@@ -53,7 +52,7 @@ class APIBase {
         .createSign('RSA-SHA256')
         .update(queryString)
         .sign({
-          key: fs.readFileSync(this.privateKeyFile),
+          key: this.privateKey,
           passphrase: this.privateKeyPassphrase
         }, 'base64')
       signature = encodeURIComponent(signature)

@@ -61,9 +61,13 @@ const { Spot } = require('@binance/connector')
 const apiKey = ''
 const apiSecret = '' // has no effect when RSA private key is provided
 
+// load private key
+const privateKey = fs.readFileSync('/Users/john/ssl/private_key_encrypted.pem')
+const privateKeyPassphrase = 'password'
+
 const client = new Spot(apiKey, apiSecret, {
-  private_key_file: '/Users/john/ssl/private_key_encrypted.pem',
-  private_key_passphrase: 'password', // only used for encrypted key
+  privateKey,
+  privateKeyPassphrase // only used for encrypted key
 })
 
 // Get account information
