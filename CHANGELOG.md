@@ -1,5 +1,11 @@
 # Changelog
 
+
+## v2.0.0 - 2023-01-31
+
+### Updated
+- Pump dependencies version
+
 ## v2.0.0-rc.4 - 2022-11-22
 ### Added
 - Support RSA key signature.
@@ -100,7 +106,7 @@
 - `POST /sapi/v1/bswap/liquidityAdd` - New optional parameter `type`
 - `POST /sapi/v1/sub-account/universalTransfer` - New transfer types `MARGIN`,`ISOLATED_MARGIN` and parameter `symbol`
 - `GET /api/v3/depth` - The `limit` value can be outside of the previous values (i.e. 5, 10, 20, 50, 100, 500, 1000, 5000). The limit still cannot exceed 5000.
-- `POST /api/v3/order`, `POST /api/v3/order/test` and `/api/v3/order/oco` - New optional parameter `trailingDelta`  
+- `POST /api/v3/order`, `POST /api/v3/order/test` and `/api/v3/order/oco` - New optional parameter `trailingDelta`
 
 ## v1.8.0 - 2022-02-24
 ### Added
