@@ -1,6 +1,6 @@
 {
   "name": "@binance/connector",
-  "version": "2.0.0-rc.4",
+  "version": "2.0.0",
   "description": "This is a lightweight library that works as a connector to the Binance public API.",
   "main": "src/index.js",
   "scripts": {
@@ -34,7 +34,7 @@
     "clean-jsdoc-theme": "^3.2.7",
     "husky": "^6.0.0",
     "jest": "^28.1.2",
-    "jsdoc": "^3.6.7",
+    "jsdoc": "^4.0.0",
     "marked": "^4.0.12",
     "nock": "^13.0.2",
     "standard": "^16.0.4"
