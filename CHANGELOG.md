@@ -1,6 +1,11 @@
 # Changelog
 
 
+## v2.0.1 - 2023-02-22
+
+### Updated
+- Fixed WebSocket onClose event issue
+
 ## v2.0.0 - 2023-01-31
 
 ### Updated
