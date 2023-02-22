@@ -289,7 +289,8 @@ const Websocket = superclass => class extends superclass {
 
       ws.on('close', (closeEventCode, reason) => {
         if (!wsRef.closeInitiated) {
-          this.logger.error(`Connection close due to ${closeEventCode}: ${reason}.`)
+          callbacks.close && callbacks.close()
+          this.logger.warn(`Connection close due to ${closeEventCode}: ${reason}.`)
           setTimeout(() => {
             this.logger.debug('Reconnect to the server.')
             initConnect()
