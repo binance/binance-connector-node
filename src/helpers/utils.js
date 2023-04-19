@@ -3,6 +3,9 @@
 const axios = require('axios')
 const { Console } = require('console')
 const constants = require('./constants')
+const crypto = require('crypto')
+
+const randomString = () => crypto.randomBytes(16).toString('hex')
 
 const removeEmptyValue = obj => {
   if (!(obj instanceof Object)) return {}
@@ -71,11 +74,18 @@ const defaultLogger = new Console({
   stderr: process.stderr
 })
 
+const sortObject = obj => Object.keys(obj).sort().reduce((res, key) => {
+  res[key] = obj[key]
+  return res
+}, {})
+
 module.exports = {
   isEmptyValue,
   removeEmptyValue,
   buildQueryString,
   createRequest,
   flowRight,
-  defaultLogger
+  defaultLogger,
+  randomString,
+  sortObject
 }

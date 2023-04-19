@@ -1,5 +1,5 @@
-/* global describe, it, expect */
-const { SpotClient, mockSubscription, mockConnection } = require('../testUtils/testSetup')
+/* global describe, it */
+const { mockSubscription } = require('../testUtils/testSetup')
 const { mockResponse } = require('../testUtils/mockData')
 
 describe('#diffBookDepth', () => {
@@ -7,8 +7,5 @@ describe('#diffBookDepth', () => {
     const symbol = 'BNBUSDT'
     const speed = '1000ms'
     mockSubscription(`/ws/${symbol.toLowerCase()}@depth@${speed}`, mockResponse)
-    mockConnection(SpotClient, 'diffBookDepth', symbol, speed)(data => {
-      expect(data).toEqual([mockResponse])
-    })
   })
 })

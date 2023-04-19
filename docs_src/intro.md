@@ -65,28 +65,49 @@ client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
 
 ```
 
-Please find `examples` folder to check for more endpoints.
+### Websocket Stream
+```javascript
+const { WebsocketStream } = require('@binance/connector')
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
+// define callbacks for different events
+const callbacks = {
+  open: () => logger.debug('Connected with Websocket server'),
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
+}
 
-### Websocket
+const websocketStreamClient = new WebsocketStream({ logger, callbacks })
+// subscribe ticker stream
+websocketStreamClient.ticker('bnbusdt')
+// close websocket stream
+setTimeout(() => websocketStreamClient.disconnect(), 6000)
+
+```
+
+### WebSocket API
 
 ```javascript
-const { Spot } = require('@binance/connector')
+const { WebsocketAPI } = require('@binance/connector')
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
-const client = new Spot('', '', {
-  wsURL: 'wss://testnet.binance.vision' // If optional base URL is not provided, wsURL defaults to wss://stream.binance.com:9443
-})
-
+// callbacks for different events
 const callbacks = {
-  open: () => client.logger.log('open'),
-  close: () => client.logger.log('closed'),
-  message: data => client.logger.log(data)
+  open: (client) => {
+    logger.debug('Connected with Websocket server')
+    // send message to get orderbook info after connection open
+    client.orderbook('BTCUSDT')
+    client.orderbook('BNBUSDT', { limit: 10 })
+  },
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
 }
-const aggTrade = client.aggTradeWS('bnbusdt', callbacks)
 
+const websocketAPIClient = new WebsocketAPI(null, null, { logger, callbacks })
 
-// support combined stream, e.g.
-const combinedStreams = client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@tikcer'], callbacks)
+// disconnect the connection
+setTimeout(() => websocketAPIClient.disconnect(), 20000)
+
 ```
 
 More websocket examples are available in the `examples` folder

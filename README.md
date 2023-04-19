@@ -13,6 +13,7 @@ This is a lightweight library that works as a connector to [Binance public API](
     - `/sapi/*`
     - Spot Websocket Market Stream
     - Spot User Data Stream
+    - Spot Websocket API
 - Inclusion of test cases and examples
 - Customizable base URL
 - Support request timeout and HTTP proxy (since v2)
@@ -239,42 +240,60 @@ There are 2 types of error that may be returned from the API server and the user
 
 ## Websocket
 
+### Websocket Stream
 ```javascript
-const { Spot } = require('@binance/connector')
+const { WebsocketStream } = require('@binance/connector')
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
-const client = new Spot('', '', {
-  wsURL: 'wss://testnet.binance.vision' // If optional base URL is not provided, wsURL defaults to wss://stream.binance.com:9443
-})
-
+// define callbacks for different events
 const callbacks = {
-  open: () => client.logger.log('open'),
-  close: () => client.logger.log('closed'),
-  message: data => client.logger.log(data)
+  open: () => logger.debug('Connected with Websocket server'),
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
 }
-const aggTrade = client.aggTradeWS('bnbusdt', callbacks)
 
-// unsubscribe the stream above
-setTimeout(() => client.unsubscribe(aggTrade), 3000)
+const websocketStreamClient = new WebsocketStream({ logger, callbacks })
+// subscribe ticker stream
+websocketStreamClient.ticker('bnbusdt')
+// close websocket stream
+setTimeout(() => websocketStreamClient.disconnect(), 6000)
 
-// support combined stream
-const combinedStreams = client.combinedStreams(['btcusdt@miniTicker', 'ethusdt@ticker'], callbacks)
 ```
 
+### Unsubscribe Websocket Stream
+
+```javascript
+// unsubscribe websocket stream
+websocketStreamClient.unsubscribe('bnbusdt@kline_1m')
+```
+
+### WebSocket API
+
+```javascript
+const { WebsocketAPI } = require('@binance/connector')
+const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
+
+// callbacks for different events
+const callbacks = {
+  open: (client) => {
+    logger.debug('Connected with Websocket server')
+    // send message to get orderbook info after connection open
+    client.orderbook('BTCUSDT')
+    client.orderbook('BNBUSDT', { limit: 10 })
+  },
+  close: () => logger.debug('Disconnected with Websocket server'),
+  message: data => logger.info(data)
+}
+
+const websocketAPIClient = new WebsocketAPI(null, null, { logger, callbacks })
+
+// disconnect the connection
+setTimeout(() => websocketAPIClient.disconnect(), 20000)
+
+```
 
 More websocket examples are available in the `examples` folder
 
-### Unsubscribe a Stream
-
-Unsubscription is achieved by closing the connection. If this method is called without any connection established, the console will output a message `No connection to close.`
-
-```javascript
-// client initialization is skipped
-const wsRef = client.aggTradeWS('bnbusdt', callbacks)
-
-// The connection (bnbusdt@aggTrade) is closed after 3 secs.
-setTimeout(() => client.unsubscribe(wsRef), 3000)
-
-```
 
 ### Auto Reconnect
 
@@ -285,52 +304,10 @@ If there is a close event not initiated by the user, the reconnection mechanism 
 It is possible to ping server from client, and expect to receive a PONG message.
 
 ```javascript
-
-const { Console } = require('console')
-const { Spot } = require('@binance/connector')
-
-const logger = new Console({ stdout: process.stdout, stderr: process.stderr });
-const client = new Spot('', '', { logger })
-
-const callbacks = {
-  open: () => logger.info('open'),
-  close: () => logger.info('closed'),
-  message: data => logger.info(data)
-}
-
-const wsRef = client.userData('the_listen_key', callbacks)
-
-setInterval(() => {
-  client.pingServer(wsRef)
-}, 1000 * 10)
-
+websocketStreamClient.pingServer()
 ```
 
 ### Custom Logger Integration
-
-```javascript
-const { Console } = require('console')
-const fs = require('fs')
-const Spot = require('@binance/connector')
-
-const output = fs.createWriteStream('./logs/stdout.log')
-const errorOutput = fs.createWriteStream('./logs/stderr.log')
-
-// make sure the logs/ folder is created beforehand
-const logger = new Console({ stdout: output, stderr: errorOutput })
-const client = new Spot('', '', {logger})
-
-const callbacks = {
-  open: () => client.logger.log('open'),
-  close: () => client.logger.log('closed'),
-  message: data => client.logger.log(data)
-}
-
-const wsRef = client.aggTradeWS('bnbusdt', callbacks)
-setTimeout(() => client.unsubscribe(wsRef), 5000)
-// check the output file
-
-```
 
 The default logger defined in the package is [Node.js Console class](https://nodejs.org/api/console.html). Its output is sent to `process.stdout` and `process.stderr`, same as the global console.
 
