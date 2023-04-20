@@ -15,8 +15,8 @@ const callbacks = {
     client.cancelReplaceOrder('BNBUSDT', 'ALLOW_FAILURE', 'BUY', 'LIMIT', {
       cancelOrderId: 3285225,
       timeInForce: 'GTC',
-      price: '300',
-      quantity: '0.1'
+      price: 300,
+      quantity: 0.1
     })
   },
   close: () => logger.debug('Disconnected with Websocket server'),

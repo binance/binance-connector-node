@@ -14,8 +14,8 @@ const callbacks = {
     logger.debug('Connected with Websocket server')
     client.newOCOOrder('BNBUSDT', 'BUY', 300, 0.1, {
       listClientOrderId: 'my_list_order',
-      stopPrice: '330',
-      stopLimitPrice: '340',
+      stopPrice: 330,
+      stopLimitPrice: 340,
       stopLimitTimeInForce: 'GTC',
       newOrderRespType: 'FULL'
     })
