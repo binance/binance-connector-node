@@ -24,7 +24,7 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run standard
-    - run: node __tests__/websocket/testingServer.js & sleep 50 && npx jest
+    - run: node __tests__/websocket/testingServer.js & sleep 50 && npm run test
   coverage:
     runs-on: ubuntu-latest
     env:
@@ -37,7 +37,7 @@ jobs:
         node-version: 17.x
     - run: npm install
     - run: npm run standard
-    - run: node __tests__/websocket/testingServer.js & sleep 50 && npx jest --silent --ci --coverage --testLocationInResults --json --outputFile="report.json"
+    - run: node __tests__/websocket/testingServer.js & sleep 50 && npm run coverage
     - uses: artiomtr/jest-coverage-report-action@v2.0-rc.1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
