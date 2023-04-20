@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.0.0-rc1 - 2023-04-20
+
+### Added
+- Add Spot Websocket API
+
+### Updated
+- Redesign the Websocket Stream and rename stream methods
+- Upgrade dependencies
 
 ## v2.0.1 - 2023-02-22
 

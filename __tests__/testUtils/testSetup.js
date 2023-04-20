@@ -1,11 +1,11 @@
-const axios = require('axios')
 const nock = require('nock')
 const Spot = require('../../src/spot')
-const httpAdapter = require('axios/lib/adapters/http')
+const WebsocketStream = require('../../src/websocketStream')
 const { buildQueryString } = require('../../src/helpers/utils')
 
 const host = 'https://api.binance.com'
-axios.defaults.adapter = httpAdapter
+
+const SpotClient = new Spot()
 
 const filterPath = path => {
   const pathList = path.split('?')
@@ -48,28 +48,19 @@ const nockPutMock = urlPath => responseData => {
     .reply(200, responseData)
 }
 
-const SpotClient = new Spot()
+const websocketStreamClient = new WebsocketStream()
 
 const mockSubscription = (targetUrl, mockResponse) => {
-  SpotClient.subscribe = new Proxy(SpotClient.subscribe, {
-    apply: function (target, thisArg, [url, callback]) {
+  websocketStreamClient.subscribe = new Proxy(websocketStreamClient.subscribe, {
+    apply: function (target, thisArg, [url]) {
       targetUrl = targetUrl.replace('?', '\\?')
       if (url.match(new RegExp(`${targetUrl}$`))) {
-        return callback(null, mockResponse)
+        return mockResponse
       }
-      return callback(new Error('URL mismatch'))
+      console.log(url)
+      return new Error('URL mismatch')
     }
   })
-}
-
-const mockConnection = (classInstance, streamMethod, ...args) => testScenarios => {
-  const messages = []
-  const messageCallback = (err, data) => {
-    if (err) messages.push(err)
-    else messages.push(data)
-  }
-  classInstance[streamMethod](...args, messageCallback)
-  return testScenarios(messages)
 }
 
 module.exports = {
@@ -79,6 +70,6 @@ module.exports = {
   nockPutMock,
   buildQueryString,
   mockSubscription,
-  mockConnection,
-  SpotClient
+  SpotClient,
+  websocketStreamClient
 }

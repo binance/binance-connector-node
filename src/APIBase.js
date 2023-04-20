@@ -5,7 +5,7 @@ const { removeEmptyValue, buildQueryString, createRequest, defaultLogger } = req
 
 class APIBase {
   constructor (options) {
-    const { apiKey, apiSecret, baseURL, logger, timeout, proxy, httpsAgent, privateKey, privateKeyPassphrase } = options
+    const { apiKey, apiSecret, baseURL, logger, timeout, proxy, httpsAgent, privateKey, privateKeyPassphrase, wsURL } = options
 
     this.apiKey = apiKey
     this.apiSecret = apiSecret
@@ -17,6 +17,7 @@ class APIBase {
     this.logger = logger || defaultLogger
     this.privateKey = privateKey || ''
     this.privateKeyPassphrase = privateKeyPassphrase || ''
+    this.wsURL = wsURL
   }
 
   publicRequest (method, path, params = {}) {

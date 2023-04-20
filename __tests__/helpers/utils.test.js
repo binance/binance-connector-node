@@ -1,5 +1,5 @@
 /* global describe, it, expect */
-const { isEmptyValue, removeEmptyValue, buildQueryString, flowRight } = require('../../src/helpers/utils')
+const { isEmptyValue, removeEmptyValue, buildQueryString, flowRight, sortObject } = require('../../src/helpers/utils')
 
 describe('#isEmptyValue', () => {
   it.each([
@@ -105,5 +105,20 @@ describe('#flowRight', () => {
     const instanceC = new ClassC()
     expect(instanceC.functionA()).toBe(1)
     expect(instanceC.functionB()).toBe(2)
+  })
+
+  it('should sort object by keys', () => {
+    const obj = {
+      c: 3,
+      b: 2,
+      a: 1
+    }
+    const expectedObj = {
+      a: 1,
+      b: 2,
+      c: 3
+    }
+
+    expect(sortObject(obj)).toStrictEqual(expectedObj)
   })
 })
