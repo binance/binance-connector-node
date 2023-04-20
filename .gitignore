@@ -2,4 +2,4 @@ node_modules
 dist
 docs
 coverage
-coverage-report.json
+report.json

@@ -6,9 +6,9 @@
   "scripts": {
     "jsdoc": "jsdoc -c ./docs_src/conf.json && ./docs_src/docs.sh",
     "jsdoc:win": "jsdoc -c ./docs_src/conf.json && npx jsdoc --readme ./docs_src/gettingStarted.md src/modules/restful/blvt.js && node ./docs_src/generateDoc.js && RD /S /Q out",
-    "test": "jest --transformIgnorePatterns \"node_modules/(?!axios)/\" --testPathIgnorePatterns=__tests__/websocket/subscription.test.js",
+    "test": "jest",
     "test:watch": "jest --watchAll",
-    "coverage": "jest --transformIgnorePatterns \"node_modules/(?!axios)/\" --testPathIgnorePatterns=__tests__/websocket/subscription.test.js --silent --ci --coverage --testLocationInResults --json --outputFile=\"coverage-report.json\"",
+    "coverage": "jest --silent --ci --coverage --testLocationInResults --json --outputFile=\"report.json\"",
     "standard": "standard",
     "standard:fix": "standard --fix ",
     "prepare": "husky install"
@@ -48,6 +48,12 @@
     "ws": "^8.13"
   },
   "jest": {
+    "testPathIgnorePatterns": [
+      "__tests__/websocket/subscription.test.js"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)/"
+    ],
     "testMatch": [
       "**/__tests__/**/*.test.js"
     ]

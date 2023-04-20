@@ -1,7 +1,7 @@
 'use strict'
 
 const WebsocketBase = require('./websocketBase')
-const Stream = require('./modules/websocket/Stream')
+const Stream = require('./modules/websocket/stream')
 
 class WebsocketStream extends (Stream)(WebsocketBase) {
   constructor (options = {}) {
