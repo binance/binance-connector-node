@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.0.0-rc.2 - 2023-05-02
+## 3.0.0-rc.2 - 2023-05-03
 
 ### Added
 - Support Ed25519 key signature
