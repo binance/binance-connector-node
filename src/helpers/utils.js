@@ -31,12 +31,34 @@ const buildQueryString = params => {
     .join('&')
 }
 
+const convertNumbersToDecimalString = (value) => {
+  if (typeof value !== "number") {
+    return value
+  }
+
+  // Convert the decimal value to a string with 20 decimal places
+  let str = value.toFixed(20)
+
+  // Remove trailing zeros
+  str = str.replace(/0+$/, '')
+
+  // Remove the decimal point if there are no decimal places remaining
+  if (str.charAt(str.length - 1) === '.') {
+    str = str.slice(0, -1)
+  }
+
+  return str
+}
+
 /**
  * NOTE: The array conversion logic is different from usual query string.
  * E.g. symbols=["BTCUSDT","BNBBTC"] instead of symbols[]=BTCUSDT&symbols[]=BNBBTC
  */
 const stringifyKeyValuePair = ([key, value]) => {
-  const valueString = Array.isArray(value) ? `["${value.join('","')}"]` : value
+  const valueString = Array.isArray(value)
+    ? `["${value.join('","')}"]`
+    : convertNumbersToDecimalString(value)
+
   return `${key}=${encodeURIComponent(valueString)}`
 }
 
