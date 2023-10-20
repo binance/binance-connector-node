@@ -70,7 +70,7 @@ const privateKeyAlgo = PrivateKeyAlgo.ED25519 // for Ed25519 key
 
 const client = new Spot(apiKey, apiSecret, {
   privateKey,
-  privateKeyPassphrase // only used for encrypted key
+  privateKeyPassphrase, // only used for encrypted key
   privateKeyAlgo
 })
 
