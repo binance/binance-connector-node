@@ -12,7 +12,7 @@ class WebsocketBase extends APIBase {
   }
 
   isConnected () {
-    return !(!this.wsConnection.ws || this.wsConnection.ws.readyState !== WebSocketClient.OPEN);
+    return !(!this.wsConnection.ws || this.wsConnection.ws.readyState !== WebSocketClient.OPEN)
   }
 
   initConnect (url) {

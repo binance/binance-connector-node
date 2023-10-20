@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.0.0 - 2023-10-20
+
+### Changed
+- Update README #142
+- Minor changes #143
+- Update package
+- Update Nodejs versions in pipeline
+
 ## 3.0.0-rc.2 - 2023-05-03
 
 ### Added
