@@ -1,5 +1,24 @@
 # Changelog
 
+
+## 3.1.0 - 2023-12-18
+
+### Added
+- Add Auto Invest endpoints
+- `GET /sapi/v1/margin/available-inventory` Query margin available inventory
+- `POST /sapi/v1/margin/manual-liquidation` Margin manual liquidation
+
+### Changed
+- Update dependencies
+
+### Removed
+- `GET /sapi/v1/futures/loan/borrow/history`
+- `GET /sapi/v1/futures/loan/repay/history`
+- `GET /sapi/v2/futures/loan/wallet`
+- `GET /sapi/v1/futures/loan/adjustCollateral/history`
+- `GET /sapi/v1/futures/loan/liquidationHistory`
+- `GET /sapi/v1/futures/loan/interestHistory`
+
 ## 3.0.0 - 2023-10-20
 
 ### Changed

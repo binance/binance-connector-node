@@ -1024,6 +1024,48 @@ const Margin = superclass => class extends superclass {
       options
     )
   }
+
+  /**
+   * Query Margin Available Inventory (USER_DATA)<br>
+   *
+   * GET /sapi/v1/margin/available-inventory<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-available-inventory-user_data}
+   *
+   * @param {Type} type
+   */
+  queryMarginAvailableInventory (type, options = {}) {
+    validateRequiredParameters({ type })
+    return this.signRequest(
+      'GET',
+      '/sapi/v1/margin/available-inventory',
+      Object.assign(options, {
+        type
+      })
+    )
+  }
+
+  /**
+   * Margin manual liquidation (MARGIN)<br>
+   *
+   * POST /sapi/v1/margin/manual-liquidation<br>
+   *
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-manual-liquidation-margin}
+   *
+   * @param {Type} type
+   * @param {object} [options]
+   * @param {string} [options.symbol]
+   */
+  marginManualLiquidation (type, options = {}) {
+    validateRequiredParameters({ type })
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/margin/manual-liquidation',
+      Object.assign(options, {
+        type
+      })
+    )
+  }
 }
 
 module.exports = Margin
