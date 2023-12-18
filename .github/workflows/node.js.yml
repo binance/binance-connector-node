@@ -38,7 +38,7 @@ jobs:
     - run: npm install
     - run: npm run standard
     - run: node __tests__/websocket/testingServer.js & sleep 50 && npm run coverage
-    - uses: artiomtr/jest-coverage-report-action@v2.0-rc.1
+    - uses: artiomtr/jest-coverage-report-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         threshold: 95
