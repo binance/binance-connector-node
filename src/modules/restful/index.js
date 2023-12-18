@@ -1,5 +1,6 @@
 'use strict'
 
+module.exports.autoInvest = require('./autoInvest')
 module.exports.Blvt = require('./blvt')
 module.exports.Bswap = require('./bswap')
 module.exports.SubAccount = require('./subAccount')
