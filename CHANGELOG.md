@@ -1,12 +1,57 @@
 # Changelog
 
+## 3.2.0 - 2024-01-23
+
+### Changed
+- Updated `follow-redirects` dependency
+
+### Removed
+- Deprecated Savings endpoints:
+  - `GET /sapi/v1/lending/daily/product/list`
+  - `GET /sapi/v1/lending/daily/userLeftQuota`
+  - `POST /sapi/v1/lending/daily/purchase`
+  - `GET /sapi/v1/lending/daily/userRedemptionQuota`
+  - `POST /sapi/v1/lending/daily/redeem`
+  - `GET /sapi/v1/lending/daily/token/position`
+  - `GET /sapi/v1/lending/project/list`
+  - `POST /sapi/v1/lending/customizedFixed/purchase`
+  - `GET /sapi/v1/lending/union/account`
+  - `GET /sapi/v1/lending/union/purchaseRecord`
+  - `GET /sapi/v1/lending/union/redemptionRecord`
+  - `GET /sapi/v1/lending/union/interestHistory`
+  - `GET /sapi/v1/lending/project/position/list`
+
+- Deprecated Staking endpoints:
+  - `GET /sapi/v1/staking/productList`
+  - `POST /sapi/v1/staking/purchase`
+  - `POST /sapi/v1/staking/redeem`
+  - `GET /sapi/v1/staking/position`
+  - `GET /sapi/v1/staking/stakingRecord`
+  - `POST /sapi/v1/staking/setAutoStaking`
+  - `GET /sapi/v1/staking/personalLeftQuota`
+
+- Deprecated BSwap endpoints:
+  - `GET /sapi/v1/bswap/pools`
+  - `GET /sapi/v1/bswap/liquidity`
+  - `POST /sapi/v1/bswap/liquidityAdd`
+  - `POST /sapi/v1/bswap/liquidityRemove`
+  - `GET /sapi/v1/bswap/liquidityOps`
+  - `GET /sapi/v1/bswap/quote`
+  - `POST /sapi/v1/bswap/swap`
+  - `GET /sapi/v1/bswap/swap`
+  - `GET /sapi/v1/bswap/poolConfigure`
+  - `GET /sapi/v1/bswap/addLiquidityPreview`
+  - `GET /sapi/v1/bswap/removeLiquidityPreview`
+  - `GET /sapi/v1/bswap/unclaimedRewards`
+  - `POST /sapi/v1/bswap/claimRewards`
+  - `GET /sapi/v1/bswap/claimedHistory`
 
 ## 3.1.0 - 2023-12-18
 
 ### Added
-- Add Auto Invest endpoints
-- `GET /sapi/v1/margin/available-inventory` Query margin available inventory
-- `POST /sapi/v1/margin/manual-liquidation` Margin manual liquidation
+- Add Auto Invest endpoints:
+  - `GET /sapi/v1/margin/available-inventory` Query margin available inventory
+  - `POST /sapi/v1/margin/manual-liquidation` Margin manual liquidation
 
 ### Changed
 - Update dependencies
