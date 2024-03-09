@@ -8,6 +8,40 @@ const { validateRequiredParameters } = require('../../helpers/validation')
  * @param {*} superclass
  */
 const Trade = superclass => class extends superclass {
+
+  /**
+ * All Orders (USER_DATA)<br>
+ *
+ * GET /api/v3/allOrders<br>
+ *
+ * {@link https://binance-docs.github.io/apidocs/spot/en/#all-orders-user_data}
+ *
+ * @param {string} symbol
+ * @param {object} [options]
+ * @param {number} [options.orderId]
+ * @param {number} [options.startTime]
+ * @param {number} [options.endTime]
+ * @param {number} [options.limit]
+ * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+ */
+async allOrders(symbol, options = {}) {
+  validateRequiredParameters({ symbol });
+  try {
+    const response = await this.signRequest(
+      'GET',
+      '/api/v3/allOrders',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
+      })
+    );
+    return response.data;
+  } catch (error) {
+    console.error(`Error getting all orders: ${error.message}`);
+    throw error;
+  }
+}
+
+  
   /**
    * Test New Order (TRADE)<br>
    *
