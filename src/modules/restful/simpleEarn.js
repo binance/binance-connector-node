@@ -57,11 +57,11 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * POST /sapi/v1/simple-earn/flexible/subscribe<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-simple-earn-locked-product-list-user_data}
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#subscribe-flexible-product-trade}
    *
    * @param {string} productId
    * @param {number} amount
-   * @param {object} options
+   * @param {object} [options]
    * @param {boolean} [options.autoSubscribe]
    * @param {string} [options.sourceAccount]
    * @param {number} [options.recvWindow]
@@ -83,20 +83,20 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#subscribe-locked-product-trade}
    *
-   * @param {string} productId
+   * @param {string} projectId
    * @param {number} amount
-   * @param {object} options
+   * @param {object} [options]
    * @param {boolean} [options.autoSubscribe]
    * @param {string} [options.sourceAccount]
    * @param {number} [options.recvWindow]
    *
    */
-  subscribeLockedProduct (productId, amount, options = {}) {
-    validateRequiredParameters({ productId, amount })
+  subscribeLockedProduct (projectId, amount, options = {}) {
+    validateRequiredParameters({ projectId, amount })
     return this.signRequest(
       'POST',
       '/sapi/v1/simple-earn/locked/subscribe',
-      Object.assign(options, { productId, amount })
+      Object.assign(options, { projectId, amount })
     )
   }
 
@@ -108,7 +108,7 @@ const SimpleEarn = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#redeem-flexible-product-trade}
    *
    * @param {string} productId
-   * @param {object} options
+   * @param {object} [options]
    * @param {boolean} [options.redeemAll] // true or false, default to false
    * @param {number} [options.amount] // if redeemAll is false, amount is mandatory
    * @param {string} [options.destAccount]
@@ -131,17 +131,17 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#redeem-locked-product-trade}
    *
-   * @param {string} productId
-   * @param {object} options
+   * @param {string} positionId
+   * @param {object} [options]
    * @param {number} [options.recvWindow]
    *
    */
-  redeemLockedProduct (productId, options = {}) {
-    validateRequiredParameters({ productId })
+  redeemLockedProduct (positionId, options = {}) {
+    validateRequiredParameters({ positionId })
     return this.signRequest(
       'POST',
       '/sapi/v1/simple-earn/locked/redeem',
-      Object.assign(options, { productId })
+      Object.assign(options, { positionId })
     )
   }
 
@@ -152,8 +152,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-position-user_data}
    *
-   *
-   * @param {object} options
+   * @param {object} [options]
    * @param {string} [options.asset]
    * @param {string} [options.productId]
    * @param {number} [options.current]
@@ -176,10 +175,10 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-product-position-user_data}
    *
-   *
-   * @param {object} options
+   * @param {object} [options]
    * @param {string} [options.asset]
-   * @param {string} [options.productId]
+   * @param {string} [options.positionId]
+   * @param {string} [options.projectId]
    * @param {number} [options.current]
    * @param {number} [options.size]
    * @param {number} [options.recvWindow]
@@ -198,9 +197,9 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-simple-account-user_data}
+   * {@link https://binance-docs.github.io/apidocs/spot/en/#simple-account-user_data}
    *
-   * @param {object} options
+   * @param {object} [options]
    * @param {number} [options.recvWindow]
    *
    */
@@ -219,7 +218,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-subscription-record-user_data}
    *
-   * @param {object} options
+   * @param {object} [options]
    * @param {string} [options.productId]
    * @param {string} [options.purchaseId]
    * @param {string} [options.asset]
@@ -245,7 +244,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-subscription-record-user_data}
    *
-   * @param {object} options
+   * @param {object} [options]
    * @param {string} [options.purchaseId]
    * @param {string} [options.asset]
    * @param {number} [options.startTime]
@@ -270,7 +269,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-redemption-record-user_data}
    *
-   * @param {object} options
+   * @param {object} [options]
    * @param {string} [options.productId]
    * @param {string} [options.redeemId]
    * @param {string} [options.asset]
@@ -296,7 +295,8 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-redemption-record-user_data}
    *
-   * @param {object} options
+   * @param {object} [options]
+   * @param {string} [options.positionId]
    * @param {string} [options.redeemId]
    * @param {string} [options.asset]
    * @param {number} [options.startTime]
@@ -321,8 +321,8 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-rewards-history-user_data}
    *
-   * @param {object} options
    * @param {string} type
+   * @param {object} [options]
    * @param {string} [options.productId]
    * @param {string} [options.asset]
    * @param {number} [options.startTime]
@@ -348,7 +348,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-rewards-history-user_data}
    *
-   * @param {object} options
+   * @param {object} [options]
    * @param {string} [options.positionId]
    * @param {string} [options.asset]
    * @param {number} [options.startTime]
@@ -395,18 +395,18 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#set-locked-auto-subscribe-user_data}
    *
-   * @param {string} productId
+   * @param {string} positionId
    * @param {boolean} autoSubscribe
    * @param {object} [options]
    * @param {number} [options.recvWindow]
    *
    */
-  setLockedAutoSubscribe (productId, autoSubscribe, options = {}) {
-    validateRequiredParameters({ productId, autoSubscribe })
+  setLockedAutoSubscribe (positionId, autoSubscribe, options = {}) {
+    validateRequiredParameters({ positionId, autoSubscribe })
     return this.signRequest(
       'POST',
       '/sapi/v1/simple-earn/locked/setAutoSubscribe',
-      Object.assign(options, { productId, autoSubscribe })
+      Object.assign(options, { positionId, autoSubscribe })
     )
   }
 
@@ -418,6 +418,7 @@ const SimpleEarn = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-personal-left-quota-user_data}
    *
    * @param {string} productId
+   * @param {object} [options]
    * @param {number} [options.recvWindow]
    *
    */
@@ -437,16 +438,17 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-personal-left-quota-user_data}
    *
-   * @param {string} productId
+   * @param {string} projectId
+   * @param {object} [options]
    * @param {number} [options.recvWindow]
    *
    */
-  getLockedPersonalLeftQuota (productId, options = {}) {
-    validateRequiredParameters({ productId })
+  getLockedPersonalLeftQuota (projectId, options = {}) {
+    validateRequiredParameters({ projectId })
     return this.signRequest(
       'GET',
       '/sapi/v1/simple-earn/locked/personalLeftQuota',
-      Object.assign(options, { productId })
+      Object.assign(options, { projectId })
     )
   }
 
@@ -479,18 +481,19 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-subscription-preview-user_data}
    *
-   * @param {string} productId
+   * @param {string} projectId
    * @param {number} amount
    * @param {object} [options]
+   * @param {boolean} [options.autoSubscribe]
    * @param {number} [options.recvWindow]
    *
    */
-  getLockedSubscriptionPreview (productId, amount, options = {}) {
-    validateRequiredParameters({ productId, amount })
+  getLockedSubscriptionPreview (projectId, amount, options = {}) {
+    validateRequiredParameters({ projectId, amount })
     return this.signRequest(
       'GET',
       '/sapi/v1/simple-earn/locked/subscriptionPreview',
-      Object.assign(options, { productId, amount })
+      Object.assign(options, { projectId, amount })
     )
   }
 
@@ -502,6 +505,7 @@ const SimpleEarn = superclass => class extends superclass {
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-rate-history-user_data}
    *
    * @param {string} productId
+   * @param {object} [options]
    * @param {number} [options.startTime]
    * @param {number} [options.endTime]
    * @param {number} [options.current]
@@ -525,7 +529,8 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#get-collateral-record-user_data}
    *
-   * @param {string} productId
+   * @param {object} [options]
+   * @param {string} [options.productId]
    * @param {number} [options.startTime]
    * @param {number} [options.endTime]
    * @param {number} [options.current]
@@ -533,13 +538,13 @@ const SimpleEarn = superclass => class extends superclass {
    * @param {number} [options.recvWindow]
    *
    */
-  getCollateralRecord (productId, options = {}) {
-    validateRequiredParameters({ productId })
+  getCollateralRecord (options = {}) {
     return this.signRequest(
       'GET',
       '/sapi/v1/simple-earn/flexible/history/collateralRecord',
-      Object.assign(options, { productId })
+      options
     )
   }
 }
+
 module.exports = SimpleEarn

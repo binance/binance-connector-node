@@ -1,34 +1,33 @@
 /* global describe, it, expect */
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
-
 const { mockResponse } = require('../../testUtils/mockData')
 
-const productId = '1'
-const autoSubscribe = true
+const projectId = '1'
+const amount = 10
 
-describe('#setFlexibleAutoSubscribe', () => {
+describe('#subscribeLockedProduct', () => {
   describe('throw MissingParameterError', () => {
-    it('missing productId', () => {
+    it('missing projectId', () => {
       expect(() => {
-        SpotClient.setFlexibleAutoSubscribe('', autoSubscribe)
+        SpotClient.subscribeLockedProduct('', amount)
       }).toThrow(MissingParameterError)
     })
 
-    it('missing autoSubscribe', () => {
+    it('missing amount', () => {
       expect(() => {
-        SpotClient.setFlexibleAutoSubscribe(productId, '')
+        SpotClient.subscribeLockedProduct(projectId, '')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should suscribe flexible product', () => {
+  it('should subscribe locked product', () => {
     const parameters = {
-      productId,
-      autoSubscribe
+      projectId,
+      amount
     }
-    nockPostMock(`/sapi/v1/simple-earn/flexible/setAutoSubscribe?${buildQueryString({ ...parameters })}`)(mockResponse)
+    nockPostMock(`/sapi/v1/simple-earn/locked/subscribe?${buildQueryString({ ...parameters })}`)(mockResponse)
 
-    return SpotClient.setFlexibleAutoSubscribe(productId, autoSubscribe).then(response => {
+    return SpotClient.subscribeLockedProduct(projectId, amount).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

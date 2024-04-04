@@ -1,26 +1,25 @@
 /* global describe, it, expect */
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
-
 const { mockResponse } = require('../../testUtils/mockData')
 
-const productId = '1'
+const projectId = '1'
 
-describe('#getRateHistory', () => {
+describe('#getLockedPersonalLeftQuota', () => {
   describe('throw MissingParameterError', () => {
-    it('missing productId', () => {
+    it('missing projectId', () => {
       expect(() => {
-        SpotClient.getRateHistory('')
+        SpotClient.getLockedPersonalLeftQuota('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should suscribe locked product', () => {
+  it('should return locked personal left quota', () => {
     const parameters = {
-      productId
+      projectId
     }
-    nockMock(`/sapi/v1/simple-earn/flexible/history/rateHistory?${buildQueryString(parameters)}`)(mockResponse)
+    nockMock(`/sapi/v1/simple-earn/locked/personalLeftQuota?${buildQueryString({ ...parameters })}`)(mockResponse)
 
-    return SpotClient.getRateHistory(productId).then(response => {
+    return SpotClient.getLockedPersonalLeftQuota(projectId).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

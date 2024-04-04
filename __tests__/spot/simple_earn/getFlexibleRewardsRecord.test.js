@@ -1,9 +1,9 @@
 /* global describe, it, expect */
+const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockMock, SpotClient, buildQueryString } = require('../../testUtils/testSetup')
 const { mockResponse } = require('../../testUtils/mockData')
-const MissingParameterError = require('../../../src/error/missingParameterError')
 
-const type = 'FLEXIBLE'
+const type = 'REALTIME'
 
 describe('#getFlexibleRewardsRecord', () => {
   describe('throw MissingParameterError', () => {
@@ -14,7 +14,7 @@ describe('#getFlexibleRewardsRecord', () => {
     })
   })
 
-  it('should return locked records history with params', () => {
+  it('should return flexible reward records', () => {
     const parameters = {
       type,
       productId: '1',

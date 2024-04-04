@@ -5,30 +5,22 @@ const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/test
 const { mockResponse } = require('../../testUtils/mockData')
 
 const productId = '1'
-const amount = 10
 
-describe('#getLockedSubscriptionPreview', () => {
+describe('#getFlexiblePersonalLeftQuota', () => {
   describe('throw MissingParameterError', () => {
     it('missing productId', () => {
       expect(() => {
-        SpotClient.getLockedSubscriptionPreview('', amount)
-      }).toThrow(MissingParameterError)
-    })
-
-    it('missing amount', () => {
-      expect(() => {
-        SpotClient.getLockedSubscriptionPreview(productId, '')
+        SpotClient.getFlexiblePersonalLeftQuota('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should suscribe locked product', () => {
+  it('should return flexible personal left quota', () => {
     const parameters = {
-      productId,
-      amount
+      productId
     }
-    nockMock(`/sapi/v1/simple-earn/locked/subscriptionPreview?${buildQueryString({ ...parameters })}`)(mockResponse)
+    nockMock(`/sapi/v1/simple-earn/flexible/personalLeftQuota?${buildQueryString({ ...parameters })}`)(mockResponse)
 
-    return SpotClient.getLockedSubscriptionPreview(productId, amount).then(response => {
+    return SpotClient.getFlexiblePersonalLeftQuota(productId).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

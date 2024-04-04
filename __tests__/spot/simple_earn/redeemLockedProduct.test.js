@@ -1,26 +1,25 @@
 /* global describe, it, expect */
 const MissingParameterError = require('../../../src/error/missingParameterError')
 const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
-
 const { mockResponse } = require('../../testUtils/mockData')
 
-const productId = '1'
+const positionId = '1'
 
-describe('#redeemFlexibleProduct', () => {
+describe('#redeemLockedProduct', () => {
   describe('throw MissingParameterError', () => {
-    it('missing productId', () => {
+    it('missing positionId', () => {
       expect(() => {
-        SpotClient.redeemFlexibleProduct('')
+        SpotClient.redeemLockedProduct('')
       }).toThrow(MissingParameterError)
     })
   })
-  it('should redeem flexible product', () => {
+  it('should redeem locked product', () => {
     const parameters = {
-      productId
+      positionId
     }
-    nockPostMock(`/sapi/v1/simple-earn/flexible/redeem?${buildQueryString({ ...parameters })}`)(mockResponse)
+    nockPostMock(`/sapi/v1/simple-earn/locked/redeem?${buildQueryString({ ...parameters })}`)(mockResponse)
 
-    return SpotClient.redeemFlexibleProduct(productId).then(response => {
+    return SpotClient.redeemLockedProduct(positionId).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

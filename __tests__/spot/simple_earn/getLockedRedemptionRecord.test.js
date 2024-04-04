@@ -15,7 +15,7 @@ describe('#getLockedRedemptionRecord', () => {
   it('should return locked redemption records with params', () => {
     const parameters = {
       asset: 'USDT',
-      productId: '1',
+      positionId: '1',
       current: 5,
       size: 10
     }

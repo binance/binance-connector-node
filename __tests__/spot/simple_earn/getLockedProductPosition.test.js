@@ -15,7 +15,7 @@ describe('#getLockedProductPosition', () => {
   it('should return locked product position with params', () => {
     const parameters = {
       asset: 'USDT',
-      productId: '1',
+      positionId: '1',
       current: 5,
       size: 10
     }
