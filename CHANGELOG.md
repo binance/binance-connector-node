@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.0 - 2024-04-04
+
+### Changed
+- Update dependencies
+
 ## 3.2.0 - 2024-01-23
 
 ### Changed
