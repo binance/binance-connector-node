@@ -9,6 +9,7 @@ class WebsocketBase extends APIBase {
     this.callbacks = options.callbacks || {}
     this.reconnectDelay = options.reconnectDelay || 5000
     this.wsConnection = {}
+    this.options = options;
   }
 
   isConnected () {
@@ -16,7 +17,7 @@ class WebsocketBase extends APIBase {
   }
 
   initConnect (url) {
-    const ws = new WebSocketClient(url)
+    const ws = new WebSocketClient(url,undefined,this.options)
     this.logger.info(`Sending Websocket connection to: ${url}`)
     this.wsConnection.ws = ws
     this.wsConnection.closeInitiated = false
