@@ -14,11 +14,14 @@ const callbacks = {
 // Connect to websocket server in combine mode, the stream name will be returned in response messages
 const websocketStreamClient = new WebsocketStream({ logger, callbacks, combinedStreams: true })
 
-// subscribe to kline stream
+// subscribe to bnbusdt kline stream
 websocketStreamClient.kline('bnbusdt', '1m')
 
-// subscribe to trade stream
-setTimeout(() => { websocketStreamClient.trade('bnbusdt') }, 3000)
+// subscribe to ethusdt kline stream
+setTimeout(() => { websocketStreamClient.kline('ethusdt', '1m') }, 3000)
+
+// subscribe to btcusdt kline stream
+setTimeout(() => { websocketStreamClient.kline('btcusdt', '1m') }, 3000)
 
 // disconnect from websocket server
 setTimeout(() => websocketStreamClient.disconnect(), 10000)

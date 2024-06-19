@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.0 - 2024-06-19
+### Changed
+- Updated dependencies
+- Resolved multiple websocket stream request issue
+
 ## 3.3.0 - 2024-04-04
 
 ### Added

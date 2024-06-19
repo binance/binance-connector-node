@@ -20,7 +20,7 @@ const callbacks = {
 const apiKey = ''
 
 // wsURL is optional, by default it's set to the production site: 'wss://ws-api.binance.com:443/ws-api/v3'.
-const websocketAPIClient = new WebsocketAPI(apiKey, null, { logger, callbacks, wsURL: 'wss://testnet.binance.vision/ws-api/v3' })
+const websocketAPIClient = new WebsocketAPI(apiKey, null, { logger, callbacks, wsURL: 'wss://ws-api.testnet.binance.vision/ws-api/v3' })
 
 // disconnect after 20 seconds
 setTimeout(() => websocketAPIClient.disconnect(), 20000)
