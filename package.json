@@ -1,6 +1,6 @@
 {
   "name": "@binance/connector",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "This is a lightweight library that works as a connector to the Binance public API.",
   "main": "src/index.js",
   "scripts": {
@@ -44,7 +44,7 @@
     "src/**/*"
   ],
   "dependencies": {
-    "axios": "^1.6",
+    "axios": "^1.7.4",
     "ws": "^8.17.1"
   },
   "jest": {
