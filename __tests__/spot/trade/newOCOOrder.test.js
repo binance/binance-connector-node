@@ -11,39 +11,39 @@ const {
   symbol,
   side,
   quantity,
-  price,
-  stopPrice
+  aboveType,
+  belowType
 } = require('../../testUtils/mockData')
 
 describe('#newOCOOrder', () => {
   describe('throw MissingParameterError', () => {
     it('missing symbol', () => {
       expect(() => {
-        SpotClient.newOCOOrder('', side, quantity, price, stopPrice)
+        SpotClient.newOCOOrder('', side, quantity, aboveType, belowType)
       }).toThrow(MissingParameterError)
     })
 
     it('missing side', () => {
       expect(() => {
-        SpotClient.newOCOOrder(symbol, '', quantity, price, stopPrice)
+        SpotClient.newOCOOrder(symbol, '', quantity, aboveType, belowType)
       }).toThrow(MissingParameterError)
     })
 
     it('missing quantity', () => {
       expect(() => {
-        SpotClient.newOCOOrder(symbol, side, '', price, stopPrice)
+        SpotClient.newOCOOrder(symbol, side, '', aboveType, belowType)
       }).toThrow(MissingParameterError)
     })
 
     it('missing price', () => {
       expect(() => {
-        SpotClient.newOCOOrder(symbol, side, quantity, '', stopPrice)
+        SpotClient.newOCOOrder(symbol, side, quantity, '', belowType)
       }).toThrow(MissingParameterError)
     })
 
     it('missing stopPrice', () => {
       expect(() => {
-        SpotClient.newOCOOrder(symbol, side, quantity, price, '')
+        SpotClient.newOCOOrder(symbol, side, quantity, aboveType, '')
       }).toThrow(MissingParameterError)
     })
   })
@@ -51,11 +51,14 @@ describe('#newOCOOrder', () => {
   it('should return new oco order', () => {
     const parameters = {
       limitClientOrderId: 'my_order_id',
-      limitIcebergQty: 1
+      abovePrice: 530,
+      belowPrice: 520,
+      belowStopPrice: 519,
+      belowTimeInForce: 'GTC'
     }
-    nockPostMock(`/api/v3/order/oco?${buildQueryString({ symbol, side, quantity, price, stopPrice, ...parameters })}`)(mockResponse)
+    nockPostMock(`/api/v3/orderList/oco?${buildQueryString({ symbol, side, quantity, aboveType, belowType, ...parameters })}`)(mockResponse)
 
-    return SpotClient.newOCOOrder(symbol, side, quantity, price, stopPrice, parameters).then(response => {
+    return SpotClient.newOCOOrder(symbol, side, quantity, aboveType, belowType, parameters).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

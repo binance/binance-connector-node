@@ -252,45 +252,51 @@ const Trade = superclass => class extends superclass {
   }
 
   /**
-   * New OCO (TRADE)<br>
+   * New Order List - OCO (TRADE)<br>
    *
-   * POST /api/v3/order/oco<br>
+   * POST /api/v3/orderList/oco<br>
    *
    * {@link https://binance-docs.github.io/apidocs/spot/en/#new-oco-trade}
    *
    * @param {string} symbol
    * @param {string} side
    * @param {number} quantity
-   * @param {number} price
-   * @param {number} stopPrice
+   * @param {string} aboveType
+   * @param {string} belowType
    * @param {object} [options]
    * @param {string} [options.listClientOrderId]
-   * @param {string} [options.limitClientOrderId]
-   * @param {number} [options.limitStrategyId]
-   * @param {number} [options.limitStrategytype] - The value cannot be less than 1000000.
-   * @param {number} [options.limitIcebergQty]
-   * @param {number} [options.trailingDelta]
-   * @param {string} [options.stopClientOrderId]
-   * @param {number} [options.stopStrategyId]
-   * @param {number} [options.stopStrategytype] - The value cannot be less than 1000000.
-   * @param {number} [options.stopLimitPrice]
-   * @param {number} [options.stopIcebergQty]
-   * @param {string} [options.stopLimitTimeInForce]
+   * @param {string} [options.aboveClientOrderId]
+   * @param {number} [options.aboveIcebergQty]
+   * @param {number} [options.abovePrice]
+   * @param {number} [options.aboveStopPrice]
+   * @param {number} [options.aboveTrailingDelta]
+   * @param {number} [options.aboveTimeInForce]
+   * @param {number} [options.aboveStrategyId]
+   * @param {number} [options.aboveStrategyType]
+   * @param {string} [options.belowClientOrderId]
+   * @param {number} [options.belowIcebergQty]
+   * @param {number} [options.belowPrice]
+   * @param {number} [options.belowStopPrice]
+   * @param {number} [options.belowTrailingDelta]
+   * @param {string} [options.belowTimeInForce]
+   * @param {number} [options.belowStrategyId]
+   * @param {number} [options.belowStrategyType]
    * @param {string} [options.newOrderRespType]
+   * @param {string} [options.selfTradePreventionMode]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
-  newOCOOrder (symbol, side, quantity, price, stopPrice, options = {}) {
-    validateRequiredParameters({ symbol, side, quantity, price, stopPrice })
+  newOCOOrder (symbol, side, quantity, aboveType, belowType, options = {}) {
+    validateRequiredParameters({ symbol, side, quantity, aboveType, belowType })
 
     return this.signRequest(
       'POST',
-      '/api/v3/order/oco',
+      '/api/v3/orderList/oco',
       Object.assign(options, {
         symbol: symbol.toUpperCase(),
         side: side.toUpperCase(),
         quantity,
-        price,
-        stopPrice
+        aboveType,
+        belowType
       })
     )
   }

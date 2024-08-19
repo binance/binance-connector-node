@@ -6,9 +6,10 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision' })
 
-client.newOCOOrder('BNBUSDT', 'BUY', 1, 10, 12, {
-  listClientOrderId: 'my_oco_order',
-  stopLimitPrice: 13,
-  stopLimitTimeInForce: 'GTC'
+client.newOCOOrder('BNBUSDT', 'SELL', 1, 'LIMIT_MAKER', 'STOP_LOSS_LIMIT', {
+  abovePrice: 530,
+  belowPrice: 520,
+  belowStopPrice: 519,
+  belowTimeInForce: 'GTC'
 }).then(response => client.logger.log(response.data))
   .catch(error => client.logger.error(error))

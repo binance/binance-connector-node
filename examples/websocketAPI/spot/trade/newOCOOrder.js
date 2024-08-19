@@ -12,12 +12,12 @@ const wsURL = 'wss://ws-api.testnet.binance.vision/ws-api/v3' // we setup wsURL 
 const callbacks = {
   open: (client) => {
     logger.debug('Connected with Websocket server')
-    client.newOCOOrder('BNBUSDT', 'BUY', 300, 0.1, {
+    client.newOCOOrder('BNBUSDT', 'SELL', 1, 'LIMIT_MAKER', 'STOP_LOSS_LIMIT', {
       listClientOrderId: 'my_list_order',
-      stopPrice: 330,
-      stopLimitPrice: 340,
-      stopLimitTimeInForce: 'GTC',
-      newOrderRespType: 'FULL'
+      abovePrice: 530,
+      belowPrice: 520,
+      belowStopPrice: 519,
+      belowTimeInForce: 'GTC'
     })
   },
   close: () => logger.debug('Disconnected with Websocket server'),

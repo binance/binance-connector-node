@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.4.1 - 2024-08-19
+### Updated
+- Updated dependencies
+- Upgraded deprecated spot endpoint `POST /api/v3/order/oco` to `POST /api/v3/orderList/oco`
+- Upgraded deprecated Websocket API endpoint `orderList.place` to `orderList.place.oco`
+
 ## 3.4.0 - 2024-06-19
 ### Changed
 - Updated dependencies
