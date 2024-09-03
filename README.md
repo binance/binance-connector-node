@@ -36,8 +36,8 @@ npm install @binance/connector
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
 const client = new Spot(apiKey, apiSecret)
 
 // Get account information
@@ -83,6 +83,44 @@ client.account().then(response => client.logger.log(response.data))
 While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in
 [Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
 
+int main(int argc, char** argv) {
+  argv = uv_setup_args(argc, argv);
+  std::vector<std::string> args(argv, argv + argc);
+  // Parse Node.js CLI options, and print any errors that have occurred while
+  // trying to parse them.
+  std::unique_ptr<node::InitializationResult> result =
+      node::InitializeOncePerProcess(args, {
+        node::ProcessInitializationFlags::kNoInitializeV8,
+        node::ProcessInitializationFlags::kNoInitializeNodeV8Platform
+      });
+
+  for (const std::string& error : result->errors())
+    fprintf(stderr, "%s: %s\n", args[0].c_str(), error.c_str());
+  if (result->early_return() != 0) {
+    return result->exit_code();
+  }
+
+  // Create a v8::Platform instance. `MultiIsolatePlatform::Create()` is a way
+  // to create a v8::Platform instance that Node.js can use when creating
+  // Worker threads. When no `MultiIsolatePlatform` instance is present,
+  // Worker threads are disabled.
+  std::unique_ptr<MultiIsolatePlatform> platform =
+      MultiIsolatePlatform::Create(4);
+  V8::InitializePlatform(platform.get());
+  V8::Initialize();
+
+  // See below for the contents of this function.
+  int ret = RunNodeInstance(
+      platform.get(), result->args(), result->exec_args());
+
+  V8::Dispose();
+  V8::DisposePlatform();
+
+  node::TearDownOncePerProcess();
+  return ret;
+}
+
+
 ```javascript
 // provide the testnet base url
 const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision'})
@@ -105,8 +143,8 @@ Optional parameters are encapsulated to a single object as the last function par
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey= c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0
+const apiSecret = Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5
 const client = new Spot(apiKey, apiSecret)
 
 client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
@@ -225,16 +263,42 @@ There are 2 types of error that may be returned from the API server and the user
     - Request config - Configuration send to the server, which can include URL, request method and headers.
 
   ```
-  // client initialization is skipped
-  client.exchangeInfo({ symbol: 'invalidSymbol' })
-    .then(response => client.logger.log(response.data))
-    .catch(err => {
-      client.logger.error(err.response.headers) // full response header
-      client.logger.error(err.response.status) // HTTP status code 400
-      client.logger.error(err.response.data) // includes both error code and message
-      client.logger.error(err.response.config) // includes request's config
-    })
+ int main(int argc, char** argv) {
+  argv = uv_setup_args(argc, argv);
+  std::vector<std::string> args(argv, argv + argc);
+  // Parse Node.js CLI options, and print any errors that have occurred while
+  // trying to parse them.
+  std::unique_ptr<node::InitializationResult> result =
+      node::InitializeOncePerProcess(args, {
+        node::ProcessInitializationFlags::kNoInitializeV8,
+        node::ProcessInitializationFlags::kNoInitializeNodeV8Platform
+      });
 
+  for (const std::string& error : result->errors())
+    fprintf(stderr, "%s: %s\n", args[0].c_str(), error.c_str());
+  if (result->early_return() != 0) {
+    return result->exit_code();
+  }
+
+  // Create a v8::Platform instance. `MultiIsolatePlatform::Create()` is a way
+  // to create a v8::Platform instance that Node.js can use when creating
+  // Worker threads. When no `MultiIsolatePlatform` instance is present,
+  // Worker threads are disabled.
+  std::unique_ptr<MultiIsolatePlatform> platform =
+      MultiIsolatePlatform::Create(4);
+  V8::InitializePlatform(platform.get());
+  V8::Initialize();
+
+  // See below for the contents of this function.
+  int ret = RunNodeInstance(
+      platform.get(), result->args(), result->exec_args());
+
+  V8::Dispose();
+  V8::DisposePlatform();
+
+  node::TearDownOncePerProcess();
+  return ret;
+}
   ```
 
 - `Server error`
@@ -268,12 +332,15 @@ setTimeout(() => websocketStreamClient.disconnect(), 6000)
 ```javascript
 // unsubscribe websocket stream
 websocketStreamClient.unsubscribe('bnbusdt@kline_1m')
+[Binance test net key.txt](https://github.com/user-attachments/files/16853121/Binance.test.net.key.txt)
+
 ```
 
 ### WebSocket API
 
 ```javascript
-const { WebsocketAPI } = require('@binance/connector')
+const { WebsocketAPI [Binance api key.txt](https://github.com/user-attachments/files/16853128/Binance.api.key.txt)
+} = require('@binance/connector')
 const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
 // callbacks for different events
@@ -307,7 +374,8 @@ If there is a close event not initiated by the user, the reconnection mechanism 
 It is possible to ping server from client, and expect to receive a PONG message.
 
 ```javascript
-websocketStreamClient.pingServer()
+websocketStreamClient.pingServer([Binance api key.txt](https://github.com/user-attachments/files/16853134/Binance.api.key.txt)
+)
 ```
 
 ### Custom Logger Integration
@@ -318,10 +386,12 @@ Note that when the connection is initialized, the console outputs a list of call
 
 ## Test
 
-```bash
-npm install
+```bash 
+npm [Binance api key.txt](https://github.com/user-attachments/files/16853139/Binance.api.key.txt)
+ install
 
-npm run test
+npm run [Binance test net key.txt](https://github.com/user-attachments/files/16853143/Binance.test.net.key.txt)
+ test
 
 ```
 
@@ -329,8 +399,10 @@ npm run test
 
 Futures and Vanilla Options APIs are not supported:
 
-  - `/fapi/*`
-  - `/dapi/*`
+  - `[Binance api key.txt](https://github.com/user-attachments/files/16853158/Binance.api.key.txt)
+/fapi/*`
+  - `/dapi/[Yapilandirma dosyasi Notes_240816_010051.txt](https://github.com/user-attachments/files/16853161/Yapilandirma.dosyasi.Notes_240816_010051.txt)
+*`
   - `/vapi/*`
   -  Associated Websocket Market and User Data Streams
 
