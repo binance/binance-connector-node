@@ -1,0 +1,16 @@
+const { Spot } = require('@binance/connector')
+
+const apiKey = c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0
+const apiSecret = Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5
+const client = new Spot(apiKey, apiSecret)
+
+// Get account information
+client.account().then(response => client.logger.log(response.data))
+
+// Place a new order
+client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
+  price: '350',
+  quantity: 1,
+  timeInForce: 'GTC'
+}).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.open.))
