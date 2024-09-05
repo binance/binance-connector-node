@@ -36,8 +36,8 @@ npm install @binance/connector
 ```javascript
 const { Spot } = require('@binance/connector')
 
-const apiKey = ''
-const apiSecret = ''
+const apiKey = 'c9f3tCe0l34EUaaPSiL9s0KtyRC4mDG0rK4KRPTdxiqhjrCrbgZeTibcexLLApP0'
+const apiSecret = 'Cittld17y7ynFYzy7NeexmVy0uzLV23OOS1JHFKfz95X1aLFP7Vv75gmCSqmGqL5'
 const client = new Spot(apiKey, apiSecret)
 
 // Get account information
