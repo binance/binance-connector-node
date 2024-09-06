@@ -20,6 +20,7 @@ class WebsocketStream extends (Stream)(WebsocketBase) {
 
   subscribe (stream) {
     if (!this.isConnected()) {
+      if (Array.isArray(stream)) stream = stream.join('/')
       const url = this._prepareURL(stream)
       this.initConnect(url)
     } else {

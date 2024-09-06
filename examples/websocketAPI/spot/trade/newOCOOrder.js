@@ -7,17 +7,17 @@ const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
 const apiKey = process.env.BINANCE_API_KEY || ''
 const apiSecret = process.env.BINANCE_API_SECRET || ''
-const wsURL = 'wss://testnet.binance.vision/ws-api/v3' // we setup wsURL to testnet. The default value set to production site: wss://ws-api.binance.com/ws-api/v3
+const wsURL = 'wss://ws-api.testnet.binance.vision/ws-api/v3' // we setup wsURL to testnet. The default value set to production site: wss://ws-api.binance.com/ws-api/v3
 
 const callbacks = {
   open: (client) => {
     logger.debug('Connected with Websocket server')
-    client.newOCOOrder('BNBUSDT', 'BUY', 300, 0.1, {
+    client.newOCOOrder('BNBUSDT', 'SELL', 1, 'LIMIT_MAKER', 'STOP_LOSS_LIMIT', {
       listClientOrderId: 'my_list_order',
-      stopPrice: 330,
-      stopLimitPrice: 340,
-      stopLimitTimeInForce: 'GTC',
-      newOrderRespType: 'FULL'
+      abovePrice: 530,
+      belowPrice: 520,
+      belowStopPrice: 519,
+      belowTimeInForce: 'GTC'
     })
   },
   close: () => logger.debug('Disconnected with Websocket server'),

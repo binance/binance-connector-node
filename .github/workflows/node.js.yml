@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x, 18.x, 20.x]
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -38,7 +38,7 @@ jobs:
     - run: npm install
     - run: npm run standard
     - run: node __tests__/websocket/testingServer.js & sleep 50 && npm run coverage
-    - uses: artiomtr/jest-coverage-report-action@v2.0-rc.1
+    - uses: artiomtr/jest-coverage-report-action@v2
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         threshold: 95

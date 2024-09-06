@@ -54,10 +54,10 @@ client.newOrder('BNBUSDT', 'BUY', 'LIMIT', {
 
 Please find `examples` folder to check for more endpoints.
 
-## RSA Key based Authentication
+## Key Pair Based Authentication
 
 ```javascript
-const { Spot } = require('@binance/connector')
+const { Spot, PrivateKeyAlgo } = require('@binance/connector')
 
 const apiKey = ''
 const apiSecret = '' // has no effect when RSA private key is provided
@@ -65,10 +65,13 @@ const apiSecret = '' // has no effect when RSA private key is provided
 // load private key
 const privateKey = fs.readFileSync('/Users/john/ssl/private_key_encrypted.pem')
 const privateKeyPassphrase = 'password'
+const privateKeyAlgo = PrivateKeyAlgo.RSA // for RSA key
+const privateKeyAlgo = PrivateKeyAlgo.ED25519 // for Ed25519 key
 
 const client = new Spot(apiKey, apiSecret, {
   privateKey,
-  privateKeyPassphrase // only used for encrypted key
+  privateKeyPassphrase, // only used for encrypted key
+  privateKeyAlgo
 })
 
 // Get account information

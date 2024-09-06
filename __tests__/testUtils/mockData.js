@@ -4,8 +4,10 @@ const mockResponse = {
 
 module.exports = {
   mockResponse,
+  aboveType: 'LIMIT_MAKER',
   amount: 10,
   asset: 'BNB',
+  belowType: 'STOP_LOSS_LIMIT',
   coin: 'BNB',
   collateralCoin: 'BUSD',
   email: 'alice@test.com',

@@ -1,4 +1,3 @@
-
 /**
  * This script is used to demonstrate log different level.
  * Package winston is required, to install:

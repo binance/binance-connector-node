@@ -12,8 +12,7 @@ class WebsocketBase extends APIBase {
   }
 
   isConnected () {
-    if (!this.wsConnection.ws || this.wsConnection.ws.readyState !== WebSocketClient.OPEN) return false
-    return true
+    return !(!this.wsConnection.ws || this.wsConnection.ws.readyState !== WebSocketClient.OPEN)
   }
 
   initConnect (url) {
@@ -69,7 +68,6 @@ class WebsocketBase extends APIBase {
   /**
    * Unsubscribe the stream <br>
    *
-   * @param {WebSocketClient} wsConnection - websocket client instance created by ws package
    */
   disconnect () {
     if (!this.isConnected()) this.logger.warn('No connection to close.')
