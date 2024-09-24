@@ -31,6 +31,30 @@ const GiftCard = superclass => class extends superclass {
   }
 
   /**
+  * Create a dual-token gift card (fixed value, discount feature) (TRADE)<br>
+  *
+  * POST /sapi/v1/giftcard/buyCode<br>
+  *
+  * {@link https://binance-docs.github.io/apidocs/spot/en/#create-a-dual-token-gift-card-fixed-value-discount-feature-trade}
+  *
+  * @param {baseToken} baseToken - The token you want to pay, example: BUSD
+  * @param {faceToken} faceToken - The token you want to buy, example: BNB. If faceToken = baseToken, it's the same as createCode endpoint.
+  * @param {baseTokenAmount} amount - The base token asset quantity
+  * @param {discount} discount - Stablecoin-denominated card discount percentage
+  * @param {object} [options]
+  * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+  */
+  giftCardBuyCode (baseToken, faceToken, baseTokenAmount, discount, options = {}) {
+    validateRequiredParameters({ baseToken, faceToken, baseTokenAmount })
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/giftcard/buyCode',
+      Object.assign(options, { baseToken, faceToken, baseTokenAmount, discount })
+    )
+  }
+
+  /**
     * Redeem a Binance Code (USER_DATA)<br>
     *
     * POST /sapi/v1/giftcard/redeemCode<br>

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.4.2 - 2024-09-24
+### Added
+- Add GiftCard endpoint:
+  - `POST /sapi/v1/giftcard/buyCode` to create a dual-token gift card
+
 ## 3.4.1 - 2024-08-19
 ### Updated
 - Updated dependencies
