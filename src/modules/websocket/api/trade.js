@@ -11,7 +11,7 @@ const Trade = superclass => class extends superclass {
    *
    * Send in a new order.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#place-new-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#place-new-order-trade}
    *
    * @param {string} symbol
    * @param {string} side
@@ -46,7 +46,7 @@ const Trade = superclass => class extends superclass {
    *
    * Test a new order.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#test-new-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#test-new-order-trade}
    *
    * @param {string} symbol
    * @param {string} side
@@ -81,7 +81,7 @@ const Trade = superclass => class extends superclass {
    *
    * Check execution status of an order.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#query-order-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#query-order-user_data}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -102,7 +102,7 @@ const Trade = superclass => class extends superclass {
    *
    * Cancel an active order.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#cancel-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#cancel-order-trade}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -124,7 +124,7 @@ const Trade = superclass => class extends superclass {
    *
    * Cancel an existing order and immediately place a new order instead of the canceled one.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#cancel-and-replace-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#cancel-and-replace-order-trade}
    *
    * @param {string} symbol
    * @param {string} cancelReplaceMode
@@ -165,7 +165,7 @@ const Trade = superclass => class extends superclass {
    *
    * Query execution status of all open orders.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#current-open-orders-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#current-open-orders-user_data}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -184,7 +184,7 @@ const Trade = superclass => class extends superclass {
    *
    * Cancel all open orders on a symbol, including OCO orders.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#cancel-open-orders-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#cancel-open-orders-trade}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -203,7 +203,7 @@ const Trade = superclass => class extends superclass {
    *
    * Send in a new OCO order.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#place-new-oco-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api}
    *
    * @param {string} symbol
    * @param {string} side
@@ -249,7 +249,7 @@ const Trade = superclass => class extends superclass {
    *
    * Check execution status of an OCO.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#query-oco-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api}
    *
    * @param {object} [options]
    * @param {string} [options.origClientOrderId]
@@ -266,7 +266,7 @@ const Trade = superclass => class extends superclass {
    *
    * Check execution status of an OCO.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#cancel-oco-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -288,7 +288,7 @@ const Trade = superclass => class extends superclass {
    *
    * Query execution status of all open OCOs.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#current-open-ocos-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow]

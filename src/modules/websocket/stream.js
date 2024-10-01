@@ -17,7 +17,7 @@ const Stream = superclass => class extends superclass {
    * Stream Name: &lt;symbol&gt;@aggTrade <br>
    * Update Speed: Real-time<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#aggregate-trade-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#aggregate-trade-streams}
    *
    * @param {string} symbol
    */
@@ -34,7 +34,7 @@ const Stream = superclass => class extends superclass {
    * Stream Name: &lt;symbol&gt;@trade <br>
    * Update Speed: Real-time<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#trade-streams}
    *
    * @param {string} symbol
    */
@@ -44,14 +44,14 @@ const Stream = superclass => class extends superclass {
   }
 
   /**
-   * Kline/Candlestick Streams<br>
+   * Kline/Candlestick Streams for UTC<br>
    *
    * The Kline/Candlestick Stream push updates to the current klines/candlestick every second.<br>
    *
    * Stream Name: &lt;symbol&gt;@kline_&lt;interval&gt; <br>
    * Update Speed: 2000ms <br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#kline-candlestick-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#klinecandlestick-streams-for-utc}
    *
    * @param {string} symbol
    * @param {string} interval - m -> minutes; h -> hours; d -> days; w -> weeks; M -> months:<br>
@@ -71,9 +71,9 @@ const Stream = superclass => class extends superclass {
    * Stream Name: &lt;symbol&gt;@miniTicker or !miniTicker@arr <br>
    * Update Speed: 1000ms <br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-mini-ticker-stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#individual-symbol-mini-ticker-stream}
    * <br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-mini-tickers-stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#all-market-mini-tickers-stream}
    *
    * @param {string} [symbol]
    */
@@ -94,9 +94,9 @@ const Stream = superclass => class extends superclass {
    * Stream Name: &lt;symbol&gt;@ticker or !ticker@arr <br>
    * Update Speed: 1000ms<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-ticker-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#individual-symbol-ticker-streams}
    * <br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-tickers-stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#all-market-tickers-stream}
    *
    * @param {string} [symbol]
    *
@@ -122,9 +122,9 @@ const Stream = superclass => class extends superclass {
    *
    * As such, the effective window might be up to 59999ms wider that &lt;window_size&gt;.
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-rolling-window-statistics-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#individual-symbol-rolling-window-statistics-streams}
    * <br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-market-rolling-window-statistics-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#all-market-rolling-window-statistics-streams}
    *
    * @param {string} [windowSize]
    * @param {string} [symbol]
@@ -146,9 +146,7 @@ const Stream = superclass => class extends superclass {
    * Stream Name: &lt;symbol&gt;@bookTicker or !bookTicker <br>
    * Update Speed: Real-time<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#individual-symbol-book-ticker-streams}
-   * <br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-book-tickers-stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#individual-symbol-book-ticker-streams}
    *
    * @param {string} [symbol]
    */
@@ -165,7 +163,7 @@ const Stream = superclass => class extends superclass {
    * Stream Names: &lt;symbol&gt;@depth&lt;levels&gt; or &lt;symbol&gt;@depth&lt;levels&gt;@100ms. <br>
    * Update Speed: 1000ms or 100ms<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#partial-book-depth-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#partial-book-depth-streams}
    *
    * @param {string} symbol
    * @param {string} levels - 5, 10, or 20
@@ -185,7 +183,7 @@ const Stream = superclass => class extends superclass {
    * Stream Names: &lt;symbol&gt;@depth or &lt;symbol&gt;@depth@100ms <br>
    * Update Speed: 1000ms or 100ms<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#diff-depth-stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-streams#diff-depth-stream}
    *
    * @param {string} symbol
    * @param {string} speed - 1000ms or 100ms
@@ -199,7 +197,7 @@ const Stream = superclass => class extends superclass {
   /**
    * Listen to User data stream<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#user-data-streams}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/user-data-stream}
    *
    * @param {string} listenKey
    */

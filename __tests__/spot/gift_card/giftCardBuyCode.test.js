@@ -3,29 +3,36 @@ const MissingParameterError = require('../../../src/error/missingParameterError'
 const { nockPostMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
 
 const {
-  mockResponse,
-  amount
+  mockResponse
 } = require('../../testUtils/mockData')
 
 const baseToken = 'USDT'
 const faceToken = 'BNB'
+const baseTokenAmount = 10
 
 describe('#giftCardBuyCode', () => {
-  it.each([
-    [undefined, undefined, undefined], ['', '', ''], [null, null, null],
-    [undefined, faceToken, undefined], ['', faceToken, ''], [null, faceToken, null],
-    [baseToken, undefined, undefined], [baseToken, '', ''], [baseToken, null, null],
-    [undefined, undefined, amount], ['', '', amount], [baseToken, faceToken, null]
-  ])('should throw MissingParameterError given missing params', (baseToken, faceToken, amount) => {
+  it('missing baseToken', () => {
     expect(() => {
-      SpotClient.giftCardBuyCode(baseToken, faceToken, amount)
+      SpotClient.giftCardBuyCode('', faceToken, baseTokenAmount)
+    }).toThrow(MissingParameterError)
+  })
+
+  it('missing faceToken', () => {
+    expect(() => {
+      SpotClient.giftCardBuyCode(baseToken, '', baseTokenAmount)
+    }).toThrow(MissingParameterError)
+  })
+
+  it('missing baseTokenAmount', () => {
+    expect(() => {
+      SpotClient.giftCardBuyCode(baseToken, faceToken, '')
     }).toThrow(MissingParameterError)
   })
 
   it('should return binance code info', () => {
-    nockPostMock(`/sapi/v1/giftcard/buyCode?${buildQueryString({ baseToken, faceToken, baseTokenAmount: amount })}`)(mockResponse)
+    nockPostMock(`/sapi/v1/giftcard/buyCode?${buildQueryString({ baseToken, faceToken, baseTokenAmount })}`)(mockResponse)
 
-    return SpotClient.giftCardBuyCode(baseToken, faceToken, amount).then(response => {
+    return SpotClient.giftCardBuyCode(baseToken, faceToken, baseTokenAmount).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

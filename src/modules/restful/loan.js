@@ -12,7 +12,7 @@ const Loan = superclass => class extends superclass {
    *
    * GET /sapi/v1/loan/income<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-crypto-loans-income-history-user_data}
+   * {@link https://developers.binance.com/docs/crypto_loan/stable-rate/market-data/Get-Crypto-Loans-Income-History}
    *
    * @param {string} asset
    * @param {object} [options]

@@ -13,7 +13,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-simple-earn-flexible-product-list-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/account/Get-Simple-Earn-Flexible-Product-List}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -35,7 +35,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/locked/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-simple-earn-locked-product-list-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/account/Get-Simple-Earn-Locked-Product-List}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -57,7 +57,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * POST /sapi/v1/simple-earn/flexible/subscribe<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#subscribe-flexible-product-trade}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Subscribe-Flexible-Product}
    *
    * @param {string} productId
    * @param {number} amount
@@ -81,7 +81,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * POST /sapi/v1/simple-earn/locked/subscribe<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#subscribe-locked-product-trade}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Subscribe-Locked-Product}
    *
    * @param {string} projectId
    * @param {number} amount
@@ -105,7 +105,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * POST /sapi/v1/simple-earn/flexible/redeem<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#redeem-flexible-product-trade}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Redeem-Flexible-Product}
    *
    * @param {string} productId
    * @param {object} [options]
@@ -129,7 +129,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * POST /sapi/v1/simple-earn/locked/redeem<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#redeem-locked-product-trade}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Redeem-Locked-Product}
    *
    * @param {string} positionId
    * @param {object} [options]
@@ -150,7 +150,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/position<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-product-position-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/account/Get-Flexible-Product-Position}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -173,7 +173,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/locked/position<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-product-position-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/account/Get-Locked-Product-Position}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -197,7 +197,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#simple-account-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/account/Simple-Account}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow]
@@ -216,7 +216,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/history/subscriptionRecord<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-subscription-record-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Flexible-Subscription-Record}
    *
    * @param {object} [options]
    * @param {string} [options.productId]
@@ -242,7 +242,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/locked/history/subscriptionRecord<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-subscription-record-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Locked-Subscription-Record}
    *
    * @param {object} [options]
    * @param {string} [options.purchaseId]
@@ -267,7 +267,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/history/redemptionRecord<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-redemption-record-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Flexible-Redemption-Record}
    *
    * @param {object} [options]
    * @param {string} [options.productId]
@@ -293,7 +293,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/locked/history/redemptionRecord<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-redemption-record-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Locked-Redemption-Record}
    *
    * @param {object} [options]
    * @param {string} [options.positionId]
@@ -319,7 +319,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/history/rewardsRecord<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-rewards-history-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Flexible-Rewards-History}
    *
    * @param {string} type
    * @param {object} [options]
@@ -346,7 +346,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/locked/history/rewardsRecord<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-rewards-history-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Locked-Rewards-History}
    *
    * @param {object} [options]
    * @param {string} [options.positionId]
@@ -371,7 +371,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * POST /sapi/v1/simple-earn/flexible/setAutoSubscribe<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#set-flexible-auto-subscribe-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Set-Flexible-Auto-Subscribe}
    *
    * @param {string} productId
    * @param {boolean} autoSubscribe
@@ -393,7 +393,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * POST /sapi/v1/simple-earn/locked/setAutoSubscribe<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#set-locked-auto-subscribe-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Set-Locked-Auto-Subscribe}
    *
    * @param {string} positionId
    * @param {boolean} autoSubscribe
@@ -415,7 +415,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/personalLeftQuota<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-personal-left-quota-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/account/Get-Flexible-Personal-Left-Quota}
    *
    * @param {string} productId
    * @param {object} [options]
@@ -436,7 +436,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/locked/personalLeftQuota<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-personal-left-quota-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/account/Get-Locked-Personal-Left-Quota}
    *
    * @param {string} projectId
    * @param {object} [options]
@@ -457,7 +457,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/subscriptionPreview<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-flexible-subscription-preview-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Get-Flexible-Subscription-Preview}
    *
    * @param {string} productId
    * @param {number} amount
@@ -479,7 +479,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/locked/subscriptionPreview<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-locked-subscription-preview-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/earn/Get-Locked-Subscription-Preview}
    *
    * @param {string} projectId
    * @param {number} amount
@@ -502,7 +502,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/history/rateHistory<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-rate-history-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Rate-History}
    *
    * @param {string} productId
    * @param {object} [options]
@@ -527,7 +527,7 @@ const SimpleEarn = superclass => class extends superclass {
    *
    * GET /sapi/v1/simple-earn/flexible/history/collateralRecord<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-collateral-record-user_data}
+   * {@link https://developers.binance.com/docs/simple_earn/history/Get-Collateral-Record}
    *
    * @param {object} [options]
    * @param {string} [options.productId]

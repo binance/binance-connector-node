@@ -12,7 +12,7 @@ const Market = superclass => class extends superclass {
    * Test connectivity to the WebSocket API.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#test-connectivity}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#test-connectivity}
    *
    */
   ping (options = {}) {
@@ -25,7 +25,7 @@ const Market = superclass => class extends superclass {
    * Test connectivity to the WebSocket API and get the current server time.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#check-server-time}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#check-server-time}
    *
    */
   time (options = {}) {
@@ -42,7 +42,7 @@ const Market = superclass => class extends superclass {
    * @param {string|array} [options.symbols]
    * @param {string|array} [options.permissions]
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#exchange-information}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#exchange-information}
    *
    */
   exchangeInfo (options = {}) {
@@ -62,7 +62,7 @@ const Market = superclass => class extends superclass {
    * Get current order book.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#order-book}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#order-book}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -84,7 +84,7 @@ const Market = superclass => class extends superclass {
    * Get recent trades.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#recent-trades}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#recent-trades}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -106,7 +106,7 @@ const Market = superclass => class extends superclass {
    * Get historical trades.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#historical-trades-market_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -129,7 +129,7 @@ const Market = superclass => class extends superclass {
    * Get aggregate trades.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#aggregate-trades}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#aggregate-trades}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -154,7 +154,7 @@ const Market = superclass => class extends superclass {
    * Get klines (candlestick bars).<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#klines}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#klines}
    *
    * @param {string} symbol
    * @param {string} interval
@@ -180,7 +180,7 @@ const Market = superclass => class extends superclass {
    * Get klines (candlestick bars) optimized for presentation.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#ui-klines}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#ui-klines}
    *
    * @param {string} symbol
    * @param {string} interval
@@ -206,7 +206,7 @@ const Market = superclass => class extends superclass {
    * Get current average price for a symbol.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#current-average-price}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#current-average-price}
    *
    * @param {string} symbol
    *
@@ -221,7 +221,7 @@ const Market = superclass => class extends superclass {
    * Get 24-hour rolling window price change statistics.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#24hr-ticker-price-change-statistics}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#24hr-ticker-price-change-statistics}
    *
    * @param {object} [options]
    * @param {string} [options.symbol]
@@ -239,7 +239,7 @@ const Market = superclass => class extends superclass {
    * Get rolling window price change statistics with a custom window.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#rolling-window-price-change-statistics}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#rolling-window-price-change-statistics}
    *
    * @param {object} [options]
    * @param {string} [options.symbol]
@@ -257,7 +257,7 @@ const Market = superclass => class extends superclass {
    * Get the latest market price for a symbol.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#symbol-price-ticker}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#symbol-price-ticker}
    *
    * @param {object} [options]
    * @param {string} [options.symbol]
@@ -274,7 +274,7 @@ const Market = superclass => class extends superclass {
    * Get the current best price and quantity on the order book.<br>
    *
    *
-   * {@link https://binance-docs.github.io/apidocs/websocket_api/en/#symbol-order-book-ticker}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#symbol-order-book-ticker}
    *
    * @param {object} [options]
    * @param {string} [options.symbol]

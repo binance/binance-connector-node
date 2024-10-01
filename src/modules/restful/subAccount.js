@@ -13,7 +13,7 @@ const SubAccount = superclass => class extends superclass {
     *
     * GET /sapi/v1/sub-account/list<br>
     *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-list-sapi-for-master-account}
+    * {@link https://developers.binance.com/docs/sub_account/account-management/Query-Sub-account-List}
     *
     * @param {object} [options]
     * @param {string} [options.email]
@@ -35,7 +35,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/sub/transfer/history<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-asset-transfer-history-sapi-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Query-Sub-account-Spot-Asset-Transfer-History}
    *
    * @param {object} [options]
    * @param {string} [options.fromEmail]
@@ -59,7 +59,7 @@ const SubAccount = superclass => class extends superclass {
     *
     * GET /sapi/v3/sub-account/assets<br>
     *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-assets-for-master-account}
+    * {@link https://developers.binance.com/docs/sub_account/asset-management/Query-Sub-account-Assets-V3}
     *
     * @param {string} email
     * @param {object} [options]
@@ -80,7 +80,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/capital/deposit/subAddress<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Sub-account-Deposit-Address}
    *
    * @param {string} email
    * @param {string} coin
@@ -106,7 +106,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/capital/deposit/subHisrec<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-deposit-address-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Sub-account-Deposit-Address}
    *
    * @param {string} email
    * @param {object} [options]
@@ -133,7 +133,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/status<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-sub-account-39-s-status-on-margin-futures-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/account-management/Get-Sub-accounts-Status-on-Margin-Or-Futures}
    *
    * @param {object} [options]
    * @param {string} [options.email]
@@ -152,7 +152,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/margin/enable<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-margin-for-sub-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/account-management/Enable-Margin-for-Sub-account}
    *
    * @param {string} email - Sub-account email
    * @param {object} [options]
@@ -175,7 +175,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/margin/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Detail-on-Sub-accounts-Margin-Account}
    *
    * @param {string} email
    * @param {object} [options]
@@ -198,7 +198,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/margin/accountSummary<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-margin-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Detail-on-Sub-accounts-Margin-Account}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -216,7 +216,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/futures/enable<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-futures-for-sub-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/account-management/Enable-Futures-for-Sub-account}
    *
    * @param {string} email
    * @param {object} [options]
@@ -239,7 +239,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/futures/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Detail-on-Sub-accounts-Futures-Account}
    *
    * @param {string} email
    * @param {object} [options]
@@ -262,7 +262,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/futures/accountSummary<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Summary-of-Sub-accounts-Futures-Account}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -280,7 +280,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/futures/positionRisk<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-futures-postion-risk-of-sub-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/account-management/Get-Futures-Position-Risk-of-Sub-account}
    *
    * @param {string} email
    * @param {object} [options]
@@ -303,7 +303,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/futures/transfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#futures-transfer-for-sub-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Futures-Transfer-for-Sub-account}
    *
    * @param {string} email
    * @param {string} asset
@@ -335,7 +335,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/margin/transfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-transfer-for-sub-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Margin-Transfer-for-Sub-account}
    *
    * @param {string} email
    * @param {string} asset
@@ -366,7 +366,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/transfer/subToSub<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#transfer-to-sub-account-of-same-master-for-sub-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Transfer-to-Sub-account-of-Same-Master}
    *
    * @param {string} toEmail
    * @param {string} asset
@@ -393,7 +393,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/transfer/subToMaster<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#transfer-to-master-for-sub-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Transfer-to-Master}
    *
    * @param {string} asset
    * @param {number} amount
@@ -418,7 +418,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/transfer/subUserHistory<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#sub-account-transfer-history-for-sub-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Sub-account-Transfer-History}
    *
    * @param {object} [options]
    * @param {string} [options.asset] - If not sent, result of all assets will be returned
@@ -442,7 +442,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/futures/internalTransfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-futures-asset-transfer-history-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Query-Sub-account-Futures-Asset-Transfer-History}
    *
    * @param {string} email - Sub-account email
    * @param {number} futuresType - 1: USDT-margined Futures，2: Coin-margined Futures
@@ -470,7 +470,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/futures/internalTransfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#sub-account-futures-asset-transfer-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Sub-account-Futures-Asset-Transfer}
    *
    * @param {string} fromEmail - Sender email
    * @param {string} toEmail - Recipient email
@@ -502,7 +502,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/spotSummary<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-sub-account-spot-assets-summary-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Query-Sub-account-Spot-Assets-Summary}
    *
    * @param {object} [options]
    * @param {string} [options.email] - Sub account email
@@ -523,7 +523,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/virtualSubAccount<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#create-a-virtual-sub-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/account-management/Create-a-Virtual-Sub-account}
    *
    * @param {string} subAccountString
    * @param {object} [options]
@@ -543,7 +543,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/blvt/enable<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-leverage-token-for-sub-account-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/account-management/Enable-Leverage-Token-for-Sub-account}
    *
    * @param {string} email
    * @param {boolean} enableBlvt
@@ -564,7 +564,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/managed-subaccount/deposit<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-assets-into-the-managed-sub-account-for-investor-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/managed-sub-account/Deposit-Assets-Into-The-Managed-Sub-account}
    *
    * @param {string} toEmail
    * @param {string} asset
@@ -586,7 +586,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/managed-subaccount/asset<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-asset-details-for-investor-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/managed-sub-account/Query-Managed-Sub-account-Asset-Details}
    *
    * @param {string} email
    * @param {object} [options]
@@ -606,7 +606,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/managed-subaccount/withdraw<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdrawl-assets-from-the-managed-sub-account-for-investor-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/managed-sub-account/Withdrawl-Assets-From-The-Managed-Sub-account}
    *
    * @param {string} fromEmail
    * @param {string} asset
@@ -630,7 +630,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/managed-subaccount/accountSnapshot<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-managed-sub-account-snapshot-for-investor-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/managed-sub-account/Query-Managed-Sub-account-Snapshot}
    *
    * @param {string} email
    * @param {string} type "SPOT", "MARGIN"（cross）, "FUTURES"（UM）
@@ -652,46 +652,23 @@ const SubAccount = superclass => class extends superclass {
   /**
    * Enable or Disable IP Restriction for a Sub-account API Key (For Master Account)<br>
    *
-   * POST /sapi/v1/sub-account/subAccountApi/ipRestriction<br>
+   * POST /sapi/v2/sub-account/subAccountApi/ipRestriction<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-or-disable-ip-restriction-for-a-sub-account-api-key-for-master-account}
-   *
-   * @param {string} email - Sub-account email
-   * @param {string} subAccountApiKey
-   * @param {boolean} ipRestrict - true or false
-   * @param {object} [options]
-   * @param {number} [options.recvWindow]
-   */
-  subAccountApiToggleIpRestriction (email, subAccountApiKey, ipRestrict, options = {}) {
-    validateRequiredParameters({ email, subAccountApiKey, ipRestrict })
-    return this.signRequest(
-      'POST',
-      '/sapi/v1/sub-account/subAccountApi/ipRestriction',
-      Object.assign(options, { email, subAccountApiKey, ipRestrict })
-    )
-  }
-
-  /**
-   * Add IP List for a Sub-account API Key (For Master Account)<br>
-   *
-   * POST /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList<br>
-   *
-   * Before the usage of this endpoint, please ensure POST /sapi/v1/sub-account/subAccountApi/ipRestriction was used to enable the IP restriction.<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#add-ip-list-for-a-sub-account-api-key-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/api-management/Add-IP-Restriction-for-Sub-Account-API-key}
    *
    * @param {string} email - Sub-account email
    * @param {string} subAccountApiKey
-   * @param {string} ipAddress - Can be added in batches, separated by commas
-   * @param {object} [options]
+   * @param {string} status - IP Restriction status. 1 = IP Unrestricted. 2 = Restrict access to trusted IPs only.
+   * @param {object} [options] - Insert static IP in batch, separated by commas.
+   * @param {string} [options.ipAddress]
    * @param {number} [options.recvWindow]
    */
-  subAccountApiAddIp (email, subAccountApiKey, ipAddress, options = {}) {
-    validateRequiredParameters({ email, subAccountApiKey, ipAddress })
+  subAccountApiToggleIpRestriction (email, subAccountApiKey, status, options = {}) {
+    validateRequiredParameters({ email, subAccountApiKey, status })
     return this.signRequest(
       'POST',
-      '/sapi/v1/sub-account/subAccountApi/ipRestriction/ipList',
-      Object.assign(options, { email, subAccountApiKey, ipAddress })
+      '/sapi/v2/sub-account/subAccountApi/ipRestriction',
+      Object.assign(options, { email, subAccountApiKey, status })
     )
   }
 
@@ -700,7 +677,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/subAccountApi/ipRestriction<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-ip-restriction-for-a-sub-account-api-key-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/api-management/Get-IP-Restriction-for-a-Sub-account-API-Key}
    *
    * @param {string} email - Sub-account email
    * @param {string} subAccountApiKey
@@ -721,7 +698,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * DELETE /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#delete-ip-list-for-a-sub-account-api-key-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/api-management/Delete-IP-List-For-a-Sub-account-API-Key}
    *
    * @param {string} email - Sub-account email
    * @param {string} subAccountApiKey
@@ -743,7 +720,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * POST /sapi/v1/sub-account/universalTransfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#universal-transfer-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Universal-Transfer}
    *
    * @param {string} fromAccountType - "SPOT", "USDT_FUTURE", "COIN_FUTURE", "MARGIN"(Cross), "ISOLATED_MARGIN"
    * @param {string} toAccountType - "SPOT", "USDT_FUTURE", "COIN_FUTURE", "MARGIN"(Cross), "ISOLATED_MARGIN"
@@ -770,7 +747,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v1/sub-account/universalTransfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-universal-transfer-history-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Query-Universal-Transfer-History}
    *
    * @param {object} [options]
    * @param {string} [options.fromEmail]
@@ -795,7 +772,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v2/sub-account/futures/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-detail-on-sub-account-39-s-futures-account-v2-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Detail-on-Sub-accounts-Futures-Account-V2}
    *
    * @param {string} email - Sub-account email
    * @param {number} futuresType - 1:USDT Margined Futures, 2:COIN Margined Futures
@@ -816,7 +793,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v2/sub-account/futures/accountSummary<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-summary-of-sub-account-39-s-futures-account-v2-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/asset-management/Get-Summary-of-Sub-accounts-Futures-Account-V2}
    *
    * @param {number} futuresType - 1:USDT Margined Futures, 2:COIN Margined Futures
    * @param {object} [options]
@@ -838,7 +815,7 @@ const SubAccount = superclass => class extends superclass {
    *
    * GET /sapi/v2/sub-account/futures/positionRisk<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-futures-position-risk-of-sub-account-v2-for-master-account}
+   * {@link https://developers.binance.com/docs/sub_account/account-management/Get-Futures-Position-Risk-of-Sub-account-V2}
    *
    * @param {string} email - Sub-account email
    * @param {number} futuresType - 1:USDT Margined Futures, 2:COIN Margined Futures
