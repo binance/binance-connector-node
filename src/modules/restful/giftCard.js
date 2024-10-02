@@ -13,7 +13,7 @@ const GiftCard = superclass => class extends superclass {
     *
     * POST /sapi/v1/giftcard/createCode<br>
     *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#create-a-binance-code-user_data}
+    * {@link https://developers.binance.com/docs/gift_card/market-data/Create-a-single-token-gift-card}
     *
     * @param {string} token - The coin type contained in the Binance Code
     * @param {number} amount - The amount of the coin
@@ -35,7 +35,7 @@ const GiftCard = superclass => class extends superclass {
     *
     * POST /sapi/v1/giftcard/redeemCode<br>
     *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#redeem-a-binance-code-user_data}
+    * {@link https://developers.binance.com/docs/gift_card/market-data/Redeem-a-Binance-Gift-Card}
     *
     * @param {string} code - Binance Code
     * @param {object} [options]
@@ -57,7 +57,7 @@ const GiftCard = superclass => class extends superclass {
     *
     * GET /sapi/v1/giftcard/verify<br>
     *
-    * {@link https://binance-docs.github.io/apidocs/spot/en/#verify-a-binance-code-user_data}
+    * {@link https://developers.binance.com/docs/gift_card/market-data/Verify-Binance-Gift-Card-by-Gift-Card-Number}
     *
     * @param {string} referenceNo - reference number
     * @param {object} [options]
@@ -78,7 +78,7 @@ const GiftCard = superclass => class extends superclass {
    *
    * GET /sapi/v1/giftcard/cryptography/rsa-public-key<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#fetch-rsa-public-key-user_data}
+   * {@link https://developers.binance.com/docs/gift_card/market-data/Fetch-RSA-Public-Key}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -88,6 +88,30 @@ const GiftCard = superclass => class extends superclass {
       'GET',
       '/sapi/v1/giftcard/cryptography/rsa-public-key',
       options
+    )
+  }
+
+  /**
+  * Create a dual-token gift card (fixed value, discount feature) (TRADE)<br>
+  *
+  * POST /sapi/v1/giftcard/buyCode<br>
+  *
+  * {@link https://developers.binance.com/docs/gift_card/market-data/Create-a-dual-token-gift-card}
+  *
+  * @param {string} baseToken - The token you want to pay, example: BUSD
+  * @param {string} faceToken - The token you want to buy, example: BNB. If faceToken = baseToken, it's the same as createCode endpoint.
+  * @param {number} baseTokenAmount - The base token asset quantity, example : 1.002
+  * @param {object} [options]
+  * @param {number} [options.discount] - Stablecoin-denominated card discount percentage, Example: 1 for 1% discount. Scale should be less than 6.
+  * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+  */
+  giftCardBuyCode (baseToken, faceToken, baseTokenAmount, options = {}) {
+    validateRequiredParameters({ baseToken, faceToken, baseTokenAmount })
+
+    return this.signRequest(
+      'POST',
+      '/sapi/v1/giftcard/buyCode',
+      Object.assign(options, { baseToken, faceToken, baseTokenAmount })
     )
   }
 }

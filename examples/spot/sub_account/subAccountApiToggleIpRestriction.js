@@ -10,6 +10,6 @@ const client = new Spot(apiKey, apiSecret)
 client.subAccountApiToggleIpRestriction(
   'alice@test.com',
   'subAccountApiKey',
-  true
+  '1'
 ).then(response => client.logger.log(response.data))
   .catch(error => client.logger.error(error))

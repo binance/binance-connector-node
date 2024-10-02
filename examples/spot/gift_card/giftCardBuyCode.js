@@ -6,6 +6,5 @@ const apiKey = ''
 const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
-client.blvtRedemptionRecord()
-  .then(response => client.logger.log(response.data))
+client.giftCardBuyCode('BUSD', 'BNB', 10).then(response => client.logger.log(response.data))
   .catch(error => client.logger.error(error))

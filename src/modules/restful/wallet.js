@@ -13,7 +13,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/system/status<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#system-status-sapi-system}
+   * {@link https://developers.binance.com/docs/wallet/others/system-status}
    */
   systemStatus () {
     return this.publicRequest('GET', '/sapi/v1/system/status')
@@ -26,7 +26,7 @@ const Wallet = superclass => class extends superclass {
    *
    * Get information of coins (available for deposit and withdraw) for user.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-coins-39-information-user_data}
+   * {@link https://developers.binance.com/docs/wallet/capital/all-coins-info}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -45,7 +45,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/accountSnapshot<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#daily-account-snapshot-user_data}
+   * {@link https://developers.binance.com/docs/wallet/account/daily-account-snapshoot}
    *
    * @param {string} type - "SPOT", "MARGIN", "FUTURES"
    * @param {object} [options]
@@ -71,7 +71,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/account/disableFastWithdrawSwitch<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-fast-withdraw-switch-user_data}
+   * {@link https://developers.binance.com/docs/wallet/account/disable-fast-withdraw-switch}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -89,7 +89,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/account/enableFastWithdrawSwitch<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-fast-withdraw-switch-user_data}
+   * {@link https://developers.binance.com/docs/wallet/account/enable-fast-withdraw-switch}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -107,7 +107,7 @@ const Wallet = superclass => class extends superclass {
    *
    * POST /sapi/v1/capital/withdraw/apply<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-user_data}
+   * {@link https://developers.binance.com/docs/wallet/capital/withdraw}
    *
    * @param {string} coin
    * @param {string} address
@@ -141,7 +141,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/capital/deposit/hisrec<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-history-supporting-network-user_data}
+   * {@link https://developers.binance.com/docs/wallet/capital/deposite-history}
    *
    * @param {object} [options]
    * @param {string} [options.coin]
@@ -165,7 +165,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/capital/withdraw/history<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#withdraw-history-supporting-network-user_data}
+   * {@link https://developers.binance.com/docs/wallet/capital/withdraw-history}
    *
    * @param {object} [options]
    * @param {string} [options.coin]
@@ -190,7 +190,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/capital/deposit/address<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#deposit-address-supporting-network-user_data}
+   * {@link https://developers.binance.com/docs/wallet/capital/deposite-address}
    *
    * @param {string} coin
    * @param {object} [options]
@@ -215,7 +215,7 @@ const Wallet = superclass => class extends superclass {
    * GET /sapi/v1/account/status<br>
    *
    * Fetch account status detail.<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-status-sapi-user_data}
+   * {@link https://developers.binance.com/docs/wallet/account/account-status}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -235,7 +235,7 @@ const Wallet = superclass => class extends superclass {
    * GET /sapi/v1/account/apiTradingStatus<br>
    *
    * Fetch account api trading status detail.<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-api-trading-status-sapi-user_data}
+   * {@link https://developers.binance.com/docs/wallet/account/account-api-trading-status}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -253,7 +253,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/asset/dribblet<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-sapi-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/dust-log}
    *
    * @param {object} [options]
    * @param {number} [options.startTime]
@@ -274,7 +274,7 @@ const Wallet = superclass => class extends superclass {
    * POST /sapi/v1/asset/dust<br>
    *
    * Convert dust assets to BNB.<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#dust-transfer-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/dust-transfer}
    *
    * @param {array} asset - The asset being converted
    * @param {object} [options]
@@ -300,7 +300,7 @@ const Wallet = superclass => class extends superclass {
    * GET /sapi/v1/asset/assetDividend<br>
    *
    * Query asset dividend record.<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-dividend-record-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/assets-divided-record}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -324,7 +324,7 @@ const Wallet = superclass => class extends superclass {
    *
    * Fetch details of assets supported on Binance.<br>
    * Please get network and other deposit or withdraw details from GET /sapi/v1/capital/config/getall.<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#asset-detail-sapi-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/asset-detail}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -344,7 +344,7 @@ const Wallet = superclass => class extends superclass {
    * GET /sapi/v1/asset/tradeFee<br>
    *
    * Fetch trade fee<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#trade-fee-sapi-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/trade-fee}
    *
    * @param {object} [options]
    * @param {string} [options.symbol]
@@ -364,7 +364,7 @@ const Wallet = superclass => class extends superclass {
    *
    * POST /sapi/v1/asset/transfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#user-universal-transfer}
+   * {@link https://developers.binance.com/docs/wallet/asset/user-universal-transfer}
    *
    * @param {string} type
    * @param {string} asset
@@ -393,7 +393,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/asset/transfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-user-universal-transfer-history}
+   * {@link https://developers.binance.com/docs/wallet/asset/query-user-universal-transfer}
    *
    * @param {string} type
    * @param {object} [options]
@@ -420,7 +420,7 @@ const Wallet = superclass => class extends superclass {
    *
    * POST /sapi/v1/asset/get-funding-asset<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#funding-wallet-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/funding-wallet}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -440,7 +440,7 @@ const Wallet = superclass => class extends superclass {
    *
    * GET /sapi/v1/account/apiRestrictions<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-api-key-permission-user_data}
+   * {@link https://developers.binance.com/docs/wallet/account/api-key-permission}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -458,7 +458,7 @@ const Wallet = superclass => class extends superclass {
    *
    * POST /sapi/v3/asset/getUserAsset<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#user-asset-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/user-assets}
    *
    * @param {object} [options]
    * @param {string} [options.asset] - If asset is blank, then query all positive assets user have.
@@ -477,7 +477,7 @@ const Wallet = superclass => class extends superclass {
    *
    * POST /sapi/v1/asset/dust-btc<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#dustlog-user_data}
+   * {@link https://developers.binance.com/docs/wallet/asset/dust-log}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000

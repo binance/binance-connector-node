@@ -11,7 +11,7 @@ const PortfolioMargin = superclass => class extends superclass {
    *
    * GET /sapi/v1/portfolio/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-portfolio-margin-account-info-user_data}
+   * {@link https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Get-Classic-Portfolio-Margin-Account-Info}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow]
@@ -30,7 +30,7 @@ const PortfolioMargin = superclass => class extends superclass {
    *
    * GET /sapi/v1/portfolio/collateralRate<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#portfolio-margin-collateral-rate-market_data}
+   * {@link https://developers.binance.com/docs/derivatives/portfolio-margin-pro/market-data/Classic-Portfolio-Margin-Collateral-Rate}
    */
   portfolioMarginCollateralRate () {
     return this.publicRequest(
@@ -44,7 +44,7 @@ const PortfolioMargin = superclass => class extends superclass {
    *
    * GET /sapi/v1/portfolio/pmLoan<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-portfolio-margin-bankruptcy-loan-amount-user_data}
+   * {@link https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Query-Classic-Portfolio-Margin-Bankruptcy-Loan-Amount}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -62,7 +62,7 @@ const PortfolioMargin = superclass => class extends superclass {
    *
    * POST /sapi/v1/portfolio/repay<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#portfolio-margin-bankruptcy-loan-repay-user_data}
+   * {@link https://developers.binance.com/docs/derivatives/portfolio-margin-pro/account/Classic-Portfolio-Margin-Bankruptcy-Loan-Repay}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000

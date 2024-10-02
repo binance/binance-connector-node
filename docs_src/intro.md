@@ -12,7 +12,7 @@ This is a lightweight library that works as a connector to [Binance public API](
 * Source Code: [https://github.com/binance/binance-connector-node](https://github.com/binance/binance-connector-node)
 * Official API document:
   * [https://github.com/binance/binance-spot-api-docs](https://github.com/binance/binance-spot-api-docs)
-  * [https://binance-docs.github.io/apidocs/spot/en](https://binance-docs.github.io/apidocs/spot/en)
+  * [https://developers.binance.com/docs/binance-spot-api-docs](https://developers.binance.com/docs/binance-spot-api-docs)
 * Support channels:
   * Binance developer forum: [https://dev.binance.vision/](https://dev.binance.vision/)
   * Telegram Channel: [https://t.me/binance_api_english](https://t.me/binance_api_english)

@@ -11,7 +11,7 @@ const Rebate = superclass => class extends superclass {
    *
    * GET /sapi/v1/rebate/taxQuery<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-spot-rebate-history-records-user_data}
+   * {@link https://developers.binance.com/docs/rebate/rest-api/Get-Spot-Rebate-History-Records}
    *
    * @param {object} [options]
    * @param {number} [options.startTime]

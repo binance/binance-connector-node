@@ -13,7 +13,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/pub/algoList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#acquiring-algorithm-market_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Acquiring-Algorithm}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -31,7 +31,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/pub/coinList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#acquiring-coinname-market_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Acquiring-CoinName}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -49,7 +49,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/worker/detail<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#request-for-detail-miner-list-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Request-for-Detail-Miner-List}
    *
    * @param {string} algo
    * @param {string} userName - Mining account
@@ -75,7 +75,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/worker/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#request-for-miner-list-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Request-for-Miner-List}
    *
    * @param {string} algo
    * @param {string} userName - Mining account
@@ -107,7 +107,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/payment/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#earnings-list-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Earnings-List}
    *
    * @param {string} algo
    * @param {string} userName - Mining account
@@ -136,7 +136,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/payment/other<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#extra-bonus-list-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Extra-Bonus-List}
    *
    * @param {string} algo
    * @param {string} userName
@@ -165,7 +165,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/hash-transfer/config/details/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-list-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Hashrate-Resale-List}
    *
    * @param {object} [options]
    * @param {number} [options.pageIndex] - Page number，default is first page, 1
@@ -185,7 +185,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/hash-transfer/profit/details<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-detail-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Hashrate-Resale-Detail}
    *
    * @param {number} configId - Mining ID
    * @param {string} userName - Mining Account
@@ -211,7 +211,7 @@ const Mining = superclass => class extends superclass {
    *
    * POST /sapi/v1/mining/hash-transfer/config<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#hashrate-resale-request-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Hashrate-Resale-Request}
    *
    * @param {string} userName - Mining Account
    * @param {string} algo
@@ -252,7 +252,7 @@ const Mining = superclass => class extends superclass {
    *
    * POST /sapi/v1/mining/hash-transfer/config/cancel<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-hashrate-resale-configuration-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Cancel-hashrate-resale-configuration}
    *
    * @param {number} configId - Mining ID
    * @param {string} userName
@@ -276,7 +276,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/statistics/user/status<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#statistic-list-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Statistic-List}
    *
    * @param {string} algo
    * @param {string} userName - Mining account
@@ -300,7 +300,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/statistics/user/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-list-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Account-List}
    *
    * @param {string} algo
    * @param {string} userName - Mining account
@@ -324,7 +324,7 @@ const Mining = superclass => class extends superclass {
    *
    * GET /sapi/v1/mining/payment/uid<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#mining-account-earning-user_data}
+   * {@link https://developers.binance.com/docs/mining/rest-api/Mining-Account-Earning}
    *
    * @param {string} algo - Algorithm(sha256)
    * @param {object} [options]

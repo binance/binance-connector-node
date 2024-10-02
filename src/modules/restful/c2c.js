@@ -12,7 +12,7 @@ const C2C = superclass => class extends superclass {
    *
    * GET /sapi/v1/c2c/orderMatch/listUserOrderHistory<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-c2c-trade-history-user_data}
+   * {@link https://developers.binance.com/docs/c2c/rest-api/Get-C2C-Trade-History}
    *
    * @param {string} tradeType - BUY, SELL
    * @param {object} [options]

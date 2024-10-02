@@ -13,7 +13,7 @@ const Trade = superclass => class extends superclass {
    *
    * POST /api/v3/order/test<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#test-new-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#test-new-order-trade}
    *
    * @param {string} symbol
    * @param {string} side
@@ -52,7 +52,7 @@ const Trade = superclass => class extends superclass {
    *
    * POST /api/v3/order<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#new-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#new-order-trade}
    *
    * @param {string} symbol
    * @param {string} side
@@ -90,7 +90,7 @@ const Trade = superclass => class extends superclass {
    *
    * DELETE /api/v3/order<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#cancel-order-trade}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -116,7 +116,7 @@ const Trade = superclass => class extends superclass {
    *
    * DELETE /api/v3/openOrders<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-all-open-orders-on-a-symbol-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#cancel-all-open-orders-on-a-symbol-trade}
    * @param {string} symbol
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -138,7 +138,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/order<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-order-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#query-order-user_data}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -168,7 +168,7 @@ const Trade = superclass => class extends superclass {
    *
    * POST /api/v3/order/cancelReplace<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-an-existing-order-and-send-a-new-order-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#cancel-an-existing-order-and-send-a-new-order-trade}
    *
    * @param {string} symbol
    * @param {string} side
@@ -211,7 +211,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/openOrders<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#current-open-orders-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#current-open-orders-user_data}
    *
    * @param {object} [options]
    * @param {string} [options.symbol]
@@ -230,7 +230,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/allOrders<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#all-orders-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#all-orders-user_data}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -256,7 +256,7 @@ const Trade = superclass => class extends superclass {
    *
    * POST /api/v3/orderList/oco<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#new-oco-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#new-oco---deprecated-trade}
    *
    * @param {string} symbol
    * @param {string} side
@@ -306,7 +306,7 @@ const Trade = superclass => class extends superclass {
    *
    * DELETE /api/v3/orderList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#cancel-oco-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#cancel-order-list-trade}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -332,7 +332,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/orderList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-oco-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#query-order-lists-user_data}
    *
    * @param {object} [options]
    * @param {number} [options.orderListId]
@@ -352,7 +352,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/allOrderList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-all-oco-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#query-all-order-lists-user_data}
    *
    * @param {object} [options]
    * @param {number} [options.fromId]
@@ -374,7 +374,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/openOrderList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-open-oco-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#query-open-order-lists-user_data}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -392,7 +392,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-information-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#account-information-user_data}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -410,7 +410,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/myTrades<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#account-trade-list-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#account-trade-list-user_data}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -438,7 +438,7 @@ const Trade = superclass => class extends superclass {
    *
    * GET /api/v3/rateLimit/order<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-current-order-count-usage-trade}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#query-current-order-count-usage-trade}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000

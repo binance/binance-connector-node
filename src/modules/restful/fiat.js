@@ -12,7 +12,7 @@ const Fiat = superclass => class extends superclass {
    *
    * GET /sapi/v1/fiat/orders<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fiat-deposit-withdraw-history-user_data}
+   * {@link https://developers.binance.com/docs/fiat/rest-api/Get-Fiat-Deposit-Withdraw-History}
    *
    * @param {number} transactionType - 0: deposit, 1: withdraw
    * @param {object} [options]
@@ -37,7 +37,7 @@ const Fiat = superclass => class extends superclass {
    *
    * GET /sapi/v1/fiat/payments<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-fiat-payments-history-user_data}
+   * {@link https://developers.binance.com/docs/fiat/rest-api/Get-Fiat-Payments-History}
    *
    * @param {number} transactionType - 0: buy, 1: sell
    * @param {object} [options]

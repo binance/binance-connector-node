@@ -1,4 +1,42 @@
 # Changelog
+## 3.5.0 - 2024-10-02
+### Added
+- Add GiftCard endpoint:
+  - `POST /sapi/v1/giftcard/buyCode` to create a dual-token gift card
+
+### Changed
+- Updated dependencies
+- Updated endpoint `/sapi/v1/sub-account/subAccountApi/ipRestriction` to `/sapi/v2/sub-account/subAccountApi/ipRestriction`
+
+### Removed
+- Deprecated Margin endpoints:
+  - `POST /sapi/v1/margin/transfer`
+  - `POST /sapi/v1/margin/isolated/transfer`
+  - `POST /sapi/v1/margin/loan`
+  - `POST /sapi/v1/margin/repay`
+  - `GET /sapi/v1/margin/isolated/transfer`
+  - `GET /sapi/v1/margin/asset`
+  - `GET /sapi/v1/margin/pair`
+  - `GET /sapi/v1/margin/isolated/pair`
+  - `GET /sapi/v1/margin/loan`
+  - `GET /sapi/v1/margin/repay`
+  - `GET /sapi/v1/margin/dribblet`
+  - `GET /sapi/v1/margin/dust`
+  - `POST /sapi/v1/margin/dust`
+
+- Deprecated Sub-Account endpoints:
+  - `POST /sapi/v1/sub-account/subAccountApi/ipRestriction/ipList`
+
+- Deprecated Futures endpoints:
+  - `POST /sapi/v1/futures/transfer`
+  - `GET /sapi/v1/futures/transfer`
+
+- BLVT endpoints:
+  - `GET /sapi/v1/blvt/tokenInfo`
+  - `POST /sapi/v1/blvt/subscribe`
+  - `GET /sapi/v1/blvt/subscribe/record`
+  - `POST /sapi/v1/blvt/redeem`
+  - `GET /sapi/v1/blvt/redeem/record`
 
 ## 3.4.1 - 2024-08-19
 ### Updated

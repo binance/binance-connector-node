@@ -12,7 +12,7 @@ const Convert = superclass => class extends superclass {
    *
    * GET /sapi/v1/convert/tradeFlow<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-convert-trade-history-user_data}
+   * {@link https://developers.binance.com/docs/convert/trade/Get-Convert-Trade-History}
    *
    * @param {number} [startTime]
    * @param {number} [endTime]

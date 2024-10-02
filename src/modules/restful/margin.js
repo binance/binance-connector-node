@@ -9,133 +9,11 @@ const { validateRequiredParameters, hasOneOfParameters } = require('../../helper
  */
 const Margin = superclass => class extends superclass {
   /**
-   * Cross Margin Account Transfer (MARGIN)<br>
-   *
-   * POST /sapi/v1/margin/transfer<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#cross-margin-account-transfer-margin}
-   *
-   * @param {string} asset
-   * @param {number} amount
-   * @param {number} type - 1: transfer from main account to margin account
-   *    <br>2: transfer from margin account to main account
-   * @param {object} [options]
-   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-   */
-  marginTransfer (asset, amount, type, options = {}) {
-    validateRequiredParameters({ asset, amount, type })
-
-    return this.signRequest(
-      'POST',
-      '/sapi/v1/margin/transfer',
-      Object.assign(options, {
-        asset: asset.toUpperCase(),
-        amount,
-        type
-      })
-    )
-  }
-
-  /**
-   * Margin Account Borrow (MARGIN)<br>
-   *
-   * POST /sapi/v1/margin/load<br>
-   *
-   * Apply for a loan.<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-borrow-margin}
-   *
-   * @param {string} asset
-   * @param {number} amount
-   * @param {object} [options]
-   * @param {string} [options.isIsolated] - TRUE or FALSE
-   * @param {string} [options.symbol] - isolated symbol
-   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-   */
-  marginBorrow (asset, amount, options = {}) {
-    validateRequiredParameters({ asset, amount })
-
-    return this.signRequest(
-      'POST',
-      '/sapi/v1/margin/loan',
-      Object.assign(options, {
-        asset: asset.toUpperCase(),
-        amount
-      })
-    )
-  }
-
-  /**
-   * Margin Account Repay(MARGIN)<br>
-   *
-   * POST /sapi/v1/margin/repay<br>
-   *
-   * Repay loan for margin account.<br>
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-repay-margin}
-   *
-   * @param {string} asset
-   * @param {string} amount
-   * @param {object} [options]
-   * @param {string} [options.isIsolated] - TRUE or FALSE
-   * @param {string} [options.symbol]
-   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-   */
-  marginRepay (asset, amount, options = {}) {
-    validateRequiredParameters({ asset, amount })
-
-    return this.signRequest(
-      'POST',
-      '/sapi/v1/margin/repay',
-      Object.assign(options, {
-        asset: asset.toUpperCase(),
-        amount
-      })
-    )
-  }
-
-  /**
-   * Query Margin Asset (MARKET_DATA)<br>
-   *
-   * GET /sapi/v1/margin/asset<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-asset-market_data}
-   *
-   * @param {string} asset
-   */
-  marginAsset (asset) {
-    validateRequiredParameters({ asset })
-
-    return this.publicRequest(
-      'GET',
-      '/sapi/v1/margin/asset',
-      { asset: asset.toUpperCase() }
-    )
-  }
-
-  /**
-   * Query Cross Margin Pair (MARKET_DATA)<br>
-   *
-   * GET /sapi/v1/margin/pair<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-cross-margin-pair-market_data}
-   *
-   * @param {string} symbol
-   */
-  marginPair (symbol) {
-    validateRequiredParameters({ symbol })
-
-    return this.publicRequest(
-      'GET',
-      '/sapi/v1/margin/pair',
-      { symbol: symbol.toUpperCase() }
-    )
-  }
-
-  /**
    * Get All Margin Assets (MARKET_DATA)<br>
    *
    * GET /sapi/v1/margin/allAssets<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-all-margin-assets-market_data}
+   * {@link https://developers.binance.com/docs/margin_trading/market-data/Get-All-Margin-Assets}
    */
   marginAllAssets () {
     return this.publicRequest(
@@ -149,7 +27,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/allPairs<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-all-cross-margin-pairs-market_data}
+   * {@link https://developers.binance.com/docs/margin_trading/market-data/Get-All-Cross-Margin-Pairs}
    */
   marginAllPairs () {
     return this.publicRequest(
@@ -163,7 +41,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/priceIndex<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-priceindex-market_data}
+   * {@link https://developers.binance.com/docs/margin_trading/market-data/Query-Margin-PriceIndex}
    *
    * @param {string} symbol
    */
@@ -182,7 +60,7 @@ const Margin = superclass => class extends superclass {
    *
    * POST /sapi/v1/margin/order<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-new-order-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Margin-Account-New-Order}
    *
    * @param {string} symbol
    * @param {string} side - BUY or SELL
@@ -224,7 +102,7 @@ const Margin = superclass => class extends superclass {
    *
    * DELETE /sapi/v1/margin/order<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-cancel-order-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Margin-Account-Cancel-Order}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -252,7 +130,7 @@ const Margin = superclass => class extends superclass {
    *
    * DELETE /sapi/v1/margin/openOrders<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-cancel-all-open-orders-on-a-symbol-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Margin-Account-Cancel-All-Open-Orders}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -276,7 +154,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/transfer<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-cross-margin-transfer-history-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/transfer/Get-Cross-Margin-Transfer-History}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -297,71 +175,11 @@ const Margin = superclass => class extends superclass {
   }
 
   /**
-   * Query Loan Record (USER_DATA)<br>
-   *
-   * GET /sapi/v1/margin/loan<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-loan-record-user_data}
-   *
-   * @param {string} asset
-   * @param {object} [options]
-   * @param {string} [options.isolatedSymbol]
-   * @param {number} [options.txId] - the tranId in POST /sapi/v1/margin/loan
-   * @param {number} [options.startTime]
-   * @param {number} [options.endTime]
-   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [options.size] - Default:10 Max:100
-   * @param {boolean} [options.archived] - Default: false. Set to true for archived data from 6 months ago
-   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-   */
-  marginLoanRecord (asset, options = {}) {
-    validateRequiredParameters({ asset })
-
-    return this.signRequest(
-      'GET',
-      '/sapi/v1/margin/loan',
-      Object.assign(options, {
-        asset: asset.toUpperCase()
-      })
-    )
-  }
-
-  /**
-   * Query Repay Record (USER_DATA)<br>
-   *
-   * GET /sapi/v1/margin/repay<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-repay-record-user_data}
-   *
-   * @param {string} asset
-   * @param {object} [options]
-   * @param {string} [options.isolatedSymbol]
-   * @param {number} [options.txId] - return of /sapi/v1/margin/repay
-   * @param {number} [options.startTime]
-   * @param {number} [options.endTime]
-   * @param {number} [options.current] - Currently querying page. Start from 1. Default:1
-   * @param {number} [options.size] - Default:10 Max:100
-   * @param {boolean} [options.archived] - Default: false. Set to true for archived data from 6 months ago
-   * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-   */
-  marginRepayRecord (asset, options = {}) {
-    validateRequiredParameters({ asset })
-
-    return this.signRequest(
-      'GET',
-      '/sapi/v1/margin/repay',
-      Object.assign(options, {
-        asset: asset.toUpperCase()
-      })
-    )
-  }
-
-  /**
    * Get Interest History (USER_DATA)<br>
    *
    * GET /sapi/v1/margin/interestHistory<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-interest-history-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/borrow-and-repay/Get-Interest-History}
    *
    * @param {object} [options]
    * @param {string} [options.asset]
@@ -386,7 +204,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/forceLiquidationRec<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-force-liquidation-record-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Get-Force-Liquidation-Record}
    *
    * @param {object} [options]
    * @param {number} [options.startTime]
@@ -409,7 +227,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-cross-margin-account-details-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Query-Cross-Margin-Account-Details}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -427,7 +245,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/order<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-order-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Margin-Account-Order}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -453,7 +271,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/openOrders<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-open-orders-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Margin-Account-Open-Orders}
    *
    * @param {object} [options]
    * @param {string} [options.symbol]
@@ -473,7 +291,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/allOrders<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-all-orders-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Margin-Account-All-Orders}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -510,7 +328,7 @@ const Margin = superclass => class extends superclass {
    * - Order Rate Limit:<br>
    * OCO counts as 2 orders against the order rate limit.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#marign-account-new-oco-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Margin-Account-New-OCO}
    *
    * @param {string} symbol
    * @param {string} side
@@ -554,7 +372,7 @@ const Margin = superclass => class extends superclass {
    * - Either orderListId or listClientOrderId must be provided<br>
    * - Canceling an individual leg will cancel the entire OCO<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-account-cancel-oco-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Margin-Account-Cancel-OCO}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -584,7 +402,7 @@ const Margin = superclass => class extends superclass {
    *
    * Either orderListId or origClientOrderId must be provided<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-oco-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Margin-Account-OCO}
    *
    * @param {object} [options]
    * @param {string} [options.isIsolated] - For isolated margin or not, "TRUE", "FALSE", default "FALSE"
@@ -609,7 +427,7 @@ const Margin = superclass => class extends superclass {
    *
    * Retrieves all OCO for a specific margin account based on provided optional parameters.<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-marign-account-39-s-all-oco-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Margin-Account-All-OCO}
    *
    * @param {object} [options]
    * @param {string} [options.isIsolated] - For isolated margin or not, "TRUE", "FALSE", default "FALSE"
@@ -633,7 +451,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/openOrderList<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-open-oco-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Margin-Account-Open-OCO}
    *
    * @param {object} [options]
    * @param {string} [options.isIsolated] - For isolated margin or not, "TRUE", "FALSE", default "FALSE"
@@ -653,7 +471,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/myTrades<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-account-39-s-trade-list-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Margin-Account-Trade-List}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -681,7 +499,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/maxBorrowable<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-max-borrow-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/borrow-and-repay/Query-Max-Borrow}
    *
    * @param {string} asset
    * @param {object} [options]
@@ -705,7 +523,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/maxTransferable<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-max-transfer-out-amount-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/transfer/Query-Max-Transfer-Out-Amount}
    *
    * @param {string} asset
    * @param {object} [options]
@@ -729,7 +547,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/interestRateHistory<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-interest-rate-history-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/borrow-and-repay/Query-Margin-Interest-Rate-History}
    *
    * @param {string} asset
    * @param {object} [options]
@@ -748,62 +566,11 @@ const Margin = superclass => class extends superclass {
   }
 
   /**
-   * Isolated Margin Account Transfer (MARGIN)<br>
-   *
-   * POST /sapi/v1/margin/isolated/transfer<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#isolated-margin-account-transfer-margin}
-   *
-   * @param {string} asset - asset, such as BTC
-   * @param {string} symbol
-   * @param {string} transFrom - "SPOT", "ISOLATED_MARGIN"
-   * @param {string} transTo - "SPOT", "ISOLATED_MARGIN"
-   * @param {number} amount
-   * @param {object} [options]
-   * @param {number} [options.recvWindow] - No more than 60000
-   */
-  isolatedMarginTransfer (asset, symbol, transFrom, transTo, amount, options = {}) {
-    validateRequiredParameters({ asset, symbol, transFrom, transTo, amount })
-    return this.signRequest(
-      'POST',
-      '/sapi/v1/margin/isolated/transfer',
-      Object.assign(options, { asset, symbol, transFrom, transTo, amount })
-    )
-  }
-
-  /**
-   * Get Isolated Margin Transfer History (USER_DATA)<br>
-   *
-   * GET /sapi/v1/margin/isolated/transfer<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-isolated-margin-transfer-history-user_data}
-   *
-   * @param {string} symbol
-   * @param {object} [options]
-   * @param {string} [options.asset]
-   * @param {string} [options.transFrom] - "SPOT", "ISOLATED_MARGIN"
-   * @param {string} [options.transTo] - "SPOT", "ISOLATED_MARGIN"
-   * @param {number} [options.startTime]
-   * @param {number} [options.endTime]
-   * @param {number} [options.current] - Current page, default 1
-   * @param {number} [options.size] - Default 10, max 100
-   * @param {number} [options.recvWindow] - No more than 60000
-   */
-  isolatedMarginTransferHistory (symbol, options = {}) {
-    validateRequiredParameters({ symbol })
-    return this.signRequest(
-      'GET',
-      '/sapi/v1/margin/isolated/transfer',
-      Object.assign(options, { symbol })
-    )
-  }
-
-  /**
    * Query Isolated Margin Account Info (USER_DATA)<br>
    *
    * GET /sapi/v1/margin/isolated/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-account-info-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Query-Isolated-Margin-Account-Info}
    *
    * @param {object} [options]
    * @param {string} [options.symbols] - Max 5 symbols can be sent; separated by ",". e.g. "BTCUSDT,BNBUSDT,ADAUSDT"
@@ -822,7 +589,7 @@ const Margin = superclass => class extends superclass {
    *
    * DELETE /sapi/v1/margin/isolated/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#disable-isolated-margin-account-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Disable-Isolated-Margin-Account}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -842,7 +609,7 @@ const Margin = superclass => class extends superclass {
    *
    * POST /sapi/v1/margin/isolated/account<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#enable-isolated-margin-account-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Enable-Isolated-Margin-Account}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -862,7 +629,7 @@ const Margin = superclass => class extends superclass {
    *
    * GET /sapi/v1/margin/isolated/accountLimit<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-enabled-isolated-margin-account-limit-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Query-Enabled-Isolated-Margin-Account-Limit}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - No more than 60000
@@ -876,31 +643,11 @@ const Margin = superclass => class extends superclass {
   }
 
   /**
-   * Query Isolated Margin Symbol (USER_DATA)<br>
-   *
-   * GET /sapi/v1/margin/isolated/pair<br>
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-symbol-user_data}
-   *
-   * @param {string} symbol
-   * @param {object} [options]
-   * @param {number} [options.recvWindow] - No more than 60000
-   */
-  isolatedMarginSymbol (symbol, options = {}) {
-    validateRequiredParameters({ symbol })
-    return this.signRequest(
-      'GET',
-      '/sapi/v1/margin/isolated/pair',
-      Object.assign(options, { symbol })
-    )
-  }
-
-  /**
    * Get All Isolated Margin Symbol(USER_DATA)<br>
    *
    * GET /sapi/v1/margin/isolated/allPairs<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-all-isolated-margin-symbol-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/market-data/Get-All-Isolated-Margin-Symbol}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - No more than 60000
@@ -920,7 +667,7 @@ const Margin = superclass => class extends superclass {
    *
    * Get cross margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-cross-margin-fee-data-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Query-Cross-Margin-Fee-Data}
    *
    * @param {object} [options]
    * @param {number} [options.vipLevel] - User's current specific margin data will be returned if vipLevel is omitted
@@ -942,7 +689,7 @@ const Margin = superclass => class extends superclass {
    *
    * Get isolated margin fee data collection with any vip level or user's current specific data as https://www.binance.com/en/margin-fee
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-fee-data-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Query-Isolated-Margin-Fee-Data}
    *
    * @param {object} [options]
    * @param {number} [options.vipLevel] - User's current specific margin data will be returned if vipLevel is omitted
@@ -964,7 +711,7 @@ const Margin = superclass => class extends superclass {
    *
    * Get isolated margin tier data collection with any tier as https://www.binance.com/en/margin-data
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-isolated-margin-fee-data-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/account/Query-Isolated-Margin-Fee-Data}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -988,7 +735,7 @@ const Margin = superclass => class extends superclass {
    *
    * Displays the user's current margin order count usage for all intervals.
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-current-margin-order-count-usage-trade}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Query-Current-Margin-Order-Count-Usage}
    *
    * @param {object} [options]
    * @param {string} [options.isIsolated] - for isolated margin or not, "TRUE", "FALSE"，default "FALSE"
@@ -1004,33 +751,11 @@ const Margin = superclass => class extends superclass {
   }
 
   /**
-   * Margin Dustlog (USER_DATA)<br>
-   *
-   * GET /sapi/v1/margin/dribblet<br>
-   *
-   * Query the historical information of user's margin account small-value asset conversion BNB.
-   *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-dustlog-user_data}
-   *
-   * @param {object} [options]
-   * @param {number} [options.startTime]
-   * @param {number} [options.endTime]
-   * @param {number} [options.recvWindow] - No more than 60000
-   */
-  marginDustLog (options = {}) {
-    return this.signRequest(
-      'GET',
-      '/sapi/v1/margin/dribblet',
-      options
-    )
-  }
-
-  /**
    * Query Margin Available Inventory (USER_DATA)<br>
    *
    * GET /sapi/v1/margin/available-inventory<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-margin-available-inventory-user_data}
+   * {@link https://developers.binance.com/docs/margin_trading/market-data/Query-margin-avaliable-inventory}
    *
    * @param {Type} type
    */
@@ -1050,7 +775,7 @@ const Margin = superclass => class extends superclass {
    *
    * POST /sapi/v1/margin/manual-liquidation<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#margin-manual-liquidation-margin}
+   * {@link https://developers.binance.com/docs/margin_trading/trade/Margin-Manual-Liquidation}
    *
    * @param {Type} type
    * @param {object} [options]

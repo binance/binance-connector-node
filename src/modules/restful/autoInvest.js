@@ -13,7 +13,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/target-asset/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-target-asset-list-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/market-data/Get-target-asset-list}
    *
    * @param {object} [options]
    * @param {string} [options.targetAsset]
@@ -34,7 +34,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/target-asset/roi/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-target-asset-roi-data-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/market-data/Get-target-asset-ROI-data}
    *
    * @param {string} targetAsset
    * @param {string} hisRoiType
@@ -58,7 +58,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/all/asset<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-all-source-asset-and-target-asset-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/market-data/Query-all-source-asset-and-target-asset}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
@@ -76,7 +76,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/source-asset/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-source-asset-list-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/market-data/Query-source-asset-list}
    *
    * @param {string} usageType
    * @param {object} [options]
@@ -101,7 +101,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * POST /sapi/v1/lending/auto-invest/plan/edit-status<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#change-plan-status}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Change-Plan-Status}
    *
    * @param {number} planId
    * @param {Status} status
@@ -125,7 +125,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/plan/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#get-list-of-plans}
+   * {@link https://developers.binance.com/docs/auto_invest/market-data/Get-list-of-plans}
    *
    * @param {string} planType
    * @param {object} [options]
@@ -147,7 +147,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/plan/id<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-holding-details-of-the-plan}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Query-holding-details-of-the-plan}
    *
    * @param {object} [options]
    * @param {number} [options.planId]
@@ -167,7 +167,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/history/list<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-subscription-transaction-history}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Query-subscription-transaction-history}
    *
    * @param {object} [options]
    * @param {number} [options.planId]
@@ -192,7 +192,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/index/info<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-index-details-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/market-data/Query-Index-Details}
    *
    * @param {number} indexId
    * @param {object} [options]
@@ -214,7 +214,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/index/user-summary<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-index-linked-plan-position-details-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Query-Index-Linked-Plan-Position-Details}
    *
    * @param {number} indexId
    * @param {object} [options]
@@ -236,7 +236,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/one-off/status<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#query-one-time-transaction-status-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Query-One-Time-Transaction-Status}
    *
    * @param {number} transactionId
    * @param {object} [options]
@@ -259,7 +259,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * POST /sapi/v1/lending/auto-invest/redeem<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#index-linked-plan-redemption-trade}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Index-Linked-Plan-Redemption}
    *
    * @param {number} indexId - PORTFOLIO plan's Id
    * @param {number} redemptionPercentage - user redeem percentage,10/20/100.
@@ -284,7 +284,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/redeem/history<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#index-linked-plan-redemption-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Query-Index-Linked-Plan-Redemption}
    *
    * @param {number} requestId
    * @param {object} [options]
@@ -311,7 +311,7 @@ const AutoInvest = superclass => class extends superclass {
    *
    * GET /sapi/v1/lending/auto-invest/rebalance/history<br>
    *
-   * {@link https://binance-docs.github.io/apidocs/spot/en/#index-linked-plan-rebalance-details-user_data}
+   * {@link https://developers.binance.com/docs/auto_invest/trade/Index-Linked-Plan-Rebalance-Details}
    *
    * @param {object} [options]
    * @param {number} [options.startTime] - UTC timestamp in ms
