@@ -2,18 +2,28 @@
 
 const WebsocketBase = require('./websocketBase')
 const Stream = require('./modules/websocket/stream')
+const { validateTimeUnit } = require('./helpers/validation')
 
 class WebsocketStream extends (Stream)(WebsocketBase) {
   constructor (options = {}) {
     super(options)
     this.wsURL = options.wsURL || 'wss://stream.binance.com:9443'
     this.combinedStreams = options.combinedStreams || false
+    this.timeUnit = options.timeUnit
   }
 
   _prepareURL (stream) {
     let url = `${this.wsURL}/ws/${stream}`
     if (this.combinedStreams) {
       url = `${this.wsURL}/stream?streams=${stream}`
+    }
+    if (this.timeUnit) {
+      try {
+        validateTimeUnit(this.timeUnit)
+        url = `${url}${url.includes('?') ? '&' : '?'}timeUnit=${this.timeUnit}`
+      } catch (err) {
+        this.logger.error(err)
+      }
     }
     return url
   }

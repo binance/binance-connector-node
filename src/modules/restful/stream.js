@@ -14,11 +14,15 @@ const Stream = superclass => class extends superclass {
    * POST /api/v3/userDataStream<br>
    *
    * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#start-user-data-stream-user_stream}
+   *
+   * @param {object} [options]
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
-  createListenKey () {
+  createListenKey (options = {}) {
     return this.publicRequest(
       'POST',
-      '/api/v3/userDataStream'
+      '/api/v3/userDataStream',
+      options
     )
   }
 
@@ -30,13 +34,17 @@ const Stream = superclass => class extends superclass {
    * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#keepalive-user-data-stream-user_stream}
    *
    * @param {string} listenKey
+   * @param {object} [options]
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
-  renewListenKey (listenKey) {
+  renewListenKey (listenKey, options = {}) {
     validateRequiredParameters({ listenKey })
     return this.publicRequest(
       'PUT',
       '/api/v3/userDataStream',
-      { listenKey }
+      Object.assign(options, {
+        listenKey
+      })
     )
   }
 
@@ -48,13 +56,17 @@ const Stream = superclass => class extends superclass {
    * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#close-user-data-stream-user_stream}
    *
    * @param {string} listenKey
+   * @param {object} [options]
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
-  closeListenKey (listenKey) {
+  closeListenKey (listenKey, options = {}) {
     validateRequiredParameters({ listenKey })
     return this.publicRequest(
       'DELETE',
       '/api/v3/userDataStream',
-      { listenKey }
+      Object.assign(options, {
+        listenKey
+      })
     )
   }
 

@@ -1,7 +1,8 @@
 'use strict'
 
 const crypto = require('crypto')
-const { removeEmptyValue, buildQueryString, createRequest, defaultLogger } = require('./helpers/utils')
+const { removeEmptyValue, removeTimeUnit, buildQueryString, createRequest, defaultLogger } = require('./helpers/utils')
+const { validateTimeUnit } = require('./helpers/validation')
 const ConnectorClientError = require('./error/connectorClientError')
 const PrivateKeyAlgo = require('./helpers/privateKeyAlgo')
 
@@ -24,6 +25,9 @@ class APIBase {
   }
 
   publicRequest (method, path, params = {}) {
+    const timeUnit = params?.timeUnit
+    validateTimeUnit(timeUnit)
+    params = removeTimeUnit(params)
     params = removeEmptyValue(params)
     params = buildQueryString(params)
     if (params !== '') {
@@ -36,11 +40,15 @@ class APIBase {
       apiKey: this.apiKey,
       timeout: this.timeout,
       proxy: this.proxy,
-      httpsAgent: this.httpsAgent
+      httpsAgent: this.httpsAgent,
+      timeUnit
     })
   }
 
   signRequest (method, path, params = {}) {
+    const timeUnit = params?.timeUnit
+    validateTimeUnit(timeUnit)
+    params = removeTimeUnit(params)
     params = removeEmptyValue(params)
     const timestamp = Date.now()
     const queryString = buildQueryString({ ...params, timestamp })
@@ -76,7 +84,8 @@ class APIBase {
       apiKey: this.apiKey,
       timeout: this.timeout,
       proxy: this.proxy,
-      httpsAgent: this.httpsAgent
+      httpsAgent: this.httpsAgent,
+      timeUnit
     })
   }
 }

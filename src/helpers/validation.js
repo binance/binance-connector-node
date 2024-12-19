@@ -1,7 +1,9 @@
 'use strict'
 
 const { isEmptyValue } = require('./utils')
+const TimeUnit = require('../helpers/timeUnit')
 const MissingParameterError = require('../error/missingParameterError')
+const ConnectorClientError = require('../error/connectorClientError')
 
 const validateRequiredParameters = paramObject => {
   if (!paramObject || isEmptyValue(paramObject)) { throw new MissingParameterError() }
@@ -22,7 +24,20 @@ const hasOneOfParameters = paramObject => {
   }
 }
 
+const validateTimeUnit = timeUnit => {
+  if (!timeUnit) return
+  if (
+    timeUnit !== TimeUnit.MILLISECOND &&
+    timeUnit !== TimeUnit.MICROSECOND &&
+    timeUnit !== TimeUnit.millisecond &&
+    timeUnit !== TimeUnit.microsecond
+  ) {
+    throw new ConnectorClientError("timeUnit must be either 'MILLISECOND' or 'MICROSECOND'")
+  }
+}
+
 module.exports = {
   validateRequiredParameters,
-  hasOneOfParameters
+  hasOneOfParameters,
+  validateTimeUnit
 }

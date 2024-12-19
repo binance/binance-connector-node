@@ -2,6 +2,7 @@
 
 const { Console } = require('console')
 const WebsocketStream = require('../../../src/websocketStream')
+const TimeUnit = require('../../../src/helpers/timeUnit')
 const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
 const callbacks = {
@@ -10,7 +11,7 @@ const callbacks = {
   message: data => logger.info(data)
 }
 
-const websocketStreamClient = new WebsocketStream({ logger, callbacks })
+const websocketStreamClient = new WebsocketStream({ logger, callbacks, timeUnit: TimeUnit.MICROSECOND })
 
 websocketStreamClient.aggTrade('bnbusdt', callbacks)
 

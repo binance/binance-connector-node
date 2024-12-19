@@ -11,5 +11,4 @@ describe('#isolatedMarginAllSymbols', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
-}
-)
+})

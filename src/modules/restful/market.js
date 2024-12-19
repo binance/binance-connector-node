@@ -28,9 +28,12 @@ const Market = superclass => class extends superclass {
    * Test connectivity to the Rest API and get the current server time.<br>
    * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#check-server-time}
    *
+   * @param {object} [options]
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
+   *
    */
-  time () {
-    return this.publicRequest('GET', '/api/v3/time')
+  time (options = {}) {
+    return this.publicRequest('GET', '/api/v3/time', options)
   }
 
   /**
@@ -44,6 +47,7 @@ const Market = superclass => class extends superclass {
    * @param {object} [options]
    * @param {string} [options.symbol] - symbol
    * @param {Array} [options.symbols] - an array of symbols
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    *
    */
   exchangeInfo (options = {}) {
@@ -95,6 +99,7 @@ const Market = superclass => class extends superclass {
    * @param {string} symbol
    * @param {object} [options]
    * @param {number} [options.limit] - Default 500; max 1000.
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   trades (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -120,6 +125,7 @@ const Market = superclass => class extends superclass {
    * @param {object} [options]
    * @param {number} [options.limit] - Default 500; max 1000.
    * @param {number} [options.fromId] - Trade id to fetch from. Default gets most recent trades.
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   historicalTrades (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -146,6 +152,7 @@ const Market = superclass => class extends superclass {
    * @param {number} [options.startTime]
    * @param {number} [options.endTime]
    * @param {number} [options.limit] - Default 500; max 1000.
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   aggTrades (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -172,6 +179,7 @@ const Market = superclass => class extends superclass {
    * @param {number} [options.startTime]
    * @param {number} [options.endTime]
    * @param {number} [options.limit] - Default 500; max 1000.
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   klines (symbol, interval, options = {}) {
     validateRequiredParameters({ symbol, interval })
@@ -198,6 +206,7 @@ const Market = superclass => class extends superclass {
    * @param {number} [options.startTime]
    * @param {number} [options.endTime]
    * @param {number} [options.limit] - Default 500; max 1000.
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   uiklines (symbol, interval, options = {}) {
     validateRequiredParameters({ symbol, interval })
@@ -220,13 +229,18 @@ const Market = superclass => class extends superclass {
    * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#current-average-price}
    *
    * @param {string} symbol
+   * @param {object} [options]
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
-  avgPrice (symbol) {
+  avgPrice (symbol, options = {}) {
     validateRequiredParameters({ symbol })
 
     return this.publicRequest(
       'GET',
-      '/api/v3/avgPrice', { symbol: symbol.toUpperCase() }
+      '/api/v3/avgPrice',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase()
+      })
     )
   }
 
@@ -240,13 +254,20 @@ const Market = superclass => class extends superclass {
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
    * @param {string} [type] - "MINI" or "FULL"
+   * @param {object} [options]
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
-  ticker24hr (symbol = '', symbols = [], type = 'FULL') {
+  ticker24hr (symbol = '', symbols = [], type = 'FULL', options = {}) {
     symbols = symbols.map(symbol => symbol.toUpperCase())
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/24hr', { symbol: symbol.toUpperCase(), symbols, type }
+      '/api/v3/ticker/24hr',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase(),
+        symbols,
+        type
+      })
     )
   }
 
@@ -260,12 +281,16 @@ const Market = superclass => class extends superclass {
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
   */
-  tickerPrice (symbol = '', symbols = []) {
+  tickerPrice (symbol = '', symbols = [], options = {}) {
     symbols = symbols.map(symbol => symbol.toUpperCase())
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/price', { symbol: symbol.toUpperCase(), symbols }
+      '/api/v3/ticker/price',
+      Object.assign(options, {
+        symbol: symbol.toUpperCase(),
+        symbols
+      })
     )
   }
 
@@ -285,7 +310,11 @@ const Market = superclass => class extends superclass {
 
     return this.publicRequest(
       'GET',
-      '/api/v3/ticker/bookTicker', { symbol: symbol.toUpperCase(), symbols }
+      '/api/v3/ticker/bookTicker',
+      {
+        symbol: symbol.toUpperCase(),
+        symbols
+      }
     )
   }
 
@@ -311,6 +340,7 @@ const Market = superclass => class extends superclass {
    * @param {object} [options]
    * @param {string} [options.type] Supported values: FULL or MINI.
    * @param {number} [options.windowSize] - Defaults to 1d if no parameter provided.
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
   */
   rollingWindowTicker (symbol = '', symbols = [], options = {}) {
     symbols = symbols.map(symbol => symbol.toUpperCase())

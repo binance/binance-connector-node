@@ -1,5 +1,5 @@
 /* global describe, it, expect */
-const { isEmptyValue, removeEmptyValue, buildQueryString, flowRight, sortObject } = require('../../src/helpers/utils')
+const { isEmptyValue, removeEmptyValue, removeTimeUnit, buildQueryString, flowRight, sortObject } = require('../../src/helpers/utils')
 
 describe('#isEmptyValue', () => {
   it.each([
@@ -42,6 +42,23 @@ describe('#removeEmptyValue', () => {
   it('should keep falsy value 0 and false', () => {
     const obj = { key1: 0, key2: false, key3: true }
     expect(removeEmptyValue(obj)).toStrictEqual(obj)
+  })
+})
+
+describe('#removeTimeUnit', () => {
+  it('should be the same without a timeUnit field', () => {
+    const obj = { foo: 'bar' }
+    expect(removeTimeUnit(obj)).toBe(obj)
+  })
+
+  it.each(
+    [
+      [{ key1: 'value1', timeUnit: 'MICROSECOND' }, { key1: 'value1' }],
+      [{ timeUnit: 'MICROSECOND' }, { }],
+      [{ key1: true, timeUnit: 'MICROSECOND', key3: false }, { key1: true, key3: false }]
+    ]
+  )('should remove the timeUnit field', (obj, expectedObj) => {
+    expect(removeTimeUnit(obj)).toStrictEqual(expectedObj)
   })
 })
 

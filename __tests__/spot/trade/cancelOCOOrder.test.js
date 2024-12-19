@@ -9,7 +9,8 @@ const {
 const {
   mockResponse,
   symbol,
-  recvWindow
+  recvWindow,
+  timeUnit
 } = require('../../testUtils/mockData')
 
 describe('#cancelOCOOrder', () => {
@@ -26,7 +27,7 @@ describe('#cancelOCOOrder', () => {
     }
     nockDeleteMock(`/api/v3/orderList?${buildQueryString({ symbol, ...parameters })}`)(mockResponse)
 
-    return SpotClient.cancelOCOOrder(symbol, parameters).then(response => {
+    return SpotClient.cancelOCOOrder(symbol, { ...parameters, timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

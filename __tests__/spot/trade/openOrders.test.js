@@ -8,7 +8,8 @@ const {
 const {
   mockResponse,
   symbol,
-  recvWindow
+  recvWindow,
+  timeUnit
 } = require('../../testUtils/mockData')
 
 describe('#openOrders', () => {
@@ -28,7 +29,7 @@ describe('#openOrders', () => {
     }
     nockMock(`/api/v3/openOrders?${buildQueryString({ ...parameters })}`)(mockResponse)
 
-    return SpotClient.openOrders(parameters).then(response => {
+    return SpotClient.openOrders({ ...parameters, timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

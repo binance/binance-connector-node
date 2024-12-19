@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
-const { mockResponse } = require('../../testUtils/mockData')
+const { mockResponse, timeUnit } = require('../../testUtils/mockData')
 const DEFAULT_TYPE = 'FULL'
 
 describe('#ticker24hr', () => {
@@ -8,6 +8,15 @@ describe('#ticker24hr', () => {
     nockMock(`/api/v3/ticker/24hr?type=${DEFAULT_TYPE}`)(mockResponse)
 
     return SpotClient.ticker24hr().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
+  it('should return 24hr price for all pairs with optional parameters', () => {
+    nockMock(`/api/v3/ticker/24hr?type=${DEFAULT_TYPE}`)(mockResponse)
+
+    return SpotClient.ticker24hr('', [], 'FULL', { timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

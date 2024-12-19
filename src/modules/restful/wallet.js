@@ -16,7 +16,10 @@ const Wallet = superclass => class extends superclass {
    * {@link https://developers.binance.com/docs/wallet/others/system-status}
    */
   systemStatus () {
-    return this.publicRequest('GET', '/sapi/v1/system/status')
+    return this.publicRequest(
+      'GET',
+      '/sapi/v1/system/status'
+    )
   }
 
   /**
