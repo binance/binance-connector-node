@@ -12,7 +12,8 @@ const {
   side,
   type,
   quantity,
-  price
+  price,
+  timeUnit
 } = require('../../testUtils/mockData')
 
 const cancelReplaceMode = 'STOP_ON_FAILURE'
@@ -53,7 +54,7 @@ describe('#cancelAndReplace', () => {
     }
     nockPostMock(`/api/v3/order/cancelReplace?${buildQueryString({ symbol, side, type, cancelReplaceMode, ...parameters })}`)(mockResponse)
 
-    return SpotClient.cancelAndReplace(symbol, side, type, cancelReplaceMode, parameters).then(response => {
+    return SpotClient.cancelAndReplace(symbol, side, type, cancelReplaceMode, { ...parameters, timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

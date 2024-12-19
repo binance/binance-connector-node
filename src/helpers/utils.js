@@ -13,6 +13,12 @@ const removeEmptyValue = obj => {
   return obj
 }
 
+const removeTimeUnit = obj => {
+  if (!(obj instanceof Object)) return {}
+  if ('timeUnit' in obj) delete obj.timeUnit
+  return obj
+}
+
 const isEmptyValue = input => {
   /**
    * Scope of empty value: falsy value (except for false and 0),
@@ -47,8 +53,8 @@ const getRequestInstance = (config) => {
 }
 
 const createRequest = (config) => {
-  const { baseURL, apiKey, method, url, timeout, proxy, httpsAgent } = config
-  return getRequestInstance({
+  const { baseURL, apiKey, method, url, timeout, proxy, httpsAgent, timeUnit } = config
+  const requestInstance = {
     baseURL,
     timeout,
     proxy,
@@ -58,10 +64,15 @@ const createRequest = (config) => {
       'X-MBX-APIKEY': apiKey,
       'User-Agent': `${constants.appName}/${constants.appVersion}`
     }
-  }).request({
-    method,
-    url
-  })
+  }
+  if (timeUnit) {
+    requestInstance.headers['X-MBX-TIME-UNIT'] = timeUnit
+  }
+  return getRequestInstance(requestInstance)
+    .request({
+      method,
+      url
+    })
 }
 
 const flowRight = (...functions) => input => functions.reduceRight(
@@ -82,6 +93,7 @@ const sortObject = obj => Object.keys(obj).sort().reduce((res, key) => {
 module.exports = {
   isEmptyValue,
   removeEmptyValue,
+  removeTimeUnit,
   buildQueryString,
   createRequest,
   flowRight,

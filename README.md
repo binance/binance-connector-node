@@ -110,7 +110,24 @@ const apiSecret = ''
 const client = new Spot(apiKey, apiSecret)
 
 client.account({ recvWindow: 2000 }).then(response => client.logger.log(response.data))
+```
 
+### Time Unit
+
+The API supports different time units for timestamp values. By default, timestamp values are provided in milliseconds. You can specify the time unit in the request parameters:
+
+```javascript
+const { Spot, TimeUnit } = require('@binance/connector')
+
+const apiKey = ''
+const apiSecret = ''
+const client = new Spot(apiKey, apiSecret)
+
+// Using milliseconds (default)
+client.exchangeInfo({ timeUnit: TimeUnit.MILLISECOND }).then(response => client.logger.log(response.data))
+
+// Using microseconds 
+client.exchangeInfo({ timeUnit: TimeUnit.MICROSECOND }).then(response => client.logger.log(response.data))
 ```
 
 ### Timeout
@@ -255,12 +272,12 @@ const callbacks = {
   message: data => logger.info(data)
 }
 
-const websocketStreamClient = new WebsocketStream({ logger, callbacks })
+// initialize websocket stream with microseconds as the preferred time unit
+const websocketStreamClient = new WebsocketStream({ logger, callbacks, timeUnit: TimeUnit.MICROSECOND })
 // subscribe ticker stream
 websocketStreamClient.ticker('bnbusdt')
 // close websocket stream
 setTimeout(() => websocketStreamClient.disconnect(), 6000)
-
 ```
 
 ### Unsubscribe Websocket Stream
@@ -273,7 +290,7 @@ websocketStreamClient.unsubscribe('bnbusdt@kline_1m')
 ### WebSocket API
 
 ```javascript
-const { WebsocketAPI } = require('@binance/connector')
+const { WebsocketAPI, TimeUnit } = require('@binance/connector')
 const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
 // callbacks for different events
@@ -288,7 +305,8 @@ const callbacks = {
   message: data => logger.info(data)
 }
 
-const websocketAPIClient = new WebsocketAPI(null, null, { logger, callbacks })
+// initialize WebsocketAPI client with microseconds as the preferred time unit
+const websocketAPIClient = new WebsocketAPI(null, null, { logger, callbacks, timeUnit: TimeUnit.MICROSECOND })
 
 // disconnect the connection
 setTimeout(() => websocketAPIClient.disconnect(), 20000)

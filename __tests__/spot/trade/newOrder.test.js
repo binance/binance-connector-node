@@ -12,7 +12,8 @@ const {
   side,
   type,
   quantity,
-  price
+  price,
+  timeUnit
 } = require('../../testUtils/mockData')
 
 describe('#newOrder', () => {
@@ -44,7 +45,7 @@ describe('#newOrder', () => {
     }
     nockPostMock(`/api/v3/order?${buildQueryString({ symbol, side, type, ...parameters })}`)(mockResponse)
 
-    return SpotClient.newOrder(symbol, side, type, parameters).then(response => {
+    return SpotClient.newOrder(symbol, side, type, { ...parameters, timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

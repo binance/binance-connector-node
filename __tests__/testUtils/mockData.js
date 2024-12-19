@@ -1,3 +1,5 @@
+const TimeUnit = require('../../src/helpers/timeUnit')
+
 const mockResponse = {
   key: 'value', foo: 'bar'
 }
@@ -28,5 +30,6 @@ module.exports = {
   status: 'enabled',
   stopPrice: 1001.02,
   symbol: 'BNBUSDT',
+  timeUnit: TimeUnit.MICROSECOND,
   type: 'LIMIT'
 }

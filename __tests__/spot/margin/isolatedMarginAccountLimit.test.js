@@ -11,5 +11,4 @@ describe('#isolatedMarginAccountLimit', () => {
       expect(response.data).toEqual(mockResponse)
     })
   })
-}
-)
+})

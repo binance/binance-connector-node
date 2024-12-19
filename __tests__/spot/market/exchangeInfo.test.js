@@ -1,12 +1,21 @@
 /* global describe, it, expect */
 const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
-const { mockResponse } = require('../../testUtils/mockData')
+const { mockResponse, timeUnit } = require('../../testUtils/mockData')
 
 describe('#exchangeInfo', () => {
   it('should return exchange info', () => {
     nockMock('/api/v3/exchangeInfo')(mockResponse)
 
     return SpotClient.exchangeInfo().then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
+  it('should return exchange info with timeUnit specified', () => {
+    nockMock('/api/v3/exchangeInfo')(mockResponse)
+
+    return SpotClient.exchangeInfo({ timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

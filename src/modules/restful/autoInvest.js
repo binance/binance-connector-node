@@ -110,7 +110,7 @@ const AutoInvest = superclass => class extends superclass {
    */
   changePlanStatus (planId, status, options = {}) {
     validateRequiredParameters({ planId, status })
-    return this.publicRequest(
+    return this.signRequest(
       'POST',
       '/sapi/v1/lending/auto-invest/plan/edit-status',
       Object.assign(options, {
@@ -133,7 +133,7 @@ const AutoInvest = superclass => class extends superclass {
    */
   getListOfPlans (planType, options = {}) {
     validateRequiredParameters({ planType })
-    return this.publicRequest(
+    return this.signRequest(
       'GET',
       '/sapi/v1/lending/auto-invest/plan/list',
       Object.assign(options, {
@@ -155,7 +155,7 @@ const AutoInvest = superclass => class extends superclass {
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   queryHoldingDetailsOfThePlan (options = {}) {
-    return this.publicRequest(
+    return this.signRequest(
       'GET',
       '/sapi/v1/lending/auto-invest/plan/id',
       options
@@ -180,7 +180,7 @@ const AutoInvest = superclass => class extends superclass {
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
    */
   querySubscriptionTransactionHistory (options = {}) {
-    return this.publicRequest(
+    return this.signRequest(
       'GET',
       '/sapi/v1/lending/auto-invest/history/list',
       options

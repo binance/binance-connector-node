@@ -1,6 +1,7 @@
 /* global describe, it, expect */
-const { validateRequiredParameters, hasOneOfParameters } = require('../../src/helpers/validation')
+const { validateRequiredParameters, hasOneOfParameters, validateTimeUnit } = require('../../src/helpers/validation')
 const MissingParameterError = require('../../src/error/missingParameterError')
+const ConnectorClientError = require('../../src/error/connectorClientError')
 
 describe('#validateRequiredParameters', () => {
   it('should throw error without parameter', () => {
@@ -72,5 +73,30 @@ describe('#hasOneOfParameters', () => {
     expect(() => {
       hasOneOfParameters({ param, param2 })
     }).not.toThrow(MissingParameterError)
+  })
+})
+
+describe('#validateTimeUnit', () => {
+  it('should not throw an error if timeUnit is not defined', () => {
+    expect(() => {
+      validateTimeUnit()
+    }).not.toThrow(ConnectorClientError)
+  })
+
+  it.each([
+    'MICROSECOND',
+    'MILLISECOND'
+  ])('should not throw an error when timeUnit is valid', (timeUnit) => {
+    expect(() => {
+      validateTimeUnit(timeUnit)
+    }).not.toThrow(ConnectorClientError)
+  })
+
+  it.each([
+    'random string'
+  ])('should throw an error when timeUnit is invalid', (timeUnit) => {
+    expect(() => {
+      validateTimeUnit(timeUnit)
+    }).toThrow(ConnectorClientError)
   })
 })

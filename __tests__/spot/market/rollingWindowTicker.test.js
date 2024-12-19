@@ -1,6 +1,6 @@
 /* global describe, it, expect */
 const { nockMock, buildQueryString, SpotClient } = require('../../testUtils/testSetup')
-const { mockResponse } = require('../../testUtils/mockData')
+const { mockResponse, timeUnit } = require('../../testUtils/mockData')
 
 describe('#rollingWindowTicker', () => {
   it('should return ticker for selective pairs', () => {
@@ -29,6 +29,16 @@ describe('#rollingWindowTicker', () => {
     nockMock(`/api/v3/ticker?symbol=${symbol}&windowSize=${windowSize}`)(mockResponse)
 
     return SpotClient.rollingWindowTicker(symbol, [], { windowSize }).then(response => {
+      expect(response).toBeDefined()
+      expect(response.data).toEqual(mockResponse)
+    })
+  })
+
+  it('should return ticker price for specific unit of time', () => {
+    const symbol = 'BTCUSDT'
+    nockMock(`/api/v3/ticker?symbol=${symbol}`)(mockResponse)
+
+    return SpotClient.rollingWindowTicker(symbol, [], { timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

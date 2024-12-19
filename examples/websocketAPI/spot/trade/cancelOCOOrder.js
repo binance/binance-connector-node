@@ -2,6 +2,7 @@
 
 const { Console } = require('console')
 const WebsocketAPI = require('../../../../src/websocketAPI')
+const TimeUnit = require('../../../../src/helpers/timeUnit')
 
 const logger = new Console({ stdout: process.stdout, stderr: process.stderr })
 
@@ -20,7 +21,7 @@ const callbacks = {
   message: data => logger.info(data)
 }
 
-const websocketAPIClient = new WebsocketAPI(apiKey, apiSecret, { logger, callbacks, wsURL })
+const websocketAPIClient = new WebsocketAPI(apiKey, apiSecret, { logger, callbacks, wsURL, timeUnit: TimeUnit.MICROSECOND })
 
 // disconnect after 20 seconds
 setTimeout(() => websocketAPIClient.disconnect(), 20000)

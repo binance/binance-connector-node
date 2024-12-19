@@ -9,7 +9,8 @@ const {
 const {
   mockResponse,
   symbol,
-  orderId
+  orderId,
+  timeUnit
 } = require('../../testUtils/mockData')
 
 describe('#getOrder', () => {
@@ -25,7 +26,7 @@ describe('#getOrder', () => {
     }
     nockMock(`/api/v3/order?${buildQueryString({ symbol, ...parameters })}`)(mockResponse)
 
-    return SpotClient.getOrder(symbol, parameters).then(response => {
+    return SpotClient.getOrder(symbol, { ...parameters, timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

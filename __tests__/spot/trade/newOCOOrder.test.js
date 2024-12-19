@@ -12,7 +12,8 @@ const {
   side,
   quantity,
   aboveType,
-  belowType
+  belowType,
+  timeUnit
 } = require('../../testUtils/mockData')
 
 describe('#newOCOOrder', () => {
@@ -58,7 +59,7 @@ describe('#newOCOOrder', () => {
     }
     nockPostMock(`/api/v3/orderList/oco?${buildQueryString({ symbol, side, quantity, aboveType, belowType, ...parameters })}`)(mockResponse)
 
-    return SpotClient.newOCOOrder(symbol, side, quantity, aboveType, belowType, parameters).then(response => {
+    return SpotClient.newOCOOrder(symbol, side, quantity, aboveType, belowType, { ...parameters, timeUnit }).then(response => {
       expect(response).toBeDefined()
       expect(response.data).toEqual(mockResponse)
     })

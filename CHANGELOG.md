@@ -1,4 +1,17 @@
 # Changelog
+
+## 3.6.0 - 2024-12-19
+
+### Added
+- A new optional parameter `timeUnit` can be used to select the time unit. Available options are `MILLISECOND`, `MICROSECOND`, `millisecond` and `microsecond`.
+
+### Changed
+- Use signed requests for the following endpoints:
+  - `POST /sapi/v1/lending/auto-invest/plan/edit-status`
+  - `GET /sapi/v1/lending/auto-invest/plan/list`
+  - `GET /sapi/v1/lending/auto-invest/plan/id`
+  - `GET /sapi/v1/lending/auto-invest/history/list`
+
 ## 3.5.0 - 2024-10-02
 ### Added
 - Add GiftCard endpoint:

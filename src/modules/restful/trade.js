@@ -32,6 +32,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} [options.newOrderRespType] - Set the response JSON. ACK, RESULT, or FULL;
    *    MARKET and LIMIT order types default to FULL, all other orders default to ACK.
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   newOrderTest (symbol, side, type, options = {}) {
     validateRequiredParameters({ symbol, side, type })
@@ -70,6 +71,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.icebergQty]
    * @param {string} [options.newOrderRespType]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   newOrder (symbol, side, type, options = {}) {
     validateRequiredParameters({ symbol, side, type })
@@ -98,6 +100,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} [options.origClientOrderId]
    * @param {string} [options.newClientOrderId]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   cancelOrder (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -120,6 +123,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} symbol
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   cancelOpenOrders (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -145,6 +149,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.orderId]
    * @param {string} [options.origClientOrderId]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   getOrder (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -190,6 +195,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.icebergQty]
    * @param {string} [options.newOrderRespType]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   cancelAndReplace (symbol, side, type, cancelReplaceMode, options = {}) {
     validateRequiredParameters({ symbol, side, type, cancelReplaceMode })
@@ -216,6 +222,7 @@ const Trade = superclass => class extends superclass {
    * @param {object} [options]
    * @param {string} [options.symbol]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   openOrders (options = {}) {
     return this.signRequest(
@@ -239,6 +246,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.endTime]
    * @param {number} [options.limit]
    * @param {string} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   allOrders (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -284,6 +292,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} [options.newOrderRespType]
    * @param {string} [options.selfTradePreventionMode]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   newOCOOrder (symbol, side, quantity, aboveType, belowType, options = {}) {
     validateRequiredParameters({ symbol, side, quantity, aboveType, belowType })
@@ -314,6 +323,7 @@ const Trade = superclass => class extends superclass {
    * @param {string} [options.listClientOrderId]
    * @param {string} [options.newClientOrderId]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   cancelOCOOrder (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -338,6 +348,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.orderListId]
    * @param {string} [options.origClientOrderId]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   getOCOOrder (options = {}) {
     return this.signRequest(
@@ -360,6 +371,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.endTime]
    * @param {number} [options.limit]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   getOCOOrders (options = {}) {
     return this.signRequest(
@@ -378,6 +390,7 @@ const Trade = superclass => class extends superclass {
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   getOpenOCOOrders (options = {}) {
     return this.signRequest(
@@ -396,6 +409,7 @@ const Trade = superclass => class extends superclass {
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   account (options = {}) {
     return this.signRequest(
@@ -420,6 +434,7 @@ const Trade = superclass => class extends superclass {
    * @param {number} [options.fromId]
    * @param {number} [options.limit]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   myTrades (symbol, options = {}) {
     validateRequiredParameters({ symbol })
@@ -442,6 +457,7 @@ const Trade = superclass => class extends superclass {
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
+   * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
    */
   orderCount (options = {}) {
     return this.signRequest(

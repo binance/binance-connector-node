@@ -344,7 +344,6 @@ const SubAccount = superclass => class extends superclass {
    * <br>2: transfer from subaccount's margin account to its spot account
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-
    */
   subAccountMarginTransfer (email, asset, amount, type, options = {}) {
     validateRequiredParameters({ email, asset, amount, type })
@@ -427,7 +426,6 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} [options.endTime]
    * @param {number} [options.limit] - Default 500
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-
    */
   subAccountTransferSubAccountHistory (options = {}) {
     return this.signRequest(
@@ -479,7 +477,6 @@ const SubAccount = superclass => class extends superclass {
    * @param {number} amount
    * @param {object} [options]
    * @param {number} [options.recvWindow] - The value cannot be greater than 60000
-
    */
   subAccountFuturesAssetTransfer (fromEmail, toEmail, futuresType, asset, amount, options = {}) {
     validateRequiredParameters({ fromEmail, toEmail, futuresType, asset, amount })
