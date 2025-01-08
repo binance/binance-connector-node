@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.6.1 - 2025-01-08
+
+### Changed
+- Updated documentation links.
+
 ## 3.6.0 - 2024-12-19
 
 ### Added

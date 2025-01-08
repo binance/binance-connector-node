@@ -12,7 +12,7 @@ const Account = superclass => class extends superclass {
    * Query information about your account.<br>
    *
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#account-information-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/account-requests#account-information-user_data}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow]
@@ -27,7 +27,7 @@ const Account = superclass => class extends superclass {
    * Query your current order rate limit.<br>
    *
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#account-order-rate-limits-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/account-requests#unfilled-order-count-user_data}
    *
    * @param {object} [options]
    * @param {number} [options.recvWindow]
@@ -42,7 +42,7 @@ const Account = superclass => class extends superclass {
    * Query information about all your orders – active, canceled, filled – filtered by time range.<br>
    *
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#account-order-history-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/account-requests#account-order-history-user_data}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -68,7 +68,7 @@ const Account = superclass => class extends superclass {
    * Query information about all your OCOs, filtered by time range.<br>
    *
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/account-requests#account-order-list-history-user_data}
    *
    * @param {object} [options]
    * @param {number} [options.fromId]
@@ -92,7 +92,7 @@ const Account = superclass => class extends superclass {
    * Query information about all your trades, filtered by time range.<br>
    *
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#account-trade-history-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/account-requests#account-trade-history-user_data}
    *
    * @param {string} [symbol]
    * @param {object} [options]
@@ -119,7 +119,7 @@ const Account = superclass => class extends superclass {
    * Displays the list of orders that were expired because of STP trigger.<br>
    *
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#account-prevented-matches-user_data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/account-requests#account-prevented-matches-user_data}
    *
    * @param {string} [symbol]
    * @param {object} [options]

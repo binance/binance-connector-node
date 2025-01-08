@@ -14,7 +14,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/ping<br>
    *
    * Test connectivity to the Rest API.<br>
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#test-connectivity}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-endpoints#test-connectivity}
    */
   ping () {
     return this.publicRequest('GET', '/api/v3/ping')
@@ -26,7 +26,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/time<br>
    *
    * Test connectivity to the Rest API and get the current server time.<br>
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#check-server-time}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-endpoints#check-server-time}
    *
    * @param {object} [options]
    * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
@@ -42,7 +42,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/exchangeInfo<br>
    *
    * Current exchange trading rules and symbol information<br>
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#exchange-information}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/general-endpoints#exchange-information}
    *
    * @param {object} [options]
    * @param {string} [options.symbol] - symbol
@@ -69,7 +69,7 @@ const Market = superclass => class extends superclass {
    *
    * GET /api/v3/depth<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#order-book}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#order-book}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -94,7 +94,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/trades<br>
    *
    * Get recent trades.<br>
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#recent-trades-list}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#recent-trades-list}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -119,7 +119,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/historicalTrades<br>
    *
    * Get older market trades.<br>
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#old-trade-lookup}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#old-trade-lookup}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -144,7 +144,7 @@ const Market = superclass => class extends superclass {
    *
    * GET /api/v3/aggTrades<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#compressedaggregate-trades-list}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#compressedaggregate-trades-list}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -171,7 +171,7 @@ const Market = superclass => class extends superclass {
    *
    * GET /api/v3/klines<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#klinecandlestick-data}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#klinecandlestick-data}
    *
    * @param {string} symbol
    * @param {string} interval
@@ -198,7 +198,7 @@ const Market = superclass => class extends superclass {
    *
    * GET /api/v3/uiKlines<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#uiklines}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#uiklines}
    *
    * @param {string} symbol
    * @param {string} interval
@@ -226,7 +226,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/avgPrice<br>
    *
    * Current average price for a symbol.<br>
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#current-average-price}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#current-average-price}
    *
    * @param {string} symbol
    * @param {object} [options]
@@ -249,7 +249,7 @@ const Market = superclass => class extends superclass {
    *
    * GET /api/v3/ticker/24hr<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#24hr-ticker-price-change-statistics}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#24hr-ticker-price-change-statistics}
    *
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
@@ -276,7 +276,7 @@ const Market = superclass => class extends superclass {
    *
    * GET /api/v3/ticker/price<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#symbol-price-ticker}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#symbol-price-ticker}
    *
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
@@ -300,7 +300,7 @@ const Market = superclass => class extends superclass {
    * GET /api/v3/ticker/bookTicker<br>
    *
    * Best price/qty on the order book for a symbol or symbols.<br>
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#symbol-order-book-ticker}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#symbol-order-book-ticker}
    *
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
@@ -333,7 +333,7 @@ const Market = superclass => class extends superclass {
    *
    * The weight for this request will cap at 100 once the number of symbols in the request is more than 50.<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#rolling-window-price-change-statistics}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api/market-data-endpoints#rolling-window-price-change-statistics}
    *
    * @param {string} [symbol]
    * @param {Array} [symbols] - an array of symbols
