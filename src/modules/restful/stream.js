@@ -13,7 +13,7 @@ const Stream = superclass => class extends superclass {
    *
    * POST /api/v3/userDataStream<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#start-user-data-stream-user_stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/user-data-stream#create-a-listenkey-user_stream}
    *
    * @param {object} [options]
    * @param {string} [options.timeUnit] - The preferred time unit for time and timestamp fields. It can be either 'MILLISECOND' or 'MICROSECOND'
@@ -31,7 +31,7 @@ const Stream = superclass => class extends superclass {
    *
    * PUT /api/v3/userDataStream<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#keepalive-user-data-stream-user_stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/user-data-stream#pingkeep-alive-a-listenkey-user_stream}
    *
    * @param {string} listenKey
    * @param {object} [options]
@@ -53,7 +53,7 @@ const Stream = superclass => class extends superclass {
    *
    * DELETE /api/v3/userDataStream<br>
    *
-   * {@link https://developers.binance.com/docs/binance-spot-api-docs/rest-api#close-user-data-stream-user_stream}
+   * {@link https://developers.binance.com/docs/binance-spot-api-docs/user-data-stream#close-a-listenkey-user_stream}
    *
    * @param {string} listenKey
    * @param {object} [options]

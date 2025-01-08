@@ -11,7 +11,7 @@ const UserData = superclass => class extends superclass {
  * Start a new user data stream.<br>
  *
  *
- * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#start-user-data-stream-user_stream}
+ * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/user-data-stream-requests#start-user-data-stream-user_stream}
  *
  */
   startUserDataStream () {
@@ -24,7 +24,7 @@ const UserData = superclass => class extends superclass {
   * Ping a user data stream to keep it alive.<br>
   *
   *
-  * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#ping-user-data-stream-user_stream}
+  * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/user-data-stream-requests#ping-user-data-stream-user_stream}
   *
   * @param {string} listenKey
   *
@@ -39,7 +39,7 @@ const UserData = superclass => class extends superclass {
   * Explicitly stop and close the user data stream.<br>
   *
   *
-  * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api#stop-user-data-stream-user_stream}
+  * {@link https://developers.binance.com/docs/binance-spot-api-docs/web-socket-api/user-data-stream-requests#stop-user-data-stream-user_stream}
   *
   */
   stopUserDataStream (listenKey) {
